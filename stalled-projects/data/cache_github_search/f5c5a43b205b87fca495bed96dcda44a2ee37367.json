@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!-- READ THIS FIRST:\r\n- If you need additional help with this template please refer to https://www.home-assistant.io/help/reporting_issues/\r\n- Make sure you are running the latest version of Home Assistant before reporting an issue: https://github.com/home-assistant/home-assistant/releases\r\n- Frontend issues should be submitted to the home-assistant-polymer repository: https://github.com/home-assistant/home-assistant-polymer/issues\r\n- iOS issues should be submitted to the home-assistant-iOS repository: https://github.com/home-assistant/home-assistant-iOS/issues\r\n- Do not report issues for components if you are using custom components: files in <config-dir>/custom_components\r\n- This is for bugs only. Feature and enhancement requests should go in our community forum: https://community.home-assistant.io/c/feature-requests\r\n- Provide as many details as possible. Paste logs, configuration sample and code into the backticks. Do not delete any text from this template!\r\n-->\r\n\r\n**Home Assistant release with the issue:**\r\n<!--\r\n- Frontend -> Developer tools -> Info\r\n- Or use this command: hass --version\r\n-->\r\n0.91.0 - 0.91.2\r\n\r\n**Last working Home Assistant release (if known):**\r\n\r\n\r\n**Operating environment (Hass.io/Docker/Windows/etc.):**\r\n<!--\r\nPlease provide details about your environment.\r\n-->\r\nHass.io on HassOS on Pi and NUC\r\n\r\n**Component/platform:**\r\n<!--\r\nPlease add the link to the documentation at https://www.home-assistant.io/components/ of the component/platform in question.\r\n-->\r\nFrontend\r\n\r\n**Description of problem:**\r\nWhen adding a generic camera entity to a picture-elements card (say a floorplan) in lovelace, I get `Login attempt or request with invalid authentication from IP\u02cb about one in three or four times upon opening the Home Assistant site.\r\nThis happens in the iOS companion app and in Safari, Firefox and Chrome on PC.\r\n\r\n\r\n**Problem-relevant `configuration.yaml` entries and (fill out even if it seems unimportant):**\r\n```yaml\r\nelements:\r\n  - entity: camera.living_room\r\n    style:\r\n      left: 28%\r\n      top: 12%\r\n    type: state-icon\r\nimage: /local/floorplan.jpg\r\ntitle: Floorplan\r\ntype: picture-elements\r\n\r\n\ufffd\r\n```\r\n\r\n**Traceback (if applicable):**\r\n```\r\n\r\n```\r\n\r\n**Additional information:**\r\n- Removing the camera entity removes the problem\r\n- I tried a run with log level set to debug but there was nothing logged that did point me towards what caused this",
+      "closed_at": "2022-07-28T16:20:40Z",
+      "comments": 123,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/23055/comments",
+      "created_at": "2019-04-12T19:03:20Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/23055/events",
+      "html_url": "https://github.com/home-assistant/core/issues/23055",
+      "id": 432703404,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/23055/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0MzI3MDM0MDQ=",
+      "number": 23055,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 9,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 9,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/23055/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/23055/timeline",
+      "title": "Lovelace: Login attempt or request with invalid authentication ",
+      "type": null,
+      "updated_at": "2022-11-18T13:19:34Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/23055",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/43749346?v=4",
+        "events_url": "https://api.github.com/users/olbjan/events{/privacy}",
+        "followers_url": "https://api.github.com/users/olbjan/followers",
+        "following_url": "https://api.github.com/users/olbjan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/olbjan/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/olbjan",
+        "id": 43749346,
+        "login": "olbjan",
+        "node_id": "MDQ6VXNlcjQzNzQ5MzQ2",
+        "organizations_url": "https://api.github.com/users/olbjan/orgs",
+        "received_events_url": "https://api.github.com/users/olbjan/received_events",
+        "repos_url": "https://api.github.com/users/olbjan/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/olbjan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/olbjan/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/olbjan",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Go version\r\n\r\ngo version go1.22.1 darwin/arm64\r\n\r\n### Output of `go env` in your module/workspace:\r\n\r\n```shell\r\nGO111MODULE=''\r\nGOARCH='arm64'\r\nGOBIN=''\r\nGOCACHE='/Users/da/Library/Caches/go-build'\r\nGOENV='/Users/da/Library/Application Support/go/env'\r\nGOEXE=''\r\nGOEXPERIMENT=''\r\nGOFLAGS=''\r\nGOHOSTARCH='arm64'\r\nGOHOSTOS='darwin'\r\nGOINSECURE=''\r\nGOMODCACHE='/Users/da/go/pkg/mod'\r\nGONOPROXY='github.com/speakeasy-api/*'\r\nGONOSUMDB='github.com/speakeasy-api/*'\r\nGOOS='darwin'\r\nGOPATH='/Users/da/go'\r\nGOPRIVATE='github.com/speakeasy-api/*'\r\nGOPROXY='https://proxy.golang.org,direct'\r\nGOROOT='/opt/homebrew/Cellar/go/1.22.1/libexec'\r\nGOSUMDB='sum.golang.org'\r\nGOTMPDIR=''\r\nGOTOOLCHAIN='auto'\r\nGOTOOLDIR='/opt/homebrew/Cellar/go/1.22.1/libexec/pkg/tool/darwin_arm64'\r\nGOVCS=''\r\nGOVERSION='go1.22.1'\r\nGCCGO='gccgo'\r\nAR='ar'\r\nCC='cc'\r\nCXX='c++'\r\nCGO_ENABLED='1'\r\nGOMOD='/Users/da/code/speakeasy/go.mod'\r\nGOWORK=''\r\nCGO_CFLAGS='-O2 -g'\r\nCGO_CPPFLAGS=''\r\nCGO_CXXFLAGS='-O2 -g'\r\nCGO_FFLAGS='-O2 -g'\r\nCGO_LDFLAGS='-O2 -g'\r\nPKG_CONFIG='pkg-config'\r\nGOGCCFLAGS='-fPIC -arch arm64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -ffile-prefix-map=/var/folders/9w/3j0xt3p530d10gz0w8v926l00000gn/T/go-build564162317=/tmp/go-build -gno-record-gcc-switches -fno-common'\r\n```\r\n\r\n\r\n### What did you do?\r\n\r\n```go\r\nfilpath.Rel(`/tmp/foo`, `/Users/me/file.txt`) // returns ../../Users/me/file.txt\r\n```\r\n\r\nThis returned value is broken as `/tmp` is actually a symlink. I would expect the method to return an error because the docs say \"An error is returned if targpath can't be made relative to basepath\"\r\n\r\n```\r\nlrwxr-xr-x@ 1 root  wheel    11B 29 Feb 04:05 /tmp -> private/tmp\r\n```\r\n\r\n\r\n\r\n### What did you see happen?\r\n\r\nSee above\r\n\r\n### What did you expect to see?\r\n\r\nSee above",
+      "closed_at": "2024-03-31T15:08:22Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/golang/go/issues/66622/comments",
+      "created_at": "2024-03-31T12:59:32Z",
+      "events_url": "https://api.github.com/repos/golang/go/issues/66622/events",
+      "html_url": "https://github.com/golang/go/issues/66622",
+      "id": 2216960947,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": null,
+          "id": 398069301,
+          "name": "FrozenDueToAge",
+          "node_id": "MDU6TGFiZWwzOTgwNjkzMDE=",
+          "url": "https://api.github.com/repos/golang/go/labels/FrozenDueToAge"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/golang/go/issues/66622/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAWBuf86EJCOz",
+      "number": 66622,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/golang/go/issues/66622/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/golang/go",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/golang/go/issues/66622/timeline",
+      "title": "path/filepath: Rel is not returning an error for symlinks",
+      "type": null,
+      "updated_at": "2025-03-31T15:09:09Z",
+      "url": "https://api.github.com/repos/golang/go/issues/66622",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1690659?v=4",
+        "events_url": "https://api.github.com/users/mfbx9da4/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mfbx9da4/followers",
+        "following_url": "https://api.github.com/users/mfbx9da4/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mfbx9da4/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mfbx9da4",
+        "id": 1690659,
+        "login": "mfbx9da4",
+        "node_id": "MDQ6VXNlcjE2OTA2NTk=",
+        "organizations_url": "https://api.github.com/users/mfbx9da4/orgs",
+        "received_events_url": "https://api.github.com/users/mfbx9da4/received_events",
+        "repos_url": "https://api.github.com/users/mfbx9da4/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mfbx9da4/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mfbx9da4/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mfbx9da4",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 748
+}

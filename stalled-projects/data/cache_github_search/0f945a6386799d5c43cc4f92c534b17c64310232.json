@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--- Verify first that your issue is not already reported on GitHub -->\r\n<!--- Also test if the latest release and devel branch are affected too -->\r\n<!--- Complete *all* sections as described, this form is processed automatically -->\r\n\r\n##### SUMMARY\r\nThe `ansible-galaxy collection publish` command, when interacting with Automation Hub, uses the Keycloak authentication protocol to fetch an access token for API requests during the session. It continues to use this token for the length of the process. When performing a collection publish operation, the client polls the import task endpoint repeatedly until getting a failed or success status on the import to report to the user.\r\nThe Keycloak access token expires after 15 minutes (900 seconds) and imports can some times take longer than this 15 minute expiration. If this is the case, the polling requests will suddenly fail with a 401 Authentication Error response. The import will appear to fail and the user will not observe the right result.\r\n\r\n##### ISSUE TYPE\r\n- Bug Report\r\n\r\n##### COMPONENT NAME\r\nansible-galaxy\r\n\r\n##### ANSIBLE VERSION\r\n<!--- Paste verbatim output from \"ansible --version\" between quotes -->\r\n```paste below\r\nansible 2.9.7\r\n  config file = /etc/ansible/ansible.cfg\r\n  configured module search path = ['/home/calvin/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /usr/local/lib/python3.7/site-packages/ansible\r\n  executable location = /usr/local/bin/ansible\r\n  python version = 3.7.5 (default, Oct 17 2019, 12:21:00) [GCC 8.3.1 20190223 (Red Hat 8.3.1-2)]\r\n```\r\n\r\n##### CONFIGURATION\r\n<!--- Paste verbatim output from \"ansible-config dump --only-changed\" between quotes -->\r\n```paste below\r\nDEFAULT_TIMEOUT(/etc/ansible/ansible.cfg) = 30\r\nGALAXY_SERVER_LIST(/etc/ansible/ansible.cfg) = ['automation_hub', 'galaxy', 'galaxy_dev', 'automation_hub_ci', 'automation_h>\r\nPERSISTENT_COMMAND_TIMEOUT(/etc/ansible/ansible.cfg) = 60\r\nPERSISTENT_CONNECT_TIMEOUT(/etc/ansible/ansible.cfg) = 30\r\n```\r\n\r\n##### OS / ENVIRONMENT\r\nFedora 30\r\n\r\n\r\n##### STEPS TO REPRODUCE\r\nThe problem will occur when the import works for Automation Hub are busy and the import has to wait in the queue before running. The best way to reproduce this would be to publish multiple collections in a very short timeframe or in parallel.\r\n\r\n##### EXPECTED RESULTS\r\n<!--- Describe what you expected to happen when running the steps above -->\r\nIdeally, the imports would complete faster, but in the case that they take longer, the client should continue to poll the import task and update the user when the import begins and when it finally finishes.\r\nIf the token expires, the client should fetch a fresh one and continue its operation normally.\r\n\r\n##### ACTUAL RESULTS\r\n\r\n```paste below\r\nansible-galaxy 2.9.9.post0\r\n  config file = /tmp/tmp3e68yyhc.cfg\r\n  configured module search path = ['/home/calvin/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /home/calvin/projects/ansible/lib/ansible\r\n  executable location = /home/calvin/.local/share/virtualenvs/iqe/bin/ansible-galaxy\r\n  python version = 3.7.5 (default, Oct 17 2019, 12:21:00) [GCC 8.3.1 20190223 (Red Hat 8.3.1-2)]\r\nUsing /tmp/tmp3e68yyhc.cfg as config file\r\nPublishing collection artifact '/tmp/home/calvin/projects/orion-utils/orionutils/collections/skeleton/autohubtest2-collection_dep_a_wbyqmoja-1.0.0.tar.gz' to automation_hub https://ci.cloud.redhat.com/api/automation-hub/\r\nCollection has been published to the Galaxy server automation_hub https://ci.cloud.redhat.com/api/automation-hub/\r\nWaiting until Galaxy import task https://ci.cloud.redhat.com/api/automation-hub/v3/imports/collections/7e4d4c36-69fc-4512-8152-6fbf4adb78d4/ has completed\r\nGalaxy import process has a status of waiting, wait 2 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 3 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 4 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 6 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 10 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 15 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 22 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nGalaxy import process has a status of waiting, wait 30 seconds before trying again\r\nERROR! Error when getting import task results at https://ci.cloud.redhat.com/api/automation-hub/v3/imports/collections/45891178-ebf2-4ec7-81f4-db7323464f54/ (HTTP Code: 401, Message: Unauthorized Code: Unknown)\r\n```",
+      "closed_at": "2024-08-22T18:57:03Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/70019/comments",
+      "created_at": "2020-06-11T18:37:19Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/70019/events",
+      "html_url": "https://github.com/ansible/ansible/issues/70019",
+      "id": 637238139,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "This issue/PR affects Ansible v2.9",
+          "id": 1316917295,
+          "name": "affects_2.9",
+          "node_id": "MDU6TGFiZWwxMzE2OTE3Mjk1",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.9"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 5347309307,
+          "name": "affects_2.16",
+          "node_id": "LA_kwDOADeGtM8AAAABPrl2-w",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.16"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/70019/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2MzcyMzgxMzk=",
+      "number": 70019,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/70019/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/70019/timeline",
+      "title": "Long import wait times in `ansible-galaxy collection publish` break on token expiration",
+      "type": null,
+      "updated_at": "2024-09-05T13:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/70019",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/34982?v=4",
+        "events_url": "https://api.github.com/users/ironfroggy/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ironfroggy/followers",
+        "following_url": "https://api.github.com/users/ironfroggy/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ironfroggy/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ironfroggy",
+        "id": 34982,
+        "login": "ironfroggy",
+        "node_id": "MDQ6VXNlcjM0OTgy",
+        "organizations_url": "https://api.github.com/users/ironfroggy/orgs",
+        "received_events_url": "https://api.github.com/users/ironfroggy/received_events",
+        "repos_url": "https://api.github.com/users/ironfroggy/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ironfroggy/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ironfroggy/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ironfroggy",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 8
+}

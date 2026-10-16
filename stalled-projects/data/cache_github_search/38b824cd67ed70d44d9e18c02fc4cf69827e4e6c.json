@@ -1,0 +1,150 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "I'm not entirely sure of the cause, and just to be transparent I have made some changes to some kernel makefiles to fix other errors, but here is the output I'm getting(word of warning- I set `SHELL='/bin/bash -xv'` so that I could get the commands being run, but the make command being run is `make -C kernel M=$PWD MO=$PWD SHELL='/bin/bash -xv' KRUSTFLAGS=\"-Zcodegen-backend=/home/averse/slack-fs/rustc_codegen_gcc/target/release/librustc_codegen_gcc.so --sysroot /home/averse/slack-fs/rustc_codegen_gcc/build/build_sysroot/sysroot\" HOSTRUSTFLAGS=\"-Clto=no\"`)\n\n```\n+ rustc --edition=2021 -Zbinary_dep_depinfo=y -Astable_features -Dunsafe_op_in_unsafe_fn -Dnon_ascii_idents -Wrust_2018_idioms -Wunreachable_pub -Wmissing_docs -Wrustdoc::missing_crate_level_docs -Wclippy::all -Wclippy::mut_mut -Wclippy::needless_bitwise_bool -Wclippy::needless_continue -Wclippy::no_mangle_with_rust_abi -Wclippy::dbg_macro -Cpanic=abort -Cembed-bitcode=n -Clto=n -Cforce-unwind-tables=n -Ccodegen-units=1 -Csymbol-mangling-version=v0 -Crelocation-model=static -Zfunction-sections=n -Wclippy::float_arithmetic --target=/home/averse/slack-fs/kernel/scripts/target.json -Ctarget-feature=-sse,-sse2,-sse3,-ssse3,-sse4.1,-sse4.2,-avx,-avx2 -Zcf-protection=branch -Zno-jump-tables -Ztune-cpu=generic -Cno-redzone=y -Ccode-model=kernel -Copt-level=2 -Cdebug-assertions=n -Coverflow-checks=n -Cdebuginfo=2 -Zcodegen-backend=/home/averse/slack-fs/rustc_codegen_gcc/target/release/librustc_codegen_gcc.so --sysroot /home/averse/slack-fs/rustc_codegen_gcc/build/build_sysroot/sysroot --cfg MODULE @/home/averse/slack-fs/kernel/include/generated/rustc_cfg -Zallow-features=new_uninit -Zcrate-attr=no_std '-Zcrate-attr=feature(new_uninit)' -Zunstable-options --extern force:alloc --extern kernel --crate-type rlib -L /home/averse/slack-fs/kernel/rust/ --crate-name slack_fs --out-dir /home/averse/slack-fs/ --emit=dep-info=/home/averse/slack-fs/.slack_fs.o.d --emit=obj=/home/averse/slack-fs/slack_fs.o /home/averse/slack-fs/slack_fs.rs\nerror: target specification was invalid: unrecognized target-pointer-width 65\n\nerror: rustc interrupted by SIGSEGV, printing backtrace\n\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/lib/librustc_driver-4cffaa09a8a15c82.so(+0x2ab7976) [0x7fb96eab7976]\n/lib64/libc.so.6(+0x19dd0) [0x7fb96bcbbdd0]\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/bin/rustc(+0x1c342) [0x55a27f9eb342]\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/lib/librustc_driver-4cffaa09a8a15c82.so(+0x328bfaa) [0x7fb96f28bfaa]\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/lib/librustc_driver-4cffaa09a8a15c82.so(_RNvNtCs9D7J3usUi2d_13rustc_session7session13build_session+0x392b) [0x7fb970a7702b]\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/lib/librustc_driver-4cffaa09a8a15c82.so(_RNvNtCsf2AqcSgA2M1_15rustc_interface4util14create_session+0x532) [0x7fb970934f32]\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/lib/librustc_driver-4cffaa09a8a15c82.so(+0x492760c) [0x7fb97092760c]\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/lib/librustc_driver-4cffaa09a8a15c82.so(+0x4926fb3) [0x7fb970926fb3]\n/home/averse/.rustup/toolchains/nightly-2023-10-21-x86_64-unknown-linux-gnu/lib/libstd-b119caf2b41e989c.so(rust_metadata_std_df43e54be7296dae+0xe1105) [0x7fb96bf77105]\n/lib64/libc.so.6(+0x70cd7) [0x7fb96bd12cd7]\n/lib64/libc.so.6(+0xf4c8c) [0x7fb96bd96c8c]\n\nnote: we would appreciate a report at https://github.com/rust-lang/rust\n/bin/bash: line 1:  2922 Segmentation fault      (core dumped) RUST_MODFILE=/home/averse/slack-fs/slack_fs rustc --edition=2021 -Zbinary_dep_depinfo=y -Astable_features -Dunsafe_op_in_unsafe_fn -Dnon_ascii_idents -Wrust_2018_idioms -Wunreachable_pub -Wmissing_docs -Wrustdoc::missing_crate_level_docs -Wclippy::all -Wclippy::mut_mut -Wclippy::needless_bitwise_bool -Wclippy::needless_continue -Wclippy::no_mangle_with_rust_abi -Wclippy::dbg_macro -Cpanic=abort -Cembed-bitcode=n -Clto=n -Cforce-unwind-tables=n -Ccodegen-units=1 -Csymbol-mangling-version=v0 -Crelocation-model=static -Zfunction-sections=n -Wclippy::float_arithmetic --target=/home/averse/slack-fs/kernel/scripts/target.json -Ctarget-feature=-sse,-sse2,-sse3,-ssse3,-sse4.1,-sse4.2,-avx,-avx2 -Zcf-protection=branch -Zno-jump-tables -Ztune-cpu=generic -Cno-redzone=y -Ccode-model=kernel -Copt-level=2 -Cdebug-assertions=n -Coverflow-checks=n -Cdebuginfo=2 -Zcodegen-backend=/home/averse/slack-fs/rustc_codegen_gcc/target/release/librustc_codegen_gcc.so --sysroot /home/averse/slack-fs/rustc_codegen_gcc/build/build_sysroot/sysroot --cfg MODULE @/home/averse/slack-fs/kernel/include/generated/rustc_cfg -Zallow-features=new_uninit -Zcrate-attr=no_std -Zcrate-attr='feature(new_uninit)' -Zunstable-options --extern force:alloc --extern kernel --crate-type rlib -L /home/averse/slack-fs/kernel/rust/ --crate-name slack_fs --out-dir /home/averse/slack-fs/ --emit=dep-info=/home/averse/slack-fs/.slack_fs.o.d --emit=obj=/home/averse/slack-fs/slack_fs.o /home/averse/slack-fs/slack_fs.rs\nmake[3]: *** [scripts/Makefile.build:293: /home/averse/slack-fs/slack_fs.o] Error 139\nmake[2]: *** [/home/averse/slack-fs/kernel/Makefile:1966: /home/averse/slack-fs] Error 2\nmake[1]: *** [Makefile:236: __sub-make] Error 2\nmake[1]: Leaving directory '/home/averse/slack-fs/kernel'\nmake: *** [Makefile:11: default] Error 2\n```\n\nLet me know if any other diagnostic information is needed.",
+      "closed_at": "2024-12-31T20:59:46Z",
+      "comments": 26,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/134928/comments",
+      "created_at": "2024-12-30T17:21:12Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/134928/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/134928",
+      "id": 2763491742,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e10c02",
+          "default": false,
+          "description": "Issue: The compiler crashes (SIGSEGV, SIGABRT, etc). Use I-ICE instead when the compiler panics.",
+          "id": 100522,
+          "name": "I-crash",
+          "node_id": "MDU6TGFiZWwxMDA1MjI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/I-crash"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Compile-target specifications",
+          "id": 632453790,
+          "name": "A-target-specs",
+          "node_id": "MDU6TGFiZWw2MzI0NTM3OTA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-target-specs"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: Discussion or questions that doesn't represent real issues.",
+          "id": 2352122097,
+          "name": "C-discussion",
+          "node_id": "MDU6TGFiZWwyMzUyMTIyMDk3",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-discussion"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "F7E101",
+          "default": false,
+          "description": "Things relevant to the [future] GCC backend",
+          "id": 3180004859,
+          "name": "A-gcc",
+          "node_id": "MDU6TGFiZWwzMTgwMDA0ODU5",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-gcc"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Concerning the implications of different compiler targets",
+          "id": 5743635875,
+          "name": "A-targets",
+          "node_id": "LA_kwDOAAsO6M8AAAABVljtow",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-targets"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/134928/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M6kt4me",
+      "number": 134928,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/134928/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/134928/timeline",
+      "title": "Unexpected SIGSEGV when trying to build a linux out-of-tree kernel module in rust",
+      "type": null,
+      "updated_at": "2025-01-02T21:24:01Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/134928",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/81586710?v=4",
+        "events_url": "https://api.github.com/users/Bee4Queer/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Bee4Queer/followers",
+        "following_url": "https://api.github.com/users/Bee4Queer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Bee4Queer/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Bee4Queer",
+        "id": 81586710,
+        "login": "Bee4Queer",
+        "node_id": "MDQ6VXNlcjgxNTg2NzEw",
+        "organizations_url": "https://api.github.com/users/Bee4Queer/orgs",
+        "received_events_url": "https://api.github.com/users/Bee4Queer/received_events",
+        "repos_url": "https://api.github.com/users/Bee4Queer/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Bee4Queer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Bee4Queer/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Bee4Queer",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 864
+}

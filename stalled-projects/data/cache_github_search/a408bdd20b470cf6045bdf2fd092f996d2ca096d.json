@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Problem\r\n\r\nThere are the builtin motions and textobjects like `w`, `e`, `it`, ... and they all work fine. There is `g@{motion}` which allows for a custom function to act as an operator over a motion, and is dot repeatable.\r\n\r\nWhat is missing, is a way to define a motion. Yes, we have `nvim_win_set_cursor`, but that is not a motion. It doesn't set marks, it can't be dot-repeated, and just does not work like a motion at all.\r\n\r\n**Why is it useful?**\r\n\r\nThere are amazing projects like [nvim-various-textobjects](https://github.com/chrisgrieser/nvim-various-textobjs) or [nvim-spider](https://github.com/chrisgrieser/nvim-spider) which aim to implement new practical motions. However, both projects struggle with implementation, especially the dot-repeatability, because they have to rely on weird hacks to implement motions.\r\n\r\nAlso, having motions be repeatable with `;` would be cool too, especially when considering more sophisticated motions.\r\n\r\n### Expected behavior\r\n\r\nI see two ways of how this could be tackled.\r\n\r\nOne would be an analog to the vim `opfunc` method. Let us define a `movefunc` method, which is called when the motion needs to be evaluated. It could just return a range `{start, end}`.\r\n\r\nThe other way would be to introduce something like `nvim_win_motion(callback)` to register a function performing a move.\r\n\r\n**Thoughts**\r\nI'd love to have a way to define by scripting to behave in the same way as those written in C. Vim is all about motions, I'm honestly a bit surprised that this has not been a thing for years already, back in old vim times. I hope neovim can improve upon this.",
+      "closed_at": "2023-03-31T12:56:44Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/22836/comments",
+      "created_at": "2023-03-31T10:33:49Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/22836/events",
+      "html_url": "https://github.com/neovim/neovim/issues/22836",
+      "id": 1649117601,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e6e6e6",
+          "default": false,
+          "description": "Usage or configuration question",
+          "id": 77997478,
+          "name": "closed:question",
+          "node_id": "MDU6TGFiZWw3Nzk5NzQ3OA==",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/closed:question"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/22836/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM5iS4mh",
+      "number": 22836,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/22836/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/22836/timeline",
+      "title": "Allow user defined motions to work like builtin motions / textobjects",
+      "type": null,
+      "updated_at": "2023-03-31T13:35:41Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/22836",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/13833431?v=4",
+        "events_url": "https://api.github.com/users/vypxl/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vypxl/followers",
+        "following_url": "https://api.github.com/users/vypxl/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vypxl/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vypxl",
+        "id": 13833431,
+        "login": "vypxl",
+        "node_id": "MDQ6VXNlcjEzODMzNDMx",
+        "organizations_url": "https://api.github.com/users/vypxl/orgs",
+        "received_events_url": "https://api.github.com/users/vypxl/received_events",
+        "repos_url": "https://api.github.com/users/vypxl/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vypxl/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vypxl/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vypxl",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 308
+}

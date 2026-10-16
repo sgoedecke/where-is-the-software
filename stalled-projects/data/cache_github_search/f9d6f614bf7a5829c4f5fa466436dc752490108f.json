@@ -1,0 +1,172 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Consider [this snippet](https://play.rust-lang.org/?version=nightly&mode=release&edition=2018&gist=51140255b8f238da7acc6e47d3c4226b):\r\n```rust\r\n#![feature(const_fn_transmute)]\r\n#![feature(or_patterns)]\r\n\r\nuse std::mem::transmute;\r\n\r\npub const fn foo3(bytes: [u8; 16]) -> Option<[u8; 4]> {\r\n    // big endian `u32`s\r\n    let dwords: [u32; 4] = unsafe { transmute(bytes) };\r\n    const FF: u32 = 0x0000_ffff_u32.to_be();\r\n    if let [0, 0, 0 | FF, ip] = dwords {\r\n        Some(unsafe { transmute(ip) })\r\n    } else {\r\n        None\r\n    }\r\n}\r\n```\r\n\r\nThe or-pattern `0 | FF` has this MIR:\r\n```rust\r\n    bb3: {\r\n        switchInt(_2[2 of 4]) -> [0_u32: bb6, 4294901760_u32: bb7, otherwise: bb4]; // scope 1 at src/lib.rs:10:19: 10:20\r\n    }\r\n```\r\n\r\nWhile `bb6` and `bb7` points to the same branch:\r\n```rust\r\n    bb6: {\r\n        StorageLive(_4);                 // scope 1 at src/lib.rs:10:27: 10:29\r\n        _4 = _2[3 of 4];                 // scope 1 at src/lib.rs:10:27: 10:29\r\n        goto -> bb5;                     // scope 1 at src/lib.rs:10:5: 14:6\r\n    }\r\n\r\n    bb7: {\r\n        StorageLive(_4);                 // scope 1 at src/lib.rs:10:27: 10:29\r\n        _4 = _2[3 of 4];                 // scope 1 at src/lib.rs:10:27: 10:29\r\n        goto -> bb5;                     // scope 1 at src/lib.rs:10:5: 14:6\r\n    }\r\n```\r\n\r\nI would expect the or-pattern points the same branch.\r\n\n\n<!-- TRIAGEBOT_START -->\n\n<!-- TRIAGEBOT_ASSIGN_START -->\n\n<!-- TRIAGEBOT_ASSIGN_DATA_START$${\"user\":\"osa1\"}$$TRIAGEBOT_ASSIGN_DATA_END -->\n\n<!-- TRIAGEBOT_ASSIGN_END -->\n<!-- TRIAGEBOT_END -->",
+      "closed_at": "2024-10-07T00:31:43Z",
+      "comments": 16,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/75439/comments",
+      "created_at": "2020-08-12T04:27:13Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/75439/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/75439",
+      "id": 677372831,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue proposing an enhancement or a PR with one.",
+          "id": 234902,
+          "name": "C-enhancement",
+          "node_id": "MDU6TGFiZWwyMzQ5MDI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "02e10c",
+          "default": false,
+          "description": "Call for participation: An issue has been fixed and does not reproduce, but no test has been added.",
+          "id": 46741598,
+          "name": "E-needs-test",
+          "node_id": "MDU6TGFiZWw0Njc0MTU5OA==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/E-needs-test"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Mid-level IR (MIR) - https://blog.rust-lang.org/2016/04/19/MIR.html",
+          "id": 256133398,
+          "name": "A-MIR",
+          "node_id": "MDU6TGFiZWwyNTYxMzMzOTg=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-MIR"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9c0cc",
+          "default": false,
+          "description": "`#![feature(or_patterns)]`",
+          "id": 1506199886,
+          "name": "F-or_patterns",
+          "node_id": "MDU6TGFiZWwxNTA2MTk5ODg2",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/F-or_patterns"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: MIR optimizations",
+          "id": 1927601458,
+          "name": "A-mir-opt",
+          "node_id": "MDU6TGFiZWwxOTI3NjAxNDU4",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-mir-opt"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Relating to patterns and pattern matching",
+          "id": 1976249039,
+          "name": "A-patterns",
+          "node_id": "MDU6TGFiZWwxOTc2MjQ5MDM5",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-patterns"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue highlighting optimization opportunities or PRs implementing such",
+          "id": 6059090684,
+          "name": "C-optimization",
+          "node_id": "LA_kwDOAAsO6M8AAAABaSZi_A",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-optimization"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/75439/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NzczNzI4MzE=",
+      "number": 75439,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/75439/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/75439/timeline",
+      "title": "[mir] or-patterns duplicate the same branch",
+      "type": null,
+      "updated_at": "2024-10-07T00:31:44Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/75439",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/15225902?v=4",
+        "events_url": "https://api.github.com/users/tesuji/events{/privacy}",
+        "followers_url": "https://api.github.com/users/tesuji/followers",
+        "following_url": "https://api.github.com/users/tesuji/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tesuji/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/tesuji",
+        "id": 15225902,
+        "login": "tesuji",
+        "node_id": "MDQ6VXNlcjE1MjI1OTAy",
+        "organizations_url": "https://api.github.com/users/tesuji/orgs",
+        "received_events_url": "https://api.github.com/users/tesuji/received_events",
+        "repos_url": "https://api.github.com/users/tesuji/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/tesuji/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tesuji/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/tesuji",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

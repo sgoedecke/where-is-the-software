@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! bug_report_template \u26a0\ufe0f\u26a0\ufe0f -->\r\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\r\n<!-- \ud83d\udd6e Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->\r\n<!-- \ud83d\udd0e Search existing issues to avoid creating duplicates. -->\r\n<!-- \ud83e\uddea Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->\r\n<!-- \ud83d\udca1 Instead of creating your report here, use 'Report Issue' from the 'Help' menu in VS Code to pre-fill useful information. -->\r\n<!-- \ud83d\udd27 Launch with `code --disable-extensions` to check. -->\r\nDoes this issue occur when all extensions are disabled?: Yes\r\n\r\n<!-- \ud83e\ude93 If you answered No above, use 'Help: Start Extension Bisect' from Command Palette to try to identify the cause. -->\r\n<!-- \ud83d\udce3 Issues caused by an extension need to be reported directly to the extension publisher. The 'Help > Report Issue' dialog can assist with this. -->\r\n- VS Code Version: \r\n```\r\nVersion: 1.77.0 (Universal)\r\nCommit: 7f329fe6c66b0f86ae1574c2911b681ad5a45d63\r\nDate: 2023-03-29T09:57:11.797Z (2 days ago)\r\nElectron: 19.1.11\r\nChromium: 102.0.5005.196\r\nNode.js: 16.14.2\r\nV8: 10.2.154.26-electron.0\r\nOS: Darwin x64 21.2.0\r\nSandboxed: No\r\n```\r\n- OS Version: Mac OS Monteray 12.1 (21C52)\r\n\r\nSteps to Reproduce using my personal layout:\r\n\r\n1. Clone keyboard layout https://github.com/Kalhama/unofficial-finnish-dvorak\r\n2. Install keyboard bundle as global as not all applications seem to respect layouts installed only for the user.\r\n3. Optional: Reboot computer to ensure that layout is loaded properly\r\n4. Switch to the custom layout\r\n5. Try using hotkeys such as `cmd + c, cmd + v`. In other applications (including Electron) layout works as intended, but vscode does'n seem to respect the layout change when modifier key cmd is pressed down.\r\n\r\n## Screenshots of the layout ##\r\nno modifiers pressed:\r\n<img width=\"1303\" alt=\"image\" src=\"https://user-images.githubusercontent.com/19395917/229140427-31462687-24e0-4427-b511-5c6331c84248.png\">\r\n\r\ncmd modifier pressed:\r\n<img width=\"1303\" alt=\"image\" src=\"https://user-images.githubusercontent.com/19395917/229140462-cc23fe7a-b4b6-4cab-9121-d127440258c8.png\">\r\n\r\n## More information regarding the matter ##\r\nVScode seems to rely quite heavily keycode when managing hotkeys even though it's [deprecated](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode) . Keycodes don't change when layout index is changed. Better solution would be to use key, as webkit already manages the layouts properly.\r\n\r\nOther electron apps seem to work this way as I haven't encountered issues with them (as long as layout is installed globally). Tested Discord, Whatsapp, Telegram, Spotify...\r\n\r\n## Workarounds ##\r\nRemap every hotkey in vscode, possible to do via script.",
+      "closed_at": "2023-03-31T15:36:41Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/microsoft/vscode/issues/178822/comments",
+      "created_at": "2023-03-31T15:13:56Z",
+      "events_url": "https://api.github.com/repos/microsoft/vscode/issues/178822/events",
+      "html_url": "https://github.com/microsoft/vscode/issues/178822",
+      "id": 1649555750,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/vscode/issues/178822/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAn8RLM5iUjkm",
+      "number": 178822,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/vscode/issues/178822/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/vscode",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/vscode/issues/178822/timeline",
+      "title": "Bug from hotkeys using deprecated keyCode instead of key from keydown event",
+      "type": null,
+      "updated_at": "2023-05-15T23:22:07Z",
+      "url": "https://api.github.com/repos/microsoft/vscode/issues/178822",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/19395917?v=4",
+        "events_url": "https://api.github.com/users/Kalhama/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Kalhama/followers",
+        "following_url": "https://api.github.com/users/Kalhama/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Kalhama/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Kalhama",
+        "id": 19395917,
+        "login": "Kalhama",
+        "node_id": "MDQ6VXNlcjE5Mzk1OTE3",
+        "organizations_url": "https://api.github.com/users/Kalhama/orgs",
+        "received_events_url": "https://api.github.com/users/Kalhama/received_events",
+        "repos_url": "https://api.github.com/users/Kalhama/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Kalhama/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Kalhama/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Kalhama",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2747
+}

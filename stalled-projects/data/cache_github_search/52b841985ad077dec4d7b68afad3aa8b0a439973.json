@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "`build/compile_commands.json` gets generated currently through CMake.\r\nBut there are usually three compile commands per file, due to the different targets we have (nvim, libnvim, nvim-test).\r\n\r\nThis causes `clang-check` to run 3 commands (basically the same, but different in terms of defines etc).\r\n\r\nUsually you would symlink `build/compile_commands.json` into the project root (to not have to use `-p` with `clang-check`, `clang-tidy` etc, and therefore we could provide a Makefile target to create a cleaned up version:\r\n\r\n```make\r\n# Massage compile_commands.json: keep first entry only (from the main nvim target).\r\n# Using `unique_by(.file)` would not keep the order.\r\n# jq 'unique_by(.file)' < $< > $<.tmp\r\ncompile_commands.json: build/compile_commands.json Makefile\r\n       jq '[reduce .[] as $$x ({}; $$x.file as $$key | if .[$$key] then . else .[$$key] = $$x end) | .[]]' < $< > $<.tmp\r\n       mv $<.tmp $@\r\n```\r\n\r\nArguably it is more an issue with CMake, which could allow to configure what commands should be generated (e.g. for certain targets only, https://gitlab.kitware.com/cmake/cmake/issues/19462), or clang's tooling, which could have an option to only run the first found command.\r\nHowever, Neovim could help its developers in this regard, given the current limitations.\r\n\r\nE.g. these are the commands for `edit.c`:\r\n```\r\n  \"command\": \"/usr/local/bin/cc -DINCLUDE_GENERATED_DECLARATIONS -DNVIM_MSGPACK_HAS_FLOAT32 -DNVIM_UNIBI_HAS_VAR_FROM -D_GNU_SOURCE -Dnvim_test_EXPORTS -Iconfig -I../src -Isrc/nvim/auto -Iinclude -I/usr/include/luajit-2.0 -isystem ../.deps/usr/include   -Werror -g -fPIC    -DUNIT_TESTING  -Wall -Wextra -pedantic -Wno-unused-parameter -Wstrict-prototypes -std=gnu99 -Wshadow -Wconversion -Wmissing-prototypes -Wimplicit-fallthrough -Wvla -fstack-protector-strong -fdiagnostics-color=always  -Wno-conversion -o src/nvim/CMakeFiles/nvim-test.dir/edit.c.o   -c \u2026/Vcs/neovim/src/nvim/edit.c\",\r\n  \"command\": \"/usr/local/bin/cc -DINCLUDE_GENERATED_DECLARATIONS -DNVIM_MSGPACK_HAS_FLOAT32 -DNVIM_UNIBI_HAS_VAR_FROM -D_GNU_SOURCE -Iconfig -I../src -Isrc/nvim/auto -Iinclude -I/usr/include/luajit-2.0 -isystem ../.deps/usr/include   -Werror -g   -Wall -Wextra -pedantic -Wno-unused-parameter -Wstrict-prototypes -std=gnu99 -Wshadow -Wconversion -Wmissing-prototypes -Wimplicit-fallthrough -Wvla -fstack-protector-strong -fdiagnostics-color=always  -Wno-conversion -o src/nvim/CMakeFiles/nvim.dir/edit.c.o   -c \u2026/Vcs/neovim/src/nvim/edit.c\",\r\n  \"command\": \"/usr/local/bin/cc -DINCLUDE_GENERATED_DECLARATIONS -DNVIM_MSGPACK_HAS_FLOAT32 -DNVIM_UNIBI_HAS_VAR_FROM -D_GNU_SOURCE -Iconfig -I../src -Isrc/nvim/auto -Iinclude -I/usr/include/luajit-2.0 -isystem ../.deps/usr/include   -Werror -g -fPIC    -DMAKE_LIB  -Wall -Wextra -pedantic -Wno-unused-parameter -Wstrict-prototypes -std=gnu99 -Wshadow -Wconversion -Wmissing-prototypes -Wimplicit-fallthrough -Wvla -fstack-protector-strong -fdiagnostics-color=always  -Wno-conversion -o src/nvim/CMakeFiles/libnvim.dir/edit.c.o   -c \u2026/Vcs/neovim/src/nvim/edit.c\",\r\n```\r\n\r\nAnother option would be to use options to only build/configure the main target (by having CMake options `BUILD_LIBNVIM` and `BUILD_NVIMTEST` to control/skip those), but with regard to the compilation DB this is more of a hack (although it could be useful in general?!).\r\n```diff\r\n CMakeLists.txt          | 2 +-\r\n src/nvim/CMakeLists.txt | 6 ++++++\r\n 2 files changed, 7 insertions(+), 1 deletion(-)\r\n\r\ndiff --git i/CMakeLists.txt w/CMakeLists.txt\r\nindex b20345570..fc10cc9c2 100644\r\n--- i/CMakeLists.txt\r\n+++ w/CMakeLists.txt\r\n@@ -588,7 +588,7 @@ if(BUSTED_PRG)\r\n     message(WARNING \"disabling unit tests: no Luajit FFI in ${LUA_PRG}\")\r\n   endif()\r\n \r\n-  if(LUA_HAS_FFI)\r\n+  if(BUILD_NVIMTEST AND LUA_HAS_FFI)\r\n     set(TEST_LIBNVIM_PATH $<TARGET_FILE:nvim-test>)\r\n   else()\r\n     set(TEST_LIBNVIM_PATH \"\")\r\ndiff --git i/src/nvim/CMakeLists.txt w/src/nvim/CMakeLists.txt\r\nindex 0fc7c780c..df2f2a7e4 100644\r\n--- i/src/nvim/CMakeLists.txt\r\n+++ w/src/nvim/CMakeLists.txt\r\n@@ -1,4 +1,6 @@\r\n option(USE_GCOV \"Enable gcov support\" OFF)\r\n+option(BUILD_NVIMTEST \"Build nvim-test (unit tests) target\" ON)\r\n+option(BUILD_LIBNVIM \"Build libnvim target\" ON)\r\n \r\n if(NOT CLANG_TSAN)\r\n # GCOV and TSAN results in false data race reports\r\n@@ -487,6 +489,7 @@ else()\r\n endif()\r\n set_target_properties(nvim_runtime_deps PROPERTIES FOLDER deps)\r\n \r\n+if(BUILD_LIBNVIM)\r\n add_library(\r\n   libnvim\r\n   STATIC\r\n@@ -507,7 +510,9 @@ set_property(\r\n   TARGET libnvim\r\n   APPEND_STRING PROPERTY COMPILE_FLAGS \" -DMAKE_LIB \"\r\n )\r\n+endif()\r\n \r\n+if(BUILD_NVIMTEST)\r\n if(NOT LUAJIT_FOUND)\r\n   message(STATUS \"luajit not found, skipping nvim-test (unit tests) target\")\r\n else()\r\n@@ -537,6 +542,7 @@ else()\r\n     APPEND_STRING PROPERTY COMPILE_FLAGS \" -DUNIT_TESTING \"\r\n   )\r\n endif()\r\n+endif()\r\n \r\n if(CLANG_ASAN_UBSAN)\r\n   message(STATUS \"Enabling Clang address sanitizer and undefined behavior sanitizer for nvim.\")\r\n```\r\n\r\n(As for Neomake, I plan to have a maker/linter based on looking up the compile command in this JSON file, and there it would just use the first entry.)",
+      "closed_at": "2022-10-02T15:17:41Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/10632/comments",
+      "created_at": "2019-07-28T06:36:29Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/10632/events",
+      "html_url": "https://github.com/neovim/neovim/issues/10632",
+      "id": 473711549,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c5def5",
+          "default": false,
+          "description": "building and installing Neovim using the provided scripts",
+          "id": 84723321,
+          "name": "build",
+          "node_id": "MDU6TGFiZWw4NDcyMzMyMQ==",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/build"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/10632/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0NzM3MTE1NDk=",
+      "number": 10632,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/10632/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/10632/timeline",
+      "title": "build: massage compile_commands.json for clang tooling",
+      "type": null,
+      "updated_at": "2022-10-02T15:17:41Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/10632",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/9766?v=4",
+        "events_url": "https://api.github.com/users/blueyed/events{/privacy}",
+        "followers_url": "https://api.github.com/users/blueyed/followers",
+        "following_url": "https://api.github.com/users/blueyed/following{/other_user}",
+        "gists_url": "https://api.github.com/users/blueyed/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/blueyed",
+        "id": 9766,
+        "login": "blueyed",
+        "node_id": "MDQ6VXNlcjk3NjY=",
+        "organizations_url": "https://api.github.com/users/blueyed/orgs",
+        "received_events_url": "https://api.github.com/users/blueyed/received_events",
+        "repos_url": "https://api.github.com/users/blueyed/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/blueyed/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/blueyed/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/blueyed",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 7
+}

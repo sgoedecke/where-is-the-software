@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\n`Task.load()` crashes with an unhandled `IndexError` when an action field contains only whitespace characters (e.g. `\"\\n\"`, `\"\\t\"`, `\" \"`). The crash happens in `ansible/parsing/mod_args.py`, where `tokens[0]` is accessed without checking that `str.split()` returned a non-empty list.\n\nDiscovered by fuzzing `ansible.playbook.task.Task.load` with [Atheris](https://github.com/google/atheris). The fuzzer input that triggered the crash:\n\n```\n0a 6e 6e 6e 6e      # \"\\nnnnn\"\nBase64: Cm5ubm4=\n```\n\n\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\nansible\n\n### Ansible Version\n\n```console\n2.21.4\n```\n\n### Configuration\n\n```console\n-\n```\n\n### OS / Environment\n\nDebian\n\n### Steps to Reproduce\n\nfrom ansible.playbook.task import Task\n\nTask.load({\n    \"name\": \"\\nnnnn\",\n    \"shell\": \"\",\n    \"action\": \"\",\n    \"debug\": \"\",\n})\n\n\n### Expected Results\n\na clean `AnsibleParserError` with a meaningful message, or the task loading successfully.\n\n### Actual Results\n\n```console\nTraceback (most recent call last):\n  File \"/home/user/ansible/lib/fuzz_task.py\", line 2, in <module>\n    Task.load({\"name\": \"\\nnnnn\", \"shell\": \"\", \"action\": \"\", \"debug\": \"\"})\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/ansible/lib/ansible/playbook/task.py\", line 176, in load\n    return task.load_data(data, variable_manager=variable_manager, loader=loader)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/ansible/lib/ansible/playbook/base.py\", line 168, in load_data\n    ds = self.preprocess_data(ds)\n  File \"/home/user/ansible/lib/ansible/playbook/task.py\", line 306, in preprocess_data\n    (action, args, delegate_to) = args_parser.parse()\n                                  ~~~~~~~~~~~~~~~~~^^\n  File \"/home/user/ansible/lib/ansible/parsing/mod_args.py\", line 316, in parse\n    action, args = self._normalize_parameters(thing, additional_args=additional_args)\n                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/ansible/lib/ansible/parsing/mod_args.py\", line 187, in _normalize_parameters\n    (action, args) = self._normalize_old_style_args(thing)\n                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/user/ansible/lib/ansible/parsing/mod_args.py\", line 285, in _normalize_old_style_args\n    (action, args) = self._split_module_string(thing)\n                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/home/user/ansible/lib/ansible/parsing/mod_args.py\", line 147, in _split_module_string\n    result = (tokens[0].strip(), \"\")\n              ~~~~~~^^^\nIndexError: list index out of range\n```\n\n### Code of Conduct\n\n- [x] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2026-09-25T13:37:33Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/87580/comments",
+      "created_at": "2026-09-25T13:30:41Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/87580/events",
+      "html_url": "https://github.com/ansible/ansible/issues/87580",
+      "id": 5583499051,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/87580/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM8AAAABTM1vKw",
+      "number": 87580,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/87580/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/87580/timeline",
+      "title": "IndexError in mod_args._split_module_string on whitespace-only action string",
+      "type": null,
+      "updated_at": "2026-10-09T00:00:05Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/87580",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/305819639?v=4",
+        "events_url": "https://api.github.com/users/a-akinina/events{/privacy}",
+        "followers_url": "https://api.github.com/users/a-akinina/followers",
+        "following_url": "https://api.github.com/users/a-akinina/following{/other_user}",
+        "gists_url": "https://api.github.com/users/a-akinina/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/a-akinina",
+        "id": 305819639,
+        "login": "a-akinina",
+        "node_id": "U_kgDOEjpv9w",
+        "organizations_url": "https://api.github.com/users/a-akinina/orgs",
+        "received_events_url": "https://api.github.com/users/a-akinina/received_events",
+        "repos_url": "https://api.github.com/users/a-akinina/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/a-akinina/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/a-akinina/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/a-akinina",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 44
+}

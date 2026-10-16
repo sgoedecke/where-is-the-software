@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "**Do you want to request a *feature* or report a *bug*?**\r\n\r\nfeature request\r\n\r\n**What is the current behavior?**\r\n\r\nThe warnings for missing act() warnings around updates only happen in jest. \r\n\r\n**What is the expected behavior?**\r\n\r\nWe should support other test runners/frameworks as well (like jasmine, karma, etc)\r\n\r\n**Which versions of React, and which browser / OS are affected by this issue? Did this work in previous versions of React?**\r\n\r\n16.8.0+",
+      "closed_at": "2022-07-03T16:50:02Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/react/react/issues/15439/comments",
+      "created_at": "2019-04-18T09:59:04Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/15439/events",
+      "html_url": "https://github.com/react/react/issues/15439",
+      "id": 434688004,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 121709921,
+          "name": "Type: Feature Request",
+          "node_id": "MDU6TGFiZWwxMjE3MDk5MjE=",
+          "url": "https://api.github.com/repos/react/react/labels/Type:%20Feature%20Request"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": null,
+          "id": 139734344,
+          "name": "Component: Test Utils",
+          "node_id": "MDU6TGFiZWwxMzk3MzQzNDQ=",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20Test%20Utils"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9149d1",
+          "default": false,
+          "description": "Opened by a member of the React Core Team",
+          "id": 1775958285,
+          "name": "React Core Team",
+          "node_id": "MDU6TGFiZWwxNzc1OTU4Mjg1",
+          "url": "https://api.github.com/repos/react/react/labels/React%20Core%20Team"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/15439/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0MzQ2ODgwMDQ=",
+      "number": 15439,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/react/react/issues/15439/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/15439/timeline",
+      "title": "act() should warn in testing frameworks besides jest ",
+      "type": null,
+      "updated_at": "2022-07-03T16:50:03Z",
+      "url": "https://api.github.com/repos/react/react/issues/15439",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/18808?v=4",
+        "events_url": "https://api.github.com/users/threepointone/events{/privacy}",
+        "followers_url": "https://api.github.com/users/threepointone/followers",
+        "following_url": "https://api.github.com/users/threepointone/following{/other_user}",
+        "gists_url": "https://api.github.com/users/threepointone/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/threepointone",
+        "id": 18808,
+        "login": "threepointone",
+        "node_id": "MDQ6VXNlcjE4ODA4",
+        "organizations_url": "https://api.github.com/users/threepointone/orgs",
+        "received_events_url": "https://api.github.com/users/threepointone/received_events",
+        "repos_url": "https://api.github.com/users/threepointone/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/threepointone/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/threepointone/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/threepointone",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

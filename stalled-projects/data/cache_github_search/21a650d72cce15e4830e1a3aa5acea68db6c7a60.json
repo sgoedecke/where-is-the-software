@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "In #66561 the diagnostic for trait not implemented errors was improved to add a hint suggesting there may be multiple crate versions, if there was a trait found with the same name. However that hint is not being shown for the testcase below, when I would have expected it to be.\r\n\r\nNote: This is a variation/subset of #22750 - however I'm filing this separately since (a) this part was meant to be fixed by #66561, (b) #22750 covers a mixture of several issues (such as surfacing crate version info from cargo) and so less actionable.\r\n\r\n---\r\n\r\nSteps to reproduce:\r\n1. Clone https://github.com/edmorley/testcase-rustc-crate-version-mismatch\r\n2. `cd a && cargo check`\r\n\r\nThe current output is (using `rustc 1.59.0-beta.8`):\r\n\r\n```\r\n    Checking c v0.1.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/c-v0.1)\r\n    Checking c v0.2.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/c-v0.2)\r\n    Checking b v0.1.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/b)\r\n    Checking a v0.1.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/a)\r\nerror[E0277]: the trait bound `CustomErrorHandler: ErrorHandler` is not satisfied\r\n --> src/main.rs:5:17\r\n  |\r\n5 |     cnb_runtime(CustomErrorHandler {});\r\n  |     ----------- ^^^^^^^^^^^^^^^^^^^^^ the trait `ErrorHandler` is not implemented for `CustomErrorHandler`\r\n  |     |\r\n  |     required by a bound introduced by this call\r\n  |\r\nnote: required by a bound in `cnb_runtime`\r\n --> /Users/emorley/src/testcase-rustc-crate-version-mismatch/c-v0.2/src/lib.rs:3:41\r\n  |\r\n3 | pub fn cnb_runtime(_error_handler: impl ErrorHandler) {}\r\n  |                                         ^^^^^^^^^^^^ required by this bound in `cnb_runtime`\r\n\r\nFor more information about this error, try `rustc --explain E0277`.\r\nerror: could not compile `a` due to previous error\r\n```\r\n\r\nIdeally the output should look like:\r\n\r\n```\r\n$ cargo check\r\n    Checking c v0.1.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/c-v0.1)\r\n    Checking c v0.2.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/c-v0.2)\r\n    Checking b v0.1.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/b)\r\n    Checking a v0.1.0 (/Users/emorley/src/testcase-rustc-crate-version-mismatch/a)\r\nerror[E0277]: the trait bound `CustomErrorHandler: ErrorHandler` is not satisfied\r\n --> src/main.rs:5:17\r\n  |\r\n5 |     cnb_runtime(CustomErrorHandler {});\r\n  |     ----------- ^^^^^^^^^^^^^^^^^^^^^ the trait `ErrorHandler` is not implemented for `CustomErrorHandler`\r\n  |     |\r\n  |     required by a bound introduced by this call\r\n  |\r\nnote: required by a bound in `cnb_runtime`\r\n --> /Users/emorley/src/testcase-rustc-crate-version-mismatch/c-v0.2/src/lib.rs:3:41\r\n  |\r\n3 | pub fn cnb_runtime(_error_handler: impl ErrorHandler) {}\r\n  |                                         ^^^^^^^^^^^^ required by this bound in `cnb_runtime`\r\nhelp: trait impl with same name found\r\n  --> /Users/emorley/src/testcase-rustc-crate-version-mismatch/b/src/lib.rs:3\r\n   |\r\nLL | impl c::ErrorHandler for CustomErrorHandler {}\r\n   | ^^^^^^^^^^^^^^^^^^^\r\n   = note: Perhaps two different versions of crate `c` are being used?\r\n\r\nFor more information about this error, try `rustc --explain E0277`.\r\nerror: could not compile `a` due to previous error\r\n```",
+      "closed_at": "2024-11-08T03:31:46Z",
+      "comments": 8,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/89143/comments",
+      "created_at": "2021-09-21T09:10:31Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/89143/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/89143",
+      "id": 1002091248,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Messages for errors, warnings, and lints",
+          "id": 235791,
+          "name": "A-diagnostics",
+          "node_id": "MDU6TGFiZWwyMzU3OTE=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-diagnostics"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c9f7a3",
+          "default": false,
+          "description": "Diagnostics: Errors or lints caused be the use of two different crate versions.",
+          "id": 2150480426,
+          "name": "D-crate-version-mismatch",
+          "node_id": "MDU6TGFiZWwyMTUwNDgwNDI2",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/D-crate-version-mismatch"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/89143/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M47urLw",
+      "number": 89143,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 6,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 6,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/89143/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/89143/timeline",
+      "title": "Crate version mismatch suggestion not being shown for trait not implemented error",
+      "type": null,
+      "updated_at": "2024-11-08T03:31:46Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/89143",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/501702?v=4",
+        "events_url": "https://api.github.com/users/edmorley/events{/privacy}",
+        "followers_url": "https://api.github.com/users/edmorley/followers",
+        "following_url": "https://api.github.com/users/edmorley/following{/other_user}",
+        "gists_url": "https://api.github.com/users/edmorley/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/edmorley",
+        "id": 501702,
+        "login": "edmorley",
+        "node_id": "MDQ6VXNlcjUwMTcwMg==",
+        "organizations_url": "https://api.github.com/users/edmorley/orgs",
+        "received_events_url": "https://api.github.com/users/edmorley/received_events",
+        "repos_url": "https://api.github.com/users/edmorley/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/edmorley/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/edmorley/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/edmorley",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

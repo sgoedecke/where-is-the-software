@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### What happened?\n\nRelated comment: https://github.com/kubernetes/kubernetes/pull/134276#discussion_r2379910306\n\n```go\n// +optional\nEffect DeviceTaintEffect json:\"effect,omitempty\" protobuf:\"bytes,4,opt,name=effect,casttype=DeviceTaintEffect\"\n```\n\nThe above tag is marked +optional incorrectly, validation checks that a field is supplied by the client and there is no default (it should be +required, not +optional w/ hand-written defaulting as there is no such defaulting and it is required):\n\n[kubernetes/pkg/apis/resource/validation/validation.go](https://github.com/kubernetes/kubernetes/blob/243d8c000e451da6f0e8f80704db5d5f672d3d18/pkg/apis/resource/validation/validation.go#L1346-L1349)\n\nLines 1346 to 1349 in [243d8c0](https://github.com/kubernetes/kubernetes/commit/243d8c000e451da6f0e8f80704db5d5f672d3d18)\n```go\n case taint.Effect == \"\": \n \tallErrs = append(allErrs, field.Required(fldPath.Child(\"effect\"), \"\")) // Required in a taint. \n case !validDeviceTaintEffects.Has(taint.Effect): \n \tallErrs = append(allErrs, field.NotSupported(fldPath.Child(\"effect\"), taint.Effect, sets.List(validDeviceTaintEffects)))\n```\n\n\n\n### What did you expect to happen?\n\nI expected the field to be marked +required\n",
+      "closed_at": "2025-09-30T17:04:57Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/134282/comments",
+      "created_at": "2025-09-25T18:23:19Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/134282/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/134282",
+      "id": 3454662280,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG API Machinery.",
+          "id": 173493835,
+          "name": "sig/api-machinery",
+          "node_id": "MDU6TGFiZWwxNzM0OTM4MzU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/api-machinery"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "8fc951",
+          "default": false,
+          "description": "Indicates an issue or PR is ready to be actively worked on.",
+          "id": 2389856656,
+          "name": "triage/accepted",
+          "node_id": "MDU6TGFiZWwyMzg5ODU2NjU2",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/triage/accepted"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/134282/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks7N6faI",
+      "number": 134282,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/134282/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/134282/timeline",
+      "title": "ResourceClaim field Effect currently marked +optional but should be +required",
+      "type": null,
+      "updated_at": "2025-09-30T17:04:57Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/134282",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1951658?v=4",
+        "events_url": "https://api.github.com/users/aaron-prindle/events{/privacy}",
+        "followers_url": "https://api.github.com/users/aaron-prindle/followers",
+        "following_url": "https://api.github.com/users/aaron-prindle/following{/other_user}",
+        "gists_url": "https://api.github.com/users/aaron-prindle/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/aaron-prindle",
+        "id": 1951658,
+        "login": "aaron-prindle",
+        "node_id": "MDQ6VXNlcjE5NTE2NTg=",
+        "organizations_url": "https://api.github.com/users/aaron-prindle/orgs",
+        "received_events_url": "https://api.github.com/users/aaron-prindle/received_events",
+        "repos_url": "https://api.github.com/users/aaron-prindle/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/aaron-prindle/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/aaron-prindle/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/aaron-prindle",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 387
+}

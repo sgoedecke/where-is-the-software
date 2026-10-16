@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "Currently, only approved PRs can trigger CI. However, this is unpractical because I often LGTM things to see what\u2019s the state in CI (sorry, I\u2019m lazy).\n\nIs it possible to improve our automation to know on which commit the request-ci label was applied to, and if this was applied by a collaborator, trust it?",
+      "closed_at": "2026-03-31T16:39:09Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/62496/comments",
+      "created_at": "2026-03-29T16:06:28Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/62496/events",
+      "html_url": "https://github.com/nodejs/node/issues/62496",
+      "id": 4164898451,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/62496/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs874P06T",
+      "number": 62496,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/62496/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/62496/timeline",
+      "title": "Add a label to note \u201cthis is good for CI\u201d",
+      "type": null,
+      "updated_at": "2026-04-02T14:52:22Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/62496",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/52195?v=4",
+        "events_url": "https://api.github.com/users/mcollina/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mcollina/followers",
+        "following_url": "https://api.github.com/users/mcollina/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mcollina/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mcollina",
+        "id": 52195,
+        "login": "mcollina",
+        "node_id": "MDQ6VXNlcjUyMTk1",
+        "organizations_url": "https://api.github.com/users/mcollina/orgs",
+        "received_events_url": "https://api.github.com/users/mcollina/received_events",
+        "repos_url": "https://api.github.com/users/mcollina/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mcollina/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mcollina/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mcollina",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 175
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "````\r\n\r\nPython/ceval.c:2849:17: warning: code will never be executed [-Wunreachable-code]\r\n                for (;;) {}\r\n                ^~~~~~~~~~~\r\nPython/ceval.c:2848:17: warning: code will never be executed [-Wunreachable-code]\r\n                abort();  // Unreachable\r\n````\r\n\r\nThe code was first introduced from https://github.com/python/cpython/commit/51fc72511733353de15bc633a3d7b6da366842e4\r\n@gvanrossum is it really needed?\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-106285\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2023-06-30T16:16:01Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/106280/comments",
+      "created_at": "2023-06-30T14:25:02Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/106280/events",
+      "html_url": "https://github.com/python/cpython/issues/106280",
+      "id": 1782624930,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/106280/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5qQLKi",
+      "number": 106280,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/106280/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/106280/timeline",
+      "title": "Python/ceval.c -Wunreachable-code warn from apple-clang",
+      "type": null,
+      "updated_at": "2023-06-30T16:16:01Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/106280",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/5110323?v=4",
+        "events_url": "https://api.github.com/users/corona10/events{/privacy}",
+        "followers_url": "https://api.github.com/users/corona10/followers",
+        "following_url": "https://api.github.com/users/corona10/following{/other_user}",
+        "gists_url": "https://api.github.com/users/corona10/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/corona10",
+        "id": 5110323,
+        "login": "corona10",
+        "node_id": "MDQ6VXNlcjUxMTAzMjM=",
+        "organizations_url": "https://api.github.com/users/corona10/orgs",
+        "received_events_url": "https://api.github.com/users/corona10/received_events",
+        "repos_url": "https://api.github.com/users/corona10/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/corona10/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/corona10/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/corona10",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 711
+}

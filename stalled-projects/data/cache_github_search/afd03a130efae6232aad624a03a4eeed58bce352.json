@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What happened?\n\nThe storage-provisioner logs are continuously showing warning messages.\n\n### What did you expect to happen?\n\nNo warning messages to appear in the logs.\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\n```\n$ minikube version\nminikube version: v1.36.0\ncommit: f8f52f5de11fc6ad8244afac475e1d0f96841df1-dirty\n\n$ minikube start\n$ kubectl logs --namespace=kube-system storage-provisioner | tail -n 1\nW0629 05:00:47.400038        1 warnings.go:70] v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice\n```\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\n\n```console\nClient Version: v1.33.1\nKustomize Version: v5.6.0\nServer Version: v1.33.1\n```\n\n</details>\n\n\n### Cloud provider\n\nNone\n\n### OS version\n\n<details>\n\n```console\n$ cat /etc/os-release\nPRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.5 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy\n$ uname -a\nLinux DESKTOP-B54PLDJ 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux\n```\n\n</details>\n\n\n### Install tools\n\n_No response_\n\n### Container runtime (CRI) and version (if applicable)\n\n_No response_\n\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\n\n_No response_",
+      "closed_at": "2025-06-30T14:44:17Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/132602/comments",
+      "created_at": "2025-06-29T05:04:41Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/132602/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/132602",
+      "id": 3185766038,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `sig/foo` label and requires one.",
+          "id": 617149945,
+          "name": "needs-sig",
+          "node_id": "MDU6TGFiZWw2MTcxNDk5NDU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-sig"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/132602/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks694u6W",
+      "number": 132602,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/132602/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/132602/timeline",
+      "title": "storage-provisioner: 'v1 Endpoints is deprecated in v1.33+' logs",
+      "type": null,
+      "updated_at": "2025-06-30T14:44:18Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/132602",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/47271927?v=4",
+        "events_url": "https://api.github.com/users/sugymt/events{/privacy}",
+        "followers_url": "https://api.github.com/users/sugymt/followers",
+        "following_url": "https://api.github.com/users/sugymt/following{/other_user}",
+        "gists_url": "https://api.github.com/users/sugymt/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/sugymt",
+        "id": 47271927,
+        "login": "sugymt",
+        "node_id": "MDQ6VXNlcjQ3MjcxOTI3",
+        "organizations_url": "https://api.github.com/users/sugymt/orgs",
+        "received_events_url": "https://api.github.com/users/sugymt/received_events",
+        "repos_url": "https://api.github.com/users/sugymt/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/sugymt/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/sugymt/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/sugymt",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 351
+}

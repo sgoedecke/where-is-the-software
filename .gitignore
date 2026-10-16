@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Scraped/raw data caches (regenerable, very large)
+**/cache/
+
+# Nested git repos used as scrape sources (not actual submodules)
+niche-usage/octoprint/plugins.octoprint.org/
+niche-usage/obsidian/obsidian-releases/
+
+# Exceeds GitHub's 100MB file limit
+niche-usage/amo/addons_firefox_extensions_current.csv
+
+# OS cruft
+.DS_Store

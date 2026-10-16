@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "## Steps to Reproduce\r\n\r\n1. run flutter build macos\r\n2. error coms\r\n```sh\r\n\r\n/macos/Pods/Pods.xcodeproj: warning: The macOS deployment target 'MACOSX_DEPLOYMENT_TARGET' is set to 10.11, but the range of supported deployment target versions is 10.13 to 13.1.99. (in target 'FlutterMacOS' from project 'Pods')\r\n\r\n```\r\n3. Changed the \"MACOSX_DEPLOYMENT_TARGET\" in \"macos/Podfile\" to \"12.0\"\r\n4. rerun flutter build macos\r\n5. show the same error in step2\r\n\r\nI want to know whether MACOSX_DEPLOYMENT_TARGET will be update by flutter and where can I change the value\r\n\r\n<!-- Finally, paste the output of running `flutter doctor -v` here. -->\r\n\r\n```\r\n[\u2713] Flutter (Channel stable, 3.3.3, on macOS 13.1 22C65 darwin-arm, locale zh-Hans-CN)\r\n    \u2022 Flutter version 3.3.3 on channel stable at /Users/xhkang/Documents/DevelopmentEnvironment/flutter\r\n    \u2022 Upstream repository https://github.com/flutter/flutter.git\r\n    \u2022 Framework revision 18a827f393 (3 \u4e2a\u6708\u524d), 2022-09-28 10:03:14 -0700\r\n    \u2022 Engine revision 5c984c26eb\r\n    \u2022 Dart version 2.18.2\r\n    \u2022 DevTools version 2.15.0\r\n    \u2022 Pub download mirror https://pub.flutter-io.cn\r\n    \u2022 Flutter download mirror https://storage.flutter-io.cn\r\n                                                                                                                                                               Checking Android licenses is taking an unexpectedly long time...[\u2713] Android toolchain - develop for Android devices (Android SDK version 33.0.0)\r\n    \u2022 Android SDK at /Users/xhkang/Library/Android/sdk\r\n    \u2022 Platform android-33, build-tools 33.0.0\r\n    \u2022 Java binary at: /Users/xhkang/Library/Application Support/JetBrains/Toolbox/apps/AndroidStudio/ch-0/213.7172.25.2113.9123335/Android\r\n      Studio.app/Contents/jre/Contents/Home/bin/java\r\n    \u2022 Java version OpenJDK Runtime Environment (build 11.0.13+0-b1751.21-8125866)\r\n    \u2022 All Android licenses accepted.\r\n\r\n[\u2713] Xcode - develop for iOS and macOS (Xcode 14.2)\r\n    \u2022 Xcode at /Applications/Xcode.app/Contents/Developer\r\n    \u2022 Build 14C18\r\n    \u2022 CocoaPods version 1.11.3\r\n\r\n[\u2713] Chrome - develop for the web\r\n    \u2022 Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\r\n\r\n[\u2713] Android Studio (version 2021.3)\r\n    \u2022 Android Studio at /Users/xhkang/Library/Application Support/JetBrains/Toolbox/apps/AndroidStudio/ch-0/213.7172.25.2113.9123335/Android Studio.app/Contents\r\n    \u2022 Flutter plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/9212-flutter\r\n    \u2022 Dart plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/6351-dart\r\n    \u2022 Java version OpenJDK Runtime Environment (build 11.0.13+0-b1751.21-8125866)\r\n\r\n[\u2713] IntelliJ IDEA Ultimate Edition (version 2022.3.1)\r\n    \u2022 IntelliJ at /Users/xhkang/Applications/JetBrains Toolbox/IntelliJ IDEA Ultimate.app\r\n    \u2022 Flutter plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/9212-flutter\r\n    \u2022 Dart plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/6351-dart\r\n\r\n[\u2713] IntelliJ IDEA Ultimate Edition (version 2022.3.1)\r\n    \u2022 IntelliJ at /Users/xhkang/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/223.8214.52/IntelliJ IDEA.app\r\n    \u2022 Flutter plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/9212-flutter\r\n    \u2022 Dart plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/6351-dart\r\n\r\n[\u2713] VS Code (version 1.74.2)\r\n    \u2022 VS Code at /Applications/Visual Studio Code.app/Contents\r\n    \u2022 Flutter extension version 3.56.0\r\n\r\n[\u2713] Connected device (2 available)\r\n    \u2022 macOS (desktop) \u2022 macos  \u2022 darwin-arm64   \u2022 macOS 13.1 22C65 darwin-arm\r\n    \u2022 Chrome (web)    \u2022 chrome \u2022 web-javascript \u2022 Google Chrome 108.0.5359.124\r\n\r\n[\u2713] HTTP Host Availability\r\n    \u2022 All required HTTP hosts are available\r\n\r\n\u2022 No issues found!\r\n\r\n\r\n```\r\n",
+      "closed_at": "2022-12-31T13:14:14Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/117837/comments",
+      "created_at": "2022-12-31T11:27:11Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/117837/events",
+      "html_url": "https://github.com/flutter/flutter/issues/117837",
+      "id": 1515098472,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/117837/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM5aTpFo",
+      "number": 117837,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/117837/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/117837/timeline",
+      "title": "how to specify macos/ios version in flutter?",
+      "type": null,
+      "updated_at": "2023-03-04T16:00:42Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/117837",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/55651847?v=4",
+        "events_url": "https://api.github.com/users/cruvie/events{/privacy}",
+        "followers_url": "https://api.github.com/users/cruvie/followers",
+        "following_url": "https://api.github.com/users/cruvie/following{/other_user}",
+        "gists_url": "https://api.github.com/users/cruvie/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/cruvie",
+        "id": 55651847,
+        "login": "cruvie",
+        "node_id": "MDQ6VXNlcjU1NjUxODQ3",
+        "organizations_url": "https://api.github.com/users/cruvie/orgs",
+        "received_events_url": "https://api.github.com/users/cruvie/received_events",
+        "repos_url": "https://api.github.com/users/cruvie/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/cruvie/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/cruvie/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/cruvie",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2115
+}

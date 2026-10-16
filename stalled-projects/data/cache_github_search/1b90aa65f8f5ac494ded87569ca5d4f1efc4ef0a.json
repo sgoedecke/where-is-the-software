@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MANNEQUIN",
+      "body": "BPO | [36481](https://bugs.python.org/issue36481)\n--- | :---\nNosy | @giampaolo, @goztrk\nPRs | <li>python/cpython#12623</li><li>python/cpython#29052</li>\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2019-03-30.02:11:13.505>\nlabels = ['type-feature', 'expert-IO', '3.11']\ntitle = 'telnetlib process_rawq() callback'\nupdated_at = <Date 2021-10-20.23:14:20.441>\nuser = 'https://github.com/goztrk'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2021-10-20.23:14:20.441>\nactor = 'goztrk'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['IO']\ncreation = <Date 2019-03-30.02:11:13.505>\ncreator = 'goztrk'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 36481\nkeywords = ['patch']\nmessage_count = 3.0\nmessages = ['339166', '339383', '404272']\nnosy_count = 3.0\nnosy_names = ['giampaolo.rodola', 'SilentGhost', 'goztrk']\npr_nums = ['12623', '29052']\npriority = 'normal'\nresolution = None\nstage = 'patch review'\nstatus = 'open'\nsuperseder = None\ntype = 'enhancement'\nurl = 'https://bugs.python.org/issue36481'\nversions = ['Python 3.11']\n```\n\n</p></details>\n",
+      "closed_at": "2022-04-12T08:25:36Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/80662/comments",
+      "created_at": "2019-03-30T02:11:14Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/80662/events",
+      "html_url": "https://github.com/python/cpython/issues/80662",
+      "id": 1199009048,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 4018733900,
+          "name": "3.11",
+          "node_id": "LA_kwDOBN0Z8c7viQNM",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.11"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4018834665,
+          "name": "topic-IO",
+          "node_id": "LA_kwDOBN0Z8c7viozp",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-IO"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/80662/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDA5MDQ4",
+      "number": 80662,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/80662/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/80662/timeline",
+      "title": "telnetlib process_rawq() callback",
+      "type": null,
+      "updated_at": "2022-04-12T09:55:48Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/80662",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/99430231?v=4",
+        "events_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/events{/privacy}",
+        "followers_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/followers",
+        "following_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/following{/other_user}",
+        "gists_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 99430231,
+        "login": "0b7de4cd-df31-45b3-acee-18838ceb35d6",
+        "node_id": "M_kgDOBe0vVw",
+        "organizations_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/orgs",
+        "received_events_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/received_events",
+        "repos_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6/subscriptions",
+        "type": "Mannequin",
+        "url": "https://api.github.com/users/0b7de4cd-df31-45b3-acee-18838ceb35d6",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 204
+}

@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Hi \ud83d\udc4b \r\n\r\nI'm experiencing this issue on macOS Big Sur when [libusb1-sys crate's `build.rs`](https://github.com/a1ien/rusb/blob/master/libusb1-sys/build.rs) invokes `pkg-config` and gets this:\r\n\r\n```\r\n$ pkg-config --static --libs /usr/local/Cellar/libusb/1.0.26/lib/pkgconfig/libusb-1.0.pc\r\n-L/usr/local/Cellar/libusb/1.0.26/lib -lusb-1.0 -lobjc -Wl,-framework,IOKit -Wl,-framework,CoreFoundation -Wl,-framework,Security\r\n```\r\n\r\nrustc seems then proceed to try to link `libobjc`:\r\n\r\n```\r\n$ [...] cargo build\r\n   Compiling libusb1-sys v0.6.2 (/Users/adaszko/repos/rusb/libusb1-sys)\r\n   Compiling rusb v0.9.1\r\nerror: could not find native static library `objc`, perhaps an -L flag is missing?\r\n```\r\n\r\nThis issue is preventing me from building a statically linked libusb1-sys.  Linking itself should still work, it's just that rustc's erroring out prevents the pipeline from getting to the linking step AFAICT.\r\n\r\n**EDIT**: Sorry, I've removed a misleading points about dynamic linking stemming from my misunderstanding of the issue.\r\n\r\n[1]: https://web.archive.org/web/20220317152936/https://developer.apple.com/documentation/macos-release-notes/macos-big-sur-11-beta-release-notes",
+      "closed_at": "2025-08-12T16:08:07Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/96943/comments",
+      "created_at": "2022-05-11T11:56:43Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/96943/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/96943",
+      "id": 1232513763,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6e6ec0",
+          "default": false,
+          "description": "Operating system: macOS",
+          "id": 123111,
+          "name": "O-macos",
+          "node_id": "MDU6TGFiZWwxMjMxMTE=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/O-macos"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/96943/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5Jdqrj",
+      "number": 96943,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/96943/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/96943/timeline",
+      "title": "Spurious \"error: could not find native static library `objc`, perhaps an -L flag is missing?\" on macOS Big Sur",
+      "type": null,
+      "updated_at": "2025-08-12T16:08:07Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/96943",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/165678?v=4",
+        "events_url": "https://api.github.com/users/adaszko/events{/privacy}",
+        "followers_url": "https://api.github.com/users/adaszko/followers",
+        "following_url": "https://api.github.com/users/adaszko/following{/other_user}",
+        "gists_url": "https://api.github.com/users/adaszko/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/adaszko",
+        "id": 165678,
+        "login": "adaszko",
+        "node_id": "MDQ6VXNlcjE2NTY3OA==",
+        "organizations_url": "https://api.github.com/users/adaszko/orgs",
+        "received_events_url": "https://api.github.com/users/adaszko/received_events",
+        "repos_url": "https://api.github.com/users/adaszko/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/adaszko/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/adaszko/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/adaszko",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 96
+}

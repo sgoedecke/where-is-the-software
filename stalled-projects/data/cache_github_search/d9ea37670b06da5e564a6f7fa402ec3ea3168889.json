@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Neovim version (nvim -v)\n\nv0.8.0-dev+399-g58323b1fe\n\n### Vim (not Nvim) behaves the same?\n\nno, vim 8.2 patches 1-3227\n\n### Operating system/version\n\nUbuntu 20.04\n\n### Terminal name/version\n\nalacritty. reproduces in other terminals also\n\n### $TERM environment variable\n\nxterm-256color\n\n### Installation\n\nfrom github releases\n\n### How to reproduce the issue\n\nOpen a terminal on a very large screen and set the font to be reasonably small. Or on a small screen, set the font to be really really small. \r\n\r\nactivate the fzf plugin: https://github.com/junegunn/fzf.vim \r\n\r\nIt runs fzf inside of terminal inside vim. \r\n\r\nThis is sluggish when the window is sufficiently big in nvim. It is not reproduceable in vim. This indicates that nvim has some inefficiency redrawing the terminal. \n\n### Expected behavior\n\nnot be slower than vim\n\n### Actual behavior\n\nsluggish terminal behavior but only apparent on large screens. this is not just a ridiculous thing, it actually is slow and chews up extra CPU when I maximize the terminal on my ultrawide monitor. ",
+      "closed_at": "2022-09-30T09:17:54Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/20408/comments",
+      "created_at": "2022-09-30T06:41:53Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/20408/events",
+      "html_url": "https://github.com/neovim/neovim/issues/20408",
+      "id": 1391921920,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "FEF2C0",
+          "default": false,
+          "description": "performance, latency, cpu/memory usage",
+          "id": 101930601,
+          "name": "performance",
+          "node_id": "MDU6TGFiZWwxMDE5MzA2MDE=",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/performance"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c5def5",
+          "default": false,
+          "description": "built-in :terminal or :shell, PTY",
+          "id": 212696822,
+          "name": "terminal",
+          "node_id": "MDU6TGFiZWwyMTI2OTY4MjI=",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/terminal"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e6e6e6",
+          "default": true,
+          "description": "",
+          "id": 3221613764,
+          "name": "duplicate",
+          "node_id": "MDU6TGFiZWwzMjIxNjEzNzY0",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/duplicate"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/20408/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM5S9wsA",
+      "number": 20408,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/20408/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/20408/timeline",
+      "title": "Neovim terminal emulation appears to be much more sluggish than vim",
+      "type": null,
+      "updated_at": "2022-09-30T09:19:08Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/20408",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1542910?v=4",
+        "events_url": "https://api.github.com/users/unphased/events{/privacy}",
+        "followers_url": "https://api.github.com/users/unphased/followers",
+        "following_url": "https://api.github.com/users/unphased/following{/other_user}",
+        "gists_url": "https://api.github.com/users/unphased/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/unphased",
+        "id": 1542910,
+        "login": "unphased",
+        "node_id": "MDQ6VXNlcjE1NDI5MTA=",
+        "organizations_url": "https://api.github.com/users/unphased/orgs",
+        "received_events_url": "https://api.github.com/users/unphased/received_events",
+        "repos_url": "https://api.github.com/users/unphased/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/unphased/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/unphased/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/unphased",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 340
+}

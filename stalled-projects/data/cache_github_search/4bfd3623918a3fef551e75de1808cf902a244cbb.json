@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Tested versions\n\nReproducible in 4.6.1 stable\n\n### System information\n\nGodot v4.6.1.stable - Windows 11 (build 26200) - Multi-window, 2 monitors - Direct3D 12 (Forward+) - dedicated AMD Radeon RX 9070 XT (Advanced Micro Devices, Inc.; 32.0.23033.1002) - Intel(R) Core(TM) i9-14900K (32 threads) - 63.72 GiB memory\n\n### Issue description\n\nWhen exporting a meshlibrary from  MeshInstance3D scene, while importing in a GridMap meshlibrary, no meshes are present:\n\n<img width=\"1917\" height=\"1028\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/60dc44a2-61f2-4b25-be9f-83691a669e79\" />\n\n<img width=\"1913\" height=\"1001\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/0619ee17-6de1-4c7d-b862-3bbfa6b251a3\" />\n\n### Steps to reproduce\n\n- Create a MeshInstance3D with staticBody3D and CollisionShape3D\n- Scene -> Export As ... -> MeshLibrary\n- In a scene, make a GridMap and import the .tres meshlibrary file\n- No meshes are present in the meshlibrary\n\n### Minimal reproduction project (MRP)\n\nN/A",
+      "closed_at": "2026-03-30T16:24:57Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/118009/comments",
+      "created_at": "2026-03-30T16:22:31Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/118009/events",
+      "html_url": "https://github.com/godotengine/godot/issues/118009",
+      "id": 4172135394,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/118009/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc74rbvi",
+      "number": 118009,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/118009/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/118009/timeline",
+      "title": "No meshes are present in the exported meshlibrary",
+      "type": null,
+      "updated_at": "2026-03-31T07:24:29Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/118009",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/81155793?v=4",
+        "events_url": "https://api.github.com/users/mbelluzzi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mbelluzzi/followers",
+        "following_url": "https://api.github.com/users/mbelluzzi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mbelluzzi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mbelluzzi",
+        "id": 81155793,
+        "login": "mbelluzzi",
+        "node_id": "MDQ6VXNlcjgxMTU1Nzkz",
+        "organizations_url": "https://api.github.com/users/mbelluzzi/orgs",
+        "received_events_url": "https://api.github.com/users/mbelluzzi/received_events",
+        "repos_url": "https://api.github.com/users/mbelluzzi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mbelluzzi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mbelluzzi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mbelluzzi",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 876
+}

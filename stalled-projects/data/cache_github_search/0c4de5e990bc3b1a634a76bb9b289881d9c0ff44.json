@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "These started failing since https://github.com/electron/electron/pull/23908 \r\n\r\n```\r\n[1608:0622/062934.889345:ERROR:gl_surface_egl.cc(693)] No suitable EGL configs found.\r\n[1608:0622/062934.889695:ERROR:gl_surface_egl.cc(741)] EGL Driver message (Error) eglGetConfigAttrib: Bad config.\r\n[1608:0622/062934.889764:ERROR:gl_context_egl.cc(85)] eglGetConfigAttrib failed with error EGL_BAD_CONFIG\r\n[1608:0622/062934.890002:ERROR:gl_surface_egl.cc(693)] No suitable EGL configs found.\r\n[1608:0622/062934.890077:ERROR:gl_surface_egl.cc(741)] EGL Driver message (Error) eglCreatePbufferSurface: Bad config.\r\n[1608:0622/062934.890140:ERROR:gl_surface_egl.cc(2001)] eglCreatePbufferSurface failed with error EGL_BAD_CONFIG\r\n[1608:0622/062934.890224:ERROR:gpu_info_collector.cc(63)] gl::GLContext::CreateOffscreenGLSurface failed\r\n[1608:0622/062934.890288:ERROR:gpu_info_collector.cc(267)] Could not create surface for info collection.\r\n[1608:0622/062934.890382:ERROR:gpu_init.cc(72)] CollectGraphicsInfo failed.\r\n[1608:0622/062934.914065:ERROR:viz_main_impl.cc(150)] Exiting GPU process due to errors during initialization\r\nError: GPU access not allowed. Reason: GPU access is disabled due to frequent crashes.\r\n```",
+      "closed_at": "2024-03-12T16:39:31Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/24224/comments",
+      "created_at": "2020-06-22T06:53:56Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/24224/events",
+      "html_url": "https://github.com/electron/electron/issues/24224",
+      "id": 642808885,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/24224/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NDI4MDg4ODU=",
+      "number": 24224,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/24224/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/24224/timeline",
+      "title": "Enable app.getGPUInfo specs on linux",
+      "type": null,
+      "updated_at": "2024-03-12T16:39:31Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/24224",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/964386?v=4",
+        "events_url": "https://api.github.com/users/deepak1556/events{/privacy}",
+        "followers_url": "https://api.github.com/users/deepak1556/followers",
+        "following_url": "https://api.github.com/users/deepak1556/following{/other_user}",
+        "gists_url": "https://api.github.com/users/deepak1556/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/deepak1556",
+        "id": 964386,
+        "login": "deepak1556",
+        "node_id": "MDQ6VXNlcjk2NDM4Ng==",
+        "organizations_url": "https://api.github.com/users/deepak1556/orgs",
+        "received_events_url": "https://api.github.com/users/deepak1556/received_events",
+        "repos_url": "https://api.github.com/users/deepak1556/repos",
+        "site_admin": true,
+        "starred_url": "https://api.github.com/users/deepak1556/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/deepak1556/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/deepak1556",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 4
+}

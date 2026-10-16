@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\nnone anymore (does not install)\n\n### Platform\n\nLinux server 5.19.0-2-amd64 #1 SMP PREEMPT_DYNAMIC Debian 5.19.11-1 (2022-09-24) x86_64 GNU/Linux\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\n1. run `curl -fsSL https://deb.nodesource.com/setup_current.x | bash -s`\r\n2. get the error:\r\n\r\n```\r\n## Confirming \"n/a\" is supported...\r\n\r\n+ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_18.x/dists/n/a/Release'\r\n\r\n## Your distribution, identified as \"n/a\", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support\r\n```\n\n### How often does it reproduce? Is there a required condition?\n\n10/10 times.\n\n### What is the expected behavior?\n\nInstalles latest NodeJS, but it errors out, and therefore does not install.\n\n### What do you see instead?\n\n```\r\n## Confirming \"n/a\" is supported...\r\n\r\n+ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_18.x/dists/n/a/Release'\r\n\r\n## Your distribution, identified as \"n/a\", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support\r\n```\n\n### Additional information\n\n**Describe the distribution information:**\r\n - OS: Debian 11.5 (upgraded to Sid)\r\n - Distribution Type: DEB\r\n - Version 11.5/Sid\r\n - Kernel Version: 5.19.11-1\r\n - This was running for years on Sid - nothing important changed.\r\n\r\nhttps://github.com/nodesource/distributions/issues/1447",
+      "closed_at": "2022-09-30T00:57:33Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/44829/comments",
+      "created_at": "2022-09-30T00:55:19Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/44829/events",
+      "html_url": "https://github.com/nodejs/node/issues/44829",
+      "id": 1391670093,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/44829/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85S8zNN",
+      "number": 44829,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/44829/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/44829/timeline",
+      "title": "Bug cross-reference",
+      "type": null,
+      "updated_at": "2022-09-30T00:57:33Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/44829",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/17692860?v=4",
+        "events_url": "https://api.github.com/users/the-hotmann/events{/privacy}",
+        "followers_url": "https://api.github.com/users/the-hotmann/followers",
+        "following_url": "https://api.github.com/users/the-hotmann/following{/other_user}",
+        "gists_url": "https://api.github.com/users/the-hotmann/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/the-hotmann",
+        "id": 17692860,
+        "login": "the-hotmann",
+        "node_id": "MDQ6VXNlcjE3NjkyODYw",
+        "organizations_url": "https://api.github.com/users/the-hotmann/orgs",
+        "received_events_url": "https://api.github.com/users/the-hotmann/received_events",
+        "repos_url": "https://api.github.com/users/the-hotmann/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/the-hotmann/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/the-hotmann/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/the-hotmann",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 217
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Bug report\r\n\r\nMRE:\r\n```py\r\nclass D(dict):\r\n  pass\r\n\r\nclass S(set):\r\n  pass\r\n\r\nclass L(list):\r\n  pass\r\n\r\nclass T(tuple):\r\n  pass\r\n\r\nclass S_(str):\r\n  pass\r\n\r\nprint(repr(dict({\"a\": 1})))\r\nprint(repr(D({\"a\": 1})))\r\nprint(repr(set([1, 2])))\r\nprint(repr(S([1, 2])))\r\nprint(repr(list([1, 2])))\r\nprint(repr(L([1, 2])))\r\nprint(repr(tuple([1, 2])))\r\nprint(repr(T([1, 2])))\r\nprint(repr(str([1, 2])))\r\nprint(repr(S_([1, 2])))\r\n```\r\n\r\nOutput:\r\n```py\r\n{'a': 1}\r\n{'a': 1}\r\n{1, 2}\r\nS({1, 2})\r\n[1, 2]\r\n[1, 2]\r\n(1, 2)\r\n(1, 2)\r\n'[1, 2]'\r\n'[1, 2]'\r\n```\r\n\r\n# Your environment\r\n\r\n- CPython versions tested on: 3.10.6, 3.11.2\r\n\r\n",
+      "closed_at": "2023-03-30T04:59:48Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/103117/comments",
+      "created_at": "2023-03-29T18:57:53Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/103117/events",
+      "html_url": "https://github.com/python/cpython/issues/103117",
+      "id": 1646351123,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/103117/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5iIVMT",
+      "number": 103117,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/103117/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/103117/timeline",
+      "title": "An inconsistent behaviours in ``__repr__`` functions for subclasses of built-in simple data structures (dict, set, list, tuple, str) ",
+      "type": null,
+      "updated_at": "2023-03-30T05:00:17Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/103117",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/78505251?v=4",
+        "events_url": "https://api.github.com/users/gresm/events{/privacy}",
+        "followers_url": "https://api.github.com/users/gresm/followers",
+        "following_url": "https://api.github.com/users/gresm/following{/other_user}",
+        "gists_url": "https://api.github.com/users/gresm/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/gresm",
+        "id": 78505251,
+        "login": "gresm",
+        "node_id": "MDQ6VXNlcjc4NTA1MjUx",
+        "organizations_url": "https://api.github.com/users/gresm/orgs",
+        "received_events_url": "https://api.github.com/users/gresm/received_events",
+        "repos_url": "https://api.github.com/users/gresm/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/gresm/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/gresm/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/gresm",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 471
+}

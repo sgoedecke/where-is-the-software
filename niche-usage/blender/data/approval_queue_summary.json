@@ -1,0 +1,14 @@
+{
+  "rows": 2105,
+  "status_counts": {
+    "Awaiting Review": 22,
+    "Awaiting Changes": 387,
+    "Approved": 1315,
+    "Declined": 381
+  },
+  "open_count": 409,
+  "open_wait_days_median": 365.0,
+  "open_wait_days_p90": 730.0,
+  "awaiting_review_count": 22,
+  "awaiting_changes_count": 387
+}

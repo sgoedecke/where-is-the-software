@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Problem\n\nCurrently, functions in [`eval.lua`](https://github.com/neovim/neovim/blob/master/src/nvim/eval.lua) can only have one return type, which is independent of parameters. This works for most functions, but there are some, that return different types depending on some parameter, so they use a union type to annotate that. This results in a diagnostic by the LSP when the return value is passed to a function that only takes one of the types.\r\nAn example of this is `expand()` which returns `string|string[]`, and thus results in a diagnostic when passed to a function that takes only strings.\n\n### Expected behavior\n\nMake it so that functions can have multiple return types depending on the parameter type. And when the _meta file is generated for these functions, it will generate two copies, basically overloading the function.\r\n\r\nFor example, let's have a function called `foo(list)` which returns `string` if list is falsy or `string[]` if list is truthy. Then the table for the function in `eval.lua` would look something like this:\r\n```lua\r\nfoo={...,returns={{list='false|nil'}='string',{list='true|string|number|...'}='string[]'}},\r\n```\r\nWhich would generate the meta file:\r\n```lua\r\n---@param list true|number|string|...\r\n---@return string[]\r\nfunction vim.fn.foo(list) end\r\n\r\n---@param list nil|false\r\n---@return string\r\nfunction vim.fn.foo(list) end\r\n```",
+      "closed_at": "2023-12-31T15:33:13Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/26825/comments",
+      "created_at": "2023-12-31T15:15:21Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/26825/events",
+      "html_url": "https://github.com/neovim/neovim/issues/26825",
+      "id": 2061090397,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/26825/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM562b5d",
+      "number": 26825,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/26825/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/26825/timeline",
+      "title": "Return type depending on paramater for functions in src/nvim/eval.lua",
+      "type": null,
+      "updated_at": "2024-01-03T11:19:50Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/26825",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/107814000?v=4",
+        "events_url": "https://api.github.com/users/altermo/events{/privacy}",
+        "followers_url": "https://api.github.com/users/altermo/followers",
+        "following_url": "https://api.github.com/users/altermo/following{/other_user}",
+        "gists_url": "https://api.github.com/users/altermo/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/altermo",
+        "id": 107814000,
+        "login": "altermo",
+        "node_id": "U_kgDOBm0ccA",
+        "organizations_url": "https://api.github.com/users/altermo/orgs",
+        "received_events_url": "https://api.github.com/users/altermo/received_events",
+        "repos_url": "https://api.github.com/users/altermo/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/altermo/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/altermo/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/altermo",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 252
+}

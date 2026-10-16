@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Steps to reproduce\r\n\r\nI tried to migrate Android gradle build files as mentioned here:\r\nhttps://docs.flutter.dev/release/breaking-changes/flutter-gradle-plugin-apply\r\nhttps://github.com/flutter/flutter/issues/135392\r\n\r\n### Expected results\r\n\r\nI'd expect to be able to run my Android app after following the migration doc.\r\n\r\n### Actual results\r\n\r\nI got the following error:\r\n```\r\nPlugin [id: 'com.android.application', version: '{agpVersion}', apply: false] was not found in any of the following sources:\r\n```\r\n\r\nIt seems like `agpVersion` should be define somewhere. (and also `kotlinVersion` perhaps?)\r\n\r\n### Code sample\r\n\r\n<details open><summary>build.gradle</summary>\r\n\r\n```\r\nallprojects {\r\n    repositories {\r\n        google()\r\n        mavenCentral()\r\n    }\r\n}\r\n\r\nrootProject.buildDir = '../build'\r\nsubprojects {\r\n    project.buildDir = \"${rootProject.buildDir}/${project.name}\"\r\n}\r\nsubprojects {\r\n    project.evaluationDependsOn(':app')\r\n}\r\n\r\ntasks.register(\"clean\", Delete) {\r\n    delete rootProject.buildDir\r\n}\r\n\r\n```\r\n</details>\r\n\r\n<details open><summary>app/build.gradle</summary>\r\n\r\n```\r\nplugins {\r\n    id \"com.android.application\"\r\n    id \"kotlin-android\"\r\n    id \"dev.flutter.flutter-gradle-plugin\"\r\n}\r\n\r\ndef localProperties = new Properties()\r\ndef localPropertiesFile = rootProject.file('local.properties')\r\nif (localPropertiesFile.exists()) {\r\n    localPropertiesFile.withReader('UTF-8') { reader ->\r\n        localProperties.load(reader)\r\n    }\r\n}\r\n\r\ndef flutterVersionCode = localProperties.getProperty('flutter.versionCode')\r\nif (flutterVersionCode == null) {\r\n    flutterVersionCode = '1'\r\n}\r\n\r\ndef flutterVersionName = localProperties.getProperty('flutter.versionName')\r\nif (flutterVersionName == null) {\r\n    flutterVersionName = '1.0'\r\n}\r\n\r\ndef keystoreProperties = new Properties()\r\ndef keystorePropertiesFile = rootProject.file('key.properties')\r\nif (keystorePropertiesFile.exists()) {\r\n    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))\r\n}\r\n\r\nandroid {\r\n    compileSdkVersion 34\r\n\r\n    sourceSets {\r\n        main.java.srcDirs += 'src/main/kotlin'\r\n    }\r\n\r\n    lintOptions {\r\n        disable 'InvalidPackage'\r\n        checkReleaseBuilds false\r\n    }\r\n\r\n    defaultConfig {\r\n        applicationId 'com.apptakk.cashplan'\r\n        minSdkVersion 21\r\n        targetSdkVersion 33\r\n        versionCode flutterVersionCode.toInteger()\r\n        versionName flutterVersionName\r\n        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'\r\n\r\n        multiDexEnabled true\r\n    }\r\n\r\n    compileOptions {\r\n        // Flag to enable support for the new language APIs\r\n        coreLibraryDesugaringEnabled true\r\n        // Sets Java compatibility to Java 8\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n\r\n    signingConfigs {\r\n        release {\r\n            keyAlias keystoreProperties['keyAlias']\r\n            keyPassword keystoreProperties['keyPassword']\r\n            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null\r\n            storePassword keystoreProperties['storePassword']\r\n        }\r\n    }\r\n    buildTypes {\r\n        release {\r\n            signingConfig signingConfigs.release\r\n        }\r\n    }\r\n}\r\n\r\nflutter {\r\n    source '../..'\r\n}\r\n\r\ndependencies {\r\n    implementation \"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version\"\r\n    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test:runner:1.4.0'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n    // https://github.com/MaikuB/flutter_local_notifications/tree/master/flutter_local_notifications#-android-setup\r\n    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'\r\n    implementation 'androidx.window:window:1.0.0'\r\n    implementation 'androidx.window:window-java:1.0.0'\r\n}\r\n\r\napply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin\r\napply plugin: 'com.google.firebase.crashlytics'\r\n\r\n```\r\n</details>\r\n\r\n<details open><summary>settings.gradle</summary>\r\n\r\n```\r\npluginManagement {\r\n    def flutterSdkPath = {\r\n        def properties = new Properties()\r\n        file(\"local.properties\").withInputStream { properties.load(it) }\r\n        def flutterSdkPath = properties.getProperty(\"flutter.sdk\")\r\n        assert flutterSdkPath != null, \"flutter.sdk not set in local.properties\"\r\n        return flutterSdkPath\r\n    }()\r\n\r\n    includeBuild(\"$flutterSdkPath/packages/flutter_tools/gradle\")\r\n\r\n    repositories {\r\n        google()\r\n        mavenCentral()\r\n        gradlePluginPortal()\r\n    }\r\n}\r\n\r\nplugins {\r\n    id \"dev.flutter.flutter-plugin-loader\" version \"1.0.0\"\r\n    id \"com.android.application\" version \"{agpVersion}\" apply false\r\n    id \"org.jetbrains.kotlin.android\" version \"{kotlinVersion}\" apply false\r\n}\r\n\r\ninclude \":app\"\r\n\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Screenshots or Video\r\n\r\n<details open>\r\n<summary>Screenshots / Video demonstration</summary>\r\n\r\n[Upload media here]\r\n\r\n</details>\r\n\r\n\r\n### Logs\r\n\r\n<details open><summary>Logs</summary>\r\n\r\n```console\r\nLaunching lib/main_prod.dart on sdk gphone64 arm64 in debug mode...\r\n\r\nFAILURE: Build failed with an exception.\r\n\r\n* Where:\r\nSettings file 'my-project/android/settings.gradle' line: 21\r\n\r\n* What went wrong:\r\nPlugin [id: 'com.android.application', version: '{agpVersion}', apply: false] was not found in any of the following sources:\r\n\r\n- Gradle Core Plugins (plugin is not in 'org.gradle' namespace)\r\n- Included Builds (None of the included builds contain this plugin)\r\n- Plugin Repositories (could not resolve plugin artifact 'com.android.application:com.android.application.gradle.plugin:{agpVersion}')\r\n  Searched in the following repositories:\r\n    Google\r\n    MavenRepo\r\n    Gradle Central Plugin Repository\r\n\r\n* Try:\r\n> Run with --stacktrace option to get the stack trace.\r\n> Run with --info or --debug option to get more log output.\r\n> Run with --scan to get full insights.\r\n\r\n* Get more help at https://help.gradle.org\r\n\r\nBUILD FAILED in 1s\r\nError: Gradle task assembleDebug failed with exit code 1\r\n\r\n\r\nExited (1).\r\n\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Flutter Doctor output\r\n\r\n<details open><summary>Doctor output</summary>\r\n\r\n```console\r\nDoctor summary (to see all details, run flutter doctor -v):\r\n[\u2713] Flutter (Channel stable, 3.19.4, on macOS 14.4.1 23E224 darwin-arm64, locale en-NO)\r\n[\u2713] Android toolchain - develop for Android devices (Android SDK version 34.0.0)\r\n[\u2713] Xcode - develop for iOS and macOS (Xcode 15.3)\r\n[\u2713] Chrome - develop for the web\r\n[\u2713] Android Studio (version 2023.2)\r\n[\u2713] VS Code (version 1.87.2)\r\n[\u2713] Connected device (5 available)\r\n[\u2713] Network resources\r\n\r\n\u2022 No issues found!\r\n```\r\n\r\n</details>\r\n",
+      "closed_at": "2024-03-30T14:27:07Z",
+      "comments": 13,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/146033/comments",
+      "created_at": "2024-03-30T10:29:28Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/146033/events",
+      "html_url": "https://github.com/flutter/flutter/issues/146033",
+      "id": 2216377393,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/146033/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM6EGzwx",
+      "number": 146033,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/146033/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/146033/timeline",
+      "title": "\"Deprecated imperative apply of Flutter's Gradle plugins\" migration failed",
+      "type": null,
+      "updated_at": "2024-04-26T22:00:38Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/146033",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1562523?v=4",
+        "events_url": "https://api.github.com/users/erf/events{/privacy}",
+        "followers_url": "https://api.github.com/users/erf/followers",
+        "following_url": "https://api.github.com/users/erf/following{/other_user}",
+        "gists_url": "https://api.github.com/users/erf/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/erf",
+        "id": 1562523,
+        "login": "erf",
+        "node_id": "MDQ6VXNlcjE1NjI1MjM=",
+        "organizations_url": "https://api.github.com/users/erf/orgs",
+        "received_events_url": "https://api.github.com/users/erf/received_events",
+        "repos_url": "https://api.github.com/users/erf/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/erf/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/erf/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/erf",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2226
+}

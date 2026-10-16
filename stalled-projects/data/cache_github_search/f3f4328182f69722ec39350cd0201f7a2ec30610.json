@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "*@yringler commented on May 27, 2019, 8:03 PM UTC:*\r\n\r\nThis is similar to [#1518](https://github.com/Dart-Code/Dart-Code/issues/1518)\r\nI set up flutter/dart, I can run everything fine from VS Code, the debugger hits the breakpoint - then it loses device connection, and `adb devices` shows my device as offline.\r\n(Running [this code lab](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/)\r\n\r\nOutput of `flutter doctor`\r\n\r\n> [\u221a] Flutter (Channel stable, v1.5.4-hotfix.2, on Microsoft Windows [Version 10.0.17763.503], locale en-US)\r\n> \r\n> [\u221a] Android toolchain - develop for Android devices (Android SDK version 28.0.3)\r\n> [\u221a] Android Studio (version 3.3)\r\n> [\u221a] VS Code (version 1.34.0)\r\n> [\u221a] VS Code, 64-bit edition (version 1.28.1)\r\n> [!] Connected device\r\n\r\nOutput of log, with **Flutter Run** and **Debugger (Observatory)**: https://gist.github.com/DanTup/c05f196729d047edef9e0db338e648f0\r\n\r\n*This issue was moved by [DanTup](https://github.com/DanTup) from [Dart-Code/Dart-Code#1754](https://github.com/Dart-Code/Dart-Code/issues/1754).*",
+      "closed_at": "2022-08-02T12:13:48Z",
+      "comments": 16,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/35016/comments",
+      "created_at": "2019-06-24T19:51:58Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/35016/events",
+      "html_url": "https://github.com/flutter/flutter/issues/35016",
+      "id": 460065972,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "Affects the \"flutter\" command-line tool. See also t: labels.",
+          "id": 283480100,
+          "name": "tool",
+          "node_id": "MDU6TGFiZWwyODM0ODAxMDA=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/tool"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "55ddbb",
+          "default": false,
+          "description": "Debugging, breakpoints, expression evaluation",
+          "id": 976224398,
+          "name": "a: debugging",
+          "node_id": "MDU6TGFiZWw5NzYyMjQzOTg=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/a:%20debugging"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "55ddbb",
+          "default": false,
+          "description": "DevTools related - suite of performance and debugging tools",
+          "id": 1417335856,
+          "name": "a: devtools",
+          "node_id": "MDU6TGFiZWwxNDE3MzM1ODU2",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/a:%20devtools"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "4A5775",
+          "default": false,
+          "description": "Issue is closed due to author not providing the requested details in time",
+          "id": 2698370874,
+          "name": "r: timeout",
+          "node_id": "MDU6TGFiZWwyNjk4MzcwODc0",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/r:%20timeout"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/35016/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0NjAwNjU5NzI=",
+      "number": 35016,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/35016/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/35016/timeline",
+      "title": "Dart debug loses device connection after reaching breakpoint",
+      "type": null,
+      "updated_at": "2022-08-16T13:09:24Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/35016",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10137?v=4",
+        "events_url": "https://api.github.com/users/ghost/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ghost/followers",
+        "following_url": "https://api.github.com/users/ghost/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ghost/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 10137,
+        "login": "ghost",
+        "node_id": "MDQ6VXNlcjEwMTM3",
+        "organizations_url": "https://api.github.com/users/ghost/orgs",
+        "received_events_url": "https://api.github.com/users/ghost/received_events",
+        "repos_url": "https://api.github.com/users/ghost/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ghost/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ghost/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ghost",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 29
+}

@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\n14.6\n\n### Platform\n\nWindows 10\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\nNot sure\n\n### How often does it reproduce? Is there a required condition?\n\nI am working with the worker threads and it is working fine . i am able to execute stuff in worker thread but the problem is the worker thread is not getting exit on its own . so i am using process.exit(0) or worker.terminate() \r\nand it get exits also. \r\nbut after that if i hit the api again then my project crashes with \r\nProcess exited with code 3221225477\r\n\r\nwhat is the issue\n\n### What is the expected behavior?\n\n_No response_\n\n### What do you see instead?\n\n_No response_\n\n### Additional information\n\n_No response_",
+      "closed_at": "2025-02-27T14:55:19Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/41107/comments",
+      "created_at": "2021-12-07T13:41:01Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/41107/events",
+      "html_url": "https://github.com/nodejs/node/issues/41107",
+      "id": 1073366415,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9944dd",
+          "default": false,
+          "description": "Issues and PRs related to the Windows platform.",
+          "id": 166236401,
+          "name": "windows",
+          "node_id": "MDU6TGFiZWwxNjYyMzY0MDE=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "94fffb",
+          "default": false,
+          "description": "Issues and PRs related to the worker_threads module and Worker API.",
+          "id": 868621832,
+          "name": "worker",
+          "node_id": "MDU6TGFiZWw4Njg2MjE4MzI=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/worker"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/41107/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs84_-kWP",
+      "number": 41107,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/41107/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/41107/timeline",
+      "title": "Project crashed after Worker.terminate()",
+      "type": null,
+      "updated_at": "2025-02-27T14:55:20Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/41107",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/37167732?v=4",
+        "events_url": "https://api.github.com/users/KunalBurangi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/KunalBurangi/followers",
+        "following_url": "https://api.github.com/users/KunalBurangi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/KunalBurangi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/KunalBurangi",
+        "id": 37167732,
+        "login": "KunalBurangi",
+        "node_id": "MDQ6VXNlcjM3MTY3NzMy",
+        "organizations_url": "https://api.github.com/users/KunalBurangi/orgs",
+        "received_events_url": "https://api.github.com/users/KunalBurangi/received_events",
+        "repos_url": "https://api.github.com/users/KunalBurangi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/KunalBurangi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/KunalBurangi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/KunalBurangi",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 19
+}

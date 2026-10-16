@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "## Bevy version\r\n`0.12`\r\n\r\n## What you did\r\n\r\n```rust\r\nuse bevy::prelude::*;\r\n\r\nfn main() {\r\n    App::new()\r\n        .add_plugins(DefaultPlugins)\r\n        .add_systems(Update, hide_cursor)\r\n        .run();\r\n}\r\n\r\nfn hide_cursor(\r\n    mut windows: Query<&mut Window>,\r\n    mouse: Res<Input<MouseButton>>,\r\n    key: Res<Input<KeyCode>>,\r\n) {\r\n    let mut window = windows.single_mut();\r\n\r\n    if mouse.just_pressed(MouseButton::Left) {\r\n        window.cursor.visible = false;\r\n    }\r\n\r\n    if key.just_pressed(KeyCode::Escape) {\r\n        window.cursor.visible = true;\r\n    }\r\n}\r\n```\r\n\r\n## What went wrong\r\n\r\n- What were you expecting?\r\nThe cursor becomes hidden.\r\n\r\n- What actually happened?\r\nThe cursor is not hidden\r\n\r\n## Additional information\r\n\r\nThe cursor is correctly hidden in the desktop builds.\r\n\r\nWhen you grab the cursor with:\r\n\r\n```rust\r\nwindow.cursor.grab_mode = CursorGrabMode::Locked;\r\n```\r\n\r\nCursor hiding will work in the web build.\r\n\r\nYou can get around this issue by setting `cursor: none;` in the CSS, so at the very least there should be some sort of API to control this.\r\n",
+      "closed_at": "2023-12-27T09:47:21Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/11093/comments",
+      "created_at": "2023-12-26T14:20:32Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/11093/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/11093",
+      "id": 2056455361,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876e3",
+          "default": false,
+          "description": "This issue needs to be labelled",
+          "id": 2488007862,
+          "name": "S-Needs-Triage",
+          "node_id": "MDU6TGFiZWwyNDg4MDA3ODYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/11093/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U856kwTB",
+      "number": 11093,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/11093/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/11093/timeline",
+      "title": "Cursor cannot be hidden in web",
+      "type": null,
+      "updated_at": "2023-12-27T09:47:21Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/11093",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/72612857?v=4",
+        "events_url": "https://api.github.com/users/musjj/events{/privacy}",
+        "followers_url": "https://api.github.com/users/musjj/followers",
+        "following_url": "https://api.github.com/users/musjj/following{/other_user}",
+        "gists_url": "https://api.github.com/users/musjj/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/musjj",
+        "id": 72612857,
+        "login": "musjj",
+        "node_id": "MDQ6VXNlcjcyNjEyODU3",
+        "organizations_url": "https://api.github.com/users/musjj/orgs",
+        "received_events_url": "https://api.github.com/users/musjj/received_events",
+        "repos_url": "https://api.github.com/users/musjj/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/musjj/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/musjj/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/musjj",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 189
+}

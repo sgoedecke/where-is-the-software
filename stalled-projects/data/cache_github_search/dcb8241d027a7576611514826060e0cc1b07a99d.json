@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Godot version\n\n4.0-beta 2\n\n### System information\n\nWindows 11, Vulkan, RTX 3070 V. 516.94\n\n### Issue description\n\nI want to create a globally accessible lookup table for scenes but :\r\n\r\nI cannot preload scenes that reference the scene that is attempting to preload them. \r\n\r\n![image](https://user-images.githubusercontent.com/47256718/193256289-be26768d-c267-4618-a83c-d87121297d2f.png)\r\n\r\n\r\n```gdscript\r\n# autoload.gd\r\nvar any_scene = preload(\"res://scene.tscn\")\r\n\r\n\r\n# scene.tscn\r\nstatic func get_scene():  # does not need to be static to fail\r\n    return Globals.any_scene\r\n```\r\n\r\nWhen using load inside _ready of the instead of preload using the loaded scene within the autoload causes cyclic dependency to be thrown.\r\n\r\n![image](https://user-images.githubusercontent.com/47256718/193256938-4fe2db61-52f7-4be8-8117-edc7bc9e3d21.png)\r\n\r\n```gdscript\r\n\r\n#autoload.gd\r\nvar any_scene\r\nfunc _ready():\r\n    any_scene = load(\"res://scene.tscn\")\r\n    AnyScript.get_any() # fails with cyclic\r\n    \r\n# scene.tscn\r\nclass_name AnyScript extends Node # to access static members\r\n\r\n\r\nstatic func get_any():\r\n    return Globals.any_scene # get autoload scene\r\n\r\n```\r\n\r\nDon't know if that is intentional.\n\n### Steps to reproduce\n\n1. Create an Autoload/Singelton\r\n2. Create a Scene that references the autoload in its script\r\n3. preload the scene within the autoload\n\n### Minimal reproduction project\n\n[CyclicTest.zip](https://github.com/godotengine/godot/files/9683605/CyclicTest.zip)\r\n",
+      "closed_at": "2022-09-30T11:15:00Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/66657/comments",
+      "created_at": "2022-09-30T11:14:12Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/66657/events",
+      "html_url": "https://github.com/godotengine/godot/issues/66657",
+      "id": 1392279551,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/66657/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc5S_H__",
+      "number": 66657,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/66657/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/66657/timeline",
+      "title": "Preload Error due to cyclic dependency for autoloads and constants",
+      "type": null,
+      "updated_at": "2022-09-30T12:00:25Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/66657",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/47256718?v=4",
+        "events_url": "https://api.github.com/users/CoreTaxxe/events{/privacy}",
+        "followers_url": "https://api.github.com/users/CoreTaxxe/followers",
+        "following_url": "https://api.github.com/users/CoreTaxxe/following{/other_user}",
+        "gists_url": "https://api.github.com/users/CoreTaxxe/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/CoreTaxxe",
+        "id": 47256718,
+        "login": "CoreTaxxe",
+        "node_id": "MDQ6VXNlcjQ3MjU2NzE4",
+        "organizations_url": "https://api.github.com/users/CoreTaxxe/orgs",
+        "received_events_url": "https://api.github.com/users/CoreTaxxe/received_events",
+        "repos_url": "https://api.github.com/users/CoreTaxxe/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/CoreTaxxe/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/CoreTaxxe/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/CoreTaxxe",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1043
+}

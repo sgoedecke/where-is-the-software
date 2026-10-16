@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "\r\n##### SUMMARY\r\nVarious valid git branches cannot be checked out by the git module.\r\n\r\n##### ISSUE TYPE\r\n- Bug Report\r\n\r\n##### COMPONENT NAME\r\ngit\r\n\r\n##### ANSIBLE VERSION\r\n```\r\nansible 2.9.2\r\n  config file = /etc/ansible/ansible.cfg\r\n  configured module search path = ['/home/notting/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /usr/lib/python3.7/site-packages/ansible\r\n  executable location = /usr/bin/ansible\r\n  python version = 3.7.5 (default, Oct 17 2019, 12:16:48) [GCC 9.2.1 20190827 (Red Hat 9.2.1-1)]\r\n```\r\n\r\n##### CONFIGURATION\r\n```\r\nANSIBLE_PIPELINING(/etc/ansible/ansible.cfg) = True\r\nDEFAULT_LOG_PATH(/etc/ansible/ansible.cfg) = /tmp/ansible.log\r\nHOST_KEY_CHECKING(/etc/ansible/ansible.cfg) = False\r\nPERSISTENT_CONNECT_TIMEOUT(/etc/ansible/ansible.cfg) = 30\r\nRETRY_FILES_ENABLED(/etc/ansible/ansible.cfg) = False\r\n```\r\n\r\n##### OS / ENVIRONMENT\r\nFedora 31, git-2.24.1\r\n\r\n\r\n##### STEPS TO REPRODUCE\r\n\r\n```\r\n---\r\n- hosts: localhost\r\n  gather_facts: False\r\n\r\n  vars:\r\n    branches:\r\n      - '\"\"'\r\n      - '$PATH'\r\n      - hawai'i\r\n      - '\u2004whitespace-the-final-frontier'\r\n\r\n  tasks:\r\n    - name: it's git clobberin' time...\r\n      git:\r\n         repo: \"https://github.com/wenottingham/testbranch.git\"\r\n         dest: \"/tmp/funtimes\"\r\n         version: \"{{ item }}\"\r\n         force: yes\r\n         depth: 1\r\n      loop: \"{{ branches }}\"\r\n      ignore_errors: True\r\n      delegate_to: localhost\r\n```\r\n\r\n##### EXPECTED RESULTS\r\nAll successful.\r\n\r\n##### ACTUAL RESULTS\r\nNone successful.\r\n```\r\nfailed: [localhost -> localhost] (item=\"\") => {\"ansible_facts\": {\"discovered_interpreter_python\": \"/usr/bin/python\"}, \"ansible_loop_var\": \"item\", \"changed\": false, \"cmd\": \"/usr/bin/git checkout --force \\\"\\\"\", \"item\": \"\\\"\\\"\", \"msg\": \"Failed to checkout \\\"\\\"\", \"rc\": 128, \"stderr\": \"fatal: empty string is not a valid pathspec. please use . instead if you meant to match all paths\\n\", \"stderr_lines\": [\"fatal: empty string is not a valid pathspec. please use . instead if you meant to match all paths\"], \"stdout\": \"\", \"stdout_lines\": []}\r\n\r\nfailed: [localhost -> localhost] (item=$PATH) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"cmd\": \"/usr/bin/git checkout --force $PATH\", \"item\": \"$PATH\", \"msg\": \"Failed to checkout $PATH\", \"rc\": 128, \"stderr\": \"fatal: Invalid path '<some component of my actual path>:': No such file or directory\\n\", \"stderr_lines\": [\"fatal: Invalid path '<some component of my actual path>:': No such file or directory\"], \"stdout\": \"\", \"stdout_lines\": []}\r\n\r\nAn exception occurred during task execution. To see the full traceback, use -vvv. The error was: ValueError: No closing quotation\r\nfailed: [localhost -> localhost] (item=hawai'i) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"hawai'i\", \"module_stderr\": \"Traceback (most recent call last):\\n  File \\\"<stdin>\\\", line 102, in <module>\\n  File \\\"<stdin>\\\", line 94, in _ansiballz_main\\n  File \\\"<stdin>\\\", line 40, in invoke_module\\n  File \\\"/usr/lib64/python3.7/runpy.py\\\", line 205, in run_module\\n    return _run_module_code(code, init_globals, run_name, mod_spec)\\n  File \\\"/usr/lib64/python3.7/runpy.py\\\", line 96, in _run_module_code\\n    mod_name, mod_spec, pkg_name, script_name)\\n  File \\\"/usr/lib64/python3.7/runpy.py\\\", line 85, in _run_code\\n    exec(code, run_globals)\\n  File \\\"/tmp/ansible_git_payload_5sddcen7/ansible_git_payload.zip/ansible/modules/source_control/git.py\\\", line 1269, in <module>\\n  File \\\"/tmp/ansible_git_payload_5sddcen7/ansible_git_payload.zip/ansible/modules/source_control/git.py\\\", line 1223, in main\\n  File \\\"/tmp/ansible_git_payload_5sddcen7/ansible_git_payload.zip/ansible/modules/source_control/git.py\\\", line 764, in fetch\\n  File \\\"/tmp/ansible_git_payload_5sddcen7/ansible_git_payload.zip/ansible/modules/source_control/git.py\\\", line 640, in is_remote_branch\\n  File \\\"/tmp/ansible_git_payload_5sddcen7/ansible_git_payload.zip/ansible/module_utils/basic.py\\\", line 2502, in run_command\\n  File \\\"/usr/lib64/python3.7/shlex.py\\\", line 309, in split\\n    return list(lex)\\n  File \\\"/usr/lib64/python3.7/shlex.py\\\", line 299, in __next__\\n    token = self.get_token()\\n  File \\\"/usr/lib64/python3.7/shlex.py\\\", line 109, in get_token\\n    raw = self.read_token()\\n  File \\\"/usr/lib64/python3.7/shlex.py\\\", line 191, in read_token\\n    raise ValueError(\\\"No closing quotation\\\")\\nValueError: No closing quotation\\n\", \"module_stdout\": \"\", \"msg\": \"MODULE FAILURE\\nSee stdout/stderr for the exact error\", \"rc\": 1}\r\n\r\nfailed: [localhost -> localhost] (item=\u2004whitespace-the-final-frontier) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"cmd\": \"/usr/bin/git checkout --track -b \u2004whitespace-the-final-frontier origin/\u2004whitespace-the-final-frontier\", \"item\": \"\u2004whitespace-the-final-frontier\", \"msg\": \"Failed to checkout \u2004whitespace-the-final-frontier\", \"rc\": 128, \"stderr\": \"fatal: A branch named '\u2004whitespace-the-final-frontier' already exists.\\n\", \"stderr_lines\": [\"fatal: A branch named '\u2004whitespace-the-final-frontier' already exists.\"], \"stdout\": \"\", \"stdout_lines\": []}\r\n\r\n```\r\n",
+      "closed_at": "2023-03-27T17:43:49Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/65956/comments",
+      "created_at": "2019-12-18T19:24:10Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/65956/events",
+      "html_url": "https://github.com/ansible/ansible/issues/65956",
+      "id": 539871140,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue/PR relates to a module.",
+          "id": 496359346,
+          "name": "module",
+          "node_id": "MDU6TGFiZWw0OTYzNTkzNDY=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/module"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "",
+          "id": 1742671738,
+          "name": "affects_2.11",
+          "node_id": "MDU6TGFiZWwxNzQyNjcxNzM4",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.11"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 2270557328,
+          "name": "bot_closed",
+          "node_id": "MDU6TGFiZWwyMjcwNTU3MzI4",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bot_closed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/65956/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1Mzk4NzExNDA=",
+      "number": 65956,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/65956/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/65956/timeline",
+      "title": "git module cannot properly check out certain branches",
+      "type": null,
+      "updated_at": "2023-04-03T13:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/65956",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/5208768?v=4",
+        "events_url": "https://api.github.com/users/wenottingham/events{/privacy}",
+        "followers_url": "https://api.github.com/users/wenottingham/followers",
+        "following_url": "https://api.github.com/users/wenottingham/following{/other_user}",
+        "gists_url": "https://api.github.com/users/wenottingham/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/wenottingham",
+        "id": 5208768,
+        "login": "wenottingham",
+        "node_id": "MDQ6VXNlcjUyMDg3Njg=",
+        "organizations_url": "https://api.github.com/users/wenottingham/orgs",
+        "received_events_url": "https://api.github.com/users/wenottingham/received_events",
+        "repos_url": "https://api.github.com/users/wenottingham/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/wenottingham/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/wenottingham/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/wenottingham",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 20
+}

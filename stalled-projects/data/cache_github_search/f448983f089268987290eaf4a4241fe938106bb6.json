@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "While attempting to use `ansible.builtin.deb822_repository` and including parameters to download the signed_by key from a remote URL in an environment that requires a proxy, I saw that it was not using the proxy and failing the download.  Curl works.\n\nThe proxy is configured using the standard `http(s)_proxy=...` environment variables.\n\nLooking at the code here:\nhttps://github.com/ansible/ansible/blob/54ccad9e460cb6bfa0ff585a46289239966b56cc/lib/ansible/module_utils/urls.py#L851\n\nIt appears that the intention of `use_proxy` is inverted.  Should it be:\n\n```diff \n-        if not use_proxy:\n+        if use_proxy:\n             proxyhandler = urllib.request.ProxyHandler({})\n             handlers.append(proxyhandler)\n```\n\n    ",
+      "closed_at": "2025-06-30T08:21:19Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/85400/comments",
+      "created_at": "2025-06-30T03:42:19Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/85400/events",
+      "html_url": "https://github.com/ansible/ansible/issues/85400",
+      "id": 3187019761,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "This issue requires further information. Please answer any outstanding questions.",
+          "id": 54811101,
+          "name": "needs_info",
+          "node_id": "MDU6TGFiZWw1NDgxMTEwMQ==",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/needs_info"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9d0c4",
+          "default": false,
+          "description": "This issue/PR has an incomplete description. Please fill in the proposed template correctly.",
+          "id": 572345061,
+          "name": "needs_template",
+          "node_id": "MDU6TGFiZWw1NzIzNDUwNjE=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/needs_template"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/85400/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM699g_x",
+      "number": 85400,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/85400/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/85400/timeline",
+      "title": "`ansible.module_utils.urls.Request().open()` appears to invert the decision to use proxies",
+      "type": null,
+      "updated_at": "2025-07-15T18:26:35Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/85400",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1924479?v=4",
+        "events_url": "https://api.github.com/users/ChrisPortman/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ChrisPortman/followers",
+        "following_url": "https://api.github.com/users/ChrisPortman/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ChrisPortman/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ChrisPortman",
+        "id": 1924479,
+        "login": "ChrisPortman",
+        "node_id": "MDQ6VXNlcjE5MjQ0Nzk=",
+        "organizations_url": "https://api.github.com/users/ChrisPortman/orgs",
+        "received_events_url": "https://api.github.com/users/ChrisPortman/received_events",
+        "repos_url": "https://api.github.com/users/ChrisPortman/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ChrisPortman/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ChrisPortman/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ChrisPortman",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 133
+}

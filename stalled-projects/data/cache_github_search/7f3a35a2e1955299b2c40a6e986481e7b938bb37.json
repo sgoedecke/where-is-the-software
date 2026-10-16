@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Aliases should be displayed after non-aliases. Since we have fuzzy search [*], we could match in this order:\r\n\r\n- Exact matches (non-aliases)\r\n- Exact matches (aliases)\r\n- Fuzzy search (any, assuming it sorts by some \"similarity\" index)\r\n\r\nIf we get #82000, then we could even do:\r\n\r\n- Exact matches (non-aliases)\r\n- Exact matches (Rust aliases)\r\n- Exact matches (non-Rust aliases)\r\n- Fuzzy search (any, assuming it sorts by some \"similarity\" index)\r\n\r\n[*]\r\n![image](https://user-images.githubusercontent.com/23638587/107890698-468c4d00-6ee8-11eb-85ed-ea2428ec6d1d.png)",
+      "closed_at": "2024-11-06T09:37:01Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/82132/comments",
+      "created_at": "2021-02-15T03:29:24Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/82132/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/82132",
+      "id": 808136046,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the rustdoc team, which will review and decide on the PR/issue.",
+          "id": 203738,
+          "name": "T-rustdoc",
+          "node_id": "MDU6TGFiZWwyMDM3Mzg=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-rustdoc"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue proposing an enhancement or a PR with one.",
+          "id": 234902,
+          "name": "C-enhancement",
+          "node_id": "MDU6TGFiZWwyMzQ5MDI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Rustdoc's search feature",
+          "id": 2432552396,
+          "name": "A-rustdoc-search",
+          "node_id": "MDU6TGFiZWwyNDMyNTUyMzk2",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-rustdoc-search"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/82132/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU4MDgxMzYwNDY=",
+      "number": 82132,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/82132/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/82132/timeline",
+      "title": "[rustdoc] Search results: List exact alias matches before fuzzy ones",
+      "type": null,
+      "updated_at": "2024-11-06T09:38:09Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/82132",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1054456?v=4",
+        "events_url": "https://api.github.com/users/ojeda/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ojeda/followers",
+        "following_url": "https://api.github.com/users/ojeda/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ojeda/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ojeda",
+        "id": 1054456,
+        "login": "ojeda",
+        "node_id": "MDQ6VXNlcjEwNTQ0NTY=",
+        "organizations_url": "https://api.github.com/users/ojeda/orgs",
+        "received_events_url": "https://api.github.com/users/ojeda/received_events",
+        "repos_url": "https://api.github.com/users/ojeda/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ojeda/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ojeda/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ojeda",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 5
+}

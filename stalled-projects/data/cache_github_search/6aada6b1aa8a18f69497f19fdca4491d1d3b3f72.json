@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--- Verify first that your feature was not already discussed on GitHub -->\r\n<!--- Complete *all* sections as described, this form is processed automatically -->\r\n\r\n##### SUMMARY\r\nSimply allow the remove_others flag like the apt_repo module\r\n\r\n##### ISSUE TYPE\r\n- Feature Idea\r\n\r\n##### COMPONENT NAME\r\napt_repository \r\n\r\n##### ADDITIONAL INFORMATION\r\nWe use apt_repository a lot, however sometimes we want to update the repo to support higher version. e.g.\r\n\r\ndeb https://deb.nodesource.com/node_8.x stretch main\r\ndeb-src https://deb.nodesource.com/node_8.x stretch main\r\n\r\nHas to become:\r\ndeb https://deb.nodesource.com/node_10.x stretch main\r\ndeb-src https://deb.nodesource.com/node_10.x stretch main\r\n\r\nUnfortunately now this change in version always results in:\r\n\r\ndeb https://deb.nodesource.com/node_8.x stretch main\r\ndeb-src https://deb.nodesource.com/node_8.x stretch main\r\ndeb https://deb.nodesource.com/node_10.x stretch main\r\ndeb-src https://deb.nodesource.com/node_10.x stretch main\r\n\r\nWhich is not what we expect. We need to get rid of any other contents in this file.\r\n\r\n\r\n",
+      "closed_at": "2022-10-26T20:04:45Z",
+      "comments": 20,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/61420/comments",
+      "created_at": "2019-08-28T08:24:13Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/61420/events",
+      "html_url": "https://github.com/ansible/ansible/issues/61420",
+      "id": 486229963,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue/PR relates to a module.",
+          "id": 496359346,
+          "name": "module",
+          "node_id": "MDU6TGFiZWw0OTYzNTkzNDY=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/module"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "This issue/PR relates to a feature request.",
+          "id": 852590921,
+          "name": "feature",
+          "node_id": "MDU6TGFiZWw4NTI1OTA5MjE=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "This issue/PR affects Ansible v2.9",
+          "id": 1316917295,
+          "name": "affects_2.9",
+          "node_id": "MDU6TGFiZWwxMzE2OTE3Mjk1",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.9"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/61420/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0ODYyMjk5NjM=",
+      "number": 61420,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 7,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 7,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/61420/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/61420/timeline",
+      "title": "apt_repository does not support remove_others",
+      "type": null,
+      "updated_at": "2022-11-02T13:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/61420",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/5538957?v=4",
+        "events_url": "https://api.github.com/users/HOSTED-POWER/events{/privacy}",
+        "followers_url": "https://api.github.com/users/HOSTED-POWER/followers",
+        "following_url": "https://api.github.com/users/HOSTED-POWER/following{/other_user}",
+        "gists_url": "https://api.github.com/users/HOSTED-POWER/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/HOSTED-POWER",
+        "id": 5538957,
+        "login": "HOSTED-POWER",
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjU1Mzg5NTc=",
+        "organizations_url": "https://api.github.com/users/HOSTED-POWER/orgs",
+        "received_events_url": "https://api.github.com/users/HOSTED-POWER/received_events",
+        "repos_url": "https://api.github.com/users/HOSTED-POWER/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/HOSTED-POWER/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/HOSTED-POWER/subscriptions",
+        "type": "Organization",
+        "url": "https://api.github.com/users/HOSTED-POWER",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 24
+}

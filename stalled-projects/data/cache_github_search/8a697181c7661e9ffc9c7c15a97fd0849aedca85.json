@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Problem\r\n\r\nAutocommands on the Nightly branch that return something other than `nil` from their Lua callbacks are deleted and not run again. This initially came up in this issue on my project https://github.com/Olical/nfnl/issues/36\r\n\r\n### Steps to reproduce\r\n\r\nWith the following Lua in your plugin / configuration:\r\n\r\n```lua\r\nlocal function callback()\r\n  print(\"EXECUTED\")\r\n  return {foo = true} -- A numerical value also causes the issue, maybe others too but I've only tried table and number so far.\r\nend\r\nvim.api.nvim_create_autocmd({\"Filetype\"}, {callback = callback})\r\n```\r\n\r\nYou should see \"EXECUTED\" printed once then never again, even if you repeatedly `:e` different files.\r\n\r\n### Expected behavior\r\n\r\n\"EXECUTED\" should be printed multiple times on every Filetype autocommand execution. You can also see the autocmd under `:autocmd Filetype` initially then see it vanish after the first execution. This does not happen on stable, only on Nightly.\r\n\r\n### Neovim version (nvim -v)\r\n\r\nv0.10.0-dev-2755+ge1ff2c51c\r\n\r\n### Vim (not Nvim) behaves the same?\r\n\r\nNo, this is only in Neovim nightly.\r\n\r\n### Operating system/version\r\n\r\nLinux and Windows users have seen this so far.\r\n\r\n### Terminal name/version\r\n\r\nKitty 0.33.0\r\n\r\n### $TERM environment variable\r\n\r\nxterm-256color\r\n\r\n### Installation\r\n\r\nManual .appimage download from GitHub, latest build from today",
+      "closed_at": "2024-03-31T13:35:38Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/28127/comments",
+      "created_at": "2024-03-31T13:26:19Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/28127/events",
+      "html_url": "https://github.com/neovim/neovim/issues/28127",
+      "id": 2216976271,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e6e6e6",
+          "default": false,
+          "description": "current behavior is by design, and change is not desired",
+          "id": 77997479,
+          "name": "closed:wontfix",
+          "node_id": "MDU6TGFiZWw3Nzk5NzQ3OQ==",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/closed:wontfix"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/28127/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM6EJF-P",
+      "number": 28127,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/28127/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/28127/timeline",
+      "title": "Auto commands with Lua callbacks that return Lua tables are removed after they are executed",
+      "type": null,
+      "updated_at": "2024-04-02T22:58:44Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/28127",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/315229?v=4",
+        "events_url": "https://api.github.com/users/Olical/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Olical/followers",
+        "following_url": "https://api.github.com/users/Olical/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Olical/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Olical",
+        "id": 315229,
+        "login": "Olical",
+        "node_id": "MDQ6VXNlcjMxNTIyOQ==",
+        "organizations_url": "https://api.github.com/users/Olical/orgs",
+        "received_events_url": "https://api.github.com/users/Olical/received_events",
+        "repos_url": "https://api.github.com/users/Olical/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Olical/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Olical/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Olical",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 276
+}

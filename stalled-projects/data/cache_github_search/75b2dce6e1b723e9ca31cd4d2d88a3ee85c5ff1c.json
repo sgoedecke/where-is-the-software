@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\nWelcome to Node.js v26.2.0.\n\n### Platform\n\n```text\nMicrosoft Windows NT 10.0.26200.0 x64\n```\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\n\nWelcome to Node.js v26.2.0.\nType \".help\" for more information.\n>\n> function     exec_sql_once(dbpath, sql) {\n|         const { DatabaseSync } = require('node:sqlite');\n|         const db = new DatabaseSync(dbpath, { readOnly: true });\n|         return db.prepare(sql).all();\n|     }\nundefined\n> s='D:/FFMPEG-RTSP-CLIENT/rtsp-win-server/rtsp_server/PUBLISH/___webvw___/userDataFolder/EBWebView/Default/History'\n'D:/FFMPEG-RTSP-CLIENT/rtsp-win-server/rtsp_server/PUBLISH/___webvw___/userDataFolder/EBWebView/Default/History'\n> exec_sql_once(s,\"SELECT * FROM urls;\")\nUncaught:\nRangeError: Value is too large to be represented as a JavaScript number: 13435075631098976\n    at exec_sql_once (REPL6:4:32) {\n  code: 'ERR_OUT_OF_RANGE'\n}\n>\n>\n\n### How often does it reproduce? Is there a required condition?\n\nalways\n\n### What is the expected behavior? Why is that the expected behavior?\n\nto bigint OR string instead of  'ERR_OUT_OF_RANGE'\n\n### What do you see instead?\n\nUncaught:\nRangeError: Value is too large to be represented as a JavaScript number: 13435075631098976\n    at exec_sql_once (REPL6:4:32) {\n  code: 'ERR_OUT_OF_RANGE'\n}\n\n### Additional information\n\n_No response_",
+      "closed_at": "2026-09-29T16:25:56Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/66381/comments",
+      "created_at": "2026-09-28T15:48:10Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/66381/events",
+      "html_url": "https://github.com/nodejs/node/issues/66381",
+      "id": 5617343192,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "cc317c",
+          "default": true,
+          "description": "Issues asking questions about Node.js.",
+          "id": 151728679,
+          "name": "question",
+          "node_id": "MDU6TGFiZWwxNTE3Mjg2Nzk=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/question"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "064a64",
+          "default": false,
+          "description": "Issues and PRs related to the SQLite subsystem.",
+          "id": 7186154574,
+          "name": "sqlite",
+          "node_id": "LA_kwDOAZ7xs88AAAABrFQETg",
+          "url": "https://api.github.com/repos/nodejs/node/labels/sqlite"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/66381/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs88AAAABTtHa2A",
+      "number": 66381,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/66381/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/66381/timeline",
+      "title": "sqlite can NOT handle big number: [ Value is too large to be represented as a JavaScript number: 13435075631098976]",
+      "type": null,
+      "updated_at": "2026-09-29T16:25:56Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/66381",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/55095363?v=4",
+        "events_url": "https://api.github.com/users/navegador5/events{/privacy}",
+        "followers_url": "https://api.github.com/users/navegador5/followers",
+        "following_url": "https://api.github.com/users/navegador5/following{/other_user}",
+        "gists_url": "https://api.github.com/users/navegador5/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/navegador5",
+        "id": 55095363,
+        "login": "navegador5",
+        "node_id": "MDQ6VXNlcjU1MDk1MzYz",
+        "organizations_url": "https://api.github.com/users/navegador5/orgs",
+        "received_events_url": "https://api.github.com/users/navegador5/received_events",
+        "repos_url": "https://api.github.com/users/navegador5/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/navegador5/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/navegador5/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/navegador5",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 377
+}

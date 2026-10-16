@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### \ud83d\udd0e Search Terms\n\ngeneric parameter extends generic type parameter based on generic parameter\n\n### \ud83d\udd57 Version & Regression Information\n\n3.3.333 to 5.7.2 (ie the versions supported by Typescript Playground)\n\n### \u23ef Playground Link\n\nhttps://www.typescriptlang.org/play/?#code/MYGwhgzhAEAqCmEAuBhcUA8sAiYlgD5oBvAXwChzgB7AO2WiUSQEYAuOZtSCDY6AG5gQAV3jtoyAE4BLWgHNopIgF5oteAHdOybpn5DR4jtLmLlACgCUAbkoAzEbWBIZdRswBiT4FmjwADyZaABMYBF10Xhw8QgAaOFx8AgtDMQ5YBJDYjKSwKxJKCnImZG9nC1LWBINhMQAmDhYAFiVbaAB6DugASWhNahEQEP8AgAd4F0YACxkYJGpoezAZEAA6Eq8fLC4ovkE640kkWQUlAhqDo0b1EQBbACN4KXPK5hZLtPgblrabTu6fQGQxGgQmUyQs3mixC8HschkTBAAE8lisQNBIJIRFJ4CjErFJNNBsNoE8ZvBJGA7pT7NQXg9qJCAPxAA\n\n### \ud83d\udcbb Code\n\n```typescript\nclass TestClass<TData> {}\n\nconst test1: TestClass<{ value1: string }> = new TestClass<{ value1: string }>();\n\nfunction testFunc<T extends TestClass<TData>, TData>(value: T, data: TData) {\n\n}\n\ntestFunc(test1, { value2: 14 }); // I would expect this to fail.\ntestFunc<TestClass<{ value1: string }>, { value2: number }>(test1, { value2: 14 }); // I would expect this to definitely fail as surely TData should be the same for both?\n```\n\n\n### \ud83d\ude41 Actual behavior\n\nNo errors are highlighted for the two calls to `testFunc()`.\n\n### \ud83d\ude42 Expected behavior\n\nBoth calls to `testFunc()` should be highlighted as errors.\nThe first call should fail because `{ value2: number}` is not the `TData` type used for the `TestClass<TData>` instance assigned to `test1`.\nThe second call should fail highlighting the generic parameter type inconsistency for `TData`.\n\n### Additional information about the issue\n\nI am attempting to create a generic method with two generic type parameters and two parameters using those generic types, where the generic type of the second is tied to the generic type of the first:\n\n```typescript\nclass TestClass<TData> {}\n\nfunction testFunc<T extends TestClass<TData>, TData>(value: T, data: TData) {\n}\n```\n\nHowever, when attempting to use it there does not seem to be any consistency enforced between the TData parameters:\n\n```typescript\nconst test1: TestClass<{ value1: string }> = new TestClass<{ value2: string }>();\n\ntestFunc(test1, { value1: 14 }); // I would expect this to fail.\ntestFunc<TestClass<{ value1: string }>, { value2: number }>(test1, { value2: 14 }); // I would expect this to definitely fail as surely TData should be enforced as the same for both?\n```\n\nExplicitly specifying the types incorrectly as shown in the second call to `testFunc()` above does not result in any apparent errors either.\n\nI am unsure if the behaviour I am seeing is a bug or if this is something I am doing incorrectly.",
+      "closed_at": "2024-12-29T16:50:45Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60870/comments",
+      "created_at": "2024-12-29T15:32:26Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60870/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/60870",
+      "id": 2762299062,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60870/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc6kpVa2",
+      "number": 60870,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/60870/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60870/timeline",
+      "title": "Consistency between generic type parameter of extends generic type based on another generic type parameter is not enforced",
+      "type": null,
+      "updated_at": "2025-10-22T03:07:48Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/60870",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/324345?v=4",
+        "events_url": "https://api.github.com/users/Metritutus/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Metritutus/followers",
+        "following_url": "https://api.github.com/users/Metritutus/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Metritutus/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Metritutus",
+        "id": 324345,
+        "login": "Metritutus",
+        "node_id": "MDQ6VXNlcjMyNDM0NQ==",
+        "organizations_url": "https://api.github.com/users/Metritutus/orgs",
+        "received_events_url": "https://api.github.com/users/Metritutus/received_events",
+        "repos_url": "https://api.github.com/users/Metritutus/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Metritutus/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Metritutus/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Metritutus",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 186
+}

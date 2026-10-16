@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "## What problem does this solve or what need does it fill?\n\nCurrently, picking events are only observers and only on the interacted-with entities. This requires using PointerInput, PointerMap, and PointerInteraction together to figure out that a click happened and that it did not hit any pickable entities.\n\nTheres also (seemingly) no way to map between ButtonInput and picking Pointers, making a non-observer approach less intuitive due to having to use purely picking types.\n\n## What solution would you like?\n\nIdeally, i feel there should be a unified API for input handling be that picking or not. I'm not sure how this would look, since i think it should be accessible from both systems and observers (which picking is currently not, at least its documented that EventReaders won't work).\n\nUltimately, i'm not sure what a good solution would look like.\n\n## What alternative(s) have you considered?\n\nAllowing picking events to be listened to by a EventReader, to enable simple \"if just_pressed and no picking events\" or similar to understand if theres no entities during a click etc.\n\nProviding a resource-based access to pointers, their current state (just_released), and the list of entities under each pointer.\n\nA SystemParam which acts like that resource by providing utility methods which extract this information from the query/events/resources required.\n\nSpawning a giant (invisible) entity behind everything, and use observers on it which mean that no (foreground) entity was hit.\n\n## Additional context\n\nThere is a implementation with PointerInput, PointerMap, and PointerInteraction to check for clicks which don't interact with any entity here:\nhttps://discord.com/channels/691052431525675048/1323319768693870682/1323343640424091699\nwhich is the question which led me to write this issue.",
+      "closed_at": "2024-12-30T19:19:41Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/17042/comments",
+      "created_at": "2024-12-30T17:50:25Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/17042/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/17042",
+      "id": 2763520346,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8b8b8",
+          "default": false,
+          "description": "A new feature, making something new possible",
+          "id": 1795619326,
+          "name": "C-Feature",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzI2",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876e3",
+          "default": false,
+          "description": "This issue needs to be labelled",
+          "id": 2488007862,
+          "name": "S-Needs-Triage",
+          "node_id": "MDU6TGFiZWwyNDg4MDA3ODYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/17042/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U86kt_la",
+      "number": 17042,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/17042/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/17042/timeline",
+      "title": "Picking: Make it easier to check if no pickable entity is clicked/hovered currently",
+      "type": null,
+      "updated_at": "2024-12-31T00:58:12Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/17042",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/24855949?v=4",
+        "events_url": "https://api.github.com/users/laundmo/events{/privacy}",
+        "followers_url": "https://api.github.com/users/laundmo/followers",
+        "following_url": "https://api.github.com/users/laundmo/following{/other_user}",
+        "gists_url": "https://api.github.com/users/laundmo/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/laundmo",
+        "id": 24855949,
+        "login": "laundmo",
+        "node_id": "MDQ6VXNlcjI0ODU1OTQ5",
+        "organizations_url": "https://api.github.com/users/laundmo/orgs",
+        "received_events_url": "https://api.github.com/users/laundmo/received_events",
+        "repos_url": "https://api.github.com/users/laundmo/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/laundmo/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/laundmo/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/laundmo",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 301
+}

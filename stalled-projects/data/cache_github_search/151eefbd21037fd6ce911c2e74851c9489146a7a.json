@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### \ud83d\udd0e Search Terms\r\n\r\nI tried search searching on the internet for\r\n- \"ts.Modulekind undefined\"\r\n- \"ts.ScriptTarget undefined\"\r\n\r\nbut found nothing that could help me :(\r\nbut i found this issue - https://github.com/microsoft/TypeScript/issues/26535\r\n\r\n### \ud83d\udd57 Version & Regression Information\r\n\r\nThis is the behavior in every version I tried, and I reviewed the FAQ for entries about\r\n\r\n### \u23ef Playground Link\r\n\r\n_No response_\r\n\r\n### \ud83d\udcbb Code\r\n\r\nThis is the same code as given in the example of [Typescript compiler api](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)\r\n```ts\r\nimport * as ts from \"typescript\";\r\n\r\nconst source = \"let x: string  = 'string'\";\r\n\r\nlet result = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS }});\r\n\r\nconsole.log(JSON.stringify(result));\r\n```\r\n\r\n### \ud83d\ude41 Actual behavior\r\n\r\nAn error occurred, saying that `ts.Modulekind` is `undefined`\r\n\r\n```\r\nlet result = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS }});\r\n                                                                                   ^\r\n\r\nTypeError: Cannot read property 'CommonJS' of undefined\r\n    at file:///Users/balkrishnaverma/Documents/yash/testum/src/index.mjs:5:84\r\n    at ModuleJob.run (internal/modules/esm/module_job.js:183:25)\r\n    at async Loader.import (internal/modules/esm/loader.js:178:24)\r\n    at async Object.loadESM (internal/process/esm_loader.js:68:5)\r\n```\r\n\r\n### \ud83d\ude42 Expected behavior\r\n\r\nThe `result` should've been printed\r\n\r\n### Additional information about the issue\r\n\r\n_No response_",
+      "closed_at": "2023-12-31T05:11:30Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/56903/comments",
+      "created_at": "2023-12-30T03:14:10Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/56903/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/56903",
+      "id": 2060560004,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/56903/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc560aaE",
+      "number": 56903,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/56903/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/56903/timeline",
+      "title": "Compiler API -  `ts.ModuleKind` and `ts.ScriptTarget` is `undefined`",
+      "type": null,
+      "updated_at": "2025-10-22T03:01:04Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/56903",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/93475253?v=4",
+        "events_url": "https://api.github.com/users/yxshv/events{/privacy}",
+        "followers_url": "https://api.github.com/users/yxshv/followers",
+        "following_url": "https://api.github.com/users/yxshv/following{/other_user}",
+        "gists_url": "https://api.github.com/users/yxshv/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/yxshv",
+        "id": 93475253,
+        "login": "yxshv",
+        "node_id": "U_kgDOBZJRtQ",
+        "organizations_url": "https://api.github.com/users/yxshv/orgs",
+        "received_events_url": "https://api.github.com/users/yxshv/received_events",
+        "repos_url": "https://api.github.com/users/yxshv/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/yxshv/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/yxshv/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/yxshv",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 423
+}

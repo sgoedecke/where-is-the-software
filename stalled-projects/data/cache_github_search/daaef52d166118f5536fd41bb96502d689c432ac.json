@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "On the commit https://github.com/flutter/flutter/commit/000f4d1590322cc229072a6e9616051cab074286\r\n\r\nSkiaPerf detected a large regression in memory footprint:\r\n\r\nhttps://flutter-flutter-perf.skia.org/e/?begin=1648248666&end=1648679710&keys=Xd4bae3d3dc3269fae4b5c302716f6d73&requestType=0&xbaroffset=28126\r\n\r\n@chunhtai @jonahwilliams \r\n\r\nMarking P1 to answer whether this regression is expected and/or whether it could affect end-users.",
+      "closed_at": "2022-03-31T19:21:24Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/101121/comments",
+      "created_at": "2022-03-31T15:53:35Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/101121/events",
+      "html_url": "https://github.com/flutter/flutter/issues/101121",
+      "id": 1188298022,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "207de5",
+          "default": false,
+          "description": "flutter/packages/flutter repository. See also f: labels.",
+          "id": 284437560,
+          "name": "framework",
+          "node_id": "MDU6TGFiZWwyODQ0Mzc1NjA=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/framework"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e02000",
+          "default": false,
+          "description": "Relates to speed or footprint issues (see \"perf:\" labels)",
+          "id": 298590876,
+          "name": "c: performance",
+          "node_id": "MDU6TGFiZWwyOTg1OTA4NzY=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/c:%20performance"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "4d7910",
+          "default": false,
+          "description": "Performance issues related to memory",
+          "id": 1710806304,
+          "name": "perf: memory",
+          "node_id": "MDU6TGFiZWwxNzEwODA2MzA0",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/perf:%20memory"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff0000",
+          "default": false,
+          "description": "Critical issues such as a build break or regression",
+          "id": 2096796794,
+          "name": "P0",
+          "node_id": "MDU6TGFiZWwyMDk2Nzk2Nzk0",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/P0"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/101121/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM5G0_0m",
+      "number": 101121,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/101121/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/101121/timeline",
+      "title": "Memory regression in fast_scroll_heavy_gridview__memory",
+      "type": null,
+      "updated_at": "2023-06-28T18:56:31Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/101121",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6343103?v=4",
+        "events_url": "https://api.github.com/users/zanderso/events{/privacy}",
+        "followers_url": "https://api.github.com/users/zanderso/followers",
+        "following_url": "https://api.github.com/users/zanderso/following{/other_user}",
+        "gists_url": "https://api.github.com/users/zanderso/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/zanderso",
+        "id": 6343103,
+        "login": "zanderso",
+        "node_id": "MDQ6VXNlcjYzNDMxMDM=",
+        "organizations_url": "https://api.github.com/users/zanderso/orgs",
+        "received_events_url": "https://api.github.com/users/zanderso/received_events",
+        "repos_url": "https://api.github.com/users/zanderso/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/zanderso/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/zanderso/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/zanderso",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2903
+}

@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Problem\n\nAfter commit 4fb3b57a19cb83a99d4c5489982c22d96e28e8c2 some keys (for example Tab and Backspace) are being repeated. For example in normal mode, when deleting work using backspace two alphabets are being deleted.\n\n### Steps to reproduce\n\nbuild vim from master (after 4fb3b57a19cb83a99d4c5489982c22d96e28e8c2)\nType in some sentences, insert normal mode, try deleting using backspace.\n\n### Expected behavior\n\nKeys are not repeated (or only one alphabet is removed deleted when using backspace)\n\nAs it used to be before commit 4fb3b57a19cb83a99d4c5489982c22d96e28e8c2 was merged.\n\n### Nvim version (nvim -v)\n\nNVIM v0.11.0-dev-1444+g4fb3b57a19\n\n### Vim (not Nvim) behaves the same?\n\nNo\n\n### Operating system/version\n\nLinux\n\n### Terminal name/version\n\nalacritty 0.14.0\n\n### $TERM environment variable\n\nxterm-256color\n\n### Installation\n\nFrom git",
+      "closed_at": "2024-12-31T18:57:15Z",
+      "comments": 23,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/31806/comments",
+      "created_at": "2024-12-31T18:45:07Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/31806/events",
+      "html_url": "https://github.com/neovim/neovim/issues/31806",
+      "id": 2764608061,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e6e6e6",
+          "default": false,
+          "description": "Issues that are closed as \"invalid\"",
+          "id": 77997477,
+          "name": "closed:invalid",
+          "node_id": "MDU6TGFiZWw3Nzk5NzQ3Nw==",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/closed:invalid"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "FEF2C0",
+          "default": false,
+          "description": "Needs a third-party / external change or fix",
+          "id": 101945532,
+          "name": "status:blocked-external",
+          "node_id": "MDU6TGFiZWwxMDE5NDU1MzI=",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/status:blocked-external"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/31806/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM6kyJI9",
+      "number": 31806,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 4,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 4,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/31806/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/31806/timeline",
+      "title": "On alacritty some keys are being repeated",
+      "type": null,
+      "updated_at": "2026-02-13T20:59:08Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/31806",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/66715002?v=4",
+        "events_url": "https://api.github.com/users/listout/events{/privacy}",
+        "followers_url": "https://api.github.com/users/listout/followers",
+        "following_url": "https://api.github.com/users/listout/following{/other_user}",
+        "gists_url": "https://api.github.com/users/listout/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/listout",
+        "id": 66715002,
+        "login": "listout",
+        "node_id": "MDQ6VXNlcjY2NzE1MDAy",
+        "organizations_url": "https://api.github.com/users/listout/orgs",
+        "received_events_url": "https://api.github.com/users/listout/received_events",
+        "repos_url": "https://api.github.com/users/listout/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/listout/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/listout/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/listout",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 198
+}

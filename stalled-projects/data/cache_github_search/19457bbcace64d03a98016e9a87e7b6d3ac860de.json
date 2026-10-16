@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\nIt seems that the modules which use httpapi are unable to decrypt ansible-vault encrypted variables. If I provider the api credentials as clear text variables the modules works fine. But they raise an exception if the variables are encrypted.\r\n\r\nThere are some other similar issues but I think they are in the wrong projects:\r\n\r\n- https://github.com/ansible-collections/cisco.ios/issues/985\r\n- https://github.com/ansible/awx/issues/14689\r\n- https://github.com/ansible-collections/community.zabbix/issues/1146\r\n\r\n\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\nansible-vault\n\n### Ansible Version\n\n```console\nansible [core 2.16.1]\r\n  config file = /etc/ansible/ansible.cfg\r\n  configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /home/user/.local/pipx/venvs/ansible/lib/python3.11/site-packages/ansible\r\n  ansible collection location = /home/user/.ansible/collections:/usr/share/ansible/collections\r\n  executable location = /home/user/.local/bin/ansible\r\n  python version = 3.11.2 (main, Mar 13 2023, 12:18:29) [GCC 12.2.0] (/home/user/.local/pipx/venvs/ansible/bin/python)\r\n  jinja version = 3.1.2\r\n  libyaml = True\n```\n\n\n### Configuration\n\n```console\n# if using a version older than ansible-core 2.12 you should omit the '-t all'\r\n$ ansible-config dump --only-changed -t all\r\nCONFIG_FILE() = /etc/ansible/ansible.cfg\r\nDEFAULT_FORKS(/etc/ansible/ansible.cfg) = 20\r\nDEFAULT_JINJA2_NATIVE(/etc/ansible/ansible.cfg) = True\r\nDEFAULT_STDOUT_CALLBACK(/etc/ansible/ansible.cfg) = yaml\r\nDEFAULT_VAULT_PASSWORD_FILE(/etc/ansible/ansible.cfg) = /home/user/.ansible/.vault.password\r\nDIFF_ALWAYS(/etc/ansible/ansible.cfg) = True\r\nDISPLAY_SKIPPED_HOSTS(/etc/ansible/ansible.cfg) = False\r\nHOST_KEY_CHECKING(/etc/ansible/ansible.cfg) = False\r\n\r\nCALLBACK:\r\n========\r\n\r\ndefault:\r\n_______\r\ndisplay_ok_hosts(/etc/ansible/ansible.cfg) = False\r\ndisplay_skipped_hosts(/etc/ansible/ansible.cfg) = False\r\n\r\nCONNECTION:\r\n==========\r\n\r\nparamiko_ssh:\r\n____________\r\nhost_key_checking(/etc/ansible/ansible.cfg) = False\r\n\r\nssh:\r\n___\r\nhost_key_checking(/etc/ansible/ansible.cfg) = False\n```\n\n\n### OS / Environment\n\nDebian 12 with ansible via pipx\n\n### Steps to Reproduce\n\n<!--- Paste example playbooks or commands between quotes below -->\r\n```yaml (paste below)\r\n- name: Ensure proxy definition is up-to-date (added/updated/removed)\r\n  vars:\r\n    ansible_user: \"{{ zabbix_proxy_api_login_user }}\"\r\n    # zabbix_proxy_api_key encrypted with ansible-vault\r\n    ansible_zabbix_auth_key: \"{{ zabbix_proxy_api_key }}\"\r\n    ansible_network_os: community.zabbix.zabbix\r\n    ansible_connection: httpapi\r\n    ansible_httpapi_use_ssl: true\r\n    ansible_httpapi_port: 443\r\n  community.zabbix.zabbix_proxy:\r\n    state: \"{{ zabbix_proxy_state }}\"\r\n    status: \"{{ zabbix_proxy_status }}\"\r\n    proxy_name: \"{{ zabbix_proxy_name }}\"\r\n    interface: \"{{ zabbix_proxy_interface }}\"\r\n  delegate_to: \"{{ zabbix_proxy_api_server_host }}\"\r\n```\r\n\n\n### Expected Results\n\ncommunity.zabbix.zabbix_proxy should create the proxy configuration via API in Zabbix server\n\n### Actual Results\n\n```console\nThe full traceback is:\r\nTraceback (most recent call last):\r\n  File \"/home/user/.local/pipx/venvs/ansible/lib/python3.11/site-packages/ansible/executor/task_executor.py\", line 165, in run\r\n    res = self._execute()\r\n          ^^^^^^^^^^^^^^^\r\n  File \"/home/user/.local/pipx/venvs/ansible/lib/python3.11/site-packages/ansible/executor/task_executor.py\", line 605, in _execute\r\n    self._handler, module_context = self._get_action_handler_with_module_context(templar=templar)\r\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/home/user/.local/pipx/venvs/ansible/lib/python3.11/site-packages/ansible/executor/task_executor.py\", line 1157, in _get_action_handler_with_module_context\r\n    socket_path = start_connection(self._play_context, options, self._task._uuid)\r\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/home/user/.local/pipx/venvs/ansible/lib/python3.11/site-packages/ansible/executor/task_executor.py\", line 1230, in start_connection\r\n    write_to_file_descriptor(master, options)\r\n  File \"/home/user/.local/pipx/venvs/ansible/lib/python3.11/site-packages/ansible/module_utils/connection.py\", line 58, in write_to_file_descriptor\r\n    src = cPickle.dumps(obj, protocol=0)\r\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/usr/lib/python3.11/copyreg.py\", line 77, in _reduce_ex\r\n    state = base(self)\r\n            ^^^^^^^^^^\r\nRecursionError: maximum recursion depth exceeded while getting the str of an object\n```\n\n\n### Code of Conduct\n\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2023-12-19T23:22:01Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/82442/comments",
+      "created_at": "2023-12-19T17:35:59Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/82442/events",
+      "html_url": "https://github.com/ansible/ansible/issues/82442",
+      "id": 2049137525,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/82442/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM56I1t1",
+      "number": 82442,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/82442/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/82442/timeline",
+      "title": "httpapi modules can't use encrypted variables",
+      "type": null,
+      "updated_at": "2024-01-02T14:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/82442",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7748344?v=4",
+        "events_url": "https://api.github.com/users/mjaepel/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mjaepel/followers",
+        "following_url": "https://api.github.com/users/mjaepel/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mjaepel/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mjaepel",
+        "id": 7748344,
+        "login": "mjaepel",
+        "node_id": "MDQ6VXNlcjc3NDgzNDQ=",
+        "organizations_url": "https://api.github.com/users/mjaepel/orgs",
+        "received_events_url": "https://api.github.com/users/mjaepel/received_events",
+        "repos_url": "https://api.github.com/users/mjaepel/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mjaepel/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mjaepel/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mjaepel",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 160
+}

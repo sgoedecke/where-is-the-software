@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What happened?\n\nWhen k8s services startup, there are still some error message, and  'kubectl get pods -A' report many RESTARTS too.\r\n\r\nRESTARTS:\r\n```\r\n+ kubectl get pods -A\r\nNAMESPACE     NAME                            READY   STATUS    RESTARTS   AGE\r\nkube-system   coredns-66f779496c-jnmdl        1/1     Running   10         7d16h\r\nkube-system   coredns-66f779496c-vnj6z        1/1     Running   10         7d16h\r\nkube-system   etcd-t7610                      1/1     Running   104        7d16h\r\nkube-system   kube-apiserver-t7610            1/1     Running   82         7d16h\r\nkube-system   kube-controller-manager-t7610   1/1     Running   90         7d16h\r\nkube-system   kube-proxy-79s84                1/1     Running   10         7d16h\r\nkube-system   kube-scheduler-t7610            1/1     Running   87         7d16h\r\n\r\n- ```\n\n### What did you expect to happen?\n\nCan k8s services startup gracefully without any error message or RESTARTS ?\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\nWe just reboot/start the k8s with the OS reboot/start.\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\r\n```console\r\n# kubectl version\r\nClient Version: v1.28.5\r\nKustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3\r\nServer Version: v1.28.5\r\n```\r\n</details>\r\n\n\n### Cloud provider\n\n<details>\r\nnone.\r\n</details>\r\n\n\n### OS version\n\n<details>\r\n\r\n```console\r\n# On Linux:\r\n\r\n# cat /etc/redhat-release\r\nRocky Linux release 9.3 (Blue Onyx)\r\n# uname -a\r\nLinux T7610 5.15.138-1.el7.x86_64 #1 SMP Sun Dec 31 09:03:25 CST 2023 x86_64 x86_64 x86_64 GNU/Linux\r\n\r\n```\r\n</details>\r\n\n\n### Install tools\n\n<details>\r\n\r\n</details>\r\n\n\n### Container runtime (CRI) and version (if applicable)\n\n<details>\r\n\r\n</details>\r\n\n\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\n\n<details>\r\n\r\n</details>\r\n",
+      "closed_at": "2023-12-31T12:47:50Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/122539/comments",
+      "created_at": "2023-12-31T09:30:39Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/122539/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/122539",
+      "id": 2060999999,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d455d0",
+          "default": false,
+          "description": "Categorizes issue or PR as a support question.",
+          "id": 130318610,
+          "name": "kind/support",
+          "node_id": "MDU6TGFiZWwxMzAzMTg2MTA=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/support"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `sig/foo` label and requires one.",
+          "id": 617149945,
+          "name": "needs-sig",
+          "node_id": "MDU6TGFiZWw2MTcxNDk5NDU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-sig"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/122539/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks562F0_",
+      "number": 122539,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/122539/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/122539/timeline",
+      "title": "error message/RESTARTS when graceful k8s start",
+      "type": null,
+      "updated_at": "2023-12-31T12:47:52Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/122539",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/119998755?v=4",
+        "events_url": "https://api.github.com/users/wangyugui-e16/events{/privacy}",
+        "followers_url": "https://api.github.com/users/wangyugui-e16/followers",
+        "following_url": "https://api.github.com/users/wangyugui-e16/following{/other_user}",
+        "gists_url": "https://api.github.com/users/wangyugui-e16/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/wangyugui-e16",
+        "id": 119998755,
+        "login": "wangyugui-e16",
+        "node_id": "U_kgDOBycJIw",
+        "organizations_url": "https://api.github.com/users/wangyugui-e16/orgs",
+        "received_events_url": "https://api.github.com/users/wangyugui-e16/received_events",
+        "repos_url": "https://api.github.com/users/wangyugui-e16/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/wangyugui-e16/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/wangyugui-e16/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/wangyugui-e16",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 359
+}

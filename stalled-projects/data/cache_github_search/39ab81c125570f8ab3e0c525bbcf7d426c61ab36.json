@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Suggestion\r\n\r\n<!--\r\n  Please fill in each section completely. Thank you!\r\n-->\r\n\r\n## \ud83d\udd0d Search Terms\r\n\r\n<!--\r\n  \ud83d\udca1 Did you know? TypeScript has over 2,000 open suggestions!\r\n  \ud83d\udd0e Please search thoroughly before logging new feature requests as most common ideas already have a proposal in progress.\r\n  The \"Common Feature Requests\" section of the FAQ lists many popular requests: https://github.com/Microsoft/TypeScript/wiki/FAQ#common-feature-requests\r\n\r\n  Replace the text below:\r\n-->\r\n\r\nvalueOf\r\n\r\n## \u2705 Viability Checklist\r\n\r\n<!--\r\n   Suggestions that don't meet all these criteria are very, very unlikely to be accepted.\r\n   We always recommend reviewing the TypeScript design goals before investing time writing\r\n   a proposal for ideas outside the scope of the project.\r\n-->\r\nMy suggestion meets these guidelines:\r\n\r\n* [x] This wouldn't be a breaking change in existing TypeScript/JavaScript code\r\n* [x] This wouldn't change the runtime behavior of existing JavaScript code\r\n* [x] This could be implemented without emitting different JS based on the types of the expressions\r\n* [x] This isn't a runtime feature (e.g. library functionality, non-ECMAScript syntax with JavaScript output, new syntax sugar for JS, etc.)\r\n* [x] This feature would agree with the rest of [TypeScript's Design Goals](https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals).\r\n\r\n\r\n## \u2b50 Suggestion\r\n\r\nAllow arithmetic operations on objects that have `valueOf()` method which returns type compatible with arithmetic operations\r\n\r\n## \ud83d\udcc3 Motivating Example\r\n\r\n```\r\nclass NumberWrapper {\r\n    constructor(private val: number) {}\r\n    valueOf(): number {\r\n        return this.val;\r\n    }\r\n}\r\n\r\nconst a = new NumberWrapper(4);\r\nconst b = new NumberWrapper(5);\r\nconsole.log(a - b);\r\n```\r\nCurrently this produces errors:\r\n```\r\n    The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.\r\n    The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.\r\n```\r\nBut this works perfectly fine with vanilla JavaScript\r\n\r\n## \ud83d\udcbb Use Cases\r\n\r\nCreating wrappers for primitive types that could be used as a target for `Proxy`",
+      "closed_at": "2022-03-31T21:42:55Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/48503/comments",
+      "created_at": "2022-03-31T21:38:25Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/48503/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/48503",
+      "id": 1188832441,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7c6c7",
+          "default": false,
+          "description": "An existing issue was already created",
+          "id": 113971226,
+          "name": "Duplicate",
+          "node_id": "MDU6TGFiZWwxMTM5NzEyMjY=",
+          "url": "https://api.github.com/repos/microsoft/TypeScript/labels/Duplicate"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/48503/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc5G3CS5",
+      "number": 48503,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/48503/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/48503/timeline",
+      "title": "Allow arithmetic operations on objects that have `valueOf()` method",
+      "type": null,
+      "updated_at": "2025-10-22T00:04:36Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/48503",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6207659?v=4",
+        "events_url": "https://api.github.com/users/dawidgarus/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dawidgarus/followers",
+        "following_url": "https://api.github.com/users/dawidgarus/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dawidgarus/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dawidgarus",
+        "id": 6207659,
+        "login": "dawidgarus",
+        "node_id": "MDQ6VXNlcjYyMDc2NTk=",
+        "organizations_url": "https://api.github.com/users/dawidgarus/orgs",
+        "received_events_url": "https://api.github.com/users/dawidgarus/received_events",
+        "repos_url": "https://api.github.com/users/dawidgarus/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dawidgarus/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dawidgarus/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dawidgarus",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 718
+}

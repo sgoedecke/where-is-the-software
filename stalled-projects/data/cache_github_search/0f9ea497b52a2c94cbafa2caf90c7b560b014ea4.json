@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\r\n\r\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\r\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\r\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a bug report that matches the one I want to file, without success.\r\n\r\n### Electron Version\r\n\r\n22.0.0\r\n\r\n### What operating system are you using?\r\n\r\nOther Linux\r\n\r\n### Operating System Version\r\n\r\nLinux apg 6.0.11-arch1-g14-1 #1 SMP PREEMPT_DYNAMIC Wed, 07 Dec 2022 16:24:00 +0000 x86_64 GNU/Linux\r\n\r\n### What arch are you using?\r\n\r\nx64\r\n\r\n### Last Known Working Electron version\r\n\r\n_No response_\r\n\r\n### Expected Behavior\r\n\r\nI expect content rendered in Electron to use the GPU to display graphics, and accelerate video.\r\n\r\n### Actual Behavior\r\n\r\nNo content inside of Electron seems to be accelerated through the GPU.\r\n\r\n### Testcase Gist URL\r\n\r\n_No response_\r\n\r\n### Additional Information\r\n\r\nThis only occurs when running Electron using the Wayland backend. When running under XWayland, acceleration appears to be functional. I am passing the following flags to Electron:\r\n```\r\n--ignore-gpu-blocklist\r\n--enable-gpu-rasterization\r\n--enable-gpu\r\n--enable-unsafe-webgpu\r\n--enable-features=WebRTCPipeWireCapturer,Vulkan,UseSkiaRenderer,VaapiVideoDecoder,CanvasOopRasterization,VaapiVideoEncoder,RawDraw\r\n--disable-features=UseSkiaRenderer,UseChromeOSDirectVideoDecoder\r\n--enable-zero-copy\r\n--enable-oop-rasterization\r\n--enable-raw-draw\r\n--enable-accelerated-mjpeg-decode\r\n--enable-accelerated-video \r\n--enable-native-gpu-memory-buffers\r\n--use-vulkan\r\n--use-gl=egl\r\n--ozone-platform-hint=auto\r\n```\r\nThese flags allow Chromium to accelerate:\r\n![image](https://user-images.githubusercontent.com/44881120/206866662-ece815d4-93e9-4dc6-af04-5053e30c38d7.png)\r\n\r\nThis issue affects Electron 20, 21, and 22 in my testing.  I am applying these flags to Electron through adding them [here](https://github.com/SpacingBat3/WebCord/blob/master/sources/code/main/modules/optimize.ts#L72) and launching WebCord (a Discord client) with Electron 22, then fullscreening a video. I see a CPU core immediately go to 100% usage, and the video playback is laggy and drops frames.\r\n\r\nMy system is Arch Linux with a Ryzen 9 6900HS and RX 6800M GPU under the open source AMD drivers.\r\n\r\nI have attached logs for both Electron 20 and Electron 22:\r\n[logs22.txt](https://github.com/electron/electron/files/10200550/logs22.txt)\r\n[logs20.txt](https://github.com/electron/electron/files/10200551/logs20.txt)\r\n",
+      "closed_at": "2026-03-27T17:29:48Z",
+      "comments": 39,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/36633/comments",
+      "created_at": "2022-12-10T17:08:09Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/36633/events",
+      "html_url": "https://github.com/electron/electron/issues/36633",
+      "id": 1488700984,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 97403642,
+          "name": "platform/linux",
+          "node_id": "MDU6TGFiZWw5NzQwMzY0Mg==",
+          "url": "https://api.github.com/repos/electron/electron/labels/platform/linux"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "",
+          "id": 520323169,
+          "name": "bug :beetle:",
+          "node_id": "MDU6TGFiZWw1MjAzMjMxNjk=",
+          "url": "https://api.github.com/repos/electron/electron/labels/bug%20:beetle:"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "F9D0C4",
+          "default": false,
+          "description": "",
+          "id": 4178287307,
+          "name": "component/gpu",
+          "node_id": "LA_kwDOAI8xS875C5rL",
+          "url": "https://api.github.com/repos/electron/electron/labels/component/gpu"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6FF496",
+          "default": false,
+          "description": "",
+          "id": 4329563274,
+          "name": "wayland",
+          "node_id": "LA_kwDOAI8xS88AAAABAg_kig",
+          "url": "https://api.github.com/repos/electron/electron/labels/wayland"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/36633/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85Yu8Y4",
+      "number": 36633,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 14,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 4,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 18,
+        "url": "https://api.github.com/repos/electron/electron/issues/36633/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/36633/timeline",
+      "title": "[Bug]: Zero GPU Acceleration on Wayland",
+      "type": null,
+      "updated_at": "2026-03-27T17:29:48Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/36633",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/44881120?v=4",
+        "events_url": "https://api.github.com/users/TheSunCat/events{/privacy}",
+        "followers_url": "https://api.github.com/users/TheSunCat/followers",
+        "following_url": "https://api.github.com/users/TheSunCat/following{/other_user}",
+        "gists_url": "https://api.github.com/users/TheSunCat/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/TheSunCat",
+        "id": 44881120,
+        "login": "TheSunCat",
+        "node_id": "MDQ6VXNlcjQ0ODgxMTIw",
+        "organizations_url": "https://api.github.com/users/TheSunCat/orgs",
+        "received_events_url": "https://api.github.com/users/TheSunCat/received_events",
+        "repos_url": "https://api.github.com/users/TheSunCat/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/TheSunCat/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/TheSunCat/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/TheSunCat",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 9
+}

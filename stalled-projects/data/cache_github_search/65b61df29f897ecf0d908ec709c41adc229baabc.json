@@ -1,0 +1,161 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!--\r\nThank you for filing a bug report! \ud83d\udc1b Please provide a short summary of the bug,\r\nalong with any information you feel relevant to replicating the bug.\r\n-->\r\n\r\nI tried this code:\r\n\r\n<https://rust.godbolt.org/z/PfGvMaK4f>\r\n\r\n```rust\r\n#![feature(stdsimd)]\r\n#![feature(arm_target_feature)]\r\n\r\n#[inline(always)]\r\nfn u8x32_add(a: [u8; 32], b: [u8; 32]) -> [u8; 32] {\r\n    let mut c = [0; 32];\r\n    for i in 0..32 {\r\n        c[i] = a[i] + b[i];\r\n    }\r\n    c\r\n}\r\n\r\n#[target_feature(enable = \"neon\")]\r\npub unsafe fn test(a: [u8; 32], b: [u8; 32]) -> [u8; 32] {\r\n    u8x32_add(a, b)\r\n}\r\n```\r\n\r\n```asm\r\n<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next:\r\n        ldm     r0, {r1, r3}\r\n        mov     r2, #0\r\n        cmp     r1, r3\r\n        addlo   r2, r1, #1\r\n        strlo   r2, [r0]\r\n        movlo   r2, #1\r\n        mov     r0, r2\r\n        bx      lr\r\n\r\nexample::test:\r\n        push    {r4, r5, r6, r7, r11, lr}\r\n        sub     sp, sp, #72\r\n        vld1.8  {d16, d17}, [r1]!\r\n        mov     r6, sp\r\n        mov     r4, r0\r\n        mov     r0, r6\r\n        vst1.64 {d16, d17}, [r0]!\r\n        vmov.i32        q10, #0x0\r\n        add     r7, sp, #32\r\n        add     r5, sp, #64\r\n        vld1.8  {d18, d19}, [r1]\r\n        vst1.64 {d18, d19}, [r0]\r\n        mov     r0, r4\r\n        vst1.8  {d20, d21}, [r0]!\r\n        vld1.8  {d16, d17}, [r2]!\r\n        vst1.8  {d20, d21}, [r0]\r\n        mov     r0, r7\r\n        vld1.8  {d18, d19}, [r2]\r\n        vst1.64 {d16, d17}, [r0]!\r\n        vst1.64 {d18, d19}, [r0]\r\n        mov     r0, #32\r\n        str     r0, [sp, #68]\r\n        mov     r0, #0\r\n        str     r0, [sp, #64]\r\n        mov     r0, r5\r\n        bl      <core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next\r\n        cmp     r0, #0\r\n        beq     .LBB1_3\r\n.LBB1_1:\r\n        cmp     r1, #31\r\n        bhi     .LBB1_4\r\n        ldrb    r0, [r6, r1]\r\n        ldrb    r2, [r7, r1]\r\n        add     r0, r2, r0\r\n        strb    r0, [r4, r1]\r\n        mov     r0, r5\r\n        bl      <core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next\r\n        cmp     r0, #0\r\n        bne     .LBB1_1\r\n.LBB1_3:\r\n        add     sp, sp, #72\r\n        pop     {r4, r5, r6, r7, r11, pc}\r\n.LBB1_4:\r\n        ldr     r2, .LCPI1_0\r\n        mov     r0, r1\r\n        mov     r1, #32\r\n.LPC1_0:\r\n        add     r2, pc, r2\r\n        bl      core::panicking::panic_bounds_check\r\n        .inst   0xe7ffdefe\r\n.LCPI1_0:\r\n        .long   .Lanon.099e68e15d4586f73c51628389ff76e1.1-(.LPC1_0+8)\r\n\r\n.Lanon.099e68e15d4586f73c51628389ff76e1.0:\r\n        .ascii  \"/app/example.rs\"\r\n\r\n.Lanon.099e68e15d4586f73c51628389ff76e1.1:\r\n        .long   .Lanon.099e68e15d4586f73c51628389ff76e1.0\r\n        .asciz  \"\\017\\000\\000\\000\\017\\000\\000\\000\\005\\000\\000\"\r\n```\r\n\r\nI expected to see this happen: The for-loop should be inlined.\r\n\r\nInstead, this happened: I see the symbol `<core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next` in the asm output.\r\n\r\n### Meta\r\n\r\n\r\n`rustc --version --verbose`:\r\n```\r\nrustc 1.66.0-nightly (e7119a030 2022-09-22)\r\nbinary: rustc\r\ncommit-hash: e7119a0300b87a3d670408ee8e847c6821b3ae80\r\ncommit-date: 2022-09-22\r\nhost: x86_64-unknown-linux-gnu\r\nrelease: 1.66.0-nightly\r\nLLVM version: 15.0.0\r\n```\r\n",
+      "closed_at": "2025-11-11T13:53:28Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/102220/comments",
+      "created_at": "2022-09-24T03:08:37Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/102220/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/102220",
+      "id": 1384498515,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Code generation",
+          "id": 234956,
+          "name": "A-codegen",
+          "node_id": "MDU6TGFiZWwyMzQ5NTY=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-codegen"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6e6ec0",
+          "default": false,
+          "description": "Target: 32-bit Arm processors (armv6, armv7, thumb...), including 64-bit Arm in AArch32 state",
+          "id": 55301954,
+          "name": "O-Arm",
+          "node_id": "MDU6TGFiZWw1NTMwMTk1NA==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/O-Arm"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: SIMD (Single Instruction Multiple Data)",
+          "id": 631737389,
+          "name": "A-SIMD",
+          "node_id": "MDU6TGFiZWw2MzE3MzczODk=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-SIMD"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Enabling/disabling target features like AVX, Neon, etc.",
+          "id": 5223550385,
+          "name": "A-target-feature",
+          "node_id": "LA_kwDOAAsO6M8AAAABN1kNsQ",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-target-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Autovectorization, which can impact perf or code size",
+          "id": 5223725825,
+          "name": "A-autovectorization",
+          "node_id": "LA_kwDOAAsO6M8AAAABN1u7AQ",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-autovectorization"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/102220/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5ShcVT",
+      "number": 102220,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/102220/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/102220/timeline",
+      "title": "rustc can not inline simple for-loop when arm neon is enabled",
+      "type": null,
+      "updated_at": "2025-11-11T13:53:28Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/102220",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/30099658?v=4",
+        "events_url": "https://api.github.com/users/Nugine/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Nugine/followers",
+        "following_url": "https://api.github.com/users/Nugine/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Nugine/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Nugine",
+        "id": 30099658,
+        "login": "Nugine",
+        "node_id": "MDQ6VXNlcjMwMDk5NjU4",
+        "organizations_url": "https://api.github.com/users/Nugine/orgs",
+        "received_events_url": "https://api.github.com/users/Nugine/received_events",
+        "repos_url": "https://api.github.com/users/Nugine/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Nugine/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Nugine/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Nugine",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 105
+}

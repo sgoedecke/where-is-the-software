@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Godot version\n\n3.5.stable.arch_linux\n\n### System information\n\nLinux 5.19.7-arch1-1\n\n### Issue description\n\nGiven the following script:\r\n\r\n```\r\nextends VisualInstance\r\n\r\nconst MAX_TRIES := 100\r\nconst CONTROL_POINT_SCENE := preload(\"res://scenes/ControlPoint.tscn\")\r\n\r\nvar raycast := RayCast.new()\r\n\r\nfunc _ready() -> void:\r\n\tadd_child(raycast)\r\n\traycast.cast_to = Vector3(0, -100, 0)\r\n\r\nfunc spawn_control_point():\r\n\tLog.info(\"Spawning control point\")\r\n\tvar bounds := get_transformed_aabb()\r\n\tvar pos := Vector2(\r\n\t\tbounds.\r\n```\r\n\r\nWith the cursor positioned after `bounds`, requesting completion causes a segfault.\r\nThis sounds similar to https://github.com/godotengine/godot/issues/24697, but doesn't involve a nested class. I tried reproing https://github.com/godotengine/godot/issues/24697 on 3.5 and could not, so this seems to be a separate issue.\r\n\r\n```\r\nThread 1 \"godot.x11.tools\" received signal SIGSEGV, Segmentation fault.\r\n0x0000000006776048 in vtable for __cxxabiv1::__si_class_type_info ()\r\n(gdb) erresc: unknown csi ESC[>4;0m\r\nerresc: unknown csi ESC[23;0t\r\n(gdb) bt\r\n#0  0x0000000006776048 in vtable for __cxxabiv1::__si_class_type_info ()\r\n#1  0x0000000003c20345 in MethodBind0RC<AABB>::call (this=0x9f0b790, p_object=0x1795d430, p_args=0x0, p_arg_count=0, \r\n    r_error=...) at ./core/method_bind.gen.inc:581\r\n#2  0x0000000001981ef6 in _guess_expression_type (p_context=..., p_expression=0x1790fd00, r_type=...)\r\n    at modules/gdscript/gdscript_editor.cpp:886\r\n#3  0x00000000019843c7 in _guess_identifier_type (p_context=..., p_identifier=..., r_type=...)\r\n    at modules/gdscript/gdscript_editor.cpp:1240\r\n#4  0x00000000019809c6 in _guess_expression_type (p_context=..., p_expression=0x179100c0, r_type=...)\r\n    at modules/gdscript/gdscript_editor.cpp:670\r\n#5  0x000000000198f28a in GDScriptLanguage::complete_code (this=0x874b110, p_code=..., p_path=..., p_owner=0x1795d430, \r\n    r_options=0x7fffffffc778, r_forced=@0x7fffffffc6bb: false, r_call_hint=...)\r\n    at modules/gdscript/gdscript_editor.cpp:2669\r\n#6  0x0000000001a60f5c in GDScriptWorkspace::completion (this=0x13d42a30, p_params=..., r_options=0x7fffffffc778)\r\n    at modules/gdscript/language_server/gdscript_workspace.cpp:603\r\n#7  0x0000000001a4e530 in GDScriptTextDocument::completion (this=0x13d42c80, p_params=...)\r\n    at modules/gdscript/language_server/gdscript_text_document.cpp:163\r\n#8  0x0000000001a5ae8d in MethodBind1R<Array, Dictionary const&>::call (this=0x13d40500, p_object=0x13d42c80, \r\n    p_args=0x7fffffffca50, p_arg_count=1, r_error=...) at ./core/method_bind.gen.inc:941\r\n#9  0x000000000498687a in Object::call (this=0x13d42c80, p_method=..., p_args=0x7fffffffca50, p_argcount=1, r_error=...)\r\n    at core/object.cpp:918\r\n#10 0x000000000498606e in Object::callv (this=0x13d42c80, p_method=..., p_args=...) at core/object.cpp:827\r\n#11 0x0000000001a82ffe in JSONRPC::process_action (this=0x13571308, p_action=..., p_process_arr_elements=true)\r\n    at modules/jsonrpc/jsonrpc.cpp:129\r\n#12 0x0000000001a8384c in JSONRPC::process_string (this=0x13571308, p_input=...) at modules/jsonrpc/jsonrpc.cpp:165\r\n#13 0x0000000001a3ab0d in GDScriptLanguageProtocol::process_message (this=0x13571308, p_text=...)\r\n    at modules/gdscript/language_server/gdscript_language_protocol.cpp:141\r\n#14 0x0000000001a3a56e in GDScriptLanguageProtocol::LSPeer::handle_data (this=0x1b2cf400)\r\n    at modules/gdscript/language_server/gdscript_language_protocol.cpp:96\r\n#15 0x0000000001a3bf1b in GDScriptLanguageProtocol::poll (this=0x13571308)\r\n    at modules/gdscript/language_server/gdscript_language_protocol.cpp:242\r\n#16 0x0000000001a4a8fd in GDScriptLanguageServer::_notification (this=0x135710f0, p_what=25)\r\n    at modules/gdscript/language_server/gdscript_language_server.cpp:62\r\n#17 0x0000000001a4ba48 in GDScriptLanguageServer::_notificationv (this=0x135710f0, p_notification=25, p_reversed=false)\r\n    at modules/gdscript/language_server/gdscript_language_server.h:39\r\n#18 0x000000000498699f in Object::notification (this=0x135710f0, p_notification=25, p_reversed=false)\r\n    at core/object.cpp:927\r\n#19 0x0000000003904872 in SceneTree::_notify_group_pause (this=0xa599a10, p_group=..., p_notification=25)\r\n    at scene/main/scene_tree.cpp:1105\r\n#20 0x0000000003901fbf in SceneTree::idle (this=0xa599a10, p_time=0.0500000045) at scene/main/scene_tree.cpp:607\r\n#21 0x000000000189dc78 in Main::iteration () at main/main.cpp:2298\r\n#22 0x000000000185d9cf in OS_X11::run (this=0x7fffffffd280) at platform/x11/os_x11.cpp:3987\r\n#23 0x0000000001847e56 in main (argc=2, argv=0x7fffffffdbb8) at platform/x11/godot_x11.cpp:59\r\n(gdb) frame 1\r\n#1  0x0000000003c20345 in MethodBind0RC<AABB>::call (this=0x9f0b790, p_object=0x1795d430, p_args=0x0, p_arg_count=0, \r\n    r_error=...) at ./core/method_bind.gen.inc:581\r\n581                     Variant ret = (instance->*method)();\r\n(gdb) p instance\r\n$1 = (__UnexistingClass *) 0x1795d430\r\n(gdb) p method\r\n$2 = &virtual table offset 288\r\n(gdb) info locals\r\n__FUNCTION__ = \"call\"\r\ninstance = 0x1795d430\r\nret = {type = 4294949136, _data = {_bool = 24, _int = 26840344, _real = 1.3260891892961227e-316, \r\n    _transform2d = 0x1998d18 <CowData<Variant const*>::size() const+24>, \r\n    _aabb = 0x1998d18 <CowData<Variant const*>::size() const+24>, \r\n    _basis = 0x1998d18 <CowData<Variant const*>::size() const+24>, \r\n    _transform = 0x1998d18 <CowData<Variant const*>::size() const+24>, \r\n    _ptr = 0x1998d18 <CowData<Variant const*>::size() const+24>, \r\n    _mem = \"\\030\\215\\231\\001\\000\\000\\000\\000\\020\\271\\377\\377\\377\\177\\000\"}}\r\n```\n\n### Steps to reproduce\n\n1. Open the example project\r\n2. Open `maps/ControlPointSpawner.gd` in an external editor using the Godot LSP\r\n3. Position the cursor after `bounds.`\r\n4. Request completion candidates\n\n### Minimal reproduction project\n\n[example.zip](https://github.com/godotengine/godot/files/9639563/example.zip)\r\n",
+      "closed_at": "2025-11-24T22:15:52Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/66376/comments",
+      "created_at": "2022-09-24T20:54:34Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/66376/events",
+      "html_url": "https://github.com/godotengine/godot/issues/66376",
+      "id": 1384810213,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098082,
+          "name": "topic:gdscript",
+          "node_id": "MDU6TGFiZWwyNzkwOTgwODI=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:gdscript"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098219,
+          "name": "topic:editor",
+          "node_id": "MDU6TGFiZWwyNzkwOTgyMTk=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:editor"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "885544",
+          "default": false,
+          "description": "",
+          "id": 1327318271,
+          "name": "crash",
+          "node_id": "MDU6TGFiZWwxMzI3MzE4Mjcx",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/crash"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/66376/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc5Siobl",
+      "number": 66376,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/66376/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/66376/timeline",
+      "title": "Completion segfault with AABB in script",
+      "type": null,
+      "updated_at": "2025-11-25T08:41:48Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/66376",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/2496231?v=4",
+        "events_url": "https://api.github.com/users/rcorre/events{/privacy}",
+        "followers_url": "https://api.github.com/users/rcorre/followers",
+        "following_url": "https://api.github.com/users/rcorre/following{/other_user}",
+        "gists_url": "https://api.github.com/users/rcorre/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/rcorre",
+        "id": 2496231,
+        "login": "rcorre",
+        "node_id": "MDQ6VXNlcjI0OTYyMzE=",
+        "organizations_url": "https://api.github.com/users/rcorre/orgs",
+        "received_events_url": "https://api.github.com/users/rcorre/received_events",
+        "repos_url": "https://api.github.com/users/rcorre/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/rcorre/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/rcorre/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/rcorre",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 46
+}

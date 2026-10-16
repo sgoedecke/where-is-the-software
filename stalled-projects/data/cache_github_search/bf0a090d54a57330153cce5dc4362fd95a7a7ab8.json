@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\r\n  Please provide a clear and concise description of what the bug is. Include\r\n  screenshots if needed. Please test using the latest version of the relevant\r\n  React packages to make sure your issue has not already been fixed.\r\n-->\r\n\r\nReact version:\r\n\r\n## Steps To Reproduce\r\n\r\n1.\r\n2.\r\n\r\n<!--\r\n  Your bug will get fixed much faster if we can run your code and it doesn't\r\n  have dependencies other than React. Issues without reproduction steps or\r\n  code examples may be immediately closed as not actionable.\r\n-->\r\n\r\nLink to code example:\r\n\r\n<!--\r\n  Please provide a CodeSandbox (https://codesandbox.io/s/new), a link to a\r\n  repository on GitHub, or provide a minimal code example that reproduces the\r\n  problem. You may provide a screenshot of the application if you think it is\r\n  relevant to your bug report. Here are some tips for providing a minimal\r\n  example: https://stackoverflow.com/help/mcve.\r\n-->\r\n\r\n## The current behavior\r\n\r\n\r\n## The expected behavior\r\n",
+      "closed_at": "2023-12-28T13:09:35Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/react/react/issues/27860/comments",
+      "created_at": "2023-12-28T13:04:52Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/27860/events",
+      "html_url": "https://github.com/react/react/issues/27860",
+      "id": 2058418933,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/27860/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks56sPr1",
+      "number": 27860,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/27860/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/27860/timeline",
+      "title": "Bug: ",
+      "type": null,
+      "updated_at": "2023-12-28T13:09:35Z",
+      "url": "https://api.github.com/repos/react/react/issues/27860",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/134768995?v=4",
+        "events_url": "https://api.github.com/users/ShadBalti/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ShadBalti/followers",
+        "following_url": "https://api.github.com/users/ShadBalti/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ShadBalti/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ShadBalti",
+        "id": 134768995,
+        "login": "ShadBalti",
+        "node_id": "U_kgDOCAhpYw",
+        "organizations_url": "https://api.github.com/users/ShadBalti/orgs",
+        "received_events_url": "https://api.github.com/users/ShadBalti/received_events",
+        "repos_url": "https://api.github.com/users/ShadBalti/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ShadBalti/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ShadBalti/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ShadBalti",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 91
+}

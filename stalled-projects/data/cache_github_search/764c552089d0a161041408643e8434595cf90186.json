@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Bug report\r\n\r\nAs the sensational article on bleepingcomputer mentions:\r\nhttps://www.bleepingcomputer.com/news/security/unpatched-15-year-old-python-bug-allows-code-execution-in-350k-projects/\r\n\r\ntarfile.extractall() just extracts everything that is in the tarball. Including stuff like  ../../../etc/passwd , which is kind of shady, and exploitable - as the video shows. \r\n\r\nThis has been reported before: \r\nhttps://mail.python.org/pipermail/python-dev/2007-August/074290.html\r\nI think the response was: \"upstream should fix it\".  (Meaning: GNU tar) \r\n\r\nEventually, upstream did fix it; tar now throws an error when untarring files with '../' in them: \r\n```\r\n(base)  %tar -tf tarvuln.tar \r\ntarvuln/\r\ntarvuln/blu.txt\r\ntarvuln/bla.txt\r\netc/passwd_notreally\r\n../../etc/passwd_notreally\r\n(base)  %tar -xf tarvuln.tar \r\n**../../etc/passwd_notreally: Path contains '..'**\r\ntar: Error exit delayed from previous errors.\r\n```\r\n\r\nI suggest tarfile.extractall() is changed so it throws that same error as GNU tar. \r\n",
+      "closed_at": "2022-09-30T13:11:01Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/97663/comments",
+      "created_at": "2022-09-30T07:44:27Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/97663/events",
+      "html_url": "https://github.com/python/cpython/issues/97663",
+      "id": 1391995451,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/97663/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5S-Co7",
+      "number": 97663,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/97663/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/97663/timeline",
+      "title": "untar vulnerability CVE-2007-4559 ",
+      "type": null,
+      "updated_at": "2022-10-13T11:47:04Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/97663",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/56443001?v=4",
+        "events_url": "https://api.github.com/users/Denelvo/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Denelvo/followers",
+        "following_url": "https://api.github.com/users/Denelvo/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Denelvo/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Denelvo",
+        "id": 56443001,
+        "login": "Denelvo",
+        "node_id": "MDQ6VXNlcjU2NDQzMDAx",
+        "organizations_url": "https://api.github.com/users/Denelvo/orgs",
+        "received_events_url": "https://api.github.com/users/Denelvo/received_events",
+        "repos_url": "https://api.github.com/users/Denelvo/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Denelvo/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Denelvo/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Denelvo",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 551
+}

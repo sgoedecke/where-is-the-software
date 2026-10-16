@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Godot version\n\n3.3 stable\n\n### System information\n\nUbuntu 20.04 | proccessor: Intel\u00ae Pentium(R) Silver N5030 CPU @ 1.10GHz \u00d7 4  | graphics: Mesa Intel\u00ae UHD Graphics 605 (GLK 3)|   HP LAPTOP BTW\n\n### Issue description\n\nWhen i start it works just fine, as you can see in the screen shot. Then i try to import a project or make a new project and my computer litterly freezes on the loading screen... This is a new computer and Ive tried waiting like 30 minutes and nothing happens. Is something not supported, i know it cant be this slow right??\r\n\r\nIMPORTANT INFO?:\r\ni installed a new WiFi driver before, i don't know if that will help.\r\n\r\nI tried on earlier versions and its doesn't work\r\n64 bits Ubuntu. \r\n\r\n\r\n![Snapchat-1216963610](https://user-images.githubusercontent.com/77030926/129988724-cf4520cc-8403-4d67-94e3-557be56732fb.jpg)\r\nI LATTERLY HAVE TO RESTART MY COMPUTER WHEN IT FREEZES, ive also tried with and without sudo and re downloaded it and tried nothing seem to work.\n\n### Steps to reproduce\n\ndownload latest godot release. \n\n### Minimal reproduction project\n\nHave an identical computer, download Godot, try and run it.",
+      "closed_at": "2024-10-22T02:58:51Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/51869/comments",
+      "created_at": "2021-08-19T00:29:11Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/51869/events",
+      "html_url": "https://github.com/godotengine/godot/issues/51869",
+      "id": 974155486,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e4e4e4",
+          "default": false,
+          "description": "",
+          "id": 279097326,
+          "name": "platform:linuxbsd",
+          "node_id": "MDU6TGFiZWwyNzkwOTczMjY=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/platform:linuxbsd"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098219,
+          "name": "topic:editor",
+          "node_id": "MDU6TGFiZWwyNzkwOTgyMTk=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:editor"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/51869/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5NzQxNTU0ODY=",
+      "number": 51869,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/51869/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/51869/timeline",
+      "title": "Godot simply not opening projects and freezing my entire computer.",
+      "type": null,
+      "updated_at": "2024-10-22T08:48:07Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/51869",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/77030926?v=4",
+        "events_url": "https://api.github.com/users/TrevorBlythe/events{/privacy}",
+        "followers_url": "https://api.github.com/users/TrevorBlythe/followers",
+        "following_url": "https://api.github.com/users/TrevorBlythe/following{/other_user}",
+        "gists_url": "https://api.github.com/users/TrevorBlythe/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/TrevorBlythe",
+        "id": 77030926,
+        "login": "TrevorBlythe",
+        "node_id": "MDQ6VXNlcjc3MDMwOTI2",
+        "organizations_url": "https://api.github.com/users/TrevorBlythe/orgs",
+        "received_events_url": "https://api.github.com/users/TrevorBlythe/received_events",
+        "repos_url": "https://api.github.com/users/TrevorBlythe/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/TrevorBlythe/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/TrevorBlythe/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/TrevorBlythe",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 104
+}

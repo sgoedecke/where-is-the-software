@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\r\n\r\nall\r\n\r\n### Platform\r\n\r\n_No response_\r\n\r\n### Subsystem\r\n\r\n_No response_\r\n\r\n### What steps will reproduce the bug?\r\n\r\nfolders that are not deleted after you remove them\r\n\r\n### How often does it reproduce? Is there a required condition?\r\n\r\n_No response_\r\n\r\n### What is the expected behavior?\r\n\r\n_No response_\r\n\r\n### What do you see instead?\r\n\r\nchocolate automatic deletion\r\n\r\n### Additional information\r\n\r\nChocolate library nodejs are sometimes not removed when removing them, which leads to problems. For example, in the latest version, when I downgrade the version while the npm install command is causing problems, powershell commands are already installed when I install. This is why my question, which can be solved with degrade, cannot be solved.\r\nI just wanted to give you some information. After deleting it, you also need to set up the \"choco.exe\" file after you go to the location and delete the folder in the program there. That's the only way I solved my problem.",
+      "closed_at": "2025-04-10T12:00:17Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/41691/comments",
+      "created_at": "2022-01-25T12:26:22Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/41691/events",
+      "html_url": "https://github.com/nodejs/node/issues/41691",
+      "id": 1113827653,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9944dd",
+          "default": false,
+          "description": "Issues and PRs related to the Windows platform.",
+          "id": 166236401,
+          "name": "windows",
+          "node_id": "MDU6TGFiZWwxNjYyMzY0MDE=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "Issues and PRs related to installing Node.js and its installers.",
+          "id": 166236503,
+          "name": "install",
+          "node_id": "MDU6TGFiZWwxNjYyMzY1MDM=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/install"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/41691/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85CY6lF",
+      "number": 41691,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/41691/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/41691/timeline",
+      "title": "Windows installer bug with chocolatey",
+      "type": null,
+      "updated_at": "2025-04-10T12:00:18Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/41691",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/62386296?v=4",
+        "events_url": "https://api.github.com/users/GurbuzKadir/events{/privacy}",
+        "followers_url": "https://api.github.com/users/GurbuzKadir/followers",
+        "following_url": "https://api.github.com/users/GurbuzKadir/following{/other_user}",
+        "gists_url": "https://api.github.com/users/GurbuzKadir/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/GurbuzKadir",
+        "id": 62386296,
+        "login": "GurbuzKadir",
+        "node_id": "MDQ6VXNlcjYyMzg2Mjk2",
+        "organizations_url": "https://api.github.com/users/GurbuzKadir/orgs",
+        "received_events_url": "https://api.github.com/users/GurbuzKadir/received_events",
+        "repos_url": "https://api.github.com/users/GurbuzKadir/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/GurbuzKadir/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/GurbuzKadir/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/GurbuzKadir",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 11
+}

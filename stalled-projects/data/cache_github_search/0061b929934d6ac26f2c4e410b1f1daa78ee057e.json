@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\nThe default branch already hardened `.github/workflows/welcome.yml` against the issue(s) below, but **3** release branches still carry it. This proposes the same, minimal, scanner-verified fix for each.\n\n### What's flagged (by [zizmor](https://github.com/woodruffw/zizmor))\n- `excessive-permissions` \u2014 workflow/job granted broader `permissions` than needed\n\nAlready resolved on the default branch in:\n- https://github.com/bevyengine/bevy/commit/a5c4606a985471fbfc9e1128c4a2ddc6c0ef9a07\n\n### Affected release branches (3)\n- **`release-0.13.2`** (still present as of HEAD `aa80e2d6`)\n- **`release-0.13.1`** (still present as of HEAD `55215706`)\n- **`release-0.13.0`** (still present as of HEAD `abb8c353`)\n\n### Suggested per-branch patches\nEach diff below was checked locally with **zizmor** and **actionlint**: the flagged finding(s) are cleared on the affected construct and no new lint or security findings are introduced. (Whitespace is normalized; only security-relevant lines change.)\n\n<details>\n<summary><code>release-0.13.2</code> &mdash; excessive-permissions</summary>\n\nFile `.github/workflows/welcome.yml`; suggested edits:\n  - + jobs.$J.permissions.pull-requests = 'write'\n\n```diff\n--- a/.github/workflows/welcome.yml\n+++ b/.github/workflows/welcome.yml\n@@ -43,3 +43,5 @@\n \n               Please make sure you've read our [contributing guide](https://github.com/bevyengine/bevy/blob/main/CONTRIBUTING.md) and we look forward to reviewing your pull request shortly \u2728`\n             })\n+    permissions:\n+      pull-requests: write\n```\n</details>\n<details>\n<summary><code>release-0.13.1</code> &mdash; excessive-permissions</summary>\n\nFile `.github/workflows/welcome.yml`; suggested edits:\n  - + jobs.$J.permissions.pull-requests = 'write'\n\n```diff\n--- a/.github/workflows/welcome.yml\n+++ b/.github/workflows/welcome.yml\n@@ -43,3 +43,5 @@\n \n               Please make sure you've read our [contributing guide](https://github.com/bevyengine/bevy/blob/main/CONTRIBUTING.md) and we look forward to reviewing your pull request shortly \u2728`\n             })\n+    permissions:\n+      pull-requests: write\n```\n</details>\n<details>\n<summary><code>release-0.13.0</code> &mdash; excessive-permissions</summary>\n\nFile `.github/workflows/welcome.yml`; suggested edits:\n  - + jobs.$J.permissions.pull-requests = 'write'\n\n```diff\n--- a/.github/workflows/welcome.yml\n+++ b/.github/workflows/welcome.yml\n@@ -43,3 +43,5 @@\n \n               Please make sure you've read our [contributing guide](https://github.com/bevyengine/bevy/blob/main/CONTRIBUTING.md) and we look forward to reviewing your pull request shortly \u2728`\n             })\n+    permissions:\n+      pull-requests: write\n```\n</details>\n\n---\n*Happy to open pull requests instead if that's preferred.*",
+      "closed_at": "2026-06-29T23:07:08Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/24803/comments",
+      "created_at": "2026-06-29T08:52:29Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/24803/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/24803",
+      "id": 4766542109,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/24803/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U88AAAABHBupHQ",
+      "number": 24803,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/24803/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/24803/timeline",
+      "title": "Backport workflow-hardening fix (excessive-permissions) to 3 release branches",
+      "type": null,
+      "updated_at": "2026-06-29T23:07:08Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/24803",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/26402240?v=4",
+        "events_url": "https://api.github.com/users/CharlieMCY/events{/privacy}",
+        "followers_url": "https://api.github.com/users/CharlieMCY/followers",
+        "following_url": "https://api.github.com/users/CharlieMCY/following{/other_user}",
+        "gists_url": "https://api.github.com/users/CharlieMCY/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/CharlieMCY",
+        "id": 26402240,
+        "login": "CharlieMCY",
+        "node_id": "MDQ6VXNlcjI2NDAyMjQw",
+        "organizations_url": "https://api.github.com/users/CharlieMCY/orgs",
+        "received_events_url": "https://api.github.com/users/CharlieMCY/received_events",
+        "repos_url": "https://api.github.com/users/CharlieMCY/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/CharlieMCY/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/CharlieMCY/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/CharlieMCY",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 217
+}

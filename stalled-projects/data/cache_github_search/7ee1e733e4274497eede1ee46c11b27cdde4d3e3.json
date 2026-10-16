@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "The following code, when switching between lines 14 and 15 (the two versions of the `for` line), oscillates between compiling and not compiling because it requires `Sync` for the `dyn Send` items:\r\n```rust\r\n#![feature(async_await, await_macro, futures_api)]\r\n\r\nuse std::collections::VecDeque;\r\nuse std::future::Future;\r\n\r\npub async fn receive<HandleFn, Fut, Ret>(handle: HandleFn) -> Ret\r\nwhere\r\n    Fut: Future<Output = ()>,\r\n    HandleFn: Fn() -> Fut,\r\n{\r\n    let v: VecDeque<Box<dyn Send>> = VecDeque::new();\r\n\r\n    let l = v.len();\r\n    for _i in 0..v.len() {\r\n    //for _i in 0..l {\r\n        await!(handle());\r\n    }\r\n    \r\n    loop {}\r\n}\r\n\r\nfn do_stuff<F: Future + Send>(_f: F) {}\r\n\r\npub fn showcase() {\r\n    do_stuff(async {\r\n        match await!(receive(async move || ())) {\r\n            true => \"test\",\r\n            false => \"test\",\r\n        };\r\n    });\r\n}\r\n```\r\n[(playground)](https://play.rust-lang.org/?version=nightly&mode=debug&edition=2018&gist=9110c0064a66d987a9eff38ab282c8c0)\r\n\r\n(Note: this is a simplification of the failure that occurs on https://github.com/Ekleog/erlust/commit/98c6cbc88805b11833b9129c457b38d68a7be970 when running `cargo test`)",
+      "closed_at": "2024-10-30T04:11:42Z",
+      "comments": 15,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/59245/comments",
+      "created_at": "2019-03-16T23:38:01Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/59245/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/59245",
+      "id": 421864151,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Async & Await",
+          "id": 1049510487,
+          "name": "A-async-await",
+          "node_id": "MDU6TGFiZWwxMDQ5NTEwNDg3",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-async-await"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "Async-await issues that have been triaged during a working group meeting.",
+          "id": 1259721467,
+          "name": "AsyncAwait-Triaged",
+          "node_id": "MDU6TGFiZWwxMjU5NzIxNDY3",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/AsyncAwait-Triaged"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/59245/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0MjE4NjQxNTE=",
+      "number": 59245,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/59245/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/59245/timeline",
+      "title": "Inconsistency in Send/Sync requirements for async/await ",
+      "type": null,
+      "updated_at": "2024-11-03T20:12:15Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/59245",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/411447?v=4",
+        "events_url": "https://api.github.com/users/Ekleog/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Ekleog/followers",
+        "following_url": "https://api.github.com/users/Ekleog/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Ekleog/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Ekleog",
+        "id": 411447,
+        "login": "Ekleog",
+        "node_id": "MDQ6VXNlcjQxMTQ0Nw==",
+        "organizations_url": "https://api.github.com/users/Ekleog/orgs",
+        "received_events_url": "https://api.github.com/users/Ekleog/received_events",
+        "repos_url": "https://api.github.com/users/Ekleog/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Ekleog/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Ekleog/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Ekleog",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Bug: hydration cursor is not rewound when a host fiber is replayed, so hydration fails on an identical tree\n\n## React version\n\n19.2.8 (`react` and `react-dom` from npm, no framework). Also present in the\nReact 19.2 canary bundled with Next.js 15.5.9, which is where we hit it first.\n\n## Steps To Reproduce\n\n1. `git clone https://github.com/dreamerhyde/react-hydration-replay-repro && cd react-hydration-replay-repro`\n2. `npm install && npm run build`\n3. `npm run probe` -- loads the page 20 times per cell with Playwright and prints\n   the table below. Or `npm run serve` and open <http://127.0.0.1:8117/> with\n   the console open.\n\nThe tree is:\n\n```jsx\n// pendingChunk(): a thenable in React's \"status / value\" protocol, pending when\n// React first renders it, fulfilled one microtask later.\nconst lazyChild = React.lazy(() =>\n  pendingChunk({ default: <section id=\"child\">lazy child</section> }),\n);\n\nfunction App() {\n  return (\n    <div id=\"outer\">\n      <p id=\"before\">before</p>\n      <div id=\"target\">{lazyChild}</div>   {/* lazy NODE, not <Lazy /> */}\n      <p id=\"after\">after</p>\n    </div>\n  );\n}\n```\n\nRendered with `renderToPipeableStream` on the server (so the served HTML already\ncontains `<section id=\"child\">`), hydrated with\n`startTransition(() => hydrateRoot(container, <App />))` on the client, which is\nwhat Next.js does and what puts the hydration render on a time-sliced lane.\n\n## Link to code example\n\nhttps://github.com/dreamerhyde/react-hydration-replay-repro\n\n## The current behavior\n\nHydration fails on every load even though the server and client trees are\nidentical. React discards the server-rendered DOM and re-renders the whole root\non the client.\n\n```\nreact-dom 19.2.8, 20 page loads per cell\n\n| page                            | react-dom  | loads with a hydration error | loads that discarded the server DOM |\n| ------------------------------- | ---------- | ---------------------------- | ----------------------------------- |\n| production                      | unpatched  | 20/20                        | 20/20                               |\n| development                     | unpatched  | 20/20                        | 20/20                               |\n| production                      | patched    | 0/20                         | 0/20                                |\n| development                     | patched    | 0/20                         | 0/20                                |\n| production, no startTransition  | unpatched  | 0/20                         | 0/20                                |\n| production, chunk resolves late | unpatched  | 0/20                         | 0/20                                |\n```\n\n(\"patched\" = with the fix below applied to the installed react-dom; the last two\nrows are controls, see Mechanism.)\n\nProduction build, reported through `onRecoverableError`:\n\n```\nMinified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message\n```\n\nDevelopment build, same load:\n\n```\nHydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client.\n...\n  <App>\n    <div id=\"outer\">\n      <p>\n+     <div id=\"target\">\n-     <section id=\"child\">\n      ...\n```\n\nReact is trying to hydrate `<div id=\"target\">` against the node **inside**\n`<div id=\"target\">`.\n\n## The expected behavior\n\nServer and client render the same tree, so hydration should succeed and the\nserver-rendered DOM should be reused.\n\n## Mechanism\n\nLine numbers from `react-dom@19.2.8`, `cjs/react-dom-client.production.js`.\n\n1. `beginWork` case 5 claims the DOM node for `<div id=\"target\">` (upstream\n   `tryToClaimNextHydratableInstance`, inlined in the published build): it sets\n   `hydrationParentFiber = workInProgress` and moves `nextHydratableInstance`\n   into that div, to `<section id=\"child\">`.\n2. Reconciling that div's children resolves the lazy node, `resolveLazy` (3254)\n   throws `SuspenseException` -- while `workInProgress` is still the div.\n3. `handleThrow` (11053) records reason 3 (`SuspendedOnImmediate`).\n4. `renderRootConcurrent` (11184) turns reason 3 into reason 7 and yields. The\n   chunk is fulfilled during that yield.\n5. Next slice: reason 7 sees `isThenableResolved` true (3197) and calls\n   `replaySuspendedUnitOfWork` (11309) on the **div**.\n6. That function's default branch does `unwindInterruptedWork` (8533, pops host\n   context only) and `resetWorkInProgress` (2489). Neither restores\n   `hydrationParentFiber` / `nextHydratableInstance` -- `popHydrationState`\n   (2835) only runs from `completeWork`.\n7. `beginWork` runs again for the div with the cursor still at\n   `<section id=\"child\">`, `canHydrateInstance` (14134) fails,\n   `throwOnHydrationMismatch` (2735) queues #418, and with no `<Suspense>`\n   handler above it `throwException` (5960) re-renders the whole root\n   (`mountHostRootWithoutHydrating`, 6805).\n\nThree conditions have to line up, and all three are ordinary in a Flight / RSC\napp, which is why this shows up as an intermittent hydration error in\nproduction and is hard to attribute:\n\n- **The lazy is in the children position** (a lazy *node*, what Flight's\n  `createLazyChunkWrapper` produces for a `$L` row), so it suspends while the\n  unit of work is the parent host fiber. As `<Lazy />` it would get its own\n  fiber (tag 16) and the replay would be harmless.\n- **The thenable carries `status`** (Flight chunks do; so does anything written\n  for `use(thenable)`). The replay path is only taken when\n  `isThenableResolved(thenable)` is true, and a bare `Promise` never has a\n  `status`, so it unwinds to the root instead and hydrates cleanly.\n- **It is fulfilled inside the yield**, after React throws and before its next\n  slice. Fulfilling it 50ms later (`?resolve=late`) unwinds and hydrates\n  cleanly; a `setTimeout(fn, 0)` still lands inside the window.\n\nAlso, `replaySuspendedUnitOfWork` only exists in `renderRootConcurrent` --\n`renderRootSync` unwinds for the same reason -- so the hydration render has to\nbe time-sliced. `?transition=0` (hydrate without `startTransition`) is clean.\n\nIn a large tree the mismatch can surface several levels *below* the replayed\nfiber (that is how we first saw it): production builds do not compare attributes, so a\nmis-positioned cursor is accepted for as long as the tags line up, and the\nerror is finally attributed to some unrelated component.\n\n## Proposed fix\n\nRestore the hydration cursor before replaying a host fiber that already claimed\nan instance:\n\n```js\nfunction replaySuspendedUnitOfWork(unitOfWork) {\n  if (\n    isHydrating &&\n    hydrationParentFiber === unitOfWork &&\n    null !== unitOfWork.stateNode &&\n    (5 === unitOfWork.tag || 26 === unitOfWork.tag)\n  ) {\n    nextHydratableInstance = unitOfWork.stateNode;\n    popToNextHostParent(unitOfWork);\n  }\n  // ... existing body\n}\n```\n\n`hydrationParentFiber === unitOfWork` is true only for a host fiber that has\nalready claimed its instance and pushed the cursor inside itself, so\n`replayFunctionComponent` (tags 0/11) and host fibers that suspended before\nclaiming anything are untouched. Tag 27 (`HostSingleton`) is deliberately\nexcluded: its `stateNode` comes from `resolveSingletonInstance`, not from the\ncursor, and its pre-claim cursor lives in\n`previousHydratableOnEnteringScopedSingleton`, so it needs a different rewind.\n\nWith counters added to `replaySuspendedUnitOfWork` and\n`throwOnHydrationMismatch`, the fix does not remove the replay -- every load\nstill replays the same `{tag: 5, hydrationParentFiber === unitOfWork}` fiber; it\njust stops the mismatch:\n\n| react-dom | replays per load | mismatches per load | recoverable errors |\n| --------- | ---------------- | ------------------- | ------------------ |\n| unpatched | 1                | 1                   | 1                  |\n| patched   | 1                | 0                   | 0                  |\n\nI am happy to open a PR with this change plus a hydration test if the approach\nlooks right.\n",
+      "closed_at": "2026-09-14T06:50:57Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/react/react/issues/37584/comments",
+      "created_at": "2026-09-11T12:22:45Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/37584/events",
+      "html_url": "https://github.com/react/react/issues/37584",
+      "id": 5424240531,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/37584/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks8AAAABQ09Xkw",
+      "number": 37584,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/37584/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/37584/timeline",
+      "title": "Bug: hydration cursor is not rewound when a host fiber is replayed, so hydration fails on an identical tree",
+      "type": null,
+      "updated_at": "2026-09-14T06:50:57Z",
+      "url": "https://api.github.com/repos/react/react/issues/37584",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1624420?v=4",
+        "events_url": "https://api.github.com/users/dreamerhyde/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dreamerhyde/followers",
+        "following_url": "https://api.github.com/users/dreamerhyde/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dreamerhyde/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dreamerhyde",
+        "id": 1624420,
+        "login": "dreamerhyde",
+        "node_id": "MDQ6VXNlcjE2MjQ0MjA=",
+        "organizations_url": "https://api.github.com/users/dreamerhyde/orgs",
+        "received_events_url": "https://api.github.com/users/dreamerhyde/received_events",
+        "repos_url": "https://api.github.com/users/dreamerhyde/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dreamerhyde/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dreamerhyde/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dreamerhyde",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 62
+}

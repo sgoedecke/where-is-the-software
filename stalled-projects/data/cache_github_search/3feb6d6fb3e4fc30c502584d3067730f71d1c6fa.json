@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\nwant to try connect a device via snmp, then the test failed and i never get a connection to the device, but now i have shown snmp with 0 device and i cant delete it, just saw it on the logfile:\r\nLogger: homeassistant.components.snmp.sensor\r\nQuelle: components/snmp/sensor.py:140\r\nIntegration: snmp ([Dokumentation](https://www.home-assistant.io/integrations/snmp), [Probleme](https://github.com/home-assistant/core/issues?q=is%3Aissue+is%3Aopen+label%3A%22integration%3A+snmp%22))\r\nErstmals aufgetreten: 12:04:31 (2 Vorkommnisse)\r\nZuletzt protokolliert: 12:04:31\r\n\r\nInvalid SNMP host: Bad IPv6/UDP transport address 192.168.2.1:161@161: [Errno -2] Name does not resolve caused by <class 'socket.gaierror'>: [Errno -2] Name does not resolve\r\n\r\n\r\n\r\nanywhere he whore down the device buit the UI doesnt show me any device, just the integratio\r\n![Bild_2024-12-31_121953530](https://github.com/user-attachments/assets/0788e614-b3ae-4074-b86b-c1558feb4502)\r\n\n\n### What version of Home Assistant Core has the issue?\n\n2024.12.5\n\n### What was the last working version of Home Assistant Core?\n\n2024.12.5\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\nSNMP\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/snmp/\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n_No response_\n\n### Anything in the logs that might be useful for us?\n\n```txt\nLogger: homeassistant.components.snmp.sensor\r\nQuelle: components/snmp/sensor.py:140\r\nIntegration: snmp (Dokumentation, Probleme)\r\nErstmals aufgetreten: 12:04:31 (2 Vorkommnisse)\r\nZuletzt protokolliert: 12:04:31\r\n\r\nInvalid SNMP host: Bad IPv6/UDP transport address 192.168.2.1:161@161: [Errno -2] Name does not resolve caused by <class 'socket.gaierror'>: [Errno -2] Name does not resolve\r\n\r\nLogger: homeassistant.components.snmp.sensor\r\nQuelle: components/snmp/sensor.py:163\r\nIntegration: snmp (Dokumentation, Probleme)\r\nErstmals aufgetreten: 12:05:21 (1 Vorkommnisse)\r\nZuletzt protokolliert: 12:05:21\r\n\r\nPlease check the details in the configuration file: No SNMP response received before timeout\n```\n\n\n### Additional information\n\nnot a big deal but a bug",
+      "closed_at": "2024-12-31T15:26:24Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/134335/comments",
+      "created_at": "2024-12-31T11:23:36Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/134335/events",
+      "html_url": "https://github.com/home-assistant/core/issues/134335",
+      "id": 2764268952,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfdadc",
+          "default": false,
+          "description": "",
+          "id": 386316533,
+          "name": "needs-more-information",
+          "node_id": "MDU6TGFiZWwzODYzMTY1MzM=",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/needs-more-information"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 1282906675,
+          "name": "integration: snmp",
+          "node_id": "MDU6TGFiZWwxMjgyOTA2Njc1",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20snmp"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/134335/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc6kw2WY",
+      "number": 134335,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/134335/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/134335/timeline",
+      "title": "SNMP",
+      "type": null,
+      "updated_at": "2025-01-30T16:02:01Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/134335",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/96685025?v=4",
+        "events_url": "https://api.github.com/users/Menino103/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Menino103/followers",
+        "following_url": "https://api.github.com/users/Menino103/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Menino103/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Menino103",
+        "id": 96685025,
+        "login": "Menino103",
+        "node_id": "U_kgDOBcNL4Q",
+        "organizations_url": "https://api.github.com/users/Menino103/orgs",
+        "received_events_url": "https://api.github.com/users/Menino103/received_events",
+        "repos_url": "https://api.github.com/users/Menino103/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Menino103/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Menino103/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Menino103",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1423
+}

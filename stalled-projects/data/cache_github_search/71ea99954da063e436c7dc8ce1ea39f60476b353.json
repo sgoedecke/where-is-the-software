@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "A bug introduced with rustc 1.12.0 with MIR enabled.\r\nThis was originally reported imprecisely as #40044 \r\n\r\nIf anywhere in the code a vector is either resize() or extend_from_slice(), any algorithms operating on any other vector will run slower.\r\nThe performance impact varies with the compiler targets and CPU characteristics.\r\n\r\n#### Real world examples measured on an audio DSP algorithm\r\n##### armv7\r\nRaspberry Pi 3, Rustc 1.12.0: 14% slower\r\nRaspberry Pi 3, Rustc 1.15.1: 11% slower\r\nNexus 5, Rustc 1.15: 1% slower\r\n##### arm\r\nRaspberry Pi, Rustc 1.15.1: 8% slower\r\n##### x86-64\r\nCore i5-750, Rustc 1.12.1 or Rustc 1.15.1: 0.4% slower\r\n\r\nWhen compiling using Rustc 1.12.0 with MIR disabled, the performance regression does not occur.\r\n\r\n#### Test and demo project\r\nhttps://github.com/supercurio/rust-issue-mir-vec-slowdown",
+      "closed_at": "2024-10-20T17:38:10Z",
+      "comments": 15,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/40267/comments",
+      "created_at": "2017-03-04T20:36:57Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/40267/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/40267",
+      "id": 211905376,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Code generation parts specific to LLVM. Both correctness bugs and optimization-related issues.",
+          "id": 108333,
+          "name": "A-LLVM",
+          "node_id": "MDU6TGFiZWwxMDgzMzM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-LLVM"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e10c02",
+          "default": false,
+          "description": "Issue: Problems and improvements with respect to performance of generated code.",
+          "id": 113376,
+          "name": "I-slow",
+          "node_id": "MDU6TGFiZWwxMTMzNzY=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/I-slow"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue proposing an enhancement or a PR with one.",
+          "id": 234902,
+          "name": "C-enhancement",
+          "node_id": "MDU6TGFiZWwyMzQ5MDI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue highlighting optimization opportunities or PRs implementing such",
+          "id": 6059090684,
+          "name": "C-optimization",
+          "node_id": "LA_kwDOAAsO6M8AAAABaSZi_A",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-optimization"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/40267/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUyMTE5MDUzNzY=",
+      "number": 40267,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/40267/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/40267/timeline",
+      "title": "MIR: global performance regression with Vec resize() or extend_from_slice(), since 1.12",
+      "type": null,
+      "updated_at": "2024-10-20T17:38:24Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/40267",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/406003?v=4",
+        "events_url": "https://api.github.com/users/supercurio/events{/privacy}",
+        "followers_url": "https://api.github.com/users/supercurio/followers",
+        "following_url": "https://api.github.com/users/supercurio/following{/other_user}",
+        "gists_url": "https://api.github.com/users/supercurio/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/supercurio",
+        "id": 406003,
+        "login": "supercurio",
+        "node_id": "MDQ6VXNlcjQwNjAwMw==",
+        "organizations_url": "https://api.github.com/users/supercurio/orgs",
+        "received_events_url": "https://api.github.com/users/supercurio/received_events",
+        "repos_url": "https://api.github.com/users/supercurio/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/supercurio/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/supercurio/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/supercurio",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

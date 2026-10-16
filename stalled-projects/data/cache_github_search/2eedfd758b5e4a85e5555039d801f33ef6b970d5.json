@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "# Feature or enhancement\r\n\r\nA GitHub Actions workflow can be used to verify libexpat files bundled in CPython in `Modules/expat/`.\r\n\r\n# Pitch\r\n\r\nWhen a new version of libexpat is released, someone usually creates a pull request to update its files bundled in CPython. Before merging it, a few people verify the change manually like in #98742.\r\n\r\nAn automatic test can be used for verifying the files during updates to reduce error proneness and speed up integration of new libexpat releases that fix security issues often.\r\n\r\nWe have a similar workflow for verifying bundled pip and setuptools wheels https://github.com/python/cpython/issues/91172.\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-100539\n* gh-145359\n* gh-145400\n* gh-145401\n* gh-145407\n* gh-145408\n* gh-145409\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2026-03-01T19:52:13Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/100538/comments",
+      "created_at": "2022-12-26T19:23:58Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/100538/events",
+      "html_url": "https://github.com/python/cpython/issues/100538",
+      "id": 1511178505,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4018689026,
+          "name": "topic-XML",
+          "node_id": "LA_kwDOBN0Z8c7viFQC",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-XML"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "CI, GitHub Actions, buildbots, Dependabot, etc.",
+          "id": 7527065505,
+          "name": "infra",
+          "node_id": "LA_kwDOBN0Z8c8AAAABwKXnoQ",
+          "url": "https://api.github.com/repos/python/cpython/labels/infra"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/100538/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5aEsEJ",
+      "number": 100538,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/100538/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/100538/timeline",
+      "title": "Create a GitHub Actions workflow for verifying bundled libexpat files",
+      "type": null,
+      "updated_at": "2026-03-02T09:26:31Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/100538",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/17710133?v=4",
+        "events_url": "https://api.github.com/users/illia-v/events{/privacy}",
+        "followers_url": "https://api.github.com/users/illia-v/followers",
+        "following_url": "https://api.github.com/users/illia-v/following{/other_user}",
+        "gists_url": "https://api.github.com/users/illia-v/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/illia-v",
+        "id": 17710133,
+        "login": "illia-v",
+        "node_id": "MDQ6VXNlcjE3NzEwMTMz",
+        "organizations_url": "https://api.github.com/users/illia-v/orgs",
+        "received_events_url": "https://api.github.com/users/illia-v/received_events",
+        "repos_url": "https://api.github.com/users/illia-v/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/illia-v/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/illia-v/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/illia-v",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 34
+}

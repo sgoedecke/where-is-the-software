@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "I have this component that I created where I'm testing useOptimistic and don't have a real backend to call to. So my data source is a variable in another module called messagesOnApi. I have a local state variable messagesRetrievedFromApi that I use to load the data from my fake api, messagesOnApi, and then when I call useOptimistic I pass the messagesRetrievedFromApi state variable as the first parameter.\r\nWhen I make my update to the api data I add a delay but instead of my optimistic data updating immediately it only updates after the delay. Why? \r\nThis is the github with entire source, https://github.com/PacktPublishing/Full-Stack-React-TypeScript-and-Node-2nd-Edition/blob/main/Chap5/components/src/OptimisticMessages.tsx. This is the main component.\r\n\r\n\r\n```\r\nimport {\r\n  useOptimistic,\r\n  useState,\r\n  MouseEvent,\r\n  ChangeEvent,\r\n  useTransition,\r\n  useEffect,\r\n} from \"react\";\r\nimport { Message, messagesOnApi } from \"./MessagesData\";\r\n\r\nexport function OptimisticMessages() {\r\n  const [messagesRetrievedFromApi, setMessagesRetrievedFromApi] = useState<\r\n    Message[]\r\n  >([]);\r\n  const [message, setMessage] = useState(\"\");\r\n  const [optimisticMessages, addOptimisticMessage] = useOptimistic<\r\n    Message[],\r\n    string\r\n  >(messagesRetrievedFromApi, (currentMessages, message) => {\r\n    const finalMessages = [\r\n      ...currentMessages,\r\n      { id: getNextId(currentMessages), message },\r\n    ];\r\n    return finalMessages;\r\n  });\r\n  const [_isPending, startTransition] = useTransition();\r\n\r\n  useEffect(() => {\r\n    const data = JSON.parse(JSON.stringify(messagesOnApi));\r\n    setMessagesRetrievedFromApi(data);\r\n  }, []);\r\n\r\n  const addMessage = async (message: string) => {\r\n    addOptimisticMessage(message);\r\n    await new Promise((res) =>\r\n      setTimeout(() => {\r\n        messagesOnApi.push({\r\n          id: getNextId(messagesOnApi),\r\n          message,\r\n        });\r\n        res(null);\r\n      }, 2000)\r\n    );\r\n\r\n    const data = JSON.parse(JSON.stringify(messagesOnApi));\r\n    setMessagesRetrievedFromApi(data);\r\n    setMessage(\"\");\r\n  };\r\n\r\n  const onChange = (e: ChangeEvent<HTMLInputElement>) => {\r\n    e.preventDefault();\r\n    setMessage(e.target.value);\r\n  };\r\n\r\n  const onClick = async (e: MouseEvent<HTMLButtonElement>) => {\r\n    e.preventDefault();\r\n\r\n    startTransition(() => {\r\n      addMessage(message);\r\n    });\r\n  };\r\n\r\n  return (\r\n    <div>\r\n      <input value={message} onChange={onChange} />\r\n      <button onClick={onClick}>add</button>\r\n      <ul style={{ listStyleType: \"none\" }}>\r\n        {optimisticMessages.map((m, i) => (\r\n          <li key={i}>{m.message}</li>\r\n        ))}\r\n      </ul>\r\n    </div>\r\n  );\r\n}\r\n\r\nfunction getNextId(currentMessages: Message[]) {\r\n  let id = 0;\r\n  for (let i = 0; i < currentMessages.length; i++) {\r\n    if (currentMessages[i].id > id) id = currentMessages[i].id;\r\n  }\r\n  id += 1;\r\n  return id;\r\n}\r\n```",
+      "closed_at": "2024-09-27T11:59:30Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/react/react/issues/31020/comments",
+      "created_at": "2024-09-22T15:14:32Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/31020/events",
+      "html_url": "https://github.com/react/react/issues/31020",
+      "id": 2541125178,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fffde7",
+          "default": false,
+          "description": null,
+          "id": 620368407,
+          "name": "Resolution: Needs More Information",
+          "node_id": "MDU6TGFiZWw2MjAzNjg0MDc=",
+          "url": "https://api.github.com/repos/react/react/labels/Resolution:%20Needs%20More%20Information"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "263258",
+          "default": false,
+          "description": "",
+          "id": 6688277426,
+          "name": "React 19",
+          "node_id": "LA_kwDOAJy2Ks8AAAABjqcDsg",
+          "url": "https://api.github.com/repos/react/react/labels/React%2019"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/31020/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks6Xdn46",
+      "number": 31020,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/31020/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/31020/timeline",
+      "title": "[React 19] useOptimistic is not updating its optimistic collection immediately",
+      "type": null,
+      "updated_at": "2024-09-27T11:59:30Z",
+      "url": "https://api.github.com/repos/react/react/issues/31020",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1474935?v=4",
+        "events_url": "https://api.github.com/users/jsoneaday/events{/privacy}",
+        "followers_url": "https://api.github.com/users/jsoneaday/followers",
+        "following_url": "https://api.github.com/users/jsoneaday/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jsoneaday/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/jsoneaday",
+        "id": 1474935,
+        "login": "jsoneaday",
+        "node_id": "MDQ6VXNlcjE0NzQ5MzU=",
+        "organizations_url": "https://api.github.com/users/jsoneaday/orgs",
+        "received_events_url": "https://api.github.com/users/jsoneaday/received_events",
+        "repos_url": "https://api.github.com/users/jsoneaday/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/jsoneaday/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jsoneaday/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/jsoneaday",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 43
+}

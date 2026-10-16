@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Given the following code ([playground](https://play.rust-lang.org/?version=nightly&mode=debug&edition=2021&gist=48f1fc4c175b1e42b9e4e97d5412c053):\r\n\r\n```rust\r\nuse std::borrow::Cow;\r\n\r\nfn main() {\r\n    let foo = Foo { inner: \"foo\".into() };\r\n    println!(\"{}\", match foo {\r\n        FOO => \"match\",\r\n        _ => \"no\"\r\n    });\r\n}\r\n\r\n#[derive(PartialEq, Eq)]\r\nstruct Foo {\r\n    inner: Cow<'static, str>,\r\n}\r\n\r\nconst FOO: Foo = Foo { inner: Cow::Borrowed(\"foo\") };\r\n```\r\n\r\nThe current output is:\r\n\r\n```rust\r\nerror: to use a constant of type `Cow` in a pattern, `Cow` must be annotated with `#[derive(PartialEq, Eq)]`\r\n --> src/main.rs:6:9\r\n  |\r\n6 |         FOO => \"match\",\r\n  |         ^^^\r\n```\r\n\r\nSurprisingly to me at least, using a custom `PartialEq` implementation still results in the same issue ([playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=103ed753194b4eb0204ff034aaed73e9)):\r\n\r\n```rust\r\nstruct Foo {\r\n    inner: Cow<'static, str>,\r\n}\r\n\r\nimpl PartialEq for Foo {\r\n    fn eq(&self, other: &Self) -> bool {\r\n        self.inner.as_ref() == other.inner.as_ref()\r\n    }\r\n}\r\n\r\nimpl Eq for Foo {}\r\n```\r\n\r\nThis seems pretty unclear:\r\n\r\n* Why is the compiler telling me I should derive `PartialEq` for `Cow` when I'm comparing matching against `Foo`?\r\n* Why is the compiler telling me to derive `PartialEq` instead of having a custom impl?\r\n\r\nI don't know exactly what kind of contract `match` depends on, but I would have thought any kind of `PartialEq` impl (that is, even non-const) would be enough here.\r\n\r\nOriginal issue here: https://github.com/open-telemetry/opentelemetry-rust/issues/685. This also links to a potential fix in https://github.com/sfackler/rust-postgres/commit/05a0643cc02e95a9c10ae7936e8941cbdb62e07f (involving adding another layer of indirection), but I'd really like to understand why that is even necessary.\r\n\r\n(To be clear: the diagnostic is unclear here, but maybe there's an actual compiler problem here, too?)\r\n\r\ncc @estebank ",
+      "closed_at": "2025-01-12T00:29:42Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/92454/comments",
+      "created_at": "2021-12-31T11:06:47Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/92454/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/92454",
+      "id": 1091528350,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Messages for errors, warnings, and lints",
+          "id": 235791,
+          "name": "A-diagnostics",
+          "node_id": "MDU6TGFiZWwyMzU3OTE=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-diagnostics"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/92454/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5BD2ae",
+      "number": 92454,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/92454/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/92454/timeline",
+      "title": "Surprising diagnostics about using const value in match pattern",
+      "type": null,
+      "updated_at": "2025-01-12T00:29:42Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/92454",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/158471?v=4",
+        "events_url": "https://api.github.com/users/djc/events{/privacy}",
+        "followers_url": "https://api.github.com/users/djc/followers",
+        "following_url": "https://api.github.com/users/djc/following{/other_user}",
+        "gists_url": "https://api.github.com/users/djc/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/djc",
+        "id": 158471,
+        "login": "djc",
+        "node_id": "MDQ6VXNlcjE1ODQ3MQ==",
+        "organizations_url": "https://api.github.com/users/djc/orgs",
+        "received_events_url": "https://api.github.com/users/djc/received_events",
+        "repos_url": "https://api.github.com/users/djc/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/djc/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/djc/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/djc",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 93
+}

@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "**Do you want to request a *feature* or report a *bug*?**\r\nFeature\r\n\r\n**What is the current behavior?**\r\nI have played a bit with Concurrent Mode and the Suspense API.\r\nReally exiting features and I look forward to use them in a stable release. Thank you for everything you are doing!\r\n\r\nRegarding the `Suspense` component, could it be nice to have a property (both in Concurrent Mode and in \"normal/synchronous\" mode) which would allow us to set the minimum duration of the `Suspense` fallback UI in case the fallback UI ever gets rendered?\r\n\r\n**What is the expected behavior?**\r\nLet me do an example. Try clicking on the `Next` button in this codesandbox: \r\nhttps://codesandbox.io/s/cold-monad-ifr29.\r\n\r\nYou will see that the `Suspense` fallback UI is rendered and stays in the tree just for a little moment (`~200ms`) because both promises resolve in `1200ms`, while `useTransition` has a `timeoutMs` of 1 second.\r\nIn my opinion, this is a bit unpleasant to the eye.\r\n\r\nWouldn't it be nicer if we could tell the `Suspense` component something like \"If you ever render the fallback, show it for at least N millisec.\"? E.g.:\r\n\r\n```jsx\r\n...\r\nfunction ProfilePage({ resource }) {\r\n  return (\r\n    <Suspense fallback={<h1>Loading profile...</h1>}\r\n      // If the fallback ever gets rendered,\r\n      // it will be shown for at least 1500 millisec.,\r\n      // even if the promise resolves right after rendering the fallback.\r\n      fallbackMinDurationMs={1500}>\r\n      <ProfileDetails resource={resource} />\r\n      <Suspense fallback={<h1>Loading posts...</h1>}>\r\n        <ProfileTimeline resource={resource} />\r\n      </Suspense>\r\n    </Suspense>\r\n  );\r\n}\r\n...\r\n```\r\n\r\nConsider an animated spinner used as a fallback of `Suspense`, if it happens that the promise resolves just a few milliseconds after rendering the fallback like above, the spinner will be rendered and suddenly disappear, without completing its animation cycle and showing an incomplete animation.\r\n\r\nWhereas, if we could keep the spinner in the tree for at least `fallbackMinDurationMs` millisec. once rendered, we could improve its appearance in such cases.\r\n\r\nThe `Suspense` component responsible for rendering the fallback would have to wrap the caught Promise in a promise which would look something like this:\r\n\r\n```js\r\nfunction maxDelayFallbackPromise({\r\n  promise,\r\n  timeoutMs, // ---> This would be the value of `useTransition`'s `timeoutMs`\r\n  onFallback = () => {}, // ---> This code would run in case `timeoutMs` exceeds (i.e. when `Suspense`'s fallback UI is rendered)\r\n  fallbackMinDurationMs\r\n} = {}) {\r\n  // Generate a unique identifier, like a string, a number, in order to identify which promise resolves first...\r\n  const uniqueIdentifier = `promise_value_${Math.random()}`\r\n  return Promise.race([\r\n    promise,\r\n    timeout(timeoutMs).then(() => uniqueIdentifier)\r\n  ]).then(value => {\r\n    if (value === uniqueIdentifier) {\r\n      onFallback()\r\n      return minDelayPromise(promise, fallbackMinDurationMs)\r\n    }\r\n    else {\r\n      return value\r\n    }\r\n  })\r\n}\r\n```\r\n\r\nWhere `timeout` and `minDelayPromise` are:\r\n\r\n```js\r\nfunction timeout(delayMs) {\r\n  return new Promise(resolve => setTimeout(resolve, delayMs))\r\n}\r\n\r\nfunction minDelayPromise(promise, minDelay) {\r\n  return Promise.all([\r\n    promise,\r\n    timeout(minDelay)\r\n  ]).then(([value]) => {\r\n    return value\r\n  })\r\n}\r\n```\r\n\r\nThis could also apply to the `isPending` flag of `useTransition`...\r\n\r\nDo you think such a feature could improve the UX in such cases?\r\n\r\n**UPDATE - 04/09/2022** - For anyone looking at this issue, there is a workaround to achieve this fallback min duration behaviour in React 17 \ud83c\udf89 , described here: https://github.com/facebook/react/issues/17351#issuecomment-1236303278\r\n",
+      "closed_at": "2025-09-30T17:07:25Z",
+      "comments": 35,
+      "comments_url": "https://api.github.com/repos/react/react/issues/17351/comments",
+      "created_at": "2019-11-13T00:33:43Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/17351/events",
+      "html_url": "https://github.com/react/react/issues/17351",
+      "id": 521883191,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 121709921,
+          "name": "Type: Feature Request",
+          "node_id": "MDU6TGFiZWwxMjE3MDk5MjE=",
+          "url": "https://api.github.com/repos/react/react/labels/Type:%20Feature%20Request"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffccd3",
+          "default": false,
+          "description": "",
+          "id": 1205087127,
+          "name": "Component: Concurrent Features",
+          "node_id": "MDU6TGFiZWwxMjA1MDg3MTI3",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20Concurrent%20Features"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9dd1e8",
+          "default": false,
+          "description": "",
+          "id": 1775955521,
+          "name": "Resolution: Backlog",
+          "node_id": "MDU6TGFiZWwxNzc1OTU1NTIx",
+          "url": "https://api.github.com/repos/react/react/labels/Resolution:%20Backlog"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/17351/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1MjE4ODMxOTE=",
+      "number": 17351,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 30,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 30,
+        "url": "https://api.github.com/repos/react/react/issues/17351/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/17351/timeline",
+      "title": "Possibility to set min duration of Suspense fallback",
+      "type": null,
+      "updated_at": "2025-09-30T17:07:25Z",
+      "url": "https://api.github.com/repos/react/react/issues/17351",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10134421?v=4",
+        "events_url": "https://api.github.com/users/tonix-tuft/events{/privacy}",
+        "followers_url": "https://api.github.com/users/tonix-tuft/followers",
+        "following_url": "https://api.github.com/users/tonix-tuft/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tonix-tuft/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/tonix-tuft",
+        "id": 10134421,
+        "login": "tonix-tuft",
+        "node_id": "MDQ6VXNlcjEwMTM0NDIx",
+        "organizations_url": "https://api.github.com/users/tonix-tuft/orgs",
+        "received_events_url": "https://api.github.com/users/tonix-tuft/received_events",
+        "repos_url": "https://api.github.com/users/tonix-tuft/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/tonix-tuft/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tonix-tuft/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/tonix-tuft",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

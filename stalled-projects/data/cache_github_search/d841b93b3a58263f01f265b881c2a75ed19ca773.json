@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "The RLS tests regularly fail on the tools builder even when the PR didn't touch anything RLS-related, and then the next PR landing switches the toolstate back to test-pass again. This is particularly bad during the week before the beta cutoff, where such a test failure leads to the PR being rejected.\r\n\r\nI have seen this for weeks or even months, but to my surprise could not find an issue tracking this yet.\r\nCc @rust-lang/infra @Xanewok \r\n\r\nSome examples (with failing platform and test):\r\nhttps://github.com/rust-lang/rust/pull/62209#issuecomment-506914620 (Linux, client_changing_workspace_lib_retains_diagnostics)\r\nhttps://github.com/rust-lang/rust/pull/61199#issuecomment-506927309 (Linux, client_find_definitions)\r\nhttps://github.com/rust-lang/rust/pull/61891#issuecomment-503326076 (Windows, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/61932#issuecomment-503269750 (Linux, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/61771#issuecomment-502950833 (Linux, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/61889#issuecomment-502619562 (Windows, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/60730#issuecomment-502447094 (Windows, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/59752#issuecomment-502365726 (Linux, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/61817#issuecomment-502228768 (Linux, client_find_definitions)\r\nhttps://github.com/rust-lang/rust/pull/61789#issuecomment-501542743 (Linux, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/61722#issuecomment-501353560 (Linux, client_completion_suggests_arguments_in_statements)\r\nhttps://github.com/rust-lang/rust/pull/61758#issuecomment-501157704 (Linux, client_find_definitions)\r\n\r\nAnd that's just for the last 17 days!",
+      "closed_at": "2022-08-28T20:12:09Z",
+      "comments": 8,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/62225/comments",
+      "created_at": "2019-06-29T08:57:23Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/62225/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/62225",
+      "id": 462282582,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: The testsuite used to check the correctness of rustc",
+          "id": 120005,
+          "name": "A-testsuite",
+          "node_id": "MDU6TGFiZWwxMjAwMDU=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-testsuite"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Spurious failures in builds (spuriously == for no apparent reason)",
+          "id": 371266501,
+          "name": "A-spurious",
+          "node_id": "MDU6TGFiZWwzNzEyNjY1MDE=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-spurious"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the dev-tools subteam, which will review and decide on the PR/issue.",
+          "id": 602425123,
+          "name": "T-dev-tools",
+          "node_id": "MDU6TGFiZWw2MDI0MjUxMjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-dev-tools"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/62225/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0NjIyODI1ODI=",
+      "number": 62225,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 2,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/62225/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/62225/timeline",
+      "title": "Spurious RLS test failures",
+      "type": null,
+      "updated_at": "2022-08-28T20:12:09Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/62225",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/330628?v=4",
+        "events_url": "https://api.github.com/users/RalfJung/events{/privacy}",
+        "followers_url": "https://api.github.com/users/RalfJung/followers",
+        "following_url": "https://api.github.com/users/RalfJung/following{/other_user}",
+        "gists_url": "https://api.github.com/users/RalfJung/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/RalfJung",
+        "id": 330628,
+        "login": "RalfJung",
+        "node_id": "MDQ6VXNlcjMzMDYyOA==",
+        "organizations_url": "https://api.github.com/users/RalfJung/orgs",
+        "received_events_url": "https://api.github.com/users/RalfJung/received_events",
+        "repos_url": "https://api.github.com/users/RalfJung/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/RalfJung/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/RalfJung/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/RalfJung",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 61
+}

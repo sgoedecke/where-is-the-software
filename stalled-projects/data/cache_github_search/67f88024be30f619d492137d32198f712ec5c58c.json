@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a feature request that matches the one I want to file, without success.\n\n### Problem Description\n\nI am writing a mouse/keyboard sharing application in Electron. I would like the ability to hide the mouse pointer when the pointer is \"off screen\" on another computer.\r\n\r\nI found a [similar question](https://github.com/electron/electron/issues/17889) that linked to an [MDN article](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API), but the [example code](https://github.com/mdn/dom-examples/tree/main/pointer-lock) does not work in Electron.\n\n### Proposed Solution\n\nProvide native control over the OS mouse.\n\n### Alternatives Considered\n\nI have tried using [robot.js](http://robotjs.io/) to bury the mouse outside of screen coordinates but this is not working properly. The mouse is still visible.\n\n### Additional Information\n\n_No response_",
+      "closed_at": "2022-12-29T22:13:19Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/36758/comments",
+      "created_at": "2022-12-29T21:38:39Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/36758/events",
+      "html_url": "https://github.com/electron/electron/issues/36758",
+      "id": 1514068266,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/36758/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85aPtkq",
+      "number": 36758,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/36758/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/36758/timeline",
+      "title": "[Feature Request]: Hide the native OS mouse pointer",
+      "type": null,
+      "updated_at": "2022-12-29T22:13:19Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/36758",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/15527661?v=4",
+        "events_url": "https://api.github.com/users/draeder/events{/privacy}",
+        "followers_url": "https://api.github.com/users/draeder/followers",
+        "following_url": "https://api.github.com/users/draeder/following{/other_user}",
+        "gists_url": "https://api.github.com/users/draeder/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/draeder",
+        "id": 15527661,
+        "login": "draeder",
+        "node_id": "MDQ6VXNlcjE1NTI3NjYx",
+        "organizations_url": "https://api.github.com/users/draeder/orgs",
+        "received_events_url": "https://api.github.com/users/draeder/received_events",
+        "repos_url": "https://api.github.com/users/draeder/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/draeder/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/draeder/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/draeder",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 148
+}

@@ -1,0 +1,183 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "## Steps to Reproduce\r\n\r\nSee the code below, or [this repo](https://github.com/jonmountjoy/navShell).  \r\n\r\n**Expected results:** \r\n\r\nI would expect `didPush` in `NavigatorObserver` to be called for every navigation to any page.\r\n\r\n**Actual results:** \r\n\r\nIt doesn't get called at all, except for the page `b/details` possibly because it's using a `_rootNavigatorKey`?\r\n\r\nSo in the app, if you click on each tab, and each detail page, (and back again), you only see two logs:\r\n\r\n```\r\n[MyNavObserver] didPush: route(/b/details: {}), previousRoute= route(: {})\r\n[MyNavObserver] didPop: route(/b/details: {}), previousRoute= route(: {})\r\n```\r\n\r\n<details>\r\n<summary>Code sample</summary>\r\n\r\n```dart\r\n// Copyright 2013 The Flutter Authors. All rights reserved.\r\n// Use of this source code is governed by a BSD-style license that can be\r\n// found in the LICENSE file.\r\n\r\nimport 'package:flutter/material.dart';\r\nimport 'package:go_router/go_router.dart';\r\nimport 'package:logging/logging.dart';\r\n\r\nfinal GlobalKey<NavigatorState> _rootNavigatorKey =\r\n    GlobalKey<NavigatorState>(debugLabel: 'root');\r\nfinal GlobalKey<NavigatorState> _shellNavigatorKey =\r\n    GlobalKey<NavigatorState>(debugLabel: 'shell');\r\n\r\n// This scenario demonstrates how to set up nested navigation using ShellRoute,\r\n// which is a pattern where an additional Navigator is placed in the widget tree\r\n// to be used instead of the root navigator. This allows deep-links to display\r\n// pages along with other UI components such as a BottomNavigationBar.\r\n//\r\n// This example demonstrates how to display a route within a ShellRoute and also\r\n// push a screen using a different navigator (such as the root Navigator) by\r\n// providing a `parentNavigatorKey`.\r\n\r\nvoid main() {\r\n  runApp(ShellRouteExampleApp());\r\n}\r\n\r\n/// An example demonstrating how to use [ShellRoute]\r\nclass ShellRouteExampleApp extends StatelessWidget {\r\n  /// Creates a [ShellRouteExampleApp]\r\n  ShellRouteExampleApp({Key? key}) : super(key: key);\r\n\r\n  final GoRouter _router = GoRouter(\r\n    observers: <NavigatorObserver>[MyNavObserver()],\r\n    debugLogDiagnostics: true,\r\n    navigatorKey: _rootNavigatorKey,\r\n    initialLocation: '/a',\r\n    routes: <RouteBase>[\r\n      /// Application shell\r\n      ShellRoute(\r\n        navigatorKey: _shellNavigatorKey,\r\n        builder: (BuildContext context, GoRouterState state, Widget child) {\r\n          return ScaffoldWithNavBar(child: child);\r\n        },\r\n        routes: <RouteBase>[\r\n          /// The first screen to display in the bottom navigation bar.\r\n          GoRoute(\r\n            path: '/a',\r\n            builder: (BuildContext context, GoRouterState state) {\r\n              return const ScreenA();\r\n            },\r\n            routes: <RouteBase>[\r\n              // The details screen to display stacked on the inner Navigator.\r\n              // This will cover screen A but not the application shell.\r\n              GoRoute(\r\n                path: 'details',\r\n                builder: (BuildContext context, GoRouterState state) {\r\n                  return const DetailsScreen(label: 'A');\r\n                },\r\n              ),\r\n            ],\r\n          ),\r\n\r\n          /// Displayed when the second item in the the bottom navigation bar is\r\n          /// selected.\r\n          GoRoute(\r\n            path: '/b',\r\n            builder: (BuildContext context, GoRouterState state) {\r\n              return const ScreenB();\r\n            },\r\n            routes: <RouteBase>[\r\n              /// Same as \"/a/details\", but displayed on the root Navigator by\r\n              /// specifying [parentNavigatorKey]. This will cover both screen B\r\n              /// and the application shell.\r\n              GoRoute(\r\n                path: 'details',\r\n                parentNavigatorKey: _rootNavigatorKey,\r\n                builder: (BuildContext context, GoRouterState state) {\r\n                  return const DetailsScreen(label: 'B');\r\n                },\r\n              ),\r\n            ],\r\n          ),\r\n        ],\r\n      ),\r\n    ],\r\n  );\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return MaterialApp.router(\r\n      title: 'Flutter Defmo',\r\n      theme: ThemeData(\r\n        primarySwatch: Colors.red,\r\n      ),\r\n      routeInformationParser: _router.routeInformationParser,\r\n      routerDelegate: _router.routerDelegate,\r\n      routeInformationProvider: _router.routeInformationProvider,\r\n    );\r\n  }\r\n}\r\n\r\n/// Builds the \"shell\" for the app by building a Scaffold with a\r\n/// BottomNavigationBar, where [child] is placed in the body of the Scaffold.\r\nclass ScaffoldWithNavBar extends StatelessWidget {\r\n  /// Constructs an [ScaffoldWithNavBar].\r\n  const ScaffoldWithNavBar({\r\n    required this.child,\r\n    Key? key,\r\n  }) : super(key: key);\r\n\r\n  /// The widget to display in the body of the Scaffold.\r\n  /// In this sample, it is a Navigator.\r\n  final Widget child;\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      body: child,\r\n      bottomNavigationBar: BottomNavigationBar(\r\n        items: const <BottomNavigationBarItem>[\r\n          BottomNavigationBarItem(\r\n            icon: Icon(Icons.home),\r\n            label: 'A Screen',\r\n          ),\r\n          BottomNavigationBarItem(\r\n            icon: Icon(Icons.business),\r\n            label: 'B Screen',\r\n          ),\r\n        ],\r\n        currentIndex: _calculateSelectedIndex(context),\r\n        onTap: (int idx) => _onItemTapped(idx, context),\r\n      ),\r\n    );\r\n  }\r\n\r\n  static int _calculateSelectedIndex(BuildContext context) {\r\n    final GoRouter route = GoRouter.of(context);\r\n    final String location = route.location;\r\n    if (location == '/a') {\r\n      return 0;\r\n    }\r\n    if (location == '/b') {\r\n      return 1;\r\n    }\r\n    return 0;\r\n  }\r\n\r\n  void _onItemTapped(int index, BuildContext context) {\r\n    switch (index) {\r\n      case 0:\r\n        GoRouter.of(context).go('/a');\r\n        break;\r\n      case 1:\r\n        GoRouter.of(context).go('/b');\r\n        break;\r\n    }\r\n  }\r\n}\r\n\r\n/// The first screen in the bottom navigation bar.\r\nclass ScreenA extends StatelessWidget {\r\n  /// Constructs a [ScreenA] widget.\r\n  const ScreenA({Key? key}) : super(key: key);\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      appBar: AppBar(),\r\n      body: Center(\r\n        child: Column(\r\n          mainAxisSize: MainAxisSize.min,\r\n          children: <Widget>[\r\n            const Text('Screen A'),\r\n            TextButton(\r\n              onPressed: () {\r\n                GoRouter.of(context).go('/a/details');\r\n              },\r\n              child: const Text('View A details'),\r\n            ),\r\n          ],\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n\r\n/// The second screen in the bottom navigation bar.\r\nclass ScreenB extends StatelessWidget {\r\n  /// Constructs a [ScreenB] widget.\r\n  const ScreenB({Key? key}) : super(key: key);\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      appBar: AppBar(),\r\n      body: Center(\r\n        child: Column(\r\n          mainAxisSize: MainAxisSize.min,\r\n          children: <Widget>[\r\n            const Text('Screen B'),\r\n            TextButton(\r\n              onPressed: () {\r\n                GoRouter.of(context).go('/b/details');\r\n              },\r\n              child: const Text('View B details'),\r\n            ),\r\n          ],\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n\r\n/// The details screen for either the A or B screen.\r\nclass DetailsScreen extends StatelessWidget {\r\n  /// Constructs a [DetailsScreen].\r\n  const DetailsScreen({\r\n    required this.label,\r\n    Key? key,\r\n  }) : super(key: key);\r\n\r\n  /// The label to display in the center of the screen.\r\n  final String label;\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      appBar: AppBar(\r\n        title: const Text('Details Screen'),\r\n      ),\r\n      body: Center(\r\n        child: Text(\r\n          'Details for $label',\r\n          style: Theme.of(context).textTheme.headlineMedium,\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n\r\n/// The Navigator observer.\r\nclass MyNavObserver extends NavigatorObserver {\r\n  /// Creates a [MyNavObserver].\r\n  MyNavObserver() {\r\n    log.onRecord.listen((LogRecord e) => debugPrint('$e'));\r\n  }\r\n\r\n  /// The logged message.\r\n  final Logger log = Logger('MyNavObserver');\r\n\r\n  @override\r\n  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {\r\n    log.info('didPush: ${route.str}, previousRoute= ${previousRoute?.str}');\r\n  }\r\n\r\n  @override\r\n  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) =>\r\n      log.info('didPop: ${route.str}, previousRoute= ${previousRoute?.str}');\r\n\r\n  @override\r\n  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) =>\r\n      log.info('didRemove: ${route.str}, previousRoute= ${previousRoute?.str}');\r\n\r\n  @override\r\n  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) =>\r\n      log.info('didReplace: new= ${newRoute?.str}, old= ${oldRoute?.str}');\r\n}\r\n\r\nextension on Route<dynamic> {\r\n  String get str => 'route(${settings.name}: ${settings.arguments})';\r\n}\r\n\r\n```\r\n\r\n</details>\r\n\r\n<details>\r\n<summary>flutter doctor -v</summary>\r\n[\u2713] Flutter (Channel stable, 3.3.2, on macOS 12.6 21G115 darwin-x64, locale en-GB)\r\n    \u2022 Flutter version 3.3.2 on channel stable at /Users/jonmountjoy/flutter\r\n    \u2022 Upstream repository https://github.com/flutter/flutter.git\r\n    \u2022 Framework revision e3c29ec00c (8 days ago), 2022-09-14 08:46:55 -0500\r\n    \u2022 Engine revision a4ff2c53d8\r\n    \u2022 Dart version 2.18.1\r\n    \u2022 DevTools version 2.15.0\r\n\r\n[\u2713] Android toolchain - develop for Android devices (Android SDK version 30.0.3)\r\n    \u2022 Android SDK at /Users/jonmountjoy/Library/Android/sdk\r\n    \u2022 Platform android-33, build-tools 30.0.3\r\n    \u2022 ANDROID_HOME = /Users/jonmountjoy/Library/Android/sdk\r\n    \u2022 Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java\r\n    \u2022 Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)\r\n    \u2022 All Android licenses accepted.\r\n\r\n[\u2713] Xcode - develop for iOS and macOS (Xcode 14.0)\r\n    \u2022 Xcode at /Applications/Xcode.app/Contents/Developer\r\n    \u2022 Build 14A309\r\n    \u2022 CocoaPods version 1.11.3\r\n\r\n[\u2713] Chrome - develop for the web\r\n    \u2022 Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\r\n</details>\r\n",
+      "closed_at": "2025-11-05T15:42:06Z",
+      "comments": 56,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/112196/comments",
+      "created_at": "2022-09-22T16:33:56Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/112196/events",
+      "html_url": "https://github.com/flutter/flutter/issues/112196",
+      "id": 1382723165,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "89d5ff",
+          "default": false,
+          "description": "flutter/packages repository. See also p: labels.",
+          "id": 1185450306,
+          "name": "package",
+          "node_id": "MDU6TGFiZWwxMTg1NDUwMzA2",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/package"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "000000",
+          "default": false,
+          "description": "The issue has been confirmed reproducible and is ready to work on",
+          "id": 1930767526,
+          "name": "has reproducible steps",
+          "node_id": "MDU6TGFiZWwxOTMwNzY3NTI2",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/has%20reproducible%20steps"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "770000",
+          "default": false,
+          "description": "Important issues not at the top of the work list",
+          "id": 2096801502,
+          "name": "P2",
+          "node_id": "MDU6TGFiZWwyMDk2ODAxNTAy",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/P2"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "4A5775",
+          "default": false,
+          "description": "Issue is closed as already fixed in a newer version",
+          "id": 2698368855,
+          "name": "r: fixed",
+          "node_id": "MDU6TGFiZWwyNjk4MzY4ODU1",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/r:%20fixed"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "89d5ff",
+          "default": false,
+          "description": "The go_router package",
+          "id": 3844253004,
+          "name": "p: go_router",
+          "node_id": "LA_kwDOAeUeuM7lIqVM",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/p:%20go_router"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fef2c0",
+          "default": false,
+          "description": "Found to occur in 3.3",
+          "id": 4349459599,
+          "name": "found in release: 3.3",
+          "node_id": "LA_kwDOAeUeuM8AAAABAz98jw",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/found%20in%20release:%203.3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fef2c0",
+          "default": false,
+          "description": "Found to occur in 3.4",
+          "id": 4489574997,
+          "name": "found in release: 3.4",
+          "node_id": "LA_kwDOAeUeuM8AAAABC5l6VQ",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/found%20in%20release:%203.4"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "198022",
+          "default": false,
+          "description": "Owned by Framework team",
+          "id": 5706368363,
+          "name": "team-framework",
+          "node_id": "LA_kwDOAeUeuM8AAAABVCBFaw",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/team-framework"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8ccba",
+          "default": false,
+          "description": "Triaged by Framework team",
+          "id": 5706368378,
+          "name": "triaged-framework",
+          "node_id": "LA_kwDOAeUeuM8AAAABVCBFeg",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/triaged-framework"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/112196/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM5Saq5d",
+      "number": 112196,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 118,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 9,
+        "heart": 9,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 136,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/112196/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/112196/timeline",
+      "title": "[go_router] ShellRoutes seem to cause NavigatorObserver to not fire (5.0.1)",
+      "type": null,
+      "updated_at": "2025-11-21T07:01:10Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/112196",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/545244?v=4",
+        "events_url": "https://api.github.com/users/jonmountjoy/events{/privacy}",
+        "followers_url": "https://api.github.com/users/jonmountjoy/followers",
+        "following_url": "https://api.github.com/users/jonmountjoy/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jonmountjoy/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/jonmountjoy",
+        "id": 545244,
+        "login": "jonmountjoy",
+        "node_id": "MDQ6VXNlcjU0NTI0NA==",
+        "organizations_url": "https://api.github.com/users/jonmountjoy/orgs",
+        "received_events_url": "https://api.github.com/users/jonmountjoy/received_events",
+        "repos_url": "https://api.github.com/users/jonmountjoy/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/jonmountjoy/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jonmountjoy/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/jonmountjoy",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 53
+}

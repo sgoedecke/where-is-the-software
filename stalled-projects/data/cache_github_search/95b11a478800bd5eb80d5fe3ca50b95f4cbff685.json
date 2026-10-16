@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "## What problem does this solve or what need does it fill?\r\n\r\nInserting components one at a time is slow.\r\n\r\n## What solution would you like?\r\n\r\nAdd `Commands::insert_batch` and `remove_batch` to modify components en-masse in a more efficient way.\r\n\r\nAs discussed in https://github.com/bevyengine/bevy/issues/3227#issuecomment-2376553464, this should be a safe, typed equivalent to `EntityWorldMut::insert_by_ids` that's exposed to commands.\r\n\r\nI think that a builder API that iteratively modifies the underlying `Command` struct is probably the correct design.\r\n\r\n## What alternative(s) have you considered?\r\n\r\nWe could use `insert_or_spawn_batch` for the insertion case, but that does not fail in the desired ways at all.\r\n\r\n## Additional context\r\n\r\nFollows up on the work from #2673, which added `insert_or_spawn_batch`. Ideally we can use the same strategy for this work, and perform similar benchmarks.",
+      "closed_at": "2024-10-13T18:32:03Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/2693/comments",
+      "created_at": "2021-08-19T21:16:40Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/2693/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/2693",
+      "id": 975056403,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c6a751",
+          "default": false,
+          "description": "Entities, components, systems, and events",
+          "id": 2197761682,
+          "name": "A-ECS",
+          "node_id": "MDU6TGFiZWwyMTk3NzYxNjgy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-ECS"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "B8B8B8",
+          "default": false,
+          "description": "A change motivated by improving speed, memory usage or compile times",
+          "id": 2272098452,
+          "name": "C-Performance",
+          "node_id": "MDU6TGFiZWwyMjcyMDk4NDUy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Performance"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876E3",
+          "default": false,
+          "description": "This issue is ready for an implementation PR. Go for it!",
+          "id": 3166151441,
+          "name": "S-Ready-For-Implementation",
+          "node_id": "MDU6TGFiZWwzMTY2MTUxNDQx",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Ready-For-Implementation"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d93f0b",
+          "default": false,
+          "description": "This work is generally agreed upon",
+          "id": 6899549740,
+          "name": "X-Uncontroversial",
+          "node_id": "LA_kwDODf6-U88AAAABmz7GLA",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/X-Uncontroversial"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "008672",
+          "default": false,
+          "description": "Simple bug fixes and API improvements, docs, test and examples",
+          "id": 6899571146,
+          "name": "D-Straightforward",
+          "node_id": "LA_kwDODf6-U88AAAABmz8Zyg",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/D-Straightforward"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/2693/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5NzUwNTY0MDM=",
+      "number": 2693,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/2693/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/2693/timeline",
+      "title": "Add Commands::insert_batch for faster component modification",
+      "type": null,
+      "updated_at": "2024-10-13T18:32:03Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/2693",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3579909?v=4",
+        "events_url": "https://api.github.com/users/alice-i-cecile/events{/privacy}",
+        "followers_url": "https://api.github.com/users/alice-i-cecile/followers",
+        "following_url": "https://api.github.com/users/alice-i-cecile/following{/other_user}",
+        "gists_url": "https://api.github.com/users/alice-i-cecile/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/alice-i-cecile",
+        "id": 3579909,
+        "login": "alice-i-cecile",
+        "node_id": "MDQ6VXNlcjM1Nzk5MDk=",
+        "organizations_url": "https://api.github.com/users/alice-i-cecile/orgs",
+        "received_events_url": "https://api.github.com/users/alice-i-cecile/received_events",
+        "repos_url": "https://api.github.com/users/alice-i-cecile/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/alice-i-cecile/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/alice-i-cecile/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/alice-i-cecile",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 5
+}

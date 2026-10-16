@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "## Bevy version\r\n\r\n0.8.1 (I also tested on master branch (39467e30fdb967cb57ac41bc116a090e748ded3a) and did have the sam issue)\r\n\r\n## \\[Optional\\] Relevant system information\r\n\r\nRust version: 1.64.0\r\nOS: Windows 11 & Mac OS Monterey 12.6\r\n\r\n```ignore\r\nAdapterInfo { name: \"AMD Radeon Pro 5300M\", vendor: 0, device: 0, device_type: DiscreteGpu, backend: Metal }\r\n```\r\nI tested it on an Nvidia RTX 3070ti with Vulkan as the backend as well and did have the same issue.\r\n\r\n## What you did\r\n\r\nI tried to spawn an entity as a child of another entity but it was not visible. After downgrading to `0.7.0` everything went fine. Thus I assume that this is a regression introduced with `0.8`.\r\n\r\nThe code to reproduce:\r\n```rust\r\nuse bevy::prelude::*;\r\n\r\nconst RECT_SIZE: f32 = 16.0;\r\n\r\nfn main() {\r\n    App::new()\r\n        .add_plugins(DefaultPlugins)\r\n        .add_startup_system(spawn_camera)\r\n        .add_startup_system(spawn_as_child)\r\n        .run();\r\n}\r\n\r\nfn spawn_camera(mut commands: Commands) {\r\n    commands.spawn_bundle(Camera2dBundle::default()); // use OrthographicCameraBundle::new_2d() in 0.7.0\r\n}\r\n\r\nfn spawn_as_child(mut commands: Commands) {\r\n    let rect_entity = commands\r\n        .spawn_bundle(SpriteBundle {\r\n            sprite: Sprite {\r\n                color: Color::RED,\r\n                custom_size: Some(Vec2::splat(RECT_SIZE)),\r\n                ..Default::default()\r\n            },\r\n            ..Default::default()\r\n        })\r\n        .insert(Transform::default())\r\n        .id();\r\n\r\n    commands\r\n        .spawn()\r\n        .insert_bundle(TransformBundle::default())\r\n        .add_child(rect_entity);\r\n}\r\n```\r\n\r\n## What went wrong\r\n\r\nThe sprite spawned is not visible in `0.8.1`:\r\n<img width=\"1276\" alt=\"0 8 1\" src=\"https://user-images.githubusercontent.com/7449886/192269755-8e78d7d7-ef6a-4c11-ad65-553f47f86909.png\">\r\n\r\nI expected to see a red rectangle as you do in version `0.7.0`:\r\n<img width=\"1280\" alt=\"0 7 0\" src=\"https://user-images.githubusercontent.com/7449886/192269877-97321e63-51ec-4e32-93df-99fc769e1152.png\">\r\n\r\n",
+      "closed_at": "2022-09-26T12:19:16Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/6105/comments",
+      "created_at": "2022-09-26T12:00:59Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/6105/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/6105",
+      "id": 1385955095,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d876e3",
+          "default": false,
+          "description": "This issue or PR already exists",
+          "id": 1795619325,
+          "name": "S-Duplicate",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzI1",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Duplicate"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/6105/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85Sm_8X",
+      "number": 6105,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/6105/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/6105/timeline",
+      "title": "Entities are invisible when spawned as child via add_child()",
+      "type": null,
+      "updated_at": "2022-09-26T12:19:16Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/6105",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7449886?v=4",
+        "events_url": "https://api.github.com/users/svenallers/events{/privacy}",
+        "followers_url": "https://api.github.com/users/svenallers/followers",
+        "following_url": "https://api.github.com/users/svenallers/following{/other_user}",
+        "gists_url": "https://api.github.com/users/svenallers/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/svenallers",
+        "id": 7449886,
+        "login": "svenallers",
+        "node_id": "MDQ6VXNlcjc0NDk4ODY=",
+        "organizations_url": "https://api.github.com/users/svenallers/orgs",
+        "received_events_url": "https://api.github.com/users/svenallers/received_events",
+        "repos_url": "https://api.github.com/users/svenallers/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/svenallers/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/svenallers/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/svenallers",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 168
+}

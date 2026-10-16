@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Neovim version (nvim -v)\n\n0.7.2\n\n### Vim (not Nvim) behaves the same?\n\nyes, 8.2.4113\n\n### Operating system/version\n\nmacOS 12.4\n\n### Terminal name/version\n\nTerminal.app 2.12.7\n\n### $TERM environment variable\n\nscreen-256color\n\n### Installation\n\nhomebrew\n\n### How to reproduce the issue\n\nAll in default macos Terminal.app\r\n\r\nSetup tmux configs following `:checkhealth` recommendations, like:\r\n```tmux\r\nset-option -g default-terminal \"screen-256color\"\r\nset-option -sa terminal-overrides ',xterm-256color:RGB' # 'cause xterm-256color is $TERM outside of tmux\r\n```\r\n\r\nSetup nvim `termguicolors` as true\r\n\r\nReload tmux and nvim\n\n### Expected behavior\n\nNo warnings while `:checkhealth` for Terminal.app($TERM == xterm-256color) + tmux ($TERM screen-256color) runtime environment\n\n### Actual behavior\n\nThere are either warning with actual colors or nothing warn but broken color support\r\n<img width=\"1471\" alt=\"\u0421\u043d\u0438\u043c\u043e\u043a \u044d\u043a\u0440\u0430\u043d\u0430 2022-06-30 \u0432 21 12 00\" src=\"https://user-images.githubusercontent.com/33671815/176752468-951e6a8c-c19f-4868-a358-4e7a06bcf96a.png\">\r\n<img width=\"1680\" alt=\"\u0421\u043d\u0438\u043c\u043e\u043a \u044d\u043a\u0440\u0430\u043d\u0430 2022-06-30 \u0432 21 14 10\" src=\"https://user-images.githubusercontent.com/33671815/176752886-50dee255-3000-4b7a-b171-17da42f1dc7d.png\">",
+      "closed_at": "2022-06-30T20:09:51Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/19176/comments",
+      "created_at": "2022-06-30T18:40:05Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/19176/events",
+      "html_url": "https://github.com/neovim/neovim/issues/19176",
+      "id": 1290507253,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/19176/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM5M65P1",
+      "number": 19176,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/19176/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/19176/timeline",
+      "title": "Checkhealth recommends me to break my configs",
+      "type": null,
+      "updated_at": "2022-06-30T20:09:51Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/19176",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/33671815?v=4",
+        "events_url": "https://api.github.com/users/tony-sol/events{/privacy}",
+        "followers_url": "https://api.github.com/users/tony-sol/followers",
+        "following_url": "https://api.github.com/users/tony-sol/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tony-sol/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/tony-sol",
+        "id": 33671815,
+        "login": "tony-sol",
+        "node_id": "MDQ6VXNlcjMzNjcxODE1",
+        "organizations_url": "https://api.github.com/users/tony-sol/orgs",
+        "received_events_url": "https://api.github.com/users/tony-sol/received_events",
+        "repos_url": "https://api.github.com/users/tony-sol/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/tony-sol/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tony-sol/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/tony-sol",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 397
+}

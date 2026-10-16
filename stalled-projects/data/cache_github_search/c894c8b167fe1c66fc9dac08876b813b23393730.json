@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\nUnable to get the inegreation to see my Keurig. The error display message is:\r\n\r\nError\r\n\r\nConfig flow could not be loaded: 500 Internal Server Error Server got itself in trouble\n\n### What version of Home Assistant Core has the issue?\n\ncore-2023.9.3\n\n### What was the last working version of Home Assistant Core?\n\ncore-2023.9.3\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\nKeurig connect\n\n### Link to integration documentation on our website\n\nhttps://github.com/GitHubGoody/homeassistant-keurig/blob/master/README.md\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n_No response_\n\n### Anything in the logs that might be useful for us?\n\n_No response_\n\n### Additional information\n\n_No response_",
+      "closed_at": "2023-09-30T14:27:15Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/101161/comments",
+      "created_at": "2023-09-30T14:25:03Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/101161/events",
+      "html_url": "https://github.com/home-assistant/core/issues/101161",
+      "id": 1920278052,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/101161/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc5ydR4k",
+      "number": 101161,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/101161/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/101161/timeline",
+      "title": "Keurig Connect HACS Integration",
+      "type": null,
+      "updated_at": "2023-10-30T15:08:34Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/101161",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/115247161?v=4",
+        "events_url": "https://api.github.com/users/chkallis7/events{/privacy}",
+        "followers_url": "https://api.github.com/users/chkallis7/followers",
+        "following_url": "https://api.github.com/users/chkallis7/following{/other_user}",
+        "gists_url": "https://api.github.com/users/chkallis7/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/chkallis7",
+        "id": 115247161,
+        "login": "chkallis7",
+        "node_id": "U_kgDOBt6IOQ",
+        "organizations_url": "https://api.github.com/users/chkallis7/orgs",
+        "received_events_url": "https://api.github.com/users/chkallis7/received_events",
+        "repos_url": "https://api.github.com/users/chkallis7/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/chkallis7/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/chkallis7/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/chkallis7",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1275
+}

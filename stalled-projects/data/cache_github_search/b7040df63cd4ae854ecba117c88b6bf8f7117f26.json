@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### \ud83d\udd0e Search Terms\r\n\r\ngenerics, type deduction, nested generics, conditional type, type inferring \r\n\r\n### \ud83d\udd57 Version & Regression Information\r\n\r\n```\r\ntype Comparable<T> = T extends ComparableBase ? true : ( T extends Option<infer U> ? Comparable<U> : false);\r\n```\r\nis supported only after v4.1.5 and the function breaks for every version since that.\r\n\r\n### \u23ef Playground Link\r\n\r\nhttps://www.typescriptlang.org/play?ts=5.5.0-dev.20240330#code/FAFwngDgpgBA8hEBLA9gOwDwBUB8MC8MAyigLZTZ4A+MAculANzBJohQBOAZgIYDGsEuUowA3sBiSYAfRA8A5gC4YAIgDOZKCoA0EqQDceAGwCuUZVmABfYCzadeAugzF7JshcpVoGK67fBoGABhMggeDh4AIyMoACEeNVhCNBNSKM4YGiiUFFieNCyYVKMjIpM0ABMoLlYoSqK1MHS8oqikeVYQZlBIWFDScMiYilwCGCwYKAAPdiq1ELCI6NiEpJgAfhgQDjMYZQAKCanZqHn4RFRMVi5MgFU8LYGhlYoH-ZheIySASh7A2AAQXGz2WIwwqXSnBwvSCcRBS2GsQwCGQ6AhaQyHBwMIBIQRgzByNRVxRl3RkKxONxfRgABECS9wWodqx5DSggBRRlEigk9EsjhsnGw2AAMR5SL55Mw-MwguFIuAAHpldtaQAlKD6ThJOn1Ex8NGYMaEUFSkQzOaVBZfdZbNDazLKApgRgwVUwADuKA4AGs1KKYFqdRw9QajaTTYtCRaxlazjbtrtYFtXR9HaH3Z6fCBvb6A7Y+EZEgssABZEws82vbAna0LEO6qD6yqG42UPDiKQwQymcwTZg9vjoQXt30HaYWH6uHs9kAACyQagAdH29oRpkOpDYbCq1bE8zxxo6vRNK9XEbWFWh2QcVDxHyo-h61fg8GoFygTEYGpwOL6wCHjAUQnlAZ4VlWIA1uClLQgcACMABMADMfxAVAeZ8GBEEXtBV7gnKGJQtiOAHKIHhKKoGjkDovbGGYijIShVgvp6n7fr+xQoHm-6AcBDQpOB55QTBxIymSHZwaRZGiDIchUeomh0euA4UQpXg0Vo2j0f2yjMVYrHZmqHE-g0uZTBwAEcPuMDAckxTCZBl6xrWRE3uysmUZpyk6apigPk+RmvgQH5fmZlnWcAQA\r\n\r\n### \ud83d\udcbb Code\r\n\r\n```ts\r\ntype Option<T> = Some<T> | None;\r\ninterface Some<T> {\r\n    _tag: \"some\",\r\n    value: T\r\n}\r\n\r\ninterface None {\r\n    _tag: \"none\"\r\n}\r\n\r\ntype ComparableBase = number | boolean | null | undefined | symbol | bigint;\r\n\r\ntype Comparable<T> = T extends ComparableBase ? true : ( T extends Option<infer U> ? Comparable<U> : false);\r\n\r\ntype A = Comparable<number>\r\ntype B = Comparable<Option<number>>\r\ntype C = Comparable<Option<Option<number>>>\r\ntype D = Comparable<string>\r\ntype E = Comparable<Option<string>>\r\ntype F = Comparable<Option<Option<string>>>\r\n\r\n// type ReverseDeduction<T> = Comparable<T> extends false ? never : any; // works\r\ntype ReverseDeduction<T> = Comparable<T> extends true ? any : never; // not works\r\n\r\nclass TMustComparable<T extends ReverseDeduction<T>> {\r\n    value: T;\r\n    constructor(x: T) {\r\n        this.value = x;\r\n    }\r\n}\r\n\r\n// let a = new TMustComparable<string>(\"aaa\"); // => should error\r\nlet b = new TMustComparable<number>(123);\r\nlet c = new TMustComparable<Option<number>>({_tag: \"some\", value:123}); // should not error\r\nlet d = new TMustComparable<Option<Option<number>>>({ _tag: \"some\", value: {_tag: \"some\", value: 123}}); // should not error\r\n// let e = new TMustComparable<Option<string>>({_tag: \"some\", value:\"aaa\"}); // => should error\r\n\r\n```\r\n\r\n\r\n### \ud83d\ude41 Actual behavior\r\n\r\nThe following errors are given\r\n```\r\nType 'Option<number>' does not satisfy the constraint 'never'.\r\n  Type 'None' is not assignable to type 'never'.\r\nType 'Option<Option<number>>' does not satisfy the constraint 'never'.\r\n  Type 'None' is not assignable to type 'never'.\r\n```\r\nit's because the type of `Comparable<Option<number>>` is calcuated as `boolean`  (result of `true | false` I think, looks like something here about `?:` is being treated as OR ) instead of `true`, similar happens to `Comparable<Option<Option<number>>>`\r\n\r\n### \ud83d\ude42 Expected behavior\r\n\r\nThe code should compile. Actually if you replace line 24 with line 23, it works. but in the end I think the type system should be able to accurately deduct the type to either true or false, instead of true, false and boolean in this case.\r\nAlthough both cases will go through `T extends Option<infer U> ? Comparable<U>`, the false case -- `Comparable<Option<string>>` will have no problem being recognized as `false` in both cases.  \r\n\r\n### Additional information about the issue\r\n",
+      "closed_at": "2024-03-31T08:09:54Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/58012/comments",
+      "created_at": "2024-03-31T07:29:06Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/58012/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/58012",
+      "id": 2216824157,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/58012/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc6EIg1d",
+      "number": 58012,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/58012/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/58012/timeline",
+      "title": "Incorrect Type Deduction in Recursive Conditional Generics Types",
+      "type": null,
+      "updated_at": "2025-10-22T03:03:07Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/58012",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1381921?v=4",
+        "events_url": "https://api.github.com/users/Yangff/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Yangff/followers",
+        "following_url": "https://api.github.com/users/Yangff/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Yangff/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Yangff",
+        "id": 1381921,
+        "login": "Yangff",
+        "node_id": "MDQ6VXNlcjEzODE5MjE=",
+        "organizations_url": "https://api.github.com/users/Yangff/orgs",
+        "received_events_url": "https://api.github.com/users/Yangff/received_events",
+        "repos_url": "https://api.github.com/users/Yangff/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Yangff/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Yangff/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Yangff",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 781
+}

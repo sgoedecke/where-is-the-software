@@ -1,0 +1,21 @@
+{
+  "git_supply_total": 3448,
+  "store_active_total": 3271,
+  "joined_active": 3252,
+  "unmatched_store": 19,
+  "download_thresholds": [
+    1000,
+    10000,
+    100000
+  ],
+  "current_download_distribution": {
+    "10": 14,
+    "25": 51,
+    "50": 223,
+    "75": 1154,
+    "90": 5270,
+    "95": 15157,
+    "99": 98974
+  },
+  "max_downloads": 781674
+}

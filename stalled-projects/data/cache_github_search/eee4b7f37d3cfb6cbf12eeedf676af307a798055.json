@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!--\r\nThank you for filing a bug report! \ud83d\udc1b Please provide a short summary of the bug,\r\nalong with any information you feel relevant to replicating the bug.\r\n-->\r\n\r\nI tried this code:\r\n\r\n```bash\r\nrustc -C help | echo\r\n```\r\n\r\nI expected to see this happen: `echo` should pipe the help output to stdout.\r\n\r\nInstead, this happened (on stable and nightly): \r\n\r\n```\r\nthread 'main' panicked at 'failed printing to stdout: The pipe is being closed. (os error 232)', lib\r\nrary\\std\\src\\io\\stdio.rs:1193:9\r\n<snip>\r\n\r\nerror: internal compiler error: unexpected panic\r\n\r\nthread 'main' panicked at 'failed printing to stdout: The pipe is being closed. (os error 232)', lib\r\nrary\\std\\src\\io\\stdio.rs:1193:9\r\n<snip>\r\n\r\nerror: internal compiler error: unexpected panic\r\n\r\nthread panicked while processing panic. aborting.\r\n```\r\n\r\n### Meta\r\n<!--\r\nIf you're using the stable version of the compiler, you should also check if the\r\nbug also exists in the beta or nightly versions.\r\n-->\r\n\r\n`rustc --version --verbose`:\r\n```\r\nrustc 1.56.0-nightly (ad981d58e 2021-08-08)\r\nbinary: rustc\r\ncommit-hash: ad981d58e1ca16bcf4072577934630deb11c5e14\r\ncommit-date: 2021-08-08\r\nhost: x86_64-pc-windows-msvc\r\nrelease: 1.56.0-nightly\r\nLLVM version: 12.0.1\r\n```\r\nand\r\n```\r\nrustc 1.54.0 (a178d0322 2021-07-26)\r\nbinary: rustc\r\ncommit-hash: a178d0322ce20e33eac124758e837cbd80a6f633\r\ncommit-date: 2021-07-26\r\nhost: x86_64-pc-windows-msvc\r\nrelease: 1.54.0\r\nLLVM version: 12.0.1\r\n```\r\n\r\n<!--\r\nInclude a backtrace in the code block by setting `RUST_BACKTRACE=1` in your\r\nenvironment. E.g. `RUST_BACKTRACE=1 cargo build`.\r\n-->\r\n<details><summary>BACKTRACE</summary><p>\r\n\r\n```\r\nthread 'main' panicked at 'failed printing to stdout: The pipe is being closed. (os error 232)', lib\r\nrary\\std\\src\\io\\stdio.rs:935:9\r\nstack backtrace:\r\n   0:     0x7fffb421647f - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Displ\r\nay>::fmt::hf141745c2b8f0ef6\r\n   1:     0x7fffb423f68a - core::fmt::write::h056df61b7bc8b831\r\n   2:     0x7fffb42099f8 - <std::io::IoSliceMut as core::fmt::Debug>::fmt::h528b029ec48da0bd\r\n   3:     0x7fffb421a646 - std::panicking::take_hook::hb978b114d2382491\r\n   4:     0x7fffb421a129 - std::panicking::take_hook::hb978b114d2382491\r\n   5:     0x7fff7b4f99e7 - rustc_driver::report_ice::ha158ba3684d6a28e\r\n   6:     0x7fffb421af40 - std::panicking::rust_panic_with_hook::h93d5982885e605de\r\n   7:     0x7fffb421aa01 - rust_begin_unwind\r\n   8:     0x7fffb4216dcf - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Displ\r\nay>::fmt::hf141745c2b8f0ef6\r\n   9:     0x7fffb421a959 - rust_begin_unwind\r\n  10:     0x7fffb42723ec - std::panicking::begin_panic_fmt::h7c307d066c3b9e56\r\n  11:     0x7fffb4208291 - std::io::stdio::_print::h7ac888e2b0b9fc90\r\n  12:     0x7fff7b4f893b - rustc_driver::handle_options::ha327e2535327a5ef\r\n  13:     0x7fff7b4ef9c7 - rustc_driver::RunCompiler::run::h41f0251ecadc65ad\r\n  14:     0x7fff7b4ebf3e - <rustc_driver::args::Error as core::fmt::Debug>::fmt::h46216c0117803f26\r\n  15:     0x7fff7b4fb6fa - rustc_driver::main::he55654e9a1f96def\r\n  16:     0x7ff6dbe5104e - <unknown>\r\n  17:     0x7ff6dbe51006 - <unknown>\r\n  18:     0x7ff6dbe5101c - <unknown>\r\n  19:     0x7fffb421b35a - std::rt::lang_start_internal::h076b7fab8d534464\r\n  20:     0x7ff6dbe51077 - <unknown>\r\n  21:     0x7ff6dbe51284 - <unknown>\r\n  22:     0x7fffe7cf7034 - BaseThreadInitThunk\r\n  23:     0x7fffe97e2651 - RtlUserThreadStart\r\n\r\nerror: internal compiler error: unexpected panic\r\n\r\nthread 'main' panicked at 'failed printing to stdout: The pipe is being closed. (os error 232)', lib\r\nrary\\std\\src\\io\\stdio.rs:935:9\r\nstack backtrace:\r\n   0:     0x7fffb421647f - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Displ\r\nay>::fmt::hf141745c2b8f0ef6\r\n   1:     0x7fffb423f68a - core::fmt::write::h056df61b7bc8b831\r\n   2:     0x7fffb42099f8 - <std::io::IoSliceMut as core::fmt::Debug>::fmt::h528b029ec48da0bd\r\n   3:     0x7fffb421a646 - std::panicking::take_hook::hb978b114d2382491\r\n   4:     0x7fffb421a129 - std::panicking::take_hook::hb978b114d2382491\r\n   5:     0x7fff7b4f99e7 - rustc_driver::report_ice::ha158ba3684d6a28e\r\n   6:     0x7fffb421af40 - std::panicking::rust_panic_with_hook::h93d5982885e605de\r\n   7:     0x7fffb421aa01 - rust_begin_unwind\r\n   8:     0x7fffb4216dcf - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Displ\r\nay>::fmt::hf141745c2b8f0ef6\r\n   9:     0x7fffb421a959 - rust_begin_unwind\r\n  10:     0x7fffb42723ec - std::panicking::begin_panic_fmt::h7c307d066c3b9e56\r\n  11:     0x7fffb4208291 - std::io::stdio::_print::h7ac888e2b0b9fc90\r\n  12:     0x7fff7b4f893b - rustc_driver::handle_options::ha327e2535327a5ef\r\n  13:     0x7fff7b4f9d55 - rustc_driver::report_ice::ha158ba3684d6a28e\r\n  14:     0x7fffb421af40 - std::panicking::rust_panic_with_hook::h93d5982885e605de\r\n  15:     0x7fffb421aa01 - rust_begin_unwind\r\n  16:     0x7fffb4216dcf - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Displ\r\nay>::fmt::hf141745c2b8f0ef6\r\n  17:     0x7fffb421a959 - rust_begin_unwind\r\n  18:     0x7fffb42723ec - std::panicking::begin_panic_fmt::h7c307d066c3b9e56\r\n  19:     0x7fffb4208291 - std::io::stdio::_print::h7ac888e2b0b9fc90\r\n  20:     0x7fff7b4f893b - rustc_driver::handle_options::ha327e2535327a5ef\r\n  21:     0x7fff7b4ef9c7 - rustc_driver::RunCompiler::run::h41f0251ecadc65ad\r\n  22:     0x7fff7b4ebf3e - <rustc_driver::args::Error as core::fmt::Debug>::fmt::h46216c0117803f26\r\n  23:     0x7fff7b4fb6fa - rustc_driver::main::he55654e9a1f96def\r\n  24:     0x7ff6dbe5104e - <unknown>\r\n  25:     0x7ff6dbe51006 - <unknown>\r\n  26:     0x7ff6dbe5101c - <unknown>\r\n  27:     0x7fffb421b35a - std::rt::lang_start_internal::h076b7fab8d534464\r\n  28:     0x7ff6dbe51077 - <unknown>\r\n  29:     0x7ff6dbe51284 - <unknown>\r\n  30:     0x7fffe7cf7034 - BaseThreadInitThunk\r\n  31:     0x7fffe97e2651 - RtlUserThreadStart\r\n\r\nerror: internal compiler error: unexpected panic\r\n\r\nthread panicked while processing panic. aborting.\r\n\r\n```\r\n\r\n</p>\r\n</details>\r\n",
+      "closed_at": "2024-10-25T01:27:15Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/87873/comments",
+      "created_at": "2021-08-09T01:38:04Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/87873/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/87873",
+      "id": 963575244,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: rustc_driver that ties everything together into the `rustc` compiler",
+          "id": 116993,
+          "name": "A-driver",
+          "node_id": "MDU6TGFiZWwxMTY5OTM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-driver"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6e6ec0",
+          "default": false,
+          "description": "Operating system: Windows",
+          "id": 123109,
+          "name": "O-windows",
+          "node_id": "MDU6TGFiZWwxMjMxMDk=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/O-windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e10c02",
+          "default": false,
+          "description": "Issue: The compiler panicked, giving an Internal Compilation Error (ICE) \u2744\ufe0f",
+          "id": 9618520,
+          "name": "I-ICE",
+          "node_id": "MDU6TGFiZWw5NjE4NTIw",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/I-ICE"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/87873/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5NjM1NzUyNDQ=",
+      "number": 87873,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/87873/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/87873/timeline",
+      "title": "ICE on `rustc -C help | echo` on Windows",
+      "type": null,
+      "updated_at": "2024-10-25T01:28:19Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/87873",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7707250?v=4",
+        "events_url": "https://api.github.com/users/TheIronBorn/events{/privacy}",
+        "followers_url": "https://api.github.com/users/TheIronBorn/followers",
+        "following_url": "https://api.github.com/users/TheIronBorn/following{/other_user}",
+        "gists_url": "https://api.github.com/users/TheIronBorn/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/TheIronBorn",
+        "id": 7707250,
+        "login": "TheIronBorn",
+        "node_id": "MDQ6VXNlcjc3MDcyNTA=",
+        "organizations_url": "https://api.github.com/users/TheIronBorn/orgs",
+        "received_events_url": "https://api.github.com/users/TheIronBorn/received_events",
+        "repos_url": "https://api.github.com/users/TheIronBorn/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/TheIronBorn/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/TheIronBorn/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/TheIronBorn",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

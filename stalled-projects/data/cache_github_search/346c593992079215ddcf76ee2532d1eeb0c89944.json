@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "I wanted to use tuple in my code for wasm application. When i tried to compile my code to wasm using `wasm32-unknown-unknown` code is compiled but its not returning any return. But I see multi-value is recently supported by webassembly community. \r\n\r\nHow can I use multivalue ?\r\nMy  sample example (Note: I'm not using external library like `wasm-bindgen` as i want to test with pure LLVM backend) \r\n```\r\n#[no_mangle]\r\npub extern fn test(x:u64, y:u64) -> (u64, u64) {\r\n  (x + y, x - y)\r\n}\r\n``` \r\nMy wasm code looks like\r\n![Screenshot from 2020-06-26 12-23-07](https://user-images.githubusercontent.com/41888986/85829653-bc507680-b7a8-11ea-8ca1-cdee599fd3c2.png)\r\n\r\nLLVM version: 9 \r\nPlease suggest in this feature\r\nThanks ",
+      "closed_at": "2023-08-31T01:42:50Z",
+      "comments": 63,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/73755/comments",
+      "created_at": "2020-06-26T07:01:36Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/73755/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/73755",
+      "id": 646055121,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6e6ec0",
+          "default": false,
+          "description": "Target: WASM (WebAssembly), http://webassembly.org/",
+          "id": 474645165,
+          "name": "O-wasm",
+          "node_id": "MDU6TGFiZWw0NzQ2NDUxNjU=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/O-wasm"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Enabling/disabling target features like AVX, Neon, etc.",
+          "id": 5223550385,
+          "name": "A-target-feature",
+          "node_id": "LA_kwDOAAsO6M8AAAABN1kNsQ",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-target-feature"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/73755/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NDYwNTUxMjE=",
+      "number": 73755,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/73755/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/73755/timeline",
+      "title": "Multi value Wasm compilation",
+      "type": null,
+      "updated_at": "2025-10-29T03:11:25Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/73755",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/41888986?v=4",
+        "events_url": "https://api.github.com/users/AchalaSB/events{/privacy}",
+        "followers_url": "https://api.github.com/users/AchalaSB/followers",
+        "following_url": "https://api.github.com/users/AchalaSB/following{/other_user}",
+        "gists_url": "https://api.github.com/users/AchalaSB/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/AchalaSB",
+        "id": 41888986,
+        "login": "AchalaSB",
+        "node_id": "MDQ6VXNlcjQxODg4OTg2",
+        "organizations_url": "https://api.github.com/users/AchalaSB/orgs",
+        "received_events_url": "https://api.github.com/users/AchalaSB/received_events",
+        "repos_url": "https://api.github.com/users/AchalaSB/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/AchalaSB/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/AchalaSB/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/AchalaSB",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 125
+}

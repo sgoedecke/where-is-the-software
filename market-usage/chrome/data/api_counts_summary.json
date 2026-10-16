@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-10-15",
+  "source": "Chrome-Stats /api/chrome/advanced-search?client=web, active extensions filter itemCategory=extension and obsolete!=true",
+  "total_active_extensions": 283176,
+  "all_active_user_thresholds": {
+    "0": 283176,
+    "100": 70093,
+    "1000": 26678,
+    "10000": 8763,
+    "100000": 2057
+  }
+}

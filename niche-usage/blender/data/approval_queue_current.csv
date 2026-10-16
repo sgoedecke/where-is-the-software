@@ -1,0 +1,2106 @@
+type,name,maintainer,submitted_age,activity_age,status
+Add-on,QFG Dynamics 1.0.0,Victor-Pronchev,2 h,1 h,Awaiting Review
+Add-on,JANCTION Render,Keisuke-Kato,2 h,2 h,Awaiting Review
+Add-on,TexelUniformityTool,JesseMckay,2 h,2 h,Awaiting Review
+Add-on,ID RenderFlo,Sahitya-Kashyap,19 h,2 h,Awaiting Review
+Add-on,MMD Auto Tools,fannyyy,5 h,5 h,Awaiting Review
+Add-on,Oh My Time,DrBlender,10 h,10 h,Awaiting Review
+Add-on,Mesh XR,DedZedOffishal,6 d,11 h,Awaiting Review
+Add-on,Auto Pivot Baker,NRexha,3 d,12 h,Awaiting Review
+Add-on,SMIRK,Krysidian,2 d,16 h,Awaiting Review
+Add-on,MikuMikuToon,BVan,1 w,17 h,Awaiting Review
+Add-on,BLMD,Zosuya,19 h,18 h,Awaiting Review
+Add-on,Positive Mirror,Paraminder-Dhiman,19 h,19 h,Awaiting Review
+Add-on,NK Combine &amp; Bake,nk-11,1 d,1 d,Awaiting Review
+Add-on,gpFlow,oylbis,2 d,1 d,Awaiting Review
+Add-on,GLB Export Optimizer,Varman,2 d,2 d,Awaiting Review
+Add-on,Filter Maker Lite,Gamma2dot2,2 d,2 d,Awaiting Review
+Add-on,In-Place Animation Tool,TIJEY,2 d,2 d,Awaiting Review
+Add-on,Combi Export,oleroma,2 d,2 d,Awaiting Review
+Add-on,Quick Favorites Manager,Munib-uddin,2 w,1 w,Awaiting Review
+Add-on,List Organizer,LingQS,2 w,2 w,Awaiting Review
+Add-on,Stylized Shader,Bhrigu-Bhattacharya,3 w,3 w,Awaiting Review
+Add-on,Animation Retargeting,Marc-Emanuel-Otto,2 y,1 mo,Awaiting Review
+Add-on,gpOutliner,oylbis,2 d,22 h,Awaiting Changes
+Add-on,sequencerFlow Lite,oylbis,2 d,22 h,Awaiting Changes
+Add-on,RRUF,Laurus-Kuvakei,2 d,1 d,Awaiting Changes
+Add-on,Boolean Stamp Brush,ObiNoWanKenobi,2 d,2 d,Awaiting Changes
+Add-on,VG Rules,BlankGlyph,5 d,2 d,Awaiting Changes
+Add-on,NormalHealer: Smart Boolean &amp; Shading Fixer,Aarush-Yadav,6 d,3 d,Awaiting Changes
+Add-on,Parent to Collection,Steven-Lohrer,6 d,3 d,Awaiting Changes
+Add-on,GTA SA Toolkit,Lior-Kagana,1 w,5 d,Awaiting Changes
+Add-on,sceneBG,Valentyn-Panchyn,1 w,6 d,Awaiting Changes
+Add-on,Blue Handles,ata-javvi,3 w,6 d,Awaiting Changes
+Add-on,UVgami,danielboxer,1 w,6 d,Awaiting Changes
+Add-on,CyclesTooner,UTAGE,2 w,1 w,Awaiting Changes
+Add-on,Seamwick UV Free,yulei,1 w,1 w,Awaiting Changes
+Add-on,Cage Visualizer &amp; Bake,LeGSyS,2 w,1 w,Awaiting Changes
+Add-on,Asignador de Pass Index,KATORENDER,3 w,1 w,Awaiting Changes
+Add-on,Persistent Dimensions,christian_cabrero,2 w,1 w,Awaiting Changes
+Add-on,MT2 Tools,YamiKhal,2 w,1 w,Awaiting Changes
+Add-on,Surface Forge,PrisonMikeTools,2 w,1 w,Awaiting Changes
+Add-on,Meso Mode,AlexBnox,2 w,1 w,Awaiting Changes
+Add-on,Aliens vs Predator RIF Importer,AdiJager,2 w,1 w,Awaiting Changes
+Add-on,Cloth Lab,slohero,2 w,1 w,Awaiting Changes
+Add-on,BetterRef,haykh,2 w,1 w,Awaiting Changes
+Add-on,GLBake,Paul-Chapon,2 w,1 w,Awaiting Changes
+Add-on,MascotCapsule MBAC/MTRA Importer,Victor-Leskov,3 w,1 w,Awaiting Changes
+Add-on,Export SVG,Travis-Tidwell,3 w,1 w,Awaiting Changes
+Add-on,MC Animaker,Priqnot,1 y,2 w,Awaiting Changes
+Add-on,Jeweler 3D Community,Alejandro-Alvarez,3 w,2 w,Awaiting Changes
+Add-on,Print Split,amzi002,3 w,2 w,Awaiting Changes
+Add-on,Torque DTS format,Henrik-Hasell,3 w,2 w,Awaiting Changes
+Add-on,Blender Render Engine,Max-Steel,3 w,2 w,Awaiting Changes
+Theme,Spectacular,itx_4k5h4y_here,2 w,2 w,Awaiting Changes
+Add-on,add_overlapping_elements,hualixiao,1 mo,4 w,Awaiting Changes
+Add-on,SketchTools Free,Asa-W-Ngunja,1 mo,4 w,Awaiting Changes
+Add-on,Project Materials,Aaron-Sorensen,1 mo,1 mo,Awaiting Changes
+Add-on,Ant Trail Curves,Onri-Benally,1 mo,1 mo,Awaiting Changes
+Add-on,Soulstruct,Grimrukh,1 mo,1 mo,Awaiting Changes
+Add-on,LINEUP,Jexz.co,1 mo,1 mo,Awaiting Changes
+Add-on,Character Lecture,Arsen-Gevorgyan,1 mo,1 mo,Awaiting Changes
+Add-on,Onyx Reviewer,Idi0tDev,1 mo,1 mo,Awaiting Changes
+Add-on,Quick Noise F-Curve,Ari-Acosta,1 mo,1 mo,Awaiting Changes
+Add-on,Freshly Baked,Andrea-Ferrati,1 mo,1 mo,Awaiting Changes
+Add-on,You Forgot to Triangulate,Cloud-Guy,1 mo,1 mo,Awaiting Changes
+Add-on,Daniel 的节点预设,wangkun,1 mo,1 mo,Awaiting Changes
+Add-on,"RigAnim Studio Suite: Character, Rigging &amp; World Creation Suite",RANJEET-KUMAR-SAW,1 mo,1 mo,Awaiting Changes
+Add-on,Meldra,xander.dice,1 mo,1 mo,Awaiting Changes
+Add-on,Structural Bars &amp; Nodes,israel-navarro-fernández,2 mo,1 mo,Awaiting Changes
+Add-on,Blender to Spine2D Mesh Exporter,Maksym-Sokolenko,1 mo,1 mo,Awaiting Changes
+Add-on,Classy Blocks Integration,B-C-H-Benjamin,1 mo,1 mo,Awaiting Changes
+Add-on,Camera Pie Menu,kaleidawave,2 mo,1 mo,Awaiting Changes
+Add-on,Incremental Compressor,Mert-Yeşilbaş,2 mo,1 mo,Awaiting Changes
+Add-on,Conduit,Niklesh-Kumar,2 mo,2 mo,Awaiting Changes
+Add-on,Brush Focus Ring,Daniel-Soler,2 mo,2 mo,Awaiting Changes
+Add-on,Zap Output,Farax-Creative,3 mo,2 mo,Awaiting Changes
+Add-on,AxisGradientMaskTool,墨泪MoLei_VFX,4 mo,2 mo,Awaiting Changes
+Add-on,InfoVis,C4rlos.Dias,2 mo,2 mo,Awaiting Changes
+Add-on,Texture Proxy RKNZ,Rikokenz,2 mo,2 mo,Awaiting Changes
+Add-on,Enamel Pin Model Maker,H-Kratz,2 mo,2 mo,Awaiting Changes
+Add-on,LP - Midi to 3D,Liamos_,2 mo,2 mo,Awaiting Changes
+Add-on,F-Curve Bouncer,Dezion,2 mo,2 mo,Awaiting Changes
+Add-on,Itonn's Material Loader,Alzahen,2 mo,2 mo,Awaiting Changes
+Add-on,Mortier,epsiln,2 mo,2 mo,Awaiting Changes
+Add-on,Auto Scale Reference,The-Huy,3 mo,2 mo,Awaiting Changes
+Add-on,PBR Forge,FrankMcDonald,2 mo,2 mo,Awaiting Changes
+Add-on,Bird Flock,Artur-Ambler-4,3 mo,2 mo,Awaiting Changes
+Add-on,Node Tree Anim,westNeighbor,3 mo,2 mo,Awaiting Changes
+Add-on,Global Control Panel,匹宙Plumb,3 mo,3 mo,Awaiting Changes
+Add-on,MWC Addon,artereket,3 mo,3 mo,Awaiting Changes
+Add-on,RenderRig,BHiMAX,3 mo,3 mo,Awaiting Changes
+Add-on,FDM Material Splitter and Check,Dejf,3 mo,3 mo,Awaiting Changes
+Add-on,OpenVR Recorder,Waipek,3 mo,3 mo,Awaiting Changes
+Add-on,OpenTimeLineIO Exporter,AndrewEnyart,3 mo,3 mo,Awaiting Changes
+Add-on,Discord Rich Presence,barroit,3 mo,3 mo,Awaiting Changes
+Add-on,Quick Merge,Addio,3 mo,3 mo,Awaiting Changes
+Add-on,Hair Auto Rig V2,surcen,3 mo,3 mo,Awaiting Changes
+Add-on,Color Picker Pro,ACGGIT_LJ,1 y,3 mo,Awaiting Changes
+Add-on,Blender Mediapipe Control,Arman-Jangmiri,3 mo,3 mo,Awaiting Changes
+Add-on,Hyperfy Tools,HowieDuhzit,1 y,3 mo,Awaiting Changes
+Add-on,UVToolkit,razed,2 y,3 mo,Awaiting Changes
+Add-on,Render Alert,John-Daniel-Absalud,3 mo,3 mo,Awaiting Changes
+Add-on,Textify,Jishnu-kv,2 y,3 mo,Awaiting Changes
+Add-on,Gesture Helper,ACGGIT_LJ,2 y,3 mo,Awaiting Changes
+Add-on,Quick Rigid,nova3D,2 y,3 mo,Awaiting Changes
+Add-on,Rizum Clip Reload,Rizum,3 mo,3 mo,Awaiting Changes
+Add-on,CINAEDVS File Rescue,CINAEDVSstudios,3 mo,3 mo,Awaiting Changes
+Add-on,VGF: Vertex Group Folders,Oleksandr-Gubanov,3 mo,3 mo,Awaiting Changes
+Add-on,Arma 3 Object Builder,MrClock,2 y,3 mo,Awaiting Changes
+Add-on,Math Formula,WannesMalfait,1 y,3 mo,Awaiting Changes
+Add-on,POV@Ble,POVαBle,1 y,3 mo,Awaiting Changes
+Add-on,Key Ops: Toolkit,Dan-Gry,2 y,3 mo,Awaiting Changes
+Add-on,IKEA Model importer,Tejay21,4 mo,3 mo,Awaiting Changes
+Add-on,Alert!!AutoKeyingIsOn,Fahim-Jaowad,3 mo,3 mo,Awaiting Changes
+Add-on,TubeRig,yakivsan,3 mo,3 mo,Awaiting Changes
+Add-on,Caustics_Baking,Benary,1 y,3 mo,Awaiting Changes
+Add-on,OCTAS® Exporter,JensZiehn,3 mo,3 mo,Awaiting Changes
+Add-on,BoneSelector,Bepis,3 mo,3 mo,Awaiting Changes
+Add-on,MN BIM Building Code Checker,enkhbold-1,3 mo,3 mo,Awaiting Changes
+Add-on,Sidebar Tab Search,McKaa,10 mo,3 mo,Awaiting Changes
+Add-on,Node Runner,Noah-Thiering,1 y,3 mo,Awaiting Changes
+Add-on,Character Pipeline Tracker,Evgeny-Lisichik,10 mo,3 mo,Awaiting Changes
+Add-on,Vectart Import,Dimona-Patrick-243,1 y,3 mo,Awaiting Changes
+Add-on,Vertex Group Hierarchy Sorter,Cloud-Guy,10 mo,3 mo,Awaiting Changes
+Add-on,"PointCloud and Splat Exporter (.ply, .splat)",GiancarloV,8 mo,3 mo,Awaiting Changes
+Add-on,LSPotato,lvoxx,4 mo,3 mo,Awaiting Changes
+Add-on,StepShot,Steven-Bleau,4 mo,3 mo,Awaiting Changes
+Add-on,Context Switcher,Neigh,1 y,3 mo,Awaiting Changes
+Add-on,Soft Select Pro,luluc137,4 mo,4 mo,Awaiting Changes
+Add-on,Fluid Flow Vertex Painter,DNArt,4 mo,4 mo,Awaiting Changes
+Add-on,YUYUFISH Toolkit,yuyufish,4 mo,4 mo,Awaiting Changes
+Add-on,Hippo3D,Victor-Calixto,4 mo,4 mo,Awaiting Changes
+Add-on,Ordo (Organizer),Agoulddesign,4 mo,4 mo,Awaiting Changes
+Add-on,Smoothify Keys,itx_4k5h4y_here,4 mo,4 mo,Awaiting Changes
+Add-on,JX Light Studio,JXER,4 mo,4 mo,Awaiting Changes
+Add-on,FFmpeg GUI,Tomáš-Klecer,4 mo,4 mo,Awaiting Changes
+Add-on,Motion State Inspector,Da-Wei,4 mo,4 mo,Awaiting Changes
+Add-on,Alias Smart Importer,61+,5 mo,4 mo,Awaiting Changes
+Add-on,Display Quad Stars,Zophiekat,5 mo,4 mo,Awaiting Changes
+Add-on,BB2RB,Dylan-Mgee,5 mo,4 mo,Awaiting Changes
+Add-on,Gauss Cannon,keshmirian,5 mo,5 mo,Awaiting Changes
+Add-on,Keyframe Collection,R4V3N,5 mo,5 mo,Awaiting Changes
+Add-on,Blender360Photolab,Mattia-Fiorini,5 mo,5 mo,Awaiting Changes
+Add-on,Easy File Manager,Soumya,5 mo,5 mo,Awaiting Changes
+Add-on,Smart Axis,StikoXD,5 mo,5 mo,Awaiting Changes
+Theme,Adwaita Dark,bumpysardines,5 mo,5 mo,Awaiting Changes
+Add-on,OptiFlow,gchibeni,5 mo,5 mo,Awaiting Changes
+Add-on,Quadify Base,Anvil-Interactiv,5 mo,5 mo,Awaiting Changes
+Add-on,RGBridge,Odin-Labs,5 mo,5 mo,Awaiting Changes
+Add-on,Simple COLLADA (.dae) Importer,TzeentchNet,5 mo,5 mo,Awaiting Changes
+Add-on,Gaussian Splat Generator,Chwriter,5 mo,5 mo,Awaiting Changes
+Add-on,The Rig Addon,Metla,6 mo,6 mo,Awaiting Changes
+Add-on,Quick Panels Lite,Its_me,6 mo,6 mo,Awaiting Changes
+Add-on,Camera Path Toolkit,fx_cat,6 mo,6 mo,Awaiting Changes
+Add-on,AE 4-Color Gradient,Asvind,6 mo,6 mo,Awaiting Changes
+Add-on,Render Time Tracker,Amir-53,6 mo,6 mo,Awaiting Changes
+Add-on,Smart Apply Scale,yakivsan,8 mo,6 mo,Awaiting Changes
+Add-on,Pinerig Hand Macro,Enip,6 mo,6 mo,Awaiting Changes
+Add-on,FBX Bundle Exporter V2,Vladyslav-Izhak,6 mo,6 mo,Awaiting Changes
+Add-on,Dynamic Sky 5 Fork,Markus-Kauschmann,7 mo,6 mo,Awaiting Changes
+Add-on,Lidar HD Tool,Bastian-Cataldi,6 mo,6 mo,Awaiting Changes
+Add-on,Gizmodal Ops,Beedy,1 y,6 mo,Awaiting Changes
+Add-on,3dverse Exporter,Nathalie-Raffray,2 y,6 mo,Awaiting Changes
+Add-on,Search Materials by Image,PixelZhao,6 mo,6 mo,Awaiting Changes
+Add-on,ParamSnap,Ding-bbyi,6 mo,6 mo,Awaiting Changes
+Add-on,Shot Handler 4 Lite,dubCUT,6 mo,6 mo,Awaiting Changes
+Add-on,NIF format Import/Export (PyNifly),BadDog,6 mo,6 mo,Awaiting Changes
+Add-on,Import Archicad OBJ,rucativava,6 mo,6 mo,Awaiting Changes
+Add-on,Viewport TurnTable Sync,UnrealBoy,6 mo,6 mo,Awaiting Changes
+Add-on,SMH Importer/Exporter,vlazed,6 mo,6 mo,Awaiting Changes
+Add-on,Restart Blender,ArtOfPilgrim,7 mo,6 mo,Awaiting Changes
+Add-on,Godot Bridge,BriThe3DGuy,7 mo,7 mo,Awaiting Changes
+Add-on,Batch Export Pro,Mateusz-Słupski,7 mo,7 mo,Awaiting Changes
+Add-on,Projector,ocupe,8 mo,8 mo,Awaiting Changes
+Add-on,Open Source Avatars (VRM),ToxSam-2,8 mo,8 mo,Awaiting Changes
+Add-on,Color Grid Generator,DevGOM,8 mo,8 mo,Awaiting Changes
+Add-on,Stash Vertex Normals,pixelbutterfly,8 mo,8 mo,Awaiting Changes
+Add-on,Sculpt Mask Manager,CX_Sun,8 mo,8 mo,Awaiting Changes
+Add-on,RigUp - AutoSpline IK,Krokinetic,8 mo,8 mo,Awaiting Changes
+Add-on,MatVault Pro,Vox3D,9 mo,9 mo,Awaiting Changes
+Add-on,Attractor Builder,Pawel-Cabala,9 mo,9 mo,Awaiting Changes
+Theme,Blender Pro theme,PaulCoops,9 mo,9 mo,Awaiting Changes
+Add-on,Smooth by Sharp Groups,Geller_Art,9 mo,9 mo,Awaiting Changes
+Add-on,GA Furniture Unified,Adam-Verner,9 mo,9 mo,Awaiting Changes
+Add-on,Panda 3MF Toolbox,juan-carlos-ramirez,9 mo,9 mo,Awaiting Changes
+Add-on,AIO-OCIO Installer,Roland-Vyens,10 mo,9 mo,Awaiting Changes
+Add-on,VOTV Print Exporter,Doctor-Krazy,1 y,10 mo,Awaiting Changes
+Add-on,Pexels Image Search,CevatAnimate,1 y,10 mo,Awaiting Changes
+Add-on,Fotographie,knox,10 mo,10 mo,Awaiting Changes
+Add-on,Filament Spool Generator,Sascha-Bladt,10 mo,10 mo,Awaiting Changes
+Add-on,Johnson's 92 Solids Generator,Arkiweez,10 mo,10 mo,Awaiting Changes
+Add-on,OpenGL Notifier,articulateAndroid,10 mo,10 mo,Awaiting Changes
+Add-on,Sollumz,Illl-Liii,10 mo,10 mo,Awaiting Changes
+Add-on,Kitten Space Agency Exporter,MarcusZuber,10 mo,10 mo,Awaiting Changes
+Theme,Steam 2013,AeroBuoyancy.source,10 mo,10 mo,Awaiting Changes
+Theme,SteamOS,AeroBuoyancy.source,10 mo,10 mo,Awaiting Changes
+Add-on,BHelper - Help Manager,Ailex,10 mo,10 mo,Awaiting Changes
+Add-on,OptiBlend,DitDev,10 mo,10 mo,Awaiting Changes
+Add-on,3D Cursor Snap,deepak756,11 mo,10 mo,Awaiting Changes
+Add-on,Scene Tabs (SketchUp-style Scenes),LiliaUlibka,11 mo,10 mo,Awaiting Changes
+Add-on,project_packager,David-Savigny,11 mo,11 mo,Awaiting Changes
+Add-on,glTF Physics Rigid Bodies,Eoin-Mcloughlin,11 mo,11 mo,Awaiting Changes
+Add-on,Smart Selection Manager - KiX Library By REX,rex_rohar,11 mo,11 mo,Awaiting Changes
+Add-on,GeoShaderNodes_IE,David-Savigny,11 mo,11 mo,Awaiting Changes
+Add-on,RBXMonkey - Roblox Importer/Exporter,cautioned,11 mo,11 mo,Awaiting Changes
+Add-on,treeGen,jens_m,1 y,11 mo,Awaiting Changes
+Add-on,OpenShelf,EmanuelDemetrescu,1 y,11 mo,Awaiting Changes
+Add-on,Dynamic Distance Text,stoatsnhoney,11 mo,11 mo,Awaiting Changes
+Add-on,Decal Beast,Bala3d,1 y,11 mo,Awaiting Changes
+Add-on,Sverchok,nikitron,11 mo,11 mo,Awaiting Changes
+Add-on,MorphoBlend,alexis.maizel,11 mo,11 mo,Awaiting Changes
+Add-on,NDPTools: Clean up tools,SleepyEngi,2 y,11 mo,Awaiting Changes
+Add-on,Dazoc Bulk Tools,Dazoc,1 y,1 y,Awaiting Changes
+Add-on,Track Me,Danylo-Hrechyshkin,1 y,1 y,Awaiting Changes
+Add-on,UberPaint,TheWorkshopWarrior,1 y,1 y,Awaiting Changes
+Add-on,Save Reminder,Logan-Sergeant,1 y,1 y,Awaiting Changes
+Add-on,World Space Baker,Jonathan-De-Leon,1 y,1 y,Awaiting Changes
+Add-on,Bilingual Translation Toolkit,mizi,1 y,1 y,Awaiting Changes
+Add-on,RoomMesh Import/Export,Joel-Nelems,1 y,1 y,Awaiting Changes
+Add-on,NS Constraint Nodes,Nursidik,1 y,1 y,Awaiting Changes
+Theme,Blender Deluxe,DiegoCortés,1 y,1 y,Awaiting Changes
+Add-on,Collector,Were-Sankofa,1 y,1 y,Awaiting Changes
+Add-on,THREE.js GLTF Previewer,Zachary-28,1 y,1 y,Awaiting Changes
+Add-on,Selection Sets Extra,Dinesh007,1 y,1 y,Awaiting Changes
+Add-on,Keyed Render,KENKEN,1 y,1 y,Awaiting Changes
+Theme,NieR : Automata,mamane-kabirou,1 y,1 y,Awaiting Changes
+Add-on,Face Highlighter Pro,Yasir-6,1 y,1 y,Awaiting Changes
+Add-on,Quick Light Groups,Kado-LaFlare,1 y,1 y,Awaiting Changes
+Add-on,ArchSV,Benedict-Dyson,1 y,1 y,Awaiting Changes
+Add-on,ORME Art-Net Output,Orme,1 y,1 y,Awaiting Changes
+Add-on,Autosave Images by Ctrl+S,del6123b5bcad89f80,1 y,1 y,Awaiting Changes
+Add-on,UPKGBlend,N1GHTMAR3,1 y,1 y,Awaiting Changes
+Add-on,Evan's VAT Generator,Evan-Owens,1 y,1 y,Awaiting Changes
+Add-on,Auto Save Sem,sempak,1 y,1 y,Awaiting Changes
+Add-on,Silhouette Dual View,wespenwald,1 y,1 y,Awaiting Changes
+Add-on,Mesh Isolate,RunicTapestry,1 y,1 y,Awaiting Changes
+Add-on,Smart Drag &amp; Drop Texture Set,Yurii-Konoplov,1 y,1 y,Awaiting Changes
+Add-on,MKeysTools,Abdotaman,1 y,1 y,Awaiting Changes
+Add-on,Addon Search,UnicornHunterCG,1 y,1 y,Awaiting Changes
+Add-on,Node Optimizer by Leearsy,Leearsy,1 y,1 y,Awaiting Changes
+Add-on,VSE Generative Media Bridge,Paul-40,1 y,1 y,Awaiting Changes
+Add-on,Only You,DaoL,1 y,1 y,Awaiting Changes
+Add-on,TriLighting Setup,Helena-Pillost,1 y,1 y,Awaiting Changes
+Add-on,MeLiDA - Measurement LiDAR system,MeLiDA,1 y,1 y,Awaiting Changes
+Add-on,Camera Tools,Ariganimation,1 y,1 y,Awaiting Changes
+Add-on,Light and Camera to View,CX_Sun,1 y,1 y,Awaiting Changes
+Add-on,ScreenScroll,landmine-girl,1 y,1 y,Awaiting Changes
+Add-on,Blender Time Tracker,AkaGiant,1 y,1 y,Awaiting Changes
+Add-on,TimeTracker,BraineyBItes,1 y,1 y,Awaiting Changes
+Add-on,Geneva Mechanism Generator,Tessa-Coil,1 y,1 y,Awaiting Changes
+Add-on,YFan 脚本加载器,yangfan,1 y,1 y,Awaiting Changes
+Add-on,IfcLCA Integration,louistrue,1 y,1 y,Awaiting Changes
+Add-on,Beats_AnalyzArt,Dimona-Patrick-243,1 y,1 y,Awaiting Changes
+Add-on,MMI Pro,xiaoFFge,1 y,1 y,Awaiting Changes
+Add-on,Fix Plane,mucki,1 y,1 y,Awaiting Changes
+Add-on,Quad Topology Smoother,Nabat-Farsi,1 y,1 y,Awaiting Changes
+Add-on,Dolly Zoom Setup,DURA,1 y,1 y,Awaiting Changes
+Add-on,Flash AOV,zhendong-xiao,1 y,1 y,Awaiting Changes
+Add-on,Duckx Tools,Kanong,1 y,1 y,Awaiting Changes
+Add-on,Dollars MoCap Blender Addon,DollarsMoCap,1 y,1 y,Awaiting Changes
+Add-on,Auto Sound Tracker,Muyang-Hong,1 y,1 y,Awaiting Changes
+Add-on,Tidy Monkey,Spark-Games,1 y,1 y,Awaiting Changes
+Add-on,RenderTune,Focus,1 y,1 y,Awaiting Changes
+Add-on,StableGen,sakalond,1 y,1 y,Awaiting Changes
+Add-on,Img2Model,Dukesoft,1 y,1 y,Awaiting Changes
+Add-on,404 3D Generator,404-GEN,1 y,1 y,Awaiting Changes
+Add-on,Eco Plastic Tools,israel-navarro-fernandez,1 y,1 y,Awaiting Changes
+Add-on,Flowify Saver Pro,BERG-07,1 y,1 y,Awaiting Changes
+Add-on,Edit Parameters Tool All MATerials,AKozyrev,1 y,1 y,Awaiting Changes
+Add-on,Timelapse Capture for 3D modellers,Pavel-Kuznetsov,1 y,1 y,Awaiting Changes
+Add-on,Extension Backup Utility,嘻嘻嘻,1 y,1 y,Awaiting Changes
+Add-on,节点预设管理,juzi45,1 y,1 y,Awaiting Changes
+Add-on,VDB Viewport Friendly,MaximeG,1 y,1 y,Awaiting Changes
+Add-on,Root Motion Batch Transfer,Nguyen-Phuc-Nguyen,1 y,1 y,Awaiting Changes
+Add-on,Random Add-on (Testing),nickberckley,1 y,1 y,Awaiting Changes
+Add-on,Basilisp Language Support,ikappaki,1 y,1 y,Awaiting Changes
+Add-on,Custom Frame Offset,cgvirus,1 y,1 y,Awaiting Changes
+Add-on,Blender-to-PrusaSlicer,NicolasPredella,1 y,1 y,Awaiting Changes
+Add-on,Kartoteka Addon,Kartoteka,1 y,1 y,Awaiting Changes
+Add-on,Outline Helper,Feline-Entity-4,1 y,1 y,Awaiting Changes
+Add-on,Bevy Skein,Chris-Biscardi,1 y,1 y,Awaiting Changes
+Add-on,Shot Handler Lite,dubCUT,1 y,1 y,Awaiting Changes
+Add-on,Cloth GPU Simulator,Arthos,1 y,1 y,Awaiting Changes
+Add-on,Shader View Lite,Alexey-Mineev,1 y,1 y,Awaiting Changes
+Add-on,Robur Addon,BimBoris,1 y,1 y,Awaiting Changes
+Add-on,Node Wrangler v3.47 (Custom build for Octane),aisatan.ne,1 y,1 y,Awaiting Changes
+Add-on,Universal File Importer,Rafael-D.-Tamayo-Rojas,1 y,1 y,Awaiting Changes
+Add-on,XNALara-io-Tools,ValyArhal,1 y,1 y,Awaiting Changes
+Add-on,Empty Assistant,nathitappan,1 y,1 y,Awaiting Changes
+Add-on,Align 2D,deathblood,1 y,1 y,Awaiting Changes
+Add-on,Enhanced Collection Tab,1P2D,1 y,1 y,Awaiting Changes
+Add-on,EasyExport,Blake-Darrow,1 y,1 y,Awaiting Changes
+Add-on,Unreal Engine Custom Collision Tool (UCX),ohmcodes,1 y,1 y,Awaiting Changes
+Add-on,Import LightWave Objects,mavek,1 y,1 y,Awaiting Changes
+Add-on,Nodehelper,Fazoway,1 y,1 y,Awaiting Changes
+Add-on,Better Pivot Tools,Danel-Sánchez,1 y,1 y,Awaiting Changes
+Add-on,SMTH_Smart_Tools,Simtech-srl,1 y,1 y,Awaiting Changes
+Add-on,Loop Methods,Lauloque,1 y,1 y,Awaiting Changes
+Add-on,Light Editor,Blenderbob,1 y,1 y,Awaiting Changes
+Add-on,Pivotier,jhmorel,1 y,1 y,Awaiting Changes
+Add-on,Render Manager,Blenderbob,1 y,1 y,Awaiting Changes
+Add-on,Render Estimator,UnicornHunterCG,1 y,1 y,Awaiting Changes
+Add-on,Mantis,Josephbburg,1 y,1 y,Awaiting Changes
+Add-on,Plumber,lasa01,1 y,1 y,Awaiting Changes
+Add-on,Object Center &amp; Symmetry,Gabriel-Falcão-G.-DeMoura,1 y,1 y,Awaiting Changes
+Add-on,Beautiful Atoms,superstar54,1 y,1 y,Awaiting Changes
+Add-on,"League of Legends SKN, SKL Importer",FingaMiro,1 y,1 y,Awaiting Changes
+Add-on,Lock Camera and/or Cursor,Blenderbob,2 y,1 y,Awaiting Changes
+Add-on,Reload Theme,aryan02420,1 y,1 y,Awaiting Changes
+Add-on,Linkage Custom Top View,Linkage,1 y,1 y,Awaiting Changes
+Add-on,DAWand,Ron-Kiehn,1 y,1 y,Awaiting Changes
+Add-on,Quick Bash Tools,Luka-Ducrocq,1 y,1 y,Awaiting Changes
+Add-on,Vertex Color Picker,rj_enoz,1 y,1 y,Awaiting Changes
+Add-on,AI Animation Bridge,Pluginowcy-AGH,1 y,1 y,Awaiting Changes
+Add-on,Quad Sphere,Jeremy-Trigano,1 y,1 y,Awaiting Changes
+Add-on,Toggle Language,del1a8dc50179276c0,2 y,1 y,Awaiting Changes
+Add-on,Bitsy Blender Toolkit,Bitsy,1 y,1 y,Awaiting Changes
+Add-on,Advanced Extrude and Bevel Tool,Universa,1 y,1 y,Awaiting Changes
+Add-on,Maxon Cinema 4D Import-Export,475519905,1 y,1 y,Awaiting Changes
+Add-on,Q.I. Tools,SamuelPederson,1 y,1 y,Awaiting Changes
+Add-on,Utility Tools,Amogh-Agrawal,1 y,1 y,Awaiting Changes
+Add-on,Timelapse Orbit,rileyb3d,1 y,1 y,Awaiting Changes
+Add-on,Link To Rhino,CP-Design,2 y,1 y,Awaiting Changes
+Add-on,BsMax Backburner,Nevil,1 y,1 y,Awaiting Changes
+Add-on,Dexr Asset Creator,Kim-Note-Dexr,1 y,1 y,Awaiting Changes
+Add-on,GoB,DanielGrauer,2 y,1 y,Awaiting Changes
+Add-on,Unreal Engine Assets Exporter,BleuRaven,2 y,1 y,Awaiting Changes
+Add-on,Path Variables,Ruben-Grigorian,1 y,1 y,Awaiting Changes
+Add-on,TexToShader,Bo0inM_,2 y,1 y,Awaiting Changes
+Add-on,Super Shrinkwrap,sculptor,2 y,1 y,Awaiting Changes
+Add-on,Blender Colormaps,TheJeran,1 y,1 y,Awaiting Changes
+Add-on,UniScatter,Alif2113,1 y,1 y,Awaiting Changes
+Add-on,Viber,Martin-Bari-Garnier,1 y,1 y,Awaiting Changes
+Add-on,Beeble Add-on,Beeble-AI,1 y,1 y,Awaiting Changes
+Add-on,Vox Cleaner V3,TheStrokeForge,2 y,1 y,Awaiting Changes
+Add-on,Simple Edge Group,BrunoRenan,1 y,1 y,Awaiting Changes
+Add-on,Interfaces Import,Lars-Bergmann,1 y,1 y,Awaiting Changes
+Add-on,Quick Toggle Visibility,purplefire,1 y,1 y,Awaiting Changes
+Add-on,Quick turn on/off an Addon,Tran-Trong-Phong,1 y,1 y,Awaiting Changes
+Add-on,Frame Select custom Scaling,Datucarl,1 y,1 y,Awaiting Changes
+Add-on,Try On Clothes 2,alexdepario,1 y,1 y,Awaiting Changes
+Add-on,Shotlist Timeline,William-Hurst,1 y,1 y,Awaiting Changes
+Add-on,Awesome Repos,agajdosi,1 y,1 y,Awaiting Changes
+Add-on,MirrorCube,David-Delepinne,1 y,1 y,Awaiting Changes
+Add-on,Set Vertex Color Tool,Viktor-Svensson,1 y,1 y,Awaiting Changes
+Add-on,Circle To Square,Jean-Yves-Grosbeau,1 y,1 y,Awaiting Changes
+Add-on,Sansar Tools - VAT Generator,Tensor,1 y,1 y,Awaiting Changes
+Add-on,NameSync,Nanosize,1 y,1 y,Awaiting Changes
+Add-on,workflow_wizard,Jake-Trionfo,1 y,1 y,Awaiting Changes
+Add-on,Dissolve Edge Loop,TakeRefuge3D,1 y,1 y,Awaiting Changes
+Add-on,Homemaker,brunopostle,2 y,1 y,Awaiting Changes
+Theme,Dark Wave,stefanbayer,1 y,1 y,Awaiting Changes
+Add-on,Triangle Generator,Josh-G,2 y,1 y,Awaiting Changes
+Add-on,bvox,claytone,1 y,1 y,Awaiting Changes
+Add-on,Send to Unreal,Joshimals,2 y,1 y,Awaiting Changes
+Add-on,UE to Rigify,Joshimals,2 y,1 y,Awaiting Changes
+Add-on,Import OpenCTM (.ctm),RealIndrit,1 y,1 y,Awaiting Changes
+Add-on,DICOMator,Michael_Douglass,1 y,1 y,Awaiting Changes
+Add-on,Cycles Device Selector,Valentin-Komkov,1 y,1 y,Awaiting Changes
+Add-on,Sprite Sheet Exporter,Horry,2 y,2 y,Awaiting Changes
+Add-on,CorteCloud Export,Filipe-Rocha-Lopes,2 y,2 y,Awaiting Changes
+Add-on,Pivot and Transform Orientation Menu,evaera,2 y,2 y,Awaiting Changes
+Theme,Stylize-V,Pierre_Schiller,2 y,2 y,Awaiting Changes
+Add-on,MIDI to Keyframes,Ryosuke-Hana,2 y,2 y,Awaiting Changes
+Add-on,N-Panel Minimize,Tran-Trong-Phong,2 y,2 y,Awaiting Changes
+Theme,Deep Dark Sun,nickberckley,2 y,2 y,Awaiting Changes
+Add-on,Easy Show Tool,ACGGIT_LJ,2 y,2 y,Awaiting Changes
+Add-on,Export All Formats and Orbit Images,TEC-IST,2 y,2 y,Awaiting Changes
+Add-on,Kyokaz's Toolbox,Faiz-Azhar,2 y,2 y,Awaiting Changes
+Theme,Flash 8,BigTexasTony,2 y,2 y,Awaiting Changes
+Add-on,UV Texture Selector,ElinHoehler,2 y,2 y,Awaiting Changes
+Add-on,DPI tool,ACGGIT_LJ,2 y,2 y,Awaiting Changes
+Add-on,Custom Autosave,SlaneDRV,2 y,2 y,Awaiting Changes
+Add-on,Duplicate Tools,vvrrss,2 y,2 y,Awaiting Changes
+Add-on,Morph Cube To Sphere,_Netoperek_,2 y,2 y,Awaiting Changes
+Add-on,Silhouette Mode,Alexandrus,2 y,2 y,Awaiting Changes
+Add-on,File ID Search,Hydrocallis,2 y,2 y,Awaiting Changes
+Add-on,Project Files Collector,AlexanderZubkov,2 y,2 y,Awaiting Changes
+Add-on,Sunders Video Editing,SunderCode,2 y,2 y,Awaiting Changes
+Add-on,Flatten-To-Camera-Geo,Cutteeth,2 y,2 y,Awaiting Changes
+Add-on,Blender Notebook,Dale-Chan,2 y,2 y,Awaiting Changes
+Add-on,Needle Engine Integration,marwi,2 y,2 y,Awaiting Changes
+Add-on,Create Text Mask Texture,sum-studio,2 y,2 y,Awaiting Changes
+Add-on,Camera fitter,odil24,2 y,2 y,Awaiting Changes
+Theme,High Color,mac4kent,2 y,2 y,Awaiting Changes
+Add-on,Sketch-To-Mesh,Kell-Behr-3,2 y,2 y,Awaiting Changes
+Add-on,KRANIO,Stanley_Creative,2 y,2 y,Awaiting Changes
+Add-on,engon,polygoniq,2 y,2 y,Awaiting Changes
+Add-on,Family,Cunarist,2 y,2 y,Awaiting Changes
+Add-on,Channel Data Baker,Matrix64,2 y,2 y,Awaiting Changes
+Add-on,assetsTranslate,尤安,2 y,2 y,Awaiting Changes
+Add-on,view_filter,lqjava,2 y,2 y,Awaiting Changes
+Add-on,Pyrogenesis Actor Importer,Stanislas-D.,2 y,2 y,Awaiting Changes
+Add-on,blend1,polygoniq,2 y,2 y,Awaiting Changes
+Add-on,Flatterer,dr.sybren,2 y,2 y,Awaiting Changes
+Add-on,my_Process,uabol,2 y,2 y,Awaiting Changes
+Add-on,Plane Alpha Texture,Igor-384,2 y,2 y,Awaiting Changes
+Add-on,BuddyCodeGPT,Sujat-Mukherjee,2 y,2 y,Awaiting Changes
+Add-on,SwiftXR (3D/AR/VR) Exporter,SwiftXR,2 y,2 y,Awaiting Changes
+Add-on,Co.Space-Converter,AdrianoDeRegino,2 y,2 y,Awaiting Changes
+Add-on,CloudRF 3D API plugin,CloudRF,2 y,2 y,Awaiting Changes
+Add-on,Add-on Install Button,GRIMMOTRON,2 y,2 y,Awaiting Changes
+Add-on,Arc Blend Tools,Stun_Muffin,2 y,2 y,Awaiting Changes
+Theme,Black Cat,Zophiekat,2 y,2 y,Awaiting Changes
+Theme,Persica,Leymora,2 y,2 y,Awaiting Changes
+Add-on,Atomic Blender PDB/XYZ,Blendphys,2 y,2 y,Awaiting Changes
+Add-on,Atomic Blender Cluster,Blendphys,2 y,2 y,Awaiting Changes
+Add-on,Render List,LEDINGQ,2 y,2 y,Awaiting Changes
+Add-on,Test Extension,2 y,2 y,3,Awaiting Changes
+Add-on,oneDOtMagic,aj-7,2 y,2 y,Awaiting Changes
+Add-on,E3D Bridge,DominicSmith,1 w,22 h,Approved
+Add-on,Provenance,Oluwatobiloba-Odede,5 d,22 h,Approved
+Add-on,Preview Quads,maylog,3 d,22 h,Approved
+Add-on,IngeTrazo Sync (.igz),3dvic,3 d,22 h,Approved
+Add-on,Dolly Zoom,JLBöhm,3 d,22 h,Approved
+Add-on,Texture Wrangler,Cowwolfe3D,3 d,22 h,Approved
+Theme,Eyes on the Horizon,EYESONtheHORIZON.studio,2 d,22 h,Approved
+Add-on,rFactor 2 GMT Importer,haunetal1990,1 d,22 h,Approved
+Add-on,MMB Double-Click View Selected,LA-Free,4 d,22 h,Declined
+Add-on,FTC – Fit The Camera,TonyS87,3 d,22 h,Approved
+Add-on,PolySketch,anup-gupte,3 d,22 h,Approved
+Add-on,Loop Resample,YLIANG,3 d,22 h,Approved
+Add-on,UV Island Colorizer,Paraminder-Dhiman,4 d,22 h,Approved
+Add-on,BB Security Test 2026,Aditya-Hadi-Pratama,5 d,22 h,Declined
+Add-on,Neuro3D Lab,Francisco-Angulo-de-Lafuente,5 d,23 h,Approved
+Add-on,Render unique frames,bored_cube,1 mo,23 h,Approved
+Add-on,Voxel Lite,wirecraft-studio,1 w,23 h,Approved
+Add-on,Claude Bridge,Szabolcs-Szabo,1 d,23 h,Declined
+Add-on,Scene Statistics,Davi-da-Mata-Oliveira,3 d,2 d,Declined
+Add-on,Blender to Unreal Pipeline,Abdulkerim-Tabakoğlu,3 d,2 d,Declined
+Add-on,KeyCraft MIDI,Steveryino,1 w,2 d,Approved
+Add-on,MD Bridge - Blender to Marvelous Designer,Nima-Ghozati,4 d,2 d,Declined
+Add-on,Radial Array,Mikhail-Siniakov,1 w,2 d,Declined
+Add-on,Driver Espresso Lite,OEBS_Studios,2 w,2 d,Approved
+Add-on,NodePreview-Optimiz,kuwadev,5 d,2 d,Declined
+Add-on,Axonobox Lite,vivimade,1 w,2 d,Approved
+Add-on,Keyframe Ease Menu,Nu_E,5 d,2 d,Declined
+Add-on,Tenji P-Fab:Japanese Braille,Kaname-Endo,1 w,3 d,Approved
+Add-on,EasyShelf,Denis_Zakharov,1 w,3 d,Approved
+Theme,Teal Singularity by Masyab,Masyab,3 d,3 d,Approved
+Theme,Rain_Cloud_Theme,Raze-Demon,4 d,3 d,Approved
+Add-on,Weathered Board,John-Singer,1 w,5 d,Approved
+Add-on,Tab Dock,GreenJin,1 w,5 d,Declined
+Add-on,Merge Tool Smart UV,Magomedkhabib-Magomedov,1 w,5 d,Approved
+Add-on,JCut - Cut faster with a hotkey,ArtVit,1 w,5 d,Approved
+Add-on,B-Bone Gizmos,Tal_Hershko,1 w,5 d,Approved
+Add-on,KN5 Tools,Gwarny,1 w,5 d,Approved
+Add-on,On-Twos Retimer,zlz188,4 w,5 d,Approved
+Add-on,3D Printing Tools,Eric-Holliday,1 w,5 d,Declined
+Add-on,H-Style RBD Nodes,Excifroge,1 w,5 d,Approved
+Add-on,MeshMarkup,Ivan-Franco,1 w,5 d,Declined
+Add-on,StepForge,Blenderhead-engineer,3 w,5 d,Approved
+Add-on,GNToolkit,oobma,2 w,5 d,Approved
+Add-on,Leviate,vladpereverzyev,1 w,5 d,Approved
+Add-on,Cycle Ortho View,revorT,2 w,6 d,Approved
+Add-on,Image Per Instance Lite - Different Texture on Every Object,Pavel-V,1 w,6 d,Declined
+Add-on,Actions to Blend Files,William-Leong,1 w,6 d,Approved
+Add-on,Quick Delete,ArtVit,1 w,6 d,Declined
+Add-on,Copy Paste Modifier,koromo_lime,1 w,6 d,Declined
+Add-on,Aneno One,Aneno,1 w,6 d,Declined
+Add-on,Audio Oven Trigger,Baraka-1,2 w,6 d,Approved
+Add-on,ZG Social Video Kit,ZeroGeometry,1 w,6 d,Approved
+Add-on,Sync Files With Taack PLM,Adrien-Guichard,2 w,6 d,Approved
+Add-on,OpenSKP Import/Export,Ahsan-Mehmood,4 w,6 d,Approved
+Add-on,Kinema,ebgenius,1 mo,6 d,Approved
+Add-on,Multires Morph Studio,LowPolyPotato,3 w,1 w,Approved
+Add-on,Print Prep,blanchsb,3 w,1 w,Approved
+Add-on,tmeasure,otonkart,2 mo,1 w,Approved
+Add-on,Unitypackage Importer,UTAGE,2 w,1 w,Approved
+Add-on,SnapSplit,Christoph-Medicus,3 w,1 w,Approved
+Add-on,Quick Crease Weight,锡箔纸,1 w,1 w,Approved
+Add-on,Stowaway,MPTools,3 w,1 w,Declined
+Add-on,Squeeze Tools,01musume,1 w,1 w,Declined
+Add-on,Evolution Stack,Iurii-Tiuzhin,1 w,1 w,Declined
+Add-on,Bake Preflight,Fortune.jp,2 w,1 w,Approved
+Add-on,Sculpt Layers for Multires,beni,3 w,1 w,Approved
+Add-on,3D Texel Asset Library,Lucas-Anton-Gomez,1 w,1 w,Declined
+Add-on,QuadFix Lite - N-gons to Quads &amp; Mesh Cleanup,Pavel-V,2 w,1 w,Declined
+Add-on,Quad Size Equalizer (Community),Andreas-Linnartz,2 w,1 w,Approved
+Add-on,Polyshell Builder,Christian-Faur,2 w,1 w,Approved
+Add-on,Accent Letters,Roshan-Tiwari,2 w,1 w,Approved
+Add-on,MonkeFrames Mocap,sirkingbinx,2 w,1 w,Approved
+Add-on,3D Rotate,anup-gupte,2 w,1 w,Approved
+Add-on,MeshDataTransfer,maumemoli,2 w,1 w,Approved
+Theme,Dust_Cloud_Theme,Raze-Demon,1 w,1 w,Approved
+Theme,Iridescent_Pastel_Theme,Raze-Demon,1 w,1 w,Approved
+Theme,Lunar_Tear_UI,Raze-Demon,1 w,1 w,Approved
+Theme,NieR_Automata_Dark_UI,Raze-Demon,1 w,1 w,Approved
+Add-on,Fusion Bridge Lite,inspace,2 w,1 w,Declined
+Theme,Macaron Pastel,huang-10,2 w,1 w,Approved
+Add-on,3D Clean Pipeline,developer1-atombits,1 w,1 w,Declined
+Add-on,Mix&amp;Design AI,Pedro-Ángel-Llinás-Bernaola,1 w,1 w,Declined
+Add-on,Touchscreen,JCHM,2 w,1 w,Declined
+Add-on,Photo Relief,bahae-el-hmimdi,2 w,1 w,Approved
+Add-on,PropHandoff,augustin-gourves,3 w,1 w,Approved
+Add-on,Justify,Yomi-A,3 w,1 w,Declined
+Add-on,Splash Editor,Guimesh,3 w,1 w,Declined
+Add-on,Auto Purge,Blender_Face,3 w,1 w,Declined
+Add-on,Bulk Action Selection Export Device,Milky-Shaker,1 mo,1 w,Approved
+Add-on,SpringPilot,PixelZer01,3 w,1 w,Declined
+Add-on,Damotified,darlak97,3 w,1 w,Approved
+Add-on,VRML2 Exporter,thebreat,3 w,1 w,Approved
+Add-on,Photometric Light Plus,MarcoCaturano3dArtist,3 w,1 w,Approved
+Add-on,Sphere Select,K_Naoki,3 w,1 w,Approved
+Add-on,Lancher Entry and Desktop Icon,bloody_albatross,3 w,1 w,Declined
+Add-on,TopoPot - Retopology Tool for Blender,ArtVit,1 mo,2 w,Approved
+Add-on,Image to 3D (bahaedev),bahae-el-hmimdi,2 w,2 w,Declined
+Add-on,UE Navigation,Rahim-Yousefi,2 w,2 w,Declined
+Add-on,IngeTrazo Sync,Gokul-DC,2 w,2 w,Declined
+Add-on,VisibleIO Local,VisibleIO,2 w,2 w,Declined
+Add-on,Asset Preflight Check,Hanru,3 w,2 w,Declined
+Add-on,DDS Save,飞天从心流,3 w,2 w,Declined
+Add-on,Quick Export Selection,David-Cai,3 w,2 w,Declined
+Add-on,PolyAssetVault,PolyAssetVault,3 w,2 w,Declined
+Add-on,Smart Design Assistant,adham-asali,3 w,2 w,Declined
+Add-on,BlendSwap Browser,PlasticWool,3 w,2 w,Declined
+Add-on,Matching Actions,Sergey-Boiko,1 mo,2 w,Approved
+Add-on,FreePicker,dirun,3 w,2 w,Approved
+Add-on,Appearance Sync,Eun,3 w,2 w,Declined
+Add-on,Proxy Interface,LingQS,1 mo,2 w,Approved
+Add-on,Quad Splitter,Rezuwen,1 mo,2 w,Approved
+Add-on,ToPu:Weight Editor,https4211,1 mo,2 w,Declined
+Theme,Purple Rain,NJS,2 w,2 w,Approved
+Theme,Work_n_After_Effect,Nois3G4te,3 w,2 w,Approved
+Theme,Work_n_Resolve,Nois3G4te,3 w,2 w,Approved
+Theme,Blender Blue,JonathanDaCube,4 w,3 w,Approved
+Add-on,Crowd Mixer Community Edition,navalab,2 mo,3 w,Declined
+Add-on,Blender Interactive Terminal,Piyush-1,4 w,3 w,Declined
+Add-on,Zeeks Auto UV Unwrap,Ezekiel-AA,4 w,3 w,Approved
+Add-on,Remove Loops,KewlSheet,5 mo,3 w,Declined
+Add-on,Outliner Auto-Highlight,SC3D.Studio,4 w,3 w,Declined
+Add-on,LandXML TIN Importer,Jonathan-McMichael,4 w,3 w,Approved
+Add-on,Mesh Expression Retargeter,vidyut,1 mo,3 w,Approved
+Add-on,IFC Mesh Importer,KIRANKUMAR-R,1 mo,3 w,Approved
+Add-on,CADSTER 3D Converter,MAHADEV-4,4 w,3 w,Declined
+Add-on,Origin Kit,arsha-flora,4 w,3 w,Declined
+Add-on,Bone Damped Track Batch,zlz188,4 w,3 w,Approved
+Add-on,Pascal,WawaSensei,1 mo,3 w,Approved
+Add-on,Swap Active Among Selected,Dhrubo-Majumder,4 w,3 w,Declined
+Add-on,Offset Rest Pose,William-Leong,4 w,3 w,Approved
+Add-on,Blender Agent Terminal,Piyush-1,4 w,4 w,Declined
+Add-on,Curve Profile Creator,M.Kumaran,1 mo,4 w,Approved
+Add-on,Quadify Compute,Anvil-Interactiv,1 mo,4 w,Declined
+Add-on,B Hair ShapeKey,Dinesh007,1 mo,4 w,Approved
+Add-on,Theme Reverter,byebyeLAN,1 mo,4 w,Approved
+Add-on,BlenDiff,vishydaperry,1 mo,4 w,Approved
+Add-on,VSE Playback Speed,Andreas-Linnartz,1 mo,4 w,Approved
+Theme,Joseon Jubu Neapolitan Gyaru,Amanda-Hong,1 mo,4 w,Approved
+Theme,Animaquina Theme,luigipacheco,1 mo,4 w,Approved
+Add-on,Dynamic Render Border | SE,steveernst117,1 mo,1 mo,Approved
+Add-on,Doom's Extractor,thaDoom,1 mo,1 mo,Declined
+Theme,Watanare,byebyeLAN,1 mo,1 mo,Approved
+Theme,Classic Light (3.6 Style),YURI-TADA,1 mo,1 mo,Approved
+Add-on,Lock View Rotation,aegisgfx,1 mo,1 mo,Declined
+Add-on,GodotFlow Pro,Lumka-1,1 mo,1 mo,Declined
+Add-on,Node cloner,Tonis,1 mo,1 mo,Declined
+Add-on,Mixtli,luigipacheco,1 mo,1 mo,Declined
+Add-on,Deform to Corrective,a.a.andrusenko,1 mo,1 mo,Approved
+Add-on,Minimalist Pipeline,Samy_Rodriguez,1 mo,1 mo,Approved
+Add-on,Apple Corner Bevel,shunqi-jiang,1 mo,1 mo,Declined
+Add-on,Vertex Color Studio,Aresp,1 mo,1 mo,Approved
+Add-on,CAD Sketcher,hlorus,1 mo,1 mo,Approved
+Add-on,MatWerk Picker,WERK,1 mo,1 mo,Approved
+Add-on,Max's Modelling Tools,Max-Steel,1 mo,1 mo,Declined
+Add-on,Laserity,StudioMedio,1 mo,1 mo,Approved
+Add-on,Pixel UV Border,LENS6,1 mo,1 mo,Approved
+Add-on,Section Cut,Agregarts,1 mo,1 mo,Approved
+Add-on,Key Hint,Yuxuan-Zeng,1 mo,1 mo,Declined
+Add-on,Colored Blender Instances,1P2D,1 mo,1 mo,Declined
+Add-on,BL Perspective Transform,usrname0,1 mo,1 mo,Approved
+Add-on,NodeFlow Importer,LitvyakovEugene,1 mo,1 mo,Approved
+Add-on,Xen Dock,Artur-61,1 mo,1 mo,Declined
+Add-on,NDOF Viewport Switcher,ChrisPrenn,1 mo,1 mo,Approved
+Add-on,Light It Up,Rasheed-Shaikh,1 mo,1 mo,Approved
+Add-on,VoxelSim FEA - Linear FEA,Blenderhead-engineer,1 mo,1 mo,Approved
+Add-on,Custom Sky Texture,03ff,1 mo,1 mo,Approved
+Add-on,EXea Jiggle,Axnise,1 mo,1 mo,Approved
+Add-on,Sync LD,K_Naoki,1 mo,1 mo,Approved
+Add-on,Release Watcher,Seán-Quill,1 mo,1 mo,Declined
+Theme,i'd do anything but my actual work,EYESONtheHORIZON.studio,1 mo,1 mo,Approved
+Add-on,Plateline Light,Hannes-Werner-3,1 mo,1 mo,Approved
+Add-on,STL Frame Sequence Exporter,James-Hogle,1 mo,1 mo,Approved
+Add-on,EasySlice Print,Rafael-Omodei,1 mo,1 mo,Approved
+Add-on,Animation Speed,Ari-Acosta,1 mo,1 mo,Declined
+Add-on,Quick N-panel,DudeHTM,1 mo,1 mo,Approved
+Add-on,Gizmo Plus,Avaranky,1 mo,1 mo,Declined
+Add-on,Universal Asset Library,Slash0011,1 mo,1 mo,Declined
+Add-on,UV Surface Projector,Jackal,1 mo,1 mo,Approved
+Add-on,VRse FBX Batch Exporter,PraveenB,1 y,1 mo,Approved
+Add-on,Auto Language,Pazelock,1 mo,1 mo,Declined
+Add-on,Ruler Mark,Владимир-Владимирович-Корнилов,2 mo,1 mo,Approved
+Add-on,Fast FrameRange,timpronin,1 mo,1 mo,Declined
+Add-on,Fill Select Between,lunna-sku,2 mo,1 mo,Approved
+Add-on,Smart Rotation Reset,Pazelock,1 mo,1 mo,Approved
+Add-on,Right-Angled Node Connection,hyee_haw,1 mo,1 mo,Approved
+Add-on,Relief Rebake,Agregarts,1 mo,1 mo,Approved
+Add-on,Marker Utilities,BigHead-Himself,1 mo,1 mo,Approved
+Add-on,HY-Motion Bridge,MoQiangShou,1 mo,1 mo,Declined
+Add-on,ToPu:IdleHero,https4211,1 mo,1 mo,Declined
+Add-on,MacBlend,Manuel-Houben,1 mo,1 mo,Approved
+Add-on,Cube Deletion Counter,3D_SHVYREV,1 mo,1 mo,Declined
+Add-on,Section Analysis Tool,Morbidmod,1 mo,1 mo,Approved
+Add-on,BT Asset Check,Tristan-Muzzu,1 mo,1 mo,Declined
+Add-on,Extra Removal,Aziz-Ur-Rehman,1 mo,1 mo,Declined
+Add-on,Generate Tree Plugin,YGForge,1 mo,1 mo,Approved
+Add-on,Reference Scale,Micah-Ganske,1 mo,1 mo,Approved
+Add-on,Compositor Find and Replace,kislyakov,1 mo,1 mo,Approved
+Add-on,GameDev Navigation,FATQ,1 mo,1 mo,Declined
+Add-on,Handheld Loop,krystofjezek,1 mo,1 mo,Approved
+Add-on,Flatcut,ITAMOTO-SHINTARO,1 mo,1 mo,Approved
+Add-on,EZSM - Easy Switch Mode,SilverKricketLab,1 mo,1 mo,Approved
+Add-on,TG Blender Link,lunna-sku,1 mo,1 mo,Declined
+Add-on,Face Corner Painter,VinsensiusAndreWijaya,1 mo,1 mo,Declined
+Add-on,Export Object Dimensions,rafaeloliveiraz,1 mo,1 mo,Approved
+Add-on,BT Turntable,Tristan-Muzzu,1 mo,1 mo,Declined
+Add-on,QuickRef,YLIANG,1 mo,1 mo,Approved
+Add-on,Edit Poly Modifier [编辑多边形修改器],RARA,1 mo,1 mo,Approved
+Add-on,SceneTrace,Dustin-Hanke,1 mo,1 mo,Approved
+Add-on,STUKACH,Maksim-Kovalev,1 mo,1 mo,Declined
+Add-on,Auto-Scale FPS,William-Leong,3 mo,1 mo,Approved
+Add-on,Hair Bone Generator,morimoristudio,1 mo,1 mo,Approved
+Add-on,RedHalo Resolution Aspect Lock,RedHaloStudio,1 mo,1 mo,Declined
+Add-on,Render Animated .GIF,byebyeLAN,1 mo,1 mo,Approved
+Add-on,Custom Backup Folder,FrankWE,1 mo,1 mo,Approved
+Add-on,AI Roto Bridge,Itai-Bar-Haim,1 mo,1 mo,Declined
+Theme,5.2 Comfortable,ChristianVan,1 mo,1 mo,Approved
+Theme,Cinema 4D,FirestormFMD,1 mo,1 mo,Approved
+Add-on,Face Project Offset,Joaquin-Remis,1 mo,1 mo,Declined
+Add-on,Erosion terrain generator,Lucas-Frans-Willem-Furer,1 mo,1 mo,Approved
+Theme,Cartoon,180LVL,1 mo,1 mo,Approved
+Theme,ToxicAcid,180LVL,1 mo,1 mo,Approved
+Theme,DeepBlueDark,180LVL,1 mo,1 mo,Approved
+Theme,DeepBlue,180LVL,1 mo,1 mo,Approved
+Add-on,CamBatch,Wen_Tao_Huang,1 mo,1 mo,Declined
+Add-on,Collada Support,Dank_Heehaw,2 mo,1 mo,Approved
+Add-on,OnlyBlends.Gamepad,Zulhakar,1 y,1 mo,Approved
+Add-on,Gore Wrap,Erik-Ogan,2 mo,1 mo,Approved
+Add-on,BeamNG Collada Importer/Exporter,Blenux,1 mo,1 mo,Declined
+Add-on,OnlyBlends.Mixer,Zulhakar,9 mo,1 mo,Approved
+Add-on,HDR Encoding Tools,Theanine3D,1 mo,1 mo,Approved
+Add-on,Web3D Asset Compiler,Abdul-Rafay-Khalid,2 mo,1 mo,Approved
+Add-on,Audio Trigger Lite,achat.graphics,2 mo,1 mo,Approved
+Add-on,Math Art,dkrider,2 mo,1 mo,Approved
+Add-on,Ripple,Tristan-Lyons,2 mo,1 mo,Approved
+Theme,ModernWhite,zhangtony239,1 mo,1 mo,Approved
+Add-on,Scale Confirm Tools,tahadorri,2 mo,1 mo,Declined
+Add-on,Flattice,MerlinPerry,2 mo,1 mo,Approved
+Add-on,Draw to Keys,TheMultiX-PGDM,2 mo,1 mo,Approved
+Add-on,GTR2 / rFactor GMT Importer,haunetal1990,2 mo,1 mo,Approved
+Add-on,U3M Import/Export,Vizoo,2 mo,1 mo,Approved
+Add-on,Matext - PBR Texture Library,Bruno-Antunes-Luis,2 mo,1 mo,Declined
+Add-on,Parent Switch,zakrich,2 mo,1 mo,Approved
+Add-on,BAGLA FBX Exporter,salwan-David,2 mo,1 mo,Declined
+Add-on,Camera orientation switch,Sertyuio,2 mo,1 mo,Declined
+Add-on,Set Origin To Selection,EricW,2 mo,1 mo,Declined
+Add-on,Unreal Groom Importer,Vicky_at_24fps,2 mo,1 mo,Approved
+Add-on,Modifier List,Dan-Gry,2 y,1 mo,Approved
+Add-on,Holey Tools,amoose136,2 mo,1 mo,Approved
+Add-on,Riyasol,aymendhaya,2 mo,1 mo,Declined
+Add-on,JB3D 3-Button Mouse Toggle,Josselin_Boullery,2 mo,1 mo,Declined
+Add-on,CV Auto Track,K_Naoki,2 mo,1 mo,Approved
+Add-on,Export To UE,bi1mcs,2 mo,2 mo,Declined
+Add-on,Interactive Pupils,Gozdul,2 mo,2 mo,Declined
+Add-on,Workplane9000,hlopes9000,2 mo,2 mo,Declined
+Add-on,JB3D Labeler,Josselin_Boullery,2 mo,2 mo,Approved
+Add-on,SEELE Transfer,liu-yiwei,2 mo,2 mo,Declined
+Add-on,Amarillo's VRM Toolkit,AmarilloArts,2 mo,2 mo,Approved
+Add-on,Addon Maneger,Choko,2 mo,2 mo,Declined
+Theme,Anime Girl Pink,180LVL,2 mo,2 mo,Approved
+Theme,NeonGrid,180LVL,2 mo,2 mo,Approved
+Theme,Light Green,180LVL,2 mo,2 mo,Approved
+Theme,Anime Sakura Dream,180LVL,2 mo,2 mo,Approved
+Theme,Dark Green,180LVL,2 mo,2 mo,Approved
+Add-on,MasterMoldSizer,Kamran-Lolo,2 mo,2 mo,Approved
+Add-on,Camera Target,Richard-Luong,2 mo,2 mo,Declined
+Add-on,Surface Mesh,3Dartmodeling,2 mo,2 mo,Approved
+Add-on,Node Orthogonalizer,孤语,2 mo,2 mo,Approved
+Add-on,Coloraide,longiy,1 y,2 mo,Approved
+Add-on,Keymap Powersearch,3DDinosaur,2 mo,2 mo,Approved
+Add-on,Overscan Manager,t0m0n,2 mo,2 mo,Declined
+Add-on,ParaRig,Zosuya,2 mo,2 mo,Approved
+Add-on,Sloyd Bridge,Sloyd,2 mo,2 mo,Declined
+Add-on,F1 Challenge 99-02 MTS Importer,haunetal1990,2 mo,2 mo,Approved
+Add-on,DCC MCP Blender,hallong,2 mo,2 mo,Declined
+Add-on,Asset Exporter Pro,山﨑-愛,2 mo,2 mo,Declined
+Add-on,Sculpt Pose Chain Tool,the_grass_trainer,2 mo,2 mo,Approved
+Add-on,Material Manager,Guruprakash-P,2 mo,2 mo,Declined
+Add-on,Origin Master Tools,Aresp,2 mo,2 mo,Approved
+Add-on,GLB External Textures,Arnau-Aymà,2 mo,2 mo,Approved
+Add-on,K3D Naming and Rigging Suite,Manuel-SEILHES,2 mo,2 mo,Declined
+Add-on,Playback FPS,Marek-Zając,2 mo,2 mo,Declined
+Add-on,Cut Plane,Firg,2 mo,2 mo,Approved
+Add-on,HABD Loop Reducer,Habdorn,2 mo,2 mo,Approved
+Add-on,MergeTools Lite,paulthien,2 mo,2 mo,Declined
+Add-on,LatticeDeform Lite,paulthien,2 mo,2 mo,Declined
+Add-on,Achievements,Illya-Ilev,2 mo,2 mo,Approved
+Add-on,Node Original Labels,Nadine-Brinkmann,2 mo,2 mo,Approved
+Add-on,NMS Shader Add-on,Gwarny,2 mo,2 mo,Approved
+Add-on,KEYPH,ArtinŌr,2 mo,2 mo,Approved
+Add-on,V2Blend Receiver,Yomi-A,2 mo,2 mo,Declined
+Theme,Leather Latch,marqosias,2 mo,2 mo,Approved
+Theme,Acid Black,NJS,2 mo,2 mo,Approved
+Theme,Maya2026,EmanuelFerro,2 mo,2 mo,Approved
+Add-on,Animal Animator,David-Alfter,2 mo,2 mo,Approved
+Add-on,Random Transform,Stepan-2,2 mo,2 mo,Declined
+Add-on,Symflick,kespie,2 mo,2 mo,Approved
+Add-on,Save Sentinel,Aresp,2 mo,2 mo,Declined
+Add-on,Sodium UV Pro,KRISH202,2 mo,2 mo,Declined
+Add-on,Modifier Snapshot,Cheni,2 mo,2 mo,Declined
+Add-on,Easy-Print,Dagnia,2 mo,2 mo,Approved
+Add-on,Topolyx Import/Export,0x309,2 mo,2 mo,Approved
+Add-on,Poly2Pixel,Opiu,2 mo,2 mo,Declined
+Add-on,Sculpt Subtools,Daniel-Soler,2 mo,2 mo,Approved
+Add-on,Pie Customizer,cgPots,2 mo,2 mo,Approved
+Add-on,PolyQuilt Retopology Tool,Dan-Gry,2 y,2 mo,Approved
+Add-on,Auto Rotoscope VSE,Volko,2 mo,2 mo,Declined
+Add-on,3D Gesture Tracking,Venkata-Sai-Smaran-Vallabhaneni,4 mo,2 mo,Declined
+Add-on,Render Queque,FallFolk,2 mo,2 mo,Approved
+Add-on,Albos Camera,a.lbos,2 mo,2 mo,Declined
+Theme,Slate,a.lbos,2 mo,2 mo,Approved
+Add-on,Object Data Auto Rename,MarcoCaturano3dArtist,2 mo,2 mo,Declined
+Add-on,Formula to Nodes,Prince_Eagle,2 mo,2 mo,Approved
+Add-on,Dimensions,Cynic.Wild,2 mo,2 mo,Approved
+Add-on,Leaf Gen,guillaume_bissieres,2 mo,2 mo,Approved
+Add-on,Switch Language,Ayunoshioyak1,2 mo,2 mo,Declined
+Add-on,Batch STL Export with geometry nodes overrides,oleroma,2 mo,2 mo,Approved
+Add-on,Sculptools: Palette,ProjectArgo,2 mo,2 mo,Approved
+Add-on,Material Override,Doğan-Aydın,2 mo,2 mo,Declined
+Theme,Pastel Blue,SammyTheBest,2 mo,2 mo,Approved
+Add-on,Attribute Cleaner,YLIANG,2 mo,2 mo,Approved
+Add-on,Show Info Panel,byebyeLAN,2 mo,2 mo,Declined
+Add-on,Scene Retimer,OEBS_Studios,2 mo,2 mo,Approved
+Add-on,Rendersynth,Lorenzo-Zani,2 mo,2 mo,Approved
+Add-on,Rig Bridge,疯技师,3 mo,2 mo,Approved
+Add-on,Bake To Single Material,Adam-Bernard,2 mo,2 mo,Approved
+Add-on,Clustta,Eaxum,2 mo,2 mo,Declined
+Add-on,Node Preview Thumbnails,CBC-4,2 mo,2 mo,Approved
+Add-on,DayZ Object Builder,sxdist,2 mo,2 mo,Declined
+Theme,Gushing Over Magical UI!,Grizlik,2 mo,2 mo,Approved
+Add-on,Easy Collection Visibility Keyframes,MingWitty,2 mo,2 mo,Approved
+Add-on,Selection Tools,muhammadmahfudin,2 mo,2 mo,Declined
+Add-on,Easy Pivot,Dang-Tran-Hoang,2 mo,2 mo,Approved
+Add-on,SimplyFive Light,zloy_pingvin,2 mo,2 mo,Declined
+Add-on,The Better Baker - PBR Baker,ChaimMendes,2 mo,2 mo,Approved
+Add-on,SciGraphs,José-Marín,2 mo,2 mo,Approved
+Add-on,Zeeks Hair,Ezekiel-AA,2 mo,2 mo,Approved
+Add-on,Text Helper,ACGGIT_LJ,3 mo,2 mo,Approved
+Add-on,Site3D Configurator,site3d,2 mo,2 mo,Declined
+Add-on,Blender Git Manager,David-Gomez-4,2 mo,2 mo,Declined
+Add-on,BlendET,haykh,3 mo,2 mo,Approved
+Add-on,Quicker Bridge,lty993951091,2 mo,2 mo,Declined
+Add-on,Shader Node Auto Size,WoahItsJeebus,2 mo,2 mo,Approved
+Add-on,3D Asset Autopilot Free,Hankil-Choi,2 mo,2 mo,Declined
+Add-on,Zap Board,Farax-Creative,2 mo,2 mo,Declined
+Add-on,Secret Paint,orencloud,2 y,2 mo,Declined
+Add-on,Atlas2Mesh,BHiMAX,2 mo,2 mo,Approved
+Add-on,Tutorial Viewer (Online &amp; Local),Bondades_Laertes_Barca,3 mo,2 mo,Approved
+Add-on,Node Tree HQ Screenshot,guillaume_bissieres,2 mo,2 mo,Declined
+Add-on,FourierMesh,Geneustace-Wicaksono,2 mo,2 mo,Approved
+Theme,Bauhaus,savannahXYZ,2 mo,2 mo,Approved
+Add-on,PTerrain,henrike586,3 mo,2 mo,Approved
+Add-on,Shape Key Helper,疯技师,2 mo,2 mo,Approved
+Add-on,Paint System,Tawan-Sunflower,1 y,2 mo,Approved
+Add-on,Edit Layers,Hayashihikaru,2 mo,2 mo,Approved
+Add-on,Darkly,TheTechromancer,3 mo,2 mo,Approved
+Add-on,Frames Per Beat,ParkerM3D,2 mo,2 mo,Approved
+Add-on,AI Assistant,himanshu-nishad,2 mo,2 mo,Declined
+Add-on,Custom Shortcut Helper 自定义快捷键助手,lieyu,2 mo,2 mo,Declined
+Add-on,ColorPalette Theme Editor,altangarts,2 mo,2 mo,Declined
+Add-on,Solo Node Preview,Muzammil-Halimov,3 mo,2 mo,Declined
+Add-on,UV Islands Edge,Edwin-Ca-Be,3 mo,2 mo,Approved
+Add-on,Robust UV transfer,leukwings0810,3 mo,2 mo,Approved
+Add-on,EzAspectRatio,Vicente-Rojas,2 mo,2 mo,Declined
+Add-on,Zeeks Flow,Ezekiel-AA,2 mo,2 mo,Approved
+Add-on,LinkFlow,Gihan-Maddumage,3 mo,2 mo,Approved
+Theme,Whisk3D,EmanuelFerro,2 mo,2 mo,Approved
+Add-on,VSE Shapes,Volko,3 mo,2 mo,Approved
+Add-on,Color Correct (MaterialX),HoudiniCat,3 mo,2 mo,Declined
+Add-on,Paper Anime Render Helper,paperzhu,5 mo,2 mo,Approved
+Add-on,Node Peek,mlstr0m,3 mo,2 mo,Approved
+Add-on,Face Shape Key Rig,thwotkd123,3 mo,2 mo,Approved
+Add-on,Easy Typography,Phoenix-Motion-Design,3 mo,2 mo,Declined
+Add-on,Bpy AI Assistant,匹宙Plumb,3 mo,2 mo,Declined
+Add-on,Local User Manual File URL,dupoxy,3 mo,3 mo,Approved
+Add-on,MiniSlicer,Germán-Andrés-Soto-Castro,3 mo,3 mo,Approved
+Add-on,ShenLe_Channel,木曜月,3 mo,3 mo,Declined
+Add-on,Bioxel Nodes,icrdr,2 y,3 mo,Approved
+Add-on,Settings icon,Muzammil-Halimov,3 mo,3 mo,Declined
+Theme,BlendGrey,iamren,3 mo,3 mo,Approved
+Theme,Matcha_Latte_Theme,Raze-Demon,3 mo,3 mo,Approved
+Theme,So Retro 5X,Ozbren,3 mo,3 mo,Approved
+Add-on,Universal Multi Importer,Tilapiatsu,2 y,3 mo,Approved
+Add-on,Simple Vertex,Petit,3 mo,3 mo,Declined
+Add-on,Layer Vertex Colors,xqfa,3 mo,3 mo,Approved
+Add-on,UniV,Oxicid,2 y,3 mo,Approved
+Add-on,Thomas Rig Legacy,BlueEvilGFX,2 y,3 mo,Approved
+Add-on,Blendtopo - Topology Optimization,Blenderhead-engineer,3 mo,3 mo,Approved
+Add-on,Unity Style Walk Navigation,時の勇者,3 mo,3 mo,Approved
+Add-on,Omoospace,icrdr,8 mo,3 mo,Approved
+Add-on,Tobin's Enhanced Pie Menus,Tobin-Cavanaugh,3 mo,3 mo,Declined
+Add-on,Mesh Filters,Hartface,3 mo,3 mo,Approved
+Add-on,Govie Tools,3D-Interaction-Technologies,2 y,3 mo,Approved
+Add-on,muSCADier,Emanuele-Lovato,3 mo,3 mo,Declined
+Add-on,Dissolve N Space Tool,Whee,3 mo,3 mo,Declined
+Add-on,Hair Net,Holo_X,3 mo,3 mo,Approved
+Add-on,ShapeKey Axis Control,Axnise,7 mo,3 mo,Approved
+Add-on,Vertex Color Forge,YLIANG,3 mo,3 mo,Approved
+Add-on,Texel Density Checker,IvanVostrikov,2 y,3 mo,Approved
+Add-on,VRM SpringBone Live Preview,surcen,3 mo,3 mo,Declined
+Add-on,K-Tools: Render Preset Manager,Robert-Kezives,1 y,3 mo,Approved
+Add-on,Blenderground,JustAJad,3 mo,3 mo,Declined
+Add-on,Blender Settings Sync,Ran-2,3 mo,3 mo,Declined
+Add-on,Image Remap Canvas,atticuslv,3 mo,3 mo,Approved
+Add-on,Texture Pipeline Studio,Gihan-Maddumage,3 mo,3 mo,Approved
+Add-on,Speak and Do,Michael-Crouse,3 mo,3 mo,Declined
+Add-on,Optics Simulator,emircbngl,3 mo,3 mo,Declined
+Add-on,NovaSkin Export,Saviski,4 mo,3 mo,Approved
+Add-on,Hardflow,ugulay,3 mo,3 mo,Approved
+Add-on,Canvas Lock,Teteerck,3 mo,3 mo,Declined
+Add-on,Keyboard and mouse tracker,Stefan2814,3 mo,3 mo,Approved
+Add-on,img2cube,LongLiveTheCube,3 mo,3 mo,Approved
+Add-on,DMX,Sunova,2 y,3 mo,Approved
+Add-on,Bbrush,ACGGIT_LJ,1 y,3 mo,Approved
+Add-on,Y.A.H.A,ArtinŌr,3 mo,3 mo,Approved
+Add-on,CAD2Cube — DXF Importer,LongLiveTheCube,3 mo,3 mo,Approved
+Add-on,Theme Panel,Illogicoma,3 mo,3 mo,Declined
+Add-on,INU Tools (GTA SA),INU,5 mo,3 mo,Approved
+Add-on,CAD-Helper,BsIngA,11 mo,3 mo,Approved
+Add-on,ND,HugeMenace,2 y,3 mo,Approved
+Add-on,LinkForge,Arouna-Patouossa-Mounchili,9 mo,3 mo,Approved
+Add-on,NFC Card and Keychain Generator,Clonephaze,1 y,3 mo,Approved
+Add-on,3MF Import/Export,Clonephaze,8 mo,3 mo,Approved
+Add-on,Quick Studio Light,Shuimeng,1 y,3 mo,Approved
+Add-on,RefBoard,MoseenkowAndrew,3 mo,3 mo,Approved
+Add-on,UVO,Dmytro-Zuievskyi,6 mo,3 mo,Approved
+Add-on,E Motion,Eridanus-Epsilon,6 mo,3 mo,Approved
+Add-on,Omniscient,Omniscient,2 y,3 mo,Declined
+Add-on,ClothDrop Reborn,Hartface,3 mo,3 mo,Approved
+Add-on,EasyMesh Batch Exporter,spec-arte,1 y,3 mo,Approved
+Add-on,Vertex Weight Cleanup,Tayou,3 mo,3 mo,Declined
+Add-on,PCamSolver,K_Naoki,3 mo,3 mo,Approved
+Add-on,Nodemap,n4dirp,3 mo,3 mo,Approved
+Theme,Frutiger Aero Green,Lightmare2000,3 mo,3 mo,Approved
+Add-on,Exact Radius,Patrick-Tiefenbacher,3 mo,3 mo,Approved
+Add-on,GZM 3D model format,777-tanks,11 mo,3 mo,Approved
+Add-on,Lazy Tools,BHiMAX,3 mo,3 mo,Declined
+Add-on,OrthoLock,Pazelock,3 mo,3 mo,Declined
+Add-on,Navigation Puck Addon,IliaVerpa,1 y,3 mo,Approved
+Add-on,B Unicode,Dinesh007,1 y,3 mo,Approved
+Add-on,Arch Generator,Aniruddhya-goswami,3 mo,3 mo,Approved
+Add-on,Simple Renaming,MatthiasPatscheider,2 y,3 mo,Approved
+Add-on,Mesh Welder,TECA3D,3 mo,3 mo,Declined
+Theme,Basic CAD - Red,Bebo,3 mo,3 mo,Approved
+Theme,ARC Interface,The_Iron_Maker,3 mo,3 mo,Approved
+Theme,Plague Inc. - Cure Theme,Bebo,3 mo,3 mo,Approved
+Add-on,Node Pie,Strike_Digital,2 y,3 mo,Approved
+Add-on,POV@Ble (Legacy),POVαBle,2 y,3 mo,Declined
+Add-on,Faster FBX Exporter,Dan-Gry,2 y,3 mo,Approved
+Add-on,List Blender Extensions,Wooniety,3 mo,3 mo,Declined
+Add-on,Shape Key Counter,ellemti,3 mo,3 mo,Declined
+Add-on,SavePoints,unclepomedev,10 mo,3 mo,Declined
+Add-on,OMI Physics Body glTF Extension,ZycaR,3 mo,3 mo,Approved
+Add-on,Helio,Mikydosh,3 mo,3 mo,Approved
+Add-on,Dev Addons Synchronizer,OlyDJ,2 y,3 mo,Declined
+Add-on,AutoTrack,Siemen-Lens,8 mo,3 mo,Approved
+Add-on,RollLux,ACGGIT_LJ,3 mo,3 mo,Approved
+Add-on,rotor,niewinny,1 y,3 mo,Approved
+Add-on,Sculpt Pose Sync,mamenr,3 mo,3 mo,Approved
+Add-on,Chunk Render,Shuimeng,6 mo,3 mo,Approved
+Add-on,R3F JSX/TSX Exporter,Tom-Heeley,3 mo,3 mo,Approved
+Add-on,Maze Generator Pro,BasharatLeoGill,6 mo,3 mo,Approved
+Add-on,Wiggle 2: RTX Edition,Chamiseul,5 mo,3 mo,Approved
+Add-on,NodeExporter,KrazyGFX,3 mo,3 mo,Approved
+Add-on,Rextools3,MatrixRex,3 mo,3 mo,Declined
+Add-on,Running Skeleton,MonkeLaysAnEgg,3 mo,3 mo,Declined
+Add-on,Custom Output Path,Shuimeng,2 y,3 mo,Approved
+Add-on,Unreal Viewport Navigation - WASD,Matsm-Studio,4 mo,3 mo,Approved
+Add-on,Copy Pivot From Active,6cto,4 mo,3 mo,Approved
+Theme,Bay Area,WGX3D,3 mo,3 mo,Approved
+Add-on,References Overlays,KENKEN,1 y,3 mo,Approved
+Add-on,STEPper Reborn,RomainGuimbal,3 mo,3 mo,Approved
+Add-on,Script Launcher,a2d4f3s1,7 mo,3 mo,Approved
+Add-on,MoldForge,Plesuro,3 mo,3 mo,Approved
+Add-on,TexLink,Rocco-Brugioni,3 mo,3 mo,Declined
+Add-on,QuickSnap,julienh,4 mo,3 mo,Approved
+Add-on,MN BIM Norm Checker — Барилгын Норм Шалгагч,enkhbold-1,3 mo,3 mo,Declined
+Add-on,Bas Relief,guillaume_bissieres,3 mo,3 mo,Approved
+Add-on,Scale by Distance,soswow,3 mo,3 mo,Declined
+Add-on,Easy View,Cho-Heechang,3 mo,3 mo,Declined
+Add-on,STEP Importer,Clonephaze,3 mo,3 mo,Approved
+Add-on,AssetKit,recp,3 mo,3 mo,Declined
+Add-on,Easy Arrangement,mlico,4 mo,3 mo,Approved
+Add-on,BlendGuard,Arthur-Dutra,4 mo,3 mo,Approved
+Add-on,Mat Assign,eggplosion,3 mo,3 mo,Declined
+Add-on,CuteGirl4U,Izumi4U,5 mo,3 mo,Declined
+Add-on,Surface Snap Offset,a.a.andrusenko,3 mo,3 mo,Declined
+Add-on,Camera Shift Sync,a2d4f3s1,4 mo,3 mo,Approved
+Add-on,MN BIM Library — Монгол Барилгын BIM Сан,enkhbold-1,3 mo,3 mo,Declined
+Add-on,FlexyTrack,MignotGeorges,4 mo,3 mo,Approved
+Add-on,Stylized Shader Tool,podo,4 mo,3 mo,Declined
+Theme,Black Acid,WGX3D,3 mo,3 mo,Approved
+Theme,Mjolnir,WGX3D,3 mo,3 mo,Approved
+Add-on,Viewport Scale Bar,Renee-13,4 mo,3 mo,Approved
+Add-on,Bugsnax Cache Importer/Exporter,SaintBaron,4 mo,3 mo,Approved
+Theme,Coffee_Theme,Leo-Mb,4 mo,3 mo,Approved
+Add-on,IMEBridge,Suenkanwei,4 mo,4 mo,Approved
+Theme,Frutiger Aero Orange,Lightmare2000,4 mo,4 mo,Approved
+Theme,Frutiger Aero Blue,Lightmare2000,4 mo,4 mo,Approved
+Theme,Prosit,WGX3D,4 mo,4 mo,Approved
+Theme,Scientia,WGX3D,4 mo,4 mo,Approved
+Add-on,Image Editor Master [图像超级工具],RARA,4 mo,4 mo,Approved
+Add-on,中文 3D 實體字生成器,22nd-Century-Visual,4 mo,4 mo,Declined
+Add-on,Float Curve CSS,guillaume_bissieres,4 mo,4 mo,Approved
+Theme,Green Viz,WGX3D,4 mo,4 mo,Approved
+Add-on,aa tools,ahmad.animation,4 mo,4 mo,Declined
+Add-on,Fill Mesh,guillaume_bissieres,4 mo,4 mo,Approved
+Add-on,Puran2 DualSPHysics Studio,puran2,4 mo,4 mo,Declined
+Add-on,Sculpt Stroke Replay,a.a.andrusenko,4 mo,4 mo,Approved
+Add-on,Meshify GP,Cesar-chavez,4 mo,4 mo,Declined
+Add-on,VFX Folder Analyzer,Vicky_at_24fps,4 mo,4 mo,Declined
+Add-on,Blend Project Packer,JohnnyCake,4 mo,4 mo,Approved
+Add-on,Flat UV Mapper,schemann,4 mo,4 mo,Approved
+Add-on,Mirror Tool,guillaume_bissieres,4 mo,4 mo,Declined
+Add-on,End-to-End Render Pipeline,impatient0,4 mo,4 mo,Approved
+Add-on,[BAM] Decalit,AlexeyHRDesign,4 mo,4 mo,Approved
+Add-on,Aiming Helper,Hartface,4 mo,4 mo,Approved
+Add-on,AL Batch OBJ Manager,Lun.A,4 mo,4 mo,Declined
+Add-on,Dimensions in Edit Mode,Matikos,4 mo,4 mo,Approved
+Add-on,Mandelbulb Generator,Suussonic,4 mo,4 mo,Approved
+Theme,Eye Zen Night,Sekuora,4 mo,4 mo,Approved
+Add-on,Simple Blender Addon,Duje-10,4 mo,4 mo,Declined
+Add-on,Grid Paper,soolim_c,4 mo,4 mo,Declined
+Add-on,GIT Utilities,AOUN,4 mo,4 mo,Declined
+Add-on,BlenderGPT,Raino-Annala,4 mo,4 mo,Declined
+Add-on,Marker Shortcuts,1P2D,4 mo,4 mo,Approved
+Add-on,Camera Grid,n4dirp,4 mo,4 mo,Approved
+Theme,VDB Theme,Tibe-Van-den-Brande,4 mo,4 mo,Approved
+Add-on,Slides,Alessandro-Pannoli,4 mo,4 mo,Approved
+Add-on,MeshCheck HUD,YLIANG,4 mo,4 mo,Approved
+Add-on,Wiggle Bones,Hans_Xwh,4 mo,4 mo,Approved
+Add-on,Magic Wand,Wiffzackius,4 mo,4 mo,Approved
+Add-on,Backup Modifiers,R4V3N,4 mo,4 mo,Approved
+Add-on,Lay Flat,Pavel-Karoukin,4 mo,4 mo,Approved
+Add-on,Lottie Export,MultLabs,4 mo,4 mo,Approved
+Add-on,Cleaner LITE,ParametrStudio,4 mo,4 mo,Declined
+Add-on,Nukxon VR Exporter,Nukxon,4 mo,4 mo,Approved
+Theme,Cream Soda,spoiledmilk,4 mo,4 mo,Approved
+Add-on,Import .PSD as Mesh Planes,byebyeLAN,4 mo,4 mo,Approved
+Add-on,Quick Mesh Select Pie,LEE-YOUNGJIN,4 mo,4 mo,Declined
+Add-on,DJI Proxy Switcher,aflynneastwood,4 mo,4 mo,Approved
+Add-on,Point Cloud I/O,StudioMedio,4 mo,4 mo,Approved
+Add-on,View Selected,wans7.gumroad.com,4 mo,4 mo,Approved
+Add-on,Custom Orientation Axis,RogenLothena,4 mo,4 mo,Declined
+Add-on,Frame By Plane,Alessandro-Pannoli,4 mo,4 mo,Approved
+Add-on,Local View Manager,3DDinosaur,4 mo,4 mo,Approved
+Add-on,Structural Topology Optimization,Emrgn.arch,4 mo,4 mo,Approved
+Theme,CGDive Dark with Area Highlights,Todor-CGDive,4 mo,4 mo,Approved
+Theme,Dark Purple,wans7.gumroad.com,4 mo,4 mo,Approved
+Add-on,Video Player,wans7.gumroad.com,4 mo,4 mo,Declined
+Add-on,Punakawan Modeller Extension,CP04,4 mo,4 mo,Declined
+Add-on,Plugin Manager Pro (4.5+),terry_ye,4 mo,4 mo,Declined
+Add-on,Advanced Align View,1P2D,4 mo,4 mo,Approved
+Add-on,Camera Resolution,Diwakar,4 mo,4 mo,Declined
+Add-on,Rename Tool,Jessy-Moreillon,4 mo,4 mo,Declined
+Add-on,Compressed GLB Importer,Wiffzackius,6 mo,4 mo,Approved
+Theme,3DSMAX 1996,Philautia,4 mo,4 mo,Approved
+Theme,Flash Light,Spikysaurus,4 mo,4 mo,Approved
+Add-on,theme dictionary,61+,4 mo,4 mo,Approved
+Add-on,Multi Files Bookmark,61+,4 mo,4 mo,Approved
+Theme,ClassicButModern,Neon-Hat,4 mo,4 mo,Approved
+Add-on,Quick Sidebar Switcher,hyeffect55,4 mo,4 mo,Approved
+Add-on,Timeline Audio Visualizer,qsOwOsp,4 mo,4 mo,Approved
+Add-on,Lightsaber VFX,Will-Hadfield-1,4 mo,4 mo,Approved
+Add-on,Color Palette,MingWitty,4 mo,4 mo,Approved
+Add-on,MMGpy - Mesh Remeshing,kmarchais,4 mo,4 mo,Approved
+Add-on,Scene Director,Melih-Kayaci,4 mo,4 mo,Approved
+Add-on,AutoAOV,Siemen-Lens,4 mo,4 mo,Approved
+Add-on,NodeSync,Matias-1,5 mo,4 mo,Approved
+Add-on,CryptoMatte ID Color,61+,5 mo,4 mo,Approved
+Add-on,Boardtyper 3D,Skarmuse,4 mo,4 mo,Approved
+Add-on,DF VColor,foxling,5 mo,4 mo,Declined
+Add-on,PivotMaster Pro,Tojo-Clement,4 mo,4 mo,Declined
+Add-on,UV Layers Tools (ULT),AbstracteurDeQuinteEssence,6 mo,4 mo,Approved
+Theme,vodi white,61+,4 mo,4 mo,Approved
+Theme,EVA UNIT 01,mamane-kabirou,4 mo,4 mo,Approved
+Add-on,Dynamic Parent,RomanVolodin,5 mo,4 mo,Approved
+Add-on,Flow,festivity,5 mo,4 mo,Approved
+Add-on,Looking Glass Display Simulator,Lukas-Vincenc,5 mo,4 mo,Approved
+Theme,STAR CITIZEN,mamane-kabirou,5 mo,4 mo,Approved
+Add-on,Copy Relative Transform,1P2D,5 mo,4 mo,Approved
+Add-on,PixelSync Porter,CYBER-KING,5 mo,5 mo,Approved
+Add-on,SPEEDZONE,KGD,5 mo,5 mo,Approved
+Add-on,QuickPath RKNZ,Rikokenz,5 mo,5 mo,Approved
+Add-on,Snake Game 3D,mabaci,5 mo,5 mo,Declined
+Add-on,Octanify,itsniloy,5 mo,5 mo,Declined
+Add-on,Sprite Sheet Generator,mabaci,5 mo,5 mo,Approved
+Theme,Plague Inc. Theme,Bebo,5 mo,5 mo,Approved
+Theme,JK3DA Theme,Jonas-Kircher,5 mo,5 mo,Approved
+Add-on,BatchForge: Batch Export Tool,mabaci,5 mo,5 mo,Approved
+Add-on,K3D UV Islands Keeper,Manuel-SEILHES,5 mo,5 mo,Approved
+Add-on,Motion Style,Willy_Work,5 mo,5 mo,Approved
+Theme,Dark_Comic_Theme,Raze-Demon,5 mo,5 mo,Approved
+Add-on,QUVIAI Render,Enes-Onur-Bayram,5 mo,5 mo,Declined
+Add-on,OBJSequence,Liam-Courtney,5 mo,5 mo,Approved
+Theme,Deus Ex MD Theme,Andrei-Khrutskii,5 mo,5 mo,Approved
+Add-on,A3DA Parser,Hans_Xwh,5 mo,5 mo,Approved
+Add-on,Multires to Mesh,DerMusikMeister,5 mo,5 mo,Declined
+Add-on,360 PhotoLab,Mattia-Fiorini,5 mo,5 mo,Approved
+Add-on,K3D Render Farm Optimizer,Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,K3D DuplicateColor,Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,K3D Anchor Point (AE-style),Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,K3D Guides (Illustrator-like),Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,K3D View Lock (Unreal Style),Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,K3D Snap to View (Unity-like),Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,K3D Unreal Material Prefix Manager,Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,K3D Distance Calculator,Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,Attribute Baker,ibotpl,5 mo,5 mo,Approved
+Add-on,K3D Object Hierarchy Inspector,Manuel-SEILHES,5 mo,5 mo,Declined
+Add-on,Resolution Lock,pbarrelas,5 mo,5 mo,Declined
+Add-on,Dynamic List Manager,Eduardito_3D,6 mo,5 mo,Approved
+Add-on,Batch Asset Placer,Andrey-Pestryakov,5 mo,5 mo,Approved
+Add-on,Let's turn on Fake User,Theiyn,5 mo,5 mo,Declined
+Add-on,A-Pose to T-Pose,九九归一,5 mo,5 mo,Declined
+Add-on,Snapline,Berun,5 mo,5 mo,Approved
+Add-on,透明动画工具,袁全,5 mo,5 mo,Declined
+Add-on,Numerador 3D,Escuela_Yedai_LaRioja,5 mo,5 mo,Declined
+Add-on,Transform to Empty (Reset Local),yellopunk39,5 mo,5 mo,Declined
+Add-on,Cherub Suite,luischerub,5 mo,5 mo,Declined
+Add-on,Color Helper,atticuslv,5 mo,5 mo,Approved
+Add-on,Render With Overscan,SergeyMetelskiy,5 mo,5 mo,Declined
+Add-on,Simply Loopy,Memm,5 mo,5 mo,Approved
+Add-on,E57 Point Cloud Importer,Quentin-Misslin,5 mo,5 mo,Approved
+Add-on,Keychain Builder,Sergey-Kabanov,5 mo,5 mo,Approved
+Add-on,DirectX X Format (.x),SaintBaron,5 mo,5 mo,Approved
+Add-on,KeyMentor,juraca,5 mo,5 mo,Declined
+Add-on,Loopkut,KewlSheet,5 mo,5 mo,Approved
+Add-on,ClothDrop,del79830f9a4869c80,5 mo,5 mo,Approved
+Add-on,Theme Tamer,3DDinosaur,5 mo,5 mo,Approved
+Add-on,Batch Import Images to Brushes,Raja-Muda,5 mo,5 mo,Approved
+Add-on,SymTrz,Berun,5 mo,5 mo,Approved
+Add-on,EdgeFlowDraw,David-Boudreau,6 mo,5 mo,Approved
+Add-on,FST ForgePolish,YLIANG,5 mo,5 mo,Approved
+Add-on,AI 3D Model Optimizer,Hinneman,5 mo,5 mo,Declined
+Add-on,Copy to Autograph,SergeyMetelskiy,5 mo,5 mo,Approved
+Add-on,Render Commander,n4dirp,6 mo,5 mo,Approved
+Add-on,Damped Track Chain,shengmingu,5 mo,5 mo,Approved
+Add-on,Unity Rig,nixkuroi,5 mo,5 mo,Approved
+Add-on,Keymap Visualizer,devanshutak25,5 mo,5 mo,Approved
+Add-on,OmniOutset,Alx_11,5 mo,5 mo,Approved
+Add-on,ADR HDRI Studio,Arun-Krishnan-Chythanya,5 mo,5 mo,Declined
+Add-on,Themeable Modes and Views,1P2D,5 mo,5 mo,Approved
+Theme,Viking's Midnight Round,IyeViking,5 mo,5 mo,Approved
+Theme,Y2K Futurism Theme,Igor-S-G-Barros,5 mo,5 mo,Approved
+Add-on,GDSII Importer,dnltz,5 mo,5 mo,Approved
+Theme,Evergreen_Theme,Raze-Demon,5 mo,5 mo,Approved
+Add-on,Backdrop,Muzammil-Halimov,6 mo,5 mo,Approved
+Add-on,Pataz Auto Hide Overlays,zanqdo,6 mo,5 mo,Approved
+Add-on,Unit to pixel converter,Viktor-Kamp,5 mo,5 mo,Approved
+Theme,Mocha_Latte_Theme,Raze-Demon,5 mo,5 mo,Approved
+Add-on,blend-ai,BytingJaws,5 mo,5 mo,Declined
+Add-on,Solo Mode,Vincentilagan,5 mo,5 mo,Declined
+Add-on,Stack,NXSTYNATE,6 mo,5 mo,Approved
+Add-on,Coral Generator,Martin-Vrablec,5 mo,5 mo,Declined
+Add-on,blendixserial,Rurouni-Usman,6 mo,5 mo,Approved
+Add-on,SphereLinks 3D Generator,Krayzo-Digital,6 mo,5 mo,Declined
+Add-on,VMC Link,Internet-Addict,6 mo,5 mo,Approved
+Add-on,Target Weld,KewlSheet,6 mo,5 mo,Approved
+Add-on,Eye Animation,Affe_mit_Waffe,6 mo,6 mo,Approved
+Add-on,Blink BG,K_Naoki,6 mo,6 mo,Approved
+Add-on,PinSolver,K_Naoki,6 mo,6 mo,Approved
+Add-on,Robotics Animation Bone Coordinate Exporter,Kiran-Kumawat,7 mo,6 mo,Approved
+Theme,PinkPinkPink,Livbaire,6 mo,6 mo,Approved
+Add-on,Armature to Mesh,SamRog94,6 mo,6 mo,Approved
+Add-on,Super3D Extra Format Bridge,475519905,6 mo,6 mo,Declined
+Add-on,Same Name Render,Ivan-Vdovitsa,6 mo,6 mo,Declined
+Add-on,Import PNG Palette,Ruuubick,11 mo,6 mo,Approved
+Add-on,Workflow Pie,chironamo,6 mo,6 mo,Declined
+Add-on,Rig UE5 Exporter,Wiffzackius,6 mo,6 mo,Approved
+Add-on,Bezier Curve Editor,IcedDog,6 mo,6 mo,Approved
+Add-on,Math Controller,o_oo_gote510,6 mo,6 mo,Approved
+Add-on,Simple Camera Match,MingWitty,6 mo,6 mo,Approved
+Add-on,Cut Sym,Wiffzackius,6 mo,6 mo,Approved
+Add-on,EquiGrid,Luis-Lerga,8 mo,6 mo,Declined
+Add-on,Dynamic Color Palette,fwdotcom,6 mo,6 mo,Approved
+Add-on,NLA Batch Editor,c4205m,1 y,6 mo,Approved
+Add-on,UV Coordinate Palette,Oleksandr-Gubanov,6 mo,6 mo,Approved
+Theme,Dark_Chocolate_Theme,Raze-Demon,6 mo,6 mo,Approved
+Add-on,FBX Bundle Exporter,Vladyslav-Izhak,6 mo,6 mo,Declined
+Add-on,批量变换(Batch Transform),alie59,6 mo,6 mo,Declined
+Add-on,xForm Toolbox,Kowzak,6 mo,6 mo,Declined
+Add-on,Export to Nuke Script,Vicky_at_24fps,6 mo,6 mo,Approved
+Add-on,Transform Tools Core,yasser-idris,6 mo,6 mo,Approved
+Add-on,BoneApaLattice,Garvi,6 mo,6 mo,Declined
+Theme,Max,Dabidzhi,6 mo,6 mo,Approved
+Add-on,Pro 3D Dimension Tool,DUONG-HOANG,6 mo,6 mo,Approved
+Add-on,SimplyPrint,SimplyPrint,6 mo,6 mo,Declined
+Add-on,Show Curve Length,Giambattista-Caltabiano,6 mo,6 mo,Approved
+Add-on,ARKit Blendshape Helper,SummonAngelus,7 mo,6 mo,Approved
+Theme,Decentraland Theme,Decentraland-Foundation,6 mo,6 mo,Approved
+Theme,Clamp PSX Dark,Gadzhimuslimov-Kamil-R,6 mo,6 mo,Approved
+Add-on,inZOI ModKit for Blender,inzoistudio,6 mo,6 mo,Declined
+Add-on,DepotKit,BHiMAX,6 mo,6 mo,Approved
+Add-on,RenderMind,qwa3r,6 mo,6 mo,Declined
+Add-on,Smart Mesh Cleaner Pro,Igor-Garcia,6 mo,6 mo,Approved
+Add-on,Sound Planes,nifi,8 mo,6 mo,Approved
+Theme,PS1 Classic,Fawkek,6 mo,6 mo,Approved
+Add-on,Render Notification,Affe_mit_Waffe,6 mo,6 mo,Declined
+Add-on,Theme Property Finder,Nanomanpro,7 mo,6 mo,Approved
+Add-on,three.js ObjectLoader,crwde,6 mo,6 mo,Approved
+Add-on,Sculpt Navigation,Cuzmic,8 mo,6 mo,Approved
+Add-on,BagaPaste,Kiara_Bagattini,9 mo,6 mo,Approved
+Add-on,Separate by Collision,Hattiffnat,6 mo,6 mo,Approved
+Add-on,LaTeX Text Generator,katterkie,6 mo,6 mo,Approved
+Add-on,NoDot Names,Jordan-Moss,6 mo,6 mo,Approved
+Add-on,PT Bridge,kevin_ma,6 mo,6 mo,Declined
+Add-on,Cutter Asset Library Ultra,Amir-53,6 mo,6 mo,Declined
+Add-on,Texture File Path Editor,BHiMAX,6 mo,6 mo,Approved
+Add-on,PBR Lookdev,BHiMAX,6 mo,6 mo,Approved
+Theme,Studio Mid,3DDinosaur,6 mo,6 mo,Approved
+Theme,Studio Light,3DDinosaur,6 mo,6 mo,Approved
+Add-on,O'Explosion Pro,Ozymandi,6 mo,6 mo,Declined
+Theme,Zbrush,mamane-kabirou,6 mo,6 mo,Approved
+Theme,RoReddosTheme,RoReddo,6 mo,6 mo,Approved
+Add-on,Xbox Controller Camera,marie.marthenorman,6 mo,6 mo,Approved
+Add-on,ToothPaste (Paste SVGs),Todor-Hlebarov,11 mo,6 mo,Approved
+Add-on,Monty Batch Exporter,Diego-Montufar-Perez,7 mo,6 mo,Approved
+Add-on,Complex Tiling,FirestormFMD,6 mo,6 mo,Declined
+Theme,灰核主控 (Gray Core Master),WA-w,6 mo,6 mo,Approved
+Add-on,Decentraland Tools,Decentraland-Foundation,7 mo,6 mo,Approved
+Add-on,PropGon UV Trim,PropGon,7 mo,6 mo,Approved
+Add-on,Planar Sculpting,clo1to5,7 mo,6 mo,Approved
+Add-on,Invisible,LENS6,7 mo,6 mo,Declined
+Add-on,Batch Render View Layers,chenkin123,7 mo,7 mo,Approved
+Add-on,Alias Nav,1P2D,7 mo,7 mo,Declined
+Theme,AE_Flow_Dark,Nois3G4te,7 mo,7 mo,Approved
+Add-on,Goblend: Export to Godot,Togira,7 mo,7 mo,Approved
+Theme,Darker,FlorianW,7 mo,7 mo,Approved
+Add-on,Vertex Color Tools,5th-Dimension,7 mo,7 mo,Declined
+Add-on,Sculpt Mask FaceSets Tools,Seaway,7 mo,7 mo,Approved
+Add-on,RoomViz Importer,Rashad-Eid,7 mo,7 mo,Declined
+Add-on,Image Dimensions Viewer,Pazelock,7 mo,7 mo,Approved
+Add-on,Dynamic Rig UI,Samy_Rodriguez,7 mo,7 mo,Approved
+Add-on,Storytools - Storyboard Tools,SamuelBernou,7 mo,7 mo,Approved
+Add-on,Booler,Jim-Bob-Petri,7 mo,7 mo,Declined
+Add-on,SoftViz Pro,Niels-Couvreur,7 mo,7 mo,Approved
+Add-on,Auto Paint Boundaries,Clonephaze,7 mo,7 mo,Approved
+Add-on,tripo3d_onlyfocus,ONLYFOCUS,7 mo,7 mo,Declined
+Add-on,Sprocket Tools,Brian-Marshall,7 mo,7 mo,Approved
+Add-on,Funny Delete Default Cube,Blatteman21,7 mo,7 mo,Declined
+Add-on,Plane to PBR,Scarlett_VFX,7 mo,7 mo,Declined
+Add-on,PresetForDyntopo,ozasuke,7 mo,7 mo,Declined
+Add-on,Render Profiler,MultLabs,7 mo,7 mo,Approved
+Add-on,Isometric Scene Setup,RafaelPasquay,7 mo,7 mo,Approved
+Add-on,Status Bar Playback Controls,Pazelock,7 mo,7 mo,Declined
+Add-on,Grease Mesh,Tonis,7 mo,7 mo,Approved
+Add-on,Aibuild Agent,Daghan-Cam,7 mo,7 mo,Declined
+Add-on,STMap Exporter,K_Naoki,7 mo,7 mo,Approved
+Add-on,Home Builder 5,AndrewPeel,7 mo,7 mo,Approved
+Add-on,Pseudo Rendering Farm,mklimenko,7 mo,7 mo,Approved
+Theme,Two Point Ex,eyecandy,7 mo,7 mo,Approved
+Add-on,Batch Texture Converter,maylog,7 mo,7 mo,Approved
+Add-on,XYZ Axis Seed,RVTibbetts,7 mo,7 mo,Declined
+Add-on,Easy Render,Caiden-Richards,7 mo,7 mo,Declined
+Theme,Gruvbox Green Theme,Edin-Spiegel,7 mo,7 mo,Approved
+Add-on,Vertex Slide,Transdemo,7 mo,7 mo,Declined
+Add-on,Import Paint Brushes,chsh2,8 mo,7 mo,Approved
+Add-on,Equal UV Scale (Safe),vishnus,7 mo,7 mo,Declined
+Add-on,Momentum,Isaac-Burke,7 mo,7 mo,Approved
+Add-on,GN MatchSize,HenDaSheng,7 mo,7 mo,Declined
+Add-on,Gp Select,HissatsuClaw,7 mo,7 mo,Approved
+Add-on,Render Complete Sound,Michail-14,7 mo,7 mo,Declined
+Add-on,Bambu Lab 3MF Tools,jsonify,8 mo,7 mo,Declined
+Theme,Dark Max Pro,PedroAmorim,7 mo,7 mo,Approved
+Theme,Solemn,czod,7 mo,7 mo,Approved
+Theme,LiLy Lime,Eridanus-Epsilon,7 mo,7 mo,Approved
+Add-on,Object Reporter,Justinas-Dudenas,7 mo,7 mo,Approved
+Add-on,E Topology Smooth,Eridanus-Epsilon,7 mo,7 mo,Approved
+Add-on,Palette,NXSTYNATE,7 mo,7 mo,Approved
+Add-on,Stop Motion Animator,Copperhead,7 mo,7 mo,Approved
+Add-on,UV Editor Texturing,AlexandrCG,7 mo,7 mo,Declined
+Add-on,Frutto Fast Unreal Setup (FFUS),Frutto,7 mo,7 mo,Declined
+Theme,Alias Repowered,Tetrabunz,7 mo,7 mo,Approved
+Add-on,Edge Length Measure,binary-angel,7 mo,7 mo,Approved
+Add-on,Linked Keyframe Duplicator,pravin-10,7 mo,7 mo,Declined
+Add-on,bMCP,niewinny,7 mo,7 mo,Declined
+Add-on,GeneradorMapsPbr,Fran-Dominguez-Leiva-2,7 mo,7 mo,Approved
+Add-on,Frame Range Renderer,AndreasResch,7 mo,7 mo,Approved
+Add-on,DOBLUX Button to execute Geometry Node Group,Dan-Oak,8 mo,7 mo,Approved
+Add-on,SoleShapper,David-Orrick,7 mo,7 mo,Approved
+Add-on,Marching Cube,Thomas-Berger,1 y,7 mo,Approved
+Add-on,B Onion Skin,Dinesh007,8 mo,7 mo,Approved
+Add-on,A2KIA's Texture Padding Tool,StoneCastle,8 mo,7 mo,Declined
+Add-on,Texture Mixer,MoonRaider,8 mo,7 mo,Approved
+Add-on,NotePad,Roman-Slack,8 mo,7 mo,Declined
+Add-on,Material Randomizer Pro,lambdawalker,8 mo,7 mo,Approved
+Add-on,Reflex Potentials,dartmeadow,8 mo,7 mo,Approved
+Add-on,Output Setup Helper,lukas.remis,8 mo,7 mo,Approved
+Theme,Eye Zen,Sekuora,8 mo,7 mo,Approved
+Theme,Crunchyroll Dark,mamane-kabirou,8 mo,7 mo,Approved
+Theme,Source,AeroBuoyancy.source,8 mo,7 mo,Approved
+Add-on,Delete Unlocked Shapes,F1dg3t,8 mo,8 mo,Declined
+Add-on,Poly Copy Paste,Fisch_Tu,8 mo,8 mo,Approved
+Add-on,StoryDesigner,StoryDesigner,8 mo,8 mo,Declined
+Theme,Dark_Pro_Max_Theme,Raze-Demon,8 mo,8 mo,Approved
+Add-on,Driver Copy IO,a2d4f3s1,8 mo,8 mo,Approved
+Add-on,BLeQ,Christian-Makarski,8 mo,8 mo,Approved
+Add-on,Smart Selection Propagation,atrxi,8 mo,8 mo,Approved
+Add-on,Modular Tree,Brandyn-Britton,8 mo,8 mo,Approved
+Add-on,SilhouetteToole,Henrik_Drygas,8 mo,8 mo,Approved
+Add-on,B3D UI Language Loop,楊景貴,8 mo,8 mo,Approved
+Add-on,NLA Empty Track Cleanup RKNZ,Rikokenz,8 mo,8 mo,Approved
+Add-on,FK/IK Snapping Tools,atrxi,8 mo,8 mo,Approved
+Theme,Cyberpunk_2077_UI,Raze-Demon,8 mo,8 mo,Approved
+Theme,theme ROSE,5Lunes,8 mo,8 mo,Approved
+Theme,Crimson Attack,zaq,8 mo,8 mo,Approved
+Theme,Blueprint_Theme,Raze-Demon,8 mo,8 mo,Approved
+Add-on,Motion Sounds,Jan-Hendrik-Müller,8 mo,8 mo,Approved
+Add-on,Modifier Manager,KewlSheet,8 mo,8 mo,Approved
+Theme,Arknights: Endfield,RAZUMNO,8 mo,8 mo,Approved
+Theme,Nostalgia_2bit_UI,Raze-Demon,8 mo,8 mo,Approved
+Add-on,3MF Format,Lee-Gillie,8 mo,8 mo,Declined
+Add-on,Buoyancy,Luis-Lerga,8 mo,8 mo,Declined
+Add-on,Our Render Button,mindbird,8 mo,8 mo,Declined
+Add-on,Camera Flow,Abdul-Majid-13,8 mo,8 mo,Declined
+Add-on,Sculpt Mask From Selection,NathanAlejver,8 mo,8 mo,Declined
+Add-on,Topology Doctor,Arman-Jangmiri,9 mo,8 mo,Approved
+Add-on,Set Emission Material,LeonardoRSilva,8 mo,8 mo,Declined
+Add-on,Lunaar AI Render,Lunaar_Vision,8 mo,8 mo,Declined
+Add-on,Tetrominode,darkstarrd,8 mo,8 mo,Approved
+Add-on,Global Custom Properties,1hue,9 mo,8 mo,Approved
+Add-on,OEBS Icon Viewer,OEBS_Studios,8 mo,8 mo,Approved
+Theme,Expecto_Patronum_Theme,Raze-Demon,8 mo,8 mo,Approved
+Add-on,Render Notifications,JimmyNoStar,1 y,8 mo,Approved
+Add-on,Easeit,AndyCuccaro,8 mo,8 mo,Approved
+Add-on,Tree Clipper,Lars-Helge-Scheel,8 mo,8 mo,Approved
+Add-on,Offest Object,Jackal,8 mo,8 mo,Declined
+Add-on,UbiSoft Pod formats,Syroot,1 y,8 mo,Approved
+Add-on,Shaping Recorder,darkstarrd,8 mo,8 mo,Approved
+Add-on,Reforge,Alexander-Bulatov,8 mo,8 mo,Approved
+Add-on,Comparable,ffuthoni,8 mo,8 mo,Approved
+Add-on,Local View by collection,D3W3,8 mo,8 mo,Approved
+Add-on,Pataz Notes,zanqdo,8 mo,8 mo,Approved
+Add-on,MAT Helper,maylog,8 mo,8 mo,Approved
+Add-on,Node Note/节点随记,W_Cloud,8 mo,8 mo,Approved
+Add-on,Screenwriter,zhengyang237,8 mo,8 mo,Approved
+Add-on,Dissolve 2-Edge Vertices,Jackal,9 mo,8 mo,Approved
+Add-on,Image Zoom Overlay,pikok85,8 mo,8 mo,Approved
+Add-on,Pivot Tools,Henrik_Drygas,9 mo,8 mo,Approved
+Add-on,B Marker Man,Dinesh007,8 mo,8 mo,Declined
+Add-on,Copy (Legacy),Vikky3D,8 mo,8 mo,Declined
+Add-on,Export Curve To Json,Quint-Vrolijk,9 mo,9 mo,Approved
+Add-on,Sculpting Extra Meshes + Curve,pixldg,9 mo,9 mo,Approved
+Add-on,Majik Blender Edu,Zelijah,9 mo,9 mo,Approved
+Add-on,Render Subcollections,Nico-Peters,9 mo,9 mo,Approved
+Add-on,Retarget,KBS-DEV,9 mo,9 mo,Approved
+Add-on,SimpleMIDI,yadu,9 mo,9 mo,Approved
+Add-on,Chord Song,Cyrill-Vitkovskiy,9 mo,9 mo,Approved
+Add-on,Time Stretch Sync,1P2D,9 mo,9 mo,Approved
+Add-on,LODify,小T_sune,9 mo,9 mo,Approved
+Add-on,NURBS/Poly Fillet Tool,zaphod,9 mo,9 mo,Approved
+Add-on,MotionPrint: Cryptographic Provenance,Thirdrez-Labs,9 mo,9 mo,Declined
+Add-on,Mesh Analysis Overlay,DShot92,1 y,9 mo,Approved
+Add-on,HDRI LightBrush,CadTamas,9 mo,9 mo,Approved
+Add-on,Keyboard Layout Emulation,endorh,9 mo,9 mo,Approved
+Theme,NieR_Automata_UI,Raze-Demon,9 mo,9 mo,Approved
+Add-on,Beyond Channel Packer,tyler.tofu,9 mo,9 mo,Approved
+Add-on,Focus on Selected (GUI),BenoîtGréant,9 mo,9 mo,Declined
+Add-on,QuickSigns,Marin-Brouwers,9 mo,9 mo,Approved
+Add-on,MCP-Link,Chris-Drake-AuraFriday,9 mo,9 mo,Declined
+Add-on,Open in GIMP,PeterBoos,9 mo,9 mo,Declined
+Add-on,Screenshot+,JR3DFUL,9 mo,9 mo,Declined
+Add-on,Mio3 Flex,mio,9 mo,9 mo,Approved
+Add-on,GhostView,JR3DFUL,9 mo,9 mo,Approved
+Add-on,Gamepad Control,Frank-Moelendoerp,9 mo,9 mo,Approved
+Add-on,RenderNames,Codeideal,10 mo,9 mo,Approved
+Add-on,AutoCam Free,RenderRides,1 y,9 mo,Approved
+Add-on,TexOps,JR3DFUL,9 mo,9 mo,Approved
+Add-on,Viewport FPS,Pazelock,9 mo,9 mo,Approved
+Add-on,Majik Blender Edu - Students,Zelijah,9 mo,9 mo,Declined
+Add-on,Buu AI 3D Generator,Buu-AI,9 mo,9 mo,Declined
+Add-on,dy Pack Master,cdordelly,9 mo,9 mo,Approved
+Add-on,SimpleToDo,Jonny-B,9 mo,9 mo,Declined
+Theme,Light N Creamy,nova3D,9 mo,9 mo,Approved
+Add-on,Geo Nodes Guide,Addonyte,9 mo,9 mo,Approved
+Add-on,Boon Shader Lite,Applebharath,9 mo,9 mo,Declined
+Add-on,Viewport Navigation Display,Cristiano-Tosoni,9 mo,9 mo,Approved
+Add-on,Asset Shelf Shortcut Display,The-Loose-Spirit,9 mo,9 mo,Approved
+Theme,elsyiun like,modekichi,9 mo,9 mo,Approved
+Add-on,Export Curve as SVG,Gilberto.R,10 mo,9 mo,Approved
+Add-on,Asset Library Tools,Akhil_Alukkaran,10 mo,9 mo,Approved
+Add-on,Outliner Model Preview,Shuimeng,9 mo,9 mo,Approved
+Add-on,Smart Box Select,R4V3N,10 mo,9 mo,Approved
+Add-on,Bake Info,Chalouek-RGBit,9 mo,9 mo,Approved
+Add-on,Areas by Materials,Justinas-Dudenas,9 mo,9 mo,Approved
+Add-on,Splashsurf Studio,Fabian-Löschner,10 mo,9 mo,Approved
+Add-on,YFan Camera / 相机,yangfan,9 mo,9 mo,Declined
+Add-on,FTW3DForge Image Projector,FTW3DForge,9 mo,9 mo,Approved
+Add-on,GA Furniture Unified (RU),Adam-Verner,9 mo,9 mo,Declined
+Add-on,Japa Tools,jaapa1,9 mo,9 mo,Declined
+Theme,Red Velvet Theme,Thunder-Artist,9 mo,9 mo,Approved
+Add-on,Overscan Addon,eknath-kambagiri,10 mo,9 mo,Approved
+Add-on,Global Copy Nodes,hisanimations,10 mo,9 mo,Approved
+Add-on,Quill Import/Export,Joan-Charmant,10 mo,9 mo,Approved
+Add-on,Splats,Dev.Patel,10 mo,10 mo,Approved
+Add-on,Cross Select,RARA,10 mo,10 mo,Approved
+Add-on,FTW Flattening Toolset,FTW3DForge,10 mo,10 mo,Approved
+Add-on,Folded Paper Engine,Papercraft-Games,10 mo,10 mo,Approved
+Add-on,B Guides,Dinesh007,10 mo,10 mo,Approved
+Add-on,SPM (Space partitioned mesh) format,STK-Team,10 mo,10 mo,Declined
+Add-on,SuperTuxKart Exporter Tools,STK-Team,10 mo,10 mo,Declined
+Add-on,Gizmo Resizer,CorentinBileau,10 mo,10 mo,Approved
+Add-on,MaskToVertexColorPro,墨泪MoLei_VFX,10 mo,10 mo,Approved
+Add-on,Selection Mode Cycler,Lise-2,10 mo,10 mo,Approved
+Theme,Redlix Theme,redlix,10 mo,10 mo,Approved
+Add-on,Image Sequence to MP4 Video Converter,Prince_Eagle,10 mo,10 mo,Approved
+Add-on,Ani Offset,Drika111,10 mo,10 mo,Approved
+Add-on,Select Similar Geometry,JuanRomero,10 mo,10 mo,Approved
+Add-on,Mixamo Rig,tyler.tofu,11 mo,10 mo,Approved
+Add-on,RenderCue,UsamaSQ,10 mo,10 mo,Approved
+Add-on,Sprite Sheet Maker,Manas-R-Makde,10 mo,10 mo,Approved
+Add-on,Cam Tools,Akhil_Alukkaran,10 mo,10 mo,Approved
+Theme,COLOR-NOVA // SPECTRAL UV | M-87,mamane-kabirou,10 mo,10 mo,Approved
+Add-on,Export Selected for Unity,Drogos,10 mo,10 mo,Declined
+Add-on,MatGeo,JR3DFUL,10 mo,10 mo,Approved
+Add-on,Surface Diagnostics,JLBöhm,10 mo,10 mo,Approved
+Add-on,Bone Math,Xury46,10 mo,10 mo,Approved
+Theme,Dark 3d,SammyTheBest,10 mo,10 mo,Approved
+Theme,Vibey™ Pro,Fedor-Rezhenov,10 mo,10 mo,Approved
+Add-on,Gather Resources,Digital-Art-Freedom,10 mo,10 mo,Approved
+Add-on,XPS Import/Export,maylog,10 mo,10 mo,Approved
+Theme,Kanagawa,timberlinefpv,10 mo,10 mo,Approved
+Add-on,Bone Widget,WayneDixon,11 mo,10 mo,Approved
+Add-on,Multirow,flakmoppen,10 mo,10 mo,Approved
+Add-on,Spine IO,Digital-Art-Freedom,10 mo,10 mo,Approved
+Add-on,CamFree,JR3DFUL,10 mo,10 mo,Approved
+Theme,Minimal,A7medKhaled.me,11 mo,10 mo,Approved
+Add-on,Sequence Loader,Stefan-Jeske,10 mo,10 mo,Approved
+Add-on,RMB Sort View Layers Alphabetically in Outliner-Scenes,RobWu,10 mo,10 mo,Approved
+Theme,ASA45,Phill420,10 mo,10 mo,Declined
+Theme,ASA50,Phill420,10 mo,10 mo,Declined
+Theme,Windows XP,Alkalide,10 mo,10 mo,Approved
+Theme,ZZZ Theme,mamane-kabirou,10 mo,10 mo,Approved
+Theme,Cyberpunk 2077,mamane-kabirou,10 mo,10 mo,Approved
+Add-on,BarBarossa Game Model Prep,BarBarossa,10 mo,10 mo,Declined
+Add-on,Blockout,niewinny,1 y,10 mo,Approved
+Theme,Mint Lavender Chill,mamane-kabirou,10 mo,10 mo,Approved
+Add-on,Lutaya Viewport Camera,3D_SHVYREV,10 mo,10 mo,Approved
+Add-on,Game Asset Optimizer,Sudip-Soni,10 mo,10 mo,Approved
+Theme,SleekNavy,Martel6ix,10 mo,10 mo,Approved
+Add-on,RootMaker,Manas-R-Makde,10 mo,10 mo,Approved
+Add-on,Classic Hide Collections Keymap,Dg0,10 mo,10 mo,Declined
+Add-on,Startup Preset Manager,Gruff-Wright,10 mo,10 mo,Approved
+Add-on,Vispace,vispace,10 mo,10 mo,Declined
+Add-on,Turntable Camera,The_Missing_Field,10 mo,10 mo,Approved
+Add-on,K-Tools: Texture Map Loader,Robert-Kezives,10 mo,10 mo,Approved
+Add-on,Visibility Check,Robert-Kezives,2 y,10 mo,Approved
+Add-on,K-Tools: Sync | Lock Viewport,Robert-Kezives,2 y,10 mo,Approved
+Add-on,K-Tools: Mode Highlight,Robert-Kezives,1 y,10 mo,Approved
+Theme,Cinnamon,VaVo,10 mo,10 mo,Approved
+Theme,Studio Dark,3DDinosaur,10 mo,10 mo,Approved
+Theme,khellstr light theme,khellstr,10 mo,10 mo,Approved
+Theme,Automata,NSA-Cloud,10 mo,10 mo,Approved
+Theme,Black,Gurra,10 mo,10 mo,Approved
+Add-on,Copy/Paste Nodes,david494,10 mo,10 mo,Approved
+Add-on,Vertex Group Renamer,YuuYamazu,10 mo,10 mo,Declined
+Add-on,MetahumanToManny,hakan-erunsal,11 mo,10 mo,Approved
+Add-on,Three d Cursor Snap,deepak756,10 mo,10 mo,Approved
+Add-on,Auto-Frame,Kenhes,10 mo,10 mo,Declined
+Add-on,Time Theme Switcher,CosmoMídias,11 mo,10 mo,Approved
+Add-on,Toggle Orbit Method (Turntable / Trackball),ArgelliKa,11 mo,10 mo,Approved
+Add-on,Export Render as DNG,FloBEAUG,11 mo,10 mo,Approved
+Add-on,Render Time Calculator,tmate,11 mo,10 mo,Declined
+Add-on,img2mat_pro,stevewarner,11 mo,10 mo,Approved
+Add-on,Batch Render Cameras,Mahdi.Shalchian,1 y,10 mo,Approved
+Add-on,Create Empty Parent,le-genda,11 mo,11 mo,Declined
+Add-on,Anim Reviewer,FhyTan,11 mo,11 mo,Approved
+Theme,RedSavStudios: Cyberpunk,Reddraconi,11 mo,11 mo,Approved
+Theme,RedSavStudios: Nord (Aurora),Reddraconi,11 mo,11 mo,Approved
+Add-on,Camera Sensor Database,Manuel-Houben,1 y,11 mo,Approved
+Add-on,Randomize Noise Offset,a.a.andrusenko,11 mo,11 mo,Approved
+Add-on,Origin_move_like_maya (Press D),deepak756,11 mo,11 mo,Approved
+Add-on,BH Smart Sym,bogatyr4ik,11 mo,11 mo,Approved
+Add-on,Printing Helper,ACGGIT_LJ,11 mo,11 mo,Approved
+Add-on,Camerafly,MichaelSchieber,11 mo,11 mo,Approved
+Add-on,Camera Aspect Ratio Guides,Prince_Eagle,11 mo,11 mo,Approved
+Add-on,Area Pie Menu,LEDINGQ,11 mo,11 mo,Declined
+Add-on,ReadyPlayerMe Blender Importer,tyler.tofu,11 mo,11 mo,Declined
+Add-on,Tek Hole Creator,UnderKo,11 mo,11 mo,Declined
+Add-on,Rigi-All,hisanimations,11 mo,11 mo,Approved
+Theme,Catppuccin Theme,Albert-Bici,11 mo,11 mo,Approved
+Theme,Momo Dark,TimoShch,11 mo,11 mo,Approved
+Theme,Gold Experience,lonku,11 mo,11 mo,Approved
+Add-on,Jagged Alliance 3 Exporter,Miroslaw-Dabrowski,11 mo,11 mo,Declined
+Add-on,Face Angle Analyzer,Astralis,11 mo,11 mo,Approved
+Add-on,Advanced VRML (.wrl) Importer,Jace-5,11 mo,11 mo,Declined
+Add-on,ManuTools,ManuelDOnofrio,11 mo,11 mo,Declined
+Add-on,Mirror Image,R4V3N,11 mo,11 mo,Approved
+Add-on,Quick Asset Manager,Clonephaze,11 mo,11 mo,Approved
+Add-on,VNF Export Extension,runerback,11 mo,11 mo,Approved
+Add-on,Real Snow V2,Mercurious-Studio,11 mo,11 mo,Declined
+Add-on,BlenderSlot,DKZ,11 mo,11 mo,Declined
+Add-on,Vray Arena Setup,Darsh,11 mo,11 mo,Approved
+Add-on,Mesh Checker,Abrar1.618,11 mo,11 mo,Declined
+Add-on,EditorBar,atetraxx,1 y,11 mo,Approved
+Add-on,Orbiter,TFMSTYLE,11 mo,11 mo,Approved
+Add-on,Bone Animation Copy Tool,maylog,11 mo,11 mo,Approved
+Add-on,Genaimo Addon,Ailive-INC,11 mo,11 mo,Declined
+Add-on,MaterialHelper,ACGGIT_LJ,1 y,11 mo,Approved
+Add-on,Auto Track Weights,david494,11 mo,11 mo,Approved
+Add-on,Frame Flow Beta,abhi.01,1 y,11 mo,Approved
+Add-on,Analysis Toolkit,K_Naoki,11 mo,11 mo,Approved
+Add-on,Batch Bone Constraints,distinctive-mark,11 mo,11 mo,Approved
+Add-on,TRIDENT,ccordi,11 mo,11 mo,Approved
+Add-on,Spline Generator,TFMSTYLE,11 mo,11 mo,Approved
+Theme,Blue Invasion,zaq,11 mo,11 mo,Approved
+Add-on,Graph Generator,TFMSTYLE,11 mo,11 mo,Approved
+Add-on,NodeLink Navigator,sunkanwei,11 mo,11 mo,Approved
+Add-on,Trajectory Anim,trisnox,11 mo,11 mo,Approved
+Add-on,Add NodeGroup to Selected Objects,hoosnick,11 mo,11 mo,Declined
+Add-on,PyBtnBox,Ou_Chiang,1 y,11 mo,Approved
+Add-on,NS Toolkit - Mesh Cleanup Pro,nandur,1 y,11 mo,Approved
+Theme,Beautiful Dream,KBS-DEV,11 mo,11 mo,Approved
+Theme,Wisteria,cmzw,11 mo,11 mo,Approved
+Theme,OLED,NARZ,1 y,11 mo,Approved
+Add-on,Multiuser,slumber,1 y,11 mo,Approved
+Add-on,NURBS2Mesh,Brrainz,1 y,11 mo,Approved
+Add-on,Replace With Copy,Brrainz,1 y,11 mo,Approved
+Add-on,Multi Adjust,Brrainz,1 y,11 mo,Approved
+Add-on,Manage File Paths,GregZaal,1 y,11 mo,Approved
+Add-on,Web Bookmark Tool,litiezhu_3d,1 y,11 mo,Declined
+Add-on,Node Position Reset,a2d4f3s1,1 y,11 mo,Declined
+Add-on,MatColeX,budijozz,1 y,1 y,Approved
+Add-on,Pataz Thumbnail Toolz,zanqdo,1 y,1 y,Approved
+Add-on,Import Meshed Alpha,The_Missing_Field,1 y,1 y,Approved
+Add-on,JSBSim Viewer,RenanMsV,1 y,1 y,Approved
+Add-on,Curve Generator,TFMSTYLE,1 y,1 y,Approved
+Theme,CyanoNexus LX490,mamane-kabirou,1 y,1 y,Approved
+Add-on,AI Compositor,leolee-2,1 y,1 y,Declined
+Add-on,WFC 3D Generator,Jonny-B,1 y,1 y,Approved
+Add-on,Lutiy Timeline,3D_SHVYREV,1 y,1 y,Approved
+Add-on,Rounded Rectangle,Lije.Morgan,1 y,1 y,Declined
+Add-on,True RoboAnimator,danyal-sarfraz,1 y,1 y,Approved
+Add-on,Sierpinski Triangle,Jonny-B,1 y,1 y,Approved
+Add-on,expLODe,Rainma22,1 y,1 y,Approved
+Add-on,Light Generator,TFMSTYLE,1 y,1 y,Approved
+Add-on,Physical Motion Blur,K_Naoki,1 y,1 y,Approved
+Add-on,COLMAP + GLOMAP Motion Tracking,carson-katri,1 y,1 y,Declined
+Add-on,BFDS fire simulations,emanuele.gissi,1 y,1 y,Approved
+Add-on,Nano Banana Render,Kovname,1 y,1 y,Declined
+Add-on,VC3D,Tim_VC,1 y,1 y,Declined
+Add-on,Align Objects Along Axis,Prashant-Swami,1 y,1 y,Declined
+Add-on,Restart,JR3DFUL,1 y,1 y,Approved
+Add-on,Better Bend,Lije.Morgan,1 y,1 y,Approved
+Add-on,Mesh Attribute Utils,Hannah-Pascal-Noël,1 y,1 y,Approved
+Add-on,Geo Bake Batch,Artyom-Pankratov,1 y,1 y,Approved
+Theme,Dark Aero,AeroBuoyancy.source,1 y,1 y,Approved
+Add-on,BlendBuddy,Vlad-Nikelov,1 y,1 y,Declined
+Add-on,HiFi Architecture Builder v4.5.8,Malik-Nomi,1 y,1 y,Approved
+Add-on,PegBoard Loader,PegBoard,1 y,1 y,Declined
+Add-on,Delete It - Hoang Tools,tranvuhoang90,1 y,1 y,Declined
+Theme,Utility Materials,Utility-Materials,1 y,1 y,Approved
+Add-on,B Browser Tools,Dinesh007,1 y,1 y,Declined
+Add-on,Section Toolbox,Victor-Calixto,1 y,1 y,Approved
+Add-on,Collection Switcher,Valentin-Komkov,1 y,1 y,Approved
+Add-on,NS VanishFX,Nursidik,1 y,1 y,Declined
+Add-on,Add Shader Attribute,atticuslv,1 y,1 y,Approved
+Add-on,Blur HDRI,Jan-Hendrik-Müller,1 y,1 y,Approved
+Theme,Yamikawaii,aer0art,1 y,1 y,Approved
+Add-on,Surface Particles Generator,匹宙Plumb,1 y,1 y,Declined
+Theme,Pjavel Theme,Zexyp,1 y,1 y,Approved
+Add-on,UV Maps+,JR3DFUL,1 y,1 y,Approved
+Add-on,Add Mesh: Teapot,F1dg3t,1 y,1 y,Declined
+Add-on,GS Model Helper,DaKashi,1 y,1 y,Approved
+Add-on,Secondary Language,mdlt7z,1 y,1 y,Approved
+Add-on,All Objects into Assets,StellArc,1 y,1 y,Approved
+Add-on,Easy Driver,NeoEmberArt,1 y,1 y,Approved
+Add-on,Parallax Node,MultLabs,1 y,1 y,Approved
+Add-on,Node Editor Pro,the_visual_geek,1 y,1 y,Approved
+Add-on,Extrude Curve (ECM),SplineDynamics,1 y,1 y,Declined
+Add-on,MidiController,Eldin-Zenderink,1 y,1 y,Approved
+Add-on,BlenDir,danielboxer,1 y,1 y,Declined
+Theme,Win7,aer0art,1 y,1 y,Approved
+Add-on,ID Tools,hisanimations,1 y,1 y,Approved
+Add-on,Text editor for Development,Martin-Lorentzon,1 y,1 y,Approved
+Add-on,DriverHelper,Zakmen150,1 y,1 y,Approved
+Add-on,OptiPloy: Rig Spawner,hisanimations,2 y,1 y,Approved
+Add-on,Format Rename,Ou_Chiang,1 y,1 y,Approved
+Add-on,Stroke Material Display,JohnNyquist,1 y,1 y,Approved
+Add-on,SciBlend,José-Marín,1 y,1 y,Approved
+Theme,Matcha,YuuYamazu,1 y,1 y,Approved
+Add-on,Smart Transform,Claz_Arts,1 y,1 y,Approved
+Add-on,MultiMix,LightFiles,1 y,1 y,Declined
+Add-on,LayerComp,KENKEN,1 y,1 y,Approved
+Theme,YorHa - Operator,mamane-kabirou,1 y,1 y,Approved
+Theme,Yet Another Orange Theme,James-Luiss,1 y,1 y,Approved
+Theme,NVIDIA,mamane-kabirou,1 y,1 y,Approved
+Theme,AMD Ryzen,mamane-kabirou,1 y,1 y,Approved
+Theme,Radeon Graphics,mamane-kabirou,1 y,1 y,Approved
+Add-on,MarkCam,SomRender,1 y,1 y,Approved
+Add-on,Ramp Generator,TFMSTYLE,1 y,1 y,Approved
+Add-on,Timelapse,Silky-Renders,1 y,1 y,Approved
+Add-on,123 Select,Fisch_Tu,1 y,1 y,Approved
+Add-on,Animated Texture Brush,Kvendy,1 y,1 y,Approved
+Add-on,Easy Animator,Arq.-Gustavo-Garcia,1 y,1 y,Declined
+Add-on,STF - Squirrel Transfer Format,mars,1 y,1 y,Declined
+Add-on,Random Spheres Generator,Arash-gmc,1 y,1 y,Declined
+Add-on,LODGen,F1dg3t,1 y,1 y,Approved
+Add-on,Linkage Marking Menu,Linkage,1 y,1 y,Approved
+Add-on,Swap Aspect Ratio,pablo-reche-beltran,1 y,1 y,Declined
+Theme,Frutiger Aero,AeroBuoyancy.source,1 y,1 y,Approved
+Theme,Work_n_rose,Nois3G4te,1 y,1 y,Approved
+Add-on,Reset Workspace,Trukas,1 y,1 y,Approved
+Theme,Vaporwave,aer0art,1 y,1 y,Approved
+Theme,Mint Y-ish,keyschain,1 y,1 y,Approved
+Add-on,PBSU 3D Studio (.3ds),Arturo-Cervantes,1 y,1 y,Approved
+Add-on,NextRender,Graphy,1 y,1 y,Declined
+Add-on,Edit Instanced Collection,Trukas,1 y,1 y,Approved
+Add-on,Set Origin Tool,johnWick_,1 y,1 y,Declined
+Add-on,Lost Selection,niewinny,1 y,1 y,Approved
+Add-on,SPArk Sequencer,TinyNick,1 y,1 y,Approved
+Theme,XP Dark,James-Luiss,1 y,1 y,Approved
+Add-on,Quick Views Parametric,Arq.-Gustavo-Garcia,1 y,1 y,Declined
+Add-on,Compositor File Output Replacer,a2d4f3s1,1 y,1 y,Approved
+Add-on,Add Std Paper-Format,BsIngA,1 y,1 y,Approved
+Add-on,Second Life-style camera,miunau,1 y,1 y,Approved
+Add-on,Surface Psycho,RomainGuimbal,1 y,1 y,Approved
+Add-on,Anim Offset Pro,Drika111.,1 y,1 y,Approved
+Theme,McBling,aer0art,1 y,1 y,Approved
+Add-on,Meshy official plugin,MeshyAI,1 y,1 y,Declined
+Theme,Blue Archive,RAZUMNO,1 y,1 y,Approved
+Add-on,Extrude Along Path,RobbieK,1 y,1 y,Approved
+Add-on,Tool Hub,Mr.Bir,1 y,1 y,Approved
+Add-on,Essential Brush Saver,emptybraces,1 y,1 y,Approved
+Add-on,Mesh Display,Blenderbob,2 y,1 y,Declined
+Theme,Blueprint_Film_Theme,Raze-Demon,1 y,1 y,Approved
+Theme,Cyber_Bluez,aer0art,1 y,1 y,Approved
+Add-on,Blueprints,Blenderbob,1 y,1 y,Approved
+Add-on,On-Screen Numpad,Pluglug,1 y,1 y,Approved
+Add-on,Linkage Object Aligner,Linkage,1 y,1 y,Declined
+Add-on,DoubleClick Linked/双击选择相连项,Shuimeng,1 y,1 y,Declined
+Add-on,Attrio CSV,sharpened,1 y,1 y,Approved
+Add-on,Mirror Across Plane,RobbieK,1 y,1 y,Declined
+Add-on,Bake Instance Animation (烘焙几何节点实例动画),ChyiZ_,1 y,1 y,Approved
+Theme,matriX,aer0art,1 y,1 y,Approved
+Add-on,BL Easy Crop,usrname0,1 y,1 y,Approved
+Add-on,Visual limits,xbodya13,1 y,1 y,Approved
+Add-on,Game Tools,Cremuss,1 y,1 y,Approved
+Add-on,Rectangle Tools,shinmera,1 y,1 y,Approved
+Theme,Techno_Zen,aer0art,1 y,1 y,Approved
+Add-on,Sakura's Rig Interfaces,SakuraSedaia,1 y,1 y,Approved
+Theme,aer0,aer0art,1 y,1 y,Approved
+Add-on,Quick Pivot,Teerapat-Wadwapee,1 y,1 y,Declined
+Add-on,Toggle Emulate 3 Button Mouse,chenkin123,1 y,1 y,Approved
+Add-on,View Layer Plus,Trukas,1 y,1 y,Approved
+Add-on,Visible_Keys,Danger-N00dle,1 y,1 y,Declined
+Add-on,IME Helper,arius-cr,1 y,1 y,Declined
+Add-on,Retro Console Lite,Prince_Eagle,1 y,1 y,Approved
+Add-on,Easy Tree,Jacob-Johnston,1 y,1 y,Approved
+Theme,Dorfic,aer0art,1 y,1 y,Approved
+Add-on,Space colonization tree generator,LS,1 y,1 y,Approved
+Add-on,Normalize and Resize Curve Handles,TomasCJ,1 y,1 y,Approved
+Theme,Candymouse,milomouse,1 y,1 y,Approved
+Add-on,Shirakumo SF3 IO,shinmera,1 y,1 y,Approved
+Add-on,Image to Mat,SHIVA,1 y,1 y,Approved
+Add-on,Wheel-O-Matic,TechArtToolBox,1 y,1 y,Approved
+Add-on,Blender Unity Export Tools,edesdan,1 y,1 y,Declined
+Add-on,Sync Material Viewport Color,Qiu-Feng,1 y,1 y,Approved
+Add-on,i32 the Mandelbrot Set,Osipenkov+Art,1 y,1 y,Approved
+Add-on,Keyframe selected,xbodya13,1 y,1 y,Approved
+Add-on,Quickmarks,Harinarayanan-P-V,1 y,1 y,Declined
+Add-on,Node Tree Screenshot,LukasTönne,1 y,1 y,Approved
+Theme,Guofeng Chi - A China Red Theme,NSD-NSD,1 y,1 y,Approved
+Add-on,Focal Length Tweaker,1P2D,1 y,1 y,Approved
+Theme,Rune3D_Theme2025,Rune3D,1 y,1 y,Approved
+Add-on,Render Webhook,vignette,1 y,1 y,Approved
+Add-on,Polychase,theartful,1 y,1 y,Approved
+Add-on,Scene Web Upload,Herrengt,1 y,1 y,Declined
+Theme,Zeratul_Theme,Raze-Demon,1 y,1 y,Approved
+Theme,Prussian_Blueprint_Theme,Raze-Demon,1 y,1 y,Approved
+Add-on,Reset Custom Properties,Lauloque,1 y,1 y,Approved
+Add-on,Merge Selected Cameras,K_Naoki,1 y,1 y,Approved
+Add-on,Grid Layout,Hodgson3d,1 y,1 y,Approved
+Add-on,Clip Tools,K_Naoki,1 y,1 y,Approved
+Add-on,Auto Sync Object Data Names,GeeDoubleU,1 y,1 y,Approved
+Add-on,Tracker to Nuke,K_Naoki,1 y,1 y,Approved
+Add-on,Script Manager Pro,CemilBerk,1 y,1 y,Approved
+Add-on,Scene Duration Display,K_Naoki,1 y,1 y,Approved
+Theme,Gray50,Nick2321,1 y,1 y,Approved
+Theme,Prussian_Blue_Theme,Raze-Demon,1 y,1 y,Approved
+Theme,Prussian_Blue_Pink_Theme,Raze-Demon,1 y,1 y,Approved
+Add-on,Bone Aligner,maylog,1 y,1 y,Approved
+Add-on,SmartScene Toolkit,Marcus997,1 y,1 y,Approved
+Add-on,Perfectly Normal,Seth-Adam-Trowbridge,1 y,1 y,Approved
+Add-on,Beantextures,daringcuteseal,1 y,1 y,Approved
+Add-on,CCNCAnimationObjects,Bitsqueezer,1 y,1 y,Approved
+Add-on,Vertex Animation Toolkit (VAT + VAB),Flement,1 y,1 y,Approved
+Add-on,Animation Auto Offset,Marek-Zając,1 y,1 y,Approved
+Add-on,NLA Midi Copier,Cornerback24,2 y,1 y,Approved
+Add-on,Flatten Selected Meshes,eren,1 y,1 y,Declined
+Theme,Blackboard_Theme,Raze-Demon,1 y,1 y,Approved
+Add-on,Align &amp; Distribute Tool,holymeo,1 y,1 y,Declined
+Add-on,Vertex Color Selector,D31,1 y,1 y,Approved
+Add-on,Multiple Camera Render,ivan-perevala,1 y,1 y,Approved
+Theme,Dim Fog,huleeb,1 y,1 y,Approved
+Add-on,Shape Key &amp; Vertex Groups Utilities Enhanced,LeafyBush7,1 y,1 y,Approved
+Add-on,Amagate,Sryml,1 y,1 y,Declined
+Add-on,Auto Wrinkle Map,Hattiffnat,1 y,1 y,Approved
+Add-on,Snap Cursor To Active With Rotation,Matt-Fisher,1 y,1 y,Declined
+Add-on,Terrain Mixer,zets,1 y,1 y,Approved
+Add-on,PAWS: Bakery,Steve-Paws,1 y,1 y,Approved
+Add-on,Additional Batch Rename,Endertainer007,1 y,1 y,Approved
+Theme,Mac OSX Cheetah,aflynneastwood,1 y,1 y,Approved
+Add-on,Procedural Tiles,Aisun-Tang,1 y,1 y,Approved
+Add-on,NodeVoidKeeper,MagnumVD,1 y,1 y,Approved
+Add-on,Batch_VGR,Andrea-Ficetti,1 y,1 y,Declined
+Add-on,DragonFF,Parik,1 y,1 y,Approved
+Add-on,Mass Keyframe,StratosDerg,1 y,1 y,Approved
+Theme,Ptools_Minimal,Hamza-Alpoguz,1 y,1 y,Approved
+Theme,Ptools,Hamza-Alpoguz,1 y,1 y,Approved
+Theme,Cryo Foxx,DrFoxx,1 y,1 y,Approved
+Add-on,Pip Library Installer,luigipacheco,1 y,1 y,Declined
+Add-on,Simple Gcode Importer,kmnunley,1 y,1 y,Approved
+Add-on,Controller Link,globglob3D,1 y,1 y,Approved
+Add-on,Dynamic Render Border,tobiaskummer,1 y,1 y,Approved
+Add-on,Color Grid Texture Generator,andersmmg,1 y,1 y,Approved
+Add-on,Glare Node Controller,darkstarrd,1 y,1 y,Approved
+Add-on,BUILD Map Importer,Jens.Ne,1 y,1 y,Approved
+Add-on,BL Fast Start (MP4/MOV),usrname0,1 y,1 y,Approved
+Add-on,Align-Distribute Grease Pencil Strokes,JohnNyquist,1 y,1 y,Approved
+Add-on,Maya Pivot,Zinkenite,1 y,1 y,Approved
+Theme,Blossom Theme,BlossomTheme,1 y,1 y,Approved
+Theme,Blueprint_Paper_Theme,Raze-Demon,1 y,1 y,Approved
+Add-on,Jiggle Physics,naelstrof,1 y,1 y,Approved
+Add-on,Link Manager,Blenderbob,1 y,1 y,Declined
+Add-on,Motion Path Creator,Blenderbob,2 y,1 y,Approved
+Add-on,Save Selection,Blenderbob,1 y,1 y,Approved
+Add-on,ShapeKey Copy,Blenderbob,2 y,1 y,Approved
+Add-on,Dynamic Text Object,Rolf-Jethon,1 y,1 y,Declined
+Add-on,Make Planar Faces Plus,Anton-Florey,1 y,1 y,Approved
+Theme,Quantum Void FluoAmber,Dimona-Patrick-243,1 y,1 y,Approved
+Add-on,Viewport stabilizer,Yaroslav_Yushk,1 y,1 y,Approved
+Add-on,Grease Pencil Nudge Frames,bergamote,1 y,1 y,Approved
+Add-on,Cad_Dimensions,Mr.Nobody3d,1 y,1 y,Approved
+Add-on,Shape Key Mirror Plus,Ciyorie,1 y,1 y,Approved
+Add-on,Camera2View,zets,1 y,1 y,Approved
+Add-on,Modifier Stack Manager,salaivv,1 y,1 y,Approved
+Theme,Toxic Foxx,DrFoxx,1 y,1 y,Approved
+Add-on,Vectart Animation,Dimona-Patrick-243,1 y,1 y,Approved
+Add-on,Set Vertex Distance,alicoskun,1 y,1 y,Approved
+Theme,MYMXT,Artur-30,1 y,1 y,Approved
+Theme,Cloud Guy's Theme,Cloud-Guy,1 y,1 y,Approved
+Add-on,Batch Render Actions,Padraig-O-Cinneide,1 y,1 y,Approved
+Add-on,rmKitUV,Timothee-Yeramian,1 y,1 y,Approved
+Add-on,Snap Bisect,AdamDominec,2 y,1 y,Approved
+Add-on,Geonode To Shapekey,Jan-Hendrik-Müller,1 y,1 y,Approved
+Add-on,rmKit,Timothee-Yeramian,1 y,1 y,Approved
+Add-on,AC Replay Importer,abchouhan,1 y,1 y,Approved
+Add-on,To Square,Jean-Yves-Grosbeau,1 y,1 y,Approved
+Add-on,Dynamic Head Property Manager,Cloud-Guy,1 y,1 y,Approved
+Add-on,Folder Structure Generator,guillaume.jaouen95,1 y,1 y,Declined
+Theme,Nocturna,AlejandroSQR,1 y,1 y,Approved
+Theme,Luminosa,AlejandroSQR,1 y,1 y,Approved
+Add-on,Quick Object Align,Nguyễn-Duy-Hiệp,1 y,1 y,Declined
+Add-on,Individual Camera Properties,Alexander-Bicukow,1 y,1 y,Approved
+Add-on,Asset Browser: Capture Thumbnail from Viewport,Dan-Gry,1 y,1 y,Approved
+Add-on,Trimmer,LaXHeXLuX,1 y,1 y,Approved
+Add-on,catafest_ImageToPointCloud,mythcat,1 y,1 y,Declined
+Add-on,Shape Fitter,pfalkingham,1 y,1 y,Approved
+Add-on,Background Timesheet,Shynez,1 y,1 y,Approved
+Add-on,Object Utility Nodes,Bitsqueezer,1 y,1 y,Approved
+Add-on,Lip Sync,Charley3D,1 y,1 y,Approved
+Add-on,Skin Weights Copypaster,Ihor-Spasivskyi,1 y,1 y,Approved
+Add-on,MAD (Microphone Audio Driver),F1dg3t,1 y,1 y,Approved
+Add-on,Render Email Notifier,Nguyen-Phuc-Nguyen,1 y,1 y,Declined
+Add-on,UnexpectedSlicer,NicolasPredella,1 y,1 y,Declined
+Add-on,FakeBones,maylog,1 y,1 y,Approved
+Add-on,Anim Curve Sorter,Duncan-Readle,1 y,1 y,Approved
+Theme,Steam,ArtinŌr,1 y,1 y,Approved
+Add-on,Clipping,uption,1 y,1 y,Declined
+Add-on,Enhanced SVG,Jan-Hendrik-Müller,1 y,1 y,Approved
+Add-on,Separate Loose Plus,RobbieK,1 y,1 y,Approved
+Add-on,Clean Slate,00face,1 y,1 y,Declined
+Add-on,MIDI To Visuals,Patochun,1 y,1 y,Approved
+Add-on,Super Duper Batch Exporter,BastianLS,1 y,1 y,Approved
+Add-on,中英双语界面生成器,eaglepes,1 y,1 y,Declined
+Add-on,Enhanced Top Bar,1P2D,1 y,1 y,Approved
+Add-on,Mesh2Rig,3DemFX,1 y,1 y,Approved
+Add-on,Measure and Scale,Belaid-ZIANE,1 y,1 y,Approved
+Add-on,SRT Subtitle Importer/Exporter,PoYakong,1 y,1 y,Approved
+Add-on,Single Point Curve,Amir-Diab,1 y,1 y,Declined
+Add-on,Quick Catalogs ( Asset Browser ),justOniL,1 y,1 y,Approved
+Theme,Dorcha Liath,rory-fly,1 y,1 y,Approved
+Add-on,Import Export Skin Weights,Nguyen-Phuc-Nguyen,1 y,1 y,Approved
+Add-on,Solid Boot,CosmoMídias,1 y,1 y,Approved
+Add-on,Cappuccino - Axis Center,luckycuky,1 y,1 y,Declined
+Add-on,Chroma Key Node,Daniel-Pollinger,1 y,1 y,Declined
+Theme,Menace,HugeMenace,1 y,1 y,Approved
+Add-on,Slot Link,mars,1 y,1 y,Approved
+Theme,VIOLET,Macarena_Akm,1 y,1 y,Approved
+Add-on,Dimensions and Lines,jan.holinka,1 y,1 y,Approved
+Theme,Neon Nexus,mamane-kabirou,1 y,1 y,Approved
+Add-on,World Creator Bridge,World-Creator,1 y,1 y,Declined
+Add-on,Simple Time Tracker,Vox3D,1 y,1 y,Declined
+Add-on,BVE Import/Export,Kusaanko,1 y,1 y,Approved
+Add-on,Symple (symmetry groups),Martín-Torres-Valverde,1 y,1 y,Approved
+Add-on,Script To Button,RivinHD,1 y,1 y,Declined
+Add-on,Select By Index,Eric-Banker,1 y,1 y,Approved
+Add-on,LetzAI Texture Generator,karim-Youssef,1 y,1 y,Declined
+Add-on,PolyZamboni,Anton-Florey,1 y,1 y,Approved
+Add-on,LUT Exporter and Importer,ichlubna,1 y,1 y,Approved
+Add-on,Language Switcher,qwerty12121,1 y,1 y,Declined
+Add-on,Fabnodes,luigipacheco,1 y,1 y,Approved
+Add-on,(VRX) Vred in Blender,KK_CSK,1 y,1 y,Declined
+Add-on,Arc Edge,dartmeadow,1 y,1 y,Approved
+Add-on,Camera Viewer,KENKEN,1 y,1 y,Approved
+Theme,Grey Orange,TimoShch,1 y,1 y,Approved
+Theme,Neutro Laranja,Push,1 y,1 y,Approved
+Add-on,Easy Rigid Body Tools,TigerTen,1 y,1 y,Declined
+Add-on,Remove All Materials,Davor-Vinkesevic,1 y,1 y,Declined
+Add-on,Quick J ( Connect Vertex Path ),justOniL,1 y,1 y,Approved
+Add-on,Render from Terminal,nukkio,1 y,1 y,Approved
+Add-on,UV_Flatten_Tool,maylog,1 y,1 y,Approved
+Add-on,Batch Material Helper,maylog,1 y,1 y,Approved
+Add-on,Substance Textures Importer,Cosmin_Planchon,1 y,1 y,Approved
+Add-on,Fractal Family,imare32,1 y,1 y,Approved
+Add-on,Run Scripts From Folder,Alexander-Bicukow,1 y,1 y,Approved
+Add-on,Animation Transform Offset,softyoda,1 y,1 y,Approved
+Add-on,Lattice Helper,ACGGIT_LJ,1 y,1 y,Approved
+Add-on,X-Ray Selection Tools,MarshmallowCirno,1 y,1 y,Approved
+Add-on,HeadsUp Warnings,ManuelLuellau,1 y,1 y,Approved
+Theme,Theme 2000,danil_orlow,1 y,1 y,Approved
+Add-on,SRTM Terrain Importer,NicolasPriniotakis,1 y,1 y,Approved
+Add-on,Favorite Objects,1P2D,1 y,1 y,Approved
+Add-on,Blender Wrapper for MOF UV Unwrapper,Ubeid-Hussein,1 y,1 y,Declined
+Add-on,AltView,Iurii-Tiuzhin,1 y,1 y,Approved
+Add-on,Pattern Collections,Martin-Lorentzon,1 y,1 y,Approved
+Add-on,Mesh Planes Pro,Prince_Eagle,1 y,1 y,Approved
+Add-on,Two-Point Perspective,Athina-Syntychaki,1 y,1 y,Approved
+Add-on,Developer Utilities,scorpion81,1 y,1 y,Approved
+Add-on,Remove Static FCurves,lokimckay,1 y,1 y,Approved
+Add-on,Autosave Textures,mont29,1 y,1 y,Approved
+Add-on,Camera Switcher,silex,1 y,1 y,Declined
+Add-on,Place Helper,ACGGIT_LJ,1 y,1 y,Approved
+Add-on,Unlooped,dr.sybren,1 y,1 y,Approved
+Add-on,Save Incremental Backup,lingtalfi,1 y,1 y,Declined
+Add-on,Development Kit,怪我咯EMM,1 y,1 y,Declined
+Add-on,TR61 Asset,Ali-Gül,1 y,1 y,Declined
+Add-on,BombSquad Tools,aryan02420,1 y,1 y,Approved
+Add-on,Neural Render,Alex-Nix,2 y,1 y,Declined
+Add-on,Industrial Light AOV Splitter,Roland-Vyens,1 y,1 y,Approved
+Add-on,GP Tween (c),cosmosmythos,1 y,1 y,Approved
+Theme,Blend95,romanasdf1,1 y,1 y,Approved
+Add-on,Servo Animation,timhendriks93,1 y,1 y,Approved
+Add-on,Tripo 3D,Zhaohan-Wang,1 y,1 y,Declined
+Add-on,Animate-Anything,Anything-World,2 y,1 y,Declined
+Add-on,Text2Motion,Text2Motion,1 y,1 y,Declined
+Add-on,ZoeDepth GLB image activator,Sondre-Ileby,1 y,1 y,Declined
+Add-on,Add Pineapple,DanielDDauersuff,1 y,1 y,Declined
+Add-on,Shading +,1P2D,1 y,1 y,Approved
+Add-on,Time Tracker,PhinDev,1 y,1 y,Approved
+Add-on,Typst Importer,Jan-Hendrik-Müller,1 y,1 y,Approved
+Add-on,MustardUI,Mustard,2 y,1 y,Approved
+Add-on,Node Align(节点对齐),W_Cloud,1 y,1 y,Approved
+Add-on,Bagapie,Kiara_Bagattini,2 y,1 y,Approved
+Add-on,MPFB,Joel-Palmius,1 y,1 y,Approved
+Add-on,AC Tools,PhinDev,1 y,1 y,Approved
+Add-on,Simple Audio Visualizer,Polyfjord,1 y,1 y,Approved
+Add-on,Skin Mesh To Bone,darknation,2 y,1 y,Approved
+Add-on,Overscan Render,Blenderbob,2 y,1 y,Approved
+Add-on,Easy Clouds,LunarKitten,1 y,1 y,Approved
+Add-on,Mustard Simplify,Mustard,1 y,1 y,Approved
+Add-on,Armature Deform with Linked Groups,Suchaaver,1 y,1 y,Approved
+Theme,Blueprint,Bob-Watt,1 y,1 y,Approved
+Add-on,Grease Pencil QuickTools_v3,PongBuster,1 y,1 y,Approved
+Add-on,Node Attribute List(节点属性列表),W_Cloud,1 y,1 y,Approved
+Add-on,Persian type,Damyar,1 y,1 y,Approved
+Add-on,Utilities Gadget,HurcaGuari,1 y,1 y,Approved
+Add-on,the bendybones toolkit,Felipe-G,1 y,1 y,Approved
+Add-on,Curve Fitting,zuda77,1 y,1 y,Approved
+Add-on,HAS Paint Layers,Hirourk,1 y,1 y,Approved
+Add-on,ViewTools,Ishara-Sandeepa,1 y,1 y,Approved
+Add-on,Group input helper(节点组输入助手),W_Cloud,1 y,1 y,Approved
+Theme,Atom One Dark theme,aryan02420,1 y,1 y,Approved
+Add-on,Connect image alpha,Snakyboopface,1 y,1 y,Approved
+Theme,Botanesque,polygoniq,1 y,1 y,Approved
+Add-on,Shutdown after render,David-Bühler,1 y,1 y,Approved
+Add-on,Vertex Group Assistant,Maro3D,1 y,1 y,Approved
+Add-on,SKkeeper,Nidus,1 y,1 y,Approved
+Add-on,AmbientCG Material Importer,Nino-Filiu,1 y,1 y,Approved
+Theme,RetroGrey,Oskar_Wasiluk,1 y,1 y,Approved
+Add-on,3D Cursor Plus,chokavr,1 y,1 y,Approved
+Add-on,Data-Block Utilities,Leonardo-Pike-Excell,1 y,1 y,Approved
+Add-on,Audio Notifier,Lauloque,1 y,1 y,Approved
+Add-on,Autokey Highlight,Lauloque,1 y,1 y,Approved
+Add-on,DEMoCap Tools,DragonDreams,2 y,1 y,Approved
+Add-on,GamiFlow,Mathieu.Einig,1 y,1 y,Approved
+Theme,Pastel_Yellow,lonku,1 y,1 y,Approved
+Add-on,PROTO Game Asset Tools,PROTOWLF,1 y,1 y,Approved
+Add-on,Link Parents,Trukas,1 y,1 y,Approved
+Add-on,Meshstats,muhuk,1 y,1 y,Approved
+Add-on,Grid Dimensions/网格标注,Shuimeng,1 y,1 y,Approved
+Add-on,vmdesk,Y.T-LAW,2 y,1 y,Approved
+Add-on,Motion inspector,Chalouek-RGBit,1 y,1 y,Approved
+Theme,Energy Gold,NRGSille,1 y,1 y,Approved
+Add-on,Modern Primitive,Degarashi,1 y,1 y,Approved
+Add-on,SCO EdgeWise,BEAST_of_BURDEN,1 y,1 y,Approved
+Add-on,ND Primitives,Dan-Gry,1 y,1 y,Approved
+Add-on,Quick Resolution Setup,Hades-Su,1 y,1 y,Approved
+Add-on,szm/首字母,Xinyu-Zhu,1 y,1 y,Approved
+Add-on,SCO ButtObjects,BEAST_of_BURDEN,1 y,1 y,Approved
+Add-on,Colorista,ACGGIT_LJ,2 y,1 y,Approved
+Theme,Orange Dark + Vignette,danil_orlow,1 y,1 y,Approved
+Add-on,B SubEditor,Dinesh007,1 y,1 y,Approved
+Add-on,Sync Render Sets,CP-Design,2 y,1 y,Approved
+Add-on,CSV Importer,Jan-Hendrik-Müller,1 y,1 y,Approved
+Add-on,Font Selector,tonton_,1 y,1 y,Approved
+Add-on,B Palettes,Dinesh007,1 y,1 y,Approved
+Add-on,Vertex Overlap,Shawn-Shipley,1 y,1 y,Approved
+Add-on,Color Randomizer,ilumetric,1 y,1 y,Approved
+Add-on,Lumos,Eqkoss,1 y,1 y,Approved
+Add-on,SMEAR,Jean-Basset,2 y,1 y,Approved
+Add-on,Light Helper,ACGGIT_LJ,1 y,1 y,Approved
+Theme,Sub-Lime Improved,Melvin-Bradley,1 y,1 y,Approved
+Add-on,EdgeFlow,Benjamin-Sauder,1 y,1 y,Approved
+Add-on,Merge NLA Strips,Likkez,1 y,1 y,Approved
+Add-on,Duplication Tool,Vinay-chikkam,1 y,1 y,Approved
+Theme,Requin Blue,MozzarellaARC,1 y,1 y,Approved
+Add-on,Quick Switch,Silvie3D,2 y,1 y,Approved
+Theme,XRD rev2 theme,blckswrdmn,1 y,1 y,Approved
+Add-on,Import SVG Cuts Directory,Benedikt-Schaber,1 y,1 y,Approved
+Add-on,Sakura Poselib,Kafuji,1 y,1 y,Approved
+Add-on,Audio Exporter,Dinesh007,1 y,1 y,Approved
+Add-on,Selected_Bones_To_Vertex_Group,mochi_Lin,1 y,1 y,Approved
+Theme,Sub-Lime Theme,goob,1 y,1 y,Approved
+Add-on,Highlighter,pioverfour,1 y,1 y,Approved
+Add-on,Node Color Tools Pie,Lumpengnom,1 y,1 y,Approved
+Theme,Teal Teal Teal,Parum,1 y,1 y,Approved
+Add-on,Select Mode Keymaps,1P2D,1 y,1 y,Approved
+Add-on,Strip Array,Dinesh007,1 y,1 y,Approved
+Add-on,Frame Focus,Ou_Chiang,1 y,1 y,Approved
+Add-on,Cameraide,longiy,2 y,1 y,Approved
+Add-on,Armature Pie,Ou_Chiang,2 y,1 y,Approved
+Add-on,Show Object/Data Users in Viewport,1P2D,1 y,1 y,Approved
+Add-on,Quick Export,Maro3D,2 y,1 y,Approved
+Add-on,Render Overscan,efimpetelin,1 y,1 y,Approved
+Add-on,Embroidery Importer,javl,2 y,1 y,Approved
+Theme,Runlevel Two,Rene-Smaal,1 y,1 y,Approved
+Add-on,Lattice Magic,Mets,1 y,1 y,Approved
+Add-on,Pohlke,mononym,2 y,1 y,Approved
+Add-on,Mio3 UV,mio,2 y,1 y,Approved
+Add-on,UV Snapper,Duncan-Readle,2 y,2 y,Approved
+Add-on,Scene/View/Workspace Switcher,1P2D,2 y,2 y,Approved
+Theme,Frigus Nox,Cyrill-Vitkovskiy,2 y,2 y,Approved
+Add-on,MQO (Metasequoia) Format File Importer/Exporter,nutti,2 y,2 y,Approved
+Add-on,Spreadsheet Import,smonbrogg,2 y,2 y,Approved
+Add-on,Auto Active Camera Switcher,Yamato3D-3dnchu.com-,2 y,2 y,Approved
+Add-on,Quick Character Selector,MatiasMartin,2 y,2 y,Approved
+Add-on,OpenVAT,sharpened,2 y,2 y,Approved
+Theme,Plasticity,SHEK,2 y,2 y,Approved
+Theme,Odyssey eobet Remix,eobet,2 y,2 y,Approved
+Add-on,HDRI Rotator,1P2D,2 y,2 y,Approved
+Add-on,FishSim,Nerk,2 y,2 y,Approved
+Add-on,Circular Stacker,Hydrocallis,2 y,2 y,Approved
+Add-on,Control Render Regions,nukkio,2 y,2 y,Approved
+Add-on,Cake_Particles,scaryplasmon,2 y,2 y,Approved
+Add-on,Scene MVR (.mvr) and GDTF (.gdtf),NRGSille,2 y,2 y,Approved
+Theme,Citrus Dark,Emmanuel-92,2 y,2 y,Approved
+Add-on,Fire Ray,Blenderbob,2 y,2 y,Approved
+Add-on,Distribute,Blenderbob,2 y,2 y,Approved
+Add-on,HUE,FardreamerLabs,2 y,2 y,Approved
+Theme,Ember Green,nova3D,2 y,2 y,Approved
+Add-on,Add Frame Range Presets,stoatsnhoney,2 y,2 y,Approved
+Add-on,Auto Sort Collections,Shuimeng,2 y,2 y,Approved
+Add-on,PCB 3D Importer,Bobbe,2 y,2 y,Approved
+Add-on,Add-on Profiler,MrClock,2 y,2 y,Approved
+Add-on,Bone and Vertex Group Merge,Tayou,2 y,2 y,Approved
+Theme,MacOS Dark Theme,stoatsnhoney,2 y,2 y,Approved
+Add-on,Simple Bounce Curve,Polyfjord,2 y,2 y,Approved
+Add-on,Auto Reload,tonton_,2 y,2 y,Approved
+Add-on,Teeworlds and DDNet Map import,Patiga,2 y,2 y,Approved
+Add-on,Bone Eyedropper,Nifs,2 y,2 y,Approved
+Add-on,Custom Grid Scales,Jacob-Beatty,2 y,2 y,Approved
+Add-on,POPOTI Align Helper,ACGGIT_LJ,2 y,2 y,Approved
+Theme,Light_Rain_Theme,Raze-Demon,2 y,2 y,Approved
+Theme,Night_Rain_Theme,Raze-Demon,2 y,2 y,Approved
+Add-on,3D Cursors Briefcase,dupoxy,2 y,2 y,Approved
+Add-on,Core Debug Tools,JacquesLucke,2 y,2 y,Approved
+Add-on,You Are Autosave,dr.sybren,2 y,2 y,Approved
+Add-on,Scene Workspaces,Francesco-Bellini,2 y,2 y,Approved
+Add-on,Import Pixel Art,bloody_albatross,2 y,2 y,Approved
+Theme,Moss,Sereda,2 y,2 y,Approved
+Add-on,Motion Path Pro,Hamdi-Amer,2 y,2 y,Approved
+Add-on,Timeline Buttons,tinkerboi,2 y,2 y,Approved
+Add-on,Image Packer,Quint-Vrolijk,2 y,2 y,Approved
+Add-on,Render Preset,tonton_,2 y,2 y,Approved
+Add-on,Aligning Horizontally Mini,Hydrocallis,2 y,2 y,Approved
+Theme,Proton,VISaberToothIV,2 y,2 y,Approved
+Theme,Graphite_Mono_Theme,Raze-Demon,2 y,2 y,Approved
+Theme,The Blue Theme,Alexandrus,2 y,2 y,Approved
+Add-on,Maze any Mesh,elfnorcat,2 y,2 y,Approved
+Add-on,Profiling Buddy,SimonThommes,2 y,2 y,Approved
+Add-on,Clean Game Asset Exporter,DeBolt,2 y,2 y,Approved
+Add-on,Import Mixamo - Root Motion,DevilMayCry,2 y,2 y,Approved
+Theme,Neo_Grey_Theme,Raze-Demon,2 y,2 y,Approved
+Add-on,Simple Deform Helper,ACGGIT_LJ,2 y,2 y,Approved
+Add-on,Auto Dark Mode,dprice,2 y,2 y,Approved
+Add-on,Modal Lattice Resolution,Tyo79,2 y,2 y,Approved
+Add-on,Connecter,DesignConnected,2 y,2 y,Approved
+Add-on,Microscopy Nodes,Aafke-Gros,2 y,2 y,Approved
+Add-on,IKEA Browser,Shish,2 y,2 y,Approved
+Add-on,Custom Templates,Francesco-Bellini,2 y,2 y,Approved
+Theme,17 Dark,S41L0R,2 y,2 y,Approved
+Add-on,Node To Python,Brendan-Parmer,2 y,2 y,Approved
+Add-on,World Apply,Baraa-Khaled-Youssef,2 y,2 y,Approved
+Add-on,ACT: Game Asset Creation Toolset,IvanVostrikov,2 y,2 y,Approved
+Add-on,LiveryHelper,Mast26,2 y,2 y,Approved
+Add-on,DDSlideshow,Michael-Lamertz,2 y,2 y,Approved
+Add-on,IK-FK Snapping Tool,Endertainer007,2 y,2 y,Approved
+Add-on,Lead Edge Maze Ash Creator,dartmeadow,2 y,2 y,Approved
+Theme,SoRetro,Strawberiie-Orea,2 y,2 y,Approved
+Theme,Elegant_Light_Theme,Raze-Demon,2 y,2 y,Approved
+Add-on,Filter_Channels,Carles-V,2 y,2 y,Approved
+Add-on,Align 2 Custom,fdaubine,2 y,2 y,Approved
+Theme,Eclipse,DaoL,2 y,2 y,Approved
+Theme,Quellenform's Theme,quellenform,2 y,2 y,Approved
+Theme,F1dg3t Red,F1dg3t,2 y,2 y,Approved
+Theme,Green Kode Mono,DannySi,2 y,2 y,Approved
+Add-on,Right Mouse Navigation,SpectralVectors,2 y,2 y,Approved
+Add-on,Render Multiple Instances,DShot92,2 y,2 y,Approved
+Add-on,Sequenced Bake,Anthony-OConnell,2 y,2 y,Approved
+Theme,MengGe's Dark Theme,MengGe_KKD,2 y,2 y,Approved
+Theme,Steam Green,del569f5da3c5df680,2 y,2 y,Approved
+Theme,RedSquare V2,luccadanielp,2 y,2 y,Approved
+Theme,Clean Blue,DaoL,2 y,2 y,Approved
+Add-on,Convert Rotation Mode,Lauloque,2 y,2 y,Approved
+Theme,Blue Genes,SpectralVectors,2 y,2 y,Approved
+Theme,Moonlight Blue,Alexandrus,2 y,2 y,Approved
+Add-on,Mesh Align Plus,BitByte,2 y,2 y,Approved
+Add-on,Mio3 Copy Weight,mio,2 y,2 y,Approved
+Add-on,QuickMenu,QiuMu,2 y,2 y,Approved
+Add-on,Industrial AOV Connector,Roland-Vyens,2 y,2 y,Approved
+Add-on,Hdr Rotation,ACGGIT_LJ,2 y,2 y,Approved
+Theme,Emerald Waters,7th,2 y,2 y,Approved
+Add-on,Node Quick Maths,Zeptofine,2 y,2 y,Approved
+Add-on,Auto Switch Theme,pablovazquez,2 y,2 y,Approved
+Add-on,GeoNode Shape Keys,Mets,2 y,2 y,Approved
+Theme,Houdini,rmantdtg,2 y,2 y,Approved
+Theme,Whispering Ripples,DaoL,2 y,2 y,Approved
+Add-on,Auto-tracking,mcd1992,2 y,2 y,Approved
+Add-on,New Object From Selected Geometry,Giambattista-Caltabiano,2 y,2 y,Approved
+Add-on,Eevee Projectors,F1dg3t,2 y,2 y,Approved
+Add-on,omUlete,Jackson-Sutherland,2 y,2 y,Approved
+Add-on,ASCII Scene Export (.ase),darknation,2 y,2 y,Approved
+Add-on,Keyframe Tools,Hydrocallis,2 y,2 y,Approved
+Add-on,XROMM toolkit,pfalkingham,2 y,2 y,Approved
+Add-on,Drag and Drop Support,Natsune-Mochizuki,2 y,2 y,Approved
+Add-on,Passpartout Slider,Costa,2 y,2 y,Approved
+Theme,Professional,kame404,2 y,2 y,Approved
+Theme,Choco_Mint,kame404,2 y,2 y,Approved
+Theme,Piano_White,kame404,2 y,2 y,Approved
+Theme,Pastel_Pink,kame404,2 y,2 y,Approved
+Theme,Midnight,kame404,2 y,2 y,Approved
+Theme,Metaseq,kame404,2 y,2 y,Approved
+Add-on,Import Autodesk MAX (.max),NRGSille,2 y,2 y,Approved
+Theme,Metaseq_Classic,kame404,2 y,2 y,Approved
+Theme,Maya2024,kame404,2 y,2 y,Approved
+Theme,Graphite,kame404,2 y,2 y,Approved
+Theme,Emerald,kame404,2 y,2 y,Approved
+Add-on,YB Animator Tool,YB_,2 y,2 y,Approved
+Add-on,ShapeKeySwapper,Maro3D,2 y,2 y,Approved
+Add-on,[BAM] AutoMat,AlexeyHRDesign,2 y,2 y,Approved
+Add-on,Hot Node,Trantor,2 y,2 y,Approved
+Theme,Dark Pro,Mahdi.Shalchian,2 y,2 y,Approved
+Theme,Eternal Crimson,Hiki-Hollow,2 y,2 y,Approved
+Theme,Momo Light,TimoShch,2 y,2 y,Approved
+Theme,Amethyst,kame404,2 y,2 y,Approved
+Add-on,Source Engine Collision Tools,Theanine3D,2 y,2 y,Approved
+Theme,Deep Gray Something,blanchsb,2 y,2 y,Approved
+Theme,Green Dark,Hori,2 y,2 y,Approved
+Add-on,Material Batch Tools,Theanine3D,2 y,2 y,Approved
+Add-on,Zen UV Checker,Sergey_Tyapkin,2 y,2 y,Approved
+Add-on,Improved Node Search,Griperis,2 y,2 y,Approved
+Add-on,Clear Filepaths,FlailingFog,2 y,2 y,Approved
+Add-on,Tiny Backup,Thane5,2 y,2 y,Approved
+Add-on,Save with Versioning,DShot92,2 y,2 y,Approved
+Add-on,MagicaVoxel VOX format,AstrorEnales,2 y,2 y,Approved
+Add-on,Noise Nodes,Haseeb-Ahmed-3,2 y,2 y,Approved
+Theme,Professional Plus,Alessandro-Vecchio,2 y,2 y,Approved
+Theme,Silk Minimal Theme,fismik,2 y,2 y,Approved
+Theme,Onyx,Aeraglyx,2 y,2 y,Approved
+Add-on,Incremental Auto-Save,Mets,2 y,2 y,Approved
+Add-on,Pose Shape Keys,Mets,2 y,2 y,Approved
+Add-on,Randomize_Bones_Pose,IZ.MdVerz,2 y,2 y,Approved
+Add-on,Half Knife,Dan-Gry,2 y,2 y,Approved
+Add-on,Visibility handler,DanielBystedt,2 y,2 y,Approved
+Add-on,Unreal PSK/PSA (.psk/.psa),darknation,2 y,2 y,Approved
+Add-on,Select panel,xdanic,2 y,2 y,Approved
+Add-on,Strange Attractors,7bitretro,2 y,2 y,Approved
+Add-on,QLE (Quick Lighting Environment),don1138,2 y,2 y,Approved
+Theme,Sharp Blade,bdvd,2 y,2 y,Approved
+Theme,XP_AliVe,AliVe,2 y,2 y,Approved
+Add-on,Set Smooth Group,VIktor-Kom,2 y,2 y,Approved
+Add-on,Toggle Socket Visibility,quackarooni,2 y,2 y,Approved
+Add-on,My Best Pie Menu Ever,emptybraces,2 y,2 y,Approved
+Add-on,EasyWeight,Mets,2 y,2 y,Approved
+Add-on,Node Group Presets,juaum,2 y,2 y,Approved
+Add-on,Action to Scene Range,dr.sybren,2 y,2 y,Approved
+Add-on,Face Set Operators,nickberckley,2 y,2 y,Approved
+Theme,Dark Artist,Chester-Alvarez,2 y,2 y,Approved
+Add-on,Molecular Nodes,bradyajohnston,2 y,2 y,Approved
+Add-on,Ucupaint,ucupumar,2 y,2 y,Approved
+Add-on,Partybots converter,vuyghu2020,2 y,2 y,Approved
+Theme,Dark Purple Theme,MohammedSalman,2 y,2 y,Approved
+Add-on,CADBase Library,mnnxp,2 y,2 y,Approved
+Add-on,Find Bad Tracks,Walles,2 y,2 y,Approved
+Add-on,Maze Generator,Leeroy-Majors,2 y,2 y,Approved
+Add-on,Selects all UV islands on one UDIM,Ailex,2 y,2 y,Approved
+Add-on,Path Actions,SamuelBernou,2 y,2 y,Approved
+Add-on,GP Tool Wheel,SietseB,2 y,2 y,Approved
+Add-on,Commotion,MikhailRachinskiy,2 y,2 y,Approved
+Add-on,Node Annotator,FrankFirsching,2 y,2 y,Approved
+Add-on,PieMenu Everywhere,DeathShot-747,2 y,2 y,Approved
+Add-on,Screencast Keys,nutti,2 y,2 y,Approved
+Add-on,Fast Language Switch,Kk,2 y,2 y,Approved
+Theme,drcl,Sereda,2 y,2 y,Approved
+Theme,DeepSeaExplorer,DeathShot-747,2 y,2 y,Approved
+Theme,Grayscale,AlexMcKonst-2,2 y,2 y,Approved
+Add-on,Booltron,MikhailRachinskiy,2 y,2 y,Approved
+Add-on,Quick Groups (Instances),MultLabs,2 y,2 y,Approved
+Add-on,T3D GN Presets,Tams_3d,2 y,2 y,Approved
+Add-on,Per-Camera Resolution,pioverfour,2 y,2 y,Approved
+Add-on,Synchronize Workspaces,MultLabs,2 y,2 y,Approved
+Add-on,VRM format,saturday06,2 y,2 y,Approved
+Add-on,Add Airfoil,Nerk,2 y,2 y,Approved
+Add-on,Browser Scroll Resize,Barrunterio,2 y,2 y,Approved
+Add-on,Bulk Asset Tools,guitargeek,2 y,2 y,Approved
+Theme,PS,Sereda,2 y,2 y,Approved
+Add-on,3D Print Toolbox,MikhailRachinskiy,2 y,2 y,Approved
+Add-on,Keymesh,nickberckley,2 y,2 y,Approved
+Add-on,Add Positive Cube,jefftml,2 y,2 y,Approved
+Add-on,Open Linked,polygoniq,2 y,2 y,Approved
+Add-on,Delete Line Shortcut,matej.zeman02,2 y,2 y,Approved
+Theme,Green Olive,Liuuzaki,2 y,2 y,Approved
+Theme,Minimal Dark,jlampel,2 y,2 y,Approved
+Theme,Print Friendly,JasonvanGumster,2 y,2 y,Approved
+Theme,White,MultLabs,2 y,2 y,Approved
+Theme,Softimage XSI,RobWu,2 y,2 y,Approved
+Theme,Deep Grey,TheRedWaxPolice,2 y,2 y,Approved
+Add-on,Amaranth,pablovazquez,2 y,2 y,Approved
+Add-on,Inset Straight Skeleton,howardt,2 y,2 y,Approved
+Add-on,BoltFactory,(Bolt Factory),2 y,2 y,Approved
+Add-on,Snap Line Tool,mano-wii,2 y,2 y,Approved
+Add-on,Node Arrange,Leonardo-Pike-Excell,2 y,2 y,Approved
+Add-on,Edit Linked Library,JasonvanGumster,2 y,2 y,Approved
+Add-on,Export Paper Model,AdamDominec,2 y,2 y,Approved
+Add-on,Edit Operator Source,scorpion81,2 y,2 y,Approved
+Add-on,Copy Render Settings,mont29,2 y,2 y,Approved
+Add-on,Demo Mode,campbell,2 y,2 y,Approved
+Add-on,Collection Manager,Imaginer,2 y,2 y,Approved
+Add-on,Autodesk 3D Studio (.3ds),NRGSille,2 y,2 y,Approved
+Add-on,Storypencil - Storyboard Tools,antoniov,2 y,2 y,Approved
+Add-on,Bool Tool,nickberckley,2 y,2 y,Approved
+Add-on,VDM Brush Baker,robin.hohni,2 y,2 y,Approved
+Add-on,Real Snow,nacioss,2 y,2 y,Approved
+Add-on,MeasureIt,antoniov,2 y,2 y,Approved
+Add-on,Grease Pencil Tools,SamuelBernou,2 y,2 y,Approved
+Add-on,Web3D X3D/VRML2 format,Bujus_Krachus,2 y,2 y,Approved
+Add-on,Magic UV,nutti,2 y,2 y,Approved
+Add-on,Sapling Tree Gen,Brad-Chamberlain,2 y,2 y,Approved
+Add-on,Sun Position,pioverfour,2 y,2 y,Approved
+Theme,Gruvbox Light,Eleuth,2 y,2 y,Approved
+Theme,Gruvbox Dark,Eleuth,2 y,2 y,Approved
+Add-on,Drag[en]gine Import/Export,DragonDreams,2 y,2 y,Approved
+Theme,Gold,Yeove,2 y,2 y,Approved
+Theme,PhoenixArt Fusion Theme,phoenixart,2 y,2 y,Approved
+Add-on,Forts Map Importer,Gonnetz,2 y,2 y,Approved
+Add-on,ProjectionNode from Camera,Yukimituki,2 y,2 y,Approved
+Add-on,Copy Object Name to Data,Xury46,2 y,2 y,Approved
+Add-on,Keyframe Visibility,hisanimations,2 y,2 y,Approved
+Add-on,Node Editor Switcher,Victor-09,2 y,2 y,Approved
+Add-on,Path Maker,thornydre,2 y,2 y,Approved
+Add-on,RigFlex,Nerk,2 y,2 y,Approved
+Add-on,Grease Pencil to Curves,DadsCastle,2 y,2 y,Approved
+Add-on,Wireframe Color Tools,Lumpengnom,2 y,2 y,Approved
+Theme,Genuinely Disgusting,Aiden-McKown,2 y,2 y,Approved
+Theme,Midnight Round,Liam-120,2 y,2 y,Approved
+Theme,Alien Pink,Alumx,2 y,2 y,Approved
+Theme,Nocturno,stephanlevin,2 y,2 y,Approved
+Theme,Shadow,--Shadow--,2 y,2 y,Approved
+Theme,Miku Green,NomoTen,2 y,2 y,Approved
+Theme,Nordic Gold. Dark Theme,EmanuelFerro,2 y,2 y,Approved
+Theme,DarkPurpleGreen,MSBH,2 y,2 y,Approved
+Theme,Adapta Nokto,Cyrill-Vitkovskiy,2 y,2 y,Approved
+Theme,Soft Purple,Tanza3D,2 y,2 y,Approved
+Theme,Midnight Blue,cmzw,2 y,2 y,Approved
+Add-on,Browser Scroll Resizer,Barrunterio,2 y,2 y,Approved
+Add-on,Light Painter,SMagnusson,2 y,2 y,Approved
+Theme,Gold White,EmanuelFerro,2 y,2 y,Approved
+Add-on,Node Group Utilities,Baraa-Khaled-Youssef,2 y,2 y,Approved
+Theme,Gold Pro,EmanuelFerro,2 y,2 y,Approved
+Add-on,Context Pie,BastianLS,2 y,2 y,Approved
+Theme,Neutral Grey,scopelma,2 y,2 y,Approved
+Theme,Deep Dark Sea,nickberckley,2 y,2 y,Approved
+Add-on,Border Buddy,SimonThommes,2 y,2 y,Approved
+Add-on,Bake Shape Keys,nickberckley,2 y,2 y,Approved
+Add-on,Matalogue,GregZaal,2 y,2 y,Approved

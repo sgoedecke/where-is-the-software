@@ -1,0 +1,131 @@
+id,name,created,visible,downloads,updates,description
+8,System Toolbox,2022-07-20T17:48:02Z,False,0,0,Helpful tools to control various settings of the Steam Deck
+15,FriendsFix,2022-08-20T02:57:56Z,False,0,0,Fixes the missing friends UI bug.
+9,DeckFAQs,2022-11-07T20:27:38Z,False,1,0,A GameFAQs browser for the Steam Deck (both Steam and non-Steam Games)
+29,SteamlessTimes,2022-12-04T05:30:15Z,False,0,0,Plugin for keeping track of play time of non steam games. Part of the EmuDeck Project
+20,Remote Play Whatever,2022-12-04T19:08:55Z,False,0,0,Currently not working due to issues with dependencies. Starts a Remote Play Together Session for non steam games. (Install Brawlhalla from steam as the donor game.)
+39,Free Games,2023-01-08T18:56:44Z,False,1,0,A plugin to notify you of free games available on the Epic Games Store.
+41,ShareDeck-y,2023-01-24T00:18:27Z,False,0,0,Plugin that loads ShareDeck reports for your currently-open game. ShareDeck is a place for users to share the game settings they are using on their Steam Decks.
+45,Decky Recorder,2023-02-19T03:18:31Z,False,117434,49983,Record your games with Decky Recorder
+47,DeckRoulette,2023-03-16T03:46:05Z,False,0,0,A plugin that allows you to navigate to a random game in your library or a Steam Collection.
+31,FlatpakUpdater,2023-03-16T22:40:14Z,False,0,0,Update flatpaks from the steam client.
+33,KLang,2023-03-16T22:46:16Z,False,0,0,A plugin that lets the user change layout and variant of an external keyboard in gaming mode.
+51,Network Info,2023-04-01T16:53:25Z,False,0,0,View detailed information about your Steam Deck's Network Interfaces.
+34,MetaDeck,2023-04-05T13:04:07Z,False,0,0,Plugin for viewing metadata for non steam games from IGDB. Part of the EmuDeck Project
+25,Bash Shortcuts,2023-05-07T07:57:39Z,False,0,0,Manager for shortcuts in the Quick Access Menu! Uses Bash under the hood.
+42,DeckSettings,2023-05-14T22:40:23Z,False,0,0,Plugin to browse recommended Steam Deck game settings from ShareDeck and SteamDeckHQ.
+55,Bookmarks,2023-05-21T06:49:48Z,False,0,0,"Remember hard-to-reach pages in Steam's UI, and open web pages."
+57,GameView Music,2023-05-31T17:47:01Z,False,0,0,Adds background music to the game page
+71,Save Manager,2023-11-01T23:39:32Z,False,0,0,Save manager to store your save files and load them whenever you want.
+54,Decky Dictation,2024-01-20T03:59:35Z,False,0,0,Enjoy speech to text input with Decky Dictation.
+86,NonSteamLaunchers,2024-08-14T19:03:49Z,False,2,0,"NonSteamLaunchers - The easiest way to add your favorite Non-Steam Launchers. Installs the latest Proton-GE and automatically adds your game and launcher shorcuts in correct format, in real time."
+11,Fantastic,2022-08-08T21:02:27Z,True,171732,35002,Fan controls
+13,Pause Games,2022-08-17T20:32:47Z,True,179349,85587,Pause/Resume games to redirect resources and even play/stop apps that don't natively have an immediate option to do so.
+16,Audio Loader,2022-08-22T17:46:47Z,True,431879,184780,Replaces Steam UI sound effects with custom sounds and adds music to menus.
+18,Bluetooth,2022-08-29T21:57:20Z,True,524683,143765,Quickly connect to your already paired bluetooth devices.
+19,Notebook,2022-09-01T18:13:26Z,True,54182,5200,Quickly scribble down important codes or notes during your play sessions.
+21,PowerTools,2022-09-25T18:35:40Z,True,602158,141539,Power tweaks for power users
+23,Animation Changer,2022-10-09T22:46:29Z,True,886918,285484,A boot/suspend animation management plugin.
+27,AutoSuspend,2022-10-27T21:44:30Z,True,48518,32416,Automatically suspend on low power.
+10,vibrantDeck,2022-11-19T22:42:09Z,True,519339,104423,Adjust color settings of your Deck
+36,SteamGridDB,2022-12-18T21:21:19Z,True,1701673,1148469,"Customize your library with user-submitted images or local files, and other style tweaks like square capsules, uniform sizing, and more!"
+32,AutoFlatpaks,2022-12-20T12:54:21Z,True,219883,103589,"A plugin to manage, notify, and automatically update flatpaks on your steamdeck console"
+44,DeckMTP,2023-02-02T07:34:41Z,True,179155,73381,A plugin that allows your Steam Deck to transfer files to your PC via MTP and USB
+24,RadiYo!,2023-02-26T21:06:29Z,True,66931,9365,Search and play music from internet radio stations while gaming
+46,Steamback,2023-03-07T23:12:47Z,True,23588,4138,Automatic save game snapshot/restore for Steam
+40,Controller Tools,2023-03-17T04:15:59Z,True,127322,38109,"The missing game controller menu. Displays the current battery % and charging status. Supports: DualSense, DualShock 4, Nintendo Switch Pro Controller"
+30,TunnelDeck,2023-03-17T18:40:15Z,True,81504,11254,Enables VPN support within Gaming Mode and activates OpenVPN support for Network Manager.
+48,Quick Launch,2023-03-17T23:13:46Z,True,93481,33469,"Quickly Launch Non-Steam-Apps from the Quick Access menu without adding them as Shortcuts, or add them to the Steam Library."
+12,MusicControl,2023-03-18T00:48:06Z,True,76363,14502,Control running media players using the DBUS interface (MPRIS). Media player has to be started through game mode.
+37,Discord Status,2023-03-18T00:48:24Z,True,111295,48245,Displays current Steam Deck game in Discord
+49,Decky Cloud Save,2023-03-19T04:41:04Z,True,68862,22085,Manage cloud saves for games that do not support it in [current year].
+50,Storage Cleaner,2023-03-27T22:13:58Z,True,453556,131763,"Quickly visualize, select and clear shader cache and compatibility data."
+14,ProtonDB Badges,2023-04-01T16:53:50Z,True,1039048,442856,Display tappable ProtonDB badges on your game pages
+26,HLTB for Deck,2023-04-03T00:22:42Z,True,345740,469887,A plugin to show you game lengths according to How Long To Beat
+7,CSS Loader,2023-04-06T02:44:54Z,True,1643644,356381,"Dynamically loads themes developed with CSS into the Steam UI. For more information, visit deckthemes.com."
+22,Memory Deck,2023-04-06T15:52:26Z,True,67954,10184,A simplistic scanmem wrapper for Decky. Enabling scanning for and editing values in memory.
+52,Game Theme Music,2023-04-08T16:36:48Z,True,375046,182570,Play theme songs on your game pages
+35,MoonDeck,2023-04-09T22:27:29Z,True,126108,160328,"MoonDeck lets you play any of your Steam games via Moonlight without needing to add them to Sunshine first, providing a similar experience to GeForce GameStream or Steam Remote Play."
+43,Tailscale Control,2023-04-12T05:16:28Z,True,29934,4749,"A Decky plugin to activate and deactivate Tailscale, while staying in Gaming mode. [Note: Tailscale needs to be installed, this works only like a switch for the same.]"
+53,Shotty,2023-04-12T17:46:07Z,True,29200,1786,A plugin for copying over screenshots to the Pictures folder
+28,Emuchievements,2023-05-15T18:35:46Z,True,144395,60380,Plugin for viewing RetroAchievements progress. Part of the EmuDeck Project
+56,MangoPeel,2023-05-28T17:17:27Z,True,90578,48148,A decky plugin for custom performance monitoring style.
+58,Volume Boost,2023-06-02T01:13:21Z,True,107753,30809,A Decky plugin to boost volume.
+59,Web Browser,2023-06-10T13:52:58Z,True,212315,118636,"A web browser with multiple features including tabs!, limited gamepad support, favorites and a multifunction search/url bar."
+38,Volume Mixer,2023-06-17T21:06:57Z,True,116727,17966,Control the volume of applications and connected Bluetooth sources.
+60,DeckyFileServer,2023-06-25T16:52:23Z,True,38473,20579,"A simple on-demand web server that enables remote file browsing, downloads, and uploads via any web browser on the same network."
+61,TabMaster,2023-07-03T16:08:51Z,True,305628,311385,"Gives you full control over your Steam library! Support for customizing, adding, and hiding Library Tabs."
+62,TS3 QuickAccess,2023-07-29T16:57:46Z,True,8298,1798,A TeamSpeak 3 client plugin that integrates TeamSpeak 3 into Steam Deck's quick access menu.
+63,Free Loader,2023-08-05T07:29:51Z,True,192276,139776,"Notifications for free games on Steam, GOG, Epic Games, and Itch.io!"
+64,Syncthing,2023-08-16T07:53:40Z,True,34407,26838,Plugin for managing Syncthing to synchronize files with other devices. Not officially affiliated with the Syncthing project.
+65,Decky Terminal,2023-08-17T21:45:54Z,True,41822,21495,"Your terminal is going places. The decky plugin that adds terminal emulator plugin for ""game mode"""
+66,PlayTime,2023-08-21T20:34:41Z,True,146120,177736,"Track time you spend gaming — whether it's Steam titles or non-Steam games. Daily, weekly, and all-time stats."
+67,Battery Tracker,2023-08-25T00:35:37Z,True,114738,17317,Battery tracker plugin
+68,Wine Cellar,2023-08-29T06:21:15Z,True,247645,79326,A decky plugin to manage Steam Play compatibility tools
+70,MicroSDeck,2023-10-23T02:16:26Z,True,55952,28598,A plugin to manage MicroSD cards.
+72,ScreenshotUploader,2023-11-14T20:44:12Z,True,26435,3597,Screenshot auto uploader because valve don't do it. Upload screenshots to cloud when screenshot is taken.
+73,EmuDecky,2023-12-09T04:25:58Z,True,558179,141518,Official EmuDeck Decky plugin
+74,KDE Connect,2023-12-18T04:56:53Z,True,58012,6368,A plugin for running KDE Connect in gamemode
+75,Reshadeck,2023-12-19T00:04:04Z,True,77449,15976,A plugin for loading reshade shaders on steam deck
+76,CheatDeck,2023-12-24T18:03:14Z,True,210690,134653,A launch options manager allows you to run games with cheats and trainers.
+1,XR Gaming,2024-01-08T16:36:17Z,True,51180,35334,"Virtual display, VR-Lite, and Follow modes for supported XR glasses"
+77,BT Wake Control,2024-01-25T22:32:37Z,True,61164,10632,Allows to selectively disable and/or enable Wake-on-Bluetooth capabilities for your Bluetooth devices.
+78,Brightness Bar,2024-03-17T18:06:28Z,True,69483,15075,Displays a customizable brightness bar when the brightness is changed with 'STEAM/QAM + LS up/down' shortcuts.
+79,Decky Notifications,2024-03-17T18:11:03Z,True,13954,3448,Receive notifications from smartphone using KDE Connect Protocol
+80,MagicBlack,2024-03-20T20:05:14Z,True,123951,45035,"Overlays the screen with black color, emulating the screen being turned off on the Steam Deck OLED."
+81,IsThereAnyDeal for Deck,2024-04-19T09:01:50Z,True,170971,124873,Shows IsThereAnyDeal data on a game's store page
+82,MagicPods,2024-04-22T18:45:15Z,True,213032,200533,"Monitor the battery level of your AirPods, Beats and Galaxy Buds. Easily switch between noise cancellation modes and enjoy the magic."
+84,Junk-Store,2024-04-29T15:10:24Z,True,371839,179205,Transform your gaming experience with Junk-Store - the ultimate solution for seamlessly integrating non-Steam games into your Steam Deck library. Say goodbye to clunky work arounds and hello to a world of endless gaming possibilities. Get ready to elevate your gaming to the next level with Junk-Store!
+2,Example Plugin,2024-07-04T01:26:10Z,True,3672,303,Decky example plugin.
+85,Decky-Undervolt,2024-08-07T03:42:48Z,True,49470,7482,A simple plugin that is using ryzenadj to apply Curve Optimizer to CPU.
+87,ScreenSaver,2024-09-13T20:54:42Z,True,10988,3789,Inhibit screensaver during video playback.
+88,steamdeck-input-disabler,2024-09-14T00:42:34Z,True,37070,3306,A plugin that lets you disable the steamdeck gamepad to prevent bugs with in game controller order and emulators not picking up the right controller.
+89,DeckySpy,2024-10-29T23:06:35Z,True,8641,719,Spy on system information.
+90,Picture in Picture,2025-01-14T19:37:27Z,True,74888,6566,Watch your favorite stream while you game!
+91,PlayCount,2025-01-14T19:42:25Z,True,158376,65052,A Steam Deck plugin that shows current player counts for your steam games.
+92,Crosshair,2025-01-16T18:24:55Z,True,20287,4490,Repurpose the performance overlay into a customizable crosshair.
+93,Deck Settings,2025-01-25T20:28:03Z,True,130040,85603,"Fetch and display community-driven game compatibility, settings, and configuration reports."
+94,Decky DoT DNS,2025-01-31T21:43:51Z,True,7834,537,A plugin to override the systemd-resolved config from Decky.
+95,Decky-SpoofDPI,2025-02-05T23:20:36Z,True,8534,699,An anti-censorship plugin for Decky Loader. This plugin is a wrapper around SpoofDPI for Game Mode
+96,Simple Timer,2025-02-07T03:40:01Z,True,22480,1473,Set a timer that will remind you when your session should end.
+97,Decky-Framegen,2025-02-14T19:22:28Z,True,374694,186475,"This plugin installs and manages OptiScaler, a tool that enhances upscaling and enables frame generation in a range of DirectX 12 games."
+98,Decky-Lookup,2025-02-15T17:11:31Z,True,27584,2508,A plugin to quickly access useful sites for the running game.
+99,Decky Zerotier,2025-03-04T00:37:10Z,True,6463,1190,A Decky plugin for Zerotier
+100,Virtual Surround Sound,2025-03-05T17:45:52Z,True,50647,5185,"Create a virtual surround sound audio sink that converts 7.1 surround audio into immersive binaural output for headphones via HRIR processing with multiple presets (Atmos, DTS, Steam, Razer, etc.)."
+101,XIVOmega,2025-03-14T01:39:22Z,True,5933,2218,"Latency Mitigator for the Critically Acclaimed MMORPG Final Fantasy XIV - based on XivMitmLatencyMitigator, XivAlexander and XivMitmDocker."
+102,DeckSP,2025-03-17T20:05:42Z,True,32525,14929,"Full audio effects DSP. EQ, Reverb and much more. Per-game settings possible."
+103,Decky Ludusavi,2025-03-23T15:03:39Z,True,17792,4781,"Ludusavi for Decky. Backup, restore, and keep multiple versions of your save files with ease! Requires Ludusavi installation on the device."
+104,Game Sync,2025-04-14T12:55:52Z,True,15947,7901,A fork of Decky Cloud Save that manages cloud saves and mods for games
+105,WiFi Locker,2025-05-17T23:21:13Z,True,27723,4943,Lock WiFi to a specific access point to prevent background scanning.
+106,LetMeReShade,2025-06-09T13:17:50Z,True,47320,20577,ReShade plugin for Steam Deck - Enhanced version with improved shader and game management.
+107,Decky Sunshine,2025-06-10T22:40:25Z,True,35969,10588,Stream your Steam Deck screen to another device with minimal effort.
+108,HueSync,2025-06-22T15:36:38Z,True,81299,26197,LED controller for non-Steam Deck gaming handhelds running SteamOS.
+109,MuraDeck,2025-08-07T00:59:09Z,True,17712,2466,"Adaptive mura correction, gamma correction, and dithering to fix mura effect ONLY FOR defective Samsung Panel for Steam Deck OLED."
+110,Dimmer Deck,2025-10-13T23:20:46Z,True,20849,1772,Make your brightness even dimmer.
+111,Music Control,2025-10-21T15:35:03Z,True,37560,3466,Quick access for media player controls in game mode.
+112,Better Keyboard,2025-10-22T15:45:57Z,True,28994,9430,Better experience for physical keyboard users.
+113,Decky LSFG-VK,2025-11-27T16:51:06Z,True,347948,206237,Enable lossless scaling frame generation on the Steam Deck using lsfg-vk compatibility layer.
+114,Network Sentinel,2025-11-27T16:56:21Z,True,15843,5609,"Monitor network quality and track connection performance with live ping display, latency graphs, and network history tracking."
+115,Decky Clash,2025-12-14T19:37:10Z,True,11799,10182,Light-weight Clash/Mihomo proxy client for Steam OS.
+116,Muon,2025-12-26T23:49:42Z,True,5743,969,Ad-hoc WiFi networking plugin for Decky.
+117,DeckyParty File Manager,2026-01-06T19:38:20Z,True,6673,923,Manage the deck's filesystem from a web browser via Copyparty!
+118,Speed Test,2026-01-06T19:38:43Z,True,28897,4096,Run internet speed tests directly from your Steam Deck Game Mode using Cloudflare's global network.
+119,Decky Clipboard,2026-01-19T14:04:37Z,True,4856,373,Share clipboard between Steam Deck and other devices via web interface.
+120,Reroll,2026-01-30T21:21:43Z,True,7588,954,A high-performance memory scanning plugin for the Steam Deck. [WARNING: Strictly for offline/single-player use only. Use at your own risk.]
+121,DeckPass,2026-02-11T23:52:12Z,True,2819,219,DeckPass is a Decky Plugin to access passwords directly in SteamOS gaming mode. Internally it uses KeePassXC.
+122,Museck,2026-02-12T00:01:24Z,True,4967,472,"A Decky Loader plugin for Steam Deck to play tracks from Plex, Jellyfin, Emby, Navidrome, and Subsonic."
+123,Steam Status,2026-02-14T21:32:43Z,True,12211,696,"Display Steam Service status, player counts, and service health"
+124,AlarMe,2026-02-14T21:37:29Z,True,10944,1936,"Advanced alarm and timer with snooze, recurring alarms, Pomodoro mode, and persistent notifications."
+125,Decky Localsend,2026-02-18T21:33:51Z,True,7849,566,"Use Localsend in gaming mode, including fast copy & paste screenshot and text by using LocalSend Client."
+126,Launch Options,2026-02-22T16:32:29Z,True,20935,5037,Manage launch options for your games with ease.
+127,Decky Translator,2026-02-27T16:43:03Z,True,17434,4062,Translate anything on your screen to your language
+128,Quick User Switcher,2026-03-09T21:11:56Z,True,2551,179,Quickly switch between Steam accounts without navigating through menus. Simplifies multi-user Steam Deck usage by allowing instant account switching from the Quick Access Menu.
+129,ShadowDeck,2026-03-13T19:29:49Z,True,1585,302,ShadowDeck allows you to access ShadowSocks connection.
+130,Games Prefix Manager,2026-03-20T23:01:17Z,True,6302,551,"Manage Steam Deck Prefixes, delete orphans, and backup data."
+131,Download All,2026-03-28T21:44:17Z,True,11923,3196,Download All - A plugin that let's the user immediately queue all scheduled downloads to immediately download.
+132,SuggestMe,2026-04-17T22:20:44Z,True,9792,586,"Smart game suggestion from your Steam library, native to Steam Deck."
+133,Non-Steam Badges,2026-04-20T22:34:06Z,True,22565,1763,A Decky plugin that helps identifying non-Steam games using themed badges
+134,Deck Progress Tracker,2026-04-23T15:50:49Z,True,16190,959,"Automatic game tagging based on achievements, playtime, and completion time. Track your progress with visual badges in the Steam library. Features 5 intelligent tags: Mastered, Completed, Dropped, In Progress, and Backlog."
+135,Deck Shelves,2026-05-06T21:50:20Z,True,21707,2067,Inject configurable shelves (Collections / Tabs / Filters) into the Steam Deck Home (library/home).
+136,Decky-Clipper,2026-05-13T22:06:59Z,True,2795,275,Record your screen even when a game is not running.
+137,Decky Proton Launch,2026-05-13T22:21:52Z,True,22973,2008,Manage Steam game launch options from Gaming Mode. Set Proton environment variables like PROTON_FSR4_UPGRADE=1 or PROTON_DLSS4_UPGRADE=1 and add wrappers such as MangoHud or GameScope.

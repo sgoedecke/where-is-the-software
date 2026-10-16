@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Location (URL)\n\nhttps://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-3\n\n### Summary\n\nThe notes field for several recently demoted tier 3 platforms is displayed in the host column. This looks like simple copy/paste errors from 430d353 and 6660d75 (the tier 3 table has more columns than the others on that page).\n\nThe targets in question are:\n - armebv7r-none-eabi\n - armebv7r-none-eabihf\n - wasm32-wasip3\n\nEdit:\n89a5bb6 and 215c936 introduced the opposite problem with armv8r-none-eabihf and armv7a-none-eabihf, respectively.",
+      "closed_at": "2025-12-31T02:00:33Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/150499/comments",
+      "created_at": "2025-12-30T05:14:43Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/150499/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/150499",
+      "id": 3769086673,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Documentation for any part of the project, including the compiler, standard library, and tools",
+          "id": 431251592,
+          "name": "A-docs",
+          "node_id": "MDU6TGFiZWw0MzEyNTE1OTI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-docs"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/150499/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M7gp7LR",
+      "number": 150499,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/150499/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/150499/timeline",
+      "title": "Tier 3 Platform Support Table is Misformatted",
+      "type": null,
+      "updated_at": "2025-12-31T02:00:33Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/150499",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/42453758?v=4",
+        "events_url": "https://api.github.com/users/qb42/events{/privacy}",
+        "followers_url": "https://api.github.com/users/qb42/followers",
+        "following_url": "https://api.github.com/users/qb42/following{/other_user}",
+        "gists_url": "https://api.github.com/users/qb42/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/qb42",
+        "id": 42453758,
+        "login": "qb42",
+        "node_id": "MDQ6VXNlcjQyNDUzNzU4",
+        "organizations_url": "https://api.github.com/users/qb42/orgs",
+        "received_events_url": "https://api.github.com/users/qb42/received_events",
+        "repos_url": "https://api.github.com/users/qb42/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/qb42/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/qb42/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/qb42",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 675
+}

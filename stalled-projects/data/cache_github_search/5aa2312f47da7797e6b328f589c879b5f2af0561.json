@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\nOn Ansible-Core 2.17 we came across a failing task that uses the `command` module. The task has an environment set that is constructed from a variable. One of the env variables to be set contained a `%D` which turned out to be the problem.\r\nThe task has worked fine on Ansible-Core 2.16.\r\n\r\nFurther experimenting revealed that the `shell` module suffers from the same problem.\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\ncommand\n\n### Ansible Version\n\n```console\n$ ansible --version\r\nansible [core 2.17.1]\r\n  config file = /home/charly/eclipseprojects/spp_playground/ansible.cfg\r\n  configured module search path = ['/home/charly/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /opt/ansible/lib/python3.11/site-packages/ansible\r\n  ansible collection location = /home/charly/.ansible/collections:/usr/share/ansible/collections\r\n  executable location = /usr/bin/ansible\r\n  python version = 3.11.9 (main, Apr 10 2024, 13:16:36) [GCC 13.2.0] (/opt/ansible/bin/python3)\r\n  jinja version = 3.1.4\r\n  libyaml = True\n```\n\n\n### Configuration\n\n```console\n$ ansible-config dump --only-changed -t all\r\nCALLBACKS_ENABLED(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = ['profile_tasks']\r\nCONFIG_FILE() = /home/charly/eclipseprojects/spp_playground/ansible.cfg\r\nDEFAULT_GATHERING(env: ANSIBLE_GATHERING) = explicit\r\nDEFAULT_LOG_PATH(env: ANSIBLE_LOG_PATH) = /tmp/ansible.log\r\nDEFAULT_ROLES_PATH(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = ['/home/charly/eclipseprojects/spp_playground/external_roles']\r\nDEFAULT_STDOUT_CALLBACK(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = yaml\r\nEDITOR(env: EDITOR) = vi\r\nGALAXY_IGNORE_CERTS(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = False\r\nHOST_KEY_CHECKING(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = False\r\nINTERPRETER_PYTHON(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = /usr/bin/python3\r\nRETRY_FILES_ENABLED(env: ANSIBLE_RETRY_FILES_ENABLED) = False\r\n\r\nCONNECTION:\r\n==========\r\n\r\nparamiko_ssh:\r\n____________\r\nhost_key_checking(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = False\r\n\r\nssh:\r\n___\r\ncontrol_path(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = %(directory)s/%%h-%%r\r\nhost_key_checking(/home/charly/eclipseprojects/spp_playground/ansible.cfg) = False\n```\n\n\n### OS / Environment\n\nController:\r\n```\r\n$ lsb_release -a\r\nNo LSB modules are available.\r\nDistributor ID:\tDebian\r\nDescription:\tDebian GNU/Linux trixie/sid\r\nRelease:\tn/a\r\nCodename:\ttrixie\r\n```\r\nManaged host:\r\n```\r\n$ lsb_release -a\r\nNo LSB modules are available.\r\nDistributor ID:\tDebian\r\nDescription:\tDebian GNU/Linux 12 (bookworm)\r\nRelease:\t12\r\nCodename:\tbookworm\r\n```\n\n### Steps to Reproduce\n\n<!--- Paste example playbooks or commands between quotes below -->\r\n```yaml (paste below)\r\n---\r\n\r\n- hosts: all\r\n  become: true\r\n  serial: 1\r\n\r\n  vars:\r\n    env_vars:\r\n      FOO: bar%D\r\n\r\n  tasks:\r\n    - name: run command with env\r\n      command: /usr/bin/uptime -p\r\n      environment: '{{ env_vars }}'\r\n```\r\n\n\n### Expected Results\n\nEnvironment should be constructed and command being run. Expected result as produced by Ansible-Core 2.16.\r\n```shell\r\n$ ansible-playbook -i environments/dev/inventory --user pammer --ask-become-pass env_bug.yml -vv\r\nansible-playbook [core 2.16.8]\r\n[...]\r\nPLAYBOOK: env_bug.yml *********************\r\n1 plays in env_bug.yml\r\n\r\nPLAY [all] **********************\r\n\r\nTASK [run command with env] **********************\r\ntask path: /home/charly/eclipseprojects/spp_playground/env_bug.yml:12\r\nDonnerstag 27 Juni 2024  14:16:00 +0200 (0:00:00.010)       0:00:00.010 ******* \r\nchanged: [charly-dev01.server.lan] => changed=true \r\n  cmd:\r\n  - /usr/bin/uptime\r\n  - -p\r\n  delta: '0:00:00.074528'\r\n  end: '2024-06-27 14:16:04.154977'\r\n  msg: ''\r\n  rc: 0\r\n  start: '2024-06-27 14:16:04.080449'\r\n  stderr: ''\r\n  stderr_lines: <omitted>\r\n  stdout: up 1 week, 1 day, 6 hours, 6 minutes\r\n  stdout_lines: <omitted>\r\n\r\nPLAY RECAP **********************\r\ncharly-dev01.server.lan    : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \r\n```\n\n### Actual Results\n\n```console\nPLAYBOOK: env_bug.yml *********************\r\n1 plays in env_bug.yml\r\n\r\nPLAY [all] **********************\r\n\r\nTASK [run command with env] **********************\r\ntask path: /home/charly/eclipseprojects/spp_playground/env_bug.yml:12\r\nDonnerstag 27 Juni 2024  14:13:29 +0200 (0:00:00.011)       0:00:00.011 ******* \r\nAn exception occurred during task execution. To see the full traceback, use -vvv. The error was: ValueError: unsupported format character 'D' (0x44) at index 8\r\nfatal: [charly-dev01.server.lan]: FAILED! => \r\n  msg: 'Unexpected failure during module execution: unsupported format character ''D'' (0x44) at index 8'\r\n  stdout: ''\r\n\r\nPLAY RECAP **********************\r\ncharly-dev01.server.lan    : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored\r\n\r\nRun using -vvv yielded some more insights:\r\nThe full traceback is:\r\nTraceback (most recent call last):\r\n  File \"/opt/ansible/lib/python3.11/site-packages/ansible/executor/task_executor.py\", line 164, in run\r\n    res = self._execute()\r\n          ^^^^^^^^^^^^^^^\r\n  File \"/opt/ansible/lib/python3.11/site-packages/ansible/executor/task_executor.py\", line 636, in _execute\r\n    result = self._handler.run(task_vars=vars_copy)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/opt/ansible/lib/python3.11/site-packages/ansible/plugins/action/command.py\", line 20, in run\r\n    results = merge_hash(results, self._execute_module(module_name='ansible.legacy.command', task_vars=task_vars, wrap_async=wrap_async))\r\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/opt/ansible/lib/python3.11/site-packages/ansible/plugins/action/__init__.py\", line 1146, in _execute_module\r\n    cmd = self._connection._shell.build_module_command(environment_string, shebang, cmd, arg_path=args_file_path).strip()\r\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/opt/ansible/lib/python3.11/site-packages/ansible/plugins/shell/__init__.py\", line 214, in build_module_command\r\n    return f'{env_string}%s' % shlex.join(cps for cp in cmd_parts if cp and (cps := cp.strip()))\r\n           ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\nValueError: unsupported format character 'D' (0x44) at index 8\r\nfatal: [charly-dev01.server.lan]: FAILED! => \r\n  msg: 'Unexpected failure during module execution: unsupported format character ''D'' (0x44) at index 8'\r\n  stdout: ''\n```\n\n\n### Code of Conduct\n\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2024-06-28T14:50:46Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/83498/comments",
+      "created_at": "2024-06-27T12:46:00Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/83498/events",
+      "html_url": "https://github.com/ansible/ansible/issues/83498",
+      "id": 2378063768,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue/PR relates to a module.",
+          "id": 496359346,
+          "name": "module",
+          "node_id": "MDU6TGFiZWw0OTYzNTkzNDY=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/module"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "",
+          "id": 6043996666,
+          "name": "affects_2.17",
+          "node_id": "LA_kwDOADeGtM8AAAABaEAR-g",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.17"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/83498/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM6Nvl-Y",
+      "number": 83498,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/83498/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/83498/timeline",
+      "title": "[2.17][command] Failure in environment construction due to special characters in variable",
+      "type": null,
+      "updated_at": "2024-07-12T13:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/83498",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/25637698?v=4",
+        "events_url": "https://api.github.com/users/k-c-p/events{/privacy}",
+        "followers_url": "https://api.github.com/users/k-c-p/followers",
+        "following_url": "https://api.github.com/users/k-c-p/following{/other_user}",
+        "gists_url": "https://api.github.com/users/k-c-p/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/k-c-p",
+        "id": 25637698,
+        "login": "k-c-p",
+        "node_id": "MDQ6VXNlcjI1NjM3Njk4",
+        "organizations_url": "https://api.github.com/users/k-c-p/orgs",
+        "received_events_url": "https://api.github.com/users/k-c-p/received_events",
+        "repos_url": "https://api.github.com/users/k-c-p/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/k-c-p/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/k-c-p/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/k-c-p",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 174
+}

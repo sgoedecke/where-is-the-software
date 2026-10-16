@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Version\r\n\r\n18.9.0\r\n\r\n### Platform\r\n\r\nDarwin\r\n\r\n### Subsystem\r\n\r\nchild_process\r\nos\r\n\r\n### What steps will reproduce the bug?\r\n\r\nIn the current implementation, `spawn` and related functions throw synchronous errors for invalid signals, e.g.:\r\n\r\n```js\r\nimport { spawn } from 'node:child_process';\r\n\r\n// TypeError [ERR_UNKNOWN_SIGNAL]\r\nspawn(process.execPath, ['-v'], { killSignal: 12345 });\r\n```\r\n\r\nAnyway, it's easy to define custom signals that pass the validation:\r\n\r\n```js\r\nimport { spawn } from 'node:child_process';\r\nimport { constants } from 'node:os';\r\n\r\nconstants.signals.FOOBAR = 12345;\r\n// no error\r\nspawn(process.execPath, ['-v'], { killSignal: 12345 });\r\n```\r\n\r\nThe same applies when signals are identified by name, i.e:\r\n\r\n```js\r\nimport { spawn } from 'node:child_process';\r\n\r\n// TypeError [ERR_UNKNOWN_SIGNAL]\r\nspawn(process.execPath, ['-v'], { killSignal: 'FOOBAR' });\r\n```\r\n\r\nand\r\n\r\n```js\r\nimport { spawn } from 'node:child_process';\r\nimport { constants } from 'node:os';\r\n\r\nconstants.signals.FOOBAR = 12345;\r\n// no error\r\nspawn(process.execPath, ['-v'], { killSignal: 'FOOBAR' });\r\n```\r\n\r\n**but** if a custom signal is added after the internal mapping of numeric codes to names signals has been generated, validation fails for numeric codes (but not for signal names):\r\n\r\n```js\r\nimport { spawn } from 'node:child_process';\r\nimport { constants } from 'node:os';\r\n\r\nspawn(process.execPath, ['-v'], { killSignal: 1 });\r\nconstants.signals.FOOBAR = 12345;\r\nspawn(process.execPath, ['-v'], { killSignal: 'FOOBAR' }); // no error\r\nspawn(process.execPath, ['-v'], { killSignal: 12345 }); // TypeError [ERR_UNKNOWN_SIGNAL]\r\n```\r\n\r\nThis strikes to me as issue of improper memoization:\r\n\r\nhttps://github.com/nodejs/node/blob/9ae2af4aaebe5c6efad774989c4958ba6d32c0fd/lib/internal/util.js#L272-L283\r\n\r\nwhere `signalsToNamesMapping` never changes once created.\r\n\r\nOn the other hand, I'm not convinced that the current behavior - being able to add, remove, and change signals at will - is intended. If it is, then the validation logic should be fixed. If it is not, then `constants.signals` should be better frozen to prevent changes.\r\n\r\n### How often does it reproduce? Is there a required condition?\r\n\r\nAll the time.\r\n\r\n### What is the expected behavior?\r\n\r\nEither custom numeric signals should always be accepted as valid, or they should always be rejected. If they should be rejected, then custom string signals should be rejected, too.\r\n\r\n### What do you see instead?\r\n\r\nInconsistent behavior, depending on (possibly unrelated) previous operations.\r\n\r\n### Additional information\r\n\r\n_No response_",
+      "closed_at": "2025-12-22T16:14:47Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/44749/comments",
+      "created_at": "2022-09-22T17:50:07Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/44749/events",
+      "html_url": "https://github.com/nodejs/node/issues/44749",
+      "id": 1382811018,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7c6c7",
+          "default": false,
+          "description": "Issues and PRs related to the child_process subsystem.",
+          "id": 155267478,
+          "name": "child_process",
+          "node_id": "MDU6TGFiZWwxNTUyNjc0Nzg=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/child_process"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "7057ff",
+          "default": true,
+          "description": "Issues that are suitable for first-time contributors.",
+          "id": 202120392,
+          "name": "good first issue",
+          "node_id": "MDU6TGFiZWwyMDIxMjAzOTI=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/good%20first%20issue"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/44749/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85SbAWK",
+      "number": 44749,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/44749/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/44749/timeline",
+      "title": "Inconsistent validation of custom signals",
+      "type": null,
+      "updated_at": "2025-12-22T16:14:47Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/44749",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6367844?v=4",
+        "events_url": "https://api.github.com/users/fasttime/events{/privacy}",
+        "followers_url": "https://api.github.com/users/fasttime/followers",
+        "following_url": "https://api.github.com/users/fasttime/following{/other_user}",
+        "gists_url": "https://api.github.com/users/fasttime/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/fasttime",
+        "id": 6367844,
+        "login": "fasttime",
+        "node_id": "MDQ6VXNlcjYzNjc4NDQ=",
+        "organizations_url": "https://api.github.com/users/fasttime/orgs",
+        "received_events_url": "https://api.github.com/users/fasttime/received_events",
+        "repos_url": "https://api.github.com/users/fasttime/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/fasttime/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/fasttime/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/fasttime",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 9
+}

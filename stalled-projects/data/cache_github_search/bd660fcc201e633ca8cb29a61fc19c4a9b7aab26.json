@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Tested versions\r\n\r\n Bug exists:\r\n4.2.1-stable, 4.2-stable, 4.1.3-stable, 4.1.2-stable, 4.1.1-stable, 4.1-stable, 4.0.4-stable, 4.0.3-stable, 4.0.2-stable, 4.0.1-stable, 4.0-stable\r\nBug does not exist:\r\n3.5.3-stable\r\n\r\n### System information\r\n\r\nGodot v4.2.1.stable - Windows 10.0.22621 - Vulkan (Forward+) - dedicated NVIDIA GeForce RTX 3060 (NVIDIA; 31.0.15.4617) - Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz (16 Threads)\r\n\r\n### Issue description\r\n\r\nWhen a popup node is selected, the bounding box is not displayed, as well as any other children of the popup node\r\nThey are also not directly editable except through the inspector\r\nHowever when you remove the child from the parent object (popup), it works fine\r\n\r\n### Steps to reproduce\r\n\r\nCreate a new UI scene\r\n![image](https://github.com/godotengine/godot/assets/154958701/00ae8164-d46f-41ae-9e7d-6f9f2d3271e6)\r\nIt will look like this, and you can drag the edges\r\n![image](https://github.com/godotengine/godot/assets/154958701/28aa6a5b-6d4d-4c70-ab56-9a6f1752e91d)\r\nAdd a popup node\r\n![image](https://github.com/godotengine/godot/assets/154958701/1eac26ae-b4d7-41b3-9ba8-8963e4bb1187)\r\nThe popup node will not be interactable\r\n![image](https://github.com/godotengine/godot/assets/154958701/04f12f0d-ce45-472e-928a-a6614719375f)\r\nAny children also created are not interactable\r\n\r\n\r\n### Minimal reproduction project (MRP)\r\n\r\nN/A",
+      "closed_at": "2023-12-31T17:59:01Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/86660/comments",
+      "created_at": "2023-12-31T08:22:18Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/86660/events",
+      "html_url": "https://github.com/godotengine/godot/issues/86660",
+      "id": 2060983309,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/86660/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc562BwN",
+      "number": 86660,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/86660/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/86660/timeline",
+      "title": "Certain UI elements not showing in 2d editor",
+      "type": null,
+      "updated_at": "2023-12-31T18:00:07Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/86660",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/154958701?v=4",
+        "events_url": "https://api.github.com/users/Odyssey8416/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Odyssey8416/followers",
+        "following_url": "https://api.github.com/users/Odyssey8416/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Odyssey8416/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Odyssey8416",
+        "id": 154958701,
+        "login": "Odyssey8416",
+        "node_id": "U_kgDOCTx7bQ",
+        "organizations_url": "https://api.github.com/users/Odyssey8416/orgs",
+        "received_events_url": "https://api.github.com/users/Odyssey8416/received_events",
+        "repos_url": "https://api.github.com/users/Odyssey8416/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Odyssey8416/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Odyssey8416/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Odyssey8416",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1400
+}

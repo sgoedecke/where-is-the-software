@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Which jobs are flaking?\n\n- https://prow.k8s.io/job-history/gs/kubernetes-ci-logs/logs/ci-kubernetes-integration-arm64-master\n- https://prow.k8s.io/job-history/gs/kubernetes-ci-logs/logs/ci-kubernetes-integration-master\n- https://prow.k8s.io/job-history/gs/kubernetes-ci-logs/logs/ci-kubernetes-integration-ppc64le-master\n\n### Which tests are flaking?\n\n`k8s.io/kubernetes/test/integration/apiserver - TestPodSubresourceAuth`\n\n### Since when has it been flaking?\n\nTriage tool shows the earliest failures on [2034427434341765120 3/19/2026, 6:01:43 AM](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-integration-arm64-master/2034427434341765120) as per [Link](https://storage.googleapis.com/k8s-triage/index.html?text=TestPodSubresourceAuth&test=k8s.io%2Fkubernetes%2Ftest%2Fintegration%2Fapiserver%20&xjob=s3).\n\n### Testgrid link\n\nhttps://testgrid.k8s.io/sig-release-master-blocking#integration-master \n\n### Reason for failure (if possible)\n\n```\nFailed\n=== RUN   TestPodSubresourceAuth/subresource=exec\n    subresource_auth_test.go:173: expected nil error for user with 'create' permissions, but got: pods \"test-pod\" is forbidden: User \"pod-creator\" cannot get resource \"pods/exec\" in API group \"\" in the namespace \"test-pod-subresource-auth\"\n--- FAIL: TestPodSubresourceAuth/subresource=exec (0.00s)\n\n=== RUN   TestPodSubresourceAuth/subresource=attach\n    subresource_auth_test.go:173: expected nil error for user with 'create' permissions, but got: pods \"test-pod\" is forbidden: User \"pod-creator\" cannot get resource \"pods/attach\" in API group \"\" in the namespace \"test-pod-subresource-auth\"\n--- FAIL: TestPodSubresourceAuth/subresource=attach (0.00s)\n\n=== RUN   TestPodSubresourceAuth\n--- FAIL: TestPodSubresourceAuth (3.26s)\n```\n\n### Anything else we need to know?\n\nWe were able to reproduce this flake locally using stress tool.\nSteps to reproduce:\n\n1. Install stress tool (# go install golang.org/x/tools/cmd/stress@latest).\n2. Clone the k8s repo (git clone https://github.com/kubernetes/kubernetes.git).\n3. cd kubernetes\n4. hack/install-etcd.sh\n5. export the output from above command (For example, export PATH=\"${PATH}:/root/kubernetes/third_party/etcd\")\n6. etcd &\n5. go test ./test/integration/apiserver/ -c -count=1\n6. /root/go/bin/stress ./apiserver.test -test.run TestPodSubresourceAuth\n\n```\n[root@cluster-node1 kubernetes]# uname -a\nLinux cluster-node1 5.14.0-611.el9.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Aug 22 16:46:08 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux\n\n[root@cluster-node1 kubernetes]# go test ./test/integration/apiserver/ -c -count=1\n\n[root@cluster-node1 kubernetes]# /root/go/bin/stress ./apiserver.test -test.run TestPodSubresourceAuth\n5s: 0 runs so far, 0 failures, 8 active\n10s: 0 runs so far, 0 failures, 8 active\n15s: 8 runs so far, 0 failures, 8 active\n20s: 12 runs so far, 0 failures, 8 active\n25s: 16 runs so far, 0 failures, 8 active\n30s: 20 runs so far, 0 failures, 8 active\n35s: 24 runs so far, 0 failures, 8 active\n40s: 27 runs so far, 0 failures, 8 active\n45s: 33 runs so far, 0 failures, 8 active\n50s: 35 runs so far, 0 failures, 8 active\n55s: 43 runs so far, 0 failures, 8 active\n1m0s: 48 runs so far, 0 failures, 8 active\n1m5s: 51 runs so far, 0 failures, 8 active\n\n/tmp/go-stress-20260330T221020-1963840003\nI0330 22:11:19.264343  449016 etcd.go:66] etcd already running at http://127.0.0.1:2379\nW0330 22:11:19.423819  449016 registry.go:342] setting componentGlobalsRegistry in SetFallback. We recommend calling componentGlobalsRegistry.Set() right after parsing flags to avoid using feature gates before their final values are set by the flags.\nI0330 22:11:19.558879  449016 serving.go:405] Generated self-signed cert (/tmp/test-integration-TestPodSubresourceAuth4104158675/apiserver.crt, /tmp/test-integration-TestPodSubresourceAuth4104158675/apiserver.key)\nI0330 22:11:19.558913  449016 options.go:263] external host was not specified, using 9.30.248.180\nE0330 22:11:19.894779  449016 options.go:205] The manifest file is empty, ignoring.\nI0330 22:11:19.903741  449016 shared_informer.go:402] \"Waiting for caches to sync\"\nI0330 22:11:19.914474  449016 shared_informer.go:402] \"Waiting for caches to sync\"\nI0330 22:11:19.922026  449016 plugins.go:157] Loaded 14 mutating admission controller(s) successfully in the following order: NamespaceLifecycle,LimitRanger,ServiceAccount,TaintNodesByCondition,Priority,DefaultTolerationSeconds,DefaultStorageClass,StorageObjectInUseProtection,PodGroupProtection,RuntimeClass,DefaultIngressClass,PodTopologyLabels,MutatingAdmissionPolicy,MutatingAdmissionWebhook.\nI0330 22:11:19.922138  449016 plugins.go:160] Loaded 17 validating admission controller(s) successfully in the following order: LimitRanger,ServiceAccount,PodSecurity,Priority,PersistentVolumeClaimResize,RuntimeClass,CertificateApproval,CertificateSigning,ClusterTrustBundleAttest,CertificateSubjectRestriction,PodGroupWorkloadExists,NodeDeclaredFeatureValidator,JobValidation,PodResizeValidator,ValidatingAdmissionPolicy,ValidatingAdmissionWebhook,ResourceQuota.\nI0330 22:11:19.922505  449016 instance.go:240] Using reconciler: lease\nI0330 22:11:19.933174  449016 cidrallocator.go:198] starting ServiceCIDR Allocator Controller\nI0330 22:11:20.013842  449016 handler.go:304] Adding GroupVersion  v1 to ResourceManager\n```\n\n### Relevant SIG(s)\n\n/sig testing",
+      "closed_at": "2026-03-31T09:09:17Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/138125/comments",
+      "created_at": "2026-03-31T07:31:53Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/138125/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/138125",
+      "id": 4176720276,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7c6c7",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a flaky test.",
+          "id": 264749912,
+          "name": "kind/flake",
+          "node_id": "MDU6TGFiZWwyNjQ3NDk5MTI=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/flake"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Testing.",
+          "id": 483069764,
+          "name": "sig/testing",
+          "node_id": "MDU6TGFiZWw0ODMwNjk3NjQ=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/testing"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/138125/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks7487GU",
+      "number": 138125,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/138125/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/138125/timeline",
+      "title": "[Flaking tests] k8s.io/kubernetes/test/integration/apiserver - TestPodSubresourceAuth",
+      "type": null,
+      "updated_at": "2026-04-27T11:07:31Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/138125",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/217171609?v=4",
+        "events_url": "https://api.github.com/users/varshadeshmane92/events{/privacy}",
+        "followers_url": "https://api.github.com/users/varshadeshmane92/followers",
+        "following_url": "https://api.github.com/users/varshadeshmane92/following{/other_user}",
+        "gists_url": "https://api.github.com/users/varshadeshmane92/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/varshadeshmane92",
+        "id": 217171609,
+        "login": "varshadeshmane92",
+        "node_id": "U_kgDODPHGmQ",
+        "organizations_url": "https://api.github.com/users/varshadeshmane92/orgs",
+        "received_events_url": "https://api.github.com/users/varshadeshmane92/received_events",
+        "repos_url": "https://api.github.com/users/varshadeshmane92/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/varshadeshmane92/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/varshadeshmane92/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/varshadeshmane92",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 373
+}

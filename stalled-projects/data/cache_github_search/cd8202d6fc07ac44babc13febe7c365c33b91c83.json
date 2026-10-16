@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\nThe German market moved to 15-minute resolution of prices today, and tibber is already billing to 15 minute prices\n\n<img width=\"603\" height=\"475\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/716d69ba-fb94-4a8e-8313-102668b1a8d9\" />\n\nHowever, Tibber integration still uses 1 hour averages and there is no way to use the 15 minute resolution right now.\n\n### What version of Home Assistant Core has the issue?\n\ncore-2025.9.4\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\nTibber\n\n### Link to integration documentation on our website\n\n_No response_\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n```yaml\n\n```\n\n### Anything in the logs that might be useful for us?\n\n```txt\n\n```\n\n### Additional information\n\n_No response_",
+      "closed_at": "2025-09-30T22:50:14Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/153291/comments",
+      "created_at": "2025-09-30T22:26:00Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/153291/events",
+      "html_url": "https://github.com/home-assistant/core/issues/153291",
+      "id": 3471256387,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/153291/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc7O5ytD",
+      "number": 153291,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/153291/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/153291/timeline",
+      "title": "Tibber not showing 15-minute price data",
+      "type": null,
+      "updated_at": "2025-10-30T23:01:47Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/153291",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/17064005?v=4",
+        "events_url": "https://api.github.com/users/metabubble/events{/privacy}",
+        "followers_url": "https://api.github.com/users/metabubble/followers",
+        "following_url": "https://api.github.com/users/metabubble/following{/other_user}",
+        "gists_url": "https://api.github.com/users/metabubble/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/metabubble",
+        "id": 17064005,
+        "login": "metabubble",
+        "node_id": "MDQ6VXNlcjE3MDY0MDA1",
+        "organizations_url": "https://api.github.com/users/metabubble/orgs",
+        "received_events_url": "https://api.github.com/users/metabubble/received_events",
+        "repos_url": "https://api.github.com/users/metabubble/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/metabubble/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/metabubble/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/metabubble",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1272
+}

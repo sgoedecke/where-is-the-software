@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### \ud83d\udd0e Search Terms\r\n\r\n`generic function`, `shared generic`, `same generic`, `optional value in required field`\r\n\r\n### \ud83d\udd57 Version & Regression Information\r\n\r\nThis behavior occurs in `5.5.3` and `5.6.2`, which are the only versions I tried.\r\n\r\n### \u23ef Playground Link\r\n\r\nhttps://www.typescriptlang.org/play/?#code/GYVwdgxgLglg9mABKMAeAKgPgBQEMBci6ANIgEaHoCUiA3ogL4BQTECAzlIm2JwE64YYLgF46iPgFMAjiBhSAJgH1gMSQBsFhKHxCTGAbibrJXCuThwTuJAB9E4BZNVhJCoymw9+g4aXpSsvJuKmqahGSMVAaIAPSxiAByAPKIAKIAShnJGTEAggAyBckA6gDKiABiOYh5iYjJAAroAJLJiYWIAGqFAKppAHSIJdmJAOIAhCye3jq+UP4SMnKKoRpaiDp6UTHxiADucHwA1uyIuGeSAB4ADpLQbkwzHHNCC+KBKyGq64SOzkI3Ds4glJHw+EczhdENc7g93IgALYgThI3BQCAAC02AE87og4MBkGEFE9wF4XgI3osBGAFHBEWtwptdPoGNEQTDwZDzpdbvcoG4YmA4DCrnNXHAUcT1uwyWAKbxXn46OzdqDuXwoXy4YKEcjUU4XPpcOp1DLNGchOcgA\r\n\r\n### \ud83d\udcbb Code\r\n\r\n```ts\r\nfunction fun<T>(a: T, b: T) { }\r\n\r\nconst constraint = { required_field: true };\r\nlet b: boolean | undefined;\r\nfun(constraint, { required_field: b }); // NO ERROR; ALLOWS FOR AN OPTIONAL VALUE. WRONG!\r\n\r\nfun(constraint, { required_field: true }); // works as expected\r\nfun(constraint, { required_field: undefined }); // errors as expected; must match type of field\r\nfun(constraint, { random_field: true }); // errors as expected; no extraneous fields\r\nfun(constraint, {}); // errors as expected; must define all fields in a\r\n```\r\n\r\n\r\n### \ud83d\ude41 Actual behavior\r\n\r\nTypeScript does not bring up an error for the first case, even though an optional value is passed for a required field defined by the constraint type in the parameter `a`.\r\n\r\n### \ud83d\ude42 Expected behavior\r\n\r\nThe first case should have an error.\r\n\r\nIt is expected that the second parameter `b` should have to strictly match the type defined in the first parameter `a`. The four cases at the bottom of the code snippet align with this behavior. However, TypeScript does not find any errors with the first case, even though an optional value is being passed for a required field. This is not consistent with the previous behavior.\r\n\r\n### Additional information about the issue\r\n\r\nIt must be noted that using a variable has different behavior from simply passing the value as a parameter.\r\nFor example,\r\n```ts\r\nfun({ required: true }, { random_field: true });\r\n/*\r\nGeneric in this case is\r\n{\r\n    required: boolean;\r\n    random_field?: undefined;\r\n} | {\r\n    random_field: boolean;\r\n    required?: undefined;\r\n}\r\n*/\r\n```\r\nWhereas the problem snippet uses a variable, which seems to make the other parameter constrained to strictly match it.\r\n\r\nThe behavior seems as if giving an optional value makes the generic revert back to the same behavior as when a value is passed in rather than a variable.",
+      "closed_at": "2024-09-28T12:50:10Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60090/comments",
+      "created_at": "2024-09-28T04:29:14Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60090/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/60090",
+      "id": 2554000797,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60090/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc6YOvWd",
+      "number": 60090,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/60090/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/60090/timeline",
+      "title": "Shared generics allow optional value for a required field",
+      "type": null,
+      "updated_at": "2025-10-22T03:06:26Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/60090",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/90565423?v=4",
+        "events_url": "https://api.github.com/users/vnnh/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vnnh/followers",
+        "following_url": "https://api.github.com/users/vnnh/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vnnh/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vnnh",
+        "id": 90565423,
+        "login": "vnnh",
+        "node_id": "MDQ6VXNlcjkwNTY1NDIz",
+        "organizations_url": "https://api.github.com/users/vnnh/orgs",
+        "received_events_url": "https://api.github.com/users/vnnh/received_events",
+        "repos_url": "https://api.github.com/users/vnnh/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vnnh/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vnnh/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vnnh",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 511
+}

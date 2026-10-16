@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!-- \u26a0\ufe0f\u26a0\ufe0f Do Not Delete This! feature_request_template \u26a0\ufe0f\u26a0\ufe0f -->\r\n<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->\r\n<!-- Please search existing issues to avoid creating duplicates. -->\r\n\r\n<!-- Describe the feature you'd like. -->\r\nI'd like a setting to decide show tab index.\r\nthere are two reasons i need to submit this issue.\r\n\r\n1.It's useful for vim extension use <leader>+num to switch tab pages , and this won't disturb regular users, as it is disabled by default.\r\n2.I tried compile an oss version , but the remote-ssh Extension not support oss version.\r\n\r\nI look forward to any feedback or suggestions for improvement. Thank you for considering.",
+      "closed_at": "2024-03-30T17:43:09Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/microsoft/vscode/issues/209195/comments",
+      "created_at": "2024-03-30T17:27:43Z",
+      "events_url": "https://api.github.com/repos/microsoft/vscode/issues/209195/events",
+      "html_url": "https://github.com/microsoft/vscode/issues/209195",
+      "id": 2216593524,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/vscode/issues/209195/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAn8RLM6EHoh0",
+      "number": 209195,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/vscode/issues/209195/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/vscode",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/vscode/issues/209195/timeline",
+      "title": "Display Tab Indexes in VSCode",
+      "type": null,
+      "updated_at": "2024-06-10T20:25:48Z",
+      "url": "https://api.github.com/repos/microsoft/vscode/issues/209195",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/22972430?v=4",
+        "events_url": "https://api.github.com/users/swordjjjkkk/events{/privacy}",
+        "followers_url": "https://api.github.com/users/swordjjjkkk/followers",
+        "following_url": "https://api.github.com/users/swordjjjkkk/following{/other_user}",
+        "gists_url": "https://api.github.com/users/swordjjjkkk/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/swordjjjkkk",
+        "id": 22972430,
+        "login": "swordjjjkkk",
+        "node_id": "MDQ6VXNlcjIyOTcyNDMw",
+        "organizations_url": "https://api.github.com/users/swordjjjkkk/orgs",
+        "received_events_url": "https://api.github.com/users/swordjjjkkk/received_events",
+        "repos_url": "https://api.github.com/users/swordjjjkkk/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/swordjjjkkk/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/swordjjjkkk/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/swordjjjkkk",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2536
+}

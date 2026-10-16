@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Code\r\n\r\nI tried this code (in a crate called `foo`):\r\n\r\n```rust\r\n/// ```\r\n/// # #[macro_use] extern crate foo;\r\n///\r\n/// mockable! {}\r\n/// ```\r\nmacro_rules! mockable {\r\n    () => {};\r\n}\r\n```\r\n\r\nand run\r\n\r\n```console\r\n$ cargo t --doc\r\n```\r\n\r\nI expected to see this happen: the doctest passes\r\n\r\nInstead, this happened: the doctest fails to build with\r\n\r\n```\r\nrunning 1 test\r\ntest src/lib.rs - mockable (line 1) ... FAILED\r\n\r\nfailures:\r\n\r\n---- src/lib.rs - mockable (line 1) stdout ----\r\nerror: cannot find macro `mockable` in this scope\r\n --> src/lib.rs:4:1\r\n  |\r\n5 | mockable! {}\r\n  | ^^^^^^^^\r\n\r\nerror: aborting due to previous error\r\n```\r\n\r\n### Version it worked on\r\n\r\nIt most recently worked on: Rust 1.61.0\r\n\r\n### Version with regression\r\n\r\n`rustc --version --verbose`:\r\n```\r\nrustc 1.62.0 (a8314ef7d 2022-06-27)\r\nbinary: rustc\r\ncommit-hash: a8314ef7d0ec7b75c336af2c9857bfaf43002bfc\r\ncommit-date: 2022-06-27\r\nhost: aarch64-unknown-linux-gnu\r\nrelease: 1.62.0\r\nLLVM version: 14.0.5\r\n```\r\n\r\n### Notes\r\n\r\nIt works if I add `#[macro_export]` above the `macro_rules!`. If intended, this feels like it should be listed in the [compatibility notes](https://github.com/rust-lang/rust/blob/a8314ef7d0ec7b75c336af2c9857bfaf43002bfc/RELEASES.md#compatibility-notes).",
+      "closed_at": "2022-06-30T20:15:24Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/98735/comments",
+      "created_at": "2022-06-30T18:34:23Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/98735/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/98735",
+      "id": 1290502308,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e4008a",
+          "default": false,
+          "description": "Untriaged performance or correctness regression.",
+          "id": 2413861294,
+          "name": "regression-untriaged",
+          "node_id": "MDU6TGFiZWwyNDEzODYxMjk0",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/regression-untriaged"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/98735/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5M64Ck",
+      "number": 98735,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/98735/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/98735/timeline",
+      "title": "Regression in 1.62.0 with macro exports in doctests",
+      "type": null,
+      "updated_at": "2022-07-01T07:36:52Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/98735",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/176295?v=4",
+        "events_url": "https://api.github.com/users/jonhoo/events{/privacy}",
+        "followers_url": "https://api.github.com/users/jonhoo/followers",
+        "following_url": "https://api.github.com/users/jonhoo/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jonhoo/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/jonhoo",
+        "id": 176295,
+        "login": "jonhoo",
+        "node_id": "MDQ6VXNlcjE3NjI5NQ==",
+        "organizations_url": "https://api.github.com/users/jonhoo/orgs",
+        "received_events_url": "https://api.github.com/users/jonhoo/received_events",
+        "repos_url": "https://api.github.com/users/jonhoo/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/jonhoo/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jonhoo/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/jonhoo",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 790
+}

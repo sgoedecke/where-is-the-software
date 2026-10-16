@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<div>{1n}</div> should render 1. Instead it renders ''.  \r\n\r\nIt looks like 'bigint' just needs adding here: https://github.com/facebook/react/blob/master/packages/react-dom/src/client/ToStringValue.js#L26. \r\n\r\nHappy to raise a PR or take guidance on a better approach.\r\n\r\nReact version: all\r\n\r\n## Steps To Reproduce\r\nLink to code example: https://codepen.io/boyne/pen/vYXJWVr\r\n\r\n\r\n## The current behavior\r\nRenders \"\"\r\n\r\n\r\n## The expected behavior\r\nRenders 1\r\n",
+      "closed_at": "2024-02-26T18:18:51Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/react/react/issues/20492/comments",
+      "created_at": "2020-12-21T11:06:39Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/20492/events",
+      "html_url": "https://github.com/react/react/issues/20492",
+      "id": 772076734,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 121709921,
+          "name": "Type: Feature Request",
+          "node_id": "MDU6TGFiZWwxMjE3MDk5MjE=",
+          "url": "https://api.github.com/repos/react/react/labels/Type:%20Feature%20Request"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fef2c0",
+          "default": false,
+          "description": null,
+          "id": 127893911,
+          "name": "Component: DOM",
+          "node_id": "MDU6TGFiZWwxMjc4OTM5MTE=",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20DOM"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/20492/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU3NzIwNzY3MzQ=",
+      "number": 20492,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 6,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 6,
+        "url": "https://api.github.com/repos/react/react/issues/20492/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/20492/timeline",
+      "title": "Bug: BigInt does not get toString()'d when rendered",
+      "type": null,
+      "updated_at": "2024-02-26T18:18:51Z",
+      "url": "https://api.github.com/repos/react/react/issues/20492",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3295544?v=4",
+        "events_url": "https://api.github.com/users/andyboyne/events{/privacy}",
+        "followers_url": "https://api.github.com/users/andyboyne/followers",
+        "following_url": "https://api.github.com/users/andyboyne/following{/other_user}",
+        "gists_url": "https://api.github.com/users/andyboyne/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/andyboyne",
+        "id": 3295544,
+        "login": "andyboyne",
+        "node_id": "MDQ6VXNlcjMyOTU1NDQ=",
+        "organizations_url": "https://api.github.com/users/andyboyne/orgs",
+        "received_events_url": "https://api.github.com/users/andyboyne/received_events",
+        "repos_url": "https://api.github.com/users/andyboyne/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/andyboyne/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/andyboyne/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/andyboyne",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 4
+}

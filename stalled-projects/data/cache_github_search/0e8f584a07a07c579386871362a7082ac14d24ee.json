@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "Encountered this today in [`node-test-commit`](https://ci.nodejs.org/job/node-test-pull-request/32726/) for #33636. Looks rare, opening an issue to keep track of this.\r\n\r\nPlatform: osx\r\nTest: parallel/test-inspector-multisession-ws\r\nError log:\r\n\r\n```\r\n00:15:17.669 not ok 1417 parallel/test-inspector-multisession-ws\r\n00:15:17.669   ---\r\n00:15:17.669   duration_ms: 15.407\r\n00:15:17.670   severity: fail\r\n00:15:17.670   exitcode: 1\r\n00:15:17.670   stack: |-\r\n00:15:17.670     [test] Connecting to a child Node process\r\n00:15:17.670     [test] Testing /json/list\r\n00:15:17.670     [test] Connecting to a child Node process\r\n00:15:17.670     [test] Testing /json/list\r\n00:15:17.671     [err] Debugger listening on ws://127.0.0.1:53830/43828c02-dd89-4c4f-991b-a038fcc9aae3\r\n00:15:17.671     [err] For help, see: https://nodejs.org/en/docs/inspector\r\n00:15:17.671     [err] \r\n00:15:17.671     [err] Debugger attached.\r\n00:15:17.671     [err] Debugger attached.\r\n00:15:17.671     [err] \r\n00:15:17.671     [test] Breaking in code and verifying events are fired\r\n00:15:17.671     Timed out waiting for matching notification (Initial pause))\r\n00:15:17.671     1\r\n00:15:17.671   ...\r\n```\r\n\r\nRef: https://ci.nodejs.org/job/node-test-commit-osx/35693/nodes=osx1015/testReport/junit/(root)/test/parallel_test_inspector_multisession_ws/\r\n\r\n<!--\r\nThank you for reporting a flaky test.\r\n\r\nFlaky tests are tests that fail occasionally in the Node.js CI, but not\r\nconsistently enough to block PRs from landing, or that are failing in CI jobs or\r\ntest modes that are not run for every PR.\r\n\r\nPlease fill in as much of the template below as you're able.\r\n\r\nTest: The test that is flaky - e.g. `test-fs-stat-bigint`\r\nPlatform: The platform the test is flaky on - e.g. `macos` or `linux`\r\nConsole Output: A pasted console output from a failed CI job showing the whole\r\nfailure of the test\r\nBuild Links: Links to builds affected by the flaky test\r\n\r\nIf any investigation has been done, please include any information found, such\r\nas how consistently the test fails, whether the failure could be reproduced\r\nlocally, when the test started failing, or anything else you think is relevant.\r\n-->\r\n",
+      "closed_at": "2024-02-23T22:46:30Z",
+      "comments": 9,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/34730/comments",
+      "created_at": "2020-08-11T17:26:17Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/34730/events",
+      "html_url": "https://github.com/nodejs/node/issues/34730",
+      "id": 677056994,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9944dd",
+          "default": false,
+          "description": "Issues and PRs related to the macOS platform.",
+          "id": 235508847,
+          "name": "macos",
+          "node_id": "MDU6TGFiZWwyMzU1MDg4NDc=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/macos"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffff00",
+          "default": false,
+          "description": "Issues and PRs involving tests that fail intermittently in CI.",
+          "id": 637807400,
+          "name": "flaky-test",
+          "node_id": "MDU6TGFiZWw2Mzc4MDc0MDA=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/flaky-test"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/34730/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NzcwNTY5OTQ=",
+      "number": 34730,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/34730/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/34730/timeline",
+      "title": "Investigate test-inspector-multisession-ws",
+      "type": null,
+      "updated_at": "2024-02-23T22:46:30Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/34730",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/33557095?v=4",
+        "events_url": "https://api.github.com/users/rexagod/events{/privacy}",
+        "followers_url": "https://api.github.com/users/rexagod/followers",
+        "following_url": "https://api.github.com/users/rexagod/following{/other_user}",
+        "gists_url": "https://api.github.com/users/rexagod/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/rexagod",
+        "id": 33557095,
+        "login": "rexagod",
+        "node_id": "MDQ6VXNlcjMzNTU3MDk1",
+        "organizations_url": "https://api.github.com/users/rexagod/orgs",
+        "received_events_url": "https://api.github.com/users/rexagod/received_events",
+        "repos_url": "https://api.github.com/users/rexagod/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/rexagod/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/rexagod/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/rexagod",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 3
+}

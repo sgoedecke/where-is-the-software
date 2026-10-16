@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "BPO | [38263](https://bugs.python.org/issue38263)\n--- | :---\nNosy | @pitrou, @eryksun, @s0undt3ch, @pablogsal, @Yan Ren\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2019-09-24.10:36:39.140>\nlabels = ['build', 'library', '3.9']\ntitle = '[Windows] multiprocessing: DupHandle.detach() race condition on DuplicateHandle(DUPLICATE_CLOSE_SOURCE)'\nupdated_at = <Date 2021-04-10.01:07:14.748>\nuser = 'https://github.com/vstinner'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2021-04-10.01:07:14.748>\nactor = 'leonardo2'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['Library (Lib)']\ncreation = <Date 2019-09-24.10:36:39.140>\ncreator = 'vstinner'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 38263\nkeywords = []\nmessage_count = 8.0\nmessages = ['353064', '362460', '362466', '362471', '377296', '389832', '390229', '390683']\nnosy_count = 7.0\nnosy_names = ['pitrou', 'eryksun', 's0undt3ch', 'pablogsal', 'pemryan', 'jesvi22j', 'leonardo2']\npr_nums = []\npriority = 'normal'\nresolution = None\nstage = 'needs patch'\nstatus = 'open'\nsuperseder = None\ntype = 'compile error'\nurl = 'https://bugs.python.org/issue38263'\nversions = ['Python 3.9']\n```\n\n</p></details>\n",
+      "closed_at": "2022-11-03T17:59:34Z",
+      "comments": 9,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/82444/comments",
+      "created_at": "2019-09-24T10:36:39Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/82444/events",
+      "html_url": "https://github.com/python/cpython/issues/82444",
+      "id": 1199020412,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Standard Library Python modules in the Lib/ directory",
+          "id": 4018668725,
+          "name": "stdlib",
+          "node_id": "LA_kwDOBN0Z8c7viAS1",
+          "url": "https://api.github.com/repos/python/cpython/labels/stdlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "The build process and cross-build",
+          "id": 4018676104,
+          "name": "build",
+          "node_id": "LA_kwDOBN0Z8c7viCGI",
+          "url": "https://api.github.com/repos/python/cpython/labels/build"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772049,
+          "name": "3.9 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhR",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.9%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4204725259,
+          "name": "topic-multiprocessing",
+          "node_id": "LA_kwDOBN0Z8c76nwQL",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-multiprocessing"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/82444/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDIwNDEy",
+      "number": 82444,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/82444/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/82444/timeline",
+      "title": "[Windows] multiprocessing: DupHandle.detach() race condition on DuplicateHandle(DUPLICATE_CLOSE_SOURCE)",
+      "type": null,
+      "updated_at": "2026-07-20T00:02:57Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/82444",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/194129?v=4",
+        "events_url": "https://api.github.com/users/vstinner/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vstinner/followers",
+        "following_url": "https://api.github.com/users/vstinner/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vstinner/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vstinner",
+        "id": 194129,
+        "login": "vstinner",
+        "node_id": "MDQ6VXNlcjE5NDEyOQ==",
+        "organizations_url": "https://api.github.com/users/vstinner/orgs",
+        "received_events_url": "https://api.github.com/users/vstinner/received_events",
+        "repos_url": "https://api.github.com/users/vstinner/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vstinner/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vstinner/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vstinner",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 74
+}

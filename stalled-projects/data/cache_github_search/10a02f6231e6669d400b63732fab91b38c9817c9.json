@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MANNEQUIN",
+      "body": "BPO | [39744](https://bugs.python.org/issue39744)\n--- | :---\nNosy | @asvetlov, @1st1, @marmarek\nPRs | <li>python/cpython#18650</li>\nFiles | <li>[commmunicate-test.py](https://bugs.python.org/file48910/commmunicate-test.py \"Uploaded as text/plain at 2020-02-24.22:09:41 by @marmarek\"): Test script</li>\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2020-02-24.22:09:41.104>\nlabels = ['3.7', '3.8', '3.9', 'expert-asyncio']\ntitle = \"asyncio.subprocess's communicate(None) does not close stdin\"\nupdated_at = <Date 2020-02-24.22:35:32.276>\nuser = 'https://github.com/marmarek'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2020-02-24.22:35:32.276>\nactor = 'marmarek'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['asyncio']\ncreation = <Date 2020-02-24.22:09:41.104>\ncreator = 'marmarek'\ndependencies = []\nfiles = ['48910']\nhgrepos = []\nissue_num = 39744\nkeywords = ['patch']\nmessage_count = 2.0\nmessages = ['362605', '362606']\nnosy_count = 3.0\nnosy_names = ['asvetlov', 'yselivanov', 'marmarek']\npr_nums = ['18650']\npriority = 'normal'\nresolution = None\nstage = 'patch review'\nstatus = 'open'\nsuperseder = None\ntype = None\nurl = 'https://bugs.python.org/issue39744'\nversions = ['Python 3.7', 'Python 3.8', 'Python 3.9']\n```\n\n</p></details>\n",
+      "closed_at": "2023-05-06T05:39:23Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/83925/comments",
+      "created_at": "2020-02-24T22:09:41Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/83925/events",
+      "html_url": "https://github.com/python/cpython/issues/83925",
+      "id": 1199031127,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 557226369,
+          "name": "topic-asyncio",
+          "node_id": "MDU6TGFiZWw1NTcyMjYzNjk=",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-asyncio"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772049,
+          "name": "3.9 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhR",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.9%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018775327,
+          "name": "3.8 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viaUf",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.8%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018775329,
+          "name": "3.7 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viaUh",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.7%20(EOL)"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/83925/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDMxMTI3",
+      "number": 83925,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/83925/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/83925/timeline",
+      "title": "asyncio.subprocess's communicate(None) does not close stdin",
+      "type": null,
+      "updated_at": "2023-05-06T05:39:23Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/83925",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/92881783?v=4",
+        "events_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/events{/privacy}",
+        "followers_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/followers",
+        "following_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/following{/other_user}",
+        "gists_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 92881783,
+        "login": "eeead3fd-fe21-42fa-b466-fbf0f0b324ee",
+        "node_id": "M_kgDOBYlDdw",
+        "organizations_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/orgs",
+        "received_events_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/received_events",
+        "repos_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee/subscriptions",
+        "type": "Mannequin",
+        "url": "https://api.github.com/users/eeead3fd-fe21-42fa-b466-fbf0f0b324ee",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 91
+}

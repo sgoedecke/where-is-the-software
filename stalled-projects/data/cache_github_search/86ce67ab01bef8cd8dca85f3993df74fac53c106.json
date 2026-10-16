@@ -1,0 +1,159 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Preflight Checklist\n\n- [x] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [x] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [x] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a bug report that matches the one I want to file, without success.\n\n### Electron Version\n\n42.5.1\n\n### What operating system(s) are you using?\n\nOther (specify below)\n\n### Operating System Version\n\nfedora 44.1.7\n\n### What arch are you using?\n\nx64\n\n### Last Known Working Electron version\n\n37.10.3\n\n### Does the issue also appear in Chromium / Google Chrome?\n\nI don't know how to test\n\n### Expected Behavior\n\nUsing mainWindow.setBounds({x: 100, y: 100}) , it should be possible to move the window\n\n### Actual Behavior\n\nwindow always opens in the center of the screen and it is not possible to move it programmatically.\nnot by setBounds or setPosition or specifying the bounds when creating the window\n\n### Testcase Gist URL\n\nhttps://gist.github.com/t57ser/a151d0206ac0091eb3c804054ee688e2\n\n### Additional Information\n\n_No response_",
+      "closed_at": "2026-06-30T11:34:15Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/52204/comments",
+      "created_at": "2026-06-30T10:42:30Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/52204/events",
+      "html_url": "https://github.com/electron/electron/issues/52204",
+      "id": 4775994886,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 97403642,
+          "name": "platform/linux",
+          "node_id": "MDU6TGFiZWw5NzQwMzY0Mg==",
+          "url": "https://api.github.com/repos/electron/electron/labels/platform/linux"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "",
+          "id": 520323169,
+          "name": "bug :beetle:",
+          "node_id": "MDU6TGFiZWw1MjAzMjMxNjk=",
+          "url": "https://api.github.com/repos/electron/electron/labels/bug%20:beetle:"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9d0c4",
+          "default": false,
+          "description": "",
+          "id": 1395832062,
+          "name": "component/BrowserWindow",
+          "node_id": "MDU6TGFiZWwxMzk1ODMyMDYy",
+          "url": "https://api.github.com/repos/electron/electron/labels/component/BrowserWindow"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c2e0c6",
+          "default": false,
+          "description": "Issue can be reproduced with code at https://gist.github.com/",
+          "id": 2285277606,
+          "name": "has-repro-gist",
+          "node_id": "MDU6TGFiZWwyMjg1Mjc3NjA2",
+          "url": "https://api.github.com/repos/electron/electron/labels/has-repro-gist"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6FF496",
+          "default": false,
+          "description": "",
+          "id": 4329563274,
+          "name": "wayland",
+          "node_id": "LA_kwDOAI8xS88AAAABAg_kig",
+          "url": "https://api.github.com/repos/electron/electron/labels/wayland"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "8d9ee8",
+          "default": false,
+          "description": "",
+          "id": 10422753336,
+          "name": "42-x-y",
+          "node_id": "LA_kwDOAI8xS88AAAACbT6YOA",
+          "url": "https://api.github.com/repos/electron/electron/labels/42-x-y"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/52204/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS88AAAABHKvmBg",
+      "number": 52204,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/52204/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/52204/timeline",
+      "title": "Not possible to move window programmatically on fedora",
+      "type": {
+        "color": "red",
+        "created_at": "2024-01-25T14:31:12Z",
+        "description": "An unexpected problem or behavior",
+        "id": 1725379,
+        "is_enabled": true,
+        "name": "Bug",
+        "node_id": "IT_kwDOAMybxs4AGlPD",
+        "updated_at": "2024-07-26T10:30:10Z"
+      },
+      "updated_at": "2026-06-30T11:41:22Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/52204",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10595986?v=4",
+        "events_url": "https://api.github.com/users/t57ser/events{/privacy}",
+        "followers_url": "https://api.github.com/users/t57ser/followers",
+        "following_url": "https://api.github.com/users/t57ser/following{/other_user}",
+        "gists_url": "https://api.github.com/users/t57ser/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/t57ser",
+        "id": 10595986,
+        "login": "t57ser",
+        "node_id": "MDQ6VXNlcjEwNTk1OTg2",
+        "organizations_url": "https://api.github.com/users/t57ser/orgs",
+        "received_events_url": "https://api.github.com/users/t57ser/received_events",
+        "repos_url": "https://api.github.com/users/t57ser/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/t57ser/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/t57ser/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/t57ser",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 124
+}

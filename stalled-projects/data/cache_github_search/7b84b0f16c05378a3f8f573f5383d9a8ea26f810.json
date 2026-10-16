@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "I'm on **Windows 11**, I don't have administration privilege and I'm not using the default path for space reason.\r\n\r\nWhen I was installing the latest stable Rust compiler, I wanted it to be installed in the `D:` Drive instead of the default path. I changed the value of `RUSTUP_HOME` and `CARHO_HOME` to a custom folder in the `D:` Drive but when I try installing the compiler it output an error of linking:\r\n\r\n```\r\nerror: could not create link from 'D:\\Tools\\rust\\bin\\rustup.exe' to 'D:\\Tools\\rust\\bin\\rust-analyzer.exe'\r\n```\r\n\r\nIn the folder their is only a `bin/rustup.exe`.\r\n\r\nThe only solution was to use the default value, wait for it to install then move it but it's not really practical and it's slow.\r\n\r\n---\r\n\r\nWhen using my method to install the compiler, I tried executing this command `rustup update` it tell me warnings and an error, then deleting `rustc.exe` which render Rust compiler unusable:\r\n\r\n```\r\nwarning: tool `rust-analyzer` is already installed, remove it from `D:\\Tools\\rust\\bin`, then run `rustup update` to have rustup manage this tool.\r\nwarning: tool `rustfmt` is already installed, remove it from `D:\\Tools\\rust\\bin`, then run `rustup update` to have rustup manage this tool.\r\nwarning: tool `cargo-fmt` is already installed, remove it from `D:\\Tools\\rust\\bin`, then run `rustup update` to have rustup manage this tool.\r\nerror: could not create link from 'D:\\Tools\\rust\\bin\\rustup.exe' to 'D:\\Tools\\rust\\bin\\rustc.exe'\r\n```\r\n\r\n---\r\n\r\nThis also seem to cause problem with cargo because when trying to install a dependency it always tell me an error occurred (I don't have a specific exemple, I will reinstall everything to show it later).",
+      "closed_at": "2023-06-30T10:39:24Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/113193/comments",
+      "created_at": "2023-06-30T10:05:36Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/113193/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/113193",
+      "id": 1782259483,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/113193/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5qOx8b",
+      "number": 113193,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/113193/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/113193/timeline",
+      "title": "Rust compiler & cargo issues with installation outside of default path",
+      "type": null,
+      "updated_at": "2023-06-30T10:39:24Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/113193",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/110781915?v=4",
+        "events_url": "https://api.github.com/users/JojoFR1/events{/privacy}",
+        "followers_url": "https://api.github.com/users/JojoFR1/followers",
+        "following_url": "https://api.github.com/users/JojoFR1/following{/other_user}",
+        "gists_url": "https://api.github.com/users/JojoFR1/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/JojoFR1",
+        "id": 110781915,
+        "login": "JojoFR1",
+        "node_id": "U_kgDOBppl2w",
+        "organizations_url": "https://api.github.com/users/JojoFR1/orgs",
+        "received_events_url": "https://api.github.com/users/JojoFR1/received_events",
+        "repos_url": "https://api.github.com/users/JojoFR1/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/JojoFR1/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/JojoFR1/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/JojoFR1",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 848
+}

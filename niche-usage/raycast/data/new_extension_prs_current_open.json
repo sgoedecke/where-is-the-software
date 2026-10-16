@@ -1,0 +1,4 @@
+{
+  "query": "repo:raycast/extensions type:pr label:\"new extension\" state:open",
+  "current_open": 236
+}

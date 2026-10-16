@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Godot version\r\n\r\n4.0.3 AND 4.1 RC 2\r\n\r\n### System information\r\n\r\nWindows 10 64 bit. Godot Mono. Ryzen 5, RX 6000, .Net 6 iirc\r\n\r\n### Issue description\r\n\r\nNew issue after investigation from:\r\nhttps://github.com/godotengine/godot/issues/78863\r\n\r\nWhen you have a character spawning projectiles to shoot, and shooting with a `MoveAndSlide()` in C# in the same `_PhysicsProcess(double delta)` method, random crashes can occur that ARE NOT HANDLED BY TRY CATCH IN C#. \r\n\r\nSEMI INCONSISTENT BECAUSE... it can take anywhere from 3 to 160 shots for it to crash on my Ryzen 5000 PC.\r\n\r\n![image](https://github.com/godotengine/godot/assets/32988055/cf3bb149-3818-4632-b25c-c6c4ede2631f)\r\n\r\n\r\n### Steps to reproduce\r\n\r\nI have a player character. If he shoots projectiles with \r\n![image](https://github.com/godotengine/godot/assets/32988055/28dd5962-d458-4b43-bf02-5d10dfc46284)\r\n\r\nAnd you spawn it in the script below (doesn't take input directly) it will cause random crashing. \r\nMore likely to crash when moving.\r\nIf you have a second character with the script below and shoot that character, it can also cause crashes. \r\n\r\n### Minimal reproduction project\r\n\r\nAs far as I can tell, it will crash with the following script at the bottom.\r\n\r\n```cs\r\nusing Godot;\r\nusing System;\r\n\r\npublic partial class PlayerPawn : CharacterBody3D {\r\n\tpublic const float Speed = 5.0f;\r\n\tpublic const float JumpVelocity = 4.5f;\r\n\r\n\t// Get the gravity from the project settings to be synced with RigidBody nodes.\r\n\tpublic static float gravity = ProjectSettings.GetSetting(\"physics/3d/default_gravity\").AsSingle();\r\n\r\n\tVector2 inputDir = Vector2.Zero;\r\n\r\n\t[Export]\r\n\tpublic Camera3D camera;\r\n    [Export]\r\n    float mouseSensitivity = .003f;\r\n\t[Export]\r\n\tPackedScene bb;\r\n\t[Export]\r\n\tNode3D bbSpawn;\r\n\r\n\tbool hitAndOut = false;\r\n\r\n\tbool shooting = false;\r\n\tstatic double[] shootingDelay = { .2, .4, .6 };\r\n\r\n\tpublic void SetHitAndOut(bool newValue) {\r\n\t\thitAndOut = newValue;\r\n    }\r\n\r\n    public void ReceiveInput(ClientToServerControllerInput input, bool pressed) {\r\n\r\n\t\tif (hitAndOut) {\r\n\t\t\tshooting = false;\r\n\t\t\tinputDir = Vector2.Zero;\r\n            return;\r\n        }\r\n\r\n        switch (input) {\r\n\t\t\tcase ClientToServerControllerInput.MoveForward:\r\n\t\t\t\tif (pressed)\r\n\t\t\t\t\tinputDir.Y -= 1;\r\n\t\t\t\telse\r\n\t\t\t\t\tinputDir.Y += 1;\r\n\t\t\t\tbreak;\r\n\t\t\tcase ClientToServerControllerInput.MoveBackward:\r\n\t\t\t\tif (pressed)\r\n\t\t\t\t\tinputDir.Y += 1;\r\n\t\t\t\telse\r\n\t\t\t\t\tinputDir.Y -= 1;\r\n                break;\r\n\t\t\tcase ClientToServerControllerInput.MoveLeft:\r\n\t\t\t\tif (pressed)\r\n\t\t\t\t\tinputDir.X -= 1;\r\n\t\t\t\telse\r\n\t\t\t\t\tinputDir.X += 1;\r\n                break;\r\n\t\t\tcase ClientToServerControllerInput.MoveRight:\r\n\t\t\t\tif (pressed)\r\n\t\t\t\t\tinputDir.X += 1;\r\n\t\t\t\telse\r\n\t\t\t\t\tinputDir.X -= 1;\r\n                break;\r\n\t\t\tcase ClientToServerControllerInput.Shoot:\r\n\t\t\t\tif (pressed) shooting = true;\r\n\t\t\t\telse shooting = false;\r\n\t\t\t\tbreak;\r\n\t\t\tdefault:\r\n\t\t\t\tbreak;\r\n\t\t}\r\n\t}\r\n\r\n\tpublic void ReceiveLookInput(Vector2 mouseMovement) {\r\n        RotateObjectLocal(Vector3.Down, mouseMovement.X * mouseSensitivity);\r\n        camera.RotateObjectLocal(Vector3.Left, mouseMovement.Y * mouseSensitivity);\r\n    }\r\n\r\n\tdouble shootTimer = 0.0;\r\n\tpublic override void _PhysicsProcess(double delta) {\r\n\t\t\r\n\r\n        #region shooting\r\n        shootTimer += delta;\r\n        if (shooting && shootTimer >= shootingDelay[0]) {\r\n\t\t\tshootTimer = 0.0;\r\n\t\t\tBB newBB = bb.Instantiate<BB>();\r\n            newBB.Position = bbSpawn.GlobalPosition;\r\n            newBB.Rotation = bbSpawn.GlobalRotation;\r\n            GetParent().AddChild(newBB);\r\n            //GlobalTransform.Basis.GetEuler();\r\n\r\n        }\r\n\t\t#endregion\r\n\r\n\r\n\t\t#region movement\r\n\t\t//Vector3 velocity = Velocity;\r\n\t\tVector3 velocity;\r\n\t\tvelocity.X = inputDir.X;\r\n\t\tvelocity.Z = inputDir.Y;\r\n\t\tvelocity.Y = 0;\r\n\r\n\t\t// Add the gravity.\r\n\t\tif (!IsOnFloor())\r\n\t\t\tvelocity.Y -= gravity * (float)delta;\r\n\r\n        // Get the input direction and handle the movement/deceleration.\r\n        // As good practice, you should replace UI actions with custom gameplay actions.\r\n        //Vector2 inputDir = Input.GetVector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\");\r\n\t\tVector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();\r\n\t\tif (direction != Vector3.Zero) {\r\n\t\t\tvelocity.X = direction.X * Speed;\r\n\t\t\tvelocity.Z = direction.Z * Speed;\r\n\t\t}\r\n\t\telse {\r\n\t\t\tvelocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);\r\n\t\t\tvelocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);\r\n\t\t}\r\n\r\n\t\tvelocity.Rotated(Vector3.Up, Rotation.Y);\r\n\r\n\t\tVelocity = velocity;\r\n\t\ttry {\r\n\t\t\tMoveAndSlide();\r\n\t\t}\r\n\t\tcatch (Exception e) { }\r\n        #endregion\r\n    }\r\n}```",
+      "closed_at": "2023-06-30T22:24:28Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/78884/comments",
+      "created_at": "2023-06-30T18:42:02Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/78884/events",
+      "html_url": "https://github.com/godotengine/godot/issues/78884",
+      "id": 1783002998,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/78884/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc5qRnd2",
+      "number": 78884,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/78884/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/78884/timeline",
+      "title": "Move And Slide Random Crash C# CharacterBody3D. Semi-Inconsistent. ",
+      "type": null,
+      "updated_at": "2023-06-30T22:32:33Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/78884",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/32988055?v=4",
+        "events_url": "https://api.github.com/users/hislittlecuzin/events{/privacy}",
+        "followers_url": "https://api.github.com/users/hislittlecuzin/followers",
+        "following_url": "https://api.github.com/users/hislittlecuzin/following{/other_user}",
+        "gists_url": "https://api.github.com/users/hislittlecuzin/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/hislittlecuzin",
+        "id": 32988055,
+        "login": "hislittlecuzin",
+        "node_id": "MDQ6VXNlcjMyOTg4MDU1",
+        "organizations_url": "https://api.github.com/users/hislittlecuzin/orgs",
+        "received_events_url": "https://api.github.com/users/hislittlecuzin/received_events",
+        "repos_url": "https://api.github.com/users/hislittlecuzin/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/hislittlecuzin/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/hislittlecuzin/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/hislittlecuzin",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1097
+}

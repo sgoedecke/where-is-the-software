@@ -1,0 +1,13 @@
+name,slug,first_listed,target_age_days,target_date,current_downloads,wayback_downloads,status,url
+STEP Importer,step-importer,2026-06-16,90,20260914,28908,0,no_download_parse,https://web.archive.org/web/20260914id_/https://extensions.blender.org/add-ons/step-importer/
+3MF Import/Export,threemf-io,2026-03-29,90,20260627,105015,0,no_download_parse,https://web.archive.org/web/20260627id_/https://extensions.blender.org/add-ons/threemf-io/
+3MF Import/Export,threemf-io,2026-03-29,180,20260925,105015,0,no_download_parse,https://web.archive.org/web/20260925id_/https://extensions.blender.org/add-ons/threemf-io/
+Easy Tree,easy-tree,2025-07-15,90,20251013,68537,0,no_download_parse,https://web.archive.org/web/20251013id_/https://extensions.blender.org/add-ons/easy-tree/
+Easy Tree,easy-tree,2025-07-15,180,20260111,68537,38572,ok,https://web.archive.org/web/20260111id_/https://extensions.blender.org/add-ons/easy-tree/
+Modern Primitive,modern-primitive,2025-12-18,90,20260318,80971,56189,ok,https://web.archive.org/web/20260318id_/https://extensions.blender.org/add-ons/modern-primitive/
+Modern Primitive,modern-primitive,2025-12-18,180,20260616,80971,65765,ok,https://web.archive.org/web/20260616id_/https://extensions.blender.org/add-ons/modern-primitive/
+MMD Tools,mmd-tools,2025-09-02,90,20251201,593438,0,no_download_parse,https://web.archive.org/web/20251201id_/https://extensions.blender.org/add-ons/mmd-tools/
+MMD Tools,mmd-tools,2025-09-02,180,20260301,593438,0,no_download_parse,https://web.archive.org/web/20260301id_/https://extensions.blender.org/add-ons/mmd-tools/
+VRM format,vrm,2026-06-07,90,20260905,313866,285158,ok,https://web.archive.org/web/20260905id_/https://extensions.blender.org/add-ons/vrm/
+Ucupaint,ucupaint,2025-06-03,90,20250901,264154,,error:<urlopen error [Errno 61] Connection refused>,https://web.archive.org/web/20250901id_/https://extensions.blender.org/add-ons/ucupaint/
+Ucupaint,ucupaint,2025-06-03,180,20251130,264154,,error:<urlopen error [Errno 61] Connection refused>,https://web.archive.org/web/20251130id_/https://extensions.blender.org/add-ons/ucupaint/

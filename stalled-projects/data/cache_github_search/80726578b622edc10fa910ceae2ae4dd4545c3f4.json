@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\n20.17.0\n\n### Platform\n\n```text\nDarwin x.home 24.0.0 Darwin Kernel Version 24.0.0: Mon Aug 12 20:52:18 PDT 2024; root:xnu-11215.1.10~2/RELEASE_ARM64_T8122 arm64\n```\n\n\n### Subsystem\n\nBuffer/Blob\n\n### What steps will reproduce the bug?\n\n```js\r\nnew Blob(['aaaaaaaa']).slice(0, 1.5)\r\n```\n\n### How often does it reproduce? Is there a required condition?\n\nAlways, no special requirements needed.\n\n### What is the expected behavior? Why is that the expected behavior?\n\nI would not expect Node to crash with a native error, as this is not possible/easy to catch.\n\n### What do you see instead?\n\n```\r\n$ node -e \"new Blob(['aaaaaaaa']).slice(0, 1.5)\"\r\n\r\n  #  node[76610]: static void node::Blob::ToSlice(const FunctionCallbackInfo<v8::Value> &) at ../src/node_blob.cc:248\r\n  #  Assertion failed: args[1]->IsUint32()\r\n\r\n----- Native stack trace -----\r\n\r\n 1: 0x1043430d4 node::Assert(node::AssertionInfo const&) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 2: 0x10584e098 node::Blob::ToSlice(v8::FunctionCallbackInfo<v8::Value> const&) (.cold.1) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 3: 0x104314e08 node::Blob::HasInstance(node::Environment*, v8::Local<v8::Value>) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 4: 0x104539bc8 v8::internal::MaybeHandle<v8::internal::Object> v8::internal::(anonymous namespace)::HandleApiCallHelper<false>(v8::internal::Isolate*, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::FunctionTemplateInfo>, v8::internal::Handle<v8::internal::Object>, unsigned long*, int) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 5: 0x1045392c0 v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 6: 0x104dc0b24 Builtins_CEntry_Return1_ArgvOnStack_BuiltinExit [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 7: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 8: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n 9: 0x104d3650c Builtins_JSEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n10: 0x104d361f4 Builtins_JSEntry [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n11: 0x10460dbc8 v8::internal::(anonymous namespace)::Invoke(v8::internal::Isolate*, v8::internal::(anonymous namespace)::InvokeParams const&) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n12: 0x10460dda0 v8::internal::Execution::CallScript(v8::internal::Isolate*, v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n13: 0x1044d3bb0 v8::Script::Run(v8::Local<v8::Context>, v8::Local<v8::Data>) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n14: 0x1043364f4 node::contextify::ContextifyScript::EvalMachine(v8::Local<v8::Context>, node::Environment*, long long, bool, bool, bool, v8::MicrotaskQueue*, v8::FunctionCallbackInfo<v8::Value> const&) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n15: 0x104335e08 node::contextify::ContextifyScript::RunInContext(v8::FunctionCallbackInfo<v8::Value> const&) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n16: 0x104539bc8 v8::internal::MaybeHandle<v8::internal::Object> v8::internal::(anonymous namespace)::HandleApiCallHelper<false>(v8::internal::Isolate*, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::Handle<v8::internal::FunctionTemplateInfo>, v8::internal::Handle<v8::internal::Object>, unsigned long*, int) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n17: 0x1045392c0 v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n18: 0x104dc0b24 Builtins_CEntry_Return1_ArgvOnStack_BuiltinExit [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n19: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n20: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n21: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n22: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n23: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n24: 0x104d383e4 Builtins_InterpreterEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n25: 0x104d3650c Builtins_JSEntryTrampoline [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n26: 0x104d361f4 Builtins_JSEntry [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n27: 0x10460dbc8 v8::internal::(anonymous namespace)::Invoke(v8::internal::Isolate*, v8::internal::(anonymous namespace)::InvokeParams const&) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n28: 0x10460d014 v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n29: 0x1044e7904 v8::Function::Call(v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n30: 0x1043243e4 node::builtins::BuiltinLoader::CompileAndCall(v8::Local<v8::Context>, char const*, node::Realm*) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n31: 0x1043b414c node::Realm::ExecuteBootstrapper(char const*) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n32: 0x104307bb4 node::StartExecution(node::Environment*, std::__1::function<v8::MaybeLocal<v8::Value> (node::StartExecutionCallbackInfo const&)>) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n33: 0x1042713a4 node::LoadEnvironment(node::Environment*, std::__1::function<v8::MaybeLocal<v8::Value> (node::StartExecutionCallbackInfo const&)>, std::__1::function<void (node::Environment*, v8::Local<v8::Value>, v8::Local<v8::Value>)>) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n34: 0x104383394 node::NodeMainInstance::Run(node::ExitCode*, node::Environment*) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n35: 0x104383104 node::NodeMainInstance::Run() [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n36: 0x10430afa0 node::Start(int, char**) [/Users/neo/.nvm/versions/node/v20.17.0/bin/node]\r\n37: 0x183130274 start [/usr/lib/dyld]\r\n\r\n----- JavaScript stack trace -----\r\n\r\n1: slice (node:internal/blob:265:21)\r\n2: [eval]:1:24\r\n3: runScriptInThisContext (node:internal/vm:209:10)\r\n4: node:internal/process/execution:118:14\r\n5: [eval]-wrapper:6:24\r\n6: runScript (node:internal/process/execution:101:62)\r\n7: evalScript (node:internal/process/execution:133:3)\r\n8: node:internal/main/eval_string:51:3\r\n\r\n\r\nAbort trap: 6\r\n```\n\n### Additional information\n\nThe functionality of Node v20 seems to have changed as of v20.15.0. v20.14.0 does not crash with this repro.\r\n\r\nI have tested with v22.9.0 and it experiences the same crash.\r\n\r\nv18.20.4 does not crash.",
+      "closed_at": "2024-09-29T09:51:11Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/55139/comments",
+      "created_at": "2024-09-27T08:14:54Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/55139/events",
+      "html_url": "https://github.com/nodejs/node/issues/55139",
+      "id": 2552307289,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fc2929",
+          "default": false,
+          "description": "Issues and PRs for confirmed bugs.",
+          "id": 151728674,
+          "name": "confirmed-bug",
+          "node_id": "MDU6TGFiZWwxNTE3Mjg2NzQ=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/confirmed-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7c6c7",
+          "default": false,
+          "description": "Issues and PRs related to the buffer subsystem.",
+          "id": 155267414,
+          "name": "buffer",
+          "node_id": "MDU6TGFiZWwxNTUyNjc0MTQ=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/buffer"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/55139/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs86YIR5Z",
+      "number": 55139,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 1,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/nodejs/node/issues/55139/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/55139/timeline",
+      "title": "Assertion failed: `args[1]->IsUint32()` when slicing Blob with non-integer parameters",
+      "type": null,
+      "updated_at": "2024-09-29T09:51:11Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/55139",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/964245?v=4",
+        "events_url": "https://api.github.com/users/daniellockyer/events{/privacy}",
+        "followers_url": "https://api.github.com/users/daniellockyer/followers",
+        "following_url": "https://api.github.com/users/daniellockyer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/daniellockyer/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/daniellockyer",
+        "id": 964245,
+        "login": "daniellockyer",
+        "node_id": "MDQ6VXNlcjk2NDI0NQ==",
+        "organizations_url": "https://api.github.com/users/daniellockyer/orgs",
+        "received_events_url": "https://api.github.com/users/daniellockyer/received_events",
+        "repos_url": "https://api.github.com/users/daniellockyer/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/daniellockyer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/daniellockyer/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/daniellockyer",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 271
+}

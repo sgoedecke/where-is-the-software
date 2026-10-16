@@ -1,0 +1,23 @@
+[
+  {
+    "cohort": "2025H2",
+    "n": 14978,
+    "ai_themed_text_hits": 1383,
+    "ai_themed_adu_ge_10": 372,
+    "explicit_ai_built_text_hits": 173
+  },
+  {
+    "cohort": "2026H1",
+    "n": 20096,
+    "ai_themed_text_hits": 3048,
+    "ai_themed_adu_ge_10": 646,
+    "explicit_ai_built_text_hits": 470
+  },
+  {
+    "cohort": "2026H2",
+    "n": 20120,
+    "ai_themed_text_hits": 2818,
+    "ai_themed_adu_ge_10": 226,
+    "explicit_ai_built_text_hits": 386
+  }
+]

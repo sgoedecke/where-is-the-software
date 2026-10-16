@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "On #123842, I'd have expected the \"Google testing\" check to run, but I don't see it anywhere in the list of checks.\r\n\r\n* It's had plenty of time to start; the last update to the PR was over 2 hours ago.\r\n* It's [documented](https://github.com/flutter/flutter/wiki/Understanding-google-testing) to start when a Flutter hacker approves the PR.\r\n\r\n  The PR's author (me) is a Flutter hacker, so I'd expect that to count, just like it counts toward the two approvals required by the autosubmit bot. And I think I've seen that working on other PRs.\r\n\r\nIs this intended behavior in some way? Or is there a bug or an operational issue?\r\n\r\nPossible related issues:\r\n* Sometimes the check does appear, but stays in \"Pending\" status indefinitely: #123289\r\n* Other issues linked to from that one.\r\n",
+      "closed_at": "2023-03-31T19:41:36Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/123889/comments",
+      "created_at": "2023-03-31T19:32:30Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/123889/events",
+      "html_url": "https://github.com/flutter/flutter/issues/123889",
+      "id": 1649908080,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/123889/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM5iV5lw",
+      "number": 123889,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/123889/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/123889/timeline",
+      "title": "Google testing didn't run on a PR",
+      "type": null,
+      "updated_at": "2023-04-14T21:00:36Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/123889",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/28173?v=4",
+        "events_url": "https://api.github.com/users/gnprice/events{/privacy}",
+        "followers_url": "https://api.github.com/users/gnprice/followers",
+        "following_url": "https://api.github.com/users/gnprice/following{/other_user}",
+        "gists_url": "https://api.github.com/users/gnprice/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/gnprice",
+        "id": 28173,
+        "login": "gnprice",
+        "node_id": "MDQ6VXNlcjI4MTcz",
+        "organizations_url": "https://api.github.com/users/gnprice/orgs",
+        "received_events_url": "https://api.github.com/users/gnprice/received_events",
+        "repos_url": "https://api.github.com/users/gnprice/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/gnprice/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/gnprice/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/gnprice",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2769
+}

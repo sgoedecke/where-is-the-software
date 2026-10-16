@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "**Do you want to request a *feature* or report a *bug*?**\r\n\r\nBug (possibly)\r\n\r\n**What is the current behavior?**\r\n\r\nThis may, in fact, fall under the purview of `Only special keys are supported, all others depend on keyboard layout or browser` but figured I'd enter this to be sure.  Additionally, the bookmark in the link specified in the `@see` comment is no longer valid so I can't confirm the official list of keys.  Looking at [the latest version of the spec](https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode), the key in question appears in the `Optionally fixed virtual keys` section rather than the `Fixed virtual keys` section, but then, none of the 1xx keys appear at all in the fixed list.\r\n\r\nThe `translateToKey` hash in the `react-dom` package's `getEventKey` function appears to be missing the `-` (dash) key.  When used with CTRL+SHIFT, this key (and probably others) is reported as `Unidentified` in IE11 and since it's not in the `translateToKey` map, returns back to the code as `Unidentified` which breaks keyboard shortcut handling.\r\n\r\nThis can be seen by navigating to https://w3c.github.io/uievents/tools/key-event-viewer.html and in IE11, pressing `CTRL + SHIFT + -` (note that you will need to check `keydown` under `preventDefault` in the options table or the browser will zoom out.\r\n\r\n**What is the expected behavior?**\r\n\r\nIf it's a bug, it shouldn't allow resolution to just fall through back to the browser.  If it's not, then the code is correct - but then requires special handling.\r\n\r\nIf I add `'189': '-'` to the hash, it works...on a US Keyboard.\r\n\r\n**Which versions of React, and which browser / OS are affected by this issue? Did this work in previous versions of React?**\r\n\r\nTested on React 16.6.1 in IE11 on Windows.",
+      "closed_at": "2022-03-29T23:07:43Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/react/react/issues/14337/comments",
+      "created_at": "2018-11-27T20:57:59Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/14337/events",
+      "html_url": "https://github.com/react/react/issues/14337",
+      "id": 384982771,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 69105383,
+          "name": "Browser: IE",
+          "node_id": "MDU6TGFiZWw2OTEwNTM4Mw==",
+          "url": "https://api.github.com/repos/react/react/labels/Browser:%20IE"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fef2c0",
+          "default": false,
+          "description": null,
+          "id": 127893911,
+          "name": "Component: DOM",
+          "node_id": "MDU6TGFiZWwxMjc4OTM5MTE=",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20DOM"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "65AA9C",
+          "default": false,
+          "description": "",
+          "id": 710722093,
+          "name": "Type: Needs Investigation",
+          "node_id": "MDU6TGFiZWw3MTA3MjIwOTM=",
+          "url": "https://api.github.com/repos/react/react/labels/Type:%20Needs%20Investigation"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/14337/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzODQ5ODI3NzE=",
+      "number": 14337,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/14337/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/14337/timeline",
+      "title": "[react-dom] getEventKey has IE11 key mapping issue",
+      "type": null,
+      "updated_at": "2022-03-29T23:07:43Z",
+      "url": "https://api.github.com/repos/react/react/issues/14337",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/370054?v=4",
+        "events_url": "https://api.github.com/users/icfantv/events{/privacy}",
+        "followers_url": "https://api.github.com/users/icfantv/followers",
+        "following_url": "https://api.github.com/users/icfantv/following{/other_user}",
+        "gists_url": "https://api.github.com/users/icfantv/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/icfantv",
+        "id": 370054,
+        "login": "icfantv",
+        "node_id": "MDQ6VXNlcjM3MDA1NA==",
+        "organizations_url": "https://api.github.com/users/icfantv/orgs",
+        "received_events_url": "https://api.github.com/users/icfantv/received_events",
+        "repos_url": "https://api.github.com/users/icfantv/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/icfantv/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/icfantv/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/icfantv",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 18
+}

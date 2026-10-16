@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Neovim version (nvim -v)\n\nv0.8.1\n\n### Vim (not Nvim) behaves the same?\n\nVim doesn't use the Lua API\n\n### Operating system/version\n\nmacOS 12.6.2\n\n### Terminal name/version\n\niTerm2\n\n### $TERM environment variable\n\n3.5.0beta8\n\n### Installation\n\nHomebrew\n\n### How to reproduce the issue\n\n- Install neodev and set up neovim for plugin development such that sumneko_lua linters are linting your lua files\r\n- When calling `vim.fn.getline(\".\")`, note that you get a linter error telling you that the function only accepts `number`.\r\n- Read the documentation. Documentation says:\r\n\r\n```\r\n-- When {lnum} is a String that doesn't start with a\r\n-- digit, |line()| is called to translate the String into a Number.\r\n-- To get the line under the cursor: \r\n-- ```vim\r\n--   getline(\".\")\r\n-- ```\r\n```\r\n\r\n- From this, I infer that passing the string `\".\"` should be valid, but the linter does not agree (because it is referencing the documentation).\r\n\r\nPlease update the docstrings such that `string` is an accepted value (or, better yet, create an alias that allows for any number and then a string whose value can only be `\".\"`)\n\n### Expected behavior\n\nLinter would accept `\".\"` as a valid value for `getline()`\n\n### Actual behavior\n\nLinter shows a warning saying that the type doesn't match what is stated in the documentation.",
+      "closed_at": "2022-12-28T20:16:34Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/21575/comments",
+      "created_at": "2022-12-28T19:53:22Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/21575/events",
+      "html_url": "https://github.com/neovim/neovim/issues/21575",
+      "id": 1513111290,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e6e6e6",
+          "default": false,
+          "description": "Issues that are closed as \"invalid\"",
+          "id": 77997477,
+          "name": "closed:invalid",
+          "node_id": "MDU6TGFiZWw3Nzk5NzQ3Nw==",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/closed:invalid"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/21575/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM5aMD76",
+      "number": 21575,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/21575/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/21575/timeline",
+      "title": "`vim.fn.getline` function's `lnum` parameter is typed as a `number` when it should be `number|string` (or something equivalent)",
+      "type": null,
+      "updated_at": "2022-12-28T22:36:31Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/21575",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/8128941?v=4",
+        "events_url": "https://api.github.com/users/macintacos/events{/privacy}",
+        "followers_url": "https://api.github.com/users/macintacos/followers",
+        "following_url": "https://api.github.com/users/macintacos/following{/other_user}",
+        "gists_url": "https://api.github.com/users/macintacos/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/macintacos",
+        "id": 8128941,
+        "login": "macintacos",
+        "node_id": "MDQ6VXNlcjgxMjg5NDE=",
+        "organizations_url": "https://api.github.com/users/macintacos/orgs",
+        "received_events_url": "https://api.github.com/users/macintacos/received_events",
+        "repos_url": "https://api.github.com/users/macintacos/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/macintacos/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/macintacos/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/macintacos",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 242
+}

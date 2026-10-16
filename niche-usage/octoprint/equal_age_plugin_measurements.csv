@@ -1,0 +1,147 @@
+id,title,cohort,published,snapshot_date,age_days,instances_month,total_instances,normalised_to_current_total,source
+longpathsdlist,OctoPrint-Longpathsdlist,2021H1,2021-01-03,2021-10-05,275,356,,,wayback:plugins_json
+timetofilament,OctoPrint-TimeToFilament,2021H1,2021-01-14,2021-10-05,264,694,,,wayback:plugins_json
+webdavbackup,WebDAV Backup,2021H1,2021-01-16,2021-10-05,262,98,,,wayback:plugins_json
+octobuddy,OctoBuddy,2021H1,2021-01-17,2021-10-05,261,200,,,wayback:plugins_json
+octolight,OctoLight,2021H1,2021-01-18,2021-10-05,260,727,,,wayback:plugins_json
+usb_keyboard,USB Keyboard,2021H1,2021-01-20,2021-10-05,258,194,,,wayback:plugins_json
+toptemp,Top Temp,2021H1,2021-01-24,2021-10-05,254,2143,,,wayback:plugins_json
+meatpack,MeatPack,2021H1,2021-01-26,2021-10-05,252,279,,,wayback:plugins_json
+simplyprint,SimplyPrint Cloud,2021H1,2021-02-02,2021-10-05,245,502,,,wayback:plugins_json
+robotcontrol,Robot Control,2021H1,2021-02-11,2021-10-05,236,18,,,wayback:plugins_json
+inlineconfirm,OctoPrint-InlineConfirm,2021H1,2021-02-14,2021-10-05,233,542,,,wayback:plugins_json
+gpiocontrol,GPIO Control,2021H1,2021-02-16,2021-10-05,231,1322,,,wayback:plugins_json
+tplinkautoshutdown,OctoPrint-TpLinkAutoShutdown,2021H1,2021-02-17,2021-10-05,230,482,,,wayback:plugins_json
+slicerestimator,Slicer Estimator,2021H1,2021-02-24,2021-10-05,223,1233,,,wayback:plugins_json
+ublmeshedit,OctoPrint-UBLMeshEdit,2021H1,2021-02-24,2021-10-05,223,493,,,wayback:plugins_json
+ignorepausedforuser,IgnorePausedForUser,2021H1,2021-02-25,2021-10-05,222,74,,,wayback:plugins_json
+translatemodel,OctoPrint-TranslateModel,2021H1,2021-03-01,2021-10-05,218,440,,,wayback:plugins_json
+youtube_timelapse,Octoprint Youtube Timelapse,2021H1,2021-03-09,2021-10-05,210,249,,,wayback:plugins_json
+octorelay,OctoRelay,2021H1,2021-03-13,2021-10-05,206,951,,,wayback:plugins_json
+octolabel,OctoPrint-OctoLabel,2021H1,2021-03-21,2021-10-05,198,79,,,wayback:plugins_json
+octotext,OctoText,2021H1,2021-03-30,2021-10-05,189,514,,,wayback:plugins_json
+energeniecontrol,OctoPrint-EnergenieControl,2021H1,2021-04-05,2021-10-05,183,69,,,wayback:plugins_json
+psucontrol_rpigpio,PSU Control - RPi.GPIO,2021H1,2021-04-05,2021-10-05,183,759,,,wayback:plugins_json
+wled,WLED Connection,2021H1,2021-04-16,2021-10-17,184,284,,,wayback:plugins_json
+networkhealth,Network Health,2021H1,2021-04-20,2021-10-17,180,783,,,wayback:plugins_json
+psucontrol_tplink,PSU Control - TPLink,2021H1,2021-04-28,2021-10-17,172,370,,,wayback:plugins_json
+camerasettings,Camera Settings,2021H1,2021-04-29,2021-10-17,171,4231,,,wayback:plugins_json
+filament_scale,Filament Scale Enhanced,2021H1,2021-04-29,2021-10-17,171,120,,,wayback:plugins_json
+psucontrol_tasmota,PSU Control - Tasmota,2021H1,2021-05-02,2021-10-17,168,186,,,wayback:plugins_json
+octodashcompanion,OctoDash Companion,2021H1,2021-05-03,2021-10-17,167,2124,,,wayback:plugins_json
+psucontrol_tendabeli,PSU Control - Tenda Beli,2021H1,2021-05-03,2021-10-17,167,23,,,wayback:plugins_json
+psucontrol_wemo,PSU Control - Wemo,2021H1,2021-05-08,2021-10-17,162,61,,,wayback:plugins_json
+calibrationcompanion,Calibration Companion,2021H1,2021-05-10,2021-10-17,160,2566,,,wayback:plugins_json
+mqtt_for_psucontrol,MQTT exposure for PSU Control,2021H1,2021-05-12,2021-10-17,158,154,,,wayback:plugins_json
+psucontrol_homeassistant,PSU Control - HomeAssistant,2021H1,2021-05-15,2021-10-17,155,364,,,wayback:plugins_json
+psucontrol_shelly,PSU Control - Shelly,2021H1,2021-05-15,2021-10-17,155,113,,,wayback:plugins_json
+draggable_files,Draggable Files,2021H1,2021-05-18,2021-10-17,152,1751,,,wayback:plugins_json
+navbarclock,Navbar Clock,2021H1,2021-06-01,2022-05-17,350,628,127561,251.025721,wayback:plugins_json
+fortune,OctoPrint-Fortune,2021H1,2021-06-04,2022-05-17,347,95,127561,37.973636,wayback:plugins_json
+arducamcameracontrol,ArducamCameraControl,2021H1,2021-06-18,2022-05-17,333,314,127561,125.512861,wayback:plugins_json
+gpiofancontroller,OctoPrint-GpioFanController,2021H2,2021-07-04,2022-05-17,317,200,127561,79.944497,wayback:plugins_json
+gpiorgbcontroller,OctoPrint-GpioRgbController,2021H2,2021-07-07,2022-05-17,314,109,127561,43.569751,wayback:plugins_json
+lightcontrols,OctoPrint-LightControls,2021H2,2021-07-09,2022-05-17,312,83,127561,33.176966,wayback:plugins_json
+mote_lighting_control,OctoPrint-MoteLightingControl,2021H2,2021-07-14,2022-05-17,307,28,127561,11.19223,wayback:plugins_json
+matrix_notifier,Matrix Notifier,2021H2,2021-07-21,2022-05-17,300,47,127561,18.786957,wayback:plugins_json
+physicalbutton,Physical Button,2021H2,2021-08-01,2022-05-17,289,281,127561,112.322018,wayback:plugins_json
+gcode_macro,Gcode Macros,2021H2,2021-08-09,2022-05-17,281,412,127561,164.685664,wayback:plugins_json
+autobim,AutoBim,2021H2,2021-08-15,2022-05-17,275,567,127561,226.642649,wayback:plugins_json
+chituboard,Octoprint-Chituboard,2021H2,2021-08-16,2022-05-17,274,54,127561,21.585014,wayback:plugins_json
+plotlytempgraph,OctoPrint-PlotlyTempGraph,2021H2,2021-08-21,2022-05-17,269,578,127561,231.039597,wayback:plugins_json
+printscheduler,Print Scheduler,2021H2,2021-08-21,2022-05-17,269,743,127561,296.993807,wayback:plugins_json
+ups,UPS,2021H2,2021-08-22,2022-05-17,268,192,127561,76.746717,wayback:plugins_json
+safetyprinter,Safety Printer,2021H2,2021-08-30,2022-05-17,260,111,127561,44.369196,wayback:plugins_json
+thingiverse_downloader,Thingiverse Downloader,2021H2,2021-09-10,2022-05-17,249,939,127561,375.339414,wayback:plugins_json
+bedcooldown,OctoPrint-BedCooldown,2021H2,2021-09-26,2022-05-17,233,1195,127561,477.66837,wayback:plugins_json
+psucontrol_openhab3,PSU Control - openHAB3,2021H2,2021-09-27,2022-05-17,232,55,127561,21.984737,wayback:plugins_json
+psucontrol_mqtt,PSU Control - MQTT,2021H2,2021-10-05,2022-05-17,224,145,127561,57.95976,wayback:plugins_json
+octoapp,OctoApp,2021H2,2021-12-01,2022-05-17,167,2778,127561,1110.429065,wayback:plugins_json
+blocks,Blocks,2021H2,2021-12-24,2022-09-15,265,25,,,wayback:plugins_json
+fractalbridge,fractalbridge,2021H2,2021-09-16,2022-05-17,243,52,127561,20.785569,wayback:plugins_json
+custom_gcode_events,OctoPrint-Custom_gcode_events,2022H1,2022-01-02,2022-09-15,256,58,,,wayback:plugins_json
+onedrive_backup,OneDrive Backup,2022H1,2022-01-03,2022-09-15,255,850,,,wayback:plugins_json
+gpiostatus,GPIO Status,2022H1,2022-01-08,2022-09-15,250,619,,,wayback:plugins_json
+shutdownbuttonledbuzzer,ShutdownButtonLEDBuzzer,2022H1,2022-01-08,2022-09-15,250,112,,,wayback:plugins_json
+activeconnections,Active Connections,2022H1,2022-01-22,2022-09-15,236,530,,,wayback:plugins_json
+googledrivefiles,Google Drive Files,2022H1,2022-01-22,2022-09-15,236,472,,,wayback:plugins_json
+printwatch,Abort Failures - Printwatch,2022H1,2022-01-31,2022-09-15,227,795,,,wayback:plugins_json
+timelapsepurger,Timelapse Purger,2022H1,2022-02-06,2022-09-15,221,718,,,wayback:plugins_json
+calibrationtools,Calibration Tools,2022H1,2022-02-09,2022-09-15,218,2642,,,wayback:plugins_json
+emc2101,OctoPrint-Emc2101,2022H1,2022-02-14,2022-09-15,213,29,,,wayback:plugins_json
+octoprint_psucontrol_meross,PSU Control - Meross,2022H1,2022-02-22,2022-09-15,205,0,,,wayback:plugins_json
+openmiko,OctoPrint-OpenMiko,2022H1,2022-02-26,2022-09-15,201,56,,,wayback:plugins_json
+servospindle,Servo Spindle for GRBL CNC,2022H1,2022-02-27,2022-09-15,200,11,,,wayback:plugins_json
+usbrelaycontrol,USB Relay Control,2022H1,2022-03-01,2022-09-15,198,134,,,wayback:plugins_json
+cnc_gcodeviewer,CNC GCode Viewer,2022H1,2022-03-03,2022-09-15,196,149,,,wayback:plugins_json
+wyze,OctoPrint-Wyze,2022H1,2022-03-16,2022-09-15,183,46,,,wayback:plugins_json
+pwmbuzzer,OctoPrint-PWMBuzzer,2022H1,2022-03-29,2022-09-15,170,106,,,wayback:plugins_json
+framer,OctoPrint-Framer,2022H1,2022-04-05,2022-09-15,163,80,,,wayback:plugins_json
+crealitycloud,OctoPrint-CrealityCloud,2022H1,2022-04-14,2022-09-15,154,743,,,wayback:plugins_json
+psucontrol_tapo,PSU Control - Tapo,2022H1,2022-04-14,2022-09-15,154,231,,,wayback:plugins_json
+detector2,OctoPrint-Detector2,2022H1,2022-04-15,2022-09-15,153,488,,,wayback:plugins_json
+psucontrol_opigpio,PSUControl - OPi.GPIO,2022H1,2022-04-27,2022-12-02,219,27,,,wayback:plugins_json
+psucontrol_fritz,PSU Control - FRITZ!Box,2022H1,2022-04-28,2022-12-02,218,69,,,wayback:plugins_json
+bedready,OctoPrint-BedReady,2022H1,2022-04-29,2022-12-02,217,424,,,wayback:plugins_json
+extrafileinfo,ExtraFileInfo,2022H1,2022-05-05,2022-12-02,211,759,,,wayback:plugins_json
+preheathelper,OctoPrint-PreheatHelper,2022H1,2022-05-07,2022-12-02,209,574,,,wayback:plugins_json
+psucontrol_jeedom,PSU Control - Jeedom,2022H1,2022-05-24,2022-12-02,192,25,,,wayback:plugins_json
+creatbotutil,Creatbot Util,2022H1,2022-06-14,2022-12-02,171,14,,,wayback:plugins_json
+psucontrol_espurna,Octoprint-PSUControl-ESPurna,2022H1,2022-06-21,2022-12-02,164,22,,,wayback:plugins_json
+queue,queue,2022H1,2022-06-06,2022-12-02,179,130,,,wayback:plugins_json
+smartabl,SmartABL,2022H2,2022-12-29,2023-09-25,270,651,,,wayback:plugins_json
+nexus_ai,nexus_ai,2022H2,2022-10-15,2023-09-25,345,542,,,wayback:plugins_json
+esp32camui,OctoPrint-Esp32CamUI,2023H1,2023-01-04,2023-09-25,264,275,,,wayback:plugins_json
+onedrive_files,OneDrive File Sync,2023H1,2023-01-07,2023-09-25,261,358,,,wayback:plugins_json
+macrosteps,OctoPrint-MacroSteps,2023H1,2023-01-11,2023-09-25,257,235,,,wayback:plugins_json
+powerfailure,OctoPrint-PowerFailure,2023H1,2023-01-23,2023-09-25,245,4045,,,wayback:plugins_json
+influxdb2,InfluxDB2,2023H1,2023-03-04,2023-09-25,205,180,,,wayback:plugins_json
+turn_off_heat_on_pause_timer,OctoPrint-TurnOffHeatOnPauseTimer,2023H1,2023-03-16,2023-09-25,193,166,,,wayback:plugins_json
+ssd1306_oled_display,SSD1306 OLED Display,2023H1,2023-03-25,2023-09-25,184,46,,,wayback:plugins_json
+psucontrol_fhem,PSU Control - FHEM,2023H1,2023-04-18,2023-09-25,160,17,,,wayback:plugins_json
+webcamextras,Webcam extras,2023H1,2023-04-22,2023-09-25,156,3108,,,wayback:plugins_json
+timelapseplus,Timelapse+,2023H1,2023-04-24,2023-09-25,154,1188,,,wayback:plugins_json
+connectandprint,Connect And Print,2023H1,2023-04-26,2023-09-25,152,388,,,wayback:plugins_json
+siocontrol,SIO Control,2023H1,2023-05-02,2023-12-26,238,124,,,wayback:plugins_json
+marlinslider,Marlin Slider Controls,2023H1,2023-05-20,2023-12-26,220,2349,,,wayback:plugins_json
+cmdexec,Cmd exec,2023H1,2023-06-13,2023-12-26,196,265,,,wayback:plugins_json
+octolightha,OctoLight Home Assistant,2023H2,2023-07-04,2023-12-26,175,247,,,wayback:plugins_json
+wattometer,Wattometer,2023H2,2023-07-17,2023-12-26,162,217,,,wayback:plugins_json
+filedescription,FileDescription,2023H2,2023-08-23,2024-05-30,281,436,108145,205.568487,wayback:plugins_json
+bedcheckai,OctoPrint-BedCheckAI,2023H2,2023-09-18,2024-05-30,255,395,108145,186.237505,wayback:plugins_json
+activateprusahosttimer,Activate Prusa HostTimer,2023H2,2023-12-01,2024-05-30,181,201,108145,94.768958,wayback:plugins_json
+bgcode,BGCode,2023H2,2023-12-06,2024-05-30,176,852,108145,401.707226,wayback:plugins_json
+psucontrol_momentarygpio,OctoPrint-PSUControl-MomentaryGpio,2023H2,2023-12-07,2024-05-30,175,23,108145,10.844209,wayback:plugins_json
+xmpp_plugin,XMPP Plugin,2023H2,2023-12-27,2024-06-29,185,16,108145,7.543798,wayback:data_plugin_30d
+mqttchambertemperature,MQTT Chamber Temperature,2024H1,2024-01-02,2024-06-29,179,60,108145,28.289241,wayback:data_plugin_30d
+api_notifications,API Notifications,2024H1,2024-01-21,2024-06-29,160,30,108145,14.144621,wayback:data_plugin_30d
+filamentbuddy,FilamentBuddy,2024H1,2024-01-21,2024-06-29,160,375,108145,176.807758,wayback:data_plugin_30d
+pause_management,Pause Management,2024H1,2024-01-22,2024-06-29,159,247,108145,116.457377,wayback:data_plugin_30d
+camerastreamer_control,Camera-Streamer Control,2024H1,2024-02-01,2024-11-09,282,898,85200,537.419272,wayback:data_plugin_30d
+sioreaction,SIO Reaction,2024H1,2024-02-11,2024-11-09,272,13,85200,7.780012,wayback:data_plugin_30d
+nozzle_filament_validator,OctoPrint-Nozzle-Filament-Validator,2024H1,2024-02-26,2024-11-09,257,71,85200,42.490833,wayback:data_plugin_30d
+prusaresetmode,Prusa Reset Mode,2024H1,2024-03-01,2024-11-09,253,442,85200,264.520399,wayback:data_plugin_30d
+zupfe,OctoPrint-Zupfe,2024H1,2024-03-03,2024-11-09,251,102,85200,61.043169,wayback:data_plugin_30d
+pinozcam,OctoPrint-PiNozCam,2024H1,2024-03-06,2024-11-09,248,133,85200,79.595505,wayback:data_plugin_30d
+jogwheel,Jog Wheel Control,2024H1,2024-03-25,2024-11-09,229,352,85200,210.658779,wayback:data_plugin_30d
+spoolman,octoprint-spoolman,2024H1,2024-04-27,2024-11-09,196,429,85200,256.740387,wayback:data_plugin_30d
+tabinfo,TabInfo,2024H1,2024-05-16,2024-11-10,178,565,85200,338.131279,wayback:plugins_json
+hologram,OctoPrint-Hologram,2024H1,2024-05-17,2024-11-10,177,231,85200,138.244824,wayback:plugins_json
+fanspeedslider,Fan Speed Control,2024H1,2024-05-28,2024-11-10,166,941,85200,563.153157,wayback:plugins_json
+wakeonlan,Wake-on-LAN,2024H1,2024-06-07,2024-11-10,156,66,85200,39.498521,wayback:plugins_json
+babystepping,Baby Stepping,2024H1,2024-06-09,2024-11-10,154,919,85200,549.986984,wayback:plugins_json
+filamentmotionsensor,Octoprint-Filament-Motion-Sensor,2024H2,2024-08-11,2025-03-18,219,38,83287,23.263919,wayback:data_plugin_30d
+skipto,OctoPrint-SkipTo,2024H2,2024-08-27,2025-03-18,203,568,83287,347.734364,wayback:data_plugin_30d
+prusafilamentrunoutmonitor,Prusa Filament Runout,2024H2,2024-08-28,2025-03-18,202,296,83287,181.213683,wayback:data_plugin_30d
+portretry,OctoPrint-PortRetry,2024H2,2024-09-15,2025-03-18,184,313,83287,191.621225,wayback:data_plugin_30d
+segmentedbed,Segmented Bed Plugin,2024H2,2024-10-07,2025-03-18,162,62,83287,37.95692,wayback:data_plugin_30d
+psucontrol_ikea_dirigera,OctoPrint PSU Control IKEA Dirigera,2024H2,2024-10-08,2025-03-18,161,27,83287,16.529626,wayback:data_plugin_30d
+btt_touch_support,BTT TFT TouchScreen Firmware Support,2024H2,2024-11-24,2025-07-16,234,224,75621,151.036564,wayback:data_plugin_30d
+mfa_totp,Two Factor Authentication: TOTP,2025H1,2025-01-28,2025-08-05,189,52,67878,39.061669,wayback:plugins_json
+go2rtc,go2rtc,2025H1,2025-02-09,2025-08-05,177,95,67878,71.362665,wayback:plugins_json
+waveshareups,OctoPrint-WaveshareUPS,2025H1,2025-04-01,2025-10-01,183,5,67878,3.75593,wayback:plugins_json
+cvprinting,OctoPrint-CVPrinting,2025H1,2025-04-21,2025-10-01,163,53,67878,39.812855,wayback:plugins_json
+remote_connection,OctoPrint-Remote_connection,2025H2,2025-07-13,2026-01-02,173,91,66573,69.697911,wayback:plugins_json
+wrapped,OctoPrint Wrapped!,2025H2,2025-12-10,2026-07-11,213,481,57708,424.99669,wayback:data_plugin_30d
+octo_fire_guard,Octo Fire Guard,2026H1,2026-02-20,2026-10-15,237,325,50989,325.0,live:data_plugin_30d
+proxy4artisan,OctoPrint-Proxy4Artisan,2026H1,2026-03-23,2026-10-15,206,13,50989,13.0,live:data_plugin_30d

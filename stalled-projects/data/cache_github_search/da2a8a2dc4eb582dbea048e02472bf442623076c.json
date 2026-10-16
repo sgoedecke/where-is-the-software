@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "BPO | [39090](https://bugs.python.org/issue39090)\n--- | :---\nNosy | @brettcannon, @pfmoore, @eryksun, @vedgar, @PythonCHB, @designerzim, @florisla, @barneygale, @John-Hennig\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2019-12-18.18:20:50.641>\nlabels = ['type-feature', '3.9', 'docs']\ntitle = 'Document various options for getting the absolute path from pathlib.Path objects'\nupdated_at = <Date 2022-04-04.13:40:35.399>\nuser = 'https://github.com/brettcannon'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2022-04-04.13:40:35.399>\nactor = 'barneygale'\nassignee = 'docs@python'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['Documentation']\ncreation = <Date 2019-12-18.18:20:50.641>\ncreator = 'brett.cannon'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 39090\nkeywords = []\nmessage_count = 15.0\nmessages = ['358638', '358854', '361698', '361877', '361878', '361885', '362030', '362578', '362579', '362627', '387634', '416465', '416470', '416488', '416668']\nnosy_count = 11.0\nnosy_names = ['brett.cannon', 'paul.moore', 'docs@python', 'eryksun', 'veky', 'ChrisBarker', 'Zim', '4-launchpad-kalvdans-no-ip-org', 'florisla', 'barneygale', 'John-Hennig']\npr_nums = []\npriority = 'normal'\nresolution = None\nstage = 'needs patch'\nstatus = 'open'\nsuperseder = None\ntype = 'enhancement'\nurl = 'https://bugs.python.org/issue39090'\nversions = ['Python 3.9']\n```\n\n</p></details>\n",
+      "closed_at": "2023-01-08T15:47:32Z",
+      "comments": 16,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/83271/comments",
+      "created_at": "2019-12-18T18:20:51Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/83271/events",
+      "html_url": "https://github.com/python/cpython/issues/83271",
+      "id": 1199027021,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Documentation in the Doc dir",
+          "id": 538516109,
+          "name": "docs",
+          "node_id": "MDU6TGFiZWw1Mzg1MTYxMDk=",
+          "url": "https://api.github.com/repos/python/cpython/labels/docs"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772049,
+          "name": "3.9 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhR",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.9%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4255101819,
+          "name": "topic-pathlib",
+          "node_id": "LA_kwDOBN0Z8c79n7N7",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-pathlib"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/83271/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDI3MDIx",
+      "number": 83271,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/83271/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/83271/timeline",
+      "title": "Document various options for getting the absolute path from pathlib.Path objects",
+      "type": null,
+      "updated_at": "2023-01-08T15:47:33Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/83271",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/54418?v=4",
+        "events_url": "https://api.github.com/users/brettcannon/events{/privacy}",
+        "followers_url": "https://api.github.com/users/brettcannon/followers",
+        "following_url": "https://api.github.com/users/brettcannon/following{/other_user}",
+        "gists_url": "https://api.github.com/users/brettcannon/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/brettcannon",
+        "id": 54418,
+        "login": "brettcannon",
+        "node_id": "MDQ6VXNlcjU0NDE4",
+        "organizations_url": "https://api.github.com/users/brettcannon/orgs",
+        "received_events_url": "https://api.github.com/users/brettcannon/received_events",
+        "repos_url": "https://api.github.com/users/brettcannon/repos",
+        "site_admin": true,
+        "starred_url": "https://api.github.com/users/brettcannon/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/brettcannon/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/brettcannon",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 52
+}

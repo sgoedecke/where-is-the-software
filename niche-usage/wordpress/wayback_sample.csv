@@ -1,0 +1,9 @@
+slug,added,current_active_installs,snapshot_ts,snapshot_date,age_days,archived_active_installs,note
+sg-ai-studio,2026-04-14,1000000,20260421192252,2026-04-21,7,"50,000+",first parsable early snapshot
+hostinger-reach,2025-08-11,1000000,20250820064757,2025-08-20,9,"10,000+",first parsable early snapshot
+cookieadmin,2025-07-15,400000,20250719150322,2025-07-19,4,"1,000+",first parsable early snapshot
+angie,2025-09-17,100000,20260316035814,2026-03-16,180,"7,000+",first parsable early snapshot
+manage,2026-03-08,100000,20260316023034,2026-03-16,8,"3,000+",first parsable early snapshot
+formlayer,2026-05-26,100000,20260712161515,2026-07-12,47,"70,000+",first parsable early snapshot
+reddit-for-woocommerce,2025-11-11,90000,20251205005232,2025-12-05,24,100+,first parsable early snapshot
+snapchat-for-woocommerce,2025-09-26,80000,,,,,CDX failed: HTTPError HTTP Error 503: Service Unavailable

@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "# Crash report\n\n### What happened?\n\nOriginal details are on: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1040057 ; despite what is written, the issue also happens on python 3.12, and can be reliably reproduced when running the test from inside a PDB, suggesting some kind of timing issue.\n\nI could reproduce independently on Archlinux an python 3.11 as well as on 3.12 in a debian docker image (https://ci.codeberg.org/repos/12939/pipeline/7/26 ).\n```\n--Return--\n> /home/mathieui/dev/slixmpp/run_tests.py(73)<module>()->None\n-> sys.exit(not result.wasSuccessful())\n(Pdb) quit\n\nThread 1 \"python\" received signal SIGSEGV, Segmentation fault.\nPyObject_CallOneArg (func=0x0, arg=0x7ffff41be950) at Objects/call.c:376\n376         return _PyObject_VectorcallTstate(tstate, func, args, nargsf, NULL);                                                                                                                                                               \n(gdb) bt \n\n#0  PyObject_CallOneArg (func=0x0, arg=0x7ffff41beb90) at Objects/call.c:376\n#1  0x00007ffff7a1b7b5 in PyObject_Repr (v=0x7ffff41beb90) at Objects/object.c:433\n#2  0x00007ffff79df41e in unicode_fromformat_arg (vargs=0x7fffffffdb50, f=0x7ffff7b42af4 \"R is not in deque\", writer=0x7fffffffdaf0) at Objects/unicodeobject.c:3036\n#3  PyUnicode_FromFormatV (format=<optimized out>, vargs=<optimized out>) at Objects/unicodeobject.c:3100\n#4  0x00007ffff7a0f007 in _PyErr_FormatV (vargs=0x7fffffffdbd0, format=0x7ffff7b42af3 \"%R is not in deque\", exception=0x7ffff7c73a60 <_PyExc_ValueError>, tstate=0x7ffff7d89378 <_PyRuntime+166328>) at Python/errors.c:1106\n#5  PyErr_Format (exception=0x7ffff7c73a60 <_PyExc_ValueError>, format=0x7ffff7b42af3 \"%R is not in deque\") at Python/errors.c:1149\n#6  0x00007ffff7958751 in deque_remove (deque=0x7ffff41ef010, value=0x7ffff41beb90) at ./Modules/_collectionsmodule.c:1256\n#7  0x00007ffff7a14e94 in method_vectorcall_O (func=0x7ffff7081e40, args=0x7ffff404cfd8, nargsf=<optimized out>, kwnames=0x0) at Objects/descrobject.c:481\n#8  0x00007ffff79f2987 in _PyObject_VectorcallTstate (kwnames=<optimized out>, nargsf=<optimized out>, args=<optimized out>, callable=0x7ffff7081e40, tstate=0x7ffff7d89378 <_PyRuntime+166328>) at ./Include/internal/pycore_call.h:92\n#9  PyObject_Vectorcall (callable=0x7ffff7081e40, args=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at Objects/call.c:299\n#10 0x00007ffff79e4c23 in _PyEval_EvalFrameDefault (tstate=<optimized out>, frame=<optimized out>, throwflag=<optimized out>) at Python/ceval.c:4760\n#11 0x00007ffff7aafcf2 in _PyEval_EvalFrame (throwflag=<optimized out>, frame=0x7ffff404cf70, tstate=0x7ffff7d89378 <_PyRuntime+166328>) at ./Include/internal/pycore_ceval.h:73\n#12 gen_send_ex2 (gen=gen@entry=0x7ffff404cf20, arg=arg@entry=0x7ffff7d58ac0 <_Py_NoneStruct>, presult=presult@entry=0x7fffffffdf70, exc=exc@entry=1, closing=closing@entry=1) at Objects/genobject.c:219\n#13 0x00007ffff7ab08e7 in gen_send_ex (gen=gen@entry=0x7ffff404cf20, arg=arg@entry=0x7ffff7d58ac0 <_Py_NoneStruct>, exc=exc@entry=1, closing=closing@entry=1) at Objects/genobject.c:287\n#14 0x00007ffff7ab05c4 in gen_close (gen=gen@entry=0x7ffff404cf20, args=args@entry=0x0) at Objects/genobject.c:391\n#15 0x00007ffff7b1c5fe in gen_close_iter (yf=yf@entry=0x7ffff404cf20) at Objects/genobject.c:327\n#16 0x00007ffff7ab0620 in gen_close (gen=gen@entry=0x7ffff455be00, args=args@entry=0x0) at Objects/genobject.c:385\n#17 0x00007ffff7a2e61e in _PyGen_Finalize (self=0x7ffff455be00) at Objects/genobject.c:96\n#18 0x00007ffff79d01b8 in finalize_garbage (tstate=0x7ffff7d89378 <_PyRuntime+166328>, collectable=0x7fffffffe110) at Modules/gcmodule.c:978\n#19 gc_collect_main (tstate=0x7ffff7d89378 <_PyRuntime+166328>, generation=generation@entry=2, n_collected=n_collected@entry=0x0, n_uncollectable=n_uncollectable@entry=0x0, nofail=nofail@entry=1) at Modules/gcmodule.c:1274\n#20 0x00007ffff7acc77c in _PyGC_CollectNoFail (tstate=<optimized out>) at Modules/gcmodule.c:2110\n#21 0x00007ffff7ab8f18 in Py_FinalizeEx () at Python/pylifecycle.c:1833\n#22 0x00007ffff7ac5093 in Py_RunMain () at Modules/main.c:682\n#23 0x00007ffff7a8e79b in Py_BytesMain (argc=<optimized out>, argv=<optimized out>) at Modules/main.c:734\n#24 0x00007ffff7645cd0 in __libc_start_call_main (main=main@entry=0x555555555120 <main>, argc=argc@entry=5, argv=argv@entry=0x7fffffffe4a8) at ../sysdeps/nptl/libc_start_call_main.h:58\n#25 0x00007ffff7645d8a in __libc_start_main_impl (main=0x555555555120 <main>, argc=5, argv=0x7fffffffe4a8, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffe498) at ../csu/libc-start.c:360\n\n```\n\n`py-bt` does not catch anything, suggesting it happens during interpreter shutdown, which would make sense. Our workaround is registering a loop.close() in atexit(), which makes the issue disappear, but my feeling is that this should not happen.\nI can provide the full backtrace but most values are optimized out, making it much less useful.\n\nThe setup requires going through quite a bit of code so we do not have a minimal test case (in terms of code), albeit running our test suite should not be too difficult.\n\n### CPython versions tested on:\n\n3.10, 3.11, 3.12\n\n### Operating systems tested on:\n\nLinux\n\n### Output from running 'python -VV' on the command line:\n\n_No response_\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-113578\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2023-12-30T05:06:45Z",
+      "comments": 8,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/113566/comments",
+      "created_at": "2023-12-29T16:07:43Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/113566/events",
+      "html_url": "https://github.com/python/cpython/issues/113566",
+      "id": 2060224683,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 557226369,
+          "name": "topic-asyncio",
+          "node_id": "MDU6TGFiZWw1NTcyMjYzNjk=",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-asyncio"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b60205",
+          "default": false,
+          "description": "A hard crash of the interpreter, possibly with a core dump",
+          "id": 4018848914,
+          "name": "type-crash",
+          "node_id": "LA_kwDOBN0Z8c7visSS",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-crash"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/113566/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c56zIir",
+      "number": 113566,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/113566/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/113566/timeline",
+      "title": "Segmentation fault during garbage collection of the asyncio event loop",
+      "type": null,
+      "updated_at": "2024-01-01T21:05:32Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/113566",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/634815?v=4",
+        "events_url": "https://api.github.com/users/mathieui/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mathieui/followers",
+        "following_url": "https://api.github.com/users/mathieui/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mathieui/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mathieui",
+        "id": 634815,
+        "login": "mathieui",
+        "node_id": "MDQ6VXNlcjYzNDgxNQ==",
+        "organizations_url": "https://api.github.com/users/mathieui/orgs",
+        "received_events_url": "https://api.github.com/users/mathieui/received_events",
+        "repos_url": "https://api.github.com/users/mathieui/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mathieui/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mathieui/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mathieui",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 754
+}

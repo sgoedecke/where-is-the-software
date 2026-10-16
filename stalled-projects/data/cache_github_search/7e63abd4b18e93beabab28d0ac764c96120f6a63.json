@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Version\n\n18.9.0, 17.1.0\n\n### Platform\n\nBodhi Linux (Ubuntu like) - VM guest on Windows 10 host\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\nI am running my Node based peer-to-peer application in test automation mode that creates persistent sockets as TLS websockets.  One the first test automation run, initiated from the windows host machine, everything is fine.  The application instance on the VMs continues to run so that I can frequently run test automation instances without ever touching the VMs.  When I attempt to run test automation a second time only 1 of my 4 VM application instances fails.\r\n\r\nThis appears to be a node defect.  The error message mentions an unhandled error event but I have extensive error handling on just about everything in my application, most especially my socket management.  The stack trace also does not indicate any code from my application.\n\n### How often does it reproduce? Is there a required condition?\n\n100% reproducible.  I am running 4 virtual machines each with a nearly identical install.  This problem only occurs on one of those 4 VMs.\n\n### What is the expected behavior?\n\nSocket not crashing.\n\n### What do you see instead?\n\n```\r\nnode:events:491\r\n      throw er; // Unhandled 'error' event\r\n\r\nError: read ECONNRESET\r\n    at TLSWrap.onStreamRead (node:internal/stream_base_commons:217:20)\r\nEmitted 'error' event on TLSSocket instance at:\r\n    at emitErrorNT (node:internal/streams/destroy:151:8)\r\n    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\r\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {\r\n  errno: -104,\r\n  code: 'ECONNRESET',\r\n  syscall: 'read'\r\n}\r\n\r\nNode.js v18.9.0\r\n```\n\n### Additional information\n\n_No response_",
+      "closed_at": "2026-01-13T16:03:18Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/44751/comments",
+      "created_at": "2022-09-22T22:53:23Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/44751/events",
+      "html_url": "https://github.com/nodejs/node/issues/44751",
+      "id": 1383102602,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fad8c7",
+          "default": false,
+          "description": "Issues and PRs related to the tls subsystem.",
+          "id": 155267349,
+          "name": "tls",
+          "node_id": "MDU6TGFiZWwxNTUyNjczNDk=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/tls"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "Issues and PRs related to the net subsystem.",
+          "id": 155435815,
+          "name": "net",
+          "node_id": "MDU6TGFiZWwxNTU0MzU4MTU=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/net"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/44751/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85ScHiK",
+      "number": 44751,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/44751/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/44751/timeline",
+      "title": "Unhandled TLSSocket error - internal Node error",
+      "type": null,
+      "updated_at": "2026-01-13T16:03:18Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/44751",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/524902?v=4",
+        "events_url": "https://api.github.com/users/prettydiff/events{/privacy}",
+        "followers_url": "https://api.github.com/users/prettydiff/followers",
+        "following_url": "https://api.github.com/users/prettydiff/following{/other_user}",
+        "gists_url": "https://api.github.com/users/prettydiff/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/prettydiff",
+        "id": 524902,
+        "login": "prettydiff",
+        "node_id": "MDQ6VXNlcjUyNDkwMg==",
+        "organizations_url": "https://api.github.com/users/prettydiff/orgs",
+        "received_events_url": "https://api.github.com/users/prettydiff/received_events",
+        "repos_url": "https://api.github.com/users/prettydiff/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/prettydiff/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/prettydiff/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/prettydiff",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 9
+}

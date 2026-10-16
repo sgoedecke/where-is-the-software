@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\r\n\r\nv19.2.0\r\n\r\n### Platform\r\n\r\nOSX 12.15.1\r\n\r\n### Subsystem\r\n\r\n_No response_\r\n\r\n### What steps will reproduce the bug?\r\n\r\nI found few cases when a Socket from node/net isn't closes when it should. Examples:\r\n\r\n## TCP issue\r\n\r\nIf a listener .on('data') on a server socket not defined, the 'end' signal from the clients side will be ignored.\r\n\r\nServer <a href=\"https://github.com/didkovsky/onend/tree/main/tcp/server.js\">source</a>\r\n``` javascript\r\nconst { createServer } = require('net')\r\n\r\ncreateServer(socket => {\r\n\r\n  socket.on('error', console.log)\r\n  \r\n  // Not emitted\r\n  socket.on('end', () => console.log('end.'))\r\n  socket.on('close', () => console.log('close.'))\r\n\r\n  /**\r\n   * If listener .on('data') not defined,\r\n   * socket will ignore 'end' signal from client\r\n   */\r\n  // socket.on('data', () => {})\r\n\r\n  setTimeout(() => {\r\n    // Missing end\r\n    // socket.end()\r\n  }, 2000)\r\n\r\n  setInterval(() => {\r\n    socket.write('Data.')\r\n  }, 500)\r\n})\r\n.listen(444)\r\n\r\n```\r\n\r\nClient <a href=\"https://github.com/didkovsky/onend/tree/main/tcp/client.js\">source</a>\r\n``` javascript\r\nconst { Socket } = require('net')\r\n\r\nconst socket = new Socket()\r\nsocket.on('error', console.log)\r\n\r\n// Not emitted, if .on('data') not attached on the server side\r\nsocket.on('end', () => console.log('End.'))\r\n\r\n// Data will come while server sends it\r\nsocket.on('data', data => console.log(data.toString('utf8')))\r\n\r\nsocket.connect({\r\n  host: 'localhost',\r\n  port: 444\r\n}, () => {\r\n  socket.write('Hello!')\r\n // Will be ignored\r\n  socket.end()\r\n})\r\n\r\n```\r\n\r\n## HTTP issue 1\r\n\r\nThis issue is a consequence of the TCP issue above. If we have not listener .on('data') on a req object, the 'end' signal from the clients side will be ignored.\r\n\r\nServer <a href=\"https://github.com/didkovsky/onend/tree/main/http/server.js\">source</a>\r\n``` javascript\r\nconst { createServer } = require('http')\r\n\r\ncreateServer((req, res) => {\r\n  console.log('Request.')\r\n  req.on('error', console.log)\r\n  req.on('end', () => console.log('End.'))\r\n\r\n  /**\r\n   * If listener .on('data') not defined,\r\n   * req will ignore 'end' signal from client\r\n   */\r\n  // req.on('data', () => {})\r\n\r\n  const dataInt = setInterval(() => {\r\n    res.write('Data.')\r\n  }, 1000)\r\n\r\n  setTimeout(() => {\u00a0\r\n    // clearInterval(dataInt)\r\n    // res.end('Ok.')\r\n  }, 10000)\r\n})\r\n.listen(333)\r\n\r\n```\r\nClient <a href=\"https://github.com/didkovsky/onend/tree/main/http/client.js\">source</a>\r\n``` javascript\r\nconst { request } = require('http')\r\n\r\nconst options = {\r\n  host: 'localhost',\r\n  port: 333,\r\n  method: 'POST',\r\n  path: '/'\r\n}\r\n\r\nconst req = request(options, response => {\r\n  response.on('error', console.log)\r\n\r\n  // Data will come while server sends it.\r\n  response.on('data', data => console.log(data.toString('utf8')))\r\n  // Not emitted, if .on('data') not attached on the server side\r\n  response.on('end', () => console.log('End.'))\r\n})\r\n\r\nreq.on('error', console.log)\r\nreq.write('Hello!')\r\n\r\n// Will be ignored\r\nreq.end()\r\n\r\n```\r\n\r\n## HTTP issue 2\r\n\r\nServer cannot close connection through res.end().\r\n\r\nServer <a href=\"https://github.com/didkovsky/onend/tree/main/http-2/server.js\">source</a>\r\n``` javascript\r\nconst { createServer } = require('http')\r\n\r\nconst server = createServer((req, res) => {\r\n  console.log('Request.')\r\n  req.on('error', console.log)\r\n\r\n  // Not emitted\r\n  req.on('end', () => console.log('End.'))\r\n  req.on('close', () => console.log('Close.'))\r\n\r\n  req.on('data', data => {\r\n    console.log(data.toString('utf8'))\r\n    res.write('Ok.')\r\n\r\n    /**\r\n     * Will be ignored,\r\n     * data will come while client sends it.\r\n     */\r\n    res.end()\r\n\r\n    // Will close a socket.\r\n    // res.socket.end()\r\n    // or\r\n    // res.destroy()\r\n  })\r\n})\r\n\r\n/**\r\n * Also, a socket will not release.\r\n */\r\nserver.maxConnections = 1\r\nserver.listen(333)\r\n\r\n```\r\n\r\nClien <a href=\"https://github.com/didkovsky/onend/tree/main/http-2/client.js\">source</a>\r\n``` javascript\r\nconst { request } = require('http')\r\n\r\nconst options = {\r\n  host: 'localhost',\r\n  port: 333,\r\n  method: 'POST',\r\n  path: '/'\r\n}\r\n\r\nconst req = request(options, response => {\r\n  response.on('error', console.log)\r\n  response.on('data', data => console.log(data.toString('utf8')))\r\n\r\n  // Not emitted\r\n  response.on('end', () => console.log('End.'))\r\n})\r\n\r\nreq.on('error', console.log)\r\n\r\nsetInterval(() => {\r\n  req.write('Hello.')\r\n}, 1000)\r\n\r\n// Missing end\r\n// req.end()\r\n\r\n```\r\n\r\nRepo with examples: https://github.com/didkovsky/onend\r\n\r\n\r\n\r\n\r\n### How often does it reproduce? Is there a required condition?\r\n\r\nAlways\r\n\r\n### What is the expected behavior?\r\n\r\nIf I call socket.end() I expect to get 'end' event. And stop receiving data on .on('data') listener.\r\n\r\n### What do you see instead?\r\n\r\nIf we have not .on('data') listener, socket ignore 'end' signal.\r\n \r\n### Additional information\r\n\r\n_No response_",
+      "closed_at": "2022-12-31T12:17:24Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/46015/comments",
+      "created_at": "2022-12-29T14:13:29Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/46015/events",
+      "html_url": "https://github.com/nodejs/node/issues/46015",
+      "id": 1513776116,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/46015/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85aOmP0",
+      "number": 46015,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/46015/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/46015/timeline",
+      "title": "In some cases Socket isn't half-close when .end() is called.",
+      "type": null,
+      "updated_at": "2022-12-31T12:17:24Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/46015",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/118548641?v=4",
+        "events_url": "https://api.github.com/users/didkovsky/events{/privacy}",
+        "followers_url": "https://api.github.com/users/didkovsky/followers",
+        "following_url": "https://api.github.com/users/didkovsky/following{/other_user}",
+        "gists_url": "https://api.github.com/users/didkovsky/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/didkovsky",
+        "id": 118548641,
+        "login": "didkovsky",
+        "node_id": "U_kgDOBxDooQ",
+        "organizations_url": "https://api.github.com/users/didkovsky/orgs",
+        "received_events_url": "https://api.github.com/users/didkovsky/received_events",
+        "repos_url": "https://api.github.com/users/didkovsky/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/didkovsky/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/didkovsky/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/didkovsky",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 285
+}

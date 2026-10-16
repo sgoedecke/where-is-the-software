@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\nWe are using ansible to create and modify VM's on vmware using vsphereautomationSDK , from last friday we are facing issue with tag_manager and it is faiing with ssl errors.\r\n\r\nwe have recently upgraded vcenters from 6.5 to 7 after that we are facing this issue. we are also using validate_certs:no in the code as well.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nurllib3\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a01.26.1\r\nvapi-client-bindings\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a03.1.0\r\nvapi-common-client\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a02.12.0\r\nvapi-runtime\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a02.12.0\r\nvmc-client-bindings\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a01.13.0\r\nvmc-draas-client-bindings\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a01.0.0\r\nvSphere-Automation-SDK\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a01.7.0\r\n\r\n\r\n\r\n\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\nvmware_tag_manager\n\n### Ansible Version\n\n```console\n$ ansible --version\r\n\r\nansible 2.10.5\u00a0\u00a0config file = None\u00a0\u00a0configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\u00a0\u00a0ansible python module location = /usr/local/lib/python3.6/site-packages/ansible\u00a0\u00a0executable location = /usr/local/bin/ansible\u00a0\u00a0python version = 3.6.8 (default, Nov 16 2020, 16:55:22) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]\n```\n\n\n### Configuration\n\n```console\n# if using a version older than ansible-core 2.12 you should omit the '-t all'\r\n$ ansible-config dump --only-changed -t all\r\n\r\nno output\n```\n\n\n### OS / Environment\n\ncentos7\n\n### Steps to Reproduce\n\n<!--- Paste example playbooks or commands between quotes below -->\r\n```yaml (paste below)\r\n\r\n```\r\n---\r\n  - name: Checking or setting the vm tags\r\n    vmware_tag_manager:\r\n      hostname: \"{{ vcenter_hostname }}\"\r\n      username: \"{{ vcenter_username }}\"\r\n      password: \"{{ vcenter_password }}\"\r\n      validate_certs: no\r\n      tag_names:  \"{{ item }}\"\r\n      object_name: \"{{ inventory_hostname }}\"\r\n      object_type: VirtualMachine\r\n      state: present\r\n    with_items:\r\n      - \"{{ tags }}\"\r\n      #- \"{{ location_fn }}\"\r\n      #- \"{{ managed }}\"\r\n      #- \"{{ application_names }}\"\r\n    delegate_to: localhost\r\n    register: createtag\r\n\n\n### Expected Results\n\nwe are excepted run the code with out errors\n\n### Actual Results\n\n```console\nfailed: [XXXXX] (item=Windows-25-SQL) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"Windows-25-SQL\", \"module_stderr\": \"/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py:1020: InsecureRequestWarning: Unverified HTTPS request is being made to host 'XXXXX'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings\\n  InsecureRequestWarning,\\n/usr/local/lib/python3.6/site-packages/urllib3/connectionpool.py:1020: InsecureRequestWarning: Unverified HTTPS request is being made to host 'XXXXXX'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings\\n  InsecureRequestWarning,https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings\\n  InsecureRequestWarning,\\nTraceback (most recent call last):\\n  File \\\"/var/lib/buildkite-agent/.ansible/tmp/ansible-tmp-1664438051.9077866-101028-180637351627619/AnsiballZ_vmware_tag\n```\n\n\n### Code of Conduct\n\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2022-09-30T06:59:28Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/78943/comments",
+      "created_at": "2022-09-30T06:56:12Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/78943/events",
+      "html_url": "https://github.com/ansible/ansible/issues/78943",
+      "id": 1391937993,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 2270557328,
+          "name": "bot_closed",
+          "node_id": "MDU6TGFiZWwyMjcwNTU3MzI4",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bot_closed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/78943/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM5S90nJ",
+      "number": 78943,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/78943/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/78943/timeline",
+      "title": "InsecureRequestWarning: Unverified HTTPS request is being made to host while ansible trying create a tag or modify tag on VMWARE",
+      "type": null,
+      "updated_at": "2022-10-07T13:00:12Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/78943",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/20111534?v=4",
+        "events_url": "https://api.github.com/users/HanumanthaRAON/events{/privacy}",
+        "followers_url": "https://api.github.com/users/HanumanthaRAON/followers",
+        "following_url": "https://api.github.com/users/HanumanthaRAON/following{/other_user}",
+        "gists_url": "https://api.github.com/users/HanumanthaRAON/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/HanumanthaRAON",
+        "id": 20111534,
+        "login": "HanumanthaRAON",
+        "node_id": "MDQ6VXNlcjIwMTExNTM0",
+        "organizations_url": "https://api.github.com/users/HanumanthaRAON/orgs",
+        "received_events_url": "https://api.github.com/users/HanumanthaRAON/received_events",
+        "repos_url": "https://api.github.com/users/HanumanthaRAON/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/HanumanthaRAON/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/HanumanthaRAON/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/HanumanthaRAON",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 334
+}

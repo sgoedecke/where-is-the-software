@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\nv18.14.1\n\n### Platform\n\nMicrosoft Windows NT 10.0.19045.0 x64\"Microsoft Windows NT 10.0.19045.0 x64\n\n### Subsystem\n\nstreams\n\n### What steps will reproduce the bug?\n\nI'm trying to read from `process.stdin` by using `for await` until I get `\\n` (as you can see in the code snippet blow):\r\n\r\n```js\r\nconst readLine = async () => {\r\n  process.stdin.on('error', err => {\r\n    console.log('stdin error:', err);\r\n  });\r\n  let str = '';\r\n  for await (const chunk of process.stdin) {\r\n    str += chunk.toString();\r\n    if (str.includes('\\n'))\r\n      break;\r\n  }\r\n  return str.split('\\n')[0];\r\n};\r\n```\r\n\r\nBut when it reaches to `break`, it will throw an error in the stream.\r\n\r\nThe output of my log:\r\n\r\n```\r\nstdin error: AbortError: The operation was aborted\r\n    at Object.destroyer (node:internal/streams/destroy:305:11)\r\n    at createAsyncIterator (node:internal/streams/readable:1141:19) {\r\n  code: 'ABORT_ERR'\r\n}\r\n````\r\n\r\nI've also tried to read from a file stream like this and got the same error.\r\n\r\nI got the same error on a Mac machine as well.\r\n\n\n### How often does it reproduce? Is there a required condition?\n\nAlways\n\n### What is the expected behavior?\n\nI don't know what exactly the expected behavior should be here, but throwing an error doesn't make sense to me\n\n### What do you see instead?\n\n-\n\n### Additional information\n\n_No response_",
+      "closed_at": "2026-06-21T06:27:31Z",
+      "comments": 16,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/46717/comments",
+      "created_at": "2023-02-18T14:10:19Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/46717/events",
+      "html_url": "https://github.com/nodejs/node/issues/46717",
+      "id": 1590356739,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": "Issues and PRs related to Node.js streams.",
+          "id": 155435883,
+          "name": "stream",
+          "node_id": "MDU6TGFiZWwxNTU0MzU4ODM=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/stream"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9d0c4",
+          "default": false,
+          "description": "Issues and PRs marked stale due to inactivity and scheduled for automatic closure.",
+          "id": 3774588687,
+          "name": "stale",
+          "node_id": "LA_kwDOAZ7xs87g-6cP",
+          "url": "https://api.github.com/repos/nodejs/node/labels/stale"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/46717/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85eyusD",
+      "number": 46717,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 1,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/nodejs/node/issues/46717/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/46717/timeline",
+      "title": "Using `for await...of` with `break` to read from a stream",
+      "type": null,
+      "updated_at": "2026-06-21T06:27:31Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/46717",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/52419410?v=4",
+        "events_url": "https://api.github.com/users/Babak-Gholamzadeh/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Babak-Gholamzadeh/followers",
+        "following_url": "https://api.github.com/users/Babak-Gholamzadeh/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Babak-Gholamzadeh/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Babak-Gholamzadeh",
+        "id": 52419410,
+        "login": "Babak-Gholamzadeh",
+        "node_id": "MDQ6VXNlcjUyNDE5NDEw",
+        "organizations_url": "https://api.github.com/users/Babak-Gholamzadeh/orgs",
+        "received_events_url": "https://api.github.com/users/Babak-Gholamzadeh/received_events",
+        "repos_url": "https://api.github.com/users/Babak-Gholamzadeh/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Babak-Gholamzadeh/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Babak-Gholamzadeh/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Babak-Gholamzadeh",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 20
+}

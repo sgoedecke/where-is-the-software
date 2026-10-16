@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\n**The problem**\n\nWhen changing fan speed for a climate entity from the Apple Home app (via the HomeKit Bridge integration), the service call fails with a ServiceValidationError because the fan_mode value sent is lowercase (e.g. \"high\"), but the entity's valid fan_modes are capitalized (e.g. \"High\"). This works fine when changing fan speed directly in Home Assistant's UI \u2014 it only breaks via the HomeKit bridge.\n\n**What you expected to happen**\n\nThe HomeKit Bridge should send the fan_mode value exactly as it appears in the entity's fan_modes list (matching case), so the service call succeeds.\n\n**What actually happened**\n\nThe service call fails with this error:\n\n```\nFan mode low is not valid. Valid fan modes are: Auto, Quiet, Low, Medium Low, Medium, Medium High, High\n```\n\nFull traceback:\n\n```\nLogger: homeassistant.core\nSource: core.py:2847\nFirst occurred: June 29, 2026 at 16:49:53 (45 occurrences)\nLast logged: 08:28:26\nError executing service: <ServiceCall climate.set_fan_mode (c:01KWBFZRFZ2RWQA1SYK75Q6YJJ): entity_id=['climate.living_room_hvac'], fan_mode=high>\nError executing service: <ServiceCall climate.set_fan_mode (c:01KWBG00FEC9CHJNCT0B42T11E): entity_id=['climate.living_room_hvac'], fan_mode=medium>\nTraceback (most recent call last):\n  File \"/usr/src/homeassistant/homeassistant/core.py\", line 2847, in _run_service_call_catch_exceptions\n    await coro_or_task\n  File \"/usr/src/homeassistant/homeassistant/core.py\", line 2870, in _execute_service\n    return await target(service_call)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/src/homeassistant/homeassistant/helpers/service.py\", line 949, in entity_service_call\n    response_data = await _async_handle_entity_calls(\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<5 lines>...\n    )\n    ^\n  File \"/usr/src/homeassistant/homeassistant/helpers/service.py\", line 828, in _async_handle_entity_calls\n    single_result = await entity.async_request_call(_with_context(entity, coro))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/src/homeassistant/homeassistant/helpers/entity.py\", line 1702, in async_request_call\n    return await coro\n           ^^^^^^^^^^\n  File \"/usr/src/homeassistant/homeassistant/helpers/service.py\", line 823, in _with_context\n    return await coro\n           ^^^^^^^^^^\n  File \"/usr/src/homeassistant/homeassistant/helpers/service.py\", line 907, in _handle_single_entity_call\n    result = await task\n             ^^^^^^^^^^\n  File \"/usr/src/homeassistant/homeassistant/components/climate/__init__.py\", line 567, in async_handle_set_fan_mode_service\n    self._valid_mode_or_raise(\"fan\", fan_mode, self.fan_modes)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/src/homeassistant/homeassistant/components/climate/__init__.py\", line 537, in _valid_mode_or_raise\n    raise ServiceValidationError(\n    ...<6 lines>...\n    )\nhomeassistant.exceptions.ServiceValidationError: Fan mode low is not valid. Valid fan modes are: Auto, Quiet, Low, Medium Low, Medium, Medium High, High\n```\n\n**Steps to reproduce**\n\n1. Have a climate entity with capitalized fan_modes (e.g. Toshiba AC integration: Auto, Quiet, Low, Medium Low, Medium, Medium High, High)\n2. Expose it to Apple Home via the HomeKit Bridge integration\n3. In the Apple Home app, open the AC's Fan accessory, switch to \"Custom\", and move the speed slider\n4. Observe the climate.set_fan_mode service call fails in HA logs with a ServiceValidationError due to lowercase fan_mode value\n\n**Home Assistant version**\n\n(2026.6.4)\n\n**Integration affected**\n\nHomeKit Bridge (climate fan_mode handling). Also relevant: Toshiba AC integration (provides the capitalized fan_modes list, e.g. \"High\", \"Medium\").\n\n**Additional context**\n\nSetting fan speed directly through the Home Assistant UI (Developer Tools or entity card) works correctly with no error \u2014 the bug only occurs when the fan_mode value originates from the HomeKit Bridge after a user changes speed via the Apple Home app. This suggests the bridge is lowercasing the fan_mode string when translating its RotationSpeed/Custom fan service back into a fan_mode value, instead of using the exact string from the entity's fan_modes attribute.\n\n### What version of Home Assistant Core has the issue?\n\n2026.6.4\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\nThe homekit bridge + \"toshiba AC\"\n\n### Link to integration documentation on our website\n\n_No response_\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n```yaml\n\n```\n\n### Anything in the logs that might be useful for us?\n\n```txt\n\n```\n\n### Additional information\n\n_No response_",
+      "closed_at": "2026-06-30T23:01:04Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/175167/comments",
+      "created_at": "2026-06-30T05:45:14Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/175167/events",
+      "html_url": "https://github.com/home-assistant/core/issues/175167",
+      "id": 4774071369,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/175167/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc8AAAABHI6MSQ",
+      "number": 175167,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/175167/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/175167/timeline",
+      "title": "The HomeKit Bridge ServiceValidationError due to capitalisation mismatch",
+      "type": null,
+      "updated_at": "2026-07-30T23:20:18Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/175167",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/43680254?v=4",
+        "events_url": "https://api.github.com/users/PFYT/events{/privacy}",
+        "followers_url": "https://api.github.com/users/PFYT/followers",
+        "following_url": "https://api.github.com/users/PFYT/following{/other_user}",
+        "gists_url": "https://api.github.com/users/PFYT/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/PFYT",
+        "id": 43680254,
+        "login": "PFYT",
+        "node_id": "MDQ6VXNlcjQzNjgwMjU0",
+        "organizations_url": "https://api.github.com/users/PFYT/orgs",
+        "received_events_url": "https://api.github.com/users/PFYT/received_events",
+        "repos_url": "https://api.github.com/users/PFYT/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/PFYT/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/PFYT/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/PFYT",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1703
+}

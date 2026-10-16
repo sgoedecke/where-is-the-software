@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "duplicate\n",
+      "closed_at": "2025-06-29T04:48:46Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/19853/comments",
+      "created_at": "2025-06-28T19:29:01Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/19853/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/19853",
+      "id": 3185405243,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876e3",
+          "default": false,
+          "description": "This issue needs to be labelled",
+          "id": 2488007862,
+          "name": "S-Needs-Triage",
+          "node_id": "MDU6TGFiZWwyNDg4MDA3ODYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/19853/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U8693W07",
+      "number": 19853,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/19853/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/19853/timeline",
+      "title": "Inverted Normal vector on some 2d primitives",
+      "type": null,
+      "updated_at": "2025-06-29T04:49:23Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/19853",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/87591431?v=4",
+        "events_url": "https://api.github.com/users/Saratii/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Saratii/followers",
+        "following_url": "https://api.github.com/users/Saratii/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Saratii/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Saratii",
+        "id": 87591431,
+        "login": "Saratii",
+        "node_id": "MDQ6VXNlcjg3NTkxNDMx",
+        "organizations_url": "https://api.github.com/users/Saratii/orgs",
+        "received_events_url": "https://api.github.com/users/Saratii/received_events",
+        "repos_url": "https://api.github.com/users/Saratii/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Saratii/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Saratii/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Saratii",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 247
+}

@@ -1,0 +1,150 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "There is currently no way to indicate to the ScrollController, that it's content is stale, and that it should re-calculate it's extents.\r\n\r\nThis is necessary as I'm building a scrollbar, that relies on maxExtents to control a list. When the contents of the list change, maxExtents does not update, until a scrollEvent has been triggered. \r\n\r\nYou can hack around this, by using antimateTo, and  moving it like 1px, but if the list is too short, this does not work since the list can not be scrolled. \r\n\r\n**Can you provide an API on ScrollController for triggering this calculation?** ",
+      "closed_at": "2023-05-05T00:22:30Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/53305/comments",
+      "created_at": "2020-03-25T20:57:32Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/53305/events",
+      "html_url": "https://github.com/flutter/flutter/issues/53305",
+      "id": 587986555,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e02000",
+          "default": false,
+          "description": "Nothing broken; request for a new capability",
+          "id": 283479235,
+          "name": "c: new feature",
+          "node_id": "MDU6TGFiZWwyODM0NzkyMzU=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/c:%20new%20feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "000000",
+          "default": false,
+          "description": "The Flutter team cannot make further progress on this issue until the original reporter responds",
+          "id": 283479965,
+          "name": "waiting for response",
+          "node_id": "MDU6TGFiZWwyODM0Nzk5NjU=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/waiting%20for%20response"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "207de5",
+          "default": false,
+          "description": "flutter/packages/flutter repository. See also f: labels.",
+          "id": 284437560,
+          "name": "framework",
+          "node_id": "MDU6TGFiZWwyODQ0Mzc1NjA=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/framework"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "207de5",
+          "default": false,
+          "description": "Viewports, list views, slivers, etc.",
+          "id": 448556278,
+          "name": "f: scrolling",
+          "node_id": "MDU6TGFiZWw0NDg1NTYyNzg=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/f:%20scrolling"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e02000",
+          "default": false,
+          "description": "A detailed proposal for a change to Flutter",
+          "id": 1203938779,
+          "name": "c: proposal",
+          "node_id": "MDU6TGFiZWwxMjAzOTM4Nzc5",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/c:%20proposal"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "550000",
+          "default": false,
+          "description": "Issues that are less important to the Flutter project",
+          "id": 2096802849,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwyMDk2ODAyODQ5",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/P3"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/53305/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1ODc5ODY1NTU=",
+      "number": 53305,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/53305/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/53305/timeline",
+      "title": "Add scrollController.calculateExtents() so we can force a list to re-calculate it's extents",
+      "type": null,
+      "updated_at": "2023-05-19T01:27:31Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/53305",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/736973?v=4",
+        "events_url": "https://api.github.com/users/esDotDev/events{/privacy}",
+        "followers_url": "https://api.github.com/users/esDotDev/followers",
+        "following_url": "https://api.github.com/users/esDotDev/following{/other_user}",
+        "gists_url": "https://api.github.com/users/esDotDev/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/esDotDev",
+        "id": 736973,
+        "login": "esDotDev",
+        "node_id": "MDQ6VXNlcjczNjk3Mw==",
+        "organizations_url": "https://api.github.com/users/esDotDev/orgs",
+        "received_events_url": "https://api.github.com/users/esDotDev/received_events",
+        "repos_url": "https://api.github.com/users/esDotDev/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/esDotDev/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/esDotDev/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/esDotDev",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 83
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\nI have a Nibe F1253 PC\nEntity \"stop heating\" is missing from the integration but is present in de diagnostics file under parameterId '47375'.\n\n### What version of Home Assistant Core has the issue?\n\ncore-2026.9.4\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant Container\n\n### Integration causing the issue\n\nmyuplink\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/myuplink\n\n### Diagnostics information\n\n[config_entry-myuplink-01KWCW80ZVH2Z7WA83NWJ8RTYS.json](https://github.com/user-attachments/files/32849256/config_entry-myuplink-01KWCW80ZVH2Z7WA83NWJ8RTYS.json)\n\n### Example YAML snippet\n\n```yaml\n\n```\n\n### Anything in the logs that might be useful for us?\n\n```txt\n\n```\n\n### Additional information\n\n_No response_",
+      "closed_at": "2026-09-30T12:29:18Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/183714/comments",
+      "created_at": "2026-09-30T09:36:16Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/183714/events",
+      "html_url": "https://github.com/home-assistant/core/issues/183714",
+      "id": 5644365180,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 5073282228,
+          "name": "integration: myuplink",
+          "node_id": "LA_kwDOAMSroc8AAAABLmQktA",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20myuplink"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/183714/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc8AAAABUG4tfA",
+      "number": 183714,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/183714/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/183714/timeline",
+      "title": "Entity \"stop heating\" is missing.",
+      "type": null,
+      "updated_at": "2026-09-30T12:29:18Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/183714",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/59499879?v=4",
+        "events_url": "https://api.github.com/users/alfadude76/events{/privacy}",
+        "followers_url": "https://api.github.com/users/alfadude76/followers",
+        "following_url": "https://api.github.com/users/alfadude76/following{/other_user}",
+        "gists_url": "https://api.github.com/users/alfadude76/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/alfadude76",
+        "id": 59499879,
+        "login": "alfadude76",
+        "node_id": "MDQ6VXNlcjU5NDk5ODc5",
+        "organizations_url": "https://api.github.com/users/alfadude76/orgs",
+        "received_events_url": "https://api.github.com/users/alfadude76/received_events",
+        "repos_url": "https://api.github.com/users/alfadude76/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/alfadude76/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/alfadude76/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/alfadude76",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1487
+}

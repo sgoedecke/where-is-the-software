@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "I have a couple of inputs and I want to call `setInputData` state synchronously right after I set `setInputValues` state, because it makes use of its updated value, however no matter what I try it always gets the delayed value of what it was in the previous keystroke entered to the inputs.\r\n\r\nEven when using setTimeout, when setting the `setInputData` , it has a previous version of the `inputValues` that was set before it, no matter how much delay I give it. Even when even when both of them are deep clone or both shallow clone still same occurrence. I  don't understand how even after waiting with setTimeout for the `setInputValues` state to finish updating, my `setInputData` state is still not getting the real-time value of `inputValues`, even when the real-time value is shown inside the `<pre>` tag\r\n\r\nI simply want to set state2 after setting state1 because state2 makes use of state1's updated value.\r\nHowever I don't think useEffect subcription is an apt solution because I need the passed argument of the `inputName` to be used when setting both states.\r\n\r\nReact version: 18.0.0\r\n\r\n## Steps To Reproduce\r\n\r\nThis is the entire app\r\n```js\r\nimport { useState } from 'react'\r\n\r\nexport default function App() {\r\n\tconst [initialValues] = useState({ email: 'initialval', city: '' })\r\n\tconst [inputValues, setInputValues] = useState(initialValues)\r\n\tconst [inputData, setInputData] = useState({ email: { isDirty: false }, city: { isDirty: false } })\r\n\r\n\tfunction inputChange(e, inputName) {\r\n\t\tsetInputValues((prev) => {\r\n\t\t\tlet clone = { ...prev }\r\n\t\t\tclone[inputName] = e.target.value\r\n\t\t\tconsole.warn(`setting inputValues[${inputName}] to: ${e.target.value}`)\r\n\t\t\treturn clone\r\n\t\t})\r\n\t\tsetTimeout(() => {\r\n\t\t\tsetInputData((prev) => {\r\n\t\t\t\tconsole.log('current inputValue: ' + inputValues[inputName])\r\n\t\t\t\tlet clone = JSON.parse(JSON.stringify(prev))\r\n\t\t\t\tclone[inputName].isDirty = inputValues[inputName] === initialValues[inputName] ? false : true\r\n\t\t\t\treturn clone\r\n\t\t\t})\r\n\t\t}, 500)\r\n\t}\r\n\r\n\treturn (\r\n\t\t<>\r\n\t\t\t<input onChange={(e) => inputChange(e, 'email')} value={inputValues.email} />\r\n\t\t\t<input onChange={(e) => inputChange(e, 'city')} value={inputValues.city} />\r\n\t\t\tinputValues<pre>{JSON.stringify(inputValues, null, 4)}</pre>\r\n\t\t\tinputData<pre>{JSON.stringify(inputData, null, 4)}</pre>\r\n\t\t</>\r\n\t)\r\n}\r\n```\r\n\r\nLink to code example: https://codesandbox.io/s/react-bug-wtf-guzldd?file=/src/App.js\r\n\r\n\r\n## The current behavior\r\nAs you can see in the screenshot, the value of `inputValues` is always behind 1 keystroke. \r\n![image](https://user-images.githubusercontent.com/66864667/192846709-8438fa07-1aca-4750-b74f-fe057350a401.png)\r\n\r\n\r\n## The expected behavior\r\nI expect by the time I am setting `setInputData` it will have access to the latest `inputValues` that was set before it.\r\nI have heard that sometimes React batches together state updates, but this still doesn't make sense because there is even a setTimeout put in place, and usually setting states one after another has worked perfectly fine for me, and most importantly, the state is already updated everywhere else as shown in the `<pre>` tag, and by the time `setInputData` is called the updated value of `inputValues` is shown in the pre tag yet it still uses the old value.\r\nIf the current behavior is the expected behavior, I would appreciate greatly if someone shows me a way to accomplish what I am trying to do ",
+      "closed_at": "2022-09-28T19:11:59Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/react/react/issues/25341/comments",
+      "created_at": "2022-09-28T17:24:40Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/25341/events",
+      "html_url": "https://github.com/react/react/issues/25341",
+      "id": 1389710455,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/25341/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks5S1Ux3",
+      "number": 25341,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/25341/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/25341/timeline",
+      "title": "Bug: setState2 still uses old value of setState1 even though state1's value is already updated",
+      "type": null,
+      "updated_at": "2022-09-28T19:11:59Z",
+      "url": "https://api.github.com/repos/react/react/issues/25341",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/66864667?v=4",
+        "events_url": "https://api.github.com/users/TamirCode/events{/privacy}",
+        "followers_url": "https://api.github.com/users/TamirCode/followers",
+        "following_url": "https://api.github.com/users/TamirCode/following{/other_user}",
+        "gists_url": "https://api.github.com/users/TamirCode/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/TamirCode",
+        "id": 66864667,
+        "login": "TamirCode",
+        "node_id": "MDQ6VXNlcjY2ODY0NjY3",
+        "organizations_url": "https://api.github.com/users/TamirCode/orgs",
+        "received_events_url": "https://api.github.com/users/TamirCode/received_events",
+        "repos_url": "https://api.github.com/users/TamirCode/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/TamirCode/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/TamirCode/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/TamirCode",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 74
+}

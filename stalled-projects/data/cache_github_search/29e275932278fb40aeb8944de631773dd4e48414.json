@@ -1,0 +1,159 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [x] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [x] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [x] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a bug report that matches the one I want to file, without success.\n\n### Electron Version\n\n44.4.3 / 45.0.0-alpha.12 / 46.0.0-nightly.20260925\n\n### What operating system(s) are you using?\n\nmacOS\n\n### Operating System Version\n\nMacOS 27 (latest)\n\n### What arch are you using?\n\narm64 (including Apple Silicon)\n\n### Last Known Working Electron version\n\nN/A\n\n### Does the issue also appear in Chromium / Google Chrome?\n\nYes\n\n### Expected Behavior\n\nElectron starts successfully even if registration for system sleep/wake\nnotifications fails. That failure should degrade the unavailable notification\nfunctionality, not terminate the application or prevent independent battery\nand thermal monitors from initializing.\n\n### Actual Behavior\n\nElectron exits with a native SIGSEGV during startup, before application\nJavaScript runs. Application-level error handlers and logging therefore cannot\ncapture the failure.\n\nThe crash is in IOKit!IONotificationPortGetRunLoopSource, with\nEXC_BAD_ACCESS at address 0x10 on the main thread. It also occurs when\nlaunching fresh alpha/nightly Electron binaries with an isolated user-data\ndirectory and only --version, without loading the application's JavaScript.\n\n### Testcase Gist URL\n\nhttps://gist.github.com/mbianchidev/1fba9b144ba1c6bbb1393a2b1554dfd7\n\n### Additional Information\n\nChromium landed the fix on 2026-09-17:\n\nChromium issue: https://issues.chromium.org/issues/562777834\nReview: https://chromium-review.googlesource.com/c/chromium/src/+/8424840\nCommit: https://chromium.googlesource.com/chromium/src/+/69403d85b78bef2370cc9f8206dce84c5ff63ea4\n\nI found a terrible workaround for two different projects but it's really AI slop so I would not submit it as a proper fix.",
+      "closed_at": "2026-09-30T21:33:25Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/54490/comments",
+      "created_at": "2026-09-27T18:06:10Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/54490/events",
+      "html_url": "https://github.com/electron/electron/issues/54490",
+      "id": 5605015519,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 97403606,
+          "name": "platform/macOS",
+          "node_id": "MDU6TGFiZWw5NzQwMzYwNg==",
+          "url": "https://api.github.com/repos/electron/electron/labels/platform/macOS"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "",
+          "id": 520323169,
+          "name": "bug :beetle:",
+          "node_id": "MDU6TGFiZWw1MjAzMjMxNjk=",
+          "url": "https://api.github.com/repos/electron/electron/labels/bug%20:beetle:"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c2e0c6",
+          "default": false,
+          "description": "Issue can be reproduced with code at https://gist.github.com/",
+          "id": 2285277606,
+          "name": "has-repro-gist",
+          "node_id": "MDU6TGFiZWwyMjg1Mjc3NjA2",
+          "url": "https://api.github.com/repos/electron/electron/labels/has-repro-gist"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "8d9ee8",
+          "default": false,
+          "description": "",
+          "id": 11391972556,
+          "name": "44-x-y",
+          "node_id": "LA_kwDOAI8xS88AAAACpwO0zA",
+          "url": "https://api.github.com/repos/electron/electron/labels/44-x-y"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "8d9ee8",
+          "default": false,
+          "description": "",
+          "id": 11480274779,
+          "name": "45-x-y",
+          "node_id": "LA_kwDOAI8xS88AAAACrEcXWw",
+          "url": "https://api.github.com/repos/electron/electron/labels/45-x-y"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "8d9ee8",
+          "default": false,
+          "description": "",
+          "id": 11982779751,
+          "name": "46-x-y",
+          "node_id": "LA_kwDOAI8xS88AAAACyjq1Zw",
+          "url": "https://api.github.com/repos/electron/electron/labels/46-x-y"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/54490/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS88AAAABThW_3w",
+      "number": 54490,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 1,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/electron/electron/issues/54490/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/54490/timeline",
+      "title": "macOS 27: startup SIGSEGV when IORegisterForSystemPower fails",
+      "type": {
+        "color": "red",
+        "created_at": "2024-01-25T14:31:12Z",
+        "description": "An unexpected problem or behavior",
+        "id": 1725379,
+        "is_enabled": true,
+        "name": "Bug",
+        "node_id": "IT_kwDOAMybxs4AGlPD",
+        "updated_at": "2024-07-26T10:30:10Z"
+      },
+      "updated_at": "2026-09-30T21:38:17Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/54490",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/37507190?v=4",
+        "events_url": "https://api.github.com/users/mbianchidev/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mbianchidev/followers",
+        "following_url": "https://api.github.com/users/mbianchidev/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mbianchidev/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mbianchidev",
+        "id": 37507190,
+        "login": "mbianchidev",
+        "node_id": "MDQ6VXNlcjM3NTA3MTkw",
+        "organizations_url": "https://api.github.com/users/mbianchidev/orgs",
+        "received_events_url": "https://api.github.com/users/mbianchidev/received_events",
+        "repos_url": "https://api.github.com/users/mbianchidev/repos",
+        "site_admin": true,
+        "starred_url": "https://api.github.com/users/mbianchidev/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mbianchidev/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mbianchidev",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 223
+}

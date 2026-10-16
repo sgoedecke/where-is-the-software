@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\nv18.19.0\n\n### Platform\n\n```text\nLinux craftstation 6.15.2-arch1-1 #1 SMP PREEMPT_DYNAMIC Tue, 10 Jun 2025 21:32:33 +0000 x86_64 GNU/Linux\n```\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\nI'm not too sure of how you might replicated this, I'm running a vue2 project with `npm run serve` and when I make changes to components, the dev server crashes while it's trying to compile the project. \n\n```bash\n<--- Last few GCs --->\n\n[226218:0x22135c70]   499964 ms: Scavenge (reduce) 1947.4 (1990.8) -> 1947.3 (1990.6) MB, 19.8 / 0.0 ms  (average mu = 0.720, current mu = 0.472) allocation failure;\n[226218:0x22135c70]   501577 ms: Mark-sweep (reduce) 2058.4 (2101.4) -> 2033.7 (2096.9) MB, 1147.4 / 0.0 ms  (+ 0.0 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 1167 ms) (average mu = 0.779, current mu = 0.807\n\n<--- JS stacktrace --->\n\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\n 1: 0xb95b60 node::Abort() [node]\n 2: 0xa9a7f8  [node]\n 3: 0xd6f2f0 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]\n 4: 0xd6f697 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]\n 5: 0xf4cba5  [node]\n 6: 0xf5f08d v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]\n 7: 0xf3978e v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 8: 0xf3ab57 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 9: 0xf1b0a0 v8::internal::Factory::AllocateRaw(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [node]\n10: 0xf12b14 v8::internal::FactoryBase<v8::internal::Factory>::AllocateRawWithImmortalMap(int, v8::internal::AllocationType, v8::internal::Map, v8::internal::AllocationAlignment) [node]\n11: 0xf1469a v8::internal::FactoryBase<v8::internal::Factory>::NewFeedbackMetadata(int, int, v8::internal::AllocationType) [node]\n12: 0x1105070 v8::internal::Handle<v8::internal::FeedbackMetadata> v8::internal::FeedbackMetadata::New<v8::internal::Isolate>(v8::internal::Isolate*, v8::internal::FeedbackVectorSpec const*) [node]\n13: 0xe1bce0  [node]\n14: 0xe1f635 v8::internal::Compiler::Compile(v8::internal::Isolate*, v8::internal::Handle<v8::internal::SharedFunctionInfo>, v8::internal::Compiler::ClearExceptionFlag, v8::internal::IsCompiledScope*, v8::internal::CreateSourcePositions) [node]\n15: 0xe1fa64 v8::internal::Compiler::Compile(v8::internal::Isolate*, v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Compiler::ClearExceptionFlag, v8::internal::IsCompiledScope*) [node]\n16: 0x12d7f55 v8::internal::Runtime_CompileLazy(int, unsigned long*, v8::internal::Isolate*) [node]\n17: 0x170deb9  [node]\n[1]    226207 IOT instruction (core dumped)  npm run serve\n```\n\n### How often does it reproduce? Is there a required condition?\n\nIt happens sometimes when there's a reload\n\n### What is the expected behavior? Why is that the expected behavior?\n\nThe changes i make to the components, trigger a recompile and the updates are available in the browser\n\n### What do you see instead?\n\nI get this error.\n\n```bash\n<--- Last few GCs --->\n\n[226218:0x22135c70]   499964 ms: Scavenge (reduce) 1947.4 (1990.8) -> 1947.3 (1990.6) MB, 19.8 / 0.0 ms  (average mu = 0.720, current mu = 0.472) allocation failure;\n[226218:0x22135c70]   501577 ms: Mark-sweep (reduce) 2058.4 (2101.4) -> 2033.7 (2096.9) MB, 1147.4 / 0.0 ms  (+ 0.0 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 1167 ms) (average mu = 0.779, current mu = 0.807\n\n<--- JS stacktrace --->\n\nFATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory\n 1: 0xb95b60 node::Abort() [node]\n 2: 0xa9a7f8  [node]\n 3: 0xd6f2f0 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]\n 4: 0xd6f697 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]\n 5: 0xf4cba5  [node]\n 6: 0xf5f08d v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]\n 7: 0xf3978e v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 8: 0xf3ab57 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [node]\n 9: 0xf1b0a0 v8::internal::Factory::AllocateRaw(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [node]\n10: 0xf12b14 v8::internal::FactoryBase<v8::internal::Factory>::AllocateRawWithImmortalMap(int, v8::internal::AllocationType, v8::internal::Map, v8::internal::AllocationAlignment) [node]\n11: 0xf1469a v8::internal::FactoryBase<v8::internal::Factory>::NewFeedbackMetadata(int, int, v8::internal::AllocationType) [node]\n12: 0x1105070 v8::internal::Handle<v8::internal::FeedbackMetadata> v8::internal::FeedbackMetadata::New<v8::internal::Isolate>(v8::internal::Isolate*, v8::internal::FeedbackVectorSpec const*) [node]\n13: 0xe1bce0  [node]\n14: 0xe1f635 v8::internal::Compiler::Compile(v8::internal::Isolate*, v8::internal::Handle<v8::internal::SharedFunctionInfo>, v8::internal::Compiler::ClearExceptionFlag, v8::internal::IsCompiledScope*, v8::internal::CreateSourcePositions) [node]\n15: 0xe1fa64 v8::internal::Compiler::Compile(v8::internal::Isolate*, v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Compiler::ClearExceptionFlag, v8::internal::IsCompiledScope*) [node]\n16: 0x12d7f55 v8::internal::Runtime_CompileLazy(int, unsigned long*, v8::internal::Isolate*) [node]\n17: 0x170deb9  [node]\n[1]    226207 IOT instruction (core dumped)  npm run serve\n```\n\n### Additional information\n\n_No response_",
+      "closed_at": "2025-06-30T17:10:20Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/58906/comments",
+      "created_at": "2025-06-30T16:27:23Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/58906/events",
+      "html_url": "https://github.com/nodejs/node/issues/58906",
+      "id": 3189120333,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/58906/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs86-Fh1N",
+      "number": 58906,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/58906/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/58906/timeline",
+      "title": "Node crashes on reload of a vue2 dev server",
+      "type": null,
+      "updated_at": "2025-06-30T17:10:20Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/58906",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/34634214?v=4",
+        "events_url": "https://api.github.com/users/gray-adeyi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/gray-adeyi/followers",
+        "following_url": "https://api.github.com/users/gray-adeyi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/gray-adeyi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/gray-adeyi",
+        "id": 34634214,
+        "login": "gray-adeyi",
+        "node_id": "MDQ6VXNlcjM0NjM0MjE0",
+        "organizations_url": "https://api.github.com/users/gray-adeyi/orgs",
+        "received_events_url": "https://api.github.com/users/gray-adeyi/received_events",
+        "repos_url": "https://api.github.com/users/gray-adeyi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/gray-adeyi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/gray-adeyi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/gray-adeyi",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 188
+}

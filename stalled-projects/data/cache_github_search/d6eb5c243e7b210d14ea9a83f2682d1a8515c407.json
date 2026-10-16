@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "The binary search is implemented as:\r\nhttps://github.com/rust-lang/rust/blob/27e766d7bc84be992c8ddef710affc92ef4a0adf/src/libcore/slice.rs#L304-L324\r\n\r\nHere I've added a caller to instantiate it with commonly used types (u32 and its cmp):\r\n\r\n```rust\r\nuse std::cmp::Ordering::{self, *};\r\n\r\nfn binary_search_by<T, F>(this: &[T], mut f: F) -> Result<usize, usize> where\r\n        F: FnMut(&T) -> Ordering\r\n    {\r\n        let mut base = 0usize;\r\n        let mut s = this;\r\n\r\n        loop {\r\n            let (head, tail) = s.split_at(s.len() >> 1);\r\n            if tail.is_empty() {\r\n                return Err(base)\r\n            }\r\n            match f(&tail[0]) {\r\n                Less => {\r\n                    base += head.len() + 1;\r\n                    s = &tail[1..];\r\n                }\r\n                Greater => s = head,\r\n                Equal => return Ok(base + head.len()),\r\n            }\r\n        }\r\n}\r\n\r\npub fn foo(data: &[u32], x: u32) -> Result<usize, usize> {\r\n    binary_search_by(data, |y| x.cmp(y))\r\n}\r\n```\r\n\r\nrustc 1.54.0-nightly with optimizations gives:\r\n\r\n```asm\r\nfoo:\r\n\tmov     r11, rsi\r\n\tshr     r11\r\n\tmov     eax, 1\r\n\tsub     rsi, r11\r\n\tje      .LBB0_8\r\n\tmov     r8d, edx\r\n\tlea     r10, [rdi + 4*r11]\r\n\txor     edx, edx\r\n\tmov     r9, -1\r\n\tjmp     .LBB0_4\r\n.LBB0_2:\r\n\tadd     rdx, r11\r\n\tinc     rdx\r\n\tadd     r10, 4\r\n\tdec     rsi\r\n\tmov     r11, rsi\r\n\tmov     rdi, r10\r\n.LBB0_3:\r\n\tmov     rcx, r11\r\n\tshr     rcx\r\n\tlea     r10, [rdi + 4*rcx]\r\n\tsub     r11, rcx\r\n\tmov     rsi, r11\r\n\tmov     r11, rcx\r\n\tje      .LBB0_7\r\n.LBB0_4:\r\n\txor     ecx, ecx\r\n\tcmp     dword ptr [r10], r8d\r\n\tsetne   cl\r\n\tcmova   rcx, r9\r\n\tcmp     rcx, -1\r\n\tje      .LBB0_2\r\n\ttest    rcx, rcx\r\n\tjne     .LBB0_3\r\n\tadd     rdx, r11\r\n\txor     eax, eax\r\n.LBB0_7:\r\n\tret\r\n.LBB0_8:\r\n\txor     edx, edx\r\n\tret\r\n```\r\n\r\nI've noticed that replacing the call to cmp + match with simpler code, the asm becomes shorter (6 asm instructions less):\r\n\r\n```rust\r\nfn binary_search_by<T: Ord>(this: &[T], x: T) -> Result<usize, usize> {\r\n        let mut base = 0usize;\r\n        let mut s = this;\r\n\r\n        loop {\r\n            let (head, tail) = s.split_at(s.len() >> 1);\r\n            if tail.is_empty() {\r\n                return Err(base)\r\n            }\r\n            if x < tail[0] {\r\n                base += head.len() + 1;\r\n                s = &tail[1 ..];\r\n            } else if x > tail[0] {\r\n                s = head;\r\n            } else {\r\n                return Ok(base + head.len());\r\n            }\r\n        }\r\n}\r\n\r\npub fn foo(data: &[u32], x: u32) -> Result<usize, usize> {\r\n    binary_search_by(data, x)\r\n}\r\n```\r\n\r\nGives:\r\n\r\n```asm\r\nfoo:\r\n\tmov     r10, rsi\r\n\tshr     r10\r\n\tmov     eax, 1\r\n\tsub     rsi, r10\r\n\tje      .LBB0_1\r\n\tmov     r8d, edx\r\n\tlea     r9, [rdi + 4*r10]\r\n\txor     edx, edx\r\n\tjmp     .LBB0_3\r\n.LBB0_4:\r\n\tadd     rdx, r10\r\n\tinc     rdx\r\n\tadd     r9, 4\r\n\tdec     rsi\r\n\tmov     r10, rsi\r\n\tmov     rdi, r9\r\n.LBB0_5:\r\n\tmov     rcx, r10\r\n\tshr     rcx\r\n\tlea     r9, [rdi + 4*rcx]\r\n\tsub     r10, rcx\r\n\tmov     rsi, r10\r\n\tmov     r10, rcx\r\n\tje      .LBB0_8\r\n.LBB0_3:\r\n\tcmp     dword ptr [r9], r8d\r\n\tja      .LBB0_4\r\n\tjb      .LBB0_5\r\n\tadd     rdx, r10\r\n\txor     eax, eax\r\n.LBB0_8:\r\n\tret\r\n.LBB0_1:\r\n\txor     edx, edx\r\n\tret\r\n```\r\n\r\nIs it possible to improve rustc so it handles simple cmp+Ordering match cases like this about as efficiently as the if/else if/else case?\r\n\r\n\r\nBy the way, I've also noticed that you can rewrite the binary search function using pattern matching, avoiding explicit indexing and slicing (the asm is the same as the stdlib version):\r\n\r\n```rust\r\nfn binary_search_by<T, F>(mut data: &[T], mut f: F) -> Result<usize, usize> where\r\n        F: FnMut(&T) -> Ordering\r\n    {\r\n        let mut base = 0_usize;\r\n\r\n        loop {\r\n            match data.split_at(data.len() >> 1) {\r\n                (_, []) => return Err(base),\r\n                (head, [t0, rest @ ..]) => {\r\n                    match f(t0) {\r\n                        Less => {\r\n                            base += head.len() + 1;\r\n                            data = rest;\r\n                        }\r\n                        Greater => data = head,\r\n                        Equal => return Ok(base + head.len()),\r\n                    }\r\n                },\r\n            }\r\n        }\r\n}\r\n```",
+      "closed_at": "2024-07-26T18:53:43Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/86354/comments",
+      "created_at": "2021-06-16T08:05:41Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/86354/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/86354",
+      "id": 922261271,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Code generation",
+          "id": 234956,
+          "name": "A-codegen",
+          "node_id": "MDU6TGFiZWwyMzQ5NTY=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-codegen"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/86354/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5MjIyNjEyNzE=",
+      "number": 86354,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/86354/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/86354/timeline",
+      "title": "cmp+Ordering match versus if+else if+then for binary_search_by",
+      "type": null,
+      "updated_at": "2024-07-26T18:53:44Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/86354",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/22328461?v=4",
+        "events_url": "https://api.github.com/users/leonardo-m/events{/privacy}",
+        "followers_url": "https://api.github.com/users/leonardo-m/followers",
+        "following_url": "https://api.github.com/users/leonardo-m/following{/other_user}",
+        "gists_url": "https://api.github.com/users/leonardo-m/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/leonardo-m",
+        "id": 22328461,
+        "login": "leonardo-m",
+        "node_id": "MDQ6VXNlcjIyMzI4NDYx",
+        "organizations_url": "https://api.github.com/users/leonardo-m/orgs",
+        "received_events_url": "https://api.github.com/users/leonardo-m/received_events",
+        "repos_url": "https://api.github.com/users/leonardo-m/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/leonardo-m/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/leonardo-m/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/leonardo-m",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 104
+}

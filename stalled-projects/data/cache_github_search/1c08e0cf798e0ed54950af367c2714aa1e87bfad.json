@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\r\nPlease answer these questions before submitting your issue. Thanks!\r\n-->\r\n\r\n### What version of Go are you using (`go version`)?\r\n\r\n<pre>\r\n$ go version \r\ngo version go1.18.1 linux/amd64\r\n</pre>\r\n\r\n### Does this issue reproduce with the latest release?\r\nmaybe not?\r\n\r\n\r\n### What operating system and processor architecture are you using (`go env`)?\r\n\r\n<details><summary><code>go env</code> Output</summary><br><pre>\r\n$ go env\r\nGO111MODULE=\"\"\r\nGOARCH=\"amd64\"\r\nGOBIN=\"\"\r\nGOCACHE=\"/home/speauty/.cache/go-build\"\r\nGOENV=\"/home/speauty/.config/go/env\"\r\nGOEXE=\"\"\r\nGOEXPERIMENT=\"\"\r\nGOFLAGS=\"\"\r\nGOHOSTARCH=\"amd64\"\r\nGOHOSTOS=\"linux\"\r\nGOINSECURE=\"\"\r\nGOMODCACHE=\"/home/speauty/go/pkg/mod\"\r\nGONOPROXY=\"\"\r\nGONOSUMDB=\"\"\r\nGOOS=\"linux\"\r\nGOPATH=\"/home/speauty/go\"\r\nGOPRIVATE=\"\"\r\nGOPROXY=\"https://goproxy.cn\"\r\nGOROOT=\"/usr/local/go\"\r\nGOSUMDB=\"sum.golang.org\"\r\nGOTMPDIR=\"\"\r\nGOTOOLDIR=\"/usr/local/go/pkg/tool/linux_amd64\"\r\nGOVCS=\"\"\r\nGOVERSION=\"go1.18.1\"\r\nGCCGO=\"gccgo\"\r\nGOAMD64=\"v1\"\r\nAR=\"ar\"\r\nCC=\"gcc\"\r\nCXX=\"g++\"\r\nCGO_ENABLED=\"1\"\r\nGOMOD=\"/dev/null\"\r\nGOWORK=\"\"\r\nCGO_CFLAGS=\"-g -O2\"\r\nCGO_CPPFLAGS=\"\"\r\nCGO_CXXFLAGS=\"-g -O2\"\r\nCGO_FFLAGS=\"-g -O2\"\r\nCGO_LDFLAGS=\"-g -O2\"\r\nPKG_CONFIG=\"pkg-config\"\r\nGOGCCFLAGS=\"-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build1154348162=/tmp/go-build -gno-record-gcc-switches\"\r\n</pre></details>\r\n\r\n### What did you do?\r\nI want to parse a xml data from a xml file to a related struct by using encoding/xml lib.\r\n<!--\r\nIf possible, provide a recipe for reproducing the error.\r\nA complete runnable program is good.\r\nA link on go.dev/play is best.\r\n-->\r\n\r\n\r\n\r\n### What did you expect to see?\r\nthat struct has all data parsed from xml, including attr.\r\n\r\n\r\n### What did you see instead?\r\nstruct is right, but the field binding to pointed attr flag is empty, no data with that.\r\n\r\nthe xml file data like follow:\r\n\r\n```xml\r\n<ProducData_ExpXML>\r\n    <IronInfo OrderNo=\"220629192669300\" />\r\n</ProducData_ExpXML>\r\n```\r\n\r\nand code,  emmm\r\n```golang\r\ntype XmlExp struct {\r\n\tXMLName  xml.Name `xml:\"ProducData_ExpXML\"`\r\n\tIronInfo IronInfo\r\n}\r\n\r\ntype IronInfo struct {\r\n\tOrderNo string `xml:\"OrderNo.attr\"`\r\n}\r\n\r\nfunc (controller Common) UploadXml(ctx *gin.Context) { // gin web handle\r\n\ttmpXML, _ := ctx.FormFile(\"xml\")\r\n\txmlParsed := &XmlExp{}\r\n\topen, err := tmpXML.Open()\r\n\tdefer func() { _ = open.Close() }()\r\n\tif err != nil {\r\n\t\tfmt.Println(\"file open\", err)\r\n\t}\r\n\tdata, _ := io.ReadAll(open)\r\n\terr = xml.Unmarshal(data, xmlParsed)\r\n\tif err != nil {\r\n\t\tfmt.Println(\"xml unmarshal\", err)\r\n\t}\r\n\tresp := (&http.JsonResponse{}).Default()\r\n\tresp.SetData(map[string]interface{}{\r\n\t\t\"xml_parsed\": xmlParsed,\r\n\t})\r\n\tcontroller.Response(ctx, resp, nil) \r\n\treturn\r\n}\r\n```\r\n\r\nof course, response is:\r\n```json\r\n{\r\n    \"c\": 200,\r\n    \"m\": \"ok\",\r\n    \"d\": {\r\n        \"xml_parsed\": {\r\n            \"XMLName\": {\r\n                \"Space\": \"\",\r\n                \"Local\": \"ProducData_ExpXML\"\r\n            },\r\n            \"IronInfo\": {\r\n                \"OrderNo\": \"\"\r\n            }\r\n        }\r\n    }\r\n}\r\n```\r\n\r\nthe go-play link is: https://go.dev/play/p/bc2tww7J4wQ, which just simplified the above code.\r\n",
+      "closed_at": "2022-06-30T04:43:30Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/golang/go/issues/53623/comments",
+      "created_at": "2022-06-30T04:08:46Z",
+      "events_url": "https://api.github.com/repos/golang/go/issues/53623/events",
+      "html_url": "https://github.com/golang/go/issues/53623",
+      "id": 1289553452,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": null,
+          "id": 398069301,
+          "name": "FrozenDueToAge",
+          "node_id": "MDU6TGFiZWwzOTgwNjkzMDE=",
+          "url": "https://api.github.com/repos/golang/go/labels/FrozenDueToAge"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/golang/go/issues/53623/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAWBuf85M3QYs",
+      "number": 53623,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/golang/go/issues/53623/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/golang/go",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/golang/go/issues/53623/timeline",
+      "title": "encoding/xml: can't bind attr val to a field of struct with flag",
+      "type": null,
+      "updated_at": "2023-06-30T04:48:15Z",
+      "url": "https://api.github.com/repos/golang/go/issues/53623",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/28774023?v=4",
+        "events_url": "https://api.github.com/users/speauty/events{/privacy}",
+        "followers_url": "https://api.github.com/users/speauty/followers",
+        "following_url": "https://api.github.com/users/speauty/following{/other_user}",
+        "gists_url": "https://api.github.com/users/speauty/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/speauty",
+        "id": 28774023,
+        "login": "speauty",
+        "node_id": "MDQ6VXNlcjI4Nzc0MDIz",
+        "organizations_url": "https://api.github.com/users/speauty/orgs",
+        "received_events_url": "https://api.github.com/users/speauty/received_events",
+        "repos_url": "https://api.github.com/users/speauty/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/speauty/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/speauty/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/speauty",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1182
+}

@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\r\n\r\nv18.18.0\r\n\r\n### Platform\r\n\r\nx64 window\r\n\r\n### Subsystem\r\n\r\n_No response_\r\n\r\n### What steps will reproduce the bug?\r\n\r\n```\r\n\r\nlet sleep_cpu_bound = function (time) {\r\n    return new Promise((resolve, reject) => {\r\n        var stop = new Date().getTime();\r\n        while (new Date().getTime() < stop + time) {\r\n            ;\r\n        }\r\n   \r\n        return resolve(true)\r\n    });\r\n}\r\n \r\nasync function call_api_1() {\r\n    try {\r\n        console.log('entering the fetchData function');\r\n \r\n        await sleep_cpu_bound(1000);\r\n  \r\n \r\n        const response_1 = await fetch('https://jsonplaceholder.typicode.com/posts/1');\r\n \r\n        if (!response_1.ok) {\r\n            throw new Error(`Error when calling API_1: ${response_1.status}`);\r\n        }\r\n \r\n        const data = await response_1.json();\r\n        console.log('API_1 is coming');\r\n \r\n        return data;\r\n    } catch (error) {\r\n        console.error('Error when calling API:', error);\r\n        throw error;\r\n    }\r\n}\r\n \r\nasync function call_api_2() {\r\n    try {\r\n        console.log('entering the fetchSlowData function');\r\n \r\n        const response_2 = await fetch('https://jsonplaceholder.typicode.com/comments/1');\r\n        if (!response_2.ok) {\r\n            throw new Error(`Error when calling API_2: ${response_2.status}`);\r\n        }\r\n \r\n        const data = await response_2.json();\r\n        console.log('API_2 is coming');\r\n        return data;\r\n    } catch (error) {\r\n        console.error('Error when calling slow API:', error);\r\n        throw error;\r\n    }\r\n}\r\n \r\nfunction checkings_1() {\r\n    console.log('checking_1')\r\n}\r\n \r\nfunction checkings_2() {\r\n    console.log('checking_2')\r\n}\r\n \r\nfunction checkings_3() {\r\n    console.log('checking_3')\r\n}\r\n \r\nasync function main() {\r\n    const promise2 = call_api_2();\r\n    console.log('promise_2', promise2);\r\n    const promise1 = call_api_1();\r\n    console.log('promise_1', promise1);\r\n \r\n    checkings_1();\r\n    checkings_2();\r\n \r\n    const [data2, data1] = await Promise.all([promise2, promise1]); // Wait for both promises to complete\r\n \r\n    checkings_3();\r\n    console.log('Ending');\r\n}\r\n \r\nmain()\r\n```\r\n\r\n\r\n### How often does it reproduce? Is there a required condition?\r\n\r\nOccasionally, and inconsistently across executions.\r\n\r\n### What is the expected behavior? Why is that the expected behavior?\r\nentering the fetchSlowData function\r\npromise_2 Promise { <pending> }\r\nentering the fetchData function\r\npromise_1 Promise { <pending> }\r\nchecking_1\r\nchecking_2\r\nAPI_2 is coming\r\nAPI_1 is coming\r\nchecking_3\r\nEnding\r\n\r\n### What do you see instead?\r\n\r\nentering the fetchSlowData function\r\npromise_2 Promise { <pending> }\r\nentering the fetchData function\r\npromise_1 Promise { <pending> }\r\nchecking_1\r\nchecking_2\r\nAPI_1 is coming\r\nAPI_2 is coming\r\nchecking_3\r\nEnding\r\n\r\n\r\n### Additional information\r\n\r\nhi You, in this piece of code, I intentionally want to notify 'API_2 is coming' first, so I placed the 'sleep()' function inside the 'call_api_1' function. However, when I run it on Node v18, I receive a strange result where sometimes 'API_2 is coming' appears first, and other times 'API_1 is coming' appears first on the screen. But when I check it in the Chrome browser, I consistently get the result 'API_2 is coming' first. I've tried to explain it, but I don't know the reason why. It seems to be a Node.js issue.\r\n\r\nthank you!\r\n",
+      "closed_at": "2023-09-30T09:51:41Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/49977/comments",
+      "created_at": "2023-09-30T09:37:58Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/49977/events",
+      "html_url": "https://github.com/nodejs/node/issues/49977",
+      "id": 1920192955,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/49977/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85yc9G7",
+      "number": 49977,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/49977/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/49977/timeline",
+      "title": "Inconsistent Execution Order in Node.js v18.18",
+      "type": null,
+      "updated_at": "2023-09-30T09:51:41Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/49977",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/51446566?v=4",
+        "events_url": "https://api.github.com/users/minhaics/events{/privacy}",
+        "followers_url": "https://api.github.com/users/minhaics/followers",
+        "following_url": "https://api.github.com/users/minhaics/following{/other_user}",
+        "gists_url": "https://api.github.com/users/minhaics/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/minhaics",
+        "id": 51446566,
+        "login": "minhaics",
+        "node_id": "MDQ6VXNlcjUxNDQ2NTY2",
+        "organizations_url": "https://api.github.com/users/minhaics/orgs",
+        "received_events_url": "https://api.github.com/users/minhaics/received_events",
+        "repos_url": "https://api.github.com/users/minhaics/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/minhaics/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/minhaics/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/minhaics",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 216
+}

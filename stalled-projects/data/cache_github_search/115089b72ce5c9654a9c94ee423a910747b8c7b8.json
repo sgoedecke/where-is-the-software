@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "BPO | [47065](https://bugs.python.org/issue47065)\n--- | :---\nNosy | @Yhg1s, @gpshead, @ncoghlan, @encukou, @serhiy-storchaka\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2022-03-19.11:10:26.159>\nlabels = ['type-bug', 'tests']\ntitle = 'test_curses fails if terminal defaults to bright white text (15)'\nupdated_at = <Date 2022-03-20.21:36:01.610>\nuser = 'https://github.com/ncoghlan'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2022-03-20.21:36:01.610>\nactor = 'gregory.p.smith'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['Tests']\ncreation = <Date 2022-03-19.11:10:26.159>\ncreator = 'ncoghlan'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 47065\nkeywords = []\nmessage_count = 3.0\nmessages = ['415539', '415559', '415634']\nnosy_count = 5.0\nnosy_names = ['twouters', 'gregory.p.smith', 'ncoghlan', 'petr.viktorin', 'serhiy.storchaka']\npr_nums = []\npriority = 'normal'\nresolution = None\nstage = 'needs patch'\nstatus = 'open'\nsuperseder = None\ntype = 'behavior'\nurl = 'https://bugs.python.org/issue47065'\nversions = []\n```\n\n</p></details>\n\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-132986\n* gh-132990\n* gh-132992\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2025-04-26T11:19:24Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/91221/comments",
+      "created_at": "2022-03-19T11:10:26Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/91221/events",
+      "html_url": "https://github.com/python/cpython/issues/91221",
+      "id": 1199077293,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Tests in the Lib/test dir",
+          "id": 537044141,
+          "name": "tests",
+          "node_id": "MDU6TGFiZWw1MzcwNDQxNDE=",
+          "url": "https://api.github.com/repos/python/cpython/labels/tests"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/91221/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5HeHet",
+      "number": 91221,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/91221/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/91221/timeline",
+      "title": "test_curses fails if terminal defaults to bright white text (15)",
+      "type": null,
+      "updated_at": "2025-04-26T11:19:25Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/91221",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1026649?v=4",
+        "events_url": "https://api.github.com/users/ncoghlan/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ncoghlan/followers",
+        "following_url": "https://api.github.com/users/ncoghlan/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ncoghlan/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ncoghlan",
+        "id": 1026649,
+        "login": "ncoghlan",
+        "node_id": "MDQ6VXNlcjEwMjY2NDk=",
+        "organizations_url": "https://api.github.com/users/ncoghlan/orgs",
+        "received_events_url": "https://api.github.com/users/ncoghlan/received_events",
+        "repos_url": "https://api.github.com/users/ncoghlan/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ncoghlan/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ncoghlan/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ncoghlan",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 72
+}

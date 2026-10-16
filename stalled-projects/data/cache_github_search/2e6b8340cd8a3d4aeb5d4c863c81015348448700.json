@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a bug report that matches the one I want to file, without success.\n\n### Electron Version\n\n18.0.1\n\n### What operating system are you using?\n\nmacOS\n\n### Operating System Version\n\nmacOS 12.3\n\n### What arch are you using?\n\narm64 (including Apple Silicon)\n\n### Last Known Working Electron version\n\n17.3.1\n\n### Expected Behavior\n\n`electron-builder -m pkg --universal` generates pkg file without error.\n\n### Actual Behavior\n\nelectron-builder fails:\r\n```\r\n  \u2022 electron-builder  version=22.14.13 os=20.6.0\r\n  \u2022 loaded configuration  file=/Users/runner/work/cbetar2/cbetar2/electronBuilderConfigs/mac.json\r\n  \u2022 rebuilding native dependencies  dependencies=libxslt-myh@0.9.13, node1-libxmljsmt-myh@1.0.5 platform=darwin arch=x64\r\n  \u2022 packaging       platform=darwin arch=x64 electron=18.0.1 appOutDir=dist/mac-universal--x64\r\n  \u2022 downloading     url=https://github.com/electron/electron/releases/download/v18.0.1/electron-v18.0.1-darwin-x64.zip size=82 MB parts=6\r\n  \u2022 downloaded      url=https://github.com/electron/electron/releases/download/v18.0.1/electron-v18.0.1-darwin-x64.zip duration=1.554s\r\n  \u2022 rebuilding native dependencies  dependencies=libxslt-myh@0.9.13, node1-libxmljsmt-myh@1.0.5 platform=darwin arch=arm64\r\n  \u2022 packaging       platform=darwin arch=arm64 electron=18.0.1 appOutDir=dist/mac-universal--arm64\r\n  \u2022 downloading     url=https://github.com/electron/electron/releases/download/v18.0.1/electron-v18.0.1-darwin-arm64.zip size=84 MB parts=6\r\n  \u2022 downloaded      url=https://github.com/electron/electron/releases/download/v18.0.1/electron-v18.0.1-darwin-arm64.zip duration=2.642s\r\n  \u2022 packaging       platform=darwin arch=universal electron=18.0.1 appOutDir=dist/mac-universal\r\n  \u2a2f Expected all non-binary files to have identical SHAs when creating a universal build but \"Contents/Frameworks/Electron Framework.framework/Versions/A/Resources/MainMenu.nib/keyedobjects-101300.nib\" did not  failedTask=build stackTrace=Error: Expected all non-binary files to have identical SHAs when creating a universal build but \"Contents/Frameworks/Electron Framework.framework/Versions/A/Resources/MainMenu.nib/keyedobjects-101300.nib\" did not\r\n    at exports.makeUniversalApp (/Users/runner/work/cbetar2/cbetar2/node_modules/@electron/universal/src/index.ts:107:15)\r\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\r\n    at MacPackager.doPack (/Users/runner/work/cbetar2/cbetar2/node_modules/app-builder-lib/src/macPackager.ts:125:9)\r\n    at MacPackager.pack (/Users/runner/work/cbetar2/cbetar2/node_modules/app-builder-lib/src/macPackager.ts:177:7)\r\n    at Packager.doBuild (/Users/runner/work/cbetar2/cbetar2/node_modules/app-builder-lib/src/packager.ts:441:9)\r\n    at Object.executeFinally (/Users/runner/work/cbetar2/cbetar2/node_modules/builder-util/src/promise.ts:12:14)\r\n    at Packager._build (/Users/runner/work/cbetar2/cbetar2/node_modules/app-builder-lib/src/packager.ts:376:31)\r\n    at Packager.build (/Users/runner/work/cbetar2/cbetar2/node_modules/app-builder-lib/src/packager.ts:337:12)\r\n    at Object.executeFinally (/Users/runner/work/cbetar2/cbetar2/node_modules/builder-util/src/promise.ts:12:14)\r\nnpm ERR! code ELIFECYCLE\r\nnpm ERR! errno 1\r\nnpm ERR! cbetar2@18.0.0 dist-mac: `npm run build-electron && electron-builder -m pkg -c electronBuilderConfigs/mac.json \"-p\" \"always\" \"--universal\"`\r\nnpm ERR! Exit status 1\r\nnpm ERR! \r\nnpm ERR! Failed at the cbetar2@18.0.0 dist-mac script.\r\nnpm ERR! This is probably not a problem with npm. There is likely additional logging output above.\r\n```\r\nRef: https://github.com/MrMYHuang/cbetar2/runs/5767240065?check_suite_focus=true\n\n### Testcase Gist URL\n\n_No response_\n\n### Additional Information\n\n`electron-builder -m pkg --universal` works well with Electron 17.3.1.",
+      "closed_at": "2022-03-31T16:14:50Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/33564/comments",
+      "created_at": "2022-03-31T15:03:43Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/33564/events",
+      "html_url": "https://github.com/electron/electron/issues/33564",
+      "id": 1188230623,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "",
+          "id": 520323169,
+          "name": "bug :beetle:",
+          "node_id": "MDU6TGFiZWw1MjAzMjMxNjk=",
+          "url": "https://api.github.com/repos/electron/electron/labels/bug%20:beetle:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/33564/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85G0vXf",
+      "number": 33564,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/33564/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/33564/timeline",
+      "title": "[Bug]: electron-builder fails to build macOS universal package with Electron 18.0.1",
+      "type": null,
+      "updated_at": "2022-03-31T16:14:50Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/33564",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/12458706?v=4",
+        "events_url": "https://api.github.com/users/MrMYHuang/events{/privacy}",
+        "followers_url": "https://api.github.com/users/MrMYHuang/followers",
+        "following_url": "https://api.github.com/users/MrMYHuang/following{/other_user}",
+        "gists_url": "https://api.github.com/users/MrMYHuang/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/MrMYHuang",
+        "id": 12458706,
+        "login": "MrMYHuang",
+        "node_id": "MDQ6VXNlcjEyNDU4NzA2",
+        "organizations_url": "https://api.github.com/users/MrMYHuang/orgs",
+        "received_events_url": "https://api.github.com/users/MrMYHuang/received_events",
+        "repos_url": "https://api.github.com/users/MrMYHuang/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/MrMYHuang/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/MrMYHuang/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/MrMYHuang",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 426
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\r\nPlease try to reproduce the issue with the latest published version. It may have already been fixed.\r\nFor npm: `typescript@next`\r\nThis is also the 'Nightly' version in the playground: http://www.typescriptlang.org/play/?ts=Nightly\r\n-->\r\n**TypeScript Version:**  3.8.3-3.9.0-dev.20200324\r\n\r\n<!-- Search terms you tried before logging this (so others can find this issue more easily) -->\r\n**Search Terms:**\r\nmapped type, record, assignability, assignability compatibility, generic type, type parameter, generic mapped type, string index signature\r\n\r\n**Code**\r\n\r\n```ts\r\nfunction foo<T extends string>(\r\n    a1: Record<T, string>, a2: Record<string, string>, a3: { [P in T]: string }\r\n): Record<T, string> {\r\n    a2 = a1 // no error, expected\r\n    a3 = a2 // error, expected\r\n\r\n    a1 = a2 // no error, not expected (!)\r\n    return a2 // no error, not expected (!)\r\n};\r\n```\r\n\r\n**Expected behavior:**\r\n`a2: Record<string, string>` is *not* assignable to `a1: Record<T, string>`. Also returned `a2` is invalid.\r\n\r\n**Actual behavior:**\r\n`a1 = a2` compiles and returned value is assignable to declared return type.\r\n\r\n**Playground Link:** <!-- A link to a TypeScript Playground \"Share\" link which demonstrates this behavior -->\r\n[here](https://www.typescriptlang.org/play/?ts=3.9.0-dev.20200324&ssl=10&ssc=1&pln=1&pc=1#code/GYVwdgxgLglg9mABMOcA8AVRBTAHlbMAEwGdESoAnGMAcwD4AKAWAChEPEBDARgC5EAJWwQ4lIpgA05KjQbSuAJgHDR4tBWp1pmufQUBmAQG9EAbQAKiGogwBdAbrqIAvmwCUKkWIkYdsunpEYzZObkVEAF5uHkQAejjEMDgcSkoxaTwABxECIlDOLgMo8PjE7DSMnFwc6Gx81gKOXhKlMqSUivTKaWSoatq8xEYAQncmxEpsKBBKJDaEjtTu3rh+7Nz64bG2FwBuNjYgA)\r\n\r\n**Related Issues:** <!-- Did you find other bugs that looked similar? -->\r\nhttps://github.com/microsoft/TypeScript/issues/28798",
+      "closed_at": "2023-05-31T15:27:15Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/37607/comments",
+      "created_at": "2020-03-25T21:39:01Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/37607/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/37607",
+      "id": 588007264,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7c6c7",
+          "default": false,
+          "description": "An existing issue was already created",
+          "id": 113971226,
+          "name": "Duplicate",
+          "node_id": "MDU6TGFiZWwxMTM5NzEyMjY=",
+          "url": "https://api.github.com/repos/microsoft/TypeScript/labels/Duplicate"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/37607/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1ODgwMDcyNjQ=",
+      "number": 37607,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/37607/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/37607/timeline",
+      "title": "Record<string, string> is assignable to Record<T, string>",
+      "type": null,
+      "updated_at": "2025-10-21T23:02:21Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/37607",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/59308557?v=4",
+        "events_url": "https://api.github.com/users/bela53/events{/privacy}",
+        "followers_url": "https://api.github.com/users/bela53/followers",
+        "following_url": "https://api.github.com/users/bela53/following{/other_user}",
+        "gists_url": "https://api.github.com/users/bela53/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/bela53",
+        "id": 59308557,
+        "login": "bela53",
+        "node_id": "MDQ6VXNlcjU5MzA4NTU3",
+        "organizations_url": "https://api.github.com/users/bela53/orgs",
+        "received_events_url": "https://api.github.com/users/bela53/received_events",
+        "repos_url": "https://api.github.com/users/bela53/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/bela53/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/bela53/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/bela53",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 32
+}

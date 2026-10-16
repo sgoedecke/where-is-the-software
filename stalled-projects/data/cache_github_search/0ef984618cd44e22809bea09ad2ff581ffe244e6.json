@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "\r\n## What solution would you like?\r\n\r\n```rust\r\nimpl Material for CustomMaterial {\r\n  // When creating a custom material, you need to define either a vertex shader, a fragment shader or both.\r\n  // If you don't define one of them it will use the default mesh shader which can be found at\r\n  // <https://github.com/bevyengine/bevy/blob/latest/crates/bevy_pbr/src/render/mesh.wgsl>\r\n\r\n  // For this example we don't need a vertex shader\r\n  // fn vertex_shader(asset_server: &AssetServer) -> Option<Handle<Shader>> {\r\n  //     // Use the same path as the fragment shader since wgsl let's you define both shader in the same file\r\n  //     Some(asset_server.load(\"shaders/custom_material.wgsl\"))\r\n  // }\r\n\r\n  fn fragment_shader(asset_server: &AssetServer) -> Option<Handle<Shader>> {\r\n    Some(asset_server.get(\"https://xxx/x.wgsl\"))\r\n  }\r\n\r\n //...\r\n}\r\n```\r\n\r\n",
+      "closed_at": "2025-08-29T03:42:35Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/5061/comments",
+      "created_at": "2022-06-21T02:33:08Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/5061/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/5061",
+      "id": 1277700238,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8b8b8",
+          "default": false,
+          "description": "A new feature, making something new possible",
+          "id": 1795619326,
+          "name": "C-Feature",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzI2",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "008672",
+          "default": false,
+          "description": "Nice and easy! A great choice to get started with Bevy",
+          "id": 1795619327,
+          "name": "D-Trivial",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzI3",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/D-Trivial"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c6a751",
+          "default": false,
+          "description": "Load files from disk to use for things like images, models, and sounds",
+          "id": 2272055462,
+          "name": "A-Assets",
+          "node_id": "MDU6TGFiZWwyMjcyMDU1NDYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-Assets"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876E3",
+          "default": false,
+          "description": "This issue is ready for an implementation PR. Go for it!",
+          "id": 3166151441,
+          "name": "S-Ready-For-Implementation",
+          "node_id": "MDU6TGFiZWwzMTY2MTUxNDQx",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Ready-For-Implementation"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/5061/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85MKCiO",
+      "number": 5061,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/5061/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/5061/timeline",
+      "title": "Allow AssetServer load from internet url",
+      "type": null,
+      "updated_at": "2025-08-29T03:42:35Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/5061",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/9606668?v=4",
+        "events_url": "https://api.github.com/users/takkuumi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/takkuumi/followers",
+        "following_url": "https://api.github.com/users/takkuumi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/takkuumi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/takkuumi",
+        "id": 9606668,
+        "login": "takkuumi",
+        "node_id": "MDQ6VXNlcjk2MDY2Njg=",
+        "organizations_url": "https://api.github.com/users/takkuumi/orgs",
+        "received_events_url": "https://api.github.com/users/takkuumi/received_events",
+        "repos_url": "https://api.github.com/users/takkuumi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/takkuumi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/takkuumi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/takkuumi",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 7
+}

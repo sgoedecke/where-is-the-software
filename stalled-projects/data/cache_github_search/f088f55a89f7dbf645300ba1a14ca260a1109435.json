@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "## Bevy version and features\n\n- 0.18.0-rc.2 but appears to have been in the first RC as well\n\n## What you did\n\nAttempting to bump [LWIM](https://github.com/Leafwing-Studios/leafwing-input-manager/) to the 0.18.0-rc.\n\n## What went wrong\n\nI noticed that [cargo_features.md](https://github.com/bevyengine/bevy/blob/main/docs/cargo_features.md) claims that `bevy_gilrs` adds `gamepad` which does not appear to be the case per the [Cargo.toml](https://github.com/bevyengine/bevy/blob/98a5aa50c3f0ba3af72920b994387790230f43d9/Cargo.toml#L313)\n\nI'm more than happy to fix it myself but I need guidance on whether we should have:\na) the feature be added by `bevy_gilrs` per the documents < I lean toward this option\nb) the document be updated to not make this claim\nc) something else entirely",
+      "closed_at": "2025-12-31T22:28:51Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/22319/comments",
+      "created_at": "2025-12-30T23:53:12Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/22319/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/22319",
+      "id": 3771597833,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876e3",
+          "default": false,
+          "description": "This issue needs to be labelled",
+          "id": 2488007862,
+          "name": "S-Needs-Triage",
+          "node_id": "MDU6TGFiZWwyNDg4MDA3ODYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/22319/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U87gzgQJ",
+      "number": 22319,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/22319/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/22319/timeline",
+      "title": "Discrepancy between feature flag docs and feature flag implementation",
+      "type": null,
+      "updated_at": "2025-12-31T22:28:51Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/22319",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/16933164?v=4",
+        "events_url": "https://api.github.com/users/it-me-joda/events{/privacy}",
+        "followers_url": "https://api.github.com/users/it-me-joda/followers",
+        "following_url": "https://api.github.com/users/it-me-joda/following{/other_user}",
+        "gists_url": "https://api.github.com/users/it-me-joda/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/it-me-joda",
+        "id": 16933164,
+        "login": "it-me-joda",
+        "node_id": "MDQ6VXNlcjE2OTMzMTY0",
+        "organizations_url": "https://api.github.com/users/it-me-joda/orgs",
+        "received_events_url": "https://api.github.com/users/it-me-joda/received_events",
+        "repos_url": "https://api.github.com/users/it-me-joda/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/it-me-joda/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/it-me-joda/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/it-me-joda",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 206
+}

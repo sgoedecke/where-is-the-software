@@ -1,0 +1,104 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\r\n\r\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\r\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\r\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a feature request that matches the one I want to file, without success.\r\n\r\n### Problem Description\r\n\r\nAs of [#21457], the ES Module has now supported in electron-nightly 28.0. This is great, but still I get an error when trying to fork the ES Module in electron-nightly 28.0's UtilityProcess.\r\nCode example:\r\n\r\n```\r\nthis.process = utilityProcess.fork('<directory_path_to_esm>/name.mjs', args, {\r\n\t\t\tserviceName, \r\n\t\t\tenv,\r\n\t\t\texecArgv,\r\n\t\t\tallowLoadingUnsignedLibraries,\r\n\t\t\tforceAllocationsToV8Sandbox,\r\n\t\t\tstdio\r\n\t\t} as ForkOptions);\r\n```\r\n\r\nErrors generated:\r\n```\r\nError [ERR_REQUIRE_ESM]: require() of ES Module '<directory_path_to_esm>/name.mjs' not supported.\r\nInstead change the require of '<directory_path_to_esm>/name.mjs' to a dynamic import() which is available in all CommonJS modules.\r\n    at f._load (node:electron/js2c/asar_bundle:2:13330)\r\n    at node:electron/js2c/utility_init:2:5946\r\n    at node:electron/js2c/utility_init:2:5961\r\n    at node:electron/js2c/utility_init:2:5965\r\n    at f._load (node:electron/js2c/asar_bundle:2:13330) {\r\n  code: 'ERR_REQUIRE_ESM'\r\n}\r\n```\r\n\r\n### Proposed Solution\r\n\r\n- Request ability to UtilityProcess of forking the ES Module (.mjs) in electron.\r\n\r\nThis ability leads to increasing the value of using Electron, so that we can dynamically load arbitrary extension code in the Node.js process without having to rely on the AMD loader especially for simplicity.\r\n\r\n\r\n### Alternatives Considered\r\n\r\nNone\r\n\r\n### Additional Information\r\n\r\n_No response_",
+      "closed_at": "2023-09-29T21:38:39Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/40031/comments",
+      "created_at": "2023-09-28T11:40:45Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/40031/events",
+      "html_url": "https://github.com/electron/electron/issues/40031",
+      "id": 1917324552,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/40031/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85ySA0I",
+      "number": 40031,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/40031/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/40031/timeline",
+      "title": "[Feature Request]: Support forking ES Modules (.mjs) in electron's utilityProcess",
+      "type": {
+        "color": "blue",
+        "created_at": "2024-01-25T14:31:12Z",
+        "description": "A request, idea, or new functionality",
+        "id": 1725382,
+        "is_enabled": true,
+        "name": "Enhancement",
+        "node_id": "IT_kwDOAMybxs4AGlPG",
+        "updated_at": "2024-07-26T10:30:10Z"
+      },
+      "updated_at": "2026-07-28T04:29:43Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/40031",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/146339921?v=4",
+        "events_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/events{/privacy}",
+        "followers_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/followers",
+        "following_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/following{/other_user}",
+        "gists_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/K-Kawamura-SuiteAdd",
+        "id": 146339921,
+        "login": "K-Kawamura-SuiteAdd",
+        "node_id": "U_kgDOCLj4UQ",
+        "organizations_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/orgs",
+        "received_events_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/received_events",
+        "repos_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/K-Kawamura-SuiteAdd/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/K-Kawamura-SuiteAdd",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 134
+}

@@ -1,0 +1,12 @@
+# Modrinth mod listings created Jan-Sep of year, surviving at 2026-10-14, by lifetime downloads (unequal ages!)
+year	all	dl>=1k	dl>=10k	dl>=100k	ai_code_disclosed
+2021	1020	747	459	265	7
+2022	2600	2062	1258	750	13
+2023	5669	4525	2664	1298	28
+2024	9684	6917	3158	1178	70
+2025	14296	7643	2905	844	214
+2026	30668	9194	2219	462	2560
+# Recheck 2026-10-16, split by AI-code disclosure (Jan-Sep cohorts): year all all>=1k ai ai>=1k ai>=10k
+# 2024 9684 6920 71 67 46
+# 2025 14289 7651 217 167 70
+# 2026 30666 9333 2565 884 247

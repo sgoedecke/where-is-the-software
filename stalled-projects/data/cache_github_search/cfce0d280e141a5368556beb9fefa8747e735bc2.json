@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What happened?\n\nI had my cluster setup and can ping to google.com in pod, but can resolve any services.\r\nI try debugging using the [doc](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/)\r\nHere's the outputs\r\n\r\nvp@vp-VirtualBox:~$ kubectl exec -it ubuntu-pod -- bash\r\n```\r\nroot@ubuntu-pod:/# nslookup kubernetes.default\r\nServer:\t\t10.96.0.10\r\nAddress:\t10.96.0.10#53\r\n\r\nName:\tkubernetes.default.svc.cluster.local\r\nAddress: 10.96.0.1\r\n\r\nroot@ubuntu-pod:/# nslookup kubernetes        \r\nServer:\t\t10.96.0.10\r\nAddress:\t10.96.0.10#53\r\n\r\nName:\tkubernetes.default.svc.cluster.local\r\nAddress: 10.96.0.1\r\n\r\nroot@ubuntu-pod:/# nslookup google.com\r\nServer:\t\t10.96.0.10\r\nAddress:\t10.96.0.10#53\r\n\r\n** server can't find google.com: SERVFAIL\r\n\r\nroot@ubuntu-pod:/# cat /etc/resolv.conf\r\nsearch default.svc.cluster.local svc.cluster.local cluster.local\r\nnameserver 10.96.0.10\r\noptions ndots:5\r\n```\r\n\r\nvp@vp-VirtualBox:~$ kubectl get pods --namespace=kube-system -l k8s-app=kube-dns\r\n```\r\nNAME                       READY   STATUS    RESTARTS   AGE\r\ncoredns-78fcd69978-vg8sr   1/1     Running   0          53m\r\ncoredns-78fcd69978-wxxdn   1/1     Running   0          53m\r\n```\r\n\r\nvp@vp-VirtualBox:~$ kubectl logs --namespace=kube-system -l k8s-app=kube-dns\r\n```\r\n.:53\r\n[INFO] plugin/reload: Running configuration MD5 = db32ca3650231d74073ff4cf814959a7\r\nCoreDNS-1.8.4\r\nlinux/amd64, go1.16.4, 053c4d5\r\n[ERROR] plugin/errors: 2 4733428109686886882.7588065647357968876. HINFO: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 security.ubuntu.com. AAAA: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 security.ubuntu.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 security.ubuntu.com. AAAA: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 security.ubuntu.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 google.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 archive.ubuntu.com. AAAA: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 archive.ubuntu.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 archive.ubuntu.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 archive.ubuntu.com. AAAA: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 archive.ubuntu.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 archive.ubuntu.com. AAAA: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 www.google.com. AAAA: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 www.google.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 www.google.com. AAAA: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n[ERROR] plugin/errors: 2 www.google.com. A: dial udp [fdef:5eb1:c8a::1]:53: connect: network is unreachable\r\n```\r\n\r\nvp@vp-VirtualBox:~$ kubectl get svc --namespace=kube-system\r\n```\r\nNAME       TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE\r\nkube-dns   ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   54m\r\n```\r\n\r\nvp@vp-VirtualBox:~$ kubectl get endpoints kube-dns --namespace=kube-system\r\n```\r\nNAME       ENDPOINTS                                            AGE\r\nkube-dns   10.32.0.2:53,10.32.0.3:53,10.32.0.2:53 + 3 more...   54m\r\n```\r\n\r\nkubectl -n kube-system edit configmap coredns\r\n```\r\napiVersion: v1\r\ndata:\r\n  Corefile: |\r\n    .:53 {\r\n        errors\r\n        health {\r\n           lameduck 5s\r\n        }\r\n        ready\r\n        kubernetes cluster.local in-addr.arpa ip6.arpa {\r\n           pods insecure\r\n           fallthrough in-addr.arpa ip6.arpa\r\n           ttl 30\r\n        }\r\n        prometheus :9153\r\n        forward . /etc/resolv.conf {\r\n           max_concurrent 1000\r\n        }\r\n        cache 30\r\n        loop\r\n        reload\r\n        loadbalance\r\n    }\r\nkind: ConfigMap\r\nmetadata:\r\n  creationTimestamp: \"2022-03-31T15:30:01Z\"\r\n  name: coredns\r\n  namespace: kube-system\r\n  resourceVersion: \"284\"\r\n  uid: c14cabc2-cb11-41c4-9f39-bf95761dadef\r\n```\n\n### What did you expect to happen?\n\nGot resolve\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\nI had my cluster setup using the following command\r\n```\r\ncurl https://kurl.sh/ea7361b | sudo bash\r\n```\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\r\n\r\n```console\r\n$ kubectl version\r\n# Client Version: version.Info{Major:\"1\", Minor:\"22\", GitVersion:\"v1.22.5\", GitCommit:\"5c99e2ac2ff9a3c549d9ca665e7bc05a3e18f07e\", GitTreeState:\"clean\", BuildDate:\"2021-12-16T08:38:33Z\", GoVersion:\"go1.16.12\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\nServer Version: version.Info{Major:\"1\", Minor:\"22\", GitVersion:\"v1.22.5\", GitCommit:\"5c99e2ac2ff9a3c549d9ca665e7bc05a3e18f07e\", GitTreeState:\"clean\", BuildDate:\"2021-12-16T08:32:32Z\", GoVersion:\"go1.16.12\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\n```\r\n\r\n</details>\r\n\n\n### Cloud provider\n\n<details>\r\nbare-metal\r\n</details>\n\n### OS version\n\n<details>\r\n\r\n```console\r\n# On Linux:\r\n$ cat /etc/os-release\r\n# NAME=\"Ubuntu\"\r\nVERSION=\"20.04.4 LTS (Focal Fossa)\"\r\nID=ubuntu\r\nID_LIKE=debian\r\nPRETTY_NAME=\"Ubuntu 20.04.4 LTS\"\r\nVERSION_ID=\"20.04\"\r\nHOME_URL=\"https://www.ubuntu.com/\"\r\nSUPPORT_URL=\"https://help.ubuntu.com/\"\r\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\r\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\r\nVERSION_CODENAME=focal\r\nUBUNTU_CODENAME=focal\r\n$ uname -a\r\n# Linux vp-VirtualBox 5.13.0-35-generic #40~20.04.1-Ubuntu SMP Mon Mar 7 09:18:32 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux\r\n\r\n# On Windows:\r\nC:\\> wmic os get Caption, Version, BuildNumber, OSArchitecture\r\n# paste output here\r\n```\r\n\r\n</details>\r\n\n\n### Install tools\n\n<details>\r\n\r\n</details>\r\n\n\n### Container runtime (CRI) and version (if applicable)\n\n<details>\r\nContainerd 1.4.x\r\n</details>\r\n\n\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\n\n<details>\r\nCNI: Weave latest\r\n</details>\r\n",
+      "closed_at": "2022-03-31T17:39:48Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/109207/comments",
+      "created_at": "2022-03-31T16:57:45Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/109207/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/109207",
+      "id": 1188377251,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d455d0",
+          "default": false,
+          "description": "Categorizes issue or PR as a support question.",
+          "id": 130318610,
+          "name": "kind/support",
+          "node_id": "MDU6TGFiZWwxMzAzMTg2MTA=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/support"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `sig/foo` label and requires one.",
+          "id": 617149945,
+          "name": "needs-sig",
+          "node_id": "MDU6TGFiZWw2MTcxNDk5NDU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-sig"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/109207/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks5G1TKj",
+      "number": 109207,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/109207/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/109207/timeline",
+      "title": "resove failed",
+      "type": null,
+      "updated_at": "2022-03-31T17:40:26Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/109207",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/29014142?v=4",
+        "events_url": "https://api.github.com/users/vincent5753/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vincent5753/followers",
+        "following_url": "https://api.github.com/users/vincent5753/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vincent5753/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vincent5753",
+        "id": 29014142,
+        "login": "vincent5753",
+        "node_id": "MDQ6VXNlcjI5MDE0MTQy",
+        "organizations_url": "https://api.github.com/users/vincent5753/orgs",
+        "received_events_url": "https://api.github.com/users/vincent5753/received_events",
+        "repos_url": "https://api.github.com/users/vincent5753/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vincent5753/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vincent5753/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vincent5753",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 648
+}

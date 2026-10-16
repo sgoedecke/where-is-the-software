@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Go version\n\ngo version go1.24.1 linux/amd64  \n\n### Output of `go env` in your module/workspace:\n\n```shell\ngo env\nAR='ar'\nCC='gcc'\nCGO_CFLAGS='-O2 -g'\nCGO_CPPFLAGS=''\nCGO_CXXFLAGS='-O2 -g'\nCGO_ENABLED='1'\nCGO_FFLAGS='-O2 -g'\nCGO_LDFLAGS='-O2 -g'\nCXX='g++'\nGCCGO='gccgo'\nGO111MODULE=''\nGOAMD64='v1'\nGOARCH='amd64'\nGOAUTH='netrc'\nGOBIN=''\nGOCACHE='/home/yeaseen/.cache/go-build'\nGOCACHEPROG=''\nGODEBUG=''\nGOENV='/home/yeaseen/.config/go/env'\nGOEXE=''\nGOEXPERIMENT=''\nGOFIPS140='off'\nGOFLAGS=''\nGOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build1042317791=/tmp/go-build -gno-record-gcc-switches'\nGOHOSTARCH='amd64'\nGOHOSTOS='linux'\nGOINSECURE=''\nGOMOD='/dev/null'\nGOMODCACHE='/home/yeaseen/go/pkg/mod'\nGONOPROXY=''\nGONOSUMDB=''\nGOOS='linux'\nGOPATH='/home/yeaseen/go'\nGOPRIVATE=''\nGOPROXY='https://proxy.golang.org,direct'\nGOROOT='/usr/local/go'\nGOSUMDB='sum.golang.org'\nGOTELEMETRY='local'\nGOTELEMETRYDIR='/home/yeaseen/.config/go/telemetry'\nGOTMPDIR=''\nGOTOOLCHAIN='auto'\nGOTOOLDIR='/usr/local/go/pkg/tool/linux_amd64'\nGOVCS=''\nGOVERSION='go1.24.1'\nGOWORK=''\nPKG_CONFIG='pkg-config'\n```\n\n### What did you do?\n\n## C code:\n\n```c\npackage main\nimport \"fmt\"\n\nvar count int = 10\n\nfunc func1() int {\n\tif count <= 0 {\n\t\treturn 0\n\t} else {\n\t\tcount--\n\t\treturn count + func1()\n\t}\n}\n\nfunc main() {\n\tres := func1()\n\tfmt.Println(res)\n}\n```\n\nI ran this C code on `Go playground` using `Go 1.24`, `Go 1.23`, `Go dev branch`, locally `go1.24.1 linux/amd64` and `go1.23.1 linux/amd64`\n\n\n\n```bash\n$ go run test.go\n$ 0\n```\n\n### What did you see happen?\n\nSurprisingly, it prints `0` everytime\n\nhttps://go.dev/play/p/729aTiEl-fC\n\n\nI then run the same Go code using TinyGo (tinygo version 0.36.0 linux/amd64)\nTinyGo prints `45`\n\n### What did you expect to see?\n\nIt should print `45`  (9+8+.....+1)\n\nIf it's a duplicate, I will close this.",
+      "closed_at": "2025-06-30T22:14:42Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/golang/go/issues/74438/comments",
+      "created_at": "2025-06-30T21:57:36Z",
+      "events_url": "https://api.github.com/repos/golang/go/issues/74438/events",
+      "html_url": "https://github.com/golang/go/issues/74438",
+      "id": 3189968793,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": null,
+          "id": 398069301,
+          "name": "FrozenDueToAge",
+          "node_id": "MDU6TGFiZWwzOTgwNjkzMDE=",
+          "url": "https://api.github.com/repos/golang/go/labels/FrozenDueToAge"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "486AF7",
+          "default": false,
+          "description": "Issues related to the Go compiler and/or runtime.",
+          "id": 4262323075,
+          "name": "compiler/runtime",
+          "node_id": "LA_kwDOAWBuf87-DeOD",
+          "url": "https://api.github.com/repos/golang/go/labels/compiler/runtime"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/golang/go/issues/74438/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAWBuf86-Iw-Z",
+      "number": 74438,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/golang/go/issues/74438/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/golang/go",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/golang/go/issues/74438/timeline",
+      "title": "cmd/compile: incorrect result for recursion with mutated global variable",
+      "type": null,
+      "updated_at": "2026-07-02T08:41:53Z",
+      "url": "https://api.github.com/repos/golang/go/issues/74438",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/19332990?v=4",
+        "events_url": "https://api.github.com/users/Yeaseen/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Yeaseen/followers",
+        "following_url": "https://api.github.com/users/Yeaseen/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Yeaseen/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Yeaseen",
+        "id": 19332990,
+        "login": "Yeaseen",
+        "node_id": "MDQ6VXNlcjE5MzMyOTkw",
+        "organizations_url": "https://api.github.com/users/Yeaseen/orgs",
+        "received_events_url": "https://api.github.com/users/Yeaseen/received_events",
+        "repos_url": "https://api.github.com/users/Yeaseen/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Yeaseen/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Yeaseen/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Yeaseen",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 580
+}

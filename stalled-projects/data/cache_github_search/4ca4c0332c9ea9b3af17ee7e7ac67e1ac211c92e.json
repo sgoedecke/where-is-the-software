@@ -1,0 +1,161 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem and a proposed guard to avoid wasting time and resources\r\n\r\nThis bug (panic message shown below) resulted from a combination of components with long names, resulting in mir-dump output that tried to create a file path exceeding Windows' 260 byte (give or take?) max path length limit.\r\n\r\nThe `bors` CI builds for Windows, under both MSVC and mingw/gnu are susceptible to this kind of failure.\r\n\r\nI worked around the problem by abbreviating directory names, rust program file names, and symbols inside the rust program, all of which contributed to the long path name.\r\n\r\nThe error messages produced by Rust and/or Windows (`NotFound`) offer no obvious clue that the problem is the path length. (Thankfully I knew enough to suspect it, but others may not.)\r\n\r\nThis was not caught until I ran the tests under CI, and it happened more than once (at least once under MSVC, which I fixed, and then again under mingw, because I didn't shrink the paths enough the first time.\r\n\r\n1. It is hard to diagnose.\r\n2. It costs the developer a lot of time to find and fix the problem.\r\n3. It wastes CI resources, and backs up the bors queue for others.\r\n\r\nThis is something that could be caught early, during development (even before sending to bors).\r\n\r\nMy recommendation is, when `compiletest` runs a test on any platform (e.g., Linux or MacOS, where this problem does not crop up naturally because they don't have path limits), `compiletest` should check the lengths of all generated files in the `build/<target>/src/test` directory. Strip the directory prefix up through `build`, and if the remaining subpath of any file path is greater than, say, 215 characters, generate an error or warning (something the developer won't miss) that their test is generating paths that may exceed path limits on Windows, and may not pass CI.\r\n\r\nThis should be enough to get the developer to update their tests and avoid the entire problem.\r\n\r\n### Meta\r\n\r\n```\r\n./build/x86_64-unknown-linux-gnu/stage1/bin/rustc --version --verbose\r\nrustc 1.49.0-dev\r\nbinary: rustc\r\ncommit-hash: unknown\r\ncommit-date: unknown\r\nhost: x86_64-unknown-linux-gnu\r\nrelease: 1.49.0-dev\r\nLLVM version: 11.0\r\n```\r\n\r\n### Error output\r\n\r\n(Newlines inserted for readability.)\r\n\r\n```\r\nthread 'rustc' panicked at 'Unexpected error creating MIR spanview HTML file: \r\nCustom { kind: NotFound, error: \"IO error creating MIR dump file: \r\n\\\"D:/a/rust/rust/build/x86_64-pc-windows-gnu/test/run-make-fulldeps/\r\ninstrument-coverage-mir-cov-html-link-dead-code/instrument-coverage-mir-cov-html-link-dead-code/\r\nmir_dump.inner_items\\\\\\\\inner_items.main-InnerTrait-default_trait_func.-------.InstrumentCoverage.0.html\\\";\r\nThe system cannot find the path specified. (os error 3)\" }', \r\ncompiler\\rustc_mir\\src\\transform\\instrument_coverage.rs:613:14```\r\n\r\n\r\n\r\n",
+      "closed_at": "2024-10-17T03:13:52Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/77576/comments",
+      "created_at": "2020-10-05T15:49:47Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/77576/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/77576",
+      "id": 714958581,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: The testsuite used to check the correctness of rustc",
+          "id": 120005,
+          "name": "A-testsuite",
+          "node_id": "MDU6TGFiZWwxMjAwMDU=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-testsuite"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6e6ec0",
+          "default": false,
+          "description": "Operating system: Windows",
+          "id": 123109,
+          "name": "O-windows",
+          "node_id": "MDU6TGFiZWwxMjMxMDk=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/O-windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the bootstrap subteam: Rust's build system (x.py and src/bootstrap)",
+          "id": 325438536,
+          "name": "T-bootstrap",
+          "node_id": "MDU6TGFiZWwzMjU0Mzg1MzY=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-bootstrap"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Makes things more difficult for new or seasoned contributors to Rust",
+          "id": 2345380158,
+          "name": "A-contributor-roadblock",
+          "node_id": "MDU6TGFiZWwyMzQ1MzgwMTU4",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-contributor-roadblock"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: The compiletest test runner",
+          "id": 7012481934,
+          "name": "A-compiletest",
+          "node_id": "LA_kwDOAAsO6M8AAAABofn7jg",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-compiletest"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/77576/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU3MTQ5NTg1ODE=",
+      "number": 77576,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/77576/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/77576/timeline",
+      "title": "rust-lang/rust CI build failed when generating test file paths exceeding about 260 chars on Windows",
+      "type": null,
+      "updated_at": "2024-10-17T03:13:53Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/77576",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3827298?v=4",
+        "events_url": "https://api.github.com/users/richkadel/events{/privacy}",
+        "followers_url": "https://api.github.com/users/richkadel/followers",
+        "following_url": "https://api.github.com/users/richkadel/following{/other_user}",
+        "gists_url": "https://api.github.com/users/richkadel/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/richkadel",
+        "id": 3827298,
+        "login": "richkadel",
+        "node_id": "MDQ6VXNlcjM4MjcyOTg=",
+        "organizations_url": "https://api.github.com/users/richkadel/orgs",
+        "received_events_url": "https://api.github.com/users/richkadel/received_events",
+        "repos_url": "https://api.github.com/users/richkadel/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/richkadel/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/richkadel/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/richkadel",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

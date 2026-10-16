@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\n23.10.0\n\n### Platform\n\n```text\nMicrosoft Windows NT 10.0.19045.0 x64\n```\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\nAfter configuration by command:\n`python configure.py --ninja --openssl-no-asm`\n\n### How often does it reproduce? Is there a required condition?\n\nWindows 10\npython 3.10.11 / python 3.11.9\nMicrosoft Visual Studio 2022 17.4\nnode 22.14.0 / node 23.10.0\n\n### What is the expected behavior? Why is that the expected behavior?\n\nCorrect build.ninja generation.\n\n### What do you see instead?\n\nIn the generated build.ninja files, the flags for generating PCH have the form:\n`build obj\\tools\\msvs\\pch\\node.node_pch.obj: cxx $\n    ..\\..\\tools\\msvs\\pch\\node_pch.cc || obj\\node.actions_rules_copies.stamp\n  cflags_cc = <map object at 0x0000026EC5A79840>`\n\n### Additional information\n\n_No response_",
+      "closed_at": "2025-03-26T09:31:03Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/57632/comments",
+      "created_at": "2025-03-26T09:29:36Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/57632/events",
+      "html_url": "https://github.com/nodejs/node/issues/57632",
+      "id": 2948917411,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/57632/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs86vxOij",
+      "number": 57632,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/57632/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/57632/timeline",
+      "title": "Error when generating cc_flags for Windows build with Ninja",
+      "type": null,
+      "updated_at": "2025-03-26T09:31:04Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/57632",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/45263149?v=4",
+        "events_url": "https://api.github.com/users/d0nc1h0t/events{/privacy}",
+        "followers_url": "https://api.github.com/users/d0nc1h0t/followers",
+        "following_url": "https://api.github.com/users/d0nc1h0t/following{/other_user}",
+        "gists_url": "https://api.github.com/users/d0nc1h0t/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/d0nc1h0t",
+        "id": 45263149,
+        "login": "d0nc1h0t",
+        "node_id": "MDQ6VXNlcjQ1MjYzMTQ5",
+        "organizations_url": "https://api.github.com/users/d0nc1h0t/orgs",
+        "received_events_url": "https://api.github.com/users/d0nc1h0t/received_events",
+        "repos_url": "https://api.github.com/users/d0nc1h0t/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/d0nc1h0t/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/d0nc1h0t/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/d0nc1h0t",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 194
+}

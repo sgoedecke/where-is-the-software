@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Summary\n\nWhen I run the sanity tests on a pre-release of my collection (12.0.0-dev0), the sanity tests fail because\n`ERROR: meta/runtime.yml:0:0: The tombstone removal_version ('12.0.0') must not be after the current version (SemanticVersion('12.0.0-dev0')) for dictionary value @ data['plugin_routing']['modules']['aws_waf_condition']['tombstone']['removal_version']. Got '12.0.0'`\n\nThis feels like a false-positive.\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\nansible-test\n\n### Ansible Version\n\n```console\n[WARNING]: You are running the development version of Ansible. You should only run Ansible from \"devel\" if you are modifying the Ansible engine, or trying out features under development. This is a rapidly changing source of code and can become unstable at any point.\nansible [core 2.21.0.dev0] (devel 8d24f0d32f) last updated 2026/03/31 11:59:41 (GMT +200)\n  config file = /etc/ansible/ansible.cfg\n  configured module search path = ['/home/mchappel/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\n  ansible python module location = /home/mchappel/vcs/ansible/ansible/lib/ansible\n  ansible collection location = /home/mchappel/.ansible/collections:/usr/share/ansible/collections\n  executable location = /home/mchappel/vcs/ansible/ansible/bin/ansible\n  python version = 3.14.3 (main, Feb  4 2026, 00:00:00) [GCC 15.2.1 20260123 (Red Hat 15.2.1-7)] (/home/mchappel/vcs/ansible/virtualenvs/ansible-dev314/bin/python)\n  jinja version = 3.1.6\n  pyyaml version = 6.0.3 (with libyaml v0.2.5)\n```\n\n### Configuration\n\n```console\n# if using a version older than ansible-core 2.12 you should omit the '-t all'\n$ ansible-config dump --only-changed -t all\n```\n\n### OS / Environment\n\nFedora\n\n### Steps to Reproduce\n\n- Set the current version to a pre-release\n- Add a tombstone for the major version\n- run the sanity tests\n\n\n### Expected Results\n\nSanity test passes\n\n### Actual Results\n\n```console\nERROR: meta/runtime.yml:0:0: The tombstone removal_version ('12.0.0') must not be after the current version (SemanticVersion('12.0.0-dev0')) for dictionary value @ data['plugin_routing']['modules']['aws_waf_condition']['tombstone']['removal_version']. Got '12.0.0'\n```\n\n### Code of Conduct\n\n- [x] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2026-03-31T10:24:23Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/86744/comments",
+      "created_at": "2026-03-31T10:14:01Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/86744/events",
+      "html_url": "https://github.com/ansible/ansible/issues/86744",
+      "id": 4177867495,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "55f65b",
+          "default": false,
+          "description": "This issue/PR affects Ansible v2.21",
+          "id": 9536306285,
+          "name": "affects_2.21",
+          "node_id": "LA_kwDOADeGtM8AAAACOGh8bQ",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.21"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/86744/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM75BTLn",
+      "number": 86744,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/86744/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/86744/timeline",
+      "title": "meta/runtime.yml sanity test complains about tombstone entries on a pre-release",
+      "type": null,
+      "updated_at": "2026-04-15T00:01:18Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/86744",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/364860?v=4",
+        "events_url": "https://api.github.com/users/tremble/events{/privacy}",
+        "followers_url": "https://api.github.com/users/tremble/followers",
+        "following_url": "https://api.github.com/users/tremble/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tremble/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/tremble",
+        "id": 364860,
+        "login": "tremble",
+        "node_id": "MDQ6VXNlcjM2NDg2MA==",
+        "organizations_url": "https://api.github.com/users/tremble/orgs",
+        "received_events_url": "https://api.github.com/users/tremble/received_events",
+        "repos_url": "https://api.github.com/users/tremble/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/tremble/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tremble/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/tremble",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 90
+}

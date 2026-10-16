@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What happened?\n\nkubelet remove pod immediately, but containerd kill container after grace period, this make oom when node resource full.\n\nkubelet logs:\n<img width=\"2808\" height=\"670\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/5617c3d6-bf4b-48e3-b9bc-6e199eaea7c2\" />\n\ncontainerd logs:\n<img width=\"2810\" height=\"1346\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/13ca0076-8541-4ec8-811a-c15a22518541\" />\n\n<img width=\"2818\" height=\"1360\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/d2247e41-9b48-462e-821a-7e3792d487da\" />\n\n### What did you expect to happen?\n\nkubelet remove pod after containerd kill container really.\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\ni can't reproduce it now,  but it happend abiogenetic.\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n<details>\n\n```console\n$ kubectl version\n# paste output here\nk8s v1.24.17\n```\n\n</details>\n\n\n### Cloud provider\n\n<details>\nk8s\n</details>\n\n\n### OS version\n\n<details>\n\n```console\n# On Linux:\n$ cat /etc/os-release\n# paste output here\n$ uname -a\n# paste output here\n5.10.134-13.1.an8.x86_64\n\n# On Windows:\nC:\\> wmic os get Caption, Version, BuildNumber, OSArchitecture\n# paste output here\n```\n\n</details>\n\n\n### Install tools\n\n<details>\n\n</details>\n\n\n### Container runtime (CRI) and version (if applicable)\n\n<details>\n\n</details>\n\n\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\n\n<details>\n\n</details>\n",
+      "closed_at": "2025-12-24T05:52:37Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/135907/comments",
+      "created_at": "2025-12-23T11:54:17Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/135907/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/135907",
+      "id": 3757129789,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Node.",
+          "id": 173493665,
+          "name": "sig/node",
+          "node_id": "MDU6TGFiZWwxNzM0OTM2NjU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/node"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d455d0",
+          "default": false,
+          "description": "Indicates an issue needs more information in order to work on it.",
+          "id": 862108635,
+          "name": "triage/needs-information",
+          "node_id": "MDU6TGFiZWw4NjIxMDg2MzU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/triage/needs-information"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/135907/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks7f8UA9",
+      "number": 135907,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/135907/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/135907/timeline",
+      "title": "Kubelet SyncLoop Remove Error",
+      "type": null,
+      "updated_at": "2025-12-24T05:52:38Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/135907",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/184892302?v=4",
+        "events_url": "https://api.github.com/users/litaixun/events{/privacy}",
+        "followers_url": "https://api.github.com/users/litaixun/followers",
+        "following_url": "https://api.github.com/users/litaixun/following{/other_user}",
+        "gists_url": "https://api.github.com/users/litaixun/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/litaixun",
+        "id": 184892302,
+        "login": "litaixun",
+        "node_id": "U_kgDOCwU7jg",
+        "organizations_url": "https://api.github.com/users/litaixun/orgs",
+        "received_events_url": "https://api.github.com/users/litaixun/received_events",
+        "repos_url": "https://api.github.com/users/litaixun/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/litaixun/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/litaixun/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/litaixun",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 312
+}

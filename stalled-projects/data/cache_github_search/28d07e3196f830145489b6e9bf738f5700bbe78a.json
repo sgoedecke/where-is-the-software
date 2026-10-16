@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\nUsing Ansible for host verification. \n\n### Issue Type\n\nFeature Idea\n\n### Component Name\n\ncore\n\n### Additional Information\n\n<!--- Paste example playbooks or commands between quotes below -->\r\n```yaml (paste below)\r\n---\r\n \r\n- name: slurp\r\n  hosts: all\r\n  tasks:\r\n  - name: \"get data\" #contains \"some data\" \r\n    slurp:\r\n      src: \"/tmp/hello\"\r\n    register: data\r\n \r\n  - name: \"check content of hello\"\r\n    assert:\r\n      that:\r\n        - \" '/foo' in data['content'] | b64decode\"\r\n        - \" 'hn1' in data['content'] | b64decode\"\r\n```\r\n\r\nWe use the JUNIT module for CI integration. \r\nWe would like to check both assertions. If one assertion fails, it should not stop everything. Instead it should continue as there are more test.\r\n\n\n### Code of Conduct\n\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2023-06-30T23:55:13Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/81162/comments",
+      "created_at": "2023-06-30T17:46:06Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/81162/events",
+      "html_url": "https://github.com/ansible/ansible/issues/81162",
+      "id": 1782917331,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "This issue/PR relates to a feature request.",
+          "id": 852590921,
+          "name": "feature",
+          "node_id": "MDU6TGFiZWw4NTI1OTA5MjE=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 5347309307,
+          "name": "affects_2.16",
+          "node_id": "LA_kwDOADeGtM8AAAABPrl2-w",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.16"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/81162/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM5qRSjT",
+      "number": 81162,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/81162/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/81162/timeline",
+      "title": "Ansible used for CI systems",
+      "type": null,
+      "updated_at": "2023-08-01T13:01:12Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/81162",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/138244569?v=4",
+        "events_url": "https://api.github.com/users/TheKushIsGood/events{/privacy}",
+        "followers_url": "https://api.github.com/users/TheKushIsGood/followers",
+        "following_url": "https://api.github.com/users/TheKushIsGood/following{/other_user}",
+        "gists_url": "https://api.github.com/users/TheKushIsGood/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/TheKushIsGood",
+        "id": 138244569,
+        "login": "TheKushIsGood",
+        "node_id": "U_kgDOCD1x2Q",
+        "organizations_url": "https://api.github.com/users/TheKushIsGood/orgs",
+        "received_events_url": "https://api.github.com/users/TheKushIsGood/received_events",
+        "repos_url": "https://api.github.com/users/TheKushIsGood/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/TheKushIsGood/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/TheKushIsGood/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/TheKushIsGood",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 282
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!-- READ THIS FIRST:\r\n- If you need additional help with this template please refer to https://www.home-assistant.io/help/reporting_issues/\r\n- Make sure you are running the latest version of Home Assistant before reporting an issue: https://github.com/home-assistant/home-assistant/releases\r\n- Frontend issues should be submitted to the home-assistant-polymer repository: https://github.com/home-assistant/home-assistant-polymer/issues\r\n- Do not report issues for components if you are using custom components: files in <config-dir>/custom_components\r\n- This is for bugs only. Feature and enhancement requests should go in our community forum: https://community.home-assistant.io/c/feature-requests\r\n- Provide as many details as possible. Paste logs, configuration sample and code into the backticks. Do not delete any text from this template!\r\n-->\r\n0.88.0\r\n**Home Assistant release with the issue:**\r\n<!--\r\n- Frontend -> Developer tools -> Info\r\n- Or use this command: hass --version\r\n-->\r\n\r\n\r\n**Last working Home Assistant release (if known):**\r\n0.87.1\r\n\r\n**Operating environment (Hass.io/Docker/Windows/etc.):**\r\n<!--\r\nPlease provide details about your environment.\r\n-->\r\nHass.io on debian\r\n**Component/platform:**\r\n<!--\r\nPlease add the link to the documentation at https://www.home-assistant.io/components/ of the component/platform in question.\r\n-->\r\n\r\n\r\n**Description of problem:**\r\n\r\nGetting an error in the log\r\nConnection to SABnzbd API failed\r\n\r\nBut then I get a notification to enter the api key once home assistant is started\r\n\r\n**Problem-relevant `configuration.yaml` entries and (fill out even if it seems unimportant):**\r\n```\r\n\r\n# SABnzbd\r\nsabnzbd:\r\n  api_key: !secret sabnzbd_api\r\n  host: !secret my_sab_host\r\n  sensors:\r\n    - current_status\r\n    - speed\r\n    - queue_size\r\n    - queue_remaining\r\n    - disk_size\r\n    - disk_free\r\n    - queue_count\r\n    - day_size\r\n    - week_size\r\n    - month_size\r\n    - total_size\r\n```\r\n\r\n**Traceback (if applicable):**\r\n```\r\n\r\n```\r\n\r\n**Additional information:**\r\nIf I manually enter the API key it then shows unknown for the sensors and then after a minute of so they update. I see also it has created a sabnzbd.conf file with the API password in it in plain text.",
+      "closed_at": "2022-05-05T16:34:20Z",
+      "comments": 63,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/21299/comments",
+      "created_at": "2019-02-22T02:32:08Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/21299/events",
+      "html_url": "https://github.com/home-assistant/core/issues/21299",
+      "id": 413214662,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 856130148,
+          "name": "integration: sabnzbd",
+          "node_id": "MDU6TGFiZWw4NTYxMzAxNDg=",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20sabnzbd"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/21299/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0MTMyMTQ2NjI=",
+      "number": 21299,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/21299/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/21299/timeline",
+      "title": "Sabnzbd not loading after 0.88.0",
+      "type": null,
+      "updated_at": "2022-05-05T16:34:20Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/21299",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/36390762?v=4",
+        "events_url": "https://api.github.com/users/DavidFW1960/events{/privacy}",
+        "followers_url": "https://api.github.com/users/DavidFW1960/followers",
+        "following_url": "https://api.github.com/users/DavidFW1960/following{/other_user}",
+        "gists_url": "https://api.github.com/users/DavidFW1960/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/DavidFW1960",
+        "id": 36390762,
+        "login": "DavidFW1960",
+        "node_id": "MDQ6VXNlcjM2MzkwNzYy",
+        "organizations_url": "https://api.github.com/users/DavidFW1960/orgs",
+        "received_events_url": "https://api.github.com/users/DavidFW1960/received_events",
+        "repos_url": "https://api.github.com/users/DavidFW1960/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/DavidFW1960/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/DavidFW1960/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/DavidFW1960",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "# Documentation\r\n\r\nTimeout unit isn't specified in subprocess docstrings. For example here:\r\n```\r\ndef run(*popenargs,\r\n        input=None, capture_output=False, timeout=None, check=False, **kwargs):\r\n    \"\"\"Run command with arguments and return a CompletedProcess instance.\r\n\r\n    The returned instance will have attributes args, returncode, stdout and\r\n    stderr. By default, stdout and stderr are not captured, and those attributes\r\n    will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,\r\n    or pass capture_output=True to capture both.\r\n\r\n    If check is True and the exit code was non-zero, it raises a\r\n    CalledProcessError. The CalledProcessError object will have the return code\r\n    in the returncode attribute, and output & stderr attributes if those streams\r\n    were captured.\r\n\r\n    If timeout is given, and the process takes too long, a TimeoutExpired\r\n    exception will be raised.\r\n\r\n    There is an optional argument \"input\", allowing you to\r\n    pass bytes or a string to the subprocess's stdin.  If you use this argument\r\n    you may not also use the Popen constructor's \"stdin\" argument, as\r\n    it will be used internally.\r\n\r\n    By default, all communication is in bytes, and therefore any \"input\" should\r\n    be bytes, and the stdout and stderr will be bytes. If in text mode, any\r\n    \"input\" should be a string, and stdout and stderr will be strings decoded\r\n    according to locale encoding, or by \"encoding\" if set. Text mode is\r\n    triggered by setting any of text, encoding, errors or universal_newlines.\r\n\r\n    The other arguments are the same as for the Popen constructor.\r\n    \"\"\"\r\n```\r\nIt would be nice if it specified the unit of the timeout.\r\n\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-128343\n* gh-128365\n* gh-128366\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2024-12-30T21:14:45Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/128342/comments",
+      "created_at": "2024-12-30T10:09:09Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/128342/events",
+      "html_url": "https://github.com/python/cpython/issues/128342",
+      "id": 2762968150,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Documentation in the Doc dir",
+          "id": 538516109,
+          "name": "docs",
+          "node_id": "MDU6TGFiZWw1Mzg1MTYxMDk=",
+          "url": "https://api.github.com/repos/python/cpython/labels/docs"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/128342/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c6kr4xW",
+      "number": 128342,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/128342/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/128342/timeline",
+      "title": "Timeout unit isn't specified in subprocess docstrings",
+      "type": null,
+      "updated_at": "2024-12-30T21:14:45Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/128342",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/57808975?v=4",
+        "events_url": "https://api.github.com/users/n-l-i/events{/privacy}",
+        "followers_url": "https://api.github.com/users/n-l-i/followers",
+        "following_url": "https://api.github.com/users/n-l-i/following{/other_user}",
+        "gists_url": "https://api.github.com/users/n-l-i/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/n-l-i",
+        "id": 57808975,
+        "login": "n-l-i",
+        "node_id": "MDQ6VXNlcjU3ODA4OTc1",
+        "organizations_url": "https://api.github.com/users/n-l-i/orgs",
+        "received_events_url": "https://api.github.com/users/n-l-i/received_events",
+        "repos_url": "https://api.github.com/users/n-l-i/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/n-l-i/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/n-l-i/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/n-l-i",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 677
+}

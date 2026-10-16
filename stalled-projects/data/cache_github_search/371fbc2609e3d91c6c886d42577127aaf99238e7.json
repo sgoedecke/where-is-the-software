@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "\u062a\u0635\u062d\u064a\u062d \u0627\u0644\u0623\u062e\u0637\u0627\u0621 \u0648\u0625\u0635\u0644\u0627\u062d\u0647\u0627 \u062a\u0644\u0642\u0627\u0626\u064a\u0627 \u0648\u062a\u0634\u063a\u064a\u0644 \u0627\u0644\u0645\u062a\u062c\u0631 \u0628\u0634\u0643\u0644 \u0645\u062a\u0643\u0627\u0645\u0644 \u0648\u0628\u0643\u0627\u0641\u0629 \u0627\u0644\u0645\u0648\u0627\u0635\u0641\u0627\u062a \u0648\u0627\u0644\u0645\u0645\u064a\u0632\u0627\u062a \u0648\u0627\u0644\u0645\u0647\u0627\u0645 \u0628\u0627\u0644\u0645\u062a\u062c\u0631 ",
+      "closed_at": "2025-12-30T18:50:36Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/61225/comments",
+      "created_at": "2025-12-30T18:38:36Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/61225/events",
+      "html_url": "https://github.com/nodejs/node/issues/61225",
+      "id": 3770954549,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/61225/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs87gxDM1",
+      "number": 61225,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/61225/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/61225/timeline",
+      "title": "deltastarsStore",
+      "type": null,
+      "updated_at": "2025-12-30T18:50:36Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/61225",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/239674757?v=4",
+        "events_url": "https://api.github.com/users/deltastars/events{/privacy}",
+        "followers_url": "https://api.github.com/users/deltastars/followers",
+        "following_url": "https://api.github.com/users/deltastars/following{/other_user}",
+        "gists_url": "https://api.github.com/users/deltastars/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/deltastars",
+        "id": 239674757,
+        "login": "deltastars",
+        "node_id": "U_kgDODkklhQ",
+        "organizations_url": "https://api.github.com/users/deltastars/orgs",
+        "received_events_url": "https://api.github.com/users/deltastars/received_events",
+        "repos_url": "https://api.github.com/users/deltastars/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/deltastars/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/deltastars/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/deltastars",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 163
+}

@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "Doing a simple `rustc +1.98.1 --target wasm32-unknown-emscripten foo.rs` gives the following warning:\n```\nwarning: linker stderr: emcc: WASM_BIGINT is deprecated (no longer needed. Should only ever be implicitly disabled by -sWASM=0). Please open a bug if you have a continuing need for this setting [-Wdeprecated]\n  |\n  = note: `#[warn(linker_messages)]` on by default\n\nwarning: 1 warning emitted\n```\n\nI can see two options for resolving this:\n1. Remove `-sWASM_BIGINT` from the default linker arguments. This would be simplest, but might drop support for older emsdk versions though, I'm unsure whether this is a problem? Which versions of emsdk we support?\n2. Tweak the `linker_messages` lint to filter out this warning. This is a bit more involved, but it's done for loads of other messages, so it wouldn't be a big issue.\n\nCC target maintainers @hoodmane @juntyr, WDYT we should do here?",
+      "closed_at": "2026-09-29T22:00:36Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/163441/comments",
+      "created_at": "2026-09-28T13:15:06Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/163441/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/163441",
+      "id": 5615156122,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "Low priority",
+          "id": 60329014,
+          "name": "P-low",
+          "node_id": "MDU6TGFiZWw2MDMyOTAxNA==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/P-low"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6e6ec0",
+          "default": false,
+          "description": "Target: 50% off wasm32-unknown-musl. the savings come out of stdio.h, but hey, you get SDL!",
+          "id": 7588727929,
+          "name": "O-emscripten",
+          "node_id": "LA_kwDOAAsO6M8AAAABxFLMeQ",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/O-emscripten"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "64E9CF",
+          "default": false,
+          "description": "Lint: linker_messages",
+          "id": 8056565901,
+          "name": "L-linker_messages",
+          "node_id": "LA_kwDOAAsO6M8AAAAB4DVwjQ",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/L-linker_messages"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/163441/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M8AAAABTrB7mg",
+      "number": 163441,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/163441/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/163441/timeline",
+      "title": "Emscripten linker stderr: deprecated `-sWASM_BIGINT`",
+      "type": null,
+      "updated_at": "2026-09-29T22:00:36Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/163441",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10577181?v=4",
+        "events_url": "https://api.github.com/users/madsmtm/events{/privacy}",
+        "followers_url": "https://api.github.com/users/madsmtm/followers",
+        "following_url": "https://api.github.com/users/madsmtm/following{/other_user}",
+        "gists_url": "https://api.github.com/users/madsmtm/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/madsmtm",
+        "id": 10577181,
+        "login": "madsmtm",
+        "node_id": "MDQ6VXNlcjEwNTc3MTgx",
+        "organizations_url": "https://api.github.com/users/madsmtm/orgs",
+        "received_events_url": "https://api.github.com/users/madsmtm/received_events",
+        "repos_url": "https://api.github.com/users/madsmtm/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/madsmtm/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/madsmtm/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/madsmtm",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1070
+}

@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "I am writing an FFI wrapper for a library that has a function returning an integer error code:\r\n\r\n```rust\r\nextern \"C\" fn foo() -> libc::c_int;\r\n```\r\n\r\nThe error code of `foo` is `0` on success and non-zero on error. As suggested by @kennytm , I can do the following dance to obtain a `NonZeroU{width}` type that's suitable to hold a `c_int` (note: `NonZero<libc::c_int>` does not work anymore, and the `NonZeroI{width}` variants have been removed, so more extra dance is then necessary to convert the unsigned integers to a `libc::c_int` to be able to compare this with with std error codes like `libc::EINVAL`):\r\n\r\n```rust\r\npub trait NonZeroUInt { type NonZero; }\r\nimpl NonZeroUInt for i32 { type NonZero = core::num::NonZeroU32; }\r\nimpl NonZeroUInt for i64 { type NonZero = core::num::NonZeroU64; }\r\nimpl NonZeroUInt for isize { type NonZero = core::num::NonZeroUsize; }\r\n\r\npub type NonZeroCInt = <libc::c_int as NonZeroUInt>::NonZero;\r\n```\r\n\r\nHowever, when I then try to use `Result` in FFI:\r\n\r\n```rust\r\nextern \"C\" fn foo() -> Result<(), NonZeroCInt>;\r\n```\r\n\r\nI get an error stating that `Result` is not FFI-safe. This type is really similar to an `Option<&'static 32>` which is FFI-safe: an enum with 2 variants, one is zero sized, and the other has niches. \r\n\r\n`Option<NonNull<*mut i32>>`, `Option<NonZeroU32>`, and `Result<(), NonZeroU32>` are not, however, FFI safe.\r\n\r\nIs this an oversight ? \r\ncc @eddyb @SimonSapin ",
+      "closed_at": "2024-10-27T18:44:41Z",
+      "comments": 10,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/55615/comments",
+      "created_at": "2018-11-02T15:00:08Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/55615/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/55615",
+      "id": 376845492,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Foreign function interface (FFI)",
+          "id": 45472092,
+          "name": "A-FFI",
+          "node_id": "MDU6TGFiZWw0NTQ3MjA5Mg==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-FFI"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the language team",
+          "id": 211668019,
+          "name": "T-lang",
+          "node_id": "MDU6TGFiZWwyMTE2NjgwMTk=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-lang"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: A feature request, i.e: not implemented / a PR.",
+          "id": 630652267,
+          "name": "C-feature-request",
+          "node_id": "MDU6TGFiZWw2MzA2NTIyNjc=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-feature-request"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/55615/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzNzY4NDU0OTI=",
+      "number": 55615,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/55615/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/55615/timeline",
+      "title": "Result / Option of non-null / non-zero types are not FFI-safe",
+      "type": null,
+      "updated_at": "2024-10-27T18:44:42Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/55615",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/904614?v=4",
+        "events_url": "https://api.github.com/users/gnzlbg/events{/privacy}",
+        "followers_url": "https://api.github.com/users/gnzlbg/followers",
+        "following_url": "https://api.github.com/users/gnzlbg/following{/other_user}",
+        "gists_url": "https://api.github.com/users/gnzlbg/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/gnzlbg",
+        "id": 904614,
+        "login": "gnzlbg",
+        "node_id": "MDQ6VXNlcjkwNDYxNA==",
+        "organizations_url": "https://api.github.com/users/gnzlbg/orgs",
+        "received_events_url": "https://api.github.com/users/gnzlbg/received_events",
+        "repos_url": "https://api.github.com/users/gnzlbg/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/gnzlbg/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/gnzlbg/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/gnzlbg",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

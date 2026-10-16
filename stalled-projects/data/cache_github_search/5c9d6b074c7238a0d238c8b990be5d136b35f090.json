@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "I'm using the nextjs framework with nginx + modsecurity in front of it.\n\nI've found the ServerAction request is send http POST request use \"content-type: text/plain\" header, but not \"content-type: application/json\"\n\ndue to the document from coreruleset\n> \n>  Content-Types that a client is allowed to send in a request.\n>  Default: |application/x-www-form-urlencoded| |multipart/form-data| |text/xml|\n>  |application/xml| |application/soap+xml| |application/json|\n> \n>  Please note, that the rule where CRS uses this variable (920420) evaluates it with operator\n>  `@within`, which is case sensitive, but uses t:lowercase. You must add your whole custom\n>  Content-Type with lowercase.\n> \n>  Bypass Warning: some applications may not rely on the content-type request header in order\n>  to parse the request body. This could make an attacker able to send malicious URLENCODED/JSON/XML\n>  payloads without being detected by the WAF. Allowing request content-type that doesn't activate any\n>  body processor (for example: \"text/plain\", \"application/x-amf\", \"application/octet-stream\", etc..)\n>  could lead to a WAF bypass. For example, a malicious JSON payload submitted with a \"text/plain\"\n>  content type may still be interpreted as JSON by a backend application but would not trigger the\n>  JSON body parser at the WAF, leading to a bypass.\n> \n>  When additional JSON content types are legitimately used in a deployment,\n>  e.g. application/cloudevents+json, it is extremely important to ensure that a\n>  rule exists to enable the engine's JSON body processor for these additional\n>  JSON content types. Failure to do so can lead to a request body bypass. The\n>  default JSON rule in modsecurity.conf-recommended (200001) will only activate\n>  the JSON body processor for the specific content type application/json. The\n>  optional modsecurity.conf-recommended rule 200006 can be used to enable the\n>  JSON body processor for a wide variety of JSON content types.\n\nwith the default WAF configure,  it will block POST with request \"content-type: text/plain\".\n\nIs there any config to let the ServerAction send with \"content-type: application/json\".",
+      "closed_at": "2025-03-31T11:58:50Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/react/react/issues/32794/comments",
+      "created_at": "2025-03-31T11:49:22Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/32794/events",
+      "html_url": "https://github.com/react/react/issues/32794",
+      "id": 2960273105,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/32794/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks6wci7R",
+      "number": 32794,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/32794/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/32794/timeline",
+      "title": "Bug: Why server action request use \"content-type: text/plain\", this will cause the default WAF rule block the request.",
+      "type": null,
+      "updated_at": "2025-03-31T11:59:16Z",
+      "url": "https://api.github.com/repos/react/react/issues/32794",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/42799130?v=4",
+        "events_url": "https://api.github.com/users/youweol-master/events{/privacy}",
+        "followers_url": "https://api.github.com/users/youweol-master/followers",
+        "following_url": "https://api.github.com/users/youweol-master/following{/other_user}",
+        "gists_url": "https://api.github.com/users/youweol-master/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/youweol-master",
+        "id": 42799130,
+        "login": "youweol-master",
+        "node_id": "MDQ6VXNlcjQyNzk5MTMw",
+        "organizations_url": "https://api.github.com/users/youweol-master/orgs",
+        "received_events_url": "https://api.github.com/users/youweol-master/received_events",
+        "repos_url": "https://api.github.com/users/youweol-master/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/youweol-master/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/youweol-master/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/youweol-master",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 108
+}

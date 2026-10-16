@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "The test must not measure the performance of the CI.\r\n\r\nGHA Windows x86:\r\n\r\n```\r\nFAIL: test_wait_for_handle (test.test_asyncio.test_windows_events.ProactorTests.test_wait_for_handle)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"D:\\a\\cpython\\cpython\\Lib\\test\\test_asyncio\\test_windows_events.py\", line 188, in test_wait_for_handle\r\n    self.assertTrue(0 <= elapsed < 0.3, elapsed)\r\nAssertionError: False is not true : 0.3129999999998745\r\n```\r\n\r\nbuild: https://github.com/python/cpython/actions/runs/6348560548/job/17245417314?pr=110080\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-110092\n* gh-110098\n* gh-110099\n* gh-110157\n* gh-110158\n* gh-110159\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2023-09-29T11:55:13Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/110088/comments",
+      "created_at": "2023-09-29T08:56:14Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/110088/events",
+      "html_url": "https://github.com/python/cpython/issues/110088",
+      "id": 1918875344,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Tests in the Lib/test dir",
+          "id": 537044141,
+          "name": "tests",
+          "node_id": "MDU6TGFiZWw1MzcwNDQxNDE=",
+          "url": "https://api.github.com/repos/python/cpython/labels/tests"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 557226369,
+          "name": "topic-asyncio",
+          "node_id": "MDU6TGFiZWw1NTcyMjYzNjk=",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-asyncio"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": null,
+          "id": 570103914,
+          "name": "OS-windows",
+          "node_id": "MDU6TGFiZWw1NzAxMDM5MTQ=",
+          "url": "https://api.github.com/repos/python/cpython/labels/OS-windows"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/110088/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5yX7bQ",
+      "number": 110088,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/python/cpython/issues/110088/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/110088/timeline",
+      "title": "test_asyncio.test_windows_events: test_wait_for_handle() failed on GHA Windows x86",
+      "type": null,
+      "updated_at": "2023-09-30T20:40:30Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/110088",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/194129?v=4",
+        "events_url": "https://api.github.com/users/vstinner/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vstinner/followers",
+        "following_url": "https://api.github.com/users/vstinner/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vstinner/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vstinner",
+        "id": 194129,
+        "login": "vstinner",
+        "node_id": "MDQ6VXNlcjE5NDEyOQ==",
+        "organizations_url": "https://api.github.com/users/vstinner/orgs",
+        "received_events_url": "https://api.github.com/users/vstinner/received_events",
+        "repos_url": "https://api.github.com/users/vstinner/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vstinner/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vstinner/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vstinner",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 573
+}

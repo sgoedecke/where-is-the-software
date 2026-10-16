@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\nIf you enable web server authentication in the web config of your SMLIGHT device the integration stops working.\n\n### What version of Home Assistant Core has the issue?\n\ncore-2024.9.3\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\nSMLIGHT\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/smlight\n\n### Diagnostics information\n\nmaybe a debug log helps\r\n\r\n[home-assistant_smlight_2024-09-29T20-52-02.421Z.log](https://github.com/user-attachments/files/17181305/home-assistant_smlight_2024-09-29T20-52-02.421Z.log)\r\n\n\n### Example YAML snippet\n\n_No response_\n\n### Anything in the logs that might be useful for us?\n\n_No response_\n\n### Additional information\n\n_No response_",
+      "closed_at": "2024-09-30T07:23:51Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/127057/comments",
+      "created_at": "2024-09-29T20:53:58Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/127057/events",
+      "html_url": "https://github.com/home-assistant/core/issues/127057",
+      "id": 2555151001,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 7031493011,
+          "name": "integration: smlight",
+          "node_id": "LA_kwDOAMSroc8AAAABoxwRkw",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20smlight"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/127057/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc6YTIKZ",
+      "number": 127057,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/127057/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/127057/timeline",
+      "title": "[bug] SMLIGHT Integration fails if password for SMLIGHT device is set",
+      "type": null,
+      "updated_at": "2024-10-30T08:04:40Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/127057",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/97352673?v=4",
+        "events_url": "https://api.github.com/users/Silther/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Silther/followers",
+        "following_url": "https://api.github.com/users/Silther/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Silther/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Silther",
+        "id": 97352673,
+        "login": "Silther",
+        "node_id": "U_kgDOBc174Q",
+        "organizations_url": "https://api.github.com/users/Silther/orgs",
+        "received_events_url": "https://api.github.com/users/Silther/received_events",
+        "repos_url": "https://api.github.com/users/Silther/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Silther/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Silther/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Silther",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1316
+}

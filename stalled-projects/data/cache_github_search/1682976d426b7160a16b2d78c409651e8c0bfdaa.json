@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### \ud83d\udd0e Search Terms\n\ndiscriminator\ndiscriminated\ndiscriminating\ncatch-all\ndefault\n\n### \ud83d\udd57 Version & Regression Information\n\n- This is the behavior in every version I tried, and I reviewed the FAQ for entries about search for discriminator/discriminating\n\n\n### \u23ef Playground Link\n\nhttps://www.typescriptlang.org/play/?#code/C4TwDgpgBAYg9nKBeKBvKATAlgZwMYBOWAtlgHYCGwcBAXFAOQBmCDANFAG4UA2ArhHrNWUAL5QAPmky5CJclRr0cwImQDmHbv0GMARhQIMxAbgBQZvHDIqoLOPXiIU6bPiKlK1Oo3vsuvAJCBkZiUBQ4sAjmZlhMUAAU9gB0bnKeigTISCjCcAwAlGhmUFBWNnA8EMk8cOpJCMnaAgUmUAD07VAAKuC6ecZSDCEMZqJAA\n\n### \ud83d\udcbb Code\n\n\u2705 Works (discriminator with default type, constant object):\n<pre code=\"ts\">\ntype Foo = { discriminator: 'foo', value: 'foo' } | { discriminator: <b>string</b>, value: 'bar' };\n\nconst foo: Foo = { discriminator: 'foo', value: 'bar' };\n\nif (foo.discriminator === 'foo') {\n  console.log(foo.value); // Type: 'foo'\n}\n</pre>\n\n\u2705 Works (discriminator with excluding value, cast object):\n<pre>\ntype Foo = { discriminator: 'foo', value: 'foo' } | { discriminator: <b>'bar'</b>, value: 'bar' };\n\nconst foo: Foo = { discriminator: 'foo', value: 'bar' } <b>as Foo</b>;\n\nif (foo.discriminator === 'foo') {\n  console.log(foo.value); // Type: 'foo'\n}\n</pre>\n\n\u274c Doesn't work (discriminator with default type, cast object):\n<pre>\ntype Foo = { discriminator: 'foo', value: 'foo' } | { discriminator: <b>string</b>, value: 'bar' };\n\nconst foo: Foo = { discriminator: 'foo', value: 'bar' } <b>as Foo</b>;\n\nif (foo.discriminator === 'foo') {\n  console.log(foo.value); // Type: 'foo' | 'bar'\n}\n</pre>\n\nIt looks a bit like TypeScript is missing information to narrow down the discriminator if the object type wasn't set as the constant object. But from a coder's perspective, it's `Foo` in all cases.\n\nI found other issues that look related but have different examples:\n- https://github.com/microsoft/TypeScript/issues/50139\n- https://github.com/microsoft/TypeScript/issues/58508\n- https://github.com/microsoft/TypeScript/issues/59654\n\n### \ud83d\ude41 Actual behavior\n\nThe type isn't narrowed down.\n\n### \ud83d\ude42 Expected behavior\n\nThe type is narrowed down to the matching discriminator.\n\n### Additional information about the issue\n\n_No response_",
+      "closed_at": "2025-12-26T23:02:53Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/62929/comments",
+      "created_at": "2025-12-26T20:58:59Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/62929/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/62929",
+      "id": 3764003427,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/62929/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc7gWiJj",
+      "number": 62929,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/62929/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/62929/timeline",
+      "title": "Discriminated union not narrowed if the declared variable isn't constant and the discriminator has an additional catch-all type",
+      "type": null,
+      "updated_at": "2026-02-25T18:27:05Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/62929",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/13484795?v=4",
+        "events_url": "https://api.github.com/users/dword-design/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dword-design/followers",
+        "following_url": "https://api.github.com/users/dword-design/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dword-design/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dword-design",
+        "id": 13484795,
+        "login": "dword-design",
+        "node_id": "MDQ6VXNlcjEzNDg0Nzk1",
+        "organizations_url": "https://api.github.com/users/dword-design/orgs",
+        "received_events_url": "https://api.github.com/users/dword-design/received_events",
+        "repos_url": "https://api.github.com/users/dword-design/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dword-design/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dword-design/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dword-design",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 194
+}

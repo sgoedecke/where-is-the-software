@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "## Bevy version\r\n14 rc4\r\nThe release number or commit hash of the version you're using.\r\n\r\nused this commit: `011f71a24520d1401b1d890a0c088c4ae7d41fb6`\r\n## \\[Optional\\] Relevant system information\r\nMacBook Pro M1. v14.3\r\nUsing Chrome Browser. (`Version 126.0.6478.127 (Official Build) (arm64)`)\r\n\r\nIf you cannot get Bevy to build or run on your machine, please include:\r\n\r\n- the Rust version you're using (you can get this by running `cargo --version`)\r\n```\r\n$ cargo --version\r\ncargo 1.79.0 (ffa9cf99a 2024-06-03)\r\n```\r\n  - Bevy relies on the \"latest stable release\" of Rust\r\n  - nightly should generally work, but there are sometimes regressions: please let us know!\r\n- the operating system or browser used, including its version\r\n  - e.g. Windows 10, Ubuntu 18.04, iOS 14\r\n\r\nIf your bug is rendering-related, copy the adapter info that appears when you run Bevy.\r\n\r\n\r\n## What you did\r\n\r\nTry to run my game in the web browser / wasm build.\r\n\r\n## What went wrong\r\n\r\nGame errors out before loading:\r\n\r\n- `Error adding plugin bevy_app::panic_handler::PanicHandlerPlugin in group bevy_internal::default_plugins::DefaultPlugins: plugin was already added in application`\r\n- `Unable to find a GPU! Make sure you have installed required drivers!`\r\n\r\n\r\n<img width=\"1178\" alt=\"Screenshot 2024-06-28 at 4 20 56\u202fPM\" src=\"https://github.com/bevyengine/bevy/assets/7761473/236e51bc-48f7-48b2-b3c5-6fa3667f5d16\">\r\n\r\n## Note: \r\n- This game with latest version of rustc and cargo works fine for bevy 13.2.\r\n- Not sure if this is only for Mac or not.",
+      "closed_at": "2024-06-28T20:52:36Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/14063/comments",
+      "created_at": "2024-06-28T20:25:26Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/14063/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/14063",
+      "id": 2381133829,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876e3",
+          "default": false,
+          "description": "This issue needs to be labelled",
+          "id": 2488007862,
+          "name": "S-Needs-Triage",
+          "node_id": "MDU6TGFiZWwyNDg4MDA3ODYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/14063/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U86N7TgF",
+      "number": 14063,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/14063/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/14063/timeline",
+      "title": "Bevy 14 - rc4, Web wasm won't run for MacBook Pro M1.",
+      "type": null,
+      "updated_at": "2024-06-28T20:52:36Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/14063",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7761473?v=4",
+        "events_url": "https://api.github.com/users/miketwenty1/events{/privacy}",
+        "followers_url": "https://api.github.com/users/miketwenty1/followers",
+        "following_url": "https://api.github.com/users/miketwenty1/following{/other_user}",
+        "gists_url": "https://api.github.com/users/miketwenty1/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/miketwenty1",
+        "id": 7761473,
+        "login": "miketwenty1",
+        "node_id": "MDQ6VXNlcjc3NjE0NzM=",
+        "organizations_url": "https://api.github.com/users/miketwenty1/orgs",
+        "received_events_url": "https://api.github.com/users/miketwenty1/received_events",
+        "repos_url": "https://api.github.com/users/miketwenty1/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/miketwenty1/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/miketwenty1/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/miketwenty1",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 305
+}

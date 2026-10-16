@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\r\n\r\nWhen upgrading some roles from `ansible 2.11.1` to `ansible 2.13.7` I discovered a regression in the behavior of the `ansible.builtin.uri` module.\r\n\r\nRequirements for the regression to appear:\r\n- control host is running `ansible  2.13+` with `python3`\r\n- target host is running `python2` as the default python bin/interpreter\r\n- uri module / server returns a GET request with the response headers `Content-type: application/json` and the content is a valid `json` string, but the response code is not `200`\r\n\r\nThe expected return values in ansible should include the key in the dictionary `json` with the content loaded. When the above  requirements are met this does not happen.\r\n\r\nThe module [documentation](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html#parameter-return_content) states the following about `return_content` key.\r\n\r\n>Independently of this option, if the reported Content-type is \u201capplication/json\u201d, then the JSON is always loaded into a key called json in the dictionary results.\r\n\r\n\r\n\r\n### Issue Type\r\n\r\nBug Report\r\n\r\n### Component Name\r\n\r\nansible.builtin.uri\r\n\r\n### Ansible Version\r\n\r\n```console\r\nIssue not present: ansible-core==2.11.1\r\nIssue not present: ansible-core==2.12.10\r\n\r\nIssue present: \r\n  - ansible-core==2.13.7\r\n  - ansible-core==2.14.1\r\n```\r\n\r\n\r\n### Configuration\r\n\r\n```console\r\nsee molecule / example role.\r\n```\r\n\r\n\r\n### OS / Environment\r\n\r\nCentos7 / Python2 interpreter\r\n\r\n### Steps to Reproduce\r\n\r\nRun the below and see that the bug does not exist in 2.11 when the target host has python2 running\r\n\r\n```shell\r\ngit clone https://github.com/stenh0use/ansible-uri-issue.git\r\npython3 -m venv .venv\r\n. .venv/bin/activate\r\npip install -r requirements_2.11.1.txt\r\n# see that the json dictionary is returned\r\nmolecule converge\r\n```\r\n\r\nRun the below and then see that the bug does exist once upgrading to 2.13+ and the target host has python2 running\r\n```shell\r\nrm -rf .venv\r\npython3 -m venv .venv\r\n. .venv/bin/activate\r\npip install -r requirements_2.13.7.txt\r\n# see that the json dictionary is not returned\r\nmolecule converge\r\n```\r\n\r\n\r\n\r\n### Expected Results\r\n\r\nI expect the json dict key to be populated even when the response code is not 200, but is in the expected list as per the documentation.\r\n\r\n### Actual Results\r\n\r\n```console\r\n\ud83d\ude2b $ molecule converge\r\nINFO     default scenario test matrix: dependency, create, prepare, converge\r\nINFO     Performing prerun with role_name_check=0...\r\nINFO     Set ANSIBLE_LIBRARY=/Users/jstenhouse/.cache/ansible-compat/70e5d7/modules:/Users/jstenhouse/.ansible/plugins/modules:/usr/share/ansible/plugins/modules\r\nINFO     Set ANSIBLE_COLLECTIONS_PATH=/Users/jstenhouse/.cache/ansible-compat/70e5d7/collections:/Users/jstenhouse/alpha/infra/ansible/collections\r\nINFO     Set ANSIBLE_ROLES_PATH=/Users/jstenhouse/.cache/ansible-compat/70e5d7/roles:/Users/jstenhouse/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/Users/jstenhouse/alpha/infra/ansible/roles:/Users/jstenhouse/alpha/infra/ansible-cloud/roles\r\nINFO     Running default > dependency\r\nWARNING  Skipping, missing the requirements file.\r\nWARNING  Skipping, missing the requirements file.\r\nINFO     Running default > create\r\nWARNING  Skipping, instances already created.\r\nINFO     Running default > prepare\r\nWARNING  Skipping, prepare playbook not configured.\r\nINFO     Running default > converge\r\nINFO     Sanity checks: 'docker'\r\n\r\nPLAY [Converge] ****************************************************************\r\n\r\nTASK [Gathering Facts] *********************************************************\r\nok: [centos8]\r\nok: [centos7]\r\n\r\nTASK [uri : ansible.builtin.include_tasks] *************************************\r\nincluded: /Users/jstenhouse/dev/github/uri/tasks/uri_get.yml for centos7, centos8 => (item=200)\r\nincluded: /Users/jstenhouse/dev/github/uri/tasks/uri_get.yml for centos7, centos8 => (item=429)\r\nincluded: /Users/jstenhouse/dev/github/uri/tasks/uri_get.yml for centos7, centos8 => (item=501)\r\nincluded: /Users/jstenhouse/dev/github/uri/tasks/uri_get.yml for centos7, centos8 => (item=503)\r\n\r\nTASK [uri : get json response with code 200] ***********************************\r\nok: [centos7]\r\nok: [centos8]\r\n\r\nTASK [uri : ansible.builtin.debug] *********************************************\r\nok: [centos7] => {\r\n    \"response\": {\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"cookies\": {},\r\n        \"cookies_string\": \"\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:53:52 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"json\": {\r\n            \"hello\": \"world\"\r\n        },\r\n        \"msg\": \"OK (20 bytes)\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 200,\r\n        \"url\": \"http://server:5000/200\"\r\n    }\r\n}\r\nok: [centos8] => {\r\n    \"response\": {\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"cookies\": {},\r\n        \"cookies_string\": \"\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:53:53 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"json\": {\r\n            \"hello\": \"world\"\r\n        },\r\n        \"msg\": \"OK (20 bytes)\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 200,\r\n        \"url\": \"http://server:5000/200\"\r\n    }\r\n}\r\n\r\nTASK [uri : assert json dict exists] *******************************************\r\nok: [centos7] => {\r\n    \"changed\": false,\r\n    \"msg\": \"All assertions passed\"\r\n}\r\nok: [centos8] => {\r\n    \"changed\": false,\r\n    \"msg\": \"All assertions passed\"\r\n}\r\n\r\nTASK [uri : ansible.builtin.set_fact] ******************************************\r\nskipping: [centos7]\r\nskipping: [centos8]\r\n\r\nTASK [uri : get json response with code 429] ***********************************\r\nok: [centos7]\r\nok: [centos8]\r\n\r\nTASK [uri : ansible.builtin.debug] *********************************************\r\nok: [centos7] => {\r\n    \"response\": {\r\n        \"body\": \"{ \\\"hello\\\": \\\"world\\\" }\",\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:53:55 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"msg\": \"HTTP Error 429: TOO MANY REQUESTS\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 429,\r\n        \"url\": \"http://server:5000/429\"\r\n    }\r\n}\r\nok: [centos8] => {\r\n    \"response\": {\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:53:55 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"json\": {\r\n            \"hello\": \"world\"\r\n        },\r\n        \"msg\": \"HTTP Error 429: TOO MANY REQUESTS\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 429,\r\n        \"url\": \"http://server:5000/429\"\r\n    }\r\n}\r\n\r\nTASK [uri : assert json dict exists] *******************************************\r\nfatal: [centos7]: FAILED! => {\r\n    \"assertion\": \"response.json is defined\",\r\n    \"changed\": false,\r\n    \"evaluated_to\": false,\r\n    \"msg\": \"Assertion failed\"\r\n}\r\n...ignoring\r\nok: [centos8] => {\r\n    \"changed\": false,\r\n    \"msg\": \"All assertions passed\"\r\n}\r\n\r\nTASK [uri : ansible.builtin.set_fact] ******************************************\r\nok: [centos7]\r\nskipping: [centos8]\r\n\r\nTASK [uri : get json response with code 501] ***********************************\r\nok: [centos7]\r\nok: [centos8]\r\n\r\nTASK [uri : ansible.builtin.debug] *********************************************\r\nok: [centos7] => {\r\n    \"response\": {\r\n        \"body\": \"{ \\\"hello\\\": \\\"world\\\" }\",\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:53:58 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"msg\": \"HTTP Error 501: NOT IMPLEMENTED\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 501,\r\n        \"url\": \"http://server:5000/501\"\r\n    }\r\n}\r\nok: [centos8] => {\r\n    \"response\": {\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:53:59 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"json\": {\r\n            \"hello\": \"world\"\r\n        },\r\n        \"msg\": \"HTTP Error 501: NOT IMPLEMENTED\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 501,\r\n        \"url\": \"http://server:5000/501\"\r\n    }\r\n}\r\n\r\nTASK [uri : assert json dict exists] *******************************************\r\nfatal: [centos7]: FAILED! => {\r\n    \"assertion\": \"response.json is defined\",\r\n    \"changed\": false,\r\n    \"evaluated_to\": false,\r\n    \"msg\": \"Assertion failed\"\r\n}\r\n...ignoring\r\nok: [centos8] => {\r\n    \"changed\": false,\r\n    \"msg\": \"All assertions passed\"\r\n}\r\n\r\nTASK [uri : ansible.builtin.set_fact] ******************************************\r\nskipping: [centos8]\r\nok: [centos7]\r\n\r\nTASK [uri : get json response with code 503] ***********************************\r\nok: [centos7]\r\nok: [centos8]\r\n\r\nTASK [uri : ansible.builtin.debug] *********************************************\r\nok: [centos7] => {\r\n    \"response\": {\r\n        \"body\": \"{ \\\"hello\\\": \\\"world\\\" }\",\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:54:01 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"msg\": \"HTTP Error 503: SERVICE UNAVAILABLE\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 503,\r\n        \"url\": \"http://server:5000/503\"\r\n    }\r\n}\r\nok: [centos8] => {\r\n    \"response\": {\r\n        \"changed\": false,\r\n        \"connection\": \"close\",\r\n        \"content_length\": \"20\",\r\n        \"content_type\": \"application/json\",\r\n        \"date\": \"Tue, 13 Dec 2022 19:54:02 GMT\",\r\n        \"elapsed\": 0,\r\n        \"failed\": false,\r\n        \"json\": {\r\n            \"hello\": \"world\"\r\n        },\r\n        \"msg\": \"HTTP Error 503: SERVICE UNAVAILABLE\",\r\n        \"redirected\": false,\r\n        \"server\": \"Werkzeug/2.2.2 Python/3.11.1\",\r\n        \"status\": 503,\r\n        \"url\": \"http://server:5000/503\"\r\n    }\r\n}\r\n\r\nTASK [uri : assert json dict exists] *******************************************\r\nfatal: [centos7]: FAILED! => {\r\n    \"assertion\": \"response.json is defined\",\r\n    \"changed\": false,\r\n    \"evaluated_to\": false,\r\n    \"msg\": \"Assertion failed\"\r\n}\r\n...ignoring\r\nok: [centos8] => {\r\n    \"changed\": false,\r\n    \"msg\": \"All assertions passed\"\r\n}\r\n\r\nTASK [uri : ansible.builtin.set_fact] ******************************************\r\nskipping: [centos8]\r\nok: [centos7]\r\n\r\nTASK [uri : ansible.builtin.debug] *********************************************\r\nok: [centos7] => {\r\n    \"ansible_facts.python_version\": \"2.7.5\"\r\n}\r\nok: [centos8] => {\r\n    \"ansible_facts.python_version\": \"3.6.8\"\r\n}\r\n\r\nTASK [uri : ansible.builtin.assert] ********************************************\r\nfatal: [centos7]: FAILED! => {\r\n    \"assertion\": \"not (json_dict_missing | default(false) | bool)\",\r\n    \"changed\": false,\r\n    \"evaluated_to\": false,\r\n    \"msg\": \"one or more uri responses had a missing json_dict.\\nfailed status codes: \\\"[429, 501, 503]\\\"\\n\"\r\n}\r\nok: [centos8] => {\r\n    \"changed\": false,\r\n    \"msg\": \"all test cases passed\"\r\n}\r\n\r\nPLAY RECAP *********************************************************************\r\ncentos7                    : ok=21   changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=3   \r\ncentos8                    : ok=19   changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0\r\n\r\nWARNING  Retrying execution failure 2 of: ansible-playbook --inventory /Users/jstenhouse/.cache/molecule/uri/default/inventory --skip-tags molecule-notest,notest /Users/jstenhouse/dev/github/uri/molecule/default/converge.yml\r\nCRITICAL Ansible return code was 2, command was: ['ansible-playbook', '--inventory', '/Users/jstenhouse/.cache/molecule/uri/default/inventory', '--skip-tags', 'molecule-notest,notest', '/Users/jstenhouse/dev/github/uri/molecule/default/converge.yml']\r\n```\r\n\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2026-01-13T23:55:14Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/79592/comments",
+      "created_at": "2022-12-13T19:54:41Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/79592/events",
+      "html_url": "https://github.com/ansible/ansible/issues/79592",
+      "id": 1495049884,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue/PR relates to a module.",
+          "id": 496359346,
+          "name": "module",
+          "node_id": "MDU6TGFiZWw0OTYzNTkzNDY=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/module"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e3ed5e",
+          "default": false,
+          "description": "Priority 3 - Approved, No Time Limitation",
+          "id": 1126594180,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwxMTI2NTk0MTgw",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "a1dbe2",
+          "default": false,
+          "description": "This issue has been verified/reproduced by maintainer",
+          "id": 1130170724,
+          "name": "verified",
+          "node_id": "MDU6TGFiZWwxMTMwMTcwNzI0",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/verified"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "",
+          "id": 1742671738,
+          "name": "affects_2.11",
+          "node_id": "MDU6TGFiZWwxNzQyNjcxNzM4",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.11"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/79592/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM5ZHKac",
+      "number": 79592,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/79592/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/79592/timeline",
+      "title": "ansible.builtin.uri doesn't return `json` dict when python interpreter is python2.",
+      "type": null,
+      "updated_at": "2026-01-27T14:00:01Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/79592",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/5916243?v=4",
+        "events_url": "https://api.github.com/users/stenh0use/events{/privacy}",
+        "followers_url": "https://api.github.com/users/stenh0use/followers",
+        "following_url": "https://api.github.com/users/stenh0use/following{/other_user}",
+        "gists_url": "https://api.github.com/users/stenh0use/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/stenh0use",
+        "id": 5916243,
+        "login": "stenh0use",
+        "node_id": "MDQ6VXNlcjU5MTYyNDM=",
+        "organizations_url": "https://api.github.com/users/stenh0use/orgs",
+        "received_events_url": "https://api.github.com/users/stenh0use/received_events",
+        "repos_url": "https://api.github.com/users/stenh0use/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/stenh0use/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/stenh0use/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/stenh0use",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 20
+}

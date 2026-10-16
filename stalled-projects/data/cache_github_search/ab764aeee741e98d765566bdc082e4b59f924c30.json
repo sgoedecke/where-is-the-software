@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!-- This form is for bug reports and feature requests ONLY!\r\n\r\nIf you're looking for help check [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes) and the [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).\r\n\r\nIf the matter is security related, please disclose it privately via https://kubernetes.io/security/.\r\n-->\r\n\r\n**Is this a BUG REPORT or FEATURE REQUEST?**:\r\n\r\n/kind feature\r\n\r\n**What happened**:\r\n\r\nDevelopers have started to use `StatefulSet` without a `Service` definition as a way to deploy a pod on a cluster exactly once, for example here: https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/blob/master/deploy/kubernetes/stable/controller.yaml\r\n\r\nConceptually that makes sense when the app running in the pod doesn't accept any connections from outside. In this example, it's the CSI sidecar containers which react to changes in the apiserver.\r\n\r\nBut is this a supported mode of operation for a `StatefulSet`? https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.12/#statefulset-v1-apps says that\r\n> serviceName is the name of the service that governs this StatefulSet. This service must exist before the StatefulSet, and is responsible for the network identity of the set. Pods get DNS/hostnames that follow the pattern: pod-specific-string.serviceName.default.svc.cluster.local where \"pod-specific-string\" is managed by the StatefulSet controller.\r\n\r\n`serviceName` is mandatory. The example above gets around this by setting `serviceName` without defining a corresponding `Service`.\r\n\r\nThe concern (raised by @rootfs in https://github.com/ceph/ceph-csi/issues/81) is that while it currently works, future revisions of the `StatefulSet` controller might not support this anymore.\r\n\r\n**What you expected to happen**:\r\n\r\nClarify in the docs that the `Service` definition is not needed or (better?) make `serviceName` optional.\r\n\r\n**Environment**:\r\n- Kubernetes version (use `kubectl version`): tested on 1.11 and 1.12\r\n",
+      "closed_at": "2022-01-28T17:06:58Z",
+      "comments": 49,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/69608/comments",
+      "created_at": "2018-10-10T06:27:55Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/69608/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/69608",
+      "id": 368511816,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a new feature.",
+          "id": 267761362,
+          "name": "kind/feature",
+          "node_id": "MDU6TGFiZWwyNjc3NjEzNjI=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Apps.",
+          "id": 404091735,
+          "name": "sig/apps",
+          "node_id": "MDU6TGFiZWw0MDQwOTE3MzU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/apps"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "604460",
+          "default": false,
+          "description": "Denotes an issue or PR that has aged beyond stale and will be auto-closed.",
+          "id": 778118402,
+          "name": "lifecycle/rotten",
+          "node_id": "MDU6TGFiZWw3NzgxMTg0MDI=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/lifecycle/rotten"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/69608/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzNjg1MTE4MTY=",
+      "number": 69608,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 34,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 34,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/69608/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/69608/timeline",
+      "title": "StatefulSet without Service",
+      "type": null,
+      "updated_at": "2022-01-29T14:06:10Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/69608",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/22076?v=4",
+        "events_url": "https://api.github.com/users/pohly/events{/privacy}",
+        "followers_url": "https://api.github.com/users/pohly/followers",
+        "following_url": "https://api.github.com/users/pohly/following{/other_user}",
+        "gists_url": "https://api.github.com/users/pohly/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/pohly",
+        "id": 22076,
+        "login": "pohly",
+        "node_id": "MDQ6VXNlcjIyMDc2",
+        "organizations_url": "https://api.github.com/users/pohly/orgs",
+        "received_events_url": "https://api.github.com/users/pohly/received_events",
+        "repos_url": "https://api.github.com/users/pohly/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/pohly/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/pohly/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/pohly",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 14
+}

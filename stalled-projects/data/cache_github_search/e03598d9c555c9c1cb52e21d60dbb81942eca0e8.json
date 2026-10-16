@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "This is the **summary issue** for the `mutable_borrow_reservation_conflict` future-compatibility warning and other related errors. The goal of this page is describe why this change was made and how you can fix code that is affected by it. It also provides a place to ask questions or register a complaint if you feel the change should not be made. For more information on the policy around future-compatibility warnings, see our [breaking change policy guidelines][RFC 1589].\r\n\r\n[RFC 1589]: https://github.com/rust-lang/rfcs/blob/master/text/1589-rustc-bug-fix-procedure.md\r\n\r\n#### What is this lint about\r\n\r\nA two-phase borrow is a mutable-borrow that is initially *reserved* at one point in the program's control-flow, and then subsequently *activated* at a later point in the control-flow.\r\n\r\nFor example, given a vector `v`, `v.push(v.len())` first reserves a borrow of `v` when it evaluates the method receiver, but does not activate that borrow until later when transferring control to the `push` method itself, *after* `v.len()` has been evaluated.\r\n\r\nThis lint detects instances where the reservation itself conflicts with some pre-existing borrow. For example:\r\n\r\n```rust\r\n   let mut v = vec![0, 1, 2];\r\n   let shared = &v;\r\n             // ~~ \r\n             // a shared borrow of `v` starts here ...\r\n   v.push(shared.len());\r\n// ~      ~~~~~~\r\n// |      ... and that shared borrow is used here...\r\n// |\r\n// ... but that comes after the reservation of the\r\n//     mutable borrow of `v` here (the reservation\r\n//     is subsequently activated when `push` is invoked)\r\n```\r\n\r\nThe latter code is an example of code that was accepted when two-phased borrows (2PB) initially landed, as part of non-lexical lifetimes (NLL) deployment in the 2018 edition.\r\n\r\nThis lint detects such cases, and warns that this pattern may be rejected by a future version of the compiler.\r\n\r\n\r\nThis is much further discussion of this at the following places:\r\n * Issue #56254\r\n * RalfJung blog post: https://www.ralfj.de/blog/2018/11/16/stacked-borrows-implementation.html\r\n(The history section below attempts to provide a summary of the events that led to this lint being developed and the current status of the lint.)\r\n\r\n#### How to fix this warning/error\r\n\r\nRevise the code so that the initial evaluation of the mutable borrow (the \"reservation\") always comes after all uses of shared borrows it conflicts with.\r\n\r\nOne example revision of the example above:\r\n\r\n```rust\r\nlet mut v = vec![0, 1, 2];\r\nlet shared = &v;\r\nlet len = shared.len();\r\nv.push(len);\r\n```\r\n\r\nNow, the last use of `shared` comes *before* the reservation in `v.push(len)`, and thus there is no conflict between the shared borrow and the mutable borrow reservation.\r\n\r\n\r\n#### Historical background \r\n\r\nAt the time NLL was stabilized, this borrowing pattern was not meant to be accepted, because it complicates the abstract model for borrows and thus poses problems for unsafe code authors and for future compiler optimizations. (How *much* complication it introduces is a matter of debate, which is in part why this restriction is being given treatment different from other future compatibility lints.)\r\n\r\nIn other words: at the time that NLL was stabilized, the compiler's acceptance of this borrowing pattern was categorized by the NLL team as a \"known bug\". The NLL team assumed that, as a bug fix, the compiler would be allowed to start rejecting the pattern in the future.\r\n\r\nWhether a future version of the compiler rejects the code will depend on an investigation of potential abstract models of the language semantics; we will not convert the lint to a hard error without first performing an evaluation of such abstract models. \r\n\r\n##### Timeline:\r\n\r\n * 2017-03-01 2PB [blog post](http://smallcultfollowing.com/babysteps/blog/2017/03/01/nested-method-calls-via-two-phase-borrowing/)\r\n * 2017-06-09 2PB RFC posted: https://github.com/rust-lang/rfcs/pull/2025\r\n * 2017-08-26 2PB RFC accepted and merged https://github.com/rust-lang/rfcs/pull/2025#issuecomment-325153662\r\n * 2017-12-06 2PB alpha implementation PRs: #46537, #47489, #48197\r\n * 2018-02-22 2PB alpha implementation identified as overly general and broken; new beta implementation proposed #48431 \r\n * 2018-03-06 2PB beta implementation via PR #48770\r\n * 2018-08-07: @RalfJung proposes \"stacked borrows\" semantic model for Rust borrowing and aliasing of references: [blog post](https://www.ralfj.de/blog/2018/08/07/stacked-borrows.html) [internals discussion](https://internals.rust-lang.org/t/stacked-borrows-an-aliasing-model-for-rust/8153)\r\n * 2018-11-16 stacked borrows implemented [blog post](https://www.ralfj.de/blog/2018/11/16/stacked-borrows-implementation.html)\r\n * 2018-11-26 @RalfJung points out that the stacked borrows model does not allow for pre-existing shares to overlap with reservations for a two-phase borrow #56254 \r\n * 2018-11-28 The NLL team decides that it should not attempt to rush to make a backportable change implementing the pre-existing share restriction. https://github.com/rust-lang/rust/issues/56254#issuecomment-442829785\r\n * 2018-11-29 The T-lang design team discussed the matter; it did not reach consensus about whether the NLL team was correct in its assumption that it could land the restriction later (by classifying the change as a \"soundness fix\"). https://github.com/rust-lang/rust/issues/56254#issuecomment-442980457\r\n * For the next four months, debate continued off and on about whether this borrowing pattern should be rejected or not.\r\n * 2019-02-25 Pull request implementing the proposed restriction is posted: PR #58739 \r\n * 2019-03-06 results from crater run with restriction posted https://github.com/rust-lang/rust/pull/58739#issuecomment-470230949\r\n * 2019-03-07 subset of T-lang design team discusses and @pnkfelix proposed PR #58739 be merged. https://github.com/rust-lang/rust/pull/58739#issuecomment-470676858 \r\n * For next three weeks, various people both within and apart from T-lang debate whether the restriction can be landed, given that NLL with a less-restricted 2PB was stabilized. Much of that debate is encoded in comments on PR #58739, such as this summary comment from niko: https://github.com/rust-lang/rust/pull/58739#issuecomment-473078780\r\n * 2019-03-25: compromise reached within T-lang design team: https://github.com/rust-lang/rust/pull/58739#issuecomment-476387184\r\n\r\n#### Current status\r\n\r\n- [x] PR #58739 introduces the `mutable_borrow_reservation_conflict` lint as warn-by-default\r\n- [ ] PR #76104 makes the `mutable_borrow_reservation_conflict` lint deny-by-default\r\n- [ ] PR ? makes the `mutable_borrow_reservation_conflict` lint a hard error\r\n\r\n",
+      "closed_at": "2022-05-06T14:53:19Z",
+      "comments": 15,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/59159/comments",
+      "created_at": "2019-03-13T15:08:24Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/59159/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/59159",
+      "id": 420553123,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Lints (warnings about flaws in source code) such as unused_mut.",
+          "id": 235137,
+          "name": "A-lints",
+          "node_id": "MDU6TGFiZWwyMzUxMzc=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-lints"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Non-lexical lifetimes (NLL)",
+          "id": 604489711,
+          "name": "A-NLL",
+          "node_id": "MDU6TGFiZWw2MDQ0ODk3MTE=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-NLL"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: Future-incompatibility lints",
+          "id": 630636017,
+          "name": "C-future-incompatibility",
+          "node_id": "MDU6TGFiZWw2MzA2MzYwMTc=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-future-incompatibility"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/59159/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0MjA1NTMxMjM=",
+      "number": 59159,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 4,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 4,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/59159/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/59159/timeline",
+      "title": "Tracking issue for `mutable_borrow_reservation_conflict` compatibility lint",
+      "type": null,
+      "updated_at": "2024-12-21T04:52:16Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/59159",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/173127?v=4",
+        "events_url": "https://api.github.com/users/pnkfelix/events{/privacy}",
+        "followers_url": "https://api.github.com/users/pnkfelix/followers",
+        "following_url": "https://api.github.com/users/pnkfelix/following{/other_user}",
+        "gists_url": "https://api.github.com/users/pnkfelix/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/pnkfelix",
+        "id": 173127,
+        "login": "pnkfelix",
+        "node_id": "MDQ6VXNlcjE3MzEyNw==",
+        "organizations_url": "https://api.github.com/users/pnkfelix/orgs",
+        "received_events_url": "https://api.github.com/users/pnkfelix/received_events",
+        "repos_url": "https://api.github.com/users/pnkfelix/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/pnkfelix/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/pnkfelix/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/pnkfelix",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 91
+}

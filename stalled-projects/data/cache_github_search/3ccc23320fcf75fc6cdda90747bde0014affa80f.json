@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "> [!IMPORTANT]\r\n> ## Support for ES Modules in Electron will land in Electron 28 and will be available in the `electron-nightly` released on August 31st\r\n>\r\n> \ud83e\udd73 \r\n\r\n**Original Issue Below**\r\n\r\n### Preflight Checklist\r\n\r\n* [x] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/master/CONTRIBUTING.md) for this project.\r\n* [x] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/master/CODE_OF_CONDUCT.md) that this project adheres to.\r\n* [x] I have searched the issue tracker for a feature request that matches the one I want to file, without success.\r\n\r\n### Feature Request\r\n\r\nAs of Node 13.3 ES modules have been unflagged (albeit still experimental), it would be nice to be able to use ES modules [as supported](https://nodejs.org/api/esm.html) in electron.\r\n\r\nCurrently when trying to run electron with an ES entry point (either `.mjs` or `.js`+`\"type\": \"module\"`) electron fails to run.\r\n\r\nFor example:\r\n\r\n```\r\n> electron-test@1.0.0 start /home/jamesernator/Projects/electron-test\r\n> electron .\r\n\r\nApp threw an error during load\r\n/home/jamesernator/Projects/electron-test/main.js:1\r\nimport electron from 'electron';\r\n^^^^^^\r\n\r\nSyntaxError: Cannot use import statement outside a module\r\n    at Module._compile (internal/modules/cjs/loader.js:815:22)\r\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)\r\n    at Module.load (internal/modules/cjs/loader.js:735:32)\r\n    at Module._load (internal/modules/cjs/loader.js:648:12)\r\n    at Module._load (electron/js2c/asar.js:717:26)\r\n    at Function.Module._load (electron/js2c/asar.js:717:26)\r\n    at loadApplicationPackage (/home/jamesernator/Projects/electron-test/node_modules/electron/dist/resources/default_app.asar/main.js:109:16)\r\n    at Object.<anonymous> (/home/jamesernator/Projects/electron-test/node_modules/electron/dist/resources/default_app.asar/main.js:155:9)\r\n    at Module._compile (internal/modules/cjs/loader.js:880:30)\r\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)\r\n```\r\n\r\n### Alternatives Considered\r\n\r\nThis is primarily a request for support, the alternative is not supporting it but that would be unfortunate given ES modules will be officially supported in both browsers and Node but not usable by electron without additional tooling.\r\n\r\n### Additional Information\r\n\r\nES Modules are still new (and experimental) so actual implementation might be delayed (or put behind flag) however starting to consider implementation considerations now would be helpful for supporting this more readily in future.",
+      "closed_at": "2023-08-31T00:38:52Z",
+      "comments": 283,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/21457/comments",
+      "created_at": "2019-12-10T13:15:26Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/21457/events",
+      "html_url": "https://github.com/electron/electron/issues/21457",
+      "id": 535722946,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "",
+          "id": 77569958,
+          "name": "discussion",
+          "node_id": "MDU6TGFiZWw3NzU2OTk1OA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/discussion"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9d0c4",
+          "default": false,
+          "description": null,
+          "id": 565223195,
+          "name": "component/node-integration",
+          "node_id": "MDU6TGFiZWw1NjUyMjMxOTU=",
+          "url": "https://api.github.com/repos/electron/electron/labels/component/node-integration"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/21457/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1MzU3MjI5NDY=",
+      "number": 21457,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 328,
+        "-1": 0,
+        "confused": 4,
+        "eyes": 9,
+        "heart": 14,
+        "hooray": 16,
+        "laugh": 0,
+        "rocket": 7,
+        "total_count": 378,
+        "url": "https://api.github.com/repos/electron/electron/issues/21457/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/21457/timeline",
+      "title": "Support Node's ES Modules",
+      "type": null,
+      "updated_at": "2026-05-26T22:23:26Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/21457",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/8518303?v=4",
+        "events_url": "https://api.github.com/users/Jamesernator/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Jamesernator/followers",
+        "following_url": "https://api.github.com/users/Jamesernator/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Jamesernator/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Jamesernator",
+        "id": 8518303,
+        "login": "Jamesernator",
+        "node_id": "MDQ6VXNlcjg1MTgzMDM=",
+        "organizations_url": "https://api.github.com/users/Jamesernator/orgs",
+        "received_events_url": "https://api.github.com/users/Jamesernator/received_events",
+        "repos_url": "https://api.github.com/users/Jamesernator/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Jamesernator/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Jamesernator/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Jamesernator",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

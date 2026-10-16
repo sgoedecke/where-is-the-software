@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\r\n\r\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\r\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\r\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a feature request that matches the one I want to file, without success.\r\n\r\n### Problem Description\r\n\r\nThe doc describes how a remote content can add a new render instance by simply adding `<webview>` and even is allowed to set its options, like nodeIntegration - which is a serious security issue. To prevent this, a proposed code example is provided but it's not prevented by default.\r\n\r\n```\r\nHowever, a WebView will always create an independent renderer process with its own webPreferences.\r\n```\r\nSrc: https://www.electronjs.org/docs/latest/tutorial/security#12-verify-webview-options-before-creation\r\n\r\n### Proposed Solution\r\n\r\nA better approach than counting on devs to add this code snippet themselves would be to have smart defaults for a pit of success.\r\n\r\nI propose the global vars:\r\n- `webviewCanCreateWebview` [false] - check if a webview can be created from within another webview\r\n- `instanceCanCreateWebview` [false] : check if render instances can create `<webview>` on the fly\r\n\r\nAlso a default setting that doesn't allow child `<webview>` to have more permissions than their parent would be advisable.\r\n\r\n### Alternatives Considered\r\n\r\n- counting on devs to implement check manually each time (pit of failure)\r\n\r\n### Additional Information\r\n\r\n_No response_",
+      "closed_at": "2022-06-29T09:12:17Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/34784/comments",
+      "created_at": "2022-06-29T07:32:50Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/34784/events",
+      "html_url": "https://github.com/electron/electron/issues/34784",
+      "id": 1288294200,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/34784/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85Myc84",
+      "number": 34784,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/34784/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/34784/timeline",
+      "title": "[Feature Request]: Better <webview> DX Security - Pit of success",
+      "type": null,
+      "updated_at": "2022-06-29T09:12:18Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/34784",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/2837147?v=4",
+        "events_url": "https://api.github.com/users/MentalGear/events{/privacy}",
+        "followers_url": "https://api.github.com/users/MentalGear/followers",
+        "following_url": "https://api.github.com/users/MentalGear/following{/other_user}",
+        "gists_url": "https://api.github.com/users/MentalGear/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/MentalGear",
+        "id": 2837147,
+        "login": "MentalGear",
+        "node_id": "MDQ6VXNlcjI4MzcxNDc=",
+        "organizations_url": "https://api.github.com/users/MentalGear/orgs",
+        "received_events_url": "https://api.github.com/users/MentalGear/received_events",
+        "repos_url": "https://api.github.com/users/MentalGear/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/MentalGear/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/MentalGear/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/MentalGear",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 245
+}

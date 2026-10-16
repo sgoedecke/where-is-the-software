@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "This code won't compile \r\nI tried this code:\r\n\r\n```rust\r\n#[derive(Debug)]\r\nstruct Node {\r\n    value: i32,\r\n    parent: RefCell<Weak<Node>>,\r\n    children: RefCell<Vec<Rc<Node>>>,\r\n}\r\n\r\nfn main() {\r\n    let leaf = Rc::new(Node {\r\n        value: 3,\r\n        parent: RefCell::new(Weak::new()),\r\n        children: RefCell::new(vec![]),\r\n    });\r\n\r\n    println!(\"leaf parent = {:?}\", leaf.parent.borrow().upgrade());\r\n\r\n    let branch = Rc::new(Node {\r\n        value: 5,\r\n        parent: RefCell::new(Weak::new()),\r\n        children: RefCell::new(vec![Rc::clone(&leaf)]),\r\n    });\r\n\r\n    *leaf.parent.borrow_mut() = Rc::downgrade(&branch);\r\n\r\n    if let Some(x) = leaf.parent.borrow().upgrade() {\r\n        println!(\"leaf parent = {:?}\", x);\r\n    }\r\n}\r\n```\r\n\r\nI expected to see this happen: code compiled\r\n\r\nInstead, this happened: compiler error\r\n```\r\na temporary with access to the borrow is created here ...rustcE0597\r\nmain.rs(35, 22): original diagnostic\r\n`leaf` does not live long enough\r\nborrowed value does not live long enoughrustcE0597\r\nmain.rs(38, 1): `leaf` dropped here while still borrowed\r\nmain.rs(35, 22): a temporary with access to the borrow is created here ...\r\nmain.rs(38, 1): ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `Ref<'_, std::rc::Weak<Node>>`\r\nmain.rs(37, 6): consider adding semicolon after the expression so its temporaries are dropped sooner, before the local variables declared by the block are dropped: `;`\r\n```\r\n",
+      "closed_at": "2025-06-02T20:39:42Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/95381/comments",
+      "created_at": "2022-03-27T20:47:44Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/95381/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/95381",
+      "id": 1182658019,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: The borrow checker",
+          "id": 171502053,
+          "name": "A-borrow-checker",
+          "node_id": "MDU6TGFiZWwxNzE1MDIwNTM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-borrow-checker"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/95381/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5Gfe3j",
+      "number": 95381,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/95381/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/95381/timeline",
+      "title": "Odd and unexpected compiler error",
+      "type": null,
+      "updated_at": "2025-06-02T20:39:43Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/95381",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/12527258?v=4",
+        "events_url": "https://api.github.com/users/bananabrick/events{/privacy}",
+        "followers_url": "https://api.github.com/users/bananabrick/followers",
+        "following_url": "https://api.github.com/users/bananabrick/following{/other_user}",
+        "gists_url": "https://api.github.com/users/bananabrick/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/bananabrick",
+        "id": 12527258,
+        "login": "bananabrick",
+        "node_id": "MDQ6VXNlcjEyNTI3MjU4",
+        "organizations_url": "https://api.github.com/users/bananabrick/orgs",
+        "received_events_url": "https://api.github.com/users/bananabrick/received_events",
+        "repos_url": "https://api.github.com/users/bananabrick/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/bananabrick/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/bananabrick/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/bananabrick",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 64
+}

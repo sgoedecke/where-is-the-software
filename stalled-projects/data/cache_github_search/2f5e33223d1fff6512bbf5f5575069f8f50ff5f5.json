@@ -1,0 +1,161 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MANNEQUIN",
+      "body": "BPO | [41754](https://bugs.python.org/issue41754)\n--- | :---\nNosy | @ronaldoussoren, @ned-deily, @serhiy-storchaka, @miss-islington\nPRs | <li>python/cpython#23075</li><li>python/cpython#23197</li><li>python/cpython#23198</li>\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2020-09-10.06:15:31.730>\nlabels = ['OS-mac', 'easy', 'type-bug', '3.8', '3.9', '3.10', 'library']\ntitle = 'Webbrowser Module Cannot Find xdg-settings on OSX'\nupdated_at = <Date 2021-02-08.17:07:14.253>\nuser = 'https://bugs.python.org/tonydiloreto'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2021-02-08.17:07:14.253>\nactor = 'serhiy.storchaka'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['Library (Lib)', 'macOS']\ncreation = <Date 2020-09-10.06:15:31.730>\ncreator = 'tony.diloreto'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 41754\nkeywords = ['patch', 'newcomer friendly']\nmessage_count = 8.0\nmessages = ['376672', '378944', '379012', '380141', '380543', '380544', '380547', '386632']\nnosy_count = 5.0\nnosy_names = ['ronaldoussoren', 'ned.deily', 'serhiy.storchaka', 'miss-islington', 'tony.diloreto']\npr_nums = ['23075', '23197', '23198']\npriority = 'normal'\nresolution = 'fixed'\nstage = 'resolved'\nstatus = 'open'\nsuperseder = None\ntype = 'behavior'\nurl = 'https://bugs.python.org/issue41754'\nversions = ['Python 3.8', 'Python 3.9', 'Python 3.10']\n```\n\n</p></details>\n",
+      "closed_at": "2023-12-20T08:36:48Z",
+      "comments": 9,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/85920/comments",
+      "created_at": "2020-09-10T06:15:32Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/85920/events",
+      "html_url": "https://github.com/python/cpython/issues/85920",
+      "id": 1199043440,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": null,
+          "id": 588881297,
+          "name": "OS-mac",
+          "node_id": "MDU6TGFiZWw1ODg4ODEyOTc=",
+          "url": "https://api.github.com/repos/python/cpython/labels/OS-mac"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Standard Library Python modules in the Lib/ directory",
+          "id": 4018668725,
+          "name": "stdlib",
+          "node_id": "LA_kwDOBN0Z8c7viAS1",
+          "url": "https://api.github.com/repos/python/cpython/labels/stdlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0e8a16",
+          "default": false,
+          "description": null,
+          "id": 4018743106,
+          "name": "easy",
+          "node_id": "LA_kwDOBN0Z8c7viSdC",
+          "url": "https://api.github.com/repos/python/cpython/labels/easy"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772048,
+          "name": "3.10 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhQ",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.10%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772049,
+          "name": "3.9 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhR",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.9%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018775327,
+          "name": "3.8 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viaUf",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.8%20(EOL)"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/85920/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDQzNDQw",
+      "number": 85920,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/85920/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/85920/timeline",
+      "title": "Webbrowser Module Cannot Find xdg-settings on OSX",
+      "type": null,
+      "updated_at": "2023-12-20T08:36:49Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/85920",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/93802147?v=4",
+        "events_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/events{/privacy}",
+        "followers_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/followers",
+        "following_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/following{/other_user}",
+        "gists_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 93802147,
+        "login": "131a3177-ec23-4a3c-95ab-61e1ebd85a3f",
+        "node_id": "M_kgDOBZdOow",
+        "organizations_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/orgs",
+        "received_events_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/received_events",
+        "repos_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f/subscriptions",
+        "type": "Mannequin",
+        "url": "https://api.github.com/users/131a3177-ec23-4a3c-95ab-61e1ebd85a3f",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 100
+}

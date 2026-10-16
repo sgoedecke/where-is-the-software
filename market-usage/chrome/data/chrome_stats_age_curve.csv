@@ -1,0 +1,6 @@
+months_since_launch,pct_over_1k_users,pct_over_10k_users,source
+0,0.2491349480968858,0.02768166089965398,Chrome-Stats public /chrome/stats page fetched 2026-10-15; aggregate age curve, not cohort-specific
+6,2.418379685610641,0.36880290205562277,Chrome-Stats public /chrome/stats page fetched 2026-10-15; aggregate age curve, not cohort-specific
+12,2.9721555949525498,0.5422880383773073,Chrome-Stats public /chrome/stats page fetched 2026-10-15; aggregate age curve, not cohort-specific
+18,6.08306314651845,1.1579434923575729,Chrome-Stats public /chrome/stats page fetched 2026-10-15; aggregate age curve, not cohort-specific
+24,9.535538353272344,2.0056298381421533,Chrome-Stats public /chrome/stats page fetched 2026-10-15; aggregate age curve, not cohort-specific

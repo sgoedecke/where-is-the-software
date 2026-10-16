@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Bug Report\r\n\r\n`composite` TypeScript projects with `allowJs: false` and using `@ts-expect-error` to allow importing a `.js` file behaves unexpectedly.\r\n\r\nThe set up for this is kinda complex and I've put together a stripped down repository demonstrating it:\r\nhttps://github.com/vitch/ts-composite-error\r\n\r\nIn this setup we have three packages:\r\n\r\n *  `package-a` - imports a class from a `.js` file from `package-b` with `@ts-expect-error` and exports a subclass of it\r\n *  `package-b` - provides that `.js` file for import\r\n *  `package-c` - imports the subclass exported from `package-a`\r\n\r\nWhen you try to build this app you get an error:\r\n\r\n>    packages/package-a/declarations/src/index.d.ts:1:21 - error TS2307: Cannot find module 'ts-composite-error-b/foo' or its corresponding type declarations.\r\n>\r\n>    1 import { Foo } from 'ts-composite-error-b/foo';\r\n\r\nNote that the error is present because the `.d.ts` from `package-a` is being type checked and it doesn't contain the `@ts-expect-error` comment that the source `.ts` file does.\r\n\r\n### \ud83d\udd0e Search Terms\r\n\r\n`@ts-expect-error`, `composite`, `.d.ts`, `comments`\r\n\r\n### \ud83d\udd57 Version & Regression Information\r\n\r\nI've reproduced this in `4.5.4`, `4.7.4` and `@next`. I have no reason to believe that there was an older version where it wasn't a problem.\r\n\r\n- This is the behavior in every version I tried, and I reviewed the FAQ for entries about modules\r\n\r\n### \u23ef Playground Link\r\n\r\nSorry - I couldn't figure out how to model the interaction between modules in a playground link so I made a repository:\r\nhttps://github.com/vitch/ts-composite-error\r\n\r\n### \ud83d\udcbb Code\r\n\r\nI stripped it down as much as I could in:\r\nhttps://github.com/vitch/ts-composite-error\r\n\r\n### \ud83d\ude41 Actual behavior\r\n\r\nAn error fired on the import\r\n\r\n### \ud83d\ude42 Expected behavior\r\n\r\nThe `@ts-expect-error` to be respected despite the additional \"module hop\"\r\n",
+      "closed_at": "2022-06-30T21:48:18Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/49741/comments",
+      "created_at": "2022-06-30T13:59:06Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/49741/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/49741",
+      "id": 1290181409,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "The behavior described is the intended behavior; this is not a bug",
+          "id": 371615203,
+          "name": "Working as Intended",
+          "node_id": "MDU6TGFiZWwzNzE2MTUyMDM=",
+          "url": "https://api.github.com/repos/microsoft/TypeScript/labels/Working%20as%20Intended"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/49741/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc5M5psh",
+      "number": 49741,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/49741/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/49741/timeline",
+      "title": "`composite` projects and `ts-expect-error`",
+      "type": null,
+      "updated_at": "2025-10-22T00:08:28Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/49741",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/9898?v=4",
+        "events_url": "https://api.github.com/users/vitch/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vitch/followers",
+        "following_url": "https://api.github.com/users/vitch/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vitch/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vitch",
+        "id": 9898,
+        "login": "vitch",
+        "node_id": "MDQ6VXNlcjk4OTg=",
+        "organizations_url": "https://api.github.com/users/vitch/orgs",
+        "received_events_url": "https://api.github.com/users/vitch/received_events",
+        "repos_url": "https://api.github.com/users/vitch/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vitch/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vitch/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vitch",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 647
+}

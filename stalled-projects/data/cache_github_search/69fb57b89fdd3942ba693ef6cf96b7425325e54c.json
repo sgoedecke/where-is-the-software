@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "BPO | [46083](https://bugs.python.org/issue46083)\n--- | :---\nNosy | @Yhg1s\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2021-12-15.14:28:25.028>\nlabels = ['expert-C-API', '3.8', '3.9', '3.10', '3.11']\ntitle = 'PyUnicode_FSConverter() has confusing reference semantics'\nupdated_at = <Date 2021-12-15.14:28:25.028>\nuser = 'https://github.com/Yhg1s'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2021-12-15.14:28:25.028>\nactor = 'twouters'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['C API']\ncreation = <Date 2021-12-15.14:28:25.028>\ncreator = 'twouters'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 46083\nkeywords = []\nmessage_count = 1.0\nmessages = ['408604']\nnosy_count = 1.0\nnosy_names = ['twouters']\npr_nums = []\npriority = 'normal'\nresolution = None\nstage = None\nstatus = 'open'\nsuperseder = None\ntype = None\nurl = 'https://bugs.python.org/issue46083'\nversions = ['Python 3.8', 'Python 3.9', 'Python 3.10', 'Python 3.11']\n```\n\n</p></details>\n\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-128451\n* gh-128542\n* gh-128543\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2025-01-06T21:21:12Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/90241/comments",
+      "created_at": "2021-12-15T14:28:25Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/90241/events",
+      "html_url": "https://github.com/python/cpython/issues/90241",
+      "id": 1199071160,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 4018733900,
+          "name": "3.11",
+          "node_id": "LA_kwDOBN0Z8c7viQNM",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.11"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772048,
+          "name": "3.10 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhQ",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.10%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772049,
+          "name": "3.9 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhR",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.9%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018775327,
+          "name": "3.8 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viaUf",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.8%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4019060898,
+          "name": "topic-C-API",
+          "node_id": "LA_kwDOBN0Z8c7vjgCi",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-C-API"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/90241/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5HeF-4",
+      "number": 90241,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/90241/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/90241/timeline",
+      "title": "PyUnicode_FSConverter() has confusing reference semantics",
+      "type": null,
+      "updated_at": "2025-01-06T21:21:12Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/90241",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3949752?v=4",
+        "events_url": "https://api.github.com/users/Yhg1s/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Yhg1s/followers",
+        "following_url": "https://api.github.com/users/Yhg1s/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Yhg1s/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Yhg1s",
+        "id": 3949752,
+        "login": "Yhg1s",
+        "node_id": "MDQ6VXNlcjM5NDk3NTI=",
+        "organizations_url": "https://api.github.com/users/Yhg1s/orgs",
+        "received_events_url": "https://api.github.com/users/Yhg1s/received_events",
+        "repos_url": "https://api.github.com/users/Yhg1s/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Yhg1s/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Yhg1s/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Yhg1s",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 75
+}

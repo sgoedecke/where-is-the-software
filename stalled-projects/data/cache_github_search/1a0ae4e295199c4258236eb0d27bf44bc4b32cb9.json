@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "React version:\n19.0.3\n\n## Steps To Reproduce\n\n1. In `ReactFlightReplyServer.js`, construct a chain of `ReactPromise` instances where each `.value` points to the next, and the last one points back to the first (e.g. `A -> B -> C -> A`), creating a multi\u2011node cycle.\n2. Trigger the cycle detection logic by resolving a chunk whose `value` is the head of this cycle and observing how the `while (inspectedValue instanceof ReactPromise)` loop behaves.\n\n## The current behavior\n\nThe cycle detection added in commit `bd4289b` only checks for a direct\nself\u2011reference:\n\n```js\nlet cycleProtection = 0;\nwhile (inspectedValue instanceof ReactPromise) {\n  cycleProtection++;\n  if (inspectedValue === chunk || cycleProtection > 1000) {\n    if (typeof reject === 'function') {\n      reject(new Error('Cannot have cyclic thenables.'));\n    }\n  }\n}\n```\n\n`inspectedValue === chunk` catches a simple self\u2011loop, but a longer cycle like `A -> B -> C -> A` will continue iterating until the `cycleProtection` counter hits the $1000$ limit instead of detecting the cycle when a node is revisited.\n\n## The expected behavior\n\nAny cyclic thenable chain, including multi\u2011node cycles (not just direct\nself\u2011references), should be rejected as soon as a `ReactPromise` is encountered more than once in the traversal, rather than relying on the $1000$ `cycleProtection` cap to eventually bail out.\n",
+      "closed_at": "2025-12-17T11:22:27Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/react/react/issues/35368/comments",
+      "created_at": "2025-12-16T06:42:13Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/35368/events",
+      "html_url": "https://github.com/react/react/issues/35368",
+      "id": 3733426626,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/35368/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks7eh5HC",
+      "number": 35368,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/35368/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/35368/timeline",
+      "title": "Improve cyclic thenable detection in ReactFlightReplyServer",
+      "type": null,
+      "updated_at": "2025-12-17T11:22:27Z",
+      "url": "https://api.github.com/repos/react/react/issues/35368",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/113378434?v=4",
+        "events_url": "https://api.github.com/users/cvan20191/events{/privacy}",
+        "followers_url": "https://api.github.com/users/cvan20191/followers",
+        "following_url": "https://api.github.com/users/cvan20191/following{/other_user}",
+        "gists_url": "https://api.github.com/users/cvan20191/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/cvan20191",
+        "id": 113378434,
+        "login": "cvan20191",
+        "node_id": "U_kgDOBsIEgg",
+        "organizations_url": "https://api.github.com/users/cvan20191/orgs",
+        "received_events_url": "https://api.github.com/users/cvan20191/received_events",
+        "repos_url": "https://api.github.com/users/cvan20191/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/cvan20191/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/cvan20191/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/cvan20191",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 109
+}

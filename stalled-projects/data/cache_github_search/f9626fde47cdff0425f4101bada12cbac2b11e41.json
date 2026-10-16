@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Note that this is me reopening the following issue which was incorrectly marked as a dupe and closed+locked:\nhttps://github.com/flutter/flutter/issues/65384\n\n### Steps to reproduce\n\n1. Create a navigator containing two pages (Material or Cupertino)\n2. In the topmost page, return a nested navigator that itself contains two cupertino pages\n3. Use the iOS backswipe gesture\n\n### Expected results\n\nThe top page of the nested navigator is dismissed. The nested navigator remains in the tree.\n\n### Actual results\n\nThe top page of the outer navigator is dismissed. The nested navigator is removed from the tree.\n\nNote that programmatic calls to pop and the app bar back button both produce the expected behavior, only the iOS backswipe gesture is unexpected.\n\n### Code sample\n\n<details open><summary>Code sample</summary>\n\n```dart\nclass NestedNavDemo extends StatefulWidget {\n  const NestedNavDemo({super.key});\n\n  @override\n  State<NestedNavDemo> createState() => _NestedNavDemoState();\n}\n\nclass _NestedNavDemoState extends State<NestedNavDemo> {\n  bool showNestedNav = true;\n\n  @override\n  Widget build(BuildContext context) {\n    return Navigator(\n      onDidRemovePage: (_) => setState(() => showNestedNav = false),\n      pages: [\n        MaterialPage(\n          child: Scaffold(\n            body: InkWell(\n              onTap: () => setState(() => showNestedNav = true),\n              child: const Center(child: Text('Oops, popped to far. Tap to start over.')),\n            ),\n          ),\n        ),\n        if (showNestedNav) const MaterialPage(child: InnerNavigator()),\n      ],\n    );\n  }\n}\n\nclass InnerNavigator extends StatefulWidget {\n  const InnerNavigator({super.key});\n\n  @override\n  State<InnerNavigator> createState() => _InnerNavigatorState();\n}\n\nclass _InnerNavigatorState extends State<InnerNavigator> {\n  bool showSecondColor = true;\n\n  @override\n  Widget build(BuildContext context) {\n    const color = Colors.blue;\n    const secondColor = Colors.red;\n\n    return Navigator(\n      onDidRemovePage: (_) => setState(() => showSecondColor = false),\n      pages: [\n        CupertinoPage(\n          child: AppScaffold(\n            appBar: AppBar(),\n            body: InkWell(onTap: () => setState(() => showSecondColor = true), child: Container(color: color)),\n          ),\n        ),\n        // Backswiping on this page will dismiss the inner navigator entirely (unexpected).\n        if (showSecondColor) CupertinoPage(\n          // Tapping the back button in the app bar will only dismiss the second color page (expected).\n          child: Scaffold(appBar: AppBar(), body: Container(color: secondColor))\n        ),\n      ],\n    );\n  }\n}\n```\n\n</details>\n\n\n### Screenshots or Video\n\n<details open>\n<summary>Screenshots / Video demonstration</summary>\n\n[Upload media here]\n\n</details>\n\n\n### Logs\n\n<details open><summary>Logs</summary>\n\n```console\n[Paste your logs here]\n```\n\n</details>\n\n\n### Flutter Doctor output\n\n<details open><summary>Doctor output</summary>\n\n```console\n[\u2713] Flutter (Channel stable, 3.29.2, on macOS 15.3.2 24D81 darwin-arm64, locale en-US) [382ms]\n    \u2022 Flutter version 3.29.2 on channel stable at /Users/caseyrogers/fvm/versions/3.29.2\n    \u2022 Upstream repository https://github.com/flutter/flutter.git\n    \u2022 Framework revision c236373904 (3 weeks ago), 2025-03-13 16:17:06 -0400\n    \u2022 Engine revision 18b71d647a\n    \u2022 Dart version 3.7.2\n    \u2022 DevTools version 2.42.3\n\n[!] Android toolchain - develop for Android devices (Android SDK version 35.0.1) [446ms]\n    \u2022 Android SDK at /Users/caseyrogers/Library/Android/sdk\n    \u2717 cmdline-tools component is missing\n      Run `path/to/sdkmanager --install \"cmdline-tools;latest\"`\n      See https://developer.android.com/studio/command-line for more details.\n    \u2717 Android license status unknown.\n      Run `flutter doctor --android-licenses` to accept the SDK licenses.\n      See https://flutter.dev/to/macos-android-setup for more details.\n\n[\u2713] Xcode - develop for iOS and macOS (Xcode 16.2) [1,079ms]\n    \u2022 Xcode at /Applications/Xcode-16.2.0.app/Contents/Developer\n    \u2022 Build 16C5032a\n    \u2022 CocoaPods version 1.16.2\n\n[\u2713] Chrome - develop for the web [9ms]\n    \u2022 Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n\n[\u2713] Android Studio (version 2024.3) [8ms]\n    \u2022 Android Studio at /Applications/Android Studio.app/Contents\n    \u2022 Flutter plugin can be installed from:\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/9212-flutter\n    \u2022 Dart plugin can be installed from:\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/6351-dart\n    \u2022 Java version OpenJDK Runtime Environment (build 21.0.5+-13047016-b750.29)\n\n[\u2713] VS Code (version 1.94.2) [7ms]\n    \u2022 VS Code at /Users/caseyrogers/Downloads/Visual Studio Code.app/Contents\n    \u2022 Flutter extension version 3.106.0\n\n[\u2713] Connected device (4 available) [6.3s]\n    \u2022 iPhone 16 Pro Max (mobile)      \u2022 8BF00E92-9591-4704-8181-1A1444DAB1D4 \u2022 ios            \u2022 com.apple.CoreSimulator.SimRuntime.iOS-18-2 (simulator)\n    \u2022 macOS (desktop)                 \u2022 macos                                \u2022 darwin-arm64   \u2022 macOS 15.3.2 24D81 darwin-arm64\n    \u2022 Mac Designed for iPad (desktop) \u2022 mac-designed-for-ipad                \u2022 darwin         \u2022 macOS 15.3.2 24D81 darwin-arm64\n    \u2022 Chrome (web)                    \u2022 chrome                               \u2022 web-javascript \u2022 Google Chrome 134.0.6998.166\n\n[\u2713] Network resources [191ms]\n    \u2022 All expected network resources are available.\n\n! Doctor found issues in 1 category.\n```\n\n</details>\n",
+      "closed_at": "2025-03-31T23:23:17Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/166290/comments",
+      "created_at": "2025-03-31T21:51:48Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/166290/events",
+      "html_url": "https://github.com/flutter/flutter/issues/166290",
+      "id": 2961660680,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "4A5775",
+          "default": false,
+          "description": "Issue is closed as a duplicate of an existing issue",
+          "id": 2698366454,
+          "name": "r: duplicate",
+          "node_id": "MDU6TGFiZWwyNjk4MzY2NDU0",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/r:%20duplicate"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/166290/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM6wh1sI",
+      "number": 166290,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/166290/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/166290/timeline",
+      "title": "iOS Back Gesture With Nested Navigator Dismisses Outer Navigator",
+      "type": null,
+      "updated_at": "2025-04-15T00:02:26Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/166290",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10675231?v=4",
+        "events_url": "https://api.github.com/users/caseycrogers/events{/privacy}",
+        "followers_url": "https://api.github.com/users/caseycrogers/followers",
+        "following_url": "https://api.github.com/users/caseycrogers/following{/other_user}",
+        "gists_url": "https://api.github.com/users/caseycrogers/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/caseycrogers",
+        "id": 10675231,
+        "login": "caseycrogers",
+        "node_id": "MDQ6VXNlcjEwNjc1MjMx",
+        "organizations_url": "https://api.github.com/users/caseycrogers/orgs",
+        "received_events_url": "https://api.github.com/users/caseycrogers/received_events",
+        "repos_url": "https://api.github.com/users/caseycrogers/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/caseycrogers/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/caseycrogers/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/caseycrogers",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2321
+}

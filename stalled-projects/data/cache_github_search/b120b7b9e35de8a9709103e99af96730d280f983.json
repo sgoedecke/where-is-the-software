@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Consider this example:\r\n\r\n```rust\r\nstruct Test(u64, u64);\r\nimpl Test {\r\n    fn into_tuple(self) -> (u64, u64) {\r\n        (self.0, self.1)\r\n    }\r\n}\r\nfn main() {\r\n    let x = vec![Test(1,1), Test(1,2)];\r\n    \r\n    let _tuples = x.iter().map(|test| test.clone().into_tuple()).collect::<Vec<_>>();\r\n}\r\n```\r\n`struct Test` is not implementing `Clone` trait, but here is the error message:\r\n```\r\n   Compiling playground v0.0.1 (file:///playground)\r\nerror[E0507]: cannot move out of borrowed content\r\n  --> src/main.rs:12:39\r\n   |\r\n12 |     let _tuples = x.iter().map(|test| test.clone().into_tuple()).collect::<Vec<_>>();\r\n   |                                       ^^^^^^^^^^^^ cannot move out of borrowed content\r\n\r\nerror: aborting due to previous error\r\n```\r\n",
+      "closed_at": "2024-10-08T08:43:27Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/55121/comments",
+      "created_at": "2018-10-16T14:08:43Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/55121/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/55121",
+      "id": 370631462,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue proposing an enhancement or a PR with one.",
+          "id": 234902,
+          "name": "C-enhancement",
+          "node_id": "MDU6TGFiZWwyMzQ5MDI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Messages for errors, warnings, and lints",
+          "id": 235791,
+          "name": "A-diagnostics",
+          "node_id": "MDU6TGFiZWwyMzU3OTE=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-diagnostics"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c9f7a3",
+          "default": false,
+          "description": "Diagnostics: An error or lint that needs small tweaks.",
+          "id": 1596122130,
+          "name": "D-papercut",
+          "node_id": "MDU6TGFiZWwxNTk2MTIyMTMw",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/D-papercut"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/55121/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzNzA2MzE0NjI=",
+      "number": 55121,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/55121/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/55121/timeline",
+      "title": "Confusing error message with unimplemented Clone",
+      "type": null,
+      "updated_at": "2024-10-08T08:43:29Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/55121",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1773973?v=4",
+        "events_url": "https://api.github.com/users/andreytkachenko/events{/privacy}",
+        "followers_url": "https://api.github.com/users/andreytkachenko/followers",
+        "following_url": "https://api.github.com/users/andreytkachenko/following{/other_user}",
+        "gists_url": "https://api.github.com/users/andreytkachenko/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/andreytkachenko",
+        "id": 1773973,
+        "login": "andreytkachenko",
+        "node_id": "MDQ6VXNlcjE3NzM5NzM=",
+        "organizations_url": "https://api.github.com/users/andreytkachenko/orgs",
+        "received_events_url": "https://api.github.com/users/andreytkachenko/received_events",
+        "repos_url": "https://api.github.com/users/andreytkachenko/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/andreytkachenko/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/andreytkachenko/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/andreytkachenko",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 6
+}

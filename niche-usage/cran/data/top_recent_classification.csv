@@ -1,0 +1,13 @@
+rank,package,first_publication_date,downloads_31_180,downloads_scaled_to_2022_2024_mirror,title,classification,ai_themed,explicit_ai_built_evidence
+1,otel,2025-07-31,2265905,1615914,OpenTelemetry R API,"New R implementation of the established OpenTelemetry observability standard, by r-lib; more platform plumbing than a standalone niche end-user tool",No,No statement found in CRAN description or README
+2,tailor,2025-08-25,180527,126879,Iterative Steps for Postprocessing Model Predictions,"New package in the established tidymodels ecosystem for ML post-processing/calibration",No,No statement found in CRAN description or README
+3,linreg,2026-04-16,105375,78914,Linear Regression and Model Selection Framework,"Apparently new generic statistics/teaching-style package; no project URL in CRAN metadata",No,No statement found in CRAN description
+4,contentanalysis,2025-10-30,96901,69921,Scientific Content and Citation Analysis from PDF Documents,"Genuine niche research/bibliometrics tool for PDF citation/content analysis",No,No statement found in CRAN description
+5,metabook,2026-03-04,89441,66393,"Data Sets and Code for Meta-Analysis with R","Companion data/code for an established book/new edition, not a standalone new software hit",No,No statement found in CRAN description
+6,aisdk,2026-03-31,80759,60549,Unified Interface for AI Model Providers,"Genuine AI/LLM infrastructure package for R; provider-neutral runtime, tools and agents",Yes,No AI-built claim found in CRAN description or README
+7,otelsdk,2025-09-10,75274,53526,R SDK and Exporters for OpenTelemetry,"New R SDK/exporter for the established OpenTelemetry standard; paired with otel",No,No statement found in CRAN description
+8,arg,2026-04-09,74055,55375,Clean and Simple Argument Checking,"Genuine small R developer-utility package",No,No statement found in CRAN description
+9,autoann,2026-01-15,71805,53312,Neural Network-Based Model Selection and Forecasting,"Genuine statistical/ML forecasting package; neural-network method rather than LLM/AI-coding themed",Borderline ML,No statement found in CRAN description
+10,readepi,2025-10-01,65310,46810,Read Data from Relational Database Management Systems and Health Information Systems,"Genuine niche epidemiology/data-import tool in the Epiverse-TRACE ecosystem",No,No statement found in CRAN description
+11,fluxtools,2025-07-09,62605,47718,A shiny App for Reproducible QA/QC of Eddy Covariance Data,"Genuine niche environmental-science/flux-tower QA tool",No,No statement found in CRAN description
+12,mini007,2025-09-05,58004,40890,Lightweight Framework for Orchestrating Multi-Agent Large Language Models,"Genuine AI/LLM multi-agent package for R",Yes,No AI-built claim found in CRAN description or README

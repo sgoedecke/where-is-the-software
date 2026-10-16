@@ -1,0 +1,302 @@
+repo,rank,number,title,url,state,state_reason,created_at,closed_at,plus_one,total_reactions,comments,user
+microsoft/vscode,1,519,Allow to change the font size and font of the workbench,https://github.com/microsoft/vscode/issues/519,open,reopened,2015-11-24T00:52:13Z,,3782,4814,604,hsdk123
+microsoft/vscode,2,10121,Allow for floating windows,https://github.com/microsoft/vscode/issues/10121,closed,completed,2016-08-04T10:40:20Z,2023-12-01T14:30:45Z,2876,3599,366,Brakkar
+microsoft/vscode,3,396,Add support for opening multiple project folders in same window,https://github.com/microsoft/vscode/issues/396,closed,completed,2015-11-21T06:44:53Z,2017-11-02T11:03:21Z,2618,3123,380,stoffeastrom
+microsoft/vscode,4,10546,Tabs for integrated terminal,https://github.com/microsoft/vscode/issues/10546,closed,completed,2016-08-15T13:01:26Z,2021-06-25T21:33:25Z,2411,3062,321,Perkovec
+microsoft/vscode,5,178,Git status in File Explorer,https://github.com/microsoft/vscode/issues/178,closed,completed,2015-11-19T09:24:13Z,2017-11-09T09:22:54Z,2285,2887,247,ozsay
+microsoft/vscode,6,3130,Allow customization of mouse shortcuts,https://github.com/microsoft/vscode/issues/3130,open,,2016-02-18T17:49:30Z,,1931,2561,453,Tyriar
+microsoft/vscode,7,35783,New VS Code icon is ugly!,https://github.com/microsoft/vscode/issues/35783,closed,completed,2017-10-07T09:18:32Z,2017-10-24T19:10:13Z,1804,2206,361,lipstick-turtleback
+microsoft/vscode,8,71827,Refreshing the VS Code product icon ,https://github.com/microsoft/vscode/issues/71827,closed,completed,2019-04-05T22:08:08Z,2019-06-03T17:57:00Z,1540,2462,282,miguelsolorio
+microsoft/vscode,9,13953,"Feature Request: Show all errors and warnings in project for all JavaScript and TypeScript files, not just opened ones",https://github.com/microsoft/vscode/issues/13953,open,,2016-10-18T18:19:04Z,,1509,2003,210,kevinjreece
+microsoft/vscode,10,37350,Support 3 way merge for git conflicts,https://github.com/microsoft/vscode/issues/37350,closed,completed,2017-10-31T21:55:53Z,2022-07-29T08:15:06Z,1464,2279,158,asydneylover
+microsoft/vscode,11,21839,Feature Request: Support for private marketplace/gallery,https://github.com/microsoft/vscode/issues/21839,closed,completed,2017-03-02T22:44:55Z,2025-11-19T17:59:34Z,1377,1746,177,levonmamikonyan
+microsoft/vscode,12,114851,VIM mode like sublime,https://github.com/microsoft/vscode/issues/114851,open,,2021-01-24T06:55:22Z,,1370,1640,26,miked508
+microsoft/vscode,13,15909,Add ability to extend from other settings files,https://github.com/microsoft/vscode/issues/15909,open,,2016-11-22T19:27:22Z,,1367,1727,161,maxdeviant
+microsoft/vscode,14,70764,Visual Studio Code for ipad,https://github.com/microsoft/vscode/issues/70764,open,,2019-03-19T15:12:04Z,,1346,2098,285,allessandrojs
+microsoft/vscode,15,4490,Macro recording,https://github.com/microsoft/vscode/issues/4490,open,,2016-03-21T09:07:08Z,,1228,1679,276,fabiopicchi
+microsoft/vscode,16,25887,Copy/replace/add left <-> right in compare views,https://github.com/microsoft/vscode/issues/25887,closed,completed,2017-05-04T10:37:32Z,2022-06-13T16:02:51Z,1193,1579,207,Dominik-K
+microsoft/vscode,17,5595,Allow to scope settings by platform,https://github.com/microsoft/vscode/issues/5595,open,,2016-04-21T09:13:09Z,,1149,1606,186,arnaud-lecat
+microsoft/vscode,18,5605,Feature request: symbols tree view,https://github.com/microsoft/vscode/issues/5605,closed,completed,2016-04-21T12:53:20Z,2018-05-16T12:41:43Z,1062,1242,152,boyvinall
+microsoft/vscode,19,4865,Enhanced Scrollbar (add minimap),https://github.com/microsoft/vscode/issues/4865,closed,completed,2016-04-01T17:19:57Z,2017-02-20T15:13:07Z,1056,1285,105,jschraub
+microsoft/vscode,20,54272,Allow diagnostics messages to have markdown (or formatted text) content,https://github.com/microsoft/vscode/issues/54272,open,,2018-07-13T18:25:09Z,,1052,1440,63,mjbvz
+microsoft/vscode,21,5770,Git: Use VS Code as merge editor,https://github.com/microsoft/vscode/issues/5770,closed,completed,2016-04-25T15:00:58Z,2022-07-19T06:37:59Z,1048,1269,116,nchammas
+microsoft/vscode,22,40233,[Feature] Local Workspace settings,https://github.com/microsoft/vscode/issues/40233,open,,2017-12-14T22:18:17Z,,1042,1466,204,firelizzard18
+microsoft/vscode,23,1023,Implement multi-select in left-panel file tree,https://github.com/microsoft/vscode/issues/1023,closed,completed,2015-12-04T18:58:18Z,2018-01-11T15:42:15Z,1018,1215,187,Tyriar
+microsoft/vscode,24,12622,Add option to pin tabs similar to Visual Studio,https://github.com/microsoft/vscode/issues/12622,closed,completed,2016-09-26T10:23:39Z,2020-05-26T07:49:17Z,1008,1371,234,jez9999
+microsoft/vscode,25,176269,Require user consent before sending any telemetry,https://github.com/microsoft/vscode/issues/176269,open,,2023-03-06T17:01:46Z,,1005,1177,18,ghost
+microsoft/vscode,26,14909,Support a grid layout for editors,https://github.com/microsoft/vscode/issues/14909,closed,completed,2016-11-03T14:02:04Z,2018-06-09T06:07:43Z,1000,1355,191,Tekbr
+microsoft/vscode,27,43188,Allow to open multiple workspaces in the same window,https://github.com/microsoft/vscode/issues/43188,open,,2018-02-08T10:13:01Z,,944,1225,219,kdubuc
+microsoft/vscode,28,14444,vscode.extensions Doesn't Update On Installing / Removing / Disabling Extensions without restarting,https://github.com/microsoft/vscode/issues/14444,closed,completed,2016-10-25T15:00:36Z,2020-11-05T13:20:54Z,936,1042,53,shanalikhan
+microsoft/vscode,29,26777,Allow multiple views to show at the same time,https://github.com/microsoft/vscode/issues/26777,closed,completed,2017-05-16T22:25:46Z,2022-04-12T13:33:23Z,870,1167,111,whatyoubendoing
+microsoft/vscode,30,100335,Implement Google Chrome-like grouped tabs,https://github.com/microsoft/vscode/issues/100335,open,,2020-06-16T22:06:35Z,,853,1183,160,dutzi
+microsoft/vscode,31,40239,Feature Request: Enable/disable extensions from config file,https://github.com/microsoft/vscode/issues/40239,open,,2017-12-15T01:34:15Z,,840,1171,437,michaeljota
+microsoft/vscode,32,34442,Extract the integrated terminal,https://github.com/microsoft/vscode/issues/34442,open,,2017-09-15T09:46:22Z,,810,1186,149,lloeki
+microsoft/vscode,33,17777,Directory tree indent guides in File Explorer,https://github.com/microsoft/vscode/issues/17777,closed,completed,2016-12-23T14:38:34Z,2019-06-18T13:09:22Z,747,990,124,Avol-V
+microsoft/vscode,34,2743,Provide support to synchronize settings across machines ,https://github.com/microsoft/vscode/issues/2743,closed,completed,2016-02-05T17:52:11Z,2020-08-17T07:19:04Z,746,957,129,SrTobi
+microsoft/vscode,35,2809,Support variables when resolving values in settings,https://github.com/microsoft/vscode/issues/2809,open,,2016-02-09T01:18:32Z,,742,931,209,OlsonDev
+microsoft/vscode,36,50140,Support syntax highlighting with tree-sitter,https://github.com/microsoft/vscode/issues/50140,open,,2018-05-19T01:41:27Z,,738,928,124,fcurts
+microsoft/vscode,37,35744,Customizable status bar item locations,https://github.com/microsoft/vscode/issues/35744,open,,2017-10-06T16:19:47Z,,718,894,77,ellman121
+microsoft/vscode,38,3884,"Revisit VS Code folder structure for app data, settings, extensions",https://github.com/microsoft/vscode/issues/3884,open,,2016-03-08T20:58:22Z,,707,821,224,Tyriar
+microsoft/vscode,39,871,Macro like keybindings,https://github.com/microsoft/vscode/issues/871,open,,2015-12-01T16:06:17Z,,699,795,68,TheColorRed
+microsoft/vscode,40,6328,File Nesting,https://github.com/microsoft/vscode/issues/6328,closed,completed,2016-05-12T17:57:25Z,2022-01-25T03:52:38Z,670,996,202,ciel
+microsoft/vscode,41,108264,Add support for vertical tabs,https://github.com/microsoft/vscode/issues/108264,open,,2020-10-07T17:39:09Z,,659,710,188,santiagopuentep
+microsoft/vscode,42,869,Exclude all files except for...,https://github.com/microsoft/vscode/issues/869,open,,2015-12-01T15:46:17Z,,653,825,222,TheColorRed
+microsoft/vscode,43,49923,Alternative locations for the outline view,https://github.com/microsoft/vscode/issues/49923,closed,completed,2018-05-15T17:10:15Z,2021-12-21T15:25:59Z,645,880,175,jrieken
+microsoft/vscode,44,75559,Builtin support for reading files from their zip archives,https://github.com/microsoft/vscode/issues/75559,open,,2019-06-15T09:14:52Z,,644,827,38,arcanis
+microsoft/vscode,45,43026,Provide ability to ignore all whitespace in diff editor (feature request),https://github.com/microsoft/vscode/issues/43026,open,,2018-02-06T10:03:55Z,,635,683,141,simonl65
+microsoft/vscode,46,23931,Display search results in a tab instead of the side bar,https://github.com/microsoft/vscode/issues/23931,closed,completed,2017-04-05T11:46:44Z,2020-02-22T00:35:25Z,634,814,213,rfgamaral
+microsoft/vscode,47,5953,Support to print the editor contents,https://github.com/microsoft/vscode/issues/5953,open,,2016-04-28T15:24:46Z,,626,708,219,OtterKring
+microsoft/vscode,48,2686,Support to open a project folder in multiple VS Code windows,https://github.com/microsoft/vscode/issues/2686,closed,not_planned,2016-02-03T22:38:23Z,2022-12-06T13:14:16Z,624,746,122,weinand
+microsoft/vscode,49,1012,Insert key doesn't switch to overtype/overwrite mode,https://github.com/microsoft/vscode/issues/1012,closed,completed,2015-12-04T11:42:32Z,2024-11-29T08:32:19Z,616,716,237,miroshko
+microsoft/vscode,50,211836,Indent with TABS instead of SPACES by default,https://github.com/microsoft/vscode/issues/211836,closed,completed,2024-05-02T10:36:56Z,2024-06-19T18:10:10Z,614,735,14,GrabbenD
+rust-lang/rust,1,100000,Rust is Beautiful,https://github.com/rust-lang/rust/issues/100000,closed,not_planned,2022-07-31T22:01:04Z,2022-08-09T14:37:29Z,1045,3010,255,Mathspy
+rust-lang/rust,2,44265,🔬 Tracking issue for generic associated types (GAT),https://github.com/rust-lang/rust/issues/44265,closed,completed,2017-09-02T07:22:59Z,2022-09-13T12:36:12Z,623,1181,146,withoutboats
+rust-lang/rust,3,31844,Tracking issue for specialization (RFC 1210),https://github.com/rust-lang/rust/issues/31844,open,,2016-02-23T17:35:55Z,,455,721,323,nikomatsakis
+rust-lang/rust,4,31436,"Tracking issue for `?` operator  (RFC 243, `question_mark`)",https://github.com/rust-lang/rust/issues/31436,closed,completed,2016-02-05T20:53:16Z,2026-03-26T11:54:23Z,443,755,454,nikomatsakis
+rust-lang/rust,5,88623,🎉 Rust 2021 celebration and thanks,https://github.com/rust-lang/rust/issues/88623,closed,completed,2021-09-03T17:49:30Z,2021-12-20T12:32:28Z,441,1739,18,m-ou-se
+rust-lang/rust,6,53667,"Tracking issue for eRFC 2497, ""if- and while-let-chains, take 2""",https://github.com/rust-lang/rust/issues/53667,closed,completed,2018-08-24T12:25:32Z,2025-04-22T11:04:48Z,433,660,86,Centril
+rust-lang/rust,7,83623,"&& operator chains (and ||, possibly) generates unoptimizable LLVM IR",https://github.com/rust-lang/rust/issues/83623,open,,2021-03-28T22:10:25Z,,399,868,21,AngelicosPhosphoros
+rust-lang/rust,8,63063,"Tracking issue for RFC 2515, ""Permit impl Trait in type aliases""",https://github.com/rust-lang/rust/issues/63063,open,,2019-07-28T06:12:00Z,,366,625,178,Centril
+rust-lang/rust,9,41517,Tracking issue for trait aliases,https://github.com/rust-lang/rust/issues/41517,open,,2017-04-24T22:45:38Z,,331,537,125,withoutboats
+rust-lang/rust,10,43122,Tracking issue for RFC 2033: Experimentally add coroutines to Rust,https://github.com/rust-lang/rust/issues/43122,open,,2017-07-08T15:56:48Z,,327,597,170,aturon
+rust-lang/rust,11,1120,Implement a Rust REPL,https://github.com/rust-lang/rust/issues/1120,closed,completed,2011-11-02T20:20:30Z,2013-02-12T18:27:46Z,325,441,30,teratorn
+rust-lang/rust,12,57525,rustdoc support for per-parameter documentation,https://github.com/rust-lang/rust/issues/57525,open,,2019-01-11T19:37:54Z,,305,359,57,kvark
+rust-lang/rust,13,50547,Tracking issue for async/await (RFC 2394),https://github.com/rust-lang/rust/issues/50547,closed,completed,2018-05-08T21:33:09Z,2019-08-20T22:15:49Z,299,668,308,withoutboats
+rust-lang/rust,14,76560,Tracking Issue for complex generic constants: `feature(generic_const_exprs)`,https://github.com/rust-lang/rust/issues/76560,open,,2020-09-10T07:35:22Z,,294,566,71,lcnr
+rust-lang/rust,15,62290,Tracking issue for `#![feature(async_closure)]` (RFC 2394 / RFC 3668),https://github.com/rust-lang/rust/issues/62290,open,reopened,2019-07-02T01:58:21Z,,262,293,38,Centril
+rust-lang/rust,16,26925,"`#[derive]` sometimes uses incorrect bounds (aka lack of ""perfect derive"")",https://github.com/rust-lang/rust/issues/26925,open,,2015-07-09T21:58:55Z,,250,307,87,comex
+rust-lang/rust,17,37009,Attribute for skipping field of struct in Debug derives?,https://github.com/rust-lang/rust/issues/37009,open,,2016-10-06T23:03:12Z,,246,246,40,alexreg
+rust-lang/rust,18,73908,"Tracking issue for supporting macOS on Apple Silicon (a.k.a arm64, M1, M2, aarch64)",https://github.com/rust-lang/rust/issues/73908,closed,completed,2020-07-01T02:00:26Z,2024-08-11T11:58:05Z,230,439,72,shepmaster
+rust-lang/rust,19,35121,Tracking issue for promoting `!` to a type (RFC 1216),https://github.com/rust-lang/rust/issues/35121,closed,completed,2016-07-29T20:28:10Z,2026-08-24T22:30:29Z,218,304,378,nikomatsakis
+rust-lang/rust,20,32838,Allocator traits and std::heap,https://github.com/rust-lang/rust/issues/32838,closed,completed,2016-04-08T20:56:09Z,2026-09-23T10:00:59Z,206,316,500,nikomatsakis
+rust-lang/rust,21,132162,Tracking issue for RFC 3681: Default field values,https://github.com/rust-lang/rust/issues/132162,open,,2024-10-25T23:13:08Z,,209,462,68,estebank
+rust-lang/rust,22,29661,"Tracking issue for RFC 2532, ""Associated type defaults""",https://github.com/rust-lang/rust/issues/29661,open,,2015-11-06T18:21:43Z,,208,266,43,aturon
+rust-lang/rust,23,91611,"Tracking Issue for async_fn_in_trait, return_position_impl_trait_in_trait",https://github.com/rust-lang/rust/issues/91611,closed,completed,2021-12-06T23:34:04Z,2023-10-14T09:17:25Z,190,332,26,nikomatsakis
+rust-lang/rust,24,44580,Tracking issue for const generics (RFC 2000),https://github.com/rust-lang/rust/issues/44580,closed,completed,2017-09-14T23:17:36Z,2022-03-21T15:26:20Z,175,386,206,withoutboats
+rust-lang/rust,25,65991,Tracking issue for dyn upcasting coercion,https://github.com/rust-lang/rust/issues/65991,closed,completed,2019-10-31T02:41:44Z,2025-02-07T20:42:26Z,164,178,84,alexreg
+rust-lang/rust,26,20400,Can't write non-overlapping blanket impls that involve associated type bindings,https://github.com/rust-lang/rust/issues/20400,open,,2015-01-01T15:31:58Z,,158,161,22,japaric
+rust-lang/rust,27,86656,Tracking Issue for RFC 2948: Portable SIMD,https://github.com/rust-lang/rust/issues/86656,open,,2021-06-27T03:57:51Z,,151,298,37,calebzulawski
+rust-lang/rust,28,51114,"Tracking issue for RFC 2294, ""if let guard""",https://github.com/rust-lang/rust/issues/51114,closed,completed,2018-05-27T22:23:41Z,2026-02-27T02:21:31Z,142,173,34,Centril
+rust-lang/rust,29,43244,Tracking issue for Vec::extract_if and LinkedList::extract_if,https://github.com/rust-lang/rust/issues/43244,closed,completed,2017-07-14T23:26:41Z,2025-02-25T08:59:59Z,139,166,230,Gankra
+rust-lang/rust,30,20041,Tracking issue for type equality constraints in where clauses,https://github.com/rust-lang/rust/issues/20041,open,,2014-12-19T20:03:31Z,,139,151,49,jroesch
+rust-lang/rust,31,39915,Linking with LLD,https://github.com/rust-lang/rust/issues/39915,closed,completed,2017-02-17T19:49:03Z,2026-07-14T21:33:55Z,137,155,122,bstrie
+rust-lang/rust,32,44491,🔬 Tracking issue for RFC 2089: Extended Implied bounds,https://github.com/rust-lang/rust/issues/44491,open,,2017-09-11T15:56:14Z,,136,215,33,aturon
+rust-lang/rust,33,95174,Tracking Issue for more complex const parameter types: `feature(adt_const_params)`,https://github.com/rust-lang/rust/issues/95174,open,,2022-03-21T15:13:47Z,,136,164,14,lcnr
+rust-lang/rust,34,88581,Tracking Issue for `int_roundings`,https://github.com/rust-lang/rust/issues/88581,open,,2021-09-02T05:24:48Z,,134,170,176,jhpratt
+rust-lang/rust,35,62149,[Stabilization] async/await MVP,https://github.com/rust-lang/rust/issues/62149,closed,completed,2019-06-26T11:35:11Z,2019-08-20T22:15:49Z,131,467,58,withoutboats
+rust-lang/rust,36,44874,Tracking issue for RFC 3519: `arbitrary_self_types`,https://github.com/rust-lang/rust/issues/44874,open,,2017-09-26T20:52:56Z,,129,190,156,arielb1
+rust-lang/rust,37,50784,"Doctests don't work in bin targets, non-public items",https://github.com/rust-lang/rust/issues/50784,open,,2018-05-15T22:33:25Z,,128,128,60,kornelski
+rust-lang/rust,38,60551,Associated constants in traits can not be used in const generics,https://github.com/rust-lang/rust/issues/60551,open,,2019-05-05T02:12:35Z,,128,130,31,newpavlov
+rust-lang/rust,39,44052,RFC: Merging the avr-rust fork upstream,https://github.com/rust-lang/rust/issues/44052,closed,completed,2017-08-23T01:45:06Z,2020-07-24T07:51:30Z,121,234,89,dylanmckay
+rust-lang/rust,40,74465,Tracking Issue for `once_cell`,https://github.com/rust-lang/rust/issues/74465,closed,completed,2020-07-18T00:07:30Z,2023-03-30T15:30:10Z,121,181,146,KodrAus
+rust-lang/rust,41,67984,Tracking issue for format_args_capture,https://github.com/rust-lang/rust/issues/67984,closed,completed,2020-01-07T19:23:24Z,2021-12-04T18:44:58Z,119,182,65,nikomatsakis
+rust-lang/rust,42,87335,Tracking Issue for RFC 3137: let-else statements,https://github.com/rust-lang/rust/issues/87335,closed,completed,2021-07-21T01:48:54Z,2022-09-17T13:37:56Z,117,196,79,joshtriplett
+rust-lang/rust,43,43408,Array lengths don't support generic parameters.,https://github.com/rust-lang/rust/issues/43408,open,,2017-07-22T16:10:18Z,,116,117,28,roblabla
+rust-lang/rust,44,23818,`print!` macro should flush stdout,https://github.com/rust-lang/rust/issues/23818,closed,completed,2015-03-28T23:10:37Z,2017-12-05T18:21:05Z,117,128,76,tanadeau
+rust-lang/rust,45,79524,Tracking Issue for `Iterator::intersperse`,https://github.com/rust-lang/rust/issues/79524,open,,2020-11-28T23:51:26Z,,115,123,58,camelid
+rust-lang/rust,46,93050,"Tracking Issue for Option::is_some_and and Result::is_{ok,err}_and",https://github.com/rust-lang/rust/issues/93050,closed,completed,2022-01-18T21:17:22Z,2023-04-07T10:31:11Z,114,127,92,m-ou-se
+rust-lang/rust,47,39412,Tracking issue: declarative macros 2.0,https://github.com/rust-lang/rust/issues/39412,open,,2017-01-30T20:33:24Z,,109,424,81,nrc
+rust-lang/rust,48,50297,"Tracking issue for eRFC 2318, Custom test frameworks",https://github.com/rust-lang/rust/issues/50297,open,reopened,2018-04-28T06:44:32Z,,108,117,107,Centril
+rust-lang/rust,49,48331,"Using std::io::{Read, Write, Cursor} in a nostd environment",https://github.com/rust-lang/rust/issues/48331,open,,2018-02-18T21:12:45Z,,104,127,41,roblabla
+rust-lang/rust,50,8995,Tracking issue for inherent associated types,https://github.com/rust-lang/rust/issues/8995,open,,2013-09-05T10:41:35Z,,103,120,34,pnkfelix
+golang/go,1,32825,"proposal: leave ""if err != nil"" alone?",https://github.com/golang/go/issues/32825,closed,completed,2019-06-28T08:42:25Z,2019-07-17T13:55:56Z,2007,3012,314,miekg
+golang/go,2,15292,proposal: spec: generic programming facilities,https://github.com/golang/go/issues/15292,closed,completed,2016-04-14T02:33:22Z,2021-03-21T20:52:11Z,1995,3453,874,adg
+golang/go,3,43651,spec: add generic programming using type parameters,https://github.com/golang/go/issues/43651,closed,completed,2021-01-12T17:40:04Z,2021-02-20T16:01:14Z,1770,3014,453,ianlancetaylor
+golang/go,4,48918,go: don't change the libraries in 1.18,https://github.com/golang/go/issues/48918,closed,completed,2021-10-12T07:51:58Z,2021-10-27T22:12:32Z,1572,2025,48,robpike
+golang/go,5,19412,proposal: spec: add sum types / discriminated unions,https://github.com/golang/go/issues/19412,open,,2017-03-05T23:39:32Z,,1044,1388,436,DemiMarie
+golang/go,6,45955,slices: new package to provide generic slice functions,https://github.com/golang/go/issues/45955,closed,completed,2021-05-05T00:16:25Z,2022-12-21T22:55:49Z,1006,1389,285,ianlancetaylor
+golang/go,7,77273,spec: generic methods for Go,https://github.com/golang/go/issues/77273,closed,completed,2026-01-22T23:13:22Z,2026-05-26T20:54:49Z,965,1723,199,griesemer
+golang/go,8,49085,proposal: spec: allow type parameters in methods,https://github.com/golang/go/issues/49085,closed,duplicate,2021-10-20T12:40:29Z,2026-04-08T20:37:56Z,907,1038,362,mariomac
+golang/go,9,19814,proposal: spec: add typed enum support,https://github.com/golang/go/issues/19814,open,,2017-03-31T23:07:08Z,,836,977,220,derekperkins
+golang/go,10,35950,proposal: cmd/go: support embedding static assets (files) in binaries,https://github.com/golang/go/issues/35950,closed,completed,2019-12-03T23:39:15Z,2020-09-02T16:20:47Z,819,1231,176,bradfitz
+golang/go,11,21498,proposal: spec: short function literals,https://github.com/golang/go/issues/21498,open,,2017-08-17T18:29:52Z,,674,1271,988,neild
+golang/go,12,18892,"all: WebAssembly (""wasm"") support",https://github.com/golang/go/issues/18892,closed,completed,2017-02-02T02:13:31Z,2018-06-15T08:57:47Z,638,1005,147,bradfitz
+golang/go,13,45624,spec: expression to create pointer to simple types,https://github.com/golang/go/issues/45624,closed,completed,2021-04-19T03:06:10Z,2025-10-27T17:36:11Z,618,779,274,robpike
+golang/go,14,59968,proposal: cmd/go: add .ʕ◔ϖ◔ʔ as an alternate spelling of .go in file names,https://github.com/golang/go/issues/59968,closed,completed,2023-05-04T12:31:14Z,2023-05-05T12:55:27Z,558,1378,66,rsc
+golang/go,15,12854,spec: type inferred composite literals,https://github.com/golang/go/issues/12854,open,,2015-10-06T21:26:59Z,,558,769,293,neild
+golang/go,16,19109,"proposal: cmd/go: make fuzzing a first class citizen, like tests or benchmarks",https://github.com/golang/go/issues/19109,closed,completed,2017-02-15T19:34:39Z,2022-02-23T19:59:41Z,544,719,116,bradfitz
+golang/go,17,18517,codereview: accept Github PRs,https://github.com/golang/go/issues/18517,closed,completed,2017-01-04T22:03:51Z,2018-02-12T23:32:59Z,531,791,100,bradfitz
+golang/go,18,45380,proposal: spec: generics: type switch on parametric types,https://github.com/golang/go/issues/45380,open,,2021-04-04T09:18:40Z,,494,582,234,rogpeppe
+golang/go,19,21956,Proposal: Just Use Github,https://github.com/golang/go/issues/21956,closed,completed,2017-09-21T01:37:12Z,2017-09-24T14:37:04Z,474,668,150,natefinch
+golang/go,20,19282,plugin: add Windows support,https://github.com/golang/go/issues/19282,open,,2017-02-24T22:54:30Z,,470,470,95,QuestionPython
+golang/go,21,60078,spec: less error-prone loop variable scoping,https://github.com/golang/go/issues/60078,closed,completed,2023-05-09T15:36:18Z,2024-02-11T13:33:56Z,453,710,138,rsc
+golang/go,22,34174,proposal: Go 2: string interpolation,https://github.com/golang/go/issues/34174,closed,not_planned,2019-09-08T10:45:23Z,2023-04-12T21:03:46Z,438,588,112,sirkon
+golang/go,23,26492,cmd/go: build: add -static flag,https://github.com/golang/go/issues/26492,open,,2018-07-19T23:58:53Z,,419,542,43,kolyshkin
+golang/go,24,19623,proposal: spec: change int to be arbitrary precision,https://github.com/golang/go/issues/19623,closed,not_planned,2017-03-20T19:49:39Z,2025-02-05T22:04:07Z,416,555,232,robpike
+golang/go,25,51317,proposal: arena:  new package providing memory arenas,https://github.com/golang/go/issues/51317,open,,2022-02-22T16:11:10Z,,396,691,392,danscales
+golang/go,26,27975,proposal: spec: immutable type qualifier,https://github.com/golang/go/issues/27975,closed,not_planned,2018-10-02T21:15:38Z,2026-04-08T20:36:37Z,387,570,132,romshark
+golang/go,27,44551,testing: add fuzz test support,https://github.com/golang/go/issues/44551,closed,completed,2021-02-23T17:41:49Z,2021-10-25T16:31:26Z,385,714,54,katiehockman
+golang/go,28,32204,net/http: support HTTP/3,https://github.com/golang/go/issues/32204,open,,2019-05-23T14:57:39Z,,380,449,55,johanbrandhorst
+golang/go,29,71076,proposal: sync/v2: new package,https://github.com/golang/go/issues/71076,open,,2025-01-01T02:32:48Z,,376,456,115,ianlancetaylor
+golang/go,30,21990,proposal: encoding/json: support struct tag for time.Format in JSON Marshaller/Unmarshaller,https://github.com/golang/go/issues/21990,open,,2017-09-23T18:06:03Z,,376,411,23,marwan-at-work
+golang/go,31,56345,"log/slog: structured, leveled logging",https://github.com/golang/go/issues/56345,closed,completed,2022-10-20T11:03:32Z,2023-08-09T18:30:35Z,364,453,841,jba
+golang/go,32,41191,"embed, cmd/go: add support for embedded files",https://github.com/golang/go/issues/41191,closed,completed,2020-09-02T16:15:38Z,2020-12-18T16:53:48Z,360,553,131,rsc
+golang/go,33,32437,"Proposal: A built-in Go error check function, ""try""",https://github.com/golang/go/issues/32437,closed,completed,2019-06-04T22:41:10Z,2019-07-16T23:08:49Z,353,1460,816,griesemer
+golang/go,34,16721,"sort: make sorting easier, add Slice, SliceStable, SliceIsSorted, reflect.Swapper",https://github.com/golang/go/issues/16721,closed,completed,2016-08-16T04:52:44Z,2016-10-03T16:10:17Z,352,442,158,bradfitz
+golang/go,35,73581,runtime: green tea garbage collector,https://github.com/golang/go/issues/73581,closed,completed,2025-05-02T16:58:35Z,2025-11-19T21:01:53Z,315,776,104,mknyszek
+golang/go,36,28987,proposal: spec: enums as an extension to types,https://github.com/golang/go/issues/28987,open,,2018-11-28T15:22:12Z,,312,323,89,deanveloper
+golang/go,37,61405,"spec: add range over int, range over func",https://github.com/golang/go/issues/61405,closed,completed,2023-07-17T21:17:46Z,2024-01-23T17:18:05Z,298,451,417,rsc
+golang/go,38,61410,net/http: enhanced ServeMux routing,https://github.com/golang/go/issues/61410,closed,completed,2023-07-18T11:33:14Z,2023-11-03T15:40:14Z,286,463,177,jba
+golang/go,39,21291,proposal: Go 2: remove bare return,https://github.com/golang/go/issues/21291,closed,not_planned,2017-08-03T16:02:21Z,2023-08-23T17:53:24Z,283,405,56,earthboundkid
+golang/go,40,19090,cmd/go: exclude vendor dir from matching `...`,https://github.com/golang/go/issues/19090,closed,completed,2017-02-14T21:15:00Z,2017-03-29T18:52:07Z,282,338,80,natefinch
+golang/go,41,24301,cmd/go: add package version support to Go toolchain,https://github.com/golang/go/issues/24301,closed,completed,2018-03-07T17:38:21Z,2018-07-17T17:08:36Z,278,468,242,rsc
+golang/go,42,9455,proposal: spec: add support for int128 and uint128,https://github.com/golang/go/issues/9455,open,,2014-12-27T04:11:25Z,,278,320,175,mei-rune
+golang/go,43,11862,path/filepath: Glob should support `**` for zero or more directories,https://github.com/golang/go/issues/11862,closed,not_planned,2015-07-24T22:24:52Z,2025-03-21T23:54:34Z,274,280,47,ascarter
+golang/go,44,57644,proposal: spec: sum types based on general interfaces,https://github.com/golang/go/issues/57644,open,,2023-01-05T23:56:54Z,,274,346,234,ianlancetaylor
+golang/go,45,31908,internal/poll: transparently support new linux io_uring interface,https://github.com/golang/go/issues/31908,open,,2019-05-08T11:05:53Z,,271,342,53,johanbrandhorst
+golang/go,46,73193,runtime: CPU limit-aware GOMAXPROCS default,https://github.com/golang/go/issues/73193,closed,completed,2025-04-07T04:59:24Z,2025-06-11T19:20:02Z,270,387,67,prattmic
+golang/go,47,73608,proposal: all: add bare metal support,https://github.com/golang/go/issues/73608,open,reopened,2025-05-06T07:54:11Z,,254,473,178,abarisani
+golang/go,48,45121,proposal: x/image/webp: support for WebP Encoding,https://github.com/golang/go/issues/45121,open,,2021-03-19T07:50:11Z,,251,274,48,ainsleyclark
+golang/go,49,76920,proposal: sum types as a non-interface union type,https://github.com/golang/go/issues/76920,open,,2025-12-18T22:03:48Z,,241,359,202,neild
+golang/go,50,11939,"proposal: encoding/json, encoding/xml: support zero values of structs with omitempty",https://github.com/golang/go/issues/11939,closed,not_planned,2015-07-30T14:14:34Z,2024-09-08T17:55:18Z,240,279,116,joeshaw
+godotengine/godot,1,100000,You're breathtaking!,https://github.com/godotengine/godot/issues/100000,open,,2024-12-04T01:23:55Z,,254,1185,38,akien-mga
+godotengine/godot,2,4884,Multiline text cursor in script editor,https://github.com/godotengine/godot/issues/4884,closed,completed,2016-05-29T17:45:19Z,2020-01-12T21:34:34Z,236,264,4,GlaDOSik
+godotengine/godot,3,68153,Add C# support for Android in Godot 4.x,https://github.com/godotengine/godot/issues/68153,closed,completed,2022-11-02T06:32:14Z,2023-09-15T13:15:29Z,222,236,26,tjacobhi
+godotengine/godot,4,30736,Proposal for renaming nodes for Godot 4.0,https://github.com/godotengine/godot/issues/30736,closed,completed,2019-07-21T19:37:37Z,2020-03-27T16:47:16Z,181,248,112,reduz
+godotengine/godot,5,21789,get_class() and is_class() not returning class_name,https://github.com/godotengine/godot/issues/21789,open,,2018-09-06T06:30:06Z,,167,170,63,ghost
+godotengine/godot,6,66231,GDExtension library cannot be reloaded while editor is running,https://github.com/godotengine/godot/issues/66231,closed,completed,2022-09-21T20:35:55Z,2023-09-26T06:33:32Z,159,196,54,Bromeon
+godotengine/godot,7,23998,Using the slowest data structure almost every time.,https://github.com/godotengine/godot/issues/23998,closed,completed,2018-11-26T17:55:16Z,2019-07-22T16:35:59Z,142,223,72,vblanco20-1
+godotengine/godot,8,17268,"GDScript: Basic Functional Concepts - Map, Filter, Reduce",https://github.com/godotengine/godot/issues/17268,closed,completed,2018-03-05T00:38:25Z,2021-05-06T18:44:01Z,118,151,16,OniLink
+godotengine/godot,9,74918,`Resource.duplicate(true)` doesn't duplicate subresources stored in Array or Dictionary properties,https://github.com/godotengine/godot/issues/74918,closed,completed,2023-03-14T18:34:12Z,2025-05-27T14:50:43Z,114,120,40,limbonaut
+godotengine/godot,10,21461,Some usages of `class_name` can produce cyclic errors unexpectedly,https://github.com/godotengine/godot/issues/21461,closed,completed,2018-08-26T21:49:09Z,2022-11-18T22:46:14Z,110,110,81,ghost
+godotengine/godot,11,6866,Ability to pass arguments to functions by name,https://github.com/godotengine/godot/issues/6866,closed,completed,2016-10-18T23:15:06Z,2020-05-26T11:58:20Z,95,120,34,PLyczkowski
+godotengine/godot,12,72566,Array `map`/`filter` fail with typed-array variables and functions,https://github.com/godotengine/godot/issues/72566,open,,2023-02-02T04:38:35Z,,93,93,18,rblopes
+godotengine/godot,13,4354,Proposal to add YAML support in addition to JSON,https://github.com/godotengine/godot/issues/4354,closed,completed,2016-04-17T16:21:50Z,2020-05-28T16:55:29Z,88,94,54,ghost
+godotengine/godot,14,70796,Readd support for web platform exports when using the C# (.NET) version of the engine,https://github.com/godotengine/godot/issues/70796,open,reopened,2023-01-01T11:11:00Z,,89,103,116,Kezzo
+godotengine/godot,15,16565,GDScript: Variadic functions (variable number of arguments/varargs),https://github.com/godotengine/godot/issues/16565,closed,completed,2018-02-11T18:37:15Z,2020-05-27T07:29:39Z,87,89,29,mhilbrunner
+godotengine/godot,16,78513,.NET: Failed to unload assemblies. Please check <this issue> for more information.,https://github.com/godotengine/godot/issues/78513,open,,2023-06-21T09:26:04Z,,83,95,194,RedworkDE
+godotengine/godot,17,80562,`str_to_var` and `ConfigFile` allow for arbitrary code execution,https://github.com/godotengine/godot/issues/80562,open,,2023-08-12T20:38:57Z,,83,86,10,jtnicholl
+godotengine/godot,18,19486,"Problems with preventing ""engine bloat"" and the AssetLibrary",https://github.com/godotengine/godot/issues/19486,closed,completed,2018-06-10T10:10:23Z,2020-06-09T13:49:28Z,83,85,144,karroffel
+godotengine/godot,19,102219,Graphical glitches all over the place in both game and editor - Nvidia drivers 572.16+ regression (fixed in 572.60),https://github.com/godotengine/godot/issues/102219,closed,completed,2025-01-30T23:35:09Z,2025-04-30T10:10:38Z,79,79,43,francogp
+godotengine/godot,20,27470,"When C# script extends Resource class, the resource doesn't show up in the ""Create New Resource"" menu",https://github.com/godotengine/godot/issues/27470,closed,completed,2019-03-27T21:27:53Z,2023-07-12T09:15:29Z,71,71,45,sudoman281
+godotengine/godot,21,16863,"[TRACKER] Methods, properties and signals to consider for renaming in next planned compatibility breakage",https://github.com/godotengine/godot/issues/16863,closed,completed,2018-02-20T16:44:26Z,2021-11-10T10:08:09Z,69,74,517,akien-mga
+godotengine/godot,22,10946,External script editing does not trigger reload of running game,https://github.com/godotengine/godot/issues/10946,closed,completed,2017-09-03T21:36:28Z,2021-08-17T17:42:44Z,68,79,29,DjPale
+godotengine/godot,23,13954,Compile shaders when a scene is loaded,https://github.com/godotengine/godot/issues/13954,closed,completed,2017-12-04T10:24:35Z,2021-06-20T23:14:03Z,68,101,115,endragor
+godotengine/godot,24,70691,HTML5 export for Godot 4.x takes 1-2 minutes to load on macOS,https://github.com/godotengine/godot/issues/70691,open,reopened,2022-12-29T01:18:56Z,,67,89,76,Luzzotica
+godotengine/godot,25,8873,Rewrite Godot in Rust,https://github.com/godotengine/godot/issues/8873,closed,not_planned,2017-05-23T08:54:12Z,2017-05-23T13:51:39Z,65,168,8,Serkan-devel
+godotengine/godot,26,64939,CanvasItem light_mask is ignored by LightOccluder2D occluder_light_mask,https://github.com/godotengine/godot/issues/64939,closed,completed,2022-08-26T17:27:23Z,2024-11-22T21:03:13Z,62,82,32,h0lley
+godotengine/godot,27,3163,Renaming anything in Godot should rename their references,https://github.com/godotengine/godot/issues/3163,closed,completed,2015-12-29T13:44:40Z,2020-05-26T09:11:27Z,59,59,21,RebelliousX
+godotengine/godot,28,10751,Shader language: implement arrays support,https://github.com/godotengine/godot/issues/10751,closed,completed,2017-08-29T10:32:35Z,2020-05-26T13:53:56Z,59,73,21,curly-brace
+godotengine/godot,29,42966,Integer division generates warnings even if you cast,https://github.com/godotengine/godot/issues/42966,open,,2020-10-21T16:30:06Z,,60,60,17,chucklepie
+godotengine/godot,30,7821,Ability to export Node types,https://github.com/godotengine/godot/issues/7821,closed,completed,2017-02-16T00:32:09Z,2020-05-26T11:56:54Z,60,74,28,Zylann
+godotengine/godot,31,18411,Private variables or functions in GDScript,https://github.com/godotengine/godot/issues/18411,closed,completed,2018-04-25T07:15:55Z,2020-05-26T07:58:59Z,58,59,47,Chaosus
+godotengine/godot,32,20368,Typed GDScript named enums can't be used as types,https://github.com/godotengine/godot/issues/20368,closed,completed,2018-07-22T18:47:23Z,2020-05-27T18:57:48Z,57,72,33,mrcdk
+godotengine/godot,33,41283,Creating signals generates no code in external editor,https://github.com/godotengine/godot/issues/41283,open,,2020-08-15T13:43:50Z,,56,56,48,chucklepie
+godotengine/godot,34,23101,Add a GDScript Trait system.,https://github.com/godotengine/godot/issues/23101,closed,completed,2018-10-17T22:24:48Z,2020-05-27T18:26:25Z,56,68,93,willnationsdev
+godotengine/godot,35,7584,Python-like list unpacking/destructuring,https://github.com/godotengine/godot/issues/7584,closed,completed,2017-01-20T10:33:51Z,2020-05-26T11:48:03Z,54,69,21,jkb0o
+godotengine/godot,36,6750,Add Shape2D node,https://github.com/godotengine/godot/issues/6750,closed,completed,2016-10-09T00:09:42Z,2020-05-26T11:14:07Z,55,55,42,toby3d
+godotengine/godot,37,2446,Breakpoints do not work in Thread,https://github.com/godotengine/godot/issues/2446,closed,completed,2015-09-07T13:30:35Z,2023-07-26T16:48:37Z,54,55,38,ret80
+godotengine/godot,38,18260,RichTextLabel doesn't set its size from the text bbox; uses 0×0,https://github.com/godotengine/godot/issues/18260,closed,completed,2018-04-17T20:06:52Z,2023-01-25T08:52:24Z,53,54,46,garyo
+godotengine/godot,39,66247,"False error ""Viewport Texture must be set to use it.""",https://github.com/godotengine/godot/issues/66247,closed,completed,2022-09-22T07:14:48Z,2024-09-18T09:22:43Z,53,59,47,rarsp
+godotengine/godot,40,31811,please add max size for controls,https://github.com/godotengine/godot/issues/31811,closed,completed,2019-08-30T19:37:07Z,2020-01-11T10:08:36Z,51,75,9,Shadowblitz16
+godotengine/godot,41,84137,"Forward Plus Renderer causes frameskips/jitter/judder/stutter, GPU frames aren't sorted correctly on Windows",https://github.com/godotengine/godot/issues/84137,open,,2023-10-29T10:53:23Z,,50,50,185,Cyangmou
+godotengine/godot,42,4192,"Allow to disable the ""output overflow"" limit",https://github.com/godotengine/godot/issues/4192,closed,completed,2016-03-31T18:37:42Z,2020-03-10T14:29:27Z,51,53,20,TheSuspiciousWombat
+godotengine/godot,43,9059,Support for multiple screens (Split scenes / gdscript),https://github.com/godotengine/godot/issues/9059,closed,completed,2017-06-05T22:01:23Z,2020-02-06T19:10:18Z,51,57,17,ivanskodje
+godotengine/godot,44,6204,Tooltip for exported variables,https://github.com/godotengine/godot/issues/6204,closed,completed,2016-08-18T19:13:05Z,2020-05-26T09:51:40Z,50,50,33,Kazuo256
+godotengine/godot,45,12543,GODOT 3.0 BETA APPROACHING!,https://github.com/godotengine/godot/issues/12543,closed,completed,2017-10-31T21:15:22Z,2017-11-30T15:20:12Z,49,113,45,reduz
+godotengine/godot,46,25157,Export Dictionary With Type Hints,https://github.com/godotengine/godot/issues/25157,closed,completed,2019-01-20T06:58:57Z,2020-10-30T17:14:34Z,49,57,6,sednave
+godotengine/godot,47,63374,"Godot Garden, A Ground Truth Lighting Reference",https://github.com/godotengine/godot/issues/63374,open,,2022-07-24T04:54:48Z,,48,69,11,WickedInsignia
+godotengine/godot,48,27491,[3.x] Can't use `new()` or reference own class name in static function (fixed in `master`),https://github.com/godotengine/godot/issues/27491,open,,2019-03-28T13:45:27Z,,48,48,11,quentincaffeino
+godotengine/godot,49,27790,ViewportTexture: Path to node is invalid,https://github.com/godotengine/godot/issues/27790,open,reopened,2019-04-08T00:49:46Z,,48,50,49,lukewilson2002
+godotengine/godot,50,7753,Godot sandbox & modding support,https://github.com/godotengine/godot/issues/7753,closed,completed,2017-02-07T22:28:01Z,2020-05-26T11:53:47Z,48,51,47,touilleMan
+flutter/flutter,1,14330,Code Push / Hot Update / out of band updates,https://github.com/flutter/flutter/issues/14330,open,,2018-01-29T20:40:17Z,,1240,2039,290,eseidelGoogle
+flutter/flutter,2,53041,"Enable ""hot reload"" (not just ""hot restart"") for Flutter Web",https://github.com/flutter/flutter/issues/53041,closed,completed,2020-03-22T09:27:31Z,2025-05-20T20:51:46Z,875,1314,160,jakobwgnr
+flutter/flutter,3,15072,flutter run should support wireless debugging of iOS devices,https://github.com/flutter/flutter/issues/15072,closed,completed,2018-03-02T17:07:28Z,2023-01-20T19:02:39Z,830,1241,87,phumberdroz
+flutter/flutter,4,14050,Let flutter be installable via homebrew,https://github.com/flutter/flutter/issues/14050,closed,not_planned,2018-01-11T19:00:27Z,2025-06-27T16:33:13Z,763,1015,85,xster
+flutter/flutter,5,101479,☂️ Move the material and cupertino packages outside of Flutter,https://github.com/flutter/flutter/issues/101479,open,,2022-04-07T06:21:20Z,,676,1022,134,nikitadol
+flutter/flutter,6,7053,Support integrating with C/C++ in plugin framework,https://github.com/flutter/flutter/issues/7053,closed,completed,2016-11-28T20:40:43Z,2020-01-06T08:13:57Z,649,980,174,jtrunick
+flutter/flutter,7,46789,Improve the indexability (SEO) of Flutter apps on the web ,https://github.com/flutter/flutter/issues/46789,open,,2019-12-11T17:11:17Z,,615,887,208,deepak-kumar-swain
+flutter/flutter,8,168813,☂️ Bring Material 3 Expressive to Flutter,https://github.com/flutter/flutter/issues/168813,open,,2025-05-14T09:35:34Z,,566,822,84,guidezpl
+flutter/flutter,9,1831,Design a new vector file format,https://github.com/flutter/flutter/issues/1831,closed,completed,2016-02-12T22:08:41Z,2023-08-07T21:20:44Z,559,737,257,krisgiesing
+flutter/flutter,10,170310,Support for iOS 26 “Liquid Glass” Design in Cupertino Widgets,https://github.com/flutter/flutter/issues/170310,open,,2025-06-10T01:01:38Z,,559,726,88,lucas-goldner
+flutter/flutter,11,14765,Please add support for Crashlytics,https://github.com/flutter/flutter/issues/14765,closed,completed,2018-02-18T21:54:09Z,2019-03-20T17:06:02Z,515,658,35,dotdoom
+flutter/flutter,12,30701,Support multiple windows for desktop shells,https://github.com/flutter/flutter/issues/30701,open,,2019-04-08T16:33:22Z,,473,727,149,stuartmorgan-g
+flutter/flutter,13,41722,Implement PlatformView support on macOS,https://github.com/flutter/flutter/issues/41722,open,,2019-10-01T17:57:26Z,,463,674,64,stuartmorgan-g
+flutter/flutter,14,26801,Apple CarPlay / Android Auto support?,https://github.com/flutter/flutter/issues/26801,open,,2019-01-19T09:29:46Z,,457,565,64,piotrrojek
+flutter/flutter,15,91605,☂️ Bring Material 3 to Flutter,https://github.com/flutter/flutter/issues/91605,closed,completed,2021-10-11T13:21:29Z,2023-11-15T21:56:18Z,438,754,136,rami-a
+flutter/flutter,16,47600,Server-side rendering for Flutter web,https://github.com/flutter/flutter/issues/47600,open,,2019-12-22T02:00:49Z,,415,663,59,wliumelb
+flutter/flutter,17,15288,Add Bitcode support for iOS,https://github.com/flutter/flutter/issues/15288,closed,completed,2018-03-08T10:32:59Z,2019-08-28T22:19:05Z,403,513,113,eseidelGoogle
+flutter/flutter,18,162069,revert deprecating Color withOpacity / opacity,https://github.com/flutter/flutter/issues/162069,closed,completed,2025-01-23T12:18:19Z,2025-02-03T22:42:25Z,383,521,31,lukepighetti
+flutter/flutter,19,18761,Text overflow with ellipsis is weird and ugly by design,https://github.com/flutter/flutter/issues/18761,closed,completed,2018-06-23T20:37:33Z,2023-04-18T18:06:14Z,369,424,134,marcglasberg
+flutter/flutter,20,31713,Implement PlatformView support on Windows,https://github.com/flutter/flutter/issues/31713,open,,2019-04-27T01:02:04Z,,366,499,41,stuartmorgan-g
+flutter/flutter,21,24213,[google_maps_flutter] Support Widgets as markers,https://github.com/flutter/flutter/issues/24213,open,,2018-11-10T16:08:29Z,,350,487,57,kunit1
+flutter/flutter,22,12114,Google native ads integrated into a Flutter widget tree,https://github.com/flutter/flutter/issues/12114,closed,completed,2017-09-15T17:06:48Z,2021-03-03T22:23:14Z,338,531,147,sethladd
+flutter/flutter,23,14967,☂ Add support for UWP,https://github.com/flutter/flutter/issues/14967,closed,completed,2018-02-28T15:26:33Z,2022-04-19T21:44:10Z,323,461,128,steskalja
+flutter/flutter,24,83596,"Android crash: Fatal Exception: java.lang.RuntimeException java.util.concurrent.ExecutionException: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file ""/system/framework/android.test.runner.jar"", zip file ""/system/framework/org.apache.http.legacy.boot.jar""........",https://github.com/flutter/flutter/issues/83596,closed,not_planned,2021-05-29T10:30:07Z,2026-01-23T16:09:52Z,323,391,298,acoutts
+flutter/flutter,25,13937,Unable to call a platform channel method from another isolate,https://github.com/flutter/flutter/issues/13937,closed,completed,2018-01-05T18:45:23Z,2022-10-05T18:17:07Z,321,452,169,sroddy
+flutter/flutter,26,13015,Autofill support,https://github.com/flutter/flutter/issues/13015,closed,completed,2017-11-14T18:01:53Z,2020-05-06T22:21:54Z,316,387,64,Hixie
+flutter/flutter,27,32170,Automatic/scalable shader warm-up,https://github.com/flutter/flutter/issues/32170,closed,not_planned,2019-05-06T20:19:41Z,2023-08-11T21:38:57Z,314,398,202,liyuqian
+flutter/flutter,28,110431,Flutter adds additional one frame touch latency compared to native,https://github.com/flutter/flutter/issues/110431,open,,2022-08-28T12:11:46Z,,312,379,35,knopp
+flutter/flutter,29,76180,OpenContainer jank due to multiple frames of shader compilation,https://github.com/flutter/flutter/issues/76180,closed,completed,2021-02-17T04:47:51Z,2023-09-22T19:01:41Z,306,457,75,danReynolds
+flutter/flutter,30,18443,Support soft hyphenation (line breaks at U+00AD plus rendering a hyphen at the end of the line),https://github.com/flutter/flutter/issues/18443,closed,completed,2018-06-13T09:31:51Z,2026-10-03T04:49:09Z,305,351,75,Mania-1024
+flutter/flutter,31,71400,Customizable project structure (platforms),https://github.com/flutter/flutter/issues/71400,open,,2020-11-30T11:45:57Z,,299,430,24,passsy
+flutter/flutter,32,94340,"[Feature Request] Support for Jetbrains Fleet
+",https://github.com/flutter/flutter/issues/94340,closed,not_planned,2021-11-29T13:02:17Z,2025-01-16T18:43:18Z,294,448,24,shinayser
+flutter/flutter,33,51752,Reusing state logic is either too verbose or too difficult,https://github.com/flutter/flutter/issues/51752,open,,2020-03-02T00:19:16Z,,293,314,555,rrousselGit
+flutter/flutter,34,37597,[webview_flutter] Add Windows support,https://github.com/flutter/flutter/issues/37597,open,,2019-08-05T03:20:47Z,,292,351,52,Tumbler0809
+flutter/flutter,35,12319,Provide method and/or config to programmatically scroll to ListView index,https://github.com/flutter/flutter/issues/12319,closed,completed,2017-09-29T14:52:46Z,2019-12-27T15:58:27Z,283,330,140,ariejdl
+flutter/flutter,36,66618,WebGPU in Flutter,https://github.com/flutter/flutter/issues/66618,open,,2020-09-25T02:52:21Z,,282,457,8,kobutri
+flutter/flutter,37,26863,[google_maps_flutter] Support marker clustering,https://github.com/flutter/flutter/issues/26863,closed,completed,2019-01-21T18:25:56Z,2024-08-07T12:10:20Z,275,369,69,m7amdElberawy
+flutter/flutter,38,26134,Support home and lock screen widgets,https://github.com/flutter/flutter/issues/26134,open,,2019-01-06T04:47:26Z,,273,337,50,gabrc52
+flutter/flutter,39,47105,Audio support,https://github.com/flutter/flutter/issues/47105,closed,not_planned,2019-12-16T04:08:00Z,2023-07-07T11:32:38Z,271,367,48,suragch
+flutter/flutter,40,30719,Support drag and drop across Flutter boundary,https://github.com/flutter/flutter/issues/30719,closed,completed,2019-04-08T18:59:07Z,2023-10-23T22:26:30Z,270,395,58,stuartmorgan-g
+flutter/flutter,41,41725,[webview_flutter] Add macOS support,https://github.com/flutter/flutter/issues/41725,closed,completed,2019-10-01T17:59:17Z,2024-08-21T09:21:38Z,268,388,67,stuartmorgan-g
+flutter/flutter,42,99126,[go_router] Support multiple navigation stacks,https://github.com/flutter/flutter/issues/99126,closed,completed,2022-02-25T00:29:17Z,2022-09-16T16:35:22Z,265,291,57,chunhtai
+flutter/flutter,43,33577,[web] Support compute on separate thread in Flutter Web,https://github.com/flutter/flutter/issues/33577,open,,2019-05-30T13:21:41Z,,264,347,103,uKL
+flutter/flutter,44,28901,Flutter support for Apple Watch,https://github.com/flutter/flutter/issues/28901,open,,2019-03-05T18:29:43Z,,264,294,44,vijayredme
+flutter/flutter,45,128313,Add support for visionOS,https://github.com/flutter/flutter/issues/128313,open,,2023-06-06T07:22:01Z,,251,356,29,vanlooverenkoen
+flutter/flutter,46,3671,Flutter should provide an abstraction for background execution,https://github.com/flutter/flutter/issues/3671,closed,completed,2016-05-02T20:38:30Z,2018-08-15T00:01:10Z,250,308,142,eseidelGoogle
+flutter/flutter,47,41062,[web] Flutter web using WebAssembly (WASM),https://github.com/flutter/flutter/issues/41062,closed,completed,2019-09-22T17:50:50Z,2023-05-25T20:16:40Z,250,362,27,iapicca
+flutter/flutter,48,45296,[path_provider] Add support for web,https://github.com/flutter/flutter/issues/45296,open,,2019-11-20T22:52:04Z,,246,299,50,harryterkelsen
+flutter/flutter,49,6827,Instance state not saved when app is killed by OS,https://github.com/flutter/flutter/issues/6827,closed,completed,2016-11-12T01:50:34Z,2020-08-04T23:17:14Z,237,237,140,LouisCAD
+flutter/flutter,50,21594,Table > TableRow > TableCell colspan,https://github.com/flutter/flutter/issues/21594,open,,2018-09-08T13:26:11Z,,236,313,60,Djafox
+home-assistant/core,1,128830,iCloud integration stopped working (due to Apple SRP-6a implementation),https://github.com/home-assistant/core/issues/128830,closed,not_planned,2024-10-20T08:09:19Z,2026-08-30T02:21:39Z,233,233,194,crazyelectron-io
+home-assistant/core,2,171369,"""Invalid authentication"" in Renault integration",https://github.com/home-assistant/core/issues/171369,closed,completed,2026-05-19T15:43:15Z,2026-05-26T08:35:07Z,225,230,146,WBoerhoop
+home-assistant/core,3,128598,BMW login failure,https://github.com/home-assistant/core/issues/128598,closed,completed,2024-10-17T16:44:44Z,2024-11-28T20:01:02Z,218,218,248,Maciejul
+home-assistant/core,4,41420,Challenge/Response error with SniTun server,https://github.com/home-assistant/core/issues/41420,closed,completed,2020-10-07T18:26:39Z,2023-08-14T13:22:43Z,210,215,128,Veldkornet
+home-assistant/core,5,180277,"Built-in map now displays ""API KEY REQUIRED"" watermark from CARTO",https://github.com/home-assistant/core/issues/180277,closed,duplicate,2026-08-26T13:08:16Z,2026-08-26T20:15:50Z,196,196,9,dougle03
+home-assistant/core,6,152646,"BMW Connected Drive - Requires continuous re-authentications and still, errors for Login requires captcha validation",https://github.com/home-assistant/core/issues/152646,closed,completed,2025-09-20T07:35:38Z,2025-12-15T18:43:43Z,184,199,299,Sanji78
+home-assistant/core,7,147122,"Xiaomi Miio: Could not login to Xiaomi Miio Cloud, check the credentials",https://github.com/home-assistant/core/issues/147122,open,,2025-06-19T08:21:34Z,,170,172,348,maisun
+home-assistant/core,8,101763,MyQ fails to setup with 401 or 429 error,https://github.com/home-assistant/core/issues/101763,closed,completed,2023-10-10T15:38:27Z,2023-10-12T13:06:47Z,156,156,237,atruest
+home-assistant/core,9,176484,"1013 Error, Change within EcovacsAPI?",https://github.com/home-assistant/core/issues/176484,closed,completed,2026-07-14T10:47:10Z,2026-07-30T16:25:49Z,152,156,158,kilrgt
+home-assistant/core,10,97470,Life 360 Integration - Invalid Authentication with correct details,https://github.com/home-assistant/core/issues/97470,closed,completed,2023-07-30T00:28:49Z,2023-08-01T08:04:05Z,148,148,134,aaronburt
+home-assistant/core,11,99947,MyQ fails with 403 forbidden error after recent cloud changes,https://github.com/home-assistant/core/issues/99947,closed,completed,2023-09-08T17:27:37Z,2023-09-26T19:48:38Z,139,139,518,Nairou
+home-assistant/core,12,158467,Not able to login into Volvo Integration,https://github.com/home-assistant/core/issues/158467,closed,completed,2025-12-09T15:36:21Z,2026-01-22T15:31:40Z,129,129,139,Palmdale95
+home-assistant/core,13,58783,Issue after DST time change [update to 2021.10.7+ or 2021.11.0b4+ recommended],https://github.com/home-assistant/core/issues/58783,closed,completed,2021-10-31T01:13:34Z,2021-11-02T15:13:35Z,123,123,115,chneau
+home-assistant/core,14,74564,Ecovacs integration broken on core-2022.7,https://github.com/home-assistant/core/issues/74564,closed,completed,2022-07-07T04:04:03Z,2022-08-26T08:01:45Z,120,121,44,aszymanik
+home-assistant/core,15,130245,Pi_hole integration doesn't work on pi_hole V6,https://github.com/home-assistant/core/issues/130245,closed,completed,2024-11-09T20:42:08Z,2025-07-05T08:21:33Z,120,137,149,Marcoevich
+home-assistant/core,16,43801,Did google_tts change once again? No TTS from google_translate for,https://github.com/home-assistant/core/issues/43801,closed,completed,2020-12-01T08:16:04Z,2020-12-02T21:03:32Z,114,114,44,Mariusthvdb
+home-assistant/core,17,123550,Daikin AC are not working after update to 2024.8.1,https://github.com/home-assistant/core/issues/123550,closed,completed,2024-08-10T18:43:24Z,2024-08-14T10:31:19Z,105,105,75,VinceRMP
+home-assistant/core,18,54177,Tesla authentication fails,https://github.com/home-assistant/core/issues/54177,closed,completed,2021-08-06T20:50:11Z,2021-09-09T05:12:04Z,104,104,67,michis0806
+home-assistant/core,19,74541,Connection error with Homematic IP,https://github.com/home-assistant/core/issues/74541,closed,completed,2022-07-06T22:15:34Z,2022-07-12T13:31:05Z,96,113,70,guigel1
+home-assistant/core,20,148187,"Alexa devices; Failed setup, will retry: 299 is not a valid HTTPStatus",https://github.com/home-assistant/core/issues/148187,closed,completed,2025-07-05T02:30:45Z,2025-07-08T08:14:44Z,96,104,120,cmgestevao
+home-assistant/core,21,162395,Tibber stops receiving data occasionally,https://github.com/home-assistant/core/issues/162395,closed,completed,2026-02-06T08:51:47Z,2026-03-17T14:11:53Z,96,96,131,jwende
+home-assistant/core,22,145825,2025.6.0b1 - UserWarning: pkg_resources is deprecated as an API (waiting for protobuf v32 release with the fix),https://github.com/home-assistant/core/issues/145825,closed,completed,2025-05-28T19:20:26Z,2025-08-15T00:31:11Z,85,85,18,holdestmade
+home-assistant/core,23,173125,Please rollback entity ID recreation with area ID as prefix,https://github.com/home-assistant/core/issues/173125,closed,completed,2026-06-05T18:52:05Z,2026-07-30T18:40:19Z,85,85,272,vint66
+home-assistant/core,24,17639,SSL handshake Fail,https://github.com/home-assistant/core/issues/17639,closed,completed,2018-10-20T18:33:18Z,2020-02-27T13:26:58Z,83,83,47,p-j-o
+home-assistant/core,25,154486,Blink setup and login failing (Known API issue),https://github.com/home-assistant/core/issues/154486,closed,completed,2025-10-14T19:40:15Z,2025-10-28T20:43:34Z,79,79,230,Duke-Box
+home-assistant/core,26,80278,ℹ️ Tuya integration not working,https://github.com/home-assistant/core/issues/80278,closed,not_planned,2022-10-13T17:38:39Z,2024-02-09T12:58:06Z,69,102,167,thecode
+home-assistant/core,27,134984,Google Cast won’t display black background,https://github.com/home-assistant/core/issues/134984,closed,not_planned,2025-01-07T13:04:29Z,2025-01-12T10:30:19Z,68,68,67,ChrisMac715
+home-assistant/core,28,159035,Matter: IKEA BILRESA Scroll wheel treated as button with no ongoing multipress,https://github.com/home-assistant/core/issues/159035,open,,2025-12-14T18:16:15Z,,68,68,12,Auroray
+home-assistant/core,29,41507,Yeelight integration broken in 0.116.1,https://github.com/home-assistant/core/issues/41507,closed,completed,2020-10-08T19:15:05Z,2020-10-09T11:30:43Z,66,73,43,XenorPLxx
+home-assistant/core,30,44497,Google Assistant via Nabu Casa Cloud: Quota exceeded,https://github.com/home-assistant/core/issues/44497,closed,completed,2020-12-23T23:15:12Z,2021-05-16T14:05:17Z,67,67,22,SeraphimSerapis
+home-assistant/core,31,114517,Tado - failed to setup ,https://github.com/home-assistant/core/issues/114517,closed,completed,2024-03-31T05:08:36Z,2024-04-01T10:13:02Z,63,63,162,rastislavpapp
+home-assistant/core,32,148739,UPnP/IGD device disappeared after upgrade to 2025.7.2,https://github.com/home-assistant/core/issues/148739,closed,duplicate,2025-07-14T13:41:38Z,2025-07-17T20:02:02Z,60,60,91,sephrioth
+home-assistant/core,33,157961,Support http.server_host for Docker installations,https://github.com/home-assistant/core/issues/157961,closed,completed,2025-12-04T14:20:30Z,2026-01-22T17:38:24Z,61,61,34,AliveDevil
+home-assistant/core,34,148095,Tado Integration - OAuth Loop,https://github.com/home-assistant/core/issues/148095,open,,2025-07-04T00:07:55Z,,58,58,26,runlvl
+home-assistant/core,35,157903,HA 2025.12.0 removes useful statistics from Ecowitt core integration,https://github.com/home-assistant/core/issues/157903,closed,completed,2025-12-04T02:09:23Z,2026-01-05T21:03:38Z,57,57,82,BJReplay
+home-assistant/core,36,74529,OpenTherm Gateway no longer working in 2022.7.0 (Python 3.10),https://github.com/home-assistant/core/issues/74529,closed,completed,2022-07-06T20:06:55Z,2022-07-16T20:26:22Z,56,56,38,ReinkNL
+home-assistant/core,37,151027,HA-Core 2025.8.3 - Alexa Devices - Attempt to decode JSON with unexpected mimetype,https://github.com/home-assistant/core/issues/151027,closed,completed,2025-08-22T08:13:58Z,2025-08-26T10:15:47Z,56,56,53,J-Ha
+home-assistant/core,38,173402,Buienradar integration not working,https://github.com/home-assistant/core/issues/173402,closed,not_planned,2026-06-09T21:07:24Z,2026-10-05T15:16:01Z,54,54,101,maceddy
+home-assistant/core,39,150997,"tailscale integration : asks for API key every other day, sometime even multiple times per day",https://github.com/home-assistant/core/issues/150997,closed,completed,2025-08-21T13:19:03Z,2026-07-13T09:11:43Z,53,53,88,ledshark24
+home-assistant/core,40,90870,Simplisafe fails to setup,https://github.com/home-assistant/core/issues/90870,closed,completed,2023-04-05T18:07:54Z,2023-04-06T08:32:38Z,51,51,9,patchmonkey
+home-assistant/core,41,133623,Samsung purposefully broke SmartThings integration on Dec 30,https://github.com/home-assistant/core/issues/133623,closed,completed,2024-12-19T23:16:08Z,2025-03-02T13:56:04Z,51,118,354,NewsGuyTor
+home-assistant/core,42,151062,Authentication expired - Bad Request 400 when re-authenticating,https://github.com/home-assistant/core/issues/151062,closed,completed,2025-08-23T05:25:52Z,2025-10-05T08:37:23Z,51,51,101,kristofferbj
+home-assistant/core,43,157882,"Ecowitt GW2000B: ""The entity no longer has a state class""",https://github.com/home-assistant/core/issues/157882,closed,completed,2025-12-03T21:08:56Z,2026-01-05T20:02:23Z,50,58,103,sxdjt
+home-assistant/core,44,138927,Pi-Hole integration -- API location changed on version 6.0,https://github.com/home-assistant/core/issues/138927,closed,not_planned,2025-02-20T10:14:17Z,2025-08-14T15:07:25Z,48,48,13,jimbolimbo3
+home-assistant/core,45,65038,Hue: Value {} of type <class 'dict'> is invalid for Device.identify,https://github.com/home-assistant/core/issues/65038,closed,completed,2022-01-27T09:49:59Z,2022-02-16T01:26:14Z,47,56,13,Mariusthvdb
+home-assistant/core,46,121281,Assist - activating the microphone triggers an error ,https://github.com/home-assistant/core/issues/121281,closed,completed,2024-07-05T06:41:50Z,2024-08-02T10:57:58Z,47,47,37,slegars56
+home-assistant/core,47,152204,2025.9.2 high load on core container,https://github.com/home-assistant/core/issues/152204,closed,completed,2025-09-12T23:52:41Z,2025-09-13T11:04:59Z,47,47,74,steuerlexi
+home-assistant/core,48,136714,Overkiz: UnknownObjectException after Tahoma box update to 1.29 - local API,https://github.com/home-assistant/core/issues/136714,closed,completed,2025-01-28T12:35:02Z,2025-02-03T15:41:40Z,45,47,126,lukpep
+home-assistant/core,49,148115,"Failed setup, will retry: Could not connect to Radio Browser API",https://github.com/home-assistant/core/issues/148115,closed,completed,2025-07-04T07:55:35Z,2025-07-04T19:42:18Z,46,46,11,litecross91
+home-assistant/core,50,9893,"0.55.1 Docker fails to start with ""cryptography.hazmat.primitives.hashes"" attribute error",https://github.com/home-assistant/core/issues/9893,closed,completed,2017-10-16T02:09:26Z,2017-10-16T20:36:13Z,45,45,19,matthewvinton

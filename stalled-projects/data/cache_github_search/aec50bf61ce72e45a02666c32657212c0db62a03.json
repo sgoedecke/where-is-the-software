@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a feature request that matches the one I want to file, without success.\n\n### Problem Description\n\nAre there any plans for implementing rounded window corners on linux, just like in mac os and windows 11. Specially after given the fact that recently the Gnome desktop has started pushing towards rounded window corners in their own toolkit (GTK), and KDE is to follow suit with their KDE 6 Desktop, if I am not mistaken\r\n\r\nI Would like to know if this has been in the project's roadmap at some point. If not, then why, and would also like to know what obstructions posed by the linux platform(s) is currently preventing this or has been preventing this feature till now.\n\n### Proposed Solution\n\n.\n\n### Alternatives Considered\n\n.\n\n### Additional Information\n\n_No response_",
+      "closed_at": "2026-06-23T20:38:01Z",
+      "comments": 19,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/33036/comments",
+      "created_at": "2022-02-22T12:09:49Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/33036/events",
+      "html_url": "https://github.com/electron/electron/issues/33036",
+      "id": 1146831653,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/33036/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85EW0Ml",
+      "number": 33036,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 78,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 13,
+        "heart": 8,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 99,
+        "url": "https://api.github.com/repos/electron/electron/issues/33036/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/33036/timeline",
+      "title": "[Feature Request]: Rounded window corners on linux.",
+      "type": null,
+      "updated_at": "2026-06-23T20:38:01Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/33036",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/61903332?v=4",
+        "events_url": "https://api.github.com/users/DuttaAB-dev/events{/privacy}",
+        "followers_url": "https://api.github.com/users/DuttaAB-dev/followers",
+        "following_url": "https://api.github.com/users/DuttaAB-dev/following{/other_user}",
+        "gists_url": "https://api.github.com/users/DuttaAB-dev/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/DuttaAB-dev",
+        "id": 61903332,
+        "login": "DuttaAB-dev",
+        "node_id": "MDQ6VXNlcjYxOTAzMzMy",
+        "organizations_url": "https://api.github.com/users/DuttaAB-dev/orgs",
+        "received_events_url": "https://api.github.com/users/DuttaAB-dev/received_events",
+        "repos_url": "https://api.github.com/users/DuttaAB-dev/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/DuttaAB-dev/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/DuttaAB-dev/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/DuttaAB-dev",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 5
+}

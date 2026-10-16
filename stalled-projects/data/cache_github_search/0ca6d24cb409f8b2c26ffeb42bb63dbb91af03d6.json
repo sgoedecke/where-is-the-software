@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "If you create a dual-stack service with `externalTrafficPolicy: Local`, kube-proxy will log something like:\r\n\r\n```\r\nI1226 19:46:08.852777       1 service_health.go:124] \"Opening healthcheck\" service=\"default/fruit-service\" port=30122\r\nI1226 19:46:08.929154       1 service_health.go:124] \"Opening healthcheck\" service=\"default/fruit-service\" port=30122\r\nE1226 19:46:08.929216       1 service_health.go:141] \"Failed to start healthcheck\" err=\"listen tcp :30122: bind: address already in use\" node=\"kind-control-plane\" service=\"default/fruit-service\" port=30122\r\n```\r\n\r\nDespite the error, the service health check _does_ actually work. The problem is that the IPv4 and IPv6 `{iptables,ipvs}.Proxier`s each create their own `ServiceHealthServer` (one which only knows about IPv4 endpoints, and one which only knows about IPv6 endpoints), but the service only has a single `healthCheckNodePort`, and in the dual-stack service case, both health servers will try to bind it. One will succeed and one will fail.\r\n\r\nWays we could fix this:\r\n\r\n- Only have a single `ServiceHealthServer` which tracks both IPv4 and IPv6 eTP:Local information. This seems probably right to me, but it would be hard to implement efficiently given the current architecture. (It also implies that the correct rule for declaring an eTP:Local Service to be \"healthy\" on a node is \"the service has at least one endpoint IP on the node _for every IP family the Service supports_\", not just \"the service has at least one endpoint IP on the node\". Yes, _normally_ those rules would give the same answer, but it's _possible_ to have a dual-stack service backed by single-stack pods...)\r\n- Keep two `ServiceHealthServer`s, but have the one for the secondary IP family ignore dual-stack services. This is easier than the above, but is obviously a hack, and it would give wrong answers in the dual-stack-service-backed-by-single-stack-pods case.\r\n- Have each `ServiceHealthServer` only bind on the IP family that it is tracking. This would be easy, but is probably an API break? I don't think we have ever claimed that IPv4 load balancers must connect to the `healthCheckNodePort` on an IPv4 node IP, and IPv6 load balancers must connect on an IPv6 node IP; it is plausible that some LBs always connect on the node's primary IP regardless of the family of the load balancer...\r\n\r\n/cc @khenidak ",
+      "closed_at": "2026-03-11T21:31:44Z",
+      "comments": 25,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114702/comments",
+      "created_at": "2022-12-26T20:30:43Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114702/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/114702",
+      "id": 1511223817,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Network.",
+          "id": 116712108,
+          "name": "sig/network",
+          "node_id": "MDU6TGFiZWwxMTY3MTIxMDg=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/network"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "8fc951",
+          "default": false,
+          "description": "Indicates an issue or PR is ready to be actively worked on.",
+          "id": 2389856656,
+          "name": "triage/accepted",
+          "node_id": "MDU6TGFiZWwyMzg5ODU2NjU2",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/triage/accepted"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114702/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks5aE3IJ",
+      "number": 114702,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 9,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 9,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114702/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114702/timeline",
+      "title": "dual-stack local traffic policy service health checks...",
+      "type": null,
+      "updated_at": "2026-03-11T21:31:44Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114702",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/96040?v=4",
+        "events_url": "https://api.github.com/users/danwinship/events{/privacy}",
+        "followers_url": "https://api.github.com/users/danwinship/followers",
+        "following_url": "https://api.github.com/users/danwinship/following{/other_user}",
+        "gists_url": "https://api.github.com/users/danwinship/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/danwinship",
+        "id": 96040,
+        "login": "danwinship",
+        "node_id": "MDQ6VXNlcjk2MDQw",
+        "organizations_url": "https://api.github.com/users/danwinship/orgs",
+        "received_events_url": "https://api.github.com/users/danwinship/received_events",
+        "repos_url": "https://api.github.com/users/danwinship/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/danwinship/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/danwinship/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/danwinship",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 16
+}

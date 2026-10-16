@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\nThank you for filing a bug report! \ud83d\udc1b Please provide a short summary of the bug,\nalong with any information you feel relevant to replicating the bug.\n-->\n\nI'm trying to use PhantomData to correctly inform the drop checker about lifetimes for a struct that holds a raw pointer. I've run into some surprising behavior that seems inconsistent, and I'm not sure if it is desired behavior or a known/unknown compiler issue.\n\nI have a simple struct, NoRefContainer<'a, T>, that holds a *const T and uses PhantomData<&'a T> to signal that it logically borrows a T for the lifetime 'a. My expectation is that the compiler should prevent the borrowed data from being dropped before the container itself.\n\nThis works as expected when I use a new() function, but not when I initialize the struct directly.\n\nCase 1: Direct Initialization (Compiles Successfully)\nWhen I build the struct directly within a function, the compiler allows me to drop the owned data before dropping the container that logically borrows it. This seems like it should be an error.\n\nCase 2: new() Function Initialization (Fails to Compile)\nWhen I wrap the exact same initialization logic in a new() function, the compiler correctly catches the invalid drop order and produces a borrow-checking error, as expected.\n\n```rust\n#![allow(dead_code)]\n\nuse std::{fmt::{self, Debug}, marker::PhantomData};\n\n#[derive(Debug)]\nstruct NonCopyint(i32);\n\nstruct NoRefContainer<'a, T: 'a + fmt::Debug> {\n    pointer: *const T,\n    _marker: PhantomData<&'a T>,\n}\n\nimpl<'a, T: 'a + fmt::Debug> NoRefContainer<'a, T> {\n    fn new(value: &'a T) -> Self {\n        Self {\n            pointer: value as *const T,\n            _marker: PhantomData,\n        }\n    }\n}\n\nimpl<'a, T: 'a + fmt::Debug> Drop for NoRefContainer<'a, T> {\n    fn drop(&mut self) {\n        unsafe {\n            println!(\"Dropping NoRefContainer: {:?}\", *self.pointer);\n        }\n    }\n}\n\n#[cfg(test)]\nmod test {\n    use super::*;\n\n    #[test]\n    fn direct_initialization_compiles() {\n        let secret;\n        let container;\n\n        secret = NonCopyint(42);\n        container = NoRefContainer {\n            pointer: &secret,\n            _marker: PhantomData,\n        };\n\n        // This compiles but it is incorrect\n        drop(secret); // `secret` is dropped...\n        drop(container); // ...while `container` still logically borrows it.\n    }\n\n    #[test]\n    fn new_function_fails_to_compile() {\n        let secret;\n        let container;\n\n        secret = NonCopyint(42);\n\n        container = NoRefContainer::new(&secret);\n\n        // This won't compile! (uncomment to see error)\n        // drop(secret);\n        // drop(container);\n\n        // Correct order - this compiles\n        drop(container);\n        drop(secret);\n    }\n}\n```\n\n### Meta\n<!--\nIf you're using the stable version of the compiler, you should also check if the\nbug also exists in the beta or nightly versions.\n-->\n\n`Compiler version`:\n```\nMinimal example can be reproduced on rustc 1.90.0 (1159e78c4 2025-09-14) and rustc 1.92.0-nightly (dc2c3564d 2025-09-29)\n```",
+      "closed_at": "2025-09-30T12:21:05Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/147182/comments",
+      "created_at": "2025-09-30T10:31:29Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/147182/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/147182",
+      "id": 3468703407,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: Discussion or questions that doesn't represent real issues.",
+          "id": 2352122097,
+          "name": "C-discussion",
+          "node_id": "MDU6TGFiZWwyMzUyMTIyMDk3",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-discussion"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/147182/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M7OwDav",
+      "number": 147182,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/147182/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/147182/timeline",
+      "title": "Inconsistent drop check behavior with PhantomData depending on initialization method",
+      "type": null,
+      "updated_at": "2025-09-30T14:44:56Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/147182",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/53856318?v=4",
+        "events_url": "https://api.github.com/users/Cheng-Li1/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Cheng-Li1/followers",
+        "following_url": "https://api.github.com/users/Cheng-Li1/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Cheng-Li1/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Cheng-Li1",
+        "id": 53856318,
+        "login": "Cheng-Li1",
+        "node_id": "MDQ6VXNlcjUzODU2MzE4",
+        "organizations_url": "https://api.github.com/users/Cheng-Li1/orgs",
+        "received_events_url": "https://api.github.com/users/Cheng-Li1/received_events",
+        "repos_url": "https://api.github.com/users/Cheng-Li1/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Cheng-Li1/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Cheng-Li1/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Cheng-Li1",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 739
+}

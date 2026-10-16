@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\r\nThank you for finding an Internal Compiler Error! \ud83e\uddca  If possible, try to provide\r\na minimal verifiable example. You can read \"Rust Bug Minimization Patterns\" for\r\nhow to create smaller examples.\r\n\r\nhttp://blog.pnkfx.org/blog/2019/11/18/rust-bug-minimization-patterns/\r\n\r\n-->\r\n\r\n### Code\r\n\r\n```Rust\r\n#![feature(dyn_star)]\r\n#![allow(incomplete_features)]\r\n\r\nuse std::fmt::Display;\r\n\r\nfn bug() -> impl Display {\r\n    // This reference seems to be evil.\r\n    // `1 as dyn* Display` compiles fine!\r\n    &1 as dyn* Display\r\n}\r\n\r\nfn main() {\r\n    let x = bug();\r\n\r\n    println!(\"{x}\");\r\n}\r\n```\r\n\r\n\r\n### Meta\r\n<!--\r\nIf you're using the stable version of the compiler, you should also check if the\r\nbug also exists in the beta or nightly versions.\r\n-->\r\n\r\n`rustc --version --verbose`:\r\n```\r\nrustc 1.66.0-nightly (ce7f0f1aa 2022-09-28)\r\n```\r\n\r\n### Error output\r\n\r\n```\r\nthread 'rustc' panicked at 'assertion failed: bx.cx().is_backend_immediate(cast)', /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/compiler/rustc_codegen_ssa/src/mir/rvalue.rs:298:25\r\n```\r\n\r\n<!--\r\nInclude a backtrace in the code block by setting `RUST_BACKTRACE=1` in your\r\nenvironment. E.g. `RUST_BACKTRACE=1 cargo build`.\r\n-->\r\n<details><summary><strong>Backtrace</strong></summary>\r\n<p>\r\n\r\n```\r\n   Compiling playground v0.0.1 (/playground)\r\nthread 'rustc' panicked at 'assertion failed: bx.cx().is_backend_immediate(cast)', /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/compiler/rustc_codegen_ssa/src/mir/rvalue.rs:298:25\r\nstack backtrace:\r\n   0:     0x7f382805e170 - std::backtrace_rs::backtrace::libunwind::trace::hac9b0f7f9661e748\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5\r\n   1:     0x7f382805e170 - std::backtrace_rs::backtrace::trace_unsynchronized::hc44795987fc42d34\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5\r\n   2:     0x7f382805e170 - std::sys_common::backtrace::_print_fmt::h11541e17c3fc86a7\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:66:5\r\n   3:     0x7f382805e170 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::hc17ff1666cc882db\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:45:22\r\n   4:     0x7f38280b8e2e - core::fmt::write::h55fcab10ae826150\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/core/src/fmt/mod.rs:1209:17\r\n   5:     0x7f382804edb5 - std::io::Write::write_fmt::hf963d6d18d14f181\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/io/mod.rs:1679:15\r\n   6:     0x7f3828060ef3 - std::sys_common::backtrace::_print::h994ce2c0e5b405c8\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:48:5\r\n   7:     0x7f3828060ef3 - std::sys_common::backtrace::print::hcc56026dcd969e04\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:35:9\r\n   8:     0x7f3828060ef3 - std::panicking::default_hook::{{closure}}::h88f2c5d855241086\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:267:22\r\n   9:     0x7f3828060bdf - std::panicking::default_hook::h8c95d81babfc3452\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:286:9\r\n  10:     0x7f382a896801 - rustc_driver[b4131074c7377c18]::DEFAULT_HOOK::{closure#0}::{closure#0}\r\n  11:     0x7f382806172b - <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call::h67c5cbe4132c274b\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/alloc/src/boxed.rs:1952:9\r\n  12:     0x7f382806172b - std::panicking::rust_panic_with_hook::h60207dae86acc93c\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:673:13\r\n  13:     0x7f3828061541 - std::panicking::begin_panic_handler::{{closure}}::h417b25e282e7bdd0\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:558:13\r\n  14:     0x7f382805e61c - std::sys_common::backtrace::__rust_end_short_backtrace::hed3dc7a8acb54b37\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:138:18\r\n  15:     0x7f38280612a2 - rust_begin_unwind\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:556:5\r\n  16:     0x7f38280b5a03 - core::panicking::panic_fmt::h33353e845faa36b7\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/core/src/panicking.rs:142:14\r\n  17:     0x7f38280b584d - core::panicking::panic::hd7761ecf6f9e50e5\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/core/src/panicking.rs:48:5\r\n  18:     0x7f38297e8754 - <rustc_codegen_ssa[d2b69af56ae265d2]::mir::FunctionCx<rustc_codegen_llvm[d08276be3b0a586e]::builder::Builder>>::codegen_block\r\n  19:     0x7f38297d71a6 - rustc_codegen_ssa[d2b69af56ae265d2]::mir::codegen_mir::<rustc_codegen_llvm[d08276be3b0a586e]::builder::Builder>\r\n  20:     0x7f3829c7d754 - rustc_codegen_llvm[d08276be3b0a586e]::base::compile_codegen_unit::module_codegen\r\n  21:     0x7f382a599c17 - <rustc_query_system[1ae1527ce801643f]::dep_graph::graph::DepGraph<rustc_middle[c8d33145a5f03cc8]::dep_graph::dep_node::DepKind>>::with_task::<rustc_middle[c8d33145a5f03cc8]::ty::context::TyCtxt, rustc_span[a9093c78adc8a30e]::symbol::Symbol, rustc_codegen_ssa[d2b69af56ae265d2]::ModuleCodegen<rustc_codegen_llvm[d08276be3b0a586e]::ModuleLlvm>>\r\n  22:     0x7f382a599a19 - rustc_codegen_llvm[d08276be3b0a586e]::base::compile_codegen_unit\r\n  23:     0x7f382a37c26d - rustc_codegen_ssa[d2b69af56ae265d2]::base::codegen_crate::<rustc_codegen_llvm[d08276be3b0a586e]::LlvmCodegenBackend>\r\n  24:     0x7f382a37ba6d - <rustc_codegen_llvm[d08276be3b0a586e]::LlvmCodegenBackend as rustc_codegen_ssa[d2b69af56ae265d2]::traits::backend::CodegenBackend>::codegen_crate\r\n  25:     0x7f38296b383c - <rustc_session[d3255eaf8224a584]::session::Session>::time::<alloc[c8bb264001a6b8ff]::boxed::Box<dyn core[de81bf0691074480]::any::Any>, rustc_interface[f0f2c906f605917e]::passes::start_codegen::{closure#0}>\r\n  26:     0x7f38296b321e - <rustc_interface[f0f2c906f605917e]::passes::QueryContext>::enter::<<rustc_interface[f0f2c906f605917e]::queries::Queries>::ongoing_codegen::{closure#0}::{closure#0}, core[de81bf0691074480]::result::Result<alloc[c8bb264001a6b8ff]::boxed::Box<dyn core[de81bf0691074480]::any::Any>, rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>\r\n  27:     0x7f3829673093 - <rustc_interface[f0f2c906f605917e]::queries::Queries>::ongoing_codegen\r\n  28:     0x7f382967133a - rustc_interface[f0f2c906f605917e]::interface::create_compiler_and_run::<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>\r\n  29:     0x7f382966fc41 - <scoped_tls[77ed516bf348563d]::ScopedKey<rustc_span[a9093c78adc8a30e]::SessionGlobals>>::set::<rustc_interface[f0f2c906f605917e]::interface::run_compiler<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>\r\n  30:     0x7f382966f92f - std[1bac5bf8d99344e6]::sys_common::backtrace::__rust_begin_short_backtrace::<rustc_interface[f0f2c906f605917e]::util::run_in_thread_pool_with_globals<rustc_interface[f0f2c906f605917e]::interface::run_compiler<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>\r\n  31:     0x7f382a6f8600 - <<std[1bac5bf8d99344e6]::thread::Builder>::spawn_unchecked_<rustc_interface[f0f2c906f605917e]::util::run_in_thread_pool_with_globals<rustc_interface[f0f2c906f605917e]::interface::run_compiler<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>::{closure#1} as core[de81bf0691074480]::ops::function::FnOnce<()>>::call_once::{shim:vtable#0}\r\n  32:     0x7f382806b393 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::hd5e3cab38cec9739\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/alloc/src/boxed.rs:1938:9\r\n  33:     0x7f382806b393 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h970a034a5216df96\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/alloc/src/boxed.rs:1938:9\r\n  34:     0x7f382806b393 - std::sys::unix::thread::Thread::new::thread_start::h19f111f22a37ea01\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys/unix/thread.rs:108:17\r\n  35:     0x7f3827f3e609 - start_thread\r\n  36:     0x7f3827e61133 - clone\r\n  37:                0x0 - <unknown>\r\n\r\nerror: internal compiler error: unexpected panic\r\n\r\nnote: the compiler unexpectedly panicked. this is a bug.\r\n\r\nnote: we would appreciate a bug report: https://github.com/rust-lang/rust/issues/new?labels=C-bug%2C+I-ICE%2C+T-compiler&template=ice.md\r\n\r\nnote: rustc 1.66.0-nightly (ce7f0f1aa 2022-09-28) running on x86_64-unknown-linux-gnu\r\n\r\nnote: compiler flags: --crate-type bin -C embed-bitcode=no -C codegen-units=1 -C debuginfo=2\r\n\r\nnote: some of the compiler flags provided by cargo are hidden\r\n\r\nquery stack during panic:\r\nend of query stack\r\nerror: internal compiler error: no errors encountered even though `delay_span_bug` issued\r\n\r\nerror: internal compiler error: broken MIR in DefId(0:6 ~ playground[53a0]::bug) (move _2 as dyn* std::fmt::Display (Pointer(ArrayToPointer))): ArrayToPointer cast from unexpected type &i32\r\n --> src/main.rs:7:5\r\n  |\r\n7 |     &1 as dyn* Display\r\n  |     ^^^^^^^^^^^^^^^^^^\r\n  |\r\n  = note: delayed at compiler/rustc_borrowck/src/type_check/mod.rs:2125:29\r\n\r\nthread 'rustc' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1530:13\r\nstack backtrace:\r\n   0:     0x7f382805e170 - std::backtrace_rs::backtrace::libunwind::trace::hac9b0f7f9661e748\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5\r\n   1:     0x7f382805e170 - std::backtrace_rs::backtrace::trace_unsynchronized::hc44795987fc42d34\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5\r\n   2:     0x7f382805e170 - std::sys_common::backtrace::_print_fmt::h11541e17c3fc86a7\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:66:5\r\n   3:     0x7f382805e170 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::hc17ff1666cc882db\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:45:22\r\n   4:     0x7f38280b8e2e - core::fmt::write::h55fcab10ae826150\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/core/src/fmt/mod.rs:1209:17\r\n   5:     0x7f382804edb5 - std::io::Write::write_fmt::hf963d6d18d14f181\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/io/mod.rs:1679:15\r\n   6:     0x7f3828060ef3 - std::sys_common::backtrace::_print::h994ce2c0e5b405c8\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:48:5\r\n   7:     0x7f3828060ef3 - std::sys_common::backtrace::print::hcc56026dcd969e04\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys_common/backtrace.rs:35:9\r\n   8:     0x7f3828060ef3 - std::panicking::default_hook::{{closure}}::h88f2c5d855241086\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:267:22\r\n   9:     0x7f3828060bdf - std::panicking::default_hook::h8c95d81babfc3452\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:286:9\r\n  10:     0x7f382a896801 - rustc_driver[b4131074c7377c18]::DEFAULT_HOOK::{closure#0}::{closure#0}\r\n  11:     0x7f382806172b - <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call::h67c5cbe4132c274b\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/alloc/src/boxed.rs:1952:9\r\n  12:     0x7f382806172b - std::panicking::rust_panic_with_hook::h60207dae86acc93c\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/panicking.rs:673:13\r\n  13:     0x7f382b9af701 - std[1bac5bf8d99344e6]::panicking::begin_panic::<rustc_errors[6dd3b64aee5d90d7]::ExplicitBug>::{closure#0}\r\n  14:     0x7f382b9ae026 - std[1bac5bf8d99344e6]::sys_common::backtrace::__rust_end_short_backtrace::<std[1bac5bf8d99344e6]::panicking::begin_panic<rustc_errors[6dd3b64aee5d90d7]::ExplicitBug>::{closure#0}, !>\r\n  15:     0x7f382b9a7fb6 - std[1bac5bf8d99344e6]::panicking::begin_panic::<rustc_errors[6dd3b64aee5d90d7]::ExplicitBug>\r\n  16:     0x7f382b9aa7d6 - std[1bac5bf8d99344e6]::panic::panic_any::<rustc_errors[6dd3b64aee5d90d7]::ExplicitBug>\r\n  17:     0x7f382a4031c8 - <rustc_errors[6dd3b64aee5d90d7]::HandlerInner as core[de81bf0691074480]::ops::drop::Drop>::drop\r\n  18:     0x7f38296b9468 - core[de81bf0691074480]::ptr::drop_in_place::<rustc_session[d3255eaf8224a584]::parse::ParseSess>\r\n  19:     0x7f38296773b8 - <alloc[c8bb264001a6b8ff]::rc::Rc<rustc_session[d3255eaf8224a584]::session::Session> as core[de81bf0691074480]::ops::drop::Drop>::drop\r\n  20:     0x7f382967408d - core[de81bf0691074480]::ptr::drop_in_place::<rustc_interface[f0f2c906f605917e]::interface::Compiler>\r\n  21:     0x7f3829672144 - rustc_interface[f0f2c906f605917e]::interface::create_compiler_and_run::<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>\r\n  22:     0x7f382966fc41 - <scoped_tls[77ed516bf348563d]::ScopedKey<rustc_span[a9093c78adc8a30e]::SessionGlobals>>::set::<rustc_interface[f0f2c906f605917e]::interface::run_compiler<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>\r\n  23:     0x7f382966f92f - std[1bac5bf8d99344e6]::sys_common::backtrace::__rust_begin_short_backtrace::<rustc_interface[f0f2c906f605917e]::util::run_in_thread_pool_with_globals<rustc_interface[f0f2c906f605917e]::interface::run_compiler<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>\r\n  24:     0x7f382a6f8600 - <<std[1bac5bf8d99344e6]::thread::Builder>::spawn_unchecked_<rustc_interface[f0f2c906f605917e]::util::run_in_thread_pool_with_globals<rustc_interface[f0f2c906f605917e]::interface::run_compiler<core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>, rustc_driver[b4131074c7377c18]::run_compiler::{closure#1}>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>::{closure#0}, core[de81bf0691074480]::result::Result<(), rustc_errors[6dd3b64aee5d90d7]::ErrorGuaranteed>>::{closure#1} as core[de81bf0691074480]::ops::function::FnOnce<()>>::call_once::{shim:vtable#0}\r\n  25:     0x7f382806b393 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::hd5e3cab38cec9739\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/alloc/src/boxed.rs:1938:9\r\n  26:     0x7f382806b393 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h970a034a5216df96\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/alloc/src/boxed.rs:1938:9\r\n  27:     0x7f382806b393 - std::sys::unix::thread::Thread::new::thread_start::h19f111f22a37ea01\r\n                               at /rustc/ce7f0f1aa0f02c45cad0749e63f3086234b1f422/library/std/src/sys/unix/thread.rs:108:17\r\n  28:     0x7f3827f3e609 - start_thread\r\n  29:     0x7f3827e61133 - clone\r\n  30:                0x0 - <unknown>\r\n\r\nnote: the compiler unexpectedly panicked. this is a bug.\r\n\r\nnote: we would appreciate a bug report: https://github.com/rust-lang/rust/issues/new?labels=C-bug%2C+I-ICE%2C+T-compiler&template=ice.md\r\n\r\nnote: rustc 1.66.0-nightly (ce7f0f1aa 2022-09-28) running on x86_64-unknown-linux-gnu\r\n\r\nnote: compiler flags: --crate-type bin -C embed-bitcode=no -C codegen-units=1 -C debuginfo=2\r\n\r\nnote: some of the compiler flags provided by cargo are hidden\r\n\r\nquery stack during panic:\r\nend of query stack\r\nthread panicked while panicking. aborting.\r\nerror: could not compile `playground`\r\n```\r\n\r\n</p>\r\n</details>\r\n\r\n",
+      "closed_at": "2022-09-29T09:19:54Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/102459/comments",
+      "created_at": "2022-09-29T09:09:47Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/102459/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/102459",
+      "id": 1390527768,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e10c02",
+          "default": false,
+          "description": "Issue: The compiler panicked, giving an Internal Compilation Error (ICE) \u2744\ufe0f",
+          "id": 9618520,
+          "name": "I-ICE",
+          "node_id": "MDU6TGFiZWw5NjE4NTIw",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/I-ICE"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/102459/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5S4cUY",
+      "number": 102459,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/102459/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/102459/timeline",
+      "title": "dyn* to -> impl Trait ICE's",
+      "type": null,
+      "updated_at": "2022-09-29T09:19:54Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/102459",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/25501014?v=4",
+        "events_url": "https://api.github.com/users/DutchGhost/events{/privacy}",
+        "followers_url": "https://api.github.com/users/DutchGhost/followers",
+        "following_url": "https://api.github.com/users/DutchGhost/following{/other_user}",
+        "gists_url": "https://api.github.com/users/DutchGhost/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/DutchGhost",
+        "id": 25501014,
+        "login": "DutchGhost",
+        "node_id": "MDQ6VXNlcjI1NTAxMDE0",
+        "organizations_url": "https://api.github.com/users/DutchGhost/orgs",
+        "received_events_url": "https://api.github.com/users/DutchGhost/received_events",
+        "repos_url": "https://api.github.com/users/DutchGhost/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/DutchGhost/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/DutchGhost/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/DutchGhost",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 870
+}

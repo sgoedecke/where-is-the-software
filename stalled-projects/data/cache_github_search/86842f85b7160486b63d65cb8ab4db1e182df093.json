@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Code\n\n```Rust\n#[derive(Debug)]\npub struct Type\n{\n    _: u8,\n}\n```\n\n\n### Meta\n`rustc --version --verbose`:\n```\nrustc 1.80.1 (3f5fd8dd4 2024-08-06) (Fedora 1.80.1-1.fc40)\nbinary: rustc\ncommit-hash: 3f5fd8dd41153bc5fdca9427e9e05be2c767ba23\ncommit-date: 2024-08-06\nhost: x86_64-unknown-linux-gnu\nrelease: 1.80.1\nLLVM version: 18.1.6\n```\n\n### Error output\n\n```\n   Compiling ice20240929 v0.1.0 (/home/njl/src/ice20240929)\nerror[E0658]: unnamed fields are not yet fully implemented\n --> src/main.rs:4:5\n  |\n4 |     _: u8,\n  |     ^\n  |\n  = note: see issue #49804 <https://github.com/rust-lang/rust/issues/49804> for more information\n\nerror[E0601]: `main` function not found in crate `ice20240929`\n --> src/main.rs:5:2\n  |\n5 | }\n  |  ^ consider adding a `main` function to `src/main.rs`\n\nerror: struct with unnamed fields must have `#[repr(C)]` representation\n --> src/main.rs:2:1\n  |\n2 | pub struct Type\n  | ^^^^^^^^^^^^^^^ struct `Type` defined here\n  |\nnote: unnamed field defined here\n --> src/main.rs:4:5\n  |\n4 |     _: u8,\n  |     ^^^^^\nhelp: add `#[repr(C)]` to this struct\n  |\n2 + #[repr(C)]\n3 | pub struct Type\n  |\n\nerror: unnamed fields can only have struct or union types\n --> src/main.rs:4:5\n  |\n4 |     _: u8,\n  |     ^^^^^\n\nthread 'rustc' panicked at compiler/rustc_hir_analysis/src/collect.rs:892:49:\nexpect Adt for unnamed field\nstack backtrace:\n   0:     0x7f8f73f4f135 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h2a0cac5be5a8d820\n   1:     0x7f8f73f9dafb - core::fmt::write::h17332d03f2f4f35b\n   2:     0x7f8f73f4421f - <unknown>\n   3:     0x7f8f73f4ef0e - <unknown>\n   4:     0x7f8f73f51949 - <unknown>\n   5:     0x7f8f73f516ea - std::panicking::default_hook::ha48f87b295834c46\n   6:     0x7f8f74a5ec30 - <unknown>\n   7:     0x7f8f73f5200b - std::panicking::rust_panic_with_hook::h4eeb081fd329f3e2\n   8:     0x7f8f73f51d84 - <unknown>\n   9:     0x7f8f73f4f5f9 - <unknown>\n  10:     0x7f8f73f51ab7 - rust_begin_unwind\n  11:     0x7f8f73f15a73 - core::panicking::panic_fmt::h755ac17b0b090cd9\n  12:     0x7f8f73f15a3b - core::option::expect_failed::h27ffe2fb3bb55e8c\n  13:     0x7f8f75f9d6c0 - rustc_hir_analysis[9a5fae5dc28e0e53]::collect::find_field\n  14:     0x7f8f7710649f - <unknown>\n  15:     0x7f8f771058b1 - <unknown>\n  16:     0x7f8f754fc093 - <unknown>\n  17:     0x7f8f7546323e - <unknown>\n  18:     0x7f8f7544390f - <unknown>\n  19:     0x7f8f7559f041 - <unknown>\n  20:     0x7f8f760a1e57 - <unknown>\n  21:     0x7f8f760603dc - <unknown>\n  22:     0x7f8f7605d32d - <unknown>\n  23:     0x7f8f7605fbc3 - <unknown>\n  24:     0x7f8f7605d32d - <unknown>\n  25:     0x7f8f7605fbc3 - <unknown>\n  26:     0x7f8f760460fa - <unknown>\n  27:     0x7f8f7605f589 - <unknown>\n  28:     0x7f8f7605d32d - <unknown>\n  29:     0x7f8f760d7b02 - <unknown>\n  30:     0x7f8f7605d32d - <unknown>\n  31:     0x7f8f7612c352 - <unknown>\n  32:     0x7f8f76124081 - rustc_hir_typeck[30ee169b06768cb7]::typeck\n  33:     0x7f8f768b6ad7 - <unknown>\n  34:     0x7f8f75462850 - <unknown>\n  35:     0x7f8f75450f11 - <unknown>\n  36:     0x7f8f7556d828 - <unknown>\n  37:     0x7f8f75fa8e3a - rustc_hir_analysis[9a5fae5dc28e0e53]::check_crate\n  38:     0x7f8f76231b9e - rustc_interface[881e2d08a402e036]::passes::analysis\n  39:     0x7f8f771081e7 - <unknown>\n  40:     0x7f8f75461a4f - <unknown>\n  41:     0x7f8f75417c08 - <unknown>\n  42:     0x7f8f7555d394 - <unknown>\n  43:     0x7f8f76e65fdc - <unknown>\n  44:     0x7f8f76e63de7 - <unknown>\n  45:     0x7f8f76e68a7a - <unknown>\n  46:     0x7f8f73f5bfeb - <unknown>\n  47:     0x7f8f73d796d7 - start_thread\n  48:     0x7f8f73dfd60c - __clone3\n  49:                0x0 - <unknown>\n\nerror: the compiler unexpectedly panicked. this is a bug.\n\nnote: we would appreciate a bug report: https://github.com/rust-lang/rust/issues/new?labels=C-bug%2C+I-ICE%2C+T-compiler&template=ice.md\n\nnote: rustc 1.80.1 (3f5fd8dd4 2024-08-06) (Fedora 1.80.1-1.fc40) running on x86_64-unknown-linux-gnu\n\nnote: compiler flags: --crate-type bin -C embed-bitcode=no -C debuginfo=2 -C incremental=[REDACTED]\n\nnote: some of the compiler flags provided by cargo are hidden\n\nquery stack during panic:\n#0 [find_field] find the index of maybe nested field `_` in `Type`\n#1 [typeck] type-checking `<impl at src/main.rs:1:10: 1:15>::fmt`\nend of query stack\nSome errors have detailed explanations: E0601, E0658.\nFor more information about an error, try `rustc --explain E0601`.\nerror: could not compile `ice20240929` (bin \"ice20240929\") due to 4 previous errors\n\n```\nthread 'rustc' panicked at compiler/rustc_hir_analysis/src/collect.rs:892:49:\nexpect Adt for unnamed field\n\n<details><summary><strong>Backtrace</strong></summary>\n<p>\n```\n   0:     0x7f8f73f4f135 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h2a0cac5be5a8d820\n   1:     0x7f8f73f9dafb - core::fmt::write::h17332d03f2f4f35b\n   2:     0x7f8f73f4421f - <unknown>\n   3:     0x7f8f73f4ef0e - <unknown>\n   4:     0x7f8f73f51949 - <unknown>\n   5:     0x7f8f73f516ea - std::panicking::default_hook::ha48f87b295834c46\n   6:     0x7f8f74a5ec30 - <unknown>\n   7:     0x7f8f73f5200b - std::panicking::rust_panic_with_hook::h4eeb081fd329f3e2\n   8:     0x7f8f73f51d84 - <unknown>\n   9:     0x7f8f73f4f5f9 - <unknown>\n  10:     0x7f8f73f51ab7 - rust_begin_unwind\n  11:     0x7f8f73f15a73 - core::panicking::panic_fmt::h755ac17b0b090cd9\n  12:     0x7f8f73f15a3b - core::option::expect_failed::h27ffe2fb3bb55e8c\n  13:     0x7f8f75f9d6c0 - rustc_hir_analysis[9a5fae5dc28e0e53]::collect::find_field\n  14:     0x7f8f7710649f - <unknown>\n  15:     0x7f8f771058b1 - <unknown>\n  16:     0x7f8f754fc093 - <unknown>\n  17:     0x7f8f7546323e - <unknown>\n  18:     0x7f8f7544390f - <unknown>\n  19:     0x7f8f7559f041 - <unknown>\n  20:     0x7f8f760a1e57 - <unknown>\n  21:     0x7f8f760603dc - <unknown>\n  22:     0x7f8f7605d32d - <unknown>\n  23:     0x7f8f7605fbc3 - <unknown>\n  24:     0x7f8f7605d32d - <unknown>\n  25:     0x7f8f7605fbc3 - <unknown>\n  26:     0x7f8f760460fa - <unknown>\n  27:     0x7f8f7605f589 - <unknown>\n  28:     0x7f8f7605d32d - <unknown>\n  29:     0x7f8f760d7b02 - <unknown>\n  30:     0x7f8f7605d32d - <unknown>\n  31:     0x7f8f7612c352 - <unknown>\n  32:     0x7f8f76124081 - rustc_hir_typeck[30ee169b06768cb7]::typeck\n  33:     0x7f8f768b6ad7 - <unknown>\n  34:     0x7f8f75462850 - <unknown>\n  35:     0x7f8f75450f11 - <unknown>\n  36:     0x7f8f7556d828 - <unknown>\n  37:     0x7f8f75fa8e3a - rustc_hir_analysis[9a5fae5dc28e0e53]::check_crate\n  38:     0x7f8f76231b9e - rustc_interface[881e2d08a402e036]::passes::analysis\n  39:     0x7f8f771081e7 - <unknown>\n  40:     0x7f8f75461a4f - <unknown>\n  41:     0x7f8f75417c08 - <unknown>\n  42:     0x7f8f7555d394 - <unknown>\n  43:     0x7f8f76e65fdc - <unknown>\n  44:     0x7f8f76e63de7 - <unknown>\n  45:     0x7f8f76e68a7a - <unknown>\n  46:     0x7f8f73f5bfeb - <unknown>\n  47:     0x7f8f73d796d7 - start_thread\n  48:     0x7f8f73dfd60c - __clone3\n  49:                0x0 - <unknown>\n```\n</p>\n</details>\n",
+      "closed_at": "2024-09-29T23:30:23Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/131041/comments",
+      "created_at": "2024-09-29T21:32:56Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/131041/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/131041",
+      "id": 2555172841,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e10c02",
+          "default": false,
+          "description": "Issue: The compiler panicked, giving an Internal Compilation Error (ICE) \u2744\ufe0f",
+          "id": 9618520,
+          "name": "I-ICE",
+          "node_id": "MDU6TGFiZWw5NjE4NTIw",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/I-ICE"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9c0cc",
+          "default": false,
+          "description": "`#![feature(unnamed_fields)]`",
+          "id": 6536018836,
+          "name": "F-unnamed_fields",
+          "node_id": "LA_kwDOAAsO6M8AAAABhZO7lA",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/F-unnamed_fields"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/131041/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M6YTNfp",
+      "number": 131041,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/131041/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/131041/timeline",
+      "title": "ICE with anonymous field and a derive in 1.80.1 but also checked on Godbolt's nightly compiler",
+      "type": null,
+      "updated_at": "2024-10-11T16:26:21Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/131041",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/29710?v=4",
+        "events_url": "https://api.github.com/users/tialaramex/events{/privacy}",
+        "followers_url": "https://api.github.com/users/tialaramex/followers",
+        "following_url": "https://api.github.com/users/tialaramex/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tialaramex/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/tialaramex",
+        "id": 29710,
+        "login": "tialaramex",
+        "node_id": "MDQ6VXNlcjI5NzEw",
+        "organizations_url": "https://api.github.com/users/tialaramex/orgs",
+        "received_events_url": "https://api.github.com/users/tialaramex/received_events",
+        "repos_url": "https://api.github.com/users/tialaramex/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/tialaramex/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tialaramex/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/tialaramex",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 788
+}

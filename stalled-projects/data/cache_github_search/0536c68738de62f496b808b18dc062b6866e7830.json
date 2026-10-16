@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What would you like to be added?\n\nConsidering CVE-1999-0511 \r\nhttps://nvd.nist.gov/vuln/detail/CVE-1999-0511\n\n### Why is this needed?\n\nMitigating IP forwarding risk",
+      "closed_at": "2022-09-28T18:21:49Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/112777/comments",
+      "created_at": "2022-09-28T16:49:47Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/112777/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/112777",
+      "id": 1389666399,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a new feature.",
+          "id": 267761362,
+          "name": "kind/feature",
+          "node_id": "MDU6TGFiZWwyNjc3NjEzNjI=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `sig/foo` label and requires one.",
+          "id": 617149945,
+          "name": "needs-sig",
+          "node_id": "MDU6TGFiZWw2MTcxNDk5NDU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-sig"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/112777/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks5S1KBf",
+      "number": 112777,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/112777/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/112777/timeline",
+      "title": "IP forwarding CVE-1999-0511 ",
+      "type": null,
+      "updated_at": "2022-09-28T18:21:50Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/112777",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/103936224?v=4",
+        "events_url": "https://api.github.com/users/Nwexpert/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Nwexpert/followers",
+        "following_url": "https://api.github.com/users/Nwexpert/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Nwexpert/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Nwexpert",
+        "id": 103936224,
+        "login": "Nwexpert",
+        "node_id": "U_kgDOBjHw4A",
+        "organizations_url": "https://api.github.com/users/Nwexpert/orgs",
+        "received_events_url": "https://api.github.com/users/Nwexpert/received_events",
+        "repos_url": "https://api.github.com/users/Nwexpert/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Nwexpert/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Nwexpert/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Nwexpert",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 570
+}

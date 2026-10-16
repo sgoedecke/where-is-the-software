@@ -1,0 +1,31 @@
+rank,name,created,cohort,downloads,ai_flag,github_repo,repo_created_at,submodule_path,description
+1,Decky-Framegen,2025-02-14,2025-H1,374694,False,xXJSONDeruloXx/Decky-Framegen,2025-01-21T23:52:49Z,plugins/Decky-Framegen,"This plugin installs and manages OptiScaler, a tool that enhances upscaling and enables frame generation in a range of DirectX 12 games."
+2,Decky LSFG-VK,2025-11-27,2025-H2,347948,False,xXJSONDeruloXx/decky-lsfg-vk,2025-07-11T11:04:28Z,plugins/decky-lsfg-vk,Enable lossless scaling frame generation on the Steam Deck using lsfg-vk compatibility layer.
+3,PlayCount,2025-01-14,2025-H1,158376,False,itsOwen/playcount-decky,2024-12-28T22:41:18Z,plugins/playcount-decky,A Steam Deck plugin that shows current player counts for your steam games.
+4,Deck Settings,2025-01-25,2025-H1,130040,False,DeckSettings/decky-game-settings,2025-01-05T07:40:12Z,plugins/decky-game-settings,"Fetch and display community-driven game compatibility, settings, and configuration reports."
+5,HueSync,2025-06-22,2025-H1,81299,False,honjow/HueSync,2023-04-19T04:09:47Z,plugins/HueSync,LED controller for non-Steam Deck gaming handhelds running SteamOS.
+6,Picture in Picture,2025-01-14,2025-H1,74888,False,rossimo/decky-pip,2025-01-04T03:20:38Z,plugins/decky-pip,Watch your favorite stream while you game!
+7,Virtual Surround Sound,2025-03-05,2025-H1,50647,False,DeckSettings/decky-virtual-surround-sound,2025-02-05T19:40:51Z,plugins/decky-virtual-surround-sound,Create a virtual surround sound audio sink that converts 7.1 surround audio into immersive binaural output for headphones via HRIR processing with multiple pres
+8,LetMeReShade,2025-06-09,2025-H1,47320,False,itsOwen/LetMeReShade,2025-02-05T09:28:57Z,plugins/LetMeReShade,ReShade plugin for Steam Deck - Enhanced version with improved shader and game management.
+9,Music Control,2025-10-21,2025-H2,37560,False,martinpl/MusicControl,2025-09-11T16:09:16Z,plugins/MusicControl,Quick access for media player controls in game mode.
+10,Decky Sunshine,2025-06-10,2025-H1,35969,False,s0t7x/decky-sunshine,2024-03-29T09:35:31Z,plugins/decky-sunshine,Stream your Steam Deck screen to another device with minimal effort.
+11,DeckSP,2025-03-17,2025-H1,32525,False,jessebofill/DeckSP,2023-12-24T19:39:44Z,plugins/DeckSP,"Full audio effects DSP. EQ, Reverb and much more. Per-game settings possible."
+12,Better Keyboard,2025-10-22,2025-H2,28994,False,chenx-dust/BetterKeyboard,2025-09-21T19:39:43Z,plugins/BetterKeyboard,Better experience for physical keyboard users.
+13,Speed Test,2026-01-06,2026-H1,28897,False,Dukeman330/decky-speed-test,2026-01-05T04:12:06Z,plugins/decky-speed-test,Run internet speed tests directly from your Steam Deck Game Mode using Cloudflare's global network.
+14,WiFi Locker,2025-05-17,2025-H1,27723,False,felipejfc/decky-wifi-locker,2025-03-28T23:18:48Z,plugins/decky-wifi-locker,Lock WiFi to a specific access point to prevent background scanning.
+15,Decky-Lookup,2025-02-15,2025-H1,27584,False,xXJSONDeruloXx/Decky-Lookup,2025-01-18T18:01:20Z,plugins/Decky-Lookup,A plugin to quickly access useful sites for the running game.
+16,Decky Proton Launch,2026-05-13,2026-H1,22973,False,moi952/decky-proton-launch,2026-02-27T11:12:17Z,plugins/decky-proton-launch,Manage Steam game launch options from Gaming Mode. Set Proton environment variables like PROTON_FSR4_UPGRADE=1 or PROTON_DLSS4_UPGRADE=1 and add wrappers such a
+17,Non-Steam Badges,2026-04-20,2026-H1,22565,False,sebet/decky-nonsteam-badges,2026-01-23T20:05:06Z,plugins/decky-nonsteam-badges,A Decky plugin that helps identifying non-Steam games using themed badges
+18,Simple Timer,2025-02-07,2025-H1,22480,False,decktools-xyz/simple-timer,2025-01-22T18:09:05Z,plugins/simple-timer,Set a timer that will remind you when your session should end.
+19,Deck Shelves,2026-05-06,2026-H1,21707,False,santojon/Deck-Shelves,2024-07-14T15:14:10Z,plugins/Deck-Shelves,Inject configurable shelves (Collections / Tabs / Filters) into the Steam Deck Home (library/home).
+20,Launch Options,2026-02-22,2026-H1,20935,False,Wurielle/decky-launch-options,2026-01-10T16:30:46Z,plugins/decky-launch-options,Manage launch options for your games with ease.
+21,Dimmer Deck,2025-10-13,2025-H2,20849,False,chenx-dust/DimmerDeck,2025-09-18T07:29:40Z,plugins/DimmerDeck,Make your brightness even dimmer.
+22,Crosshair,2025-01-16,2025-H1,20287,False,xXJSONDeruloXx/crosshair-plugin,2025-01-11T04:50:48Z,plugins/Crosshair,Repurpose the performance overlay into a customizable crosshair.
+23,Decky Ludusavi,2025-03-23,2025-H1,17792,False,GedasFX/decky-ludusavi,2024-01-06T09:55:26Z,plugins/decky-ludusavi,"Ludusavi for Decky. Backup, restore, and keep multiple versions of your save files with ease! Requires Ludusavi installation on the device."
+24,MuraDeck,2025-08-07,2025-H2,17712,False,Moonveil-Kanata/MuraDeck,2025-05-10T14:21:03Z,plugins/MuraDeck,"Adaptive mura correction, gamma correction, and dithering to fix mura effect ONLY FOR defective Samsung Panel for Steam Deck OLED."
+25,Decky Translator,2026-02-27,2026-H1,17434,True,cat-in-a-box/Decky-Translator,2026-01-12T18:04:16Z,plugins/decky-translator,Translate anything on your screen to your language
+26,Deck Progress Tracker,2026-04-23,2026-H1,16190,False,maroun2/deck-progress-tracker,2026-02-08T12:18:50Z,plugins/deck-progress-tracker,"Automatic game tagging based on achievements, playtime, and completion time. Track your progress with visual badges in the Steam library. Features 5 intelligent"
+27,Game Sync,2025-04-14,2025-H1,15947,False,AkazaRenn/SDH-GameSync,2023-10-20T00:12:11Z,plugins/SDH-GameSync,A fork of Decky Cloud Save that manages cloud saves and mods for games
+28,Network Sentinel,2025-11-27,2025-H2,15843,False,KrishGaur1354/network-sentinel,2025-10-07T13:46:18Z,plugins/network-sentinel,"Monitor network quality and track connection performance with live ping display, latency graphs, and network history tracking."
+29,Steam Status,2026-02-14,2026-H1,12211,False,bschelst/steamstatus-decky,2026-01-02T14:36:04Z,plugins/steamstatus-decky,"Display Steam Service status, player counts, and service health"
+30,Download All,2026-03-28,2026-H1,11923,False,bentemple/decky-download-all,2026-03-27T01:13:39Z,plugins/decky-download-all,Download All - A plugin that let's the user immediately queue all scheduled downloads to immediately download.

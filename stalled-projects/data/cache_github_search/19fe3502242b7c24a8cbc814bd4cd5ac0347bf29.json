@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "# Situation\r\n\r\nIn relibc we need a way to have a static with the signature of\r\n```\r\n#[no_mangle]\r\npub static stdin: *mut FILE\r\n```\r\nCurrently we have two statics, one for the file and one for the pointer.\r\nHowever, using `unsafe { &mut default_stdin } as *mut _` doesn't work because\r\n```\r\nerror[E0017]: references in statics may only refer to immutable values\r\n  --> src/stdio/src/default.rs:68:36\r\n   |\r\n68 | pub static mut stdout: *mut FILE = unsafe { &mut default_stdout } as *mut _;\r\n   |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ statics require immutable values\r\n```\r\n\r\nWe were thinking of solving this with `UnsafeCell`, but it's not Sync and can't be used in a static, and the `get` function is not const fn.\r\n\r\n```\r\nerror[E0277]: the trait bound `core::cell::UnsafeCell<FILE>: core::marker::Sync` is not satisfied\r\n  --> src/stdio/src/default.rs:10:1\r\n   |\r\n10 | / static default_stdin: UnsafeCell<FILE> = UnsafeCell::new(FILE {\r\n11 | |     flags: constants::F_PERM | constants::F_NOWR | constants::F_BADJ,\r\n12 | |     rpos: ptr::null_mut(),\r\n13 | |     rend: ptr::null_mut(),\r\n...  |\r\n22 | |     lock: AtomicBool::new(false),\r\n23 | | });\r\n   | |___^ `core::cell::UnsafeCell<FILE>` cannot be shared between threads safely\r\n   |\r\n   = help: the trait `core::marker::Sync` is not implemented for `core::cell::UnsafeCell<FILE>`\r\n   = note: shared static variables must have a type that implements `Sync`\r\n\r\nerror[E0015]: calls in statics are limited to constant functions, struct and enum contructors\r\n  --> src/stdio/src/default.rs:65:35\r\n   |\r\n65 | pub static mut stdin: *mut FILE = default_stdin.get();\r\n   |                                   ^^^^^^^^^^^^^^^^^^^\r\n```\r\n\r\nThe only way we see of doing this is with `unsafe { &default_stdin } as *const _ as *mut _`, as you can see [here](https://gitlab.redox-os.org/redox-os/relibc/blob/c24d1e2b361eae5227d2294d98e45d0658374785/src/stdio/src/default.rs#L68), however, that's undefined behavior according to the [nomicon](https://doc.rust-lang.org/nomicon/transmutes.html).\r\n\r\n# Proposition\r\n\r\nWe can work around the Sync problem with a wrapper, but we need `get` to be const fn.",
+      "closed_at": "2024-11-01T19:33:56Z",
+      "comments": 8,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/51718/comments",
+      "created_at": "2018-06-22T17:21:32Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/51718/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/51718",
+      "id": 334957366,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the language team",
+          "id": 211668019,
+          "name": "T-lang",
+          "node_id": "MDU6TGFiZWwyMTE2NjgwMTk=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-lang"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: A feature request, i.e: not implemented / a PR.",
+          "id": 630652267,
+          "name": "C-feature-request",
+          "node_id": "MDU6TGFiZWw2MzA2NTIyNjc=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-feature-request"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Constant evaluation, covers all const contexts (static, const fn, ...)",
+          "id": 900795185,
+          "name": "A-const-eval",
+          "node_id": "MDU6TGFiZWw5MDA3OTUxODU=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-const-eval"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/51718/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzMzQ5NTczNjY=",
+      "number": 51718,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/51718/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/51718/timeline",
+      "title": "No way to make a static *mut _",
+      "type": null,
+      "updated_at": "2024-12-01T15:00:30Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/51718",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/12830969?v=4",
+        "events_url": "https://api.github.com/users/jD91mZM2/events{/privacy}",
+        "followers_url": "https://api.github.com/users/jD91mZM2/followers",
+        "following_url": "https://api.github.com/users/jD91mZM2/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jD91mZM2/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/jD91mZM2",
+        "id": 12830969,
+        "login": "jD91mZM2",
+        "node_id": "MDQ6VXNlcjEyODMwOTY5",
+        "organizations_url": "https://api.github.com/users/jD91mZM2/orgs",
+        "received_events_url": "https://api.github.com/users/jD91mZM2/received_events",
+        "repos_url": "https://api.github.com/users/jD91mZM2/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/jD91mZM2/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jD91mZM2/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/jD91mZM2",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "There is no `transformOrigin` in a list of supported SVG attributes actually, but it is(`transform-origin`) supported in DOM.\r\n\r\n**Current behavior?**\r\n\r\nAttribute `transformOrigin` is ignored and a warning is shown in a console that the property is not not supported. \r\n\r\nhttps://jsfiddle.net/4L9sksjx/\r\n\r\nIt is possible to set `transform-origin` but there is another error that the attribute is not valid of course, but it is set to the DOM and makes the spinner look correct.\r\n\r\n**Expected behavior?**\r\n\r\nThe attribute should be set to the `g` tag.",
+      "closed_at": "2023-02-09T12:47:52Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/react/react/issues/11265/comments",
+      "created_at": "2017-10-18T11:05:04Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/11265/events",
+      "html_url": "https://github.com/react/react/issues/11265",
+      "id": 266452040,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/react/react/issues/11265/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUyNjY0NTIwNDA=",
+      "number": 11265,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 3,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 3,
+        "url": "https://api.github.com/repos/react/react/issues/11265/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/11265/timeline",
+      "title": "No way to set SVG transform-origin attribute?",
+      "type": null,
+      "updated_at": "2023-02-09T12:47:52Z",
+      "url": "https://api.github.com/repos/react/react/issues/11265",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10609041?v=4",
+        "events_url": "https://api.github.com/users/rosskhanas/events{/privacy}",
+        "followers_url": "https://api.github.com/users/rosskhanas/followers",
+        "following_url": "https://api.github.com/users/rosskhanas/following{/other_user}",
+        "gists_url": "https://api.github.com/users/rosskhanas/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/rosskhanas",
+        "id": 10609041,
+        "login": "rosskhanas",
+        "node_id": "MDQ6VXNlcjEwNjA5MDQx",
+        "organizations_url": "https://api.github.com/users/rosskhanas/orgs",
+        "received_events_url": "https://api.github.com/users/rosskhanas/received_events",
+        "repos_url": "https://api.github.com/users/rosskhanas/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/rosskhanas/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/rosskhanas/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/rosskhanas",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

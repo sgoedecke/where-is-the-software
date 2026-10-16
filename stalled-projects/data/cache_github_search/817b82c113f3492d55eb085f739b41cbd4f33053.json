@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "## Problem\r\n\r\nThe [current behavior](https://github.com/bevyengine/bevy/blob/e48f9d8cd4562d5ea6b483764ae9288feb13cc72/crates/bevy_input/src/gamepad.rs#L188) of `AxisSettings` is:\r\n\r\n- If an axis's value is below the low-threshold, set them to 0.0.\r\n- If an axis's is above the high-threshold, set them to 1.0.\r\n\r\nThis is sensible enough, and it's useful to be able to configure this in order to control dead zones and partially account for controller drift.\r\n\r\nHowever, this results in a compression of values: rather than the controller always being able to send values from -1.0 to 1.0, they can only send values in a restricted range: the high, low and near-zero values are just clipped out.\r\n\r\nThis is undesirable because it causes player-configurable settings which are intended to account for strange quirks in physical controller behavior to have unintuitive and far-reaching gameplay effects.\r\n\r\nThe same effect occurs for analogue buttons like triggers in `ButtonSetttings`.\r\n\r\n## Proposed Solution\r\n\r\nRescale values to cover the full range regardless of the configuration. The formula (for positive values) is:\r\n\r\n```rust\r\nlet new_value = (value - positive_low) / (positive_high - positive_low);\r\n```\r\n\r\nIf the game cares about the original raw input values instead, they can intercept the event stream themselves.\r\n\r\n## Alternatives\r\n\r\nMake this a configurable setting, and keep the current behavior if the `rescale_values` field in the `AxisSettings` is set to false.",
+      "closed_at": "2025-01-03T22:55:45Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/3450/comments",
+      "created_at": "2021-12-27T18:56:07Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/3450/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/3450",
+      "id": 1089417639,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "008672",
+          "default": false,
+          "description": "Nice and easy! A great choice to get started with Bevy",
+          "id": 1795619327,
+          "name": "D-Trivial",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzI3",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/D-Trivial"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "C6A751",
+          "default": false,
+          "description": "Player input via keyboard, mouse, gamepad, and more",
+          "id": 2272055247,
+          "name": "A-Input",
+          "node_id": "MDU6TGFiZWwyMjcyMDU1MjQ3",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-Input"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/3450/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85A7zGn",
+      "number": 3450,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/3450/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/3450/timeline",
+      "title": "Deadzone clipping in AxisSettings and ButtonSettings results in a compression of values",
+      "type": null,
+      "updated_at": "2025-01-03T22:55:45Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/3450",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3579909?v=4",
+        "events_url": "https://api.github.com/users/alice-i-cecile/events{/privacy}",
+        "followers_url": "https://api.github.com/users/alice-i-cecile/followers",
+        "following_url": "https://api.github.com/users/alice-i-cecile/following{/other_user}",
+        "gists_url": "https://api.github.com/users/alice-i-cecile/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/alice-i-cecile",
+        "id": 3579909,
+        "login": "alice-i-cecile",
+        "node_id": "MDQ6VXNlcjM1Nzk5MDk=",
+        "organizations_url": "https://api.github.com/users/alice-i-cecile/orgs",
+        "received_events_url": "https://api.github.com/users/alice-i-cecile/received_events",
+        "repos_url": "https://api.github.com/users/alice-i-cecile/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/alice-i-cecile/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/alice-i-cecile/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/alice-i-cecile",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 8
+}

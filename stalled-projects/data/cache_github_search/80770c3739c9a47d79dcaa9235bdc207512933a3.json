@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Godot version\r\n\r\n4.0\r\n\r\n### System information\r\n\r\nWin10, Core I7-9700,RTX2080\r\n\r\n### Issue description\r\n\r\n![image](https://user-images.githubusercontent.com/1620585/228900894-a4ecdcf0-8a3d-4959-b5ce-7447048d063a.png)\r\nIt causes the height of two labels with the same font size to be inconsistent.\r\n\r\n### Steps to reproduce\r\n\r\njust use this chinese to test:\r\n\u6d4b\u8bd5\u4e00\u4e0b\r\n\u6d4b\u8bd5\u4e00\u4e0ba \r\n\r\n### Minimal reproduction project\r\n\r\nuse this project \r\n[gd_ee_localization_demo.zip](https://github.com/godotengine/godot/files/11113729/gd_ee_localization_demo.zip)\r\n",
+      "closed_at": "2023-03-31T06:36:28Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/75496/comments",
+      "created_at": "2023-03-30T16:24:20Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/75496/events",
+      "html_url": "https://github.com/godotengine/godot/issues/75496",
+      "id": 1647937750,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffddff",
+          "default": true,
+          "description": "",
+          "id": 283518839,
+          "name": "documentation",
+          "node_id": "MDU6TGFiZWwyODM1MTg4Mzk=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/documentation"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 1732720779,
+          "name": "topic:gui",
+          "node_id": "MDU6TGFiZWwxNzMyNzIwNzc5",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:gui"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/75496/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc5iOYjW",
+      "number": 75496,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/75496/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/75496/timeline",
+      "title": "In the built-in font, the height of Chinese characters seems to be slightly shorter than that of English characters",
+      "type": null,
+      "updated_at": "2025-06-07T10:57:08Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/75496",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1620585?v=4",
+        "events_url": "https://api.github.com/users/kaluluosi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/kaluluosi/followers",
+        "following_url": "https://api.github.com/users/kaluluosi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/kaluluosi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/kaluluosi",
+        "id": 1620585,
+        "login": "kaluluosi",
+        "node_id": "MDQ6VXNlcjE2MjA1ODU=",
+        "organizations_url": "https://api.github.com/users/kaluluosi/orgs",
+        "received_events_url": "https://api.github.com/users/kaluluosi/received_events",
+        "repos_url": "https://api.github.com/users/kaluluosi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/kaluluosi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/kaluluosi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/kaluluosi",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1867
+}

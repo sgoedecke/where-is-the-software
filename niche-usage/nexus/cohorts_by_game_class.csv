@@ -1,0 +1,181 @@
+game_domain,game,cohort,cohort_partial,class,still_listed_n,downloads_ge_100_n,downloads_ge_100_share,downloads_ge_1000_n,downloads_ge_1000_share,downloads_ge_10000_n,downloads_ge_10000_share,endorsements_ge_10_n,endorsements_ge_10_share,endorsements_ge_100_n,endorsements_ge_100_share
+skyrimspecialedition,Skyrim Special Edition,2021H1,no,code_tool,1319,1266,0.9598,879,0.6664,418,0.3169,1181,0.8954,651,0.4936
+skyrimspecialedition,Skyrim Special Edition,2021H1,no,asset_only,2500,2407,0.9628,1762,0.7048,868,0.3472,2288,0.9152,1347,0.5388
+skyrimspecialedition,Skyrim Special Edition,2021H1,no,other_mixed,1948,1853,0.9512,1219,0.6258,493,0.2531,1729,0.8876,877,0.4502
+skyrimspecialedition,Skyrim Special Edition,2021H2,no,code_tool,1760,1704,0.9682,1236,0.7023,683,0.3881,1610,0.9148,910,0.517
+skyrimspecialedition,Skyrim Special Edition,2021H2,no,asset_only,2758,2647,0.9598,1879,0.6813,834,0.3024,2476,0.8978,1357,0.492
+skyrimspecialedition,Skyrim Special Edition,2021H2,no,other_mixed,2290,2112,0.9223,1322,0.5773,562,0.2454,1910,0.8341,922,0.4026
+skyrimspecialedition,Skyrim Special Edition,2022H1,no,code_tool,1883,1816,0.9644,1331,0.7069,760,0.4036,1708,0.9071,912,0.4843
+skyrimspecialedition,Skyrim Special Edition,2022H1,no,asset_only,2878,2796,0.9715,2077,0.7217,1075,0.3735,2642,0.918,1500,0.5212
+skyrimspecialedition,Skyrim Special Edition,2022H1,no,other_mixed,2169,2048,0.9442,1314,0.6058,643,0.2964,1893,0.8728,966,0.4454
+skyrimspecialedition,Skyrim Special Edition,2022H2,no,code_tool,2104,1993,0.9472,1359,0.6459,749,0.356,1828,0.8688,920,0.4373
+skyrimspecialedition,Skyrim Special Edition,2022H2,no,asset_only,3432,3290,0.9586,2307,0.6722,1191,0.347,3008,0.8765,1579,0.4601
+skyrimspecialedition,Skyrim Special Edition,2022H2,no,other_mixed,2848,2638,0.9263,1674,0.5878,808,0.2837,2361,0.829,1129,0.3964
+skyrimspecialedition,Skyrim Special Edition,2023H1,no,code_tool,2527,2386,0.9442,1579,0.6249,770,0.3047,2151,0.8512,887,0.351
+skyrimspecialedition,Skyrim Special Edition,2023H1,no,asset_only,3905,3694,0.946,2516,0.6443,1376,0.3524,3368,0.8625,1701,0.4356
+skyrimspecialedition,Skyrim Special Edition,2023H1,no,other_mixed,3131,2848,0.9096,1757,0.5612,794,0.2536,2514,0.8029,1062,0.3392
+skyrimspecialedition,Skyrim Special Edition,2023H2,no,code_tool,2444,2258,0.9239,1432,0.5859,726,0.2971,1992,0.8151,717,0.2934
+skyrimspecialedition,Skyrim Special Edition,2023H2,no,asset_only,4302,3924,0.9121,2488,0.5783,1259,0.2927,3390,0.788,1495,0.3475
+skyrimspecialedition,Skyrim Special Edition,2023H2,no,other_mixed,3372,2977,0.8829,1742,0.5166,773,0.2292,2480,0.7355,970,0.2877
+skyrimspecialedition,Skyrim Special Edition,2024H1,no,code_tool,2795,2524,0.903,1548,0.5538,745,0.2665,2040,0.7299,686,0.2454
+skyrimspecialedition,Skyrim Special Edition,2024H1,no,asset_only,4568,4218,0.9234,2739,0.5996,1362,0.2982,3628,0.7942,1542,0.3376
+skyrimspecialedition,Skyrim Special Edition,2024H1,no,other_mixed,3836,3397,0.8856,1865,0.4862,734,0.1913,2704,0.7049,873,0.2276
+skyrimspecialedition,Skyrim Special Edition,2024H2,no,code_tool,2769,2428,0.8769,1360,0.4912,591,0.2134,1936,0.6992,584,0.2109
+skyrimspecialedition,Skyrim Special Edition,2024H2,no,asset_only,4510,3966,0.8794,2445,0.5421,1103,0.2446,3403,0.7545,1273,0.2823
+skyrimspecialedition,Skyrim Special Edition,2024H2,no,other_mixed,3354,2886,0.8605,1533,0.4571,605,0.1804,2260,0.6738,785,0.234
+skyrimspecialedition,Skyrim Special Edition,2025H1,no,code_tool,3353,2817,0.8401,1393,0.4154,585,0.1745,2084,0.6215,543,0.1619
+skyrimspecialedition,Skyrim Special Edition,2025H1,no,asset_only,4923,4262,0.8657,2142,0.4351,931,0.1891,3284,0.6671,1091,0.2216
+skyrimspecialedition,Skyrim Special Edition,2025H1,no,other_mixed,4287,3362,0.7842,1428,0.3331,515,0.1201,2396,0.5589,653,0.1523
+skyrimspecialedition,Skyrim Special Edition,2025H2,no,code_tool,3381,2658,0.7862,1108,0.3277,406,0.1201,1826,0.5401,347,0.1026
+skyrimspecialedition,Skyrim Special Edition,2025H2,no,asset_only,4278,3604,0.8424,1698,0.3969,688,0.1608,2712,0.6339,740,0.173
+skyrimspecialedition,Skyrim Special Edition,2025H2,no,other_mixed,4073,3082,0.7567,1177,0.289,372,0.0913,2059,0.5055,467,0.1147
+skyrimspecialedition,Skyrim Special Edition,2026H1,no,code_tool,3739,2440,0.6526,867,0.2319,283,0.0757,1692,0.4525,297,0.0794
+skyrimspecialedition,Skyrim Special Edition,2026H1,no,asset_only,4264,3232,0.758,1335,0.3131,388,0.091,2386,0.5596,519,0.1217
+skyrimspecialedition,Skyrim Special Edition,2026H1,no,other_mixed,3672,2422,0.6596,837,0.2279,210,0.0572,1651,0.4496,341,0.0929
+skyrimspecialedition,Skyrim Special Edition,2026H2,yes,code_tool,3084,1556,0.5045,441,0.143,75,0.0243,937,0.3038,131,0.0425
+skyrimspecialedition,Skyrim Special Edition,2026H2,yes,asset_only,2882,1714,0.5947,505,0.1752,91,0.0316,1099,0.3813,158,0.0548
+skyrimspecialedition,Skyrim Special Edition,2026H2,yes,other_mixed,2636,1235,0.4685,341,0.1294,46,0.0175,804,0.305,106,0.0402
+stardewvalley,Stardew Valley,2021H1,no,code_tool,209,207,0.9904,175,0.8373,87,0.4163,197,0.9426,148,0.7081
+stardewvalley,Stardew Valley,2021H1,no,asset_only,640,630,0.9844,443,0.6922,151,0.2359,585,0.9141,319,0.4984
+stardewvalley,Stardew Valley,2021H1,no,other_mixed,155,154,0.9935,115,0.7419,49,0.3161,142,0.9161,95,0.6129
+stardewvalley,Stardew Valley,2021H2,no,code_tool,159,158,0.9937,125,0.7862,46,0.2893,149,0.9371,93,0.5849
+stardewvalley,Stardew Valley,2021H2,no,asset_only,586,580,0.9898,412,0.7031,149,0.2543,530,0.9044,281,0.4795
+stardewvalley,Stardew Valley,2021H2,no,other_mixed,162,157,0.9691,129,0.7963,44,0.2716,138,0.8519,88,0.5432
+stardewvalley,Stardew Valley,2022H1,no,code_tool,264,262,0.9924,221,0.8371,76,0.2879,249,0.9432,141,0.5341
+stardewvalley,Stardew Valley,2022H1,no,asset_only,925,904,0.9773,650,0.7027,207,0.2238,827,0.8941,406,0.4389
+stardewvalley,Stardew Valley,2022H1,no,other_mixed,243,237,0.9753,177,0.7284,63,0.2593,211,0.8683,107,0.4403
+stardewvalley,Stardew Valley,2022H2,no,code_tool,210,210,1.0,155,0.7381,58,0.2762,192,0.9143,100,0.4762
+stardewvalley,Stardew Valley,2022H2,no,asset_only,975,959,0.9836,650,0.6667,186,0.1908,864,0.8862,385,0.3949
+stardewvalley,Stardew Valley,2022H2,no,other_mixed,211,206,0.9763,148,0.7014,57,0.2701,190,0.9005,94,0.4455
+stardewvalley,Stardew Valley,2023H1,no,code_tool,235,231,0.983,166,0.7064,58,0.2468,213,0.9064,102,0.434
+stardewvalley,Stardew Valley,2023H1,no,asset_only,1010,994,0.9842,633,0.6267,190,0.1881,855,0.8465,368,0.3644
+stardewvalley,Stardew Valley,2023H1,no,other_mixed,220,217,0.9864,156,0.7091,59,0.2682,193,0.8773,80,0.3636
+stardewvalley,Stardew Valley,2023H2,no,code_tool,233,224,0.9614,138,0.5923,43,0.1845,190,0.8155,68,0.2918
+stardewvalley,Stardew Valley,2023H2,no,asset_only,977,938,0.9601,572,0.5855,165,0.1689,766,0.784,269,0.2753
+stardewvalley,Stardew Valley,2023H2,no,other_mixed,271,259,0.9557,161,0.5941,55,0.203,209,0.7712,94,0.3469
+stardewvalley,Stardew Valley,2024H1,no,code_tool,824,811,0.9842,603,0.7318,265,0.3216,711,0.8629,363,0.4405
+stardewvalley,Stardew Valley,2024H1,no,asset_only,2655,2567,0.9669,1738,0.6546,570,0.2147,2228,0.8392,902,0.3397
+stardewvalley,Stardew Valley,2024H1,no,other_mixed,618,591,0.9563,373,0.6036,126,0.2039,477,0.7718,195,0.3155
+stardewvalley,Stardew Valley,2024H2,no,code_tool,526,501,0.9525,304,0.5779,108,0.2053,381,0.7243,147,0.2795
+stardewvalley,Stardew Valley,2024H2,no,asset_only,1982,1868,0.9425,1093,0.5515,326,0.1645,1499,0.7563,516,0.2603
+stardewvalley,Stardew Valley,2024H2,no,other_mixed,541,505,0.9335,290,0.536,94,0.1738,380,0.7024,143,0.2643
+stardewvalley,Stardew Valley,2025H1,no,code_tool,552,503,0.9112,251,0.4547,60,0.1087,327,0.5924,89,0.1612
+stardewvalley,Stardew Valley,2025H1,no,asset_only,1922,1776,0.924,925,0.4813,239,0.1243,1322,0.6878,360,0.1873
+stardewvalley,Stardew Valley,2025H1,no,other_mixed,679,627,0.9234,323,0.4757,80,0.1178,430,0.6333,116,0.1708
+stardewvalley,Stardew Valley,2025H2,no,code_tool,735,604,0.8218,251,0.3415,54,0.0735,373,0.5075,71,0.0966
+stardewvalley,Stardew Valley,2025H2,no,asset_only,2245,1934,0.8615,842,0.3751,205,0.0913,1251,0.5572,251,0.1118
+stardewvalley,Stardew Valley,2025H2,no,other_mixed,702,594,0.8462,240,0.3419,46,0.0655,343,0.4886,69,0.0983
+stardewvalley,Stardew Valley,2026H1,no,code_tool,1480,1124,0.7595,378,0.2554,65,0.0439,572,0.3865,80,0.0541
+stardewvalley,Stardew Valley,2026H1,no,asset_only,2577,1987,0.7711,637,0.2472,110,0.0427,1051,0.4078,136,0.0528
+stardewvalley,Stardew Valley,2026H1,no,other_mixed,869,620,0.7135,170,0.1956,25,0.0288,237,0.2727,39,0.0449
+stardewvalley,Stardew Valley,2026H2,yes,code_tool,1236,677,0.5477,115,0.093,10,0.0081,175,0.1416,9,0.0073
+stardewvalley,Stardew Valley,2026H2,yes,asset_only,1382,794,0.5745,159,0.1151,10,0.0072,276,0.1997,13,0.0094
+stardewvalley,Stardew Valley,2026H2,yes,other_mixed,530,251,0.4736,59,0.1113,4,0.0075,66,0.1245,3,0.0057
+cyberpunk2077,Cyberpunk 2077,2021H1,no,code_tool,244,244,1.0,206,0.8443,99,0.4057,240,0.9836,174,0.7131
+cyberpunk2077,Cyberpunk 2077,2021H1,no,asset_only,1006,987,0.9811,734,0.7296,310,0.3082,940,0.9344,592,0.5885
+cyberpunk2077,Cyberpunk 2077,2021H1,no,other_mixed,160,157,0.9812,82,0.5125,20,0.125,145,0.9062,50,0.3125
+cyberpunk2077,Cyberpunk 2077,2021H2,no,code_tool,112,108,0.9643,84,0.75,55,0.4911,100,0.8929,78,0.6964
+cyberpunk2077,Cyberpunk 2077,2021H2,no,asset_only,310,305,0.9839,233,0.7516,93,0.3,294,0.9484,172,0.5548
+cyberpunk2077,Cyberpunk 2077,2021H2,no,other_mixed,24,24,1.0,17,0.7083,7,0.2917,24,1.0,13,0.5417
+cyberpunk2077,Cyberpunk 2077,2022H1,no,code_tool,168,167,0.994,141,0.8393,101,0.6012,165,0.9821,120,0.7143
+cyberpunk2077,Cyberpunk 2077,2022H1,no,asset_only,546,538,0.9853,424,0.7766,192,0.3516,521,0.9542,309,0.5659
+cyberpunk2077,Cyberpunk 2077,2022H1,no,other_mixed,61,61,1.0,33,0.541,14,0.2295,57,0.9344,27,0.4426
+cyberpunk2077,Cyberpunk 2077,2022H2,no,code_tool,396,389,0.9823,298,0.7525,155,0.3914,365,0.9217,231,0.5833
+cyberpunk2077,Cyberpunk 2077,2022H2,no,asset_only,909,898,0.9879,755,0.8306,404,0.4444,871,0.9582,569,0.626
+cyberpunk2077,Cyberpunk 2077,2022H2,no,other_mixed,163,159,0.9755,119,0.7301,48,0.2945,149,0.9141,85,0.5215
+cyberpunk2077,Cyberpunk 2077,2023H1,no,code_tool,185,180,0.973,161,0.8703,100,0.5405,169,0.9135,117,0.6324
+cyberpunk2077,Cyberpunk 2077,2023H1,no,asset_only,897,888,0.99,805,0.8974,547,0.6098,860,0.9588,646,0.7202
+cyberpunk2077,Cyberpunk 2077,2023H1,no,other_mixed,77,77,1.0,65,0.8442,41,0.5325,74,0.961,49,0.6364
+cyberpunk2077,Cyberpunk 2077,2023H2,no,code_tool,618,609,0.9854,500,0.8091,282,0.4563,562,0.9094,381,0.6165
+cyberpunk2077,Cyberpunk 2077,2023H2,no,asset_only,1578,1556,0.9861,1276,0.8086,687,0.4354,1462,0.9265,840,0.5323
+cyberpunk2077,Cyberpunk 2077,2023H2,no,other_mixed,180,178,0.9889,129,0.7167,44,0.2444,161,0.8944,63,0.35
+cyberpunk2077,Cyberpunk 2077,2024H1,no,code_tool,502,496,0.988,385,0.7669,205,0.4084,451,0.8984,251,0.5
+cyberpunk2077,Cyberpunk 2077,2024H1,no,asset_only,1937,1915,0.9886,1616,0.8343,957,0.4941,1808,0.9334,1115,0.5756
+cyberpunk2077,Cyberpunk 2077,2024H1,no,other_mixed,164,154,0.939,102,0.622,43,0.2622,135,0.8232,52,0.3171
+cyberpunk2077,Cyberpunk 2077,2024H2,no,code_tool,574,558,0.9721,379,0.6603,154,0.2683,454,0.7909,165,0.2875
+cyberpunk2077,Cyberpunk 2077,2024H2,no,asset_only,1637,1614,0.9859,1307,0.7984,822,0.5021,1485,0.9071,870,0.5315
+cyberpunk2077,Cyberpunk 2077,2024H2,no,other_mixed,167,162,0.9701,108,0.6467,54,0.3234,132,0.7904,60,0.3593
+cyberpunk2077,Cyberpunk 2077,2025H1,no,code_tool,632,612,0.9684,358,0.5665,161,0.2547,466,0.7373,161,0.2547
+cyberpunk2077,Cyberpunk 2077,2025H1,no,asset_only,2038,2018,0.9902,1691,0.8297,1094,0.5368,1860,0.9127,1086,0.5329
+cyberpunk2077,Cyberpunk 2077,2025H1,no,other_mixed,161,157,0.9752,109,0.677,49,0.3043,139,0.8634,45,0.2795
+cyberpunk2077,Cyberpunk 2077,2025H2,no,code_tool,776,747,0.9626,430,0.5541,193,0.2487,559,0.7204,194,0.25
+cyberpunk2077,Cyberpunk 2077,2025H2,no,asset_only,2283,2258,0.989,1870,0.8191,1107,0.4849,2033,0.8905,960,0.4205
+cyberpunk2077,Cyberpunk 2077,2025H2,no,other_mixed,202,198,0.9802,132,0.6535,65,0.3218,167,0.8267,64,0.3168
+cyberpunk2077,Cyberpunk 2077,2026H1,no,code_tool,906,842,0.9294,476,0.5254,210,0.2318,580,0.6402,168,0.1854
+cyberpunk2077,Cyberpunk 2077,2026H1,no,asset_only,2137,2108,0.9864,1590,0.744,826,0.3865,1775,0.8306,617,0.2887
+cyberpunk2077,Cyberpunk 2077,2026H1,no,other_mixed,239,220,0.9205,117,0.4895,46,0.1925,157,0.6569,35,0.1464
+cyberpunk2077,Cyberpunk 2077,2026H2,yes,code_tool,1058,799,0.7552,321,0.3034,87,0.0822,437,0.413,86,0.0813
+cyberpunk2077,Cyberpunk 2077,2026H2,yes,asset_only,1638,1475,0.9005,778,0.475,211,0.1288,1055,0.6441,141,0.0861
+cyberpunk2077,Cyberpunk 2077,2026H2,yes,other_mixed,194,153,0.7887,61,0.3144,8,0.0412,98,0.5052,9,0.0464
+baldursgate3,Baldur's Gate 3,2021H1,no,code_tool,7,7,1.0,6,0.8571,5,0.7143,6,0.8571,5,0.7143
+baldursgate3,Baldur's Gate 3,2021H1,no,asset_only,18,18,1.0,16,0.8889,8,0.4444,18,1.0,12,0.6667
+baldursgate3,Baldur's Gate 3,2021H1,no,other_mixed,2,2,1.0,1,0.5,0,0.0,1,0.5,1,0.5
+baldursgate3,Baldur's Gate 3,2021H2,no,code_tool,8,8,1.0,8,1.0,5,0.625,8,1.0,7,0.875
+baldursgate3,Baldur's Gate 3,2021H2,no,asset_only,15,15,1.0,12,0.8,7,0.4667,15,1.0,12,0.8
+baldursgate3,Baldur's Gate 3,2021H2,no,other_mixed,7,7,1.0,6,0.8571,2,0.2857,6,0.8571,4,0.5714
+baldursgate3,Baldur's Gate 3,2022H1,no,code_tool,2,2,1.0,2,1.0,1,0.5,2,1.0,1,0.5
+baldursgate3,Baldur's Gate 3,2022H1,no,asset_only,7,7,1.0,7,1.0,4,0.5714,7,1.0,6,0.8571
+baldursgate3,Baldur's Gate 3,2022H1,no,other_mixed,2,2,1.0,2,1.0,2,1.0,2,1.0,2,1.0
+baldursgate3,Baldur's Gate 3,2022H2,no,code_tool,7,7,1.0,6,0.8571,4,0.5714,7,1.0,5,0.7143
+baldursgate3,Baldur's Gate 3,2022H2,no,asset_only,12,12,1.0,11,0.9167,8,0.6667,12,1.0,9,0.75
+baldursgate3,Baldur's Gate 3,2022H2,no,other_mixed,3,3,1.0,3,1.0,3,1.0,3,1.0,3,1.0
+baldursgate3,Baldur's Gate 3,2023H1,no,code_tool,32,32,1.0,26,0.8125,18,0.5625,30,0.9375,22,0.6875
+baldursgate3,Baldur's Gate 3,2023H1,no,asset_only,21,21,1.0,16,0.7619,14,0.6667,19,0.9048,15,0.7143
+baldursgate3,Baldur's Gate 3,2023H1,no,other_mixed,4,4,1.0,3,0.75,2,0.5,4,1.0,3,0.75
+baldursgate3,Baldur's Gate 3,2023H2,no,code_tool,2035,1988,0.9769,1487,0.7307,666,0.3273,1793,0.8811,960,0.4717
+baldursgate3,Baldur's Gate 3,2023H2,no,asset_only,1557,1544,0.9917,1306,0.8388,684,0.4393,1493,0.9589,980,0.6294
+baldursgate3,Baldur's Gate 3,2023H2,no,other_mixed,306,295,0.9641,228,0.7451,96,0.3137,272,0.8889,139,0.4542
+baldursgate3,Baldur's Gate 3,2024H1,no,code_tool,1741,1617,0.9288,791,0.4543,327,0.1878,1111,0.6381,338,0.1941
+baldursgate3,Baldur's Gate 3,2024H1,no,asset_only,1627,1566,0.9625,1033,0.6349,479,0.2944,1340,0.8236,638,0.3921
+baldursgate3,Baldur's Gate 3,2024H1,no,other_mixed,337,305,0.905,168,0.4985,90,0.2671,220,0.6528,96,0.2849
+baldursgate3,Baldur's Gate 3,2024H2,no,code_tool,1299,1102,0.8483,516,0.3972,232,0.1786,757,0.5828,190,0.1463
+baldursgate3,Baldur's Gate 3,2024H2,no,asset_only,1388,1262,0.9092,788,0.5677,366,0.2637,1020,0.7349,450,0.3242
+baldursgate3,Baldur's Gate 3,2024H2,no,other_mixed,295,276,0.9356,149,0.5051,64,0.2169,214,0.7254,84,0.2847
+baldursgate3,Baldur's Gate 3,2025H1,no,code_tool,979,789,0.8059,382,0.3902,171,0.1747,540,0.5516,143,0.1461
+baldursgate3,Baldur's Gate 3,2025H1,no,asset_only,1023,935,0.914,509,0.4976,230,0.2248,697,0.6813,270,0.2639
+baldursgate3,Baldur's Gate 3,2025H1,no,other_mixed,198,174,0.8788,84,0.4242,32,0.1616,125,0.6313,34,0.1717
+baldursgate3,Baldur's Gate 3,2025H2,no,code_tool,1053,833,0.7911,315,0.2991,147,0.1396,497,0.472,99,0.094
+baldursgate3,Baldur's Gate 3,2025H2,no,asset_only,1077,916,0.8505,494,0.4587,202,0.1876,670,0.6221,202,0.1876
+baldursgate3,Baldur's Gate 3,2025H2,no,other_mixed,430,345,0.8023,154,0.3581,84,0.1953,220,0.5116,78,0.1814
+baldursgate3,Baldur's Gate 3,2026H1,no,code_tool,1180,689,0.5839,266,0.2254,98,0.0831,387,0.328,47,0.0398
+baldursgate3,Baldur's Gate 3,2026H1,no,asset_only,1105,689,0.6235,332,0.3005,121,0.1095,494,0.4471,113,0.1023
+baldursgate3,Baldur's Gate 3,2026H1,no,other_mixed,360,225,0.625,101,0.2806,45,0.125,191,0.5306,32,0.0889
+baldursgate3,Baldur's Gate 3,2026H2,yes,code_tool,839,441,0.5256,117,0.1395,20,0.0238,212,0.2527,17,0.0203
+baldursgate3,Baldur's Gate 3,2026H2,yes,asset_only,617,433,0.7018,188,0.3047,39,0.0632,318,0.5154,45,0.0729
+baldursgate3,Baldur's Gate 3,2026H2,yes,other_mixed,206,125,0.6068,34,0.165,9,0.0437,103,0.5,5,0.0243
+fallout4,Fallout 4,2021H1,no,code_tool,543,521,0.9595,313,0.5764,93,0.1713,481,0.8858,206,0.3794
+fallout4,Fallout 4,2021H1,no,asset_only,1232,1179,0.957,751,0.6096,276,0.224,1099,0.892,539,0.4375
+fallout4,Fallout 4,2021H1,no,other_mixed,891,830,0.9315,437,0.4905,136,0.1526,772,0.8664,275,0.3086
+fallout4,Fallout 4,2021H2,no,code_tool,556,527,0.9478,348,0.6259,147,0.2644,493,0.8867,233,0.4191
+fallout4,Fallout 4,2021H2,no,asset_only,1290,1244,0.9643,794,0.6155,295,0.2287,1188,0.9209,569,0.4411
+fallout4,Fallout 4,2021H2,no,other_mixed,804,773,0.9614,444,0.5522,122,0.1517,728,0.9055,294,0.3657
+fallout4,Fallout 4,2022H1,no,code_tool,760,711,0.9355,448,0.5895,172,0.2263,661,0.8697,292,0.3842
+fallout4,Fallout 4,2022H1,no,asset_only,1771,1656,0.9351,1029,0.581,356,0.201,1542,0.8707,644,0.3636
+fallout4,Fallout 4,2022H1,no,other_mixed,972,922,0.9486,506,0.5206,175,0.18,831,0.8549,321,0.3302
+fallout4,Fallout 4,2022H2,no,code_tool,978,897,0.9172,538,0.5501,228,0.2331,830,0.8487,335,0.3425
+fallout4,Fallout 4,2022H2,no,asset_only,2046,1907,0.9321,1069,0.5225,342,0.1672,1727,0.8441,619,0.3025
+fallout4,Fallout 4,2022H2,no,other_mixed,1023,937,0.9159,511,0.4995,161,0.1574,840,0.8211,294,0.2874
+fallout4,Fallout 4,2023H1,no,code_tool,861,805,0.935,438,0.5087,145,0.1684,704,0.8177,224,0.2602
+fallout4,Fallout 4,2023H1,no,asset_only,1965,1866,0.9496,1088,0.5537,407,0.2071,1680,0.855,597,0.3038
+fallout4,Fallout 4,2023H1,no,other_mixed,1022,909,0.8894,499,0.4883,144,0.1409,798,0.7808,262,0.2564
+fallout4,Fallout 4,2023H2,no,code_tool,832,773,0.9291,456,0.5481,183,0.22,666,0.8005,219,0.2632
+fallout4,Fallout 4,2023H2,no,asset_only,1602,1525,0.9519,915,0.5712,303,0.1891,1343,0.8383,438,0.2734
+fallout4,Fallout 4,2023H2,no,other_mixed,970,892,0.9196,485,0.5,173,0.1784,766,0.7897,227,0.234
+fallout4,Fallout 4,2024H1,no,code_tool,1357,1217,0.8968,586,0.4318,212,0.1562,997,0.7347,246,0.1813
+fallout4,Fallout 4,2024H1,no,asset_only,3181,2878,0.9047,1379,0.4335,434,0.1364,2310,0.7262,599,0.1883
+fallout4,Fallout 4,2024H1,no,other_mixed,1477,1310,0.8869,581,0.3934,153,0.1036,1014,0.6865,198,0.1341
+fallout4,Fallout 4,2024H2,no,code_tool,715,628,0.8783,294,0.4112,113,0.158,506,0.7077,126,0.1762
+fallout4,Fallout 4,2024H2,no,asset_only,1803,1580,0.8763,706,0.3916,262,0.1453,1190,0.66,337,0.1869
+fallout4,Fallout 4,2024H2,no,other_mixed,977,787,0.8055,281,0.2876,86,0.088,581,0.5947,91,0.0931
+fallout4,Fallout 4,2025H1,no,code_tool,687,591,0.8603,265,0.3857,73,0.1063,427,0.6215,75,0.1092
+fallout4,Fallout 4,2025H1,no,asset_only,1652,1459,0.8832,586,0.3547,180,0.109,1080,0.6538,232,0.1404
+fallout4,Fallout 4,2025H1,no,other_mixed,924,753,0.8149,259,0.2803,77,0.0833,547,0.592,87,0.0942
+fallout4,Fallout 4,2025H2,no,code_tool,906,670,0.7395,276,0.3046,90,0.0993,448,0.4945,78,0.0861
+fallout4,Fallout 4,2025H2,no,asset_only,1864,1496,0.8026,554,0.2972,142,0.0762,1080,0.5794,189,0.1014
+fallout4,Fallout 4,2025H2,no,other_mixed,1188,848,0.7138,301,0.2534,85,0.0715,557,0.4689,70,0.0589
+fallout4,Fallout 4,2026H1,no,code_tool,1340,763,0.5694,251,0.1873,63,0.047,439,0.3276,70,0.0522
+fallout4,Fallout 4,2026H1,no,asset_only,2869,1713,0.5971,536,0.1868,129,0.045,984,0.343,191,0.0666
+fallout4,Fallout 4,2026H1,no,other_mixed,1244,592,0.4759,159,0.1278,34,0.0273,314,0.2524,40,0.0322
+fallout4,Fallout 4,2026H2,yes,code_tool,888,488,0.5495,148,0.1667,27,0.0304,302,0.3401,68,0.0766
+fallout4,Fallout 4,2026H2,yes,asset_only,1323,699,0.5283,162,0.1224,15,0.0113,401,0.3031,46,0.0348
+fallout4,Fallout 4,2026H2,yes,other_mixed,619,254,0.4103,79,0.1276,9,0.0145,130,0.21,23,0.0372

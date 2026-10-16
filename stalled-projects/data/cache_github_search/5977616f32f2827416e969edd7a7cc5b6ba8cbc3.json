@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Tested versions\n\n- Reproducible: tested on v4.4\n\n### System information\n\nmacOS - Godot v4.4.0 stable -Vulkan (Forward+)\n\n### Issue description\n\nI have encountered a LinkError on web when I enabled exceptions on my GDExtension, which exports a `__cpp_exception` symbol.\n\n<img width=\"624\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a307f026-8e5e-4682-9451-67e115de03e6\" />\n\nThe LinkError occurred in the [WebAssembly.instantiateStreaming](https://developer.mozilla.org/en-US/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static#importobject) function. \n\n> There must be one matching property for each declared import of the compiled module or else a [WebAssembly.LinkError](https://developer.mozilla.org/en-US/docs/WebAssembly/Reference/JavaScript_interface/LinkError) is thrown.\n\nAs the doc says, when the `importObject` doesn't have a property `__cpp_exception`, then a `LinkError` is thrown. Adding `-fwasm-exceptions` in compile flags and link flags would solve the problem, and the `-fno-exceptions` flag will not affect the result.\n\nIMO, an option 'Allow exceptions' on the export dialog and an export template with exceptions enabled might be the solution. Or just let users to compile their own versions.\n\n### Steps to reproduce\n\nThe minimal reproduction project with a Godot project inside is provided. Build and install the extension and run the game in the web server. You could see the error in the browser console.\n\n### Minimal reproduction project (MRP)\n\nhttps://github.com/hiugiak/gdext-linkerror",
+      "closed_at": "2025-03-31T17:40:37Z",
+      "comments": 17,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/104835/comments",
+      "created_at": "2025-03-31T11:29:15Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/104835/events",
+      "html_url": "https://github.com/godotengine/godot/issues/104835",
+      "id": 2960233600,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e4e4e4",
+          "default": false,
+          "description": "",
+          "id": 279097455,
+          "name": "platform:web",
+          "node_id": "MDU6TGFiZWwyNzkwOTc0NTU=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/platform:web"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098009,
+          "name": "topic:buildsystem",
+          "node_id": "MDU6TGFiZWwyNzkwOTgwMDk=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:buildsystem"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 580537003,
+          "name": "topic:gdextension",
+          "node_id": "MDU6TGFiZWw1ODA1MzcwMDM=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:gdextension"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/104835/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc6wcZSA",
+      "number": 104835,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/104835/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/104835/timeline",
+      "title": "WebAssembly.LinkError occurred when GDExtension enables exceptions",
+      "type": null,
+      "updated_at": "2025-03-31T17:40:47Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/104835",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/22273250?v=4",
+        "events_url": "https://api.github.com/users/hiugiak/events{/privacy}",
+        "followers_url": "https://api.github.com/users/hiugiak/followers",
+        "following_url": "https://api.github.com/users/hiugiak/following{/other_user}",
+        "gists_url": "https://api.github.com/users/hiugiak/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/hiugiak",
+        "id": 22273250,
+        "login": "hiugiak",
+        "node_id": "MDQ6VXNlcjIyMjczMjUw",
+        "organizations_url": "https://api.github.com/users/hiugiak/orgs",
+        "received_events_url": "https://api.github.com/users/hiugiak/received_events",
+        "repos_url": "https://api.github.com/users/hiugiak/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/hiugiak/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/hiugiak/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/hiugiak",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1139
+}

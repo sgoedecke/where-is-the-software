@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "Modifying an asset currently requires grabbing a mutable reference to `Assets<T>`. This makes sense conceptually, but Legion's Scheduler (correctly) synchronizes when a mutable reference is grabbed. This means multiple systems requiring mut access to the same `Assets<T>` storage cant run in parallel.\r\n\r\nIt is worth adding some interior mutability / `RwLock`s to `Assets<T>` to see if this improves performance for common use cases.",
+      "closed_at": "2023-08-12T08:04:09Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/8/comments",
+      "created_at": "2020-05-17T19:14:27Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/8/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/8",
+      "id": 619776874,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c6a751",
+          "default": false,
+          "description": "Entities, components, systems, and events",
+          "id": 2197761682,
+          "name": "A-ECS",
+          "node_id": "MDU6TGFiZWwyMTk3NzYxNjgy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-ECS"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c6a751",
+          "default": false,
+          "description": "Load files from disk to use for things like images, models, and sounds",
+          "id": 2272055462,
+          "name": "A-Assets",
+          "node_id": "MDU6TGFiZWwyMjcyMDU1NDYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-Assets"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "B8B8B8",
+          "default": false,
+          "description": "A change motivated by improving speed, memory usage or compile times",
+          "id": 2272098452,
+          "name": "C-Performance",
+          "node_id": "MDU6TGFiZWwyMjcyMDk4NDUy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Performance"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876E3",
+          "default": false,
+          "description": "This issue requires design work to think about how it would best be accomplished",
+          "id": 3166152189,
+          "name": "S-Needs-Design",
+          "node_id": "MDU6TGFiZWwzMTY2MTUyMTg5",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Design"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/8/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2MTk3NzY4NzQ=",
+      "number": 8,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/8/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/8/timeline",
+      "title": "Consider making mutating Assets<T> more Scheduler friendly ",
+      "type": null,
+      "updated_at": "2023-08-12T08:04:09Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/8",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/2694663?v=4",
+        "events_url": "https://api.github.com/users/cart/events{/privacy}",
+        "followers_url": "https://api.github.com/users/cart/followers",
+        "following_url": "https://api.github.com/users/cart/following{/other_user}",
+        "gists_url": "https://api.github.com/users/cart/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/cart",
+        "id": 2694663,
+        "login": "cart",
+        "node_id": "MDQ6VXNlcjI2OTQ2NjM=",
+        "organizations_url": "https://api.github.com/users/cart/orgs",
+        "received_events_url": "https://api.github.com/users/cart/received_events",
+        "repos_url": "https://api.github.com/users/cart/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/cart/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/cart/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/cart",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

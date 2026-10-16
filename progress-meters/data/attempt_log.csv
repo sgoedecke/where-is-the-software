@@ -1,0 +1,48 @@
+series,status,detail
+WebAIM Million,ok,Parsed annual report pages 2019-2026.
+WPT Interop,ok,Used wpt.fyi static interop CSVs for 2022-2026; annual focus areas reset each year.
+Wine bugs fixed,ok,Parsed Wine GitLab release tags and ANNOUNCE/ANNOUNCE.md total bug-fix counts for dev releases.
+ScummVM supported games,ok,Counted game entries on versioned compatibility pages; release dates from GitHub releases.
+xenia_playable,ok,"Fetched 311 issues currently labelled state-playable; creation-date approximation, not label-event history."
+Vita3K/compatibility,partial-failed,label Playable page 11: HTTP 422
+vita3k_playable,ok,"Fetched 1000 issues currently labelled Playable; creation-date approximation, not label-event history."
+shadps4_playable,ok,"Fetched 399 issues currently labelled status-playable; creation-date approximation, not label-event history."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jan1_2020.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_apr1_2020.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jul5_2020.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_oct3_2020.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jan1_2021.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_apr1_2021.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jul1_2021.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_oct1_2021.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jan1_2022.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_apr1_2022.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jul1_2022.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_oct2_2022.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jan1_2023.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_apr4_2023.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jul2_2023.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_oct1_2023.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jan1_2024.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_apr3_2024.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jul1_2024.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_oct5_2024.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jan1_2025.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_apr1_2025.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jul1_2025.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_oct2_2025.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jan2_2026.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_apr1_2026.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_jul1_2026.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,ok,"Parsed quarterly dump reports_oct1_2026.tar.gz; raw verdict yes/no, not ProtonDB tier algorithm."
+ProtonDB works share,note,Full monthly reconstruction skipped to avoid multi-GB download; quarterly Jan/Apr/Jul/Oct sampled from public cumulative tarballs.
+RPCS3 compatibility history,failed,https://rpcs3.net/compatibility: HTTPError HTTP Error 403: Forbidden
+RPCS3 compatibility history,failed,https://rpcs3.net/compatibility?b: HTTPError HTTP Error 403: Forbidden
+RPCS3 compatibility history,failed,https://raw.githubusercontent.com/RPCS3/rpcs3-compatibility/gh-pages/history.json: HTTPError HTTP Error 404: Not Found
+decomp.dev progress history,partial,https://decomp.dev: site returns Sunsetting page; says existing pages/history remain but index disabled
+decomp.dev progress history,failed,https://decomp.dev/projects.json: HTTPError HTTP Error 410: Gone
+decomp.dev progress history,failed,https://decomp.dev/api/projects: HTTPError HTTP Error 404: Not Found
+decomp.dev progress history,failed,https://github.com/encounter/decomp.dev: HTTPError HTTP Error 404: Not Found
+test262.fyi,partial,"https://test262.fyi/: fetched current data (22250 bytes), no dated history endpoint found in page JS."
+test262.fyi,partial,"https://data.test262.fyi/index.json: fetched current data (1581 bytes), no dated history endpoint found in page JS."
+test262.fyi,partial,"https://data.test262.fyi/meta.json: fetched current data (50327 bytes), no dated history endpoint found in page JS."

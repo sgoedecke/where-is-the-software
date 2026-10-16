@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What happened?\n\n## The control plane fails to be initialized. Procedure\r\n- When I am through the browser to https://10.1.6.215:16443/healthz? At timeout=10s, the browser returned ok\r\n- Kubectl Version 1.22.10\r\n## This is kubeadm.conf\r\n```yaml\r\napiVersion: kubeadm.k8s.io/v1beta3\r\nbootstrapTokens:\r\n- groups:\r\n  - system:bootstrappers:kubeadm:default-node-token\r\n  token: abcdef.0123456789abcdef\r\n  ttl: 24h0m0s\r\n  usages:\r\n  - signing\r\n  - authentication\r\nkind: InitConfiguration\r\nlocalAPIEndpoint:\r\n  advertiseAddress: 10.1.6.48  #\u5f53\u524d\u4e3b\u673aip\r\n  bindPort: 6443\r\nnodeRegistration:\r\n  criSocket: unix:///run/containerd/containerd.sock\r\n  imagePullPolicy: IfNotPresent\r\n  taints: \r\n  - effect: NoSchedule\r\n    key: node-role.kubernetes.io/master\r\n---\r\napiServer:\r\n  timeoutForControlPlane: 4m0s\r\napiVersion: kubeadm.k8s.io/v1beta3\r\ncertificatesDir: /etc/kubernetes/pki\r\nclusterName: kubernetes\r\ncontrolPlaneEndpoint: \"10.1.6.215:16443\"\r\ncontrollerManager: {}\r\ndns: \r\n  type: CoreDNS\r\netcd:\r\n  external:\r\n    endpoints:\r\n      - https://10.1.6.46:2379 # \u9002\u5f53\u5730\u66f4\u6539 ETCD_0_IP\r\n      - https://10.1.6.43:2379 # \u9002\u5f53\u5730\u66f4\u6539 ETCD_1_IP\r\n      - https://10.1.6.47:2379 # \u9002\u5f53\u5730\u66f4\u6539 ETCD_2_IP\r\n    caFile: /etc/kubernetes/pki/etcd/ca.crt\r\n    certFile: /etc/kubernetes/pki/apiserver-etcd-client.crt\r\n    keyFile: /etc/kubernetes/pki/apiserver-etcd-client.key\r\nimageRepository: registry.aliyuncs.com/google_containers # \u4fee\u6539\u4e3a\u963f\u91cc\u4e91\u5730\u5740\r\nkind: ClusterConfiguration\r\nkubernetesVersion: 1.22.10\r\nnetworking:\r\n  dnsDomain: cluster.local\r\n  serviceSubnet: 10.96.0.0/12   # Pod\u4f7f\u7528\u7684\u5b50\u7f51\u5730\u5740\r\nscheduler: {}\r\n---\r\napiVersion: kubeproxy.config.k8s.io/v1alpha1\r\nkind: KubeProxyConfiguration\r\nfeatureGates:\r\n  SupportIPVSProxyMode: true\r\nmode: ipvs\r\n```\r\n## This is my error message\r\n```shell\r\nI1228 00:56:04.436302   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 1 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:05.437604   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 2 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:06.438350   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 3 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:07.439002   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 4 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:08.440586   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 5 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:09.441198   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 6 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:10.441895   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 7 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:11.442637   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 8 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:12.443235   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 9 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:13.444832   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 10 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:14.947069   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 1 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:15.948668   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 2 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:16.949471   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 3 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:17.950236   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 4 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:18.951666   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 5 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:19.952411   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 6 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:20.953663   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 7 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:21.954453   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 8 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:22.955147   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 9 to https://10.1.6.215:16443/healthz?timeout=10s\r\nI1228 00:56:23.955697   54085 with_retry.go:171] Got a Retry-After 1s response for attempt 10 to https://10.1.6.215:16443/healthz?timeout=10s\r\n[apiclient] All control plane components are healthy after 21.017306 seconds\r\nI1228 00:56:25.452926   54085 uploadconfig.go:110] [upload-config] Uploading the kubeadm ClusterConfiguration to a ConfigMap\r\n[upload-config] Storing the configuration used in ConfigMap \"kubeadm-config\" in the \"kube-system\" Namespace\r\nI1228 00:56:25.475677   54085 uploadconfig.go:124] [upload-config] Uploading the kubelet component config to a ConfigMap\r\n[kubelet] Creating a ConfigMap \"kubelet-config-1.22\" in namespace kube-system with the configuration for the kubelets in the cluster\r\nI1228 00:56:25.489104   54085 uploadconfig.go:129] [upload-config] Preserving the CRISocket information for the control-plane node\r\nI1228 00:56:25.489119   54085 patchnode.go:31] [patchnode] Uploading the CRI Socket information \"unix:///run/containerd/containerd.sock\" to the Node API object \"containerd-master1\" as an annotation\r\n[kubelet-check] Initial timeout of 40s passed.\r\ntimed out waiting for the condition\r\nError writing Crisocket information for the control-plane node\r\nk8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/init.runUploadKubeletConfig\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/init/uploadconfig.go:131\r\nk8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).Run.func1\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:234\r\nk8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).visitAll\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:421\r\nk8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow.(*Runner).Run\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/workflow/runner.go:207\r\nk8s.io/kubernetes/cmd/kubeadm/app/cmd.newCmdInit.func1\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/cmd/kubeadm/app/cmd/init.go:153\r\nk8s.io/kubernetes/vendor/github.com/spf13/cobra.(*Command).execute\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/vendor/github.com/spf13/cobra/command.go:852\r\nk8s.io/kubernetes/vendor/github.com/spf13/cobra.(*Command).ExecuteC\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/vendor/github.com/spf13/cobra/command.go:960\r\nk8s.io/kubernetes/vendor/github.com/spf13/cobra.(*Command).Execute\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/vendor/github.com/spf13/cobra/command.go:897\r\nk8s.io/kubernetes/cmd/kubeadm/app.Run\r\n        /workspace/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/cmd/kubeadm/app/kubeadm.go:50\r\nmain.main\r\n```\r\n\r\n### Os Version\r\n```shell\r\n[root@containerd-master1 ~]# cat /etc/redhat-release \r\nRocky Linux release 8.6 (Green Obsidian)\r\n```\r\n### This is Runtime Version\r\n```shell\r\n[root@containerd-master1 ~]# containerd -v\r\ncontainerd containerd.io 1.6.14 9ba4b250366a5ddde94bb7c9d1def331423aa323\r\n```\r\n\n\n### What did you expect to happen?\n\nHow to solve it?\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\nNo\r\n\n\n### Anything else we need to know?\n\n_No response_\n\n### Kubernetes version\n\n1.22.10\n\n### Cloud provider\n\nNo\r\n\n\n### OS version\n\n_No response_\n\n### Install tools\n\n_No response_\n\n### Container runtime (CRI) and version (if applicable)\n\n_No response_\n\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\n\n_No response_",
+      "closed_at": "2022-12-28T07:53:28Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114718/comments",
+      "created_at": "2022-12-28T06:06:35Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114718/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/114718",
+      "id": 1512437639,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d455d0",
+          "default": false,
+          "description": "Categorizes issue or PR as a support question.",
+          "id": 130318610,
+          "name": "kind/support",
+          "node_id": "MDU6TGFiZWwxMzAzMTg2MTA=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/support"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `sig/foo` label and requires one.",
+          "id": 617149945,
+          "name": "needs-sig",
+          "node_id": "MDU6TGFiZWw2MTcxNDk5NDU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-sig"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114718/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks5aJfeH",
+      "number": 114718,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114718/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114718/timeline",
+      "title": " The control plane fails to be initialized. Procedure",
+      "type": null,
+      "updated_at": "2022-12-28T07:53:29Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/114718",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/90432556?v=4",
+        "events_url": "https://api.github.com/users/ailunbolinkenasi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ailunbolinkenasi/followers",
+        "following_url": "https://api.github.com/users/ailunbolinkenasi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ailunbolinkenasi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ailunbolinkenasi",
+        "id": 90432556,
+        "login": "ailunbolinkenasi",
+        "node_id": "MDQ6VXNlcjkwNDMyNTU2",
+        "organizations_url": "https://api.github.com/users/ailunbolinkenasi/orgs",
+        "received_events_url": "https://api.github.com/users/ailunbolinkenasi/received_events",
+        "repos_url": "https://api.github.com/users/ailunbolinkenasi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ailunbolinkenasi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ailunbolinkenasi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ailunbolinkenasi",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 371
+}

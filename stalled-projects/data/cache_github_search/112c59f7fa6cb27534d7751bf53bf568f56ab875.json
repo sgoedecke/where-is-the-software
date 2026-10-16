@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\r\nThank you for filing a bug report! \ud83d\udc1b Please provide a short summary of the bug,\r\nalong with any information you feel relevant to replicating the bug.\r\n-->\r\n----------------------\r\n**Summary :** \r\nwhen i am passing 2 argument to a C function from rust, doing changes in the first parameter affects the value of the second parameter\r\n----------------------\r\nI tried this code in which i am just passing some values from Rust to C :\r\n_you can also repeat this bug , code is in this repository :_ https://github.com/Sjain-dir/Bug_in_Rust\r\n\r\n**in interface.c code** \r\n```C\r\nvoid test1(int* i) {\r\n    printf(\"in test 1 :::\\n\");\r\n    printf(\"i pointer value is : %p\\n\",i);\r\n    printf(\"i -> value in that addressr is : %d\\n\",*i);\r\n}\r\n\r\nvoid test2(char* string1, int *i) {\r\n    printf(\"in test 2 :::\\n\");\r\n    printf(\"i pointer value is : %p\\n\",i);\r\n    printf(\"i value in that address is : %d\\n\",*i);\r\n    printf(\"string1 value is : %s\\n\",string1);\r\n}\r\n```\r\nIn test1, i am just taking a integer pointer and returning the address and its value\r\nin test2, i am doing the same, but i am also taking character pointer\r\n\r\n**in main.rs** \r\n```rust\r\nuse std::ffi::{\r\n    c_int,\r\n    CString\r\n};\r\n\r\n#[link (name = \"interface\", kind = \"static\")]\r\nextern \"C\" {\r\n    fn test1(i : *mut c_int);\r\n    fn test2(string1 : *mut CString, i : *mut c_int);\r\n    //fn test2(string1 : CString, i : *mut c_int);\r\n}\r\n\r\nfn main() {\r\n    trying();\r\n}\r\n\r\nfn trying() {\r\n    unsafe {\r\n        let mut string1 = CString::new(\"Likhe jo khat tujhe, jo teri yaad mee...........\").expect(\"lol error in payload\");\r\n        let mut i : c_int = 69420;\r\n\r\n        test1(&mut i);\r\n        test2(&mut string1, &mut i);\r\n        //test2(string1, &mut i);\r\n    }\r\n}\r\n```\r\nhere i am just calling functions from C \r\nin trying function, i am declare a string and a int and passed its pointer to functions\r\nand after `cargo run`\r\nand the output is as expected :\r\n```\r\nin test 1 :::\r\ni pointer value is : 0x7fff2d8fbbc4\r\ni -> value in that address is : 69420\r\nin test 2 :::\r\ni pointer value is : 0x7fff2d8fbbc4\r\ni value in that address is : 69420\r\nstring1 value is : \ufffd\ufffd\ufffdFV\r\n```\r\n### **But : the bug is .....**\r\nwhen i change do a little changes in passing CString like in `main.rs` : \r\n```rust\r\nextern \"C\" {\r\n    fn test1(i : *mut c_int);\r\n    //fn test2(string1 : *mut CString, i : *mut c_int);\r\n    fn test2(string1 : CString, i : *mut c_int);\r\n}\r\n```\r\nin `trying()` function\r\n```rust\r\n        test1(&mut i);\r\n        //test2(&mut string1, &mut i);\r\n        test2(string1, &mut i);\r\n```\r\nSo the output is : \r\n```\r\nin test 1 :::\r\ni pointer value is : 0x7fffdfbeff10\r\ni -> value in that address is : 69420\r\nin test 2 :::\r\ni pointer value is : 0x31\r\nSegmentation fault\r\n```\r\ntest1 is running perfectly and giving expected output,\r\n**but** in test2 output, somehow, **making changes in CString affects the output of `i` integer pointer**\r\nthis shouldn't happen as changes in the first parameter shouldn't affect the second parameter\r\n\r\n",
+      "closed_at": "2023-03-30T18:05:01Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/109777/comments",
+      "created_at": "2023-03-30T15:54:14Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/109777/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/109777",
+      "id": 1647892861,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/109777/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5iONl9",
+      "number": 109777,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/109777/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/109777/timeline",
+      "title": "Bug: changes in one parameter affects another parameter while passing it from Rust to C function",
+      "type": null,
+      "updated_at": "2023-03-30T18:05:01Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/109777",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/83182945?v=4",
+        "events_url": "https://api.github.com/users/Sjain-dir/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Sjain-dir/followers",
+        "following_url": "https://api.github.com/users/Sjain-dir/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Sjain-dir/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Sjain-dir",
+        "id": 83182945,
+        "login": "Sjain-dir",
+        "node_id": "MDQ6VXNlcjgzMTgyOTQ1",
+        "organizations_url": "https://api.github.com/users/Sjain-dir/orgs",
+        "received_events_url": "https://api.github.com/users/Sjain-dir/received_events",
+        "repos_url": "https://api.github.com/users/Sjain-dir/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Sjain-dir/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Sjain-dir/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Sjain-dir",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 886
+}

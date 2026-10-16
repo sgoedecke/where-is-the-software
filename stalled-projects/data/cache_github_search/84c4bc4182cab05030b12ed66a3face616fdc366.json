@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--  As an open source project with a dedicated but small maintainer team, it can sometimes take a long time for issues to be addressed so please be patient and we will get back to you as soon as we can.\r\n-->\r\n\r\n### Preflight Checklist\r\n<!-- Please ensure you've completed the following steps by replacing [ ] with [x]-->\r\n\r\n* [x] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/master/CONTRIBUTING.md) for this project.\r\n* [x] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/master/CODE_OF_CONDUCT.md) that this project adheres to.\r\n* [x] I have searched the issue tracker for an issue that matches the one I want to file, without success.\r\n\r\n### Issue Details\r\n\r\n* **Electron Version:**\r\n  * V5.0.0-beta.7\r\n* **Operating System:**\r\n  * macOS 10.13.6\r\n* **Last Known Working Electron version:**:\r\n  * 4.1.3\r\n\r\n### Expected Behavior\r\nMy app used the \u201cwindowMenu\u201d role for a menu template in Electron v4 which worked as expected.  In v5 my app failed to compile as TypeScript alerted me to a change in expected values.  I see the docs now reflect \u201cwindow\u201d as the correct value for this functionality so I changed and recompiled, expecting it to work...\r\n\r\n### Actual Behavior\r\nThe \u201cwindow\u201d role is ignored and no menu appears as a result.  Changing my code to use (\u201cwindowMenu\u201d as any) works as before.  It would seem the implementation is out of step with the TypeScript definitions and documentation.\r\n\r\n### To Reproduce\r\n<!--\r\nYour best chance of getting this bug looked at quickly is to provide a REPOSITORY that can be cloned and run.\r\n-->\r\n\r\n<!--\r\nYou can fork electron-quick-start (https://github.com/electron/electron-quick-start) and include a link to the branch with your changes.\r\n-->\r\n\r\n<!--\r\nIf you provide a URL, please list the commands required to clone/setup/run your repo e.g.\r\n```sh\r\n$ git clone $YOUR_URL -b $BRANCH\r\n$ npm install\r\n$ npm start || electron .\r\n```\r\n-->\r\n\r\n### Screenshots\r\n<!-- If applicable, add screenshots to help explain your problem. -->\r\n\r\n### Additional Information\r\n<!-- Add any other context about the problem here. -->\r\n",
+      "closed_at": "2022-09-16T00:10:35Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/17647/comments",
+      "created_at": "2019-04-01T21:53:18Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/17647/events",
+      "html_url": "https://github.com/electron/electron/issues/17647",
+      "id": 427928775,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6addf7",
+          "default": false,
+          "description": "",
+          "id": 97431925,
+          "name": "documentation :notebook:",
+          "node_id": "MDU6TGFiZWw5NzQzMTkyNQ==",
+          "url": "https://api.github.com/repos/electron/electron/labels/documentation%20:notebook:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/17647/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0Mjc5Mjg3NzU=",
+      "number": 17647,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/electron/electron/issues/17647/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/17647/timeline",
+      "title": "Menu role \u201cwindowMenu\u201d incompletely renamed to \u201cwindow\u201d",
+      "type": null,
+      "updated_at": "2022-09-16T00:10:35Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/17647",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/15329771?v=4",
+        "events_url": "https://api.github.com/users/k8stone/events{/privacy}",
+        "followers_url": "https://api.github.com/users/k8stone/followers",
+        "following_url": "https://api.github.com/users/k8stone/following{/other_user}",
+        "gists_url": "https://api.github.com/users/k8stone/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/k8stone",
+        "id": 15329771,
+        "login": "k8stone",
+        "node_id": "MDQ6VXNlcjE1MzI5Nzcx",
+        "organizations_url": "https://api.github.com/users/k8stone/orgs",
+        "received_events_url": "https://api.github.com/users/k8stone/received_events",
+        "repos_url": "https://api.github.com/users/k8stone/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/k8stone/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/k8stone/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/k8stone",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 7
+}

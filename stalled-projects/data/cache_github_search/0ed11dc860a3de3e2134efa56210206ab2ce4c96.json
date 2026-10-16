@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "## Keywords\r\n\r\n- React 18\r\n- createRoot\r\n- CSS selector\r\n- CSS Target\r\n- :target\r\n\r\n<!--\r\n  Please provide a clear and concise description of what the bug is. Include\r\n  screenshots if needed. Please test using the latest version of the relevant\r\n  React packages to make sure your issue has not already been fixed.\r\n-->\r\n\r\n## React version: React@18\r\n\r\n## Steps To Reproduce\r\n\r\n1. open https://joyful-kelpie-c3bb20.netlify.app/buggy.html\r\n2. click `go to react id target` link\r\n3. You should see the `react id target` with green background\r\n4. Refresh page. The green background disappears\r\n\r\n<!--\r\n  Your bug will get fixed much faster if we can run your code and it doesn't\r\n  have dependencies other than React. Issues without reproduction steps or\r\n  code examples may be immediately closed as not actionable.\r\n-->\r\n\r\nLink to code example:\r\n\r\nThe webpage source code is simple. You could check the source code directly.\r\n\r\nOr, you can check this:\r\nhttps://gist.github.com/magic-akari/475a13219394fb938cff4169a9b61eb7\r\n\r\n\r\n<!--\r\n  Please provide a CodeSandbox (https://codesandbox.io/s/new), a link to a\r\n  repository on GitHub, or provide a minimal code example that reproduces the\r\n  problem. You may provide a screenshot of the application if you think it is\r\n  relevant to your bug report. Here are some tips for providing a minimal\r\n  example: https://stackoverflow.com/help/mcve.\r\n-->\r\n\r\n\r\n## The current behavior\r\nCSS target selector does not work.\r\nThe green background disappears after refresh pages.\r\n\r\n## The expected behavior\r\n\r\nCSS target selector should work after refresh pages.\r\n\r\nSee: https://joyful-kelpie-c3bb20.netlify.app/ok.html",
+      "closed_at": "2026-09-09T07:20:25Z",
+      "comments": 26,
+      "comments_url": "https://api.github.com/repos/react/react/issues/26374/comments",
+      "created_at": "2023-03-12T08:53:51Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/26374/events",
+      "html_url": "https://github.com/react/react/issues/26374",
+      "id": 1620285061,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/26374/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks5gk5aF",
+      "number": 26374,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 3,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 3,
+        "url": "https://api.github.com/repos/react/react/issues/26374/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/26374/timeline",
+      "title": "Bug: `createRoot` function from React@18 break the css `:target`",
+      "type": null,
+      "updated_at": "2026-09-09T07:20:25Z",
+      "url": "https://api.github.com/repos/react/react/issues/26374",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7829098?v=4",
+        "events_url": "https://api.github.com/users/magic-akari/events{/privacy}",
+        "followers_url": "https://api.github.com/users/magic-akari/followers",
+        "following_url": "https://api.github.com/users/magic-akari/following{/other_user}",
+        "gists_url": "https://api.github.com/users/magic-akari/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/magic-akari",
+        "id": 7829098,
+        "login": "magic-akari",
+        "node_id": "MDQ6VXNlcjc4MjkwOTg=",
+        "organizations_url": "https://api.github.com/users/magic-akari/orgs",
+        "received_events_url": "https://api.github.com/users/magic-akari/received_events",
+        "repos_url": "https://api.github.com/users/magic-akari/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/magic-akari/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/magic-akari/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/magic-akari",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 8
+}

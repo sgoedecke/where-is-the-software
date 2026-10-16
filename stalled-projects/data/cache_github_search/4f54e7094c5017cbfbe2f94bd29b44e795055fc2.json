@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "### Neovim version (nvim -v)\r\n\r\nNVIM v0.7.0-dev+1347-gba257d74b\r\n\r\n### Vim (not Nvim) behaves the same?\r\n\r\nN/A\r\n\r\n### Operating system/version\r\n\r\nmacOS\r\n\r\n### Terminal name/version\r\n\r\niTerm2 / tmux\r\n\r\n### $TERM environment variable\r\n\r\ntmux-256color\r\n\r\n### Installation\r\n\r\nBuild from source\r\n\r\n### How to reproduce the issue\r\n\r\nNo reproduction steps yet. For now, all I know to do is enable treesitter highlighting for C, modify a C buffer, then hope you get (un)lucky.\r\n\r\nMostly opening this to share the backtrace as a reference issue.\r\n\r\nStack trace:\r\n\r\n```\r\n* thread #1, stop reason = signal SIGSTOP\r\n  * frame #0: 0x00007fff7291f33a libsystem_kernel.dylib`__pthread_kill + 10\r\n    frame #1: 0x00007fff729dbe60 libsystem_pthread.dylib`pthread_kill + 430\r\n    frame #2: 0x00007fff728a6808 libsystem_c.dylib`abort + 120\r\n    frame #3: 0x00007fff7299c50b libsystem_malloc.dylib`malloc_vreport + 548\r\n    frame #4: 0x00007fff729add27 libsystem_malloc.dylib`malloc_zone_error + 183\r\n    frame #5: 0x00007fff72990f1b libsystem_malloc.dylib`tiny_malloc_from_free_list + 1801\r\n    frame #6: 0x00007fff72990297 libsystem_malloc.dylib`tiny_malloc_should_clear + 288\r\n    frame #7: 0x00007fff7298f0c6 libsystem_malloc.dylib`szone_malloc_should_clear + 66\r\n    frame #8: 0x00007fff7298dd7a libsystem_malloc.dylib`malloc_zone_malloc + 104\r\n    frame #9: 0x00007fff7298dcf5 libsystem_malloc.dylib`malloc + 21\r\n    frame #10: 0x0000000103d77dcc nvim`xmalloc + 28\r\n    frame #11: 0x0000000103b04059 nvim`ts_subtree_clone + 57\r\n    frame #12: 0x0000000103b05644 nvim`ts_subtree_edit + 1412\r\n    frame #13: 0x0000000103b06fd4 nvim`ts_tree_edit + 452\r\n    frame #14: 0x0000000103d49326 nvim`tree_edit + 342\r\n    frame #15: 0x0000000103b0aa36 nvim`lj_BC_FUNCC + 68\r\n    frame #16: 0x0000000103b21f02 nvim`lua_pcall(L=<unavailable>, nargs=<unavailable>, nresults=<unavailable>, errfunc=<unavailable>) at lj_api.c:1145:12 [opt]\r\n    frame #17: 0x0000000103d41de1 nvim`nlua_pcall.llvm.6183486749107631760 + 113\r\n    frame #18: 0x0000000103d428ff nvim`nlua_call_ref + 175\r\n    frame #19: 0x0000000103beb941 nvim`buf_updates_send_splice + 865\r\n    frame #20: 0x0000000103ced310 nvim`extmark_splice_impl + 96\r\n    frame #21: 0x0000000103d2f051 nvim`set_indent + 3713\r\n    frame #22: 0x0000000103db4d8e nvim`op_reindent + 686\r\n    frame #23: 0x0000000103dc7d8c nvim`do_pending_operator + 10268\r\n    frame #24: 0x0000000103da440f nvim`normal_execute.llvm.12994324649586266943 + 9855\r\n    frame #25: 0x0000000103ed1209 nvim`state_enter + 89\r\n    frame #26: 0x0000000103d507fe nvim`main + 17566\r\n    frame #27: 0x00007fff727d7cc9 libdyld.dylib`start + 1\r\n    frame #28: 0x00007fff727d7cc9 libdyld.dylib`start + 1\r\n```\r\n\r\n### Expected behavior\r\n\r\nNo SIGABRT\r\n\r\n### Actual behavior\r\n\r\nSee stacktrace above",
+      "closed_at": "2022-03-31T22:00:59Z",
+      "comments": 0,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/17941/comments",
+      "created_at": "2022-03-31T21:58:51Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/17941/events",
+      "html_url": "https://github.com/neovim/neovim/issues/17941",
+      "id": 1188870366,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/17941/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAPphoM5G3Lje",
+      "number": 17941,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/17941/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/17941/timeline",
+      "title": "SIGABRT: failed `malloc` in `ts_subtree_clone`",
+      "type": null,
+      "updated_at": "2022-03-31T22:00:59Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/17941",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/8965202?v=4",
+        "events_url": "https://api.github.com/users/gpanders/events{/privacy}",
+        "followers_url": "https://api.github.com/users/gpanders/followers",
+        "following_url": "https://api.github.com/users/gpanders/following{/other_user}",
+        "gists_url": "https://api.github.com/users/gpanders/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/gpanders",
+        "id": 8965202,
+        "login": "gpanders",
+        "node_id": "MDQ6VXNlcjg5NjUyMDI=",
+        "organizations_url": "https://api.github.com/users/gpanders/orgs",
+        "received_events_url": "https://api.github.com/users/gpanders/received_events",
+        "repos_url": "https://api.github.com/users/gpanders/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/gpanders/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/gpanders/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/gpanders",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 297
+}

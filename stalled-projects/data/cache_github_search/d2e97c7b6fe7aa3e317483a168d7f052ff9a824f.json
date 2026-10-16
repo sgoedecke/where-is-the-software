@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Suggestion\r\n\r\n<!--\r\n  Please fill in each section completely. Thank you!\r\n-->\r\n\r\n## \ud83d\udd0d Search Terms\r\n\r\n<!--\r\n  \ud83d\udca1 Did you know? TypeScript has over 2,000 open suggestions!\r\n  \ud83d\udd0e Please search thoroughly before logging new feature requests as most common ideas already have a proposal in progress.\r\n  The \"Common Feature Requests\" section of the FAQ lists many popular requests: https://github.com/Microsoft/TypeScript/wiki/FAQ#common-feature-requests\r\n\r\n  Replace the text below:\r\n-->\r\n\r\n- assert\r\n- type guard\r\n- object property\r\n- dynamic\r\n\r\n## \u2705 Viability Checklist\r\n\r\n<!--\r\n   Suggestions that don't meet all these criteria are very, very unlikely to be accepted.\r\n   We always recommend reviewing the TypeScript design goals before investing time writing\r\n   a proposal for ideas outside the scope of the project.\r\n-->\r\nMy suggestion meets these guidelines:\r\n\r\n* [x] This wouldn't be a breaking change in existing TypeScript/JavaScript code\r\n* [x] This wouldn't change the runtime behavior of existing JavaScript code\r\n* [x] This could be implemented without emitting different JS based on the types of the expressions\r\n* [x] This isn't a runtime feature (e.g. library functionality, non-ECMAScript syntax with JavaScript output, new syntax sugar for JS, etc.)\r\n* [x] This feature would agree with the rest of [TypeScript's Design Goals](https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals).\r\n\r\n\r\n## \u2b50 Suggestion\r\n\r\nTypeScript recently introduced assertion type guards, like follows:\r\n\r\n```typescript\r\nfunction assertIsDefined<T>(value: T | undefined ): asserts value is T {\r\n  if (value === undefined) {\r\n    throw new AssertionError({ message: `Expected value not to be undefined` });\r\n  }\r\n}\r\n\r\nassertIsDefined(value);\r\n```\r\n\r\nThis is great, but what I would love is for the error message to log the variable name. The first thing I did was change the function to accept an object:\r\n\r\n```typescript\r\nfunction assertIsDefined<T>(obj: { value: T | undefined }): asserts obj is { value: T } {\r\n  const [key, value] = Object.entries(obj)[0];\r\n\r\n  if (value === undefined) {\r\n    throw new AssertionError({ message: `Expected \"${key}\" not to be undefined` });\r\n  }\r\n}\r\n\r\nassertIsDefined({ value });\r\n```\r\n\r\nHowever this doesn't work. The compiler sees `value`, and the value within `{ value }` as separate variables.\r\n\r\nI would love to take it further, and have multiple assertion checks in one, like:\r\n\r\n```typescript\r\nassertIsDefined({ value1, value2 });\r\n```\r\n\r\nThe type guard could look like:\r\n\r\n```typescript\r\nexport function assertIsDefined<T>(obj: { [value: string]: T | undefined }): asserts obj is { [value: string]: T } {\r\n  for (const [key, value] of Object.entries(obj)) {\r\n    if (value === undefined) {\r\n      throw new AssertionError({ message: `Expected \"${key}\" not to be undefined` });\r\n    }    \r\n  }\r\n}\r\n```\r\n\r\n<!-- A summary of what you'd like to see added or changed -->\r\n\r\n## \ud83d\udcc3 Motivating Example\r\n\r\nAssertion type guards to work for object properties.\r\n\r\n## \ud83d\udcbb Use Cases\r\n\r\nThe type guard currently only works for values like `value`, but does not recognise that the check on `{ value }` should work. Supporting this would enable dynamic assertion checks, supporting multiple input values as shown from the Suggestions section above.\r\n",
+      "closed_at": "2026-01-07T10:58:36Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/46184/comments",
+      "created_at": "2021-10-03T11:00:42Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/46184/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/46184",
+      "id": 1014352465,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "An idea for TypeScript",
+          "id": 113971155,
+          "name": "Suggestion",
+          "node_id": "MDU6TGFiZWwxMTM5NzExNTU=",
+          "url": "https://api.github.com/repos/microsoft/TypeScript/labels/Suggestion"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "556677",
+          "default": false,
+          "description": "This means we'd like to hear from more people who would be helped by this feature",
+          "id": 373477802,
+          "name": "Awaiting More Feedback",
+          "node_id": "MDU6TGFiZWwzNzM0Nzc4MDI=",
+          "url": "https://api.github.com/repos/microsoft/TypeScript/labels/Awaiting%20More%20Feedback"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/46184/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc48dcpR",
+      "number": 46184,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 2,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/46184/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/46184/timeline",
+      "title": "Assert value type guard for dynamic object properties",
+      "type": null,
+      "updated_at": "2026-01-07T10:58:36Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/46184",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10348798?v=4",
+        "events_url": "https://api.github.com/users/cristianrgreco/events{/privacy}",
+        "followers_url": "https://api.github.com/users/cristianrgreco/followers",
+        "following_url": "https://api.github.com/users/cristianrgreco/following{/other_user}",
+        "gists_url": "https://api.github.com/users/cristianrgreco/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/cristianrgreco",
+        "id": 10348798,
+        "login": "cristianrgreco",
+        "node_id": "MDQ6VXNlcjEwMzQ4Nzk4",
+        "organizations_url": "https://api.github.com/users/cristianrgreco/orgs",
+        "received_events_url": "https://api.github.com/users/cristianrgreco/received_events",
+        "repos_url": "https://api.github.com/users/cristianrgreco/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/cristianrgreco/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/cristianrgreco/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/cristianrgreco",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 4
+}

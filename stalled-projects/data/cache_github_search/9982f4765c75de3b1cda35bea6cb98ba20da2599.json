@@ -1,0 +1,161 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "This is theoretically a problem that applies to all platforms, but in practice, at least on Linux, the rust compiler is saved by the forced linkage of libgcc_s (which, incidentally, is not really desirable when using clang's `--rtlib` argument, but that's another story). It is a problem on x86_64 Android.\r\n\r\nHere are steps to reproduce the problem:\r\n\r\nDownload and unpack Android NDK r25c:\r\n```\r\n$ wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip\r\n$ unzip android-ndk-r25c-linux.zip\r\n```\r\nCreate a test crate:\r\n```\r\n$ cargo new --bin testcase\r\n$ cd testcase\r\n$ cat <<EOF >> Cargo.toml\r\n[build-dependencies]\r\ncc = \"1.0\"\r\nEOF\r\n$ cat <<EOF > build.rs\r\nfn main() {\r\n    cc::Build::new().file(\"foo.cpp\").compile(\"foo\");\r\n}\r\nEOF\r\n$ cat <<EOF > src/main.rs\r\n#[link(name=\"foo\")]\r\nextern {\r\n    fn foo(d: f64);\r\n}\r\n\r\nfn main() {\r\n    unsafe {\r\n        foo(42.0);\r\n    }\r\n}\r\nEOF\r\n$ cat <<EOF > foo.cpp\r\nextern \"C\" __float128 foo(double d) {\r\n    return d;\r\n}\r\nEOF\r\n```\r\nCompile the crate (with some manual work that presumable cargo-apk would do):\r\n```\r\n$ export RUSTFLAGS=\"-Clinker=$PWD/../android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -Clink-arg=--target=x86_64-linux-android31 -Clink-arg=--sysroot=/tmp/android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/sysroot\"\r\n$ export CC=$PWD/../android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang\r\n$ export AR=$PWD/../android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar\r\n$ cargo build --target=x86_64-linux-android\r\n```\r\n\r\nThis fails to link with, eventually:\r\n```\r\n  = note: ld: error: undefined symbol: __extenddftf2\r\n          >>> referenced by foo.cpp:2\r\n          >>>               foo.o:(foo) in archive /tmp/testcase/target/x86_64-linux-android/debug/build/testcase-7b8046ba34d79ef2/out/libfoo.a\r\n          clang-14: error: linker command failed with exit code 1 (use -v to see invocation)\r\n```\r\n\r\nThe `__extenddftft2` symbol comes from the compilation of the function `foo`, for the extension of the 64-bits double to a 128-bits double. It is part of libclang_rt that comes with clang. But because rustc calls the linker (clang) with `-nodefaultlibs`, the clang runtime is not compiled in. And because the equivalent compiler-builtins from rustc doesn't contain all the clang builtins, this fails to link.\r\n\r\nWhen linking dynamic libraries, the link actually goes through without an error, but yields an error when the library is loaded at runtime because of the missing `__extenddftft2` symbol. You'll find multiple people running into this problem over the years, but somehow I didn't find it reported against the rust compiler (example: https://github.com/mozilla/application-services/issues/5436).\r\n\r\nBecause the `__extenddftft2` symbol exists in rustc's compiler-builtins for aarch64 android, it's not a problem on that platform.",
+      "closed_at": "2026-05-28T15:52:39Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/109717/comments",
+      "created_at": "2023-03-29T06:11:19Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/109717/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/109717",
+      "id": 1645101025,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: linking into static, shared libraries and binaries",
+          "id": 37547,
+          "name": "A-linkage",
+          "node_id": "MDU6TGFiZWwzNzU0Nw==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-linkage"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "02e10c",
+          "default": false,
+          "description": "Call for participation: Hard difficulty. Experience needed to fix: A lot.",
+          "id": 234876,
+          "name": "E-hard",
+          "node_id": "MDU6TGFiZWwyMzQ4NzY=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/E-hard"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "6e6ec0",
+          "default": false,
+          "description": "Operating system: Android",
+          "id": 25141820,
+          "name": "O-android",
+          "node_id": "MDU6TGFiZWwyNTE0MTgyMA==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/O-android"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Foreign function interface (FFI)",
+          "id": 45472092,
+          "name": "A-FFI",
+          "node_id": "MDU6TGFiZWw0NTQ3MjA5Mg==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-FFI"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "02E10C",
+          "default": false,
+          "description": "Call for participation: This issue has a mentor. Use #t-compiler/help on Zulip for discussion.",
+          "id": 67766349,
+          "name": "E-mentor",
+          "node_id": "MDU6TGFiZWw2Nzc2NjM0OQ==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/E-mentor"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: This is a bug.",
+          "id": 650731663,
+          "name": "C-bug",
+          "node_id": "MDU6TGFiZWw2NTA3MzE2NjM=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-bug"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/109717/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M5iDj_h",
+      "number": 109717,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 6,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 6,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/109717/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/109717/timeline",
+      "title": "C/C++ code linked to Rust code can't use some clang builtins",
+      "type": null,
+      "updated_at": "2026-05-28T15:52:39Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/109717",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1038527?v=4",
+        "events_url": "https://api.github.com/users/glandium/events{/privacy}",
+        "followers_url": "https://api.github.com/users/glandium/followers",
+        "following_url": "https://api.github.com/users/glandium/following{/other_user}",
+        "gists_url": "https://api.github.com/users/glandium/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/glandium",
+        "id": 1038527,
+        "login": "glandium",
+        "node_id": "MDQ6VXNlcjEwMzg1Mjc=",
+        "organizations_url": "https://api.github.com/users/glandium/orgs",
+        "received_events_url": "https://api.github.com/users/glandium/received_events",
+        "repos_url": "https://api.github.com/users/glandium/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/glandium/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/glandium/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/glandium",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 81
+}

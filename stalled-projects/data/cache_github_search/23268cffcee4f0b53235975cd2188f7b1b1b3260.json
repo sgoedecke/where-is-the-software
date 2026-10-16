@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\n## Observed behavior\r\n\r\nI have hosts file configured like this:\r\n```\r\n[linux-hosts]\r\nlinux-0 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.16.119'\"\r\nlinux-1 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.19.183'\"\r\nlinux-2 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.19.21'\"\r\nlinux-3 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.17.208'\"\r\nlinux-4 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.17.0'\"\r\nlinux-5 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.16.110'\"\r\nlinux-6 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.19.235'\"\r\nlinux-7 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.18.255'\"\r\nlinux-8 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.18.165'\"\r\nlinux-9 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.16.94'\"\r\n```\r\n\r\nWhen I run my playbook against any individual host using `--limit linux-X`, it is completely fine. \r\n\r\nHowever, when I run it agains all hosts, everything is done on a single host, although Ansible reports connecting to multiple hosts. I've found out the hard way, apt locks were not obtained for no obvious reson:\r\n```\r\nTASK [setup : Update and upgrade apt packages] **********************************************************************************************************************************************************************************************************************************\r\nfatal: [linux-0]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-2]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-3]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-4]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-6]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-8]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-5]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-7]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\nfatal: [linux-9]: FAILED! => {\"changed\": false, \"msg\": \"Failed to lock apt for exclusive operation\"}\r\n\r\nchanged: [linux-1]\r\n```\r\n\r\nBut then I've verified that all connections were made to a single machine, so only one obtained the lock and the rest failed.\r\n\r\n## Expected behavior:\r\n\r\nWhen I have multiple hosts configured with ProxyCommand, I expect each host to use its own configuration.\r\n\r\n\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\nInventory\n\n### Ansible Version\n\n```console\n$ ansible --version\r\nansible 2.9.27\r\n  config file = /etc/ansible/ansible.cfg\r\n  configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /usr/lib/python3.8/site-packages/ansible\r\n  executable location = /usr/bin/ansible\r\n  python version = 3.8.12 (default, Aug 31 2021, 01:23:42) [GCC]\n```\n\n\n### Configuration\n\n```console\n$ ansible-config dump --only-changed\r\n# no changes\n```\n\n\n### OS / Environment\n\nOpenSUSE Tumbleweed\n\n### Steps to Reproduce\n\n<!--- Paste example playbooks or commands between quotes below -->\r\n\r\nCreate this hosts file:\r\n```yaml (paste below)\r\n[linux-hosts]\r\nlinux-0 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.16.119'\"\r\nlinux-1 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.19.183'\"\r\nlinux-2 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.19.21'\"\r\nlinux-3 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.17.208'\"\r\nlinux-4 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.17.0'\"\r\nlinux-5 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.16.110'\"\r\nlinux-6 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.19.235'\"\r\nlinux-7 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.18.255'\"\r\nlinux-8 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.18.165'\"\r\nlinux-9 ansible_host=192.168.0.3 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_ed25519_test ansible_ssh_common_args=\"-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519_test -W %h:%p ubuntu@10.0.16.94'\"\r\n```\r\n\r\nRun `ansible linux* -i inventory/hosts -m setup | grep macaddress`\r\n\n\n### Expected Results\n\nI expect the ansible to connect do distinct machines using the ProxyCommand. There should be different MAC addresses reported.\n\n### Actual Results\n\n```console\nansible linux* -i inventory/hosts -m setup | grep macaddress\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n```\r\n\r\nThe settings seem to be cached:\r\n```\r\nansible linux-3 -i inventory/hosts -m setup |grep macaddress\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n            \"macaddress\": \"fa:16:3e:46:e0:96\",\r\n```\r\n\r\nAfter a while (a minute or a few) it return correct output:\r\n```\r\nansible linux-3 -i inventory/hosts -m setup |grep macaddress\r\n            \"macaddress\": \"fa:16:3e:f7:5b:03\",\r\n            \"macaddress\": \"fa:16:3e:f7:5b:03\",\r\n```\n```\n\n\n### Code of Conduct\n\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2025-05-06T15:10:55Z",
+      "comments": 9,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/76956/comments",
+      "created_at": "2022-02-05T09:50:25Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/76956/events",
+      "html_url": "https://github.com/ansible/ansible/issues/76956",
+      "id": 1124886142,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e3ed5e",
+          "default": false,
+          "description": "Priority 3 - Approved, No Time Limitation",
+          "id": 1126594180,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwxMTI2NTk0MTgw",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "This issue/PR affects Ansible v2.9",
+          "id": 1316917295,
+          "name": "affects_2.9",
+          "node_id": "MDU6TGFiZWwxMzE2OTE3Mjk1",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.9"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/76956/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM5DDGZ-",
+      "number": 76956,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/76956/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/76956/timeline",
+      "title": "ControlPath calculated only using ansible_host, preventing different ssh args per inventory_hostname",
+      "type": null,
+      "updated_at": "2025-05-20T13:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/76956",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1065918?v=4",
+        "events_url": "https://api.github.com/users/thorgrin/events{/privacy}",
+        "followers_url": "https://api.github.com/users/thorgrin/followers",
+        "following_url": "https://api.github.com/users/thorgrin/following{/other_user}",
+        "gists_url": "https://api.github.com/users/thorgrin/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/thorgrin",
+        "id": 1065918,
+        "login": "thorgrin",
+        "node_id": "MDQ6VXNlcjEwNjU5MTg=",
+        "organizations_url": "https://api.github.com/users/thorgrin/orgs",
+        "received_events_url": "https://api.github.com/users/thorgrin/received_events",
+        "repos_url": "https://api.github.com/users/thorgrin/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/thorgrin/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/thorgrin/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/thorgrin",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 12
+}

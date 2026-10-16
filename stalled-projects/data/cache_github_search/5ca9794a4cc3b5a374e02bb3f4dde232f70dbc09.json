@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Expected: it should error\r\nActual: it doesn't\r\n\r\nPossibly related: https://github.com/facebook/react/issues/25710#issuecomment-1352456042. In a standalone project, I've only managed to repro `<!--$-->` before doctype, but not between doctype and html as in the repro from that issue. I haven't confirmed that this is the actual cause of #25710, but at the very least we should have errored there as well.",
+      "closed_at": "2026-03-25T14:30:56Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/react/react/issues/25886/comments",
+      "created_at": "2022-12-15T02:09:43Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/25886/events",
+      "html_url": "https://github.com/react/react/issues/25886",
+      "id": 1497674589,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b60205",
+          "default": false,
+          "description": null,
+          "id": 40929151,
+          "name": "Type: Bug",
+          "node_id": "MDU6TGFiZWw0MDkyOTE1MQ==",
+          "url": "https://api.github.com/repos/react/react/labels/Type:%20Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": null,
+          "id": 710332294,
+          "name": "Component: Server Rendering",
+          "node_id": "MDU6TGFiZWw3MTAzMzIyOTQ=",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20Server%20Rendering"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/25886/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks5ZRLNd",
+      "number": 25886,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/25886/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/25886/timeline",
+      "title": "Bug: Rendering <Suspense> outside <body> should error",
+      "type": null,
+      "updated_at": "2026-03-25T14:30:56Z",
+      "url": "https://api.github.com/repos/react/react/issues/25886",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/810438?v=4",
+        "events_url": "https://api.github.com/users/gaearon/events{/privacy}",
+        "followers_url": "https://api.github.com/users/gaearon/followers",
+        "following_url": "https://api.github.com/users/gaearon/following{/other_user}",
+        "gists_url": "https://api.github.com/users/gaearon/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/gaearon",
+        "id": 810438,
+        "login": "gaearon",
+        "node_id": "MDQ6VXNlcjgxMDQzOA==",
+        "organizations_url": "https://api.github.com/users/gaearon/orgs",
+        "received_events_url": "https://api.github.com/users/gaearon/received_events",
+        "repos_url": "https://api.github.com/users/gaearon/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/gaearon/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/gaearon/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/gaearon",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

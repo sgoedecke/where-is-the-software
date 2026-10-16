@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!--\r\nThank you for reporting a flaky test.\r\n\r\nFlaky tests are tests that fail occasionally in the Node.js CI, but not\r\nconsistently enough to block PRs from landing, or that are failing in CI jobs or\r\ntest modes that are not run for every PR.\r\n\r\nPlease fill in as much of the template below as you're able.\r\n\r\nTest: The test that is flaky - e.g. `test-fs-stat-bigint`\r\nPlatform: The platform the test is flaky on - e.g. `macos` or `linux`\r\nConsole Output: A pasted console output from a failed CI job showing the whole\r\nfailure of the test\r\nBuild Links: Links to builds affected by the flaky test\r\n\r\nIf any investigation has been done, please include any information found, such\r\nas how consistently the test fails, whether the failure could be reproduced\r\nlocally, when the test started failing, or anything else you think is relevant.\r\n-->\r\n\r\nThe `coverage-windows` and `build-windows` workflows seem to be failing consistently due to `nasm.us` being unavailable for Chocolatey (ie. `choco install ..`), and blocks GitHub checks for staging branches, release branches, and master. With some quick googling, it appears that this is something that happens with the host sometimes, but it can be fixed by using Chocolatey's CDN or having an internally hosted `nasm`.\r\n\r\n* **Test**: `coverage-windows` and `build-windows` GitHub workflows\r\n* **Platform**: Windows\r\n* **Console Output:**\r\n```\r\nRun choco install nasm\r\nChocolatey v0.10.15\r\nInstalling the following packages:\r\nnasm\r\nBy installing you accept licenses for the packages.\r\n\r\nProgress: Downloading nasm 2.14.02... 15%\r\nProgress: Downloading nasm 2.14.02... 49%\r\nProgress: Downloading nasm 2.14.02... 82%\r\nProgress: Downloading nasm 2.14.02... 100%\r\n\r\nnasm v2.14.02 [Approved]\r\nnasm package files install completed. Performing other installation steps.\r\nAttempt to get headers for https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-installer-x64.exe failed.\r\n  The remote file either doesn't exist, is unauthorized, or is forbidden for url 'https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-installer-x64.exe'. Exception calling \"GetResponse\" with \"0\" argument(s): \"Unable to connect to the remote server\"\r\nDownloading nasm 64 bit\r\n  from 'https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-installer-x64.exe'\r\nERROR: The remote file either doesn't exist, is unauthorized, or is forbidden for url 'https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/win64/nasm-2.14.02-installer-x64.exe'. Exception calling \"GetResponse\" with \"0\" argument(s): \"Unable to connect to the remote server\" \r\nThis package is likely not broken for licensed users - see https://chocolatey.org/docs/features-private-cdn.\r\nThe install of nasm was NOT successful.\r\nError while running 'C:\\ProgramData\\chocolatey\\lib\\nasm\\tools\\chocolateyInstall.ps1'.\r\n```\r\n* **Build Links**:\r\nhttps://github.com/nodejs/node/runs/2826101554\r\nhttps://github.com/nodejs/node/pull/39031/checks?check_run_id=2826221528\r\nhttps://github.com/nodejs/node/pull/39031/checks?check_run_id=2826221630",
+      "closed_at": "2024-07-17T12:28:16Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/39038/comments",
+      "created_at": "2021-06-15T05:23:52Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/39038/events",
+      "html_url": "https://github.com/nodejs/node/issues/39038",
+      "id": 920998898,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9944dd",
+          "default": false,
+          "description": "Issues and PRs related to the Windows platform.",
+          "id": 166236401,
+          "name": "windows",
+          "node_id": "MDU6TGFiZWwxNjYyMzY0MDE=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "Issues and PRs related to Node.js builds or CI infrastructure.",
+          "id": 171787391,
+          "name": "build",
+          "node_id": "MDU6TGFiZWwxNzE3ODczOTE=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/build"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/39038/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5MjA5OTg4OTg=",
+      "number": 39038,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/nodejs/node/issues/39038/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/39038/timeline",
+      "title": "nasm installation fails from Chocolatey",
+      "type": null,
+      "updated_at": "2024-07-17T12:28:16Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/39038",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6271256?v=4",
+        "events_url": "https://api.github.com/users/danielleadams/events{/privacy}",
+        "followers_url": "https://api.github.com/users/danielleadams/followers",
+        "following_url": "https://api.github.com/users/danielleadams/following{/other_user}",
+        "gists_url": "https://api.github.com/users/danielleadams/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/danielleadams",
+        "id": 6271256,
+        "login": "danielleadams",
+        "node_id": "MDQ6VXNlcjYyNzEyNTY=",
+        "organizations_url": "https://api.github.com/users/danielleadams/orgs",
+        "received_events_url": "https://api.github.com/users/danielleadams/received_events",
+        "repos_url": "https://api.github.com/users/danielleadams/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/danielleadams/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/danielleadams/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/danielleadams",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 40
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a bug report that matches the one I want to file, without success.\n\n### Electron Version\n\n26.0.0-alpha.7\n\n### What operating system are you using?\n\nmacOS\n\n### Operating System Version\n\nmacOS Ventura 13.4\n\n### What arch are you using?\n\narm64 (including Apple Silicon)\n\n### Last Known Working Electron version\n\n26.0.0-alpha.7\n\n### Expected Behavior\n\nwebContents.print({ silent: true }) should work correctly\n\n### Actual Behavior\n\nwebContents.print({ silent: true }) not working\n\n### Testcase Gist URL\n\nhttps://github.com/KAROTT7/electron-print-silent-issue\n\n### Additional Information\n\nIs this problem relate to printer?",
+      "closed_at": "2023-06-20T13:00:18Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/38852/comments",
+      "created_at": "2023-06-20T05:57:27Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/38852/events",
+      "html_url": "https://github.com/electron/electron/issues/38852",
+      "id": 1764697121,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "",
+          "id": 520323169,
+          "name": "bug :beetle:",
+          "node_id": "MDU6TGFiZWw1MjAzMjMxNjk=",
+          "url": "https://api.github.com/repos/electron/electron/labels/bug%20:beetle:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/38852/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85pLyQh",
+      "number": 38852,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/38852/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/38852/timeline",
+      "title": "[Bug]: webContents.print({ silent: true }) not working",
+      "type": null,
+      "updated_at": "2023-06-29T13:09:39Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/38852",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/21054747?v=4",
+        "events_url": "https://api.github.com/users/KAROTT7/events{/privacy}",
+        "followers_url": "https://api.github.com/users/KAROTT7/followers",
+        "following_url": "https://api.github.com/users/KAROTT7/following{/other_user}",
+        "gists_url": "https://api.github.com/users/KAROTT7/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/KAROTT7",
+        "id": 21054747,
+        "login": "KAROTT7",
+        "node_id": "MDQ6VXNlcjIxMDU0NzQ3",
+        "organizations_url": "https://api.github.com/users/KAROTT7/orgs",
+        "received_events_url": "https://api.github.com/users/KAROTT7/received_events",
+        "repos_url": "https://api.github.com/users/KAROTT7/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/KAROTT7/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/KAROTT7/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/KAROTT7",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 107
+}

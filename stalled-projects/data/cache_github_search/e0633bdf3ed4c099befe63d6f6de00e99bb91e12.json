@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Tested versions\n\n- Reproductible in v.4.4.dev2.mono.official\n\n### System information\n\nGodot v4.4.dev2.mono - Windows 10.0.22631 - Vulkan (Forward+) - dedicated NVIDIA GeForce RTX 4090 (NVIDIA; 32.0.15.6094) - AMD Ryzen 7 7800X3D 8-Core Processor (16 Threads)\n\n### Issue description\n\nIf I launch Godot as administrator, only my attached drives (C/D) shows up and are available to load from. However, running without it allows me to load from all my mapped drives. Considering that Godot sometimes has issues with dotnet without administrator, and that I keep my local project copies off my PC, this is quite annoying.\r\n\r\n![image](https://github.com/user-attachments/assets/07872c88-9c4a-4e3d-951f-96e3b923712f)\r\n![image](https://github.com/user-attachments/assets/a54c735a-5f9c-49af-8700-43131f7df991)\r\n\n\n### Steps to reproduce\n\n1. Map a network drive to your computer using the \"Map Network Drive...\" feature in Windows.\r\n![image](https://github.com/user-attachments/assets/b3654cab-fdfc-4300-b412-192632861eb0)\r\n\r\n2. Attempt to load any project from the mapped drive.\n\n### Minimal reproduction project (MRP)\n\nAny default empty project should work.",
+      "closed_at": "2024-09-30T16:39:22Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/97643/comments",
+      "created_at": "2024-09-30T14:50:42Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/97643/events",
+      "html_url": "https://github.com/godotengine/godot/issues/97643",
+      "id": 2556919852,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e4e4e4",
+          "default": false,
+          "description": "",
+          "id": 205417413,
+          "name": "platform:windows",
+          "node_id": "MDU6TGFiZWwyMDU0MTc0MTM=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/platform:windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098255,
+          "name": "topic:platforms",
+          "node_id": "MDU6TGFiZWwyNzkwOTgyNTU=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:platforms"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/97643/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc6YZ4As",
+      "number": 97643,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/97643/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/97643/timeline",
+      "title": "Launching Godot as administrator prevents loading project from mapped network drive.",
+      "type": null,
+      "updated_at": "2025-06-05T16:29:35Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/97643",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7960042?v=4",
+        "events_url": "https://api.github.com/users/CantyCanadian/events{/privacy}",
+        "followers_url": "https://api.github.com/users/CantyCanadian/followers",
+        "following_url": "https://api.github.com/users/CantyCanadian/following{/other_user}",
+        "gists_url": "https://api.github.com/users/CantyCanadian/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/CantyCanadian",
+        "id": 7960042,
+        "login": "CantyCanadian",
+        "node_id": "MDQ6VXNlcjc5NjAwNDI=",
+        "organizations_url": "https://api.github.com/users/CantyCanadian/orgs",
+        "received_events_url": "https://api.github.com/users/CantyCanadian/received_events",
+        "repos_url": "https://api.github.com/users/CantyCanadian/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/CantyCanadian/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/CantyCanadian/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/CantyCanadian",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1183
+}

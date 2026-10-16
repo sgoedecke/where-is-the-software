@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "Using the react Example given for useOptimistic hook in docs, an update in state passed to the hook should directly reset the optimisticState in one render.\r\nInstead\r\n1. It calls the updaterFn first, updates the optimisticState using new state and optimisticValue during one render cycle\r\n2. resets optimisticState with new State in another render cycle.\r\n\r\nAs a result, both the new state and optimisticValue is rendered. Tried this in 20x slowdown\r\n\r\nhttps://github.com/user-attachments/assets/3087c892-6f99-4ac5-b261-caf46bed343a\r\n\r\nReact version: 19\r\n\r\n## Steps To Reproduce\r\n\r\n1. Throttle CPU to 20x slowdown\r\n2. Type some input in text box and press submit\r\n3. See that the optimistic state is displayed and then it is pushed down for an instant along with the new state\r\n4. Check console logs\r\n\r\n<img width=\"1728\" alt=\"Screen Shot 2024-12-31 at 1 28 14 PM\" src=\"https://github.com/user-attachments/assets/fb2f8b96-a833-4d20-acb5-62a5f6218a2e\" />\r\n\r\n\r\nLink to code example:\r\n\r\nhttps://codesandbox.io/p/sandbox/react-dev-forked-gmlxnr?file=%2Fsrc%2FApp.js&workspaceId=ws_QiCvK4c476hege6EDsXfpC\r\n\r\n## The current behavior\r\n\r\nWhen new state is passed to useOptimistic, \r\n1. It updates optimisticState by calling updaterFn with new state and optimisticValue\r\n2. Component is rendered using this optimisticState (incorrect one)\r\n3. Another update to optimisticState is done by resetting it to the new state\r\n4. Component is rendered using this new optimisticState (correct one)\r\n\r\n## The expected behavior\r\n\r\nWhen new state is passed to useOptimistic, it should directly reset the optimisticState without calling the updater Fn",
+      "closed_at": "2024-12-31T08:17:35Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/react/react/issues/31943/comments",
+      "created_at": "2024-12-31T08:08:11Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/31943/events",
+      "html_url": "https://github.com/react/react/issues/31943",
+      "id": 2764088198,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/31943/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks6kwKOG",
+      "number": 31943,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/31943/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/31943/timeline",
+      "title": "Bug: Both optimisticValue and new state is displayed together using useOptimistic",
+      "type": null,
+      "updated_at": "2024-12-31T08:18:15Z",
+      "url": "https://api.github.com/repos/react/react/issues/31943",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6966618?v=4",
+        "events_url": "https://api.github.com/users/vedanttikku12/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vedanttikku12/followers",
+        "following_url": "https://api.github.com/users/vedanttikku12/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vedanttikku12/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vedanttikku12",
+        "id": 6966618,
+        "login": "vedanttikku12",
+        "node_id": "MDQ6VXNlcjY5NjY2MTg=",
+        "organizations_url": "https://api.github.com/users/vedanttikku12/orgs",
+        "received_events_url": "https://api.github.com/users/vedanttikku12/received_events",
+        "repos_url": "https://api.github.com/users/vedanttikku12/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vedanttikku12/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vedanttikku12/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vedanttikku12",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 69
+}

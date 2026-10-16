@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "**Godot version:**\r\n3.1.1 Headless\r\n\r\n**OS/device including version:**\r\nLinux, version shouldn't matter\r\n\r\n**Issue description:**\r\nGodot headless export path is confusing.\r\n\r\n**Steps to reproduce:**\r\n`./bin/Godot_v3.1.1-stable_linux_headless.64 -v \"./${projectDir}/project.godot\" --export HTML5 \"./${exportDir}/index.html\"`\r\n\r\nI expect this to export to export to the relative path of my current directory, `\"./${exportDir}/testProject.html\"`, but instead it tries to export to the relative path of the `project.godot` file, so `./${projectDir}/${exportDir}/testProject.html`\r\n\r\nThis can be bypassed with the absolute path `${realpath \"./${exportDir}/testProject.html\"}`, but it is not oblivious that is the problem from the error messages.\r\n\r\nThis is not technically a bug, but it is very confusing and can cause headless builds to fail and give no useful error message if you don't realize Godot is using the project file's relative path.",
+      "closed_at": "2022-07-22T19:48:11Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/29618/comments",
+      "created_at": "2019-06-08T21:49:42Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/29618/events",
+      "html_url": "https://github.com/godotengine/godot/issues/29618",
+      "id": 453839170,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaccff",
+          "default": true,
+          "description": "",
+          "id": 73330066,
+          "name": "enhancement",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2Ng==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098219,
+          "name": "topic:editor",
+          "node_id": "MDU6TGFiZWwyNzkwOTgyMTk=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:editor"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 2909900850,
+          "name": "topic:export",
+          "node_id": "MDU6TGFiZWwyOTA5OTAwODUw",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:export"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/29618/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0NTM4MzkxNzA=",
+      "number": 29618,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/29618/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/29618/timeline",
+      "title": "Godot Headless Export Path Inconsistent",
+      "type": null,
+      "updated_at": "2022-07-22T19:48:15Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/29618",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1642297?v=4",
+        "events_url": "https://api.github.com/users/greenfox1505/events{/privacy}",
+        "followers_url": "https://api.github.com/users/greenfox1505/followers",
+        "following_url": "https://api.github.com/users/greenfox1505/following{/other_user}",
+        "gists_url": "https://api.github.com/users/greenfox1505/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/greenfox1505",
+        "id": 1642297,
+        "login": "greenfox1505",
+        "node_id": "MDQ6VXNlcjE2NDIyOTc=",
+        "organizations_url": "https://api.github.com/users/greenfox1505/orgs",
+        "received_events_url": "https://api.github.com/users/greenfox1505/received_events",
+        "repos_url": "https://api.github.com/users/greenfox1505/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/greenfox1505/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/greenfox1505/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/greenfox1505",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 42
+}

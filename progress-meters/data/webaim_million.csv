@@ -1,0 +1,9 @@
+date,year,avg_errors_per_page,wcag_failure_pct,source_url
+2019-02-01,2019,59.6,97.8,https://webaim.org/projects/million/2019
+2020-02-01,2020,60.9,98.1,https://webaim.org/projects/million/2020
+2021-02-01,2021,51.4,97.4,https://webaim.org/projects/million/2021
+2022-02-01,2022,50.8,96.8,https://webaim.org/projects/million/2022
+2023-02-01,2023,50.0,96.3,https://webaim.org/projects/million/2023
+2024-02-01,2024,56.8,95.9,https://webaim.org/projects/million/2024
+2025-02-01,2025,51.0,94.8,https://webaim.org/projects/million/2025
+2026-02-01,2026,56.1,95.9,https://webaim.org/projects/million/

@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "## Problem\n\nThe homeassistant integration still contains `unittest.TestCase` based unit tests. We want to rewrite them to standalone pytest test functions.\n\n## Background\n\nThe Home Assistant core standard is to write tests as standalone pytest test functions. We still have some old tests that are based on `unittest.TestCase`. We want all these tests to be rewritten as pytest test functions.\n\nHere are the docs for pytest: https://docs.pytest.org/en/stable/\n\nHere's an example of an async pytest test function in Home Assistant core:\n\nhttps://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/tests/components/tradfri/test_light.py#L156-L176\n\nThere are many pytest fixtures to help writing the tests. See:\n\n- https://docs.pytest.org/en/stable/reference.html#fixtures\n- https://github.com/home-assistant/core/blob/dev/tests/conftest.py\n- The most common fixture to use is [`hass`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/tests/conftest.py#L107) which will set up a [`HomeAssistant`](https://github.com/home-assistant/core/blob/4cce724473233d4fb32c08bd251940b1ce2ba570/homeassistant/core.py#L166) instance and start it.\n\nHere's an example of a pull request that rewrote a module of `unittest.TestCase` tests to standalone pytest test functions:\nhttps://github.com/home-assistant/core/pull/40749\n\nHere's an example command to run a single test module with pytest inside tox on Python 3.8:\n\n```sh\ntox -e py38 -- --cov-report term-missing --cov=homeassistant.components.command_line.switch tests/components/command_line/test_switch.py\n```\n\nIt will print coverage information with lines that are missing coverage.\n\n## Prerequisites\n\n- A working [development environment](https://developers.home-assistant.io/docs/development_environment).\n\n## Task\n\n- Rewrite the tests one module at a time and submit the changes as a pull request to this repository.\n- We want to limit the change scope to a single module to not have the pull request be too long, which would take longer time to review.\n- Remember to reference this issue in your pull request, but don't close or fix the issue until all tests for the integration are updated.\n",
+      "closed_at": "2024-10-17T19:28:16Z",
+      "comments": 12,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/40855/comments",
+      "created_at": "2020-09-30T23:15:59Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/40855/events",
+      "html_url": "https://github.com/home-assistant/core/issues/40855",
+      "id": 712341212,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": null,
+          "id": 450787042,
+          "name": "Hacktoberfest",
+          "node_id": "MDU6TGFiZWw0NTA3ODcwNDI=",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/Hacktoberfest"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 1282925655,
+          "name": "integration: homeassistant",
+          "node_id": "MDU6TGFiZWwxMjgyOTI1NjU1",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20homeassistant"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "159818",
+          "default": false,
+          "description": "Wanna help? Jump in!",
+          "id": 1451704233,
+          "name": "help-wanted",
+          "node_id": "MDU6TGFiZWwxNDUxNzA0MjMz",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/help-wanted"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 2388600624,
+          "name": "unittest.TestCase",
+          "node_id": "MDU6TGFiZWwyMzg4NjAwNjI0",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/unittest.TestCase"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "A4E1CD",
+          "default": false,
+          "description": "",
+          "id": 2620140025,
+          "name": "no-stale",
+          "node_id": "MDU6TGFiZWwyNjIwMTQwMDI1",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/no-stale"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/40855/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU3MTIzNDEyMTI=",
+      "number": 40855,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/40855/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/40855/timeline",
+      "title": "Rewrite homeassistant unittest tests to pytest style test functions",
+      "type": null,
+      "updated_at": "2024-10-17T19:28:16Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/40855",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3181692?v=4",
+        "events_url": "https://api.github.com/users/MartinHjelmare/events{/privacy}",
+        "followers_url": "https://api.github.com/users/MartinHjelmare/followers",
+        "following_url": "https://api.github.com/users/MartinHjelmare/following{/other_user}",
+        "gists_url": "https://api.github.com/users/MartinHjelmare/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/MartinHjelmare",
+        "id": 3181692,
+        "login": "MartinHjelmare",
+        "node_id": "MDQ6VXNlcjMxODE2OTI=",
+        "organizations_url": "https://api.github.com/users/MartinHjelmare/orgs",
+        "received_events_url": "https://api.github.com/users/MartinHjelmare/received_events",
+        "repos_url": "https://api.github.com/users/MartinHjelmare/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/MartinHjelmare/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/MartinHjelmare/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/MartinHjelmare",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 3
+}

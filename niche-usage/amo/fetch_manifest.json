@@ -1,0 +1,94 @@
+{
+  "fetched_at": "2026-10-15T07:06:29.571322+00:00",
+  "source": "AMO public API v5 search, Firefox extensions",
+  "base_url": "https://addons.mozilla.org/api/v5/addons/search/",
+  "user_agent": "niche-usage-study/1.0 (research; polite cached AMO API client)",
+  "cohorts": [
+    {
+      "cohort": "2021H1",
+      "start": "2021-01-01",
+      "end": "2021-06-30",
+      "count": 2375,
+      "page_count": 48
+    },
+    {
+      "cohort": "2021H2",
+      "start": "2021-07-01",
+      "end": "2021-12-31",
+      "count": 1958,
+      "page_count": 40
+    },
+    {
+      "cohort": "2022H1",
+      "start": "2022-01-01",
+      "end": "2022-06-30",
+      "count": 2135,
+      "page_count": 43
+    },
+    {
+      "cohort": "2022H2",
+      "start": "2022-07-01",
+      "end": "2022-12-31",
+      "count": 2279,
+      "page_count": 46
+    },
+    {
+      "cohort": "2023H1",
+      "start": "2023-01-01",
+      "end": "2023-06-30",
+      "count": 2973,
+      "page_count": 60
+    },
+    {
+      "cohort": "2023H2",
+      "start": "2023-07-01",
+      "end": "2023-12-31",
+      "count": 3163,
+      "page_count": 64
+    },
+    {
+      "cohort": "2024H1",
+      "start": "2024-01-01",
+      "end": "2024-06-30",
+      "count": 3730,
+      "page_count": 75
+    },
+    {
+      "cohort": "2024H2",
+      "start": "2024-07-01",
+      "end": "2024-12-31",
+      "count": 5248,
+      "page_count": 105
+    },
+    {
+      "cohort": "2025H1",
+      "start": "2025-01-01",
+      "end": "2025-06-30",
+      "count": 11517,
+      "page_count": 231
+    },
+    {
+      "cohort": "2025H2",
+      "start": "2025-07-01",
+      "end": "2025-12-31",
+      "count": 14978,
+      "page_count": 300
+    },
+    {
+      "cohort": "2026H1",
+      "start": "2026-01-01",
+      "end": "2026-06-30",
+      "count": 20096,
+      "page_count": 402
+    },
+    {
+      "cohort": "2026H2",
+      "start": "2026-07-01",
+      "end": "2026-10-15",
+      "count": 20120,
+      "page_count": 403
+    }
+  ],
+  "rows_written": 90572,
+  "note": "Search API lists currently public/listed add-ons; removed, disabled, and unlisted creations may be missing."
+}

@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a feature request that matches the one I want to file, without success.\n\n### Problem Description\n\nSFSymbols are macOS native icons consisting of 3k+ high quality icons. Currently seems there is no way to use them in Electron apps built for macOS.\r\n\r\n<img width=\"691\" alt=\"CleanShot 2022-09-16 at 21 47 10@2x\" src=\"https://user-images.githubusercontent.com/7311462/190718766-6c6e1fe0-3407-44f5-b1f4-13ca7645f8c8.png\">\r\n\r\nIt is trivial to use it natively in swiftUI\r\n\r\n```swift\r\nImage(systemName: \"square.and.pencil\")\r\n```\r\n\r\n\n\n### Proposed Solution\n\neg.\r\n\r\n```ts\r\nnativeImage.fromSFSymbolName(\"square.and.pencil\")\r\n```\n\n### Alternatives Considered\n\nIt is possible to export SFSymbols to PNG using native MacOS app \"SF Symbols\", but it is quite a manual process.\n\n### Additional Information\n\n_No response_",
+      "closed_at": "2025-11-04T10:15:35Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/35711/comments",
+      "created_at": "2022-09-16T19:50:14Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/35711/events",
+      "html_url": "https://github.com/electron/electron/issues/35711",
+      "id": 1376404265,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": null,
+          "id": 97403606,
+          "name": "platform/macOS",
+          "node_id": "MDU6TGFiZWw5NzQwMzYwNg==",
+          "url": "https://api.github.com/repos/electron/electron/labels/platform/macOS"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9d0c4",
+          "default": false,
+          "description": null,
+          "id": 759870987,
+          "name": "component/native-image",
+          "node_id": "MDU6TGFiZWw3NTk4NzA5ODc=",
+          "url": "https://api.github.com/repos/electron/electron/labels/component/native-image"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/35711/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85SCkMp",
+      "number": 35711,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 5,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 2,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 7,
+        "url": "https://api.github.com/repos/electron/electron/issues/35711/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/35711/timeline",
+      "title": "[Feature Request]: Using SFSymbols as source for nativeImage",
+      "type": null,
+      "updated_at": "2025-11-04T10:15:35Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/35711",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7311462?v=4",
+        "events_url": "https://api.github.com/users/pie6k/events{/privacy}",
+        "followers_url": "https://api.github.com/users/pie6k/followers",
+        "following_url": "https://api.github.com/users/pie6k/following{/other_user}",
+        "gists_url": "https://api.github.com/users/pie6k/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/pie6k",
+        "id": 7311462,
+        "login": "pie6k",
+        "node_id": "MDQ6VXNlcjczMTE0NjI=",
+        "organizations_url": "https://api.github.com/users/pie6k/orgs",
+        "received_events_url": "https://api.github.com/users/pie6k/received_events",
+        "repos_url": "https://api.github.com/users/pie6k/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/pie6k/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/pie6k/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/pie6k",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 4
+}

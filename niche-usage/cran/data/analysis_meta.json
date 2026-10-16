@@ -1,0 +1,12 @@
+{
+  "latest_cranlogs_date": "2026-10-13",
+  "baseline_mirror_downloads_150d_median_2022_2024": 851097408,
+  "thresholds_downloads_31_180": [
+    500,
+    2000,
+    20000
+  ],
+  "eligible_latest_first_publication_date": "2026-04-16",
+  "created_packages_2021_to_2026q3": 13834,
+  "matured_packages_with_download_windows": 11725
+}

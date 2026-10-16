@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### \u2699 Compilation target\n\nESNext\n\n### \u2699 Library\n\n5.8\n\n### Missing / Incorrect Definition\n\n`lib.dom.ts`\n\n```ts\ninterface HTMLIFrameElement extends HTMLElement {\n    /** [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox) */\n    get sandbox(): DOMTokenList;\n    set sandbox(value: string);\n}\n```\n\n### Sample Code\n\nAccording to the spec, it should be a readonly property\n\nIDL:\n```\n[Exposed=Window]\ninterface HTMLIFrameElement : HTMLElement {\n  [SameObject, PutForwards=value] readonly attribute DOMTokenList sandbox;\n};\n```\n\n### Documentation Link\n\nhttps://html.spec.whatwg.org/multipage/iframe-embed-object.html#htmliframeelement\nhttps://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/sandbox",
+      "closed_at": "2025-06-30T13:19:08Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61974/comments",
+      "created_at": "2025-06-30T11:48:56Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61974/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/61974",
+      "id": 3188192246,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61974/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc6-B_P2",
+      "number": 61974,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/61974/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61974/timeline",
+      "title": "`HTMLIFrameElement.sandbox`'s type should be readonly",
+      "type": null,
+      "updated_at": "2025-10-22T03:09:42Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/61974",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/78926228?v=4",
+        "events_url": "https://api.github.com/users/mozesstumpf/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mozesstumpf/followers",
+        "following_url": "https://api.github.com/users/mozesstumpf/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mozesstumpf/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mozesstumpf",
+        "id": 78926228,
+        "login": "mozesstumpf",
+        "node_id": "MDQ6VXNlcjc4OTI2MjI4",
+        "organizations_url": "https://api.github.com/users/mozesstumpf/orgs",
+        "received_events_url": "https://api.github.com/users/mozesstumpf/received_events",
+        "repos_url": "https://api.github.com/users/mozesstumpf/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mozesstumpf/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mozesstumpf/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mozesstumpf",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 119
+}

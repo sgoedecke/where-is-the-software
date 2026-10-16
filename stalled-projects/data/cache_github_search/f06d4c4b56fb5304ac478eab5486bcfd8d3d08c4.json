@@ -1,0 +1,161 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "## Use case\r\nI want to use my own spring simulation for fling animation of a widget\r\n\r\n## Proposal\r\n\r\nAllow us to have some control over the direction of the animation.\r\n\r\n[Src link](https://github.com/flutter/flutter/blob/2962912d68fb72d6c9fd60f652e27f3593d692d6/packages/flutter/lib/src/animation/animation_controller.dart#L696)\r\n```dart\r\n/// From animation\\animation_controller.dart\r\n///\r\n/// The [status] is always [AnimationStatus.forward] for the entire duration\r\n/// of the simulation. --------- I mean - WHY is that?\r\n  TickerFuture animateWith(Simulation simulation) {\r\n    assert(\r\n      _ticker != null,\r\n      'AnimationController.animateWith() called after AnimationController.dispose()\\n'\r\n      'AnimationController methods should not be used after calling dispose.'\r\n    );\r\n    stop();\r\n    _direction = _AnimationDirection.forward;\r\n    return _startSimulation(simulation);\r\n  }\r\n```\r\n",
+      "closed_at": "2023-07-17T23:39:34Z",
+      "comments": 16,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/60419/comments",
+      "created_at": "2020-06-27T09:41:16Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/60419/events",
+      "html_url": "https://github.com/flutter/flutter/issues/60419",
+      "id": 646647963,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e02000",
+          "default": false,
+          "description": "Nothing broken; request for a new capability",
+          "id": 283479235,
+          "name": "c: new feature",
+          "node_id": "MDU6TGFiZWwyODM0NzkyMzU=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/c:%20new%20feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "207de5",
+          "default": false,
+          "description": "flutter/packages/flutter repository. See also f: labels.",
+          "id": 284437560,
+          "name": "framework",
+          "node_id": "MDU6TGFiZWwyODQ0Mzc1NjA=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/framework"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "55ddbb",
+          "default": false,
+          "description": "Animation APIs",
+          "id": 288132724,
+          "name": "a: animation",
+          "node_id": "MDU6TGFiZWwyODgxMzI3MjQ=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/a:%20animation"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e02000",
+          "default": false,
+          "description": "A detailed proposal for a change to Flutter",
+          "id": 1203938779,
+          "name": "c: proposal",
+          "node_id": "MDU6TGFiZWwxMjAzOTM4Nzc5",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/c:%20proposal"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "550000",
+          "default": false,
+          "description": "Issues that are less important to the Flutter project",
+          "id": 2096802849,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwyMDk2ODAyODQ5",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "198022",
+          "default": false,
+          "description": "Owned by Framework team",
+          "id": 5706368363,
+          "name": "team-framework",
+          "node_id": "LA_kwDOAeUeuM8AAAABVCBFaw",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/team-framework"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8ccba",
+          "default": false,
+          "description": "Triaged by Framework team",
+          "id": 5706368378,
+          "name": "triaged-framework",
+          "node_id": "LA_kwDOAeUeuM8AAAABVCBFeg",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/triaged-framework"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/60419/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NDY2NDc5NjM=",
+      "number": 60419,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/60419/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/60419/timeline",
+      "title": "The AnimationController animateWith must allow to change the direction",
+      "type": null,
+      "updated_at": "2023-08-01T00:01:41Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/60419",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/39104740?v=4",
+        "events_url": "https://api.github.com/users/nt4f04uNd/events{/privacy}",
+        "followers_url": "https://api.github.com/users/nt4f04uNd/followers",
+        "following_url": "https://api.github.com/users/nt4f04uNd/following{/other_user}",
+        "gists_url": "https://api.github.com/users/nt4f04uNd/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/nt4f04uNd",
+        "id": 39104740,
+        "login": "nt4f04uNd",
+        "node_id": "MDQ6VXNlcjM5MTA0NzQw",
+        "organizations_url": "https://api.github.com/users/nt4f04uNd/orgs",
+        "received_events_url": "https://api.github.com/users/nt4f04uNd/received_events",
+        "repos_url": "https://api.github.com/users/nt4f04uNd/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/nt4f04uNd/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/nt4f04uNd/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/nt4f04uNd",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 120
+}

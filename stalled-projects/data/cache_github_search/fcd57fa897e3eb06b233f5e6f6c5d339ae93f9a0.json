@@ -1,0 +1,161 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Godot version\n\n4.0 alpha 6\n\n### System information\n\nArch Linux, NVIDIA GTX750Ti, driver 510.60.02, Xorg\n\n### Issue description\n\nVery laggy windows with Godot 4. No such problem with version 3.4.4. Could be a problem with Vulkan render. No window lags on wayland, but there is a input delay about half a second, probably because of NVIDIA poor wayland support.\r\nHere is video:\r\nhttps://youtu.be/2nGjznv3seU\n\n### Steps to reproduce\n\nJust open Godot 4 on linux.\n\n### Minimal reproduction project\n\n_No response_",
+      "closed_at": "2025-08-12T11:23:59Z",
+      "comments": 12,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/60106/comments",
+      "created_at": "2022-04-10T17:24:32Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/60106/events",
+      "html_url": "https://github.com/godotengine/godot/issues/60106",
+      "id": 1199118264,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e4e4e4",
+          "default": false,
+          "description": "",
+          "id": 279097326,
+          "name": "platform:linuxbsd",
+          "node_id": "MDU6TGFiZWwyNzkwOTczMjY=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/platform:linuxbsd"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098111,
+          "name": "topic:rendering",
+          "node_id": "MDU6TGFiZWwyNzkwOTgxMTE=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:rendering"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaddaa",
+          "default": false,
+          "description": "",
+          "id": 279128044,
+          "name": "confirmed",
+          "node_id": "MDU6TGFiZWwyNzkxMjgwNDQ=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/confirmed"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 370471795,
+          "name": "topic:thirdparty",
+          "node_id": "MDU6TGFiZWwzNzA0NzE3OTU=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:thirdparty"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff63ac",
+          "default": false,
+          "description": "",
+          "id": 1332303119,
+          "name": "regression",
+          "node_id": "MDU6TGFiZWwxMzMyMzAzMTE5",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/regression"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/60106/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc5HeRe4",
+      "number": 60106,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 11,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 11,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/60106/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/60106/timeline",
+      "title": "Vulkan: Moving editor's windows is very laggy on linux",
+      "type": null,
+      "updated_at": "2025-08-12T11:24:42Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/60106",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/64690334?v=4",
+        "events_url": "https://api.github.com/users/mrvladus/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mrvladus/followers",
+        "following_url": "https://api.github.com/users/mrvladus/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mrvladus/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mrvladus",
+        "id": 64690334,
+        "login": "mrvladus",
+        "node_id": "MDQ6VXNlcjY0NjkwMzM0",
+        "organizations_url": "https://api.github.com/users/mrvladus/orgs",
+        "received_events_url": "https://api.github.com/users/mrvladus/received_events",
+        "repos_url": "https://api.github.com/users/mrvladus/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mrvladus/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mrvladus/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mrvladus",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 35
+}

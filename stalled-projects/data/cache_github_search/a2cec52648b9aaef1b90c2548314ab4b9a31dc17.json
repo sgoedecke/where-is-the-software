@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### What happened?\r\n\r\nWhen a pod's emptyDir exceeds the resource limit, the pod will restart and enter the ContainerStatusUnknown state.\r\n\r\n### What did you expect to happen?\r\n\r\nAfter the emptyDir of the pod exceeds the resource limit, the pod should enter the error state, should not restart and enter the ContainerStatusUnknown state \r\n\r\n### How can we reproduce it (as minimally and precisely as possible)?\r\n\r\nstep1\r\n```\r\n$ kubectl apply -f - <<EOF\r\napiVersion: v1\r\nkind: Pod\r\nmetadata:\r\n  name: centos\r\n  labels:\r\n    app: centos\r\nspec:\r\n  containers:\r\n    - name: centos\r\n      image: centos:7\r\n      imagePullPolicy: IfNotPresent\r\n      command:\r\n        - \"/bin/bash\"\r\n        - \"-c\"\r\n        - \"sleep 1000000\"\r\n      volumeMounts:\r\n        - mountPath: /data\r\n          name: tm\r\n      resources:\r\n        limits:\r\n          ephemeral-storage: 100M\r\n  volumes:\r\n    - name: tm\r\n      emptyDir: {}\r\n  restartPolicy: Always\r\nEOF\r\n```\r\nstep2\r\n\r\n```\r\n$ kubectl exec centos /usr/bin/dd if=/dev/zero of=/data/test bs=1M count=150\r\n```\r\n\r\nThe status of the pod will show that the pod restarts and enters the ContainerStatusUnknown state\r\n\r\n```\r\n$ kubectl get pods  -w\r\nNAME     READY   STATUS    RESTARTS   AGE\r\ncentos   1/1     Running   0          11s\r\ncentos   1/1     Running   0          77s\r\ncentos   0/1     ContainerCreating   1          79s\r\ncentos   0/1     ContainerStatusUnknown   1          79s\r\n```\r\n\r\n### Anything else we need to know?\r\n\r\nI tried to reproduce #116986 and accidentally discovered an error that doesn't always occur,  requires repeated attempts to see it\r\n\r\n\r\n### Kubernetes version\r\n\r\n<details>\r\n\r\n```console\r\n$ kubectl version\r\nWARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.\r\nClient Version: version.Info{Major:\"1\", Minor:\"26\", GitVersion:\"v1.26.3\", GitCommit:\"9e644106593f3f4aa98f8a84b23db5fa378900bd\", GitTreeState:\"clean\", BuildDate:\"2023-03-15T13:40:17Z\", GoVersion:\"go1.19.7\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\nKustomize Version: v4.5.7\r\nServer Version: version.Info{Major:\"1\", Minor:\"26\", GitVersion:\"v1.26.3\", GitCommit:\"9e644106593f3f4aa98f8a84b23db5fa378900bd\", GitTreeState:\"clean\", BuildDate:\"2023-03-15T13:33:12Z\", GoVersion:\"go1.19.7\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Cloud provider\r\n\r\n<details>\r\n\r\n</details>\r\n\r\n\r\n### OS version\r\n\r\n<details>\r\n\r\n```console\r\n# On Linux:\r\n$ cat /etc/os-release\r\nPRETTY_NAME=\"Debian GNU/Linux 11 (bullseye)\"\r\nNAME=\"Debian GNU/Linux\"\r\nVERSION_ID=\"11\"\r\nVERSION=\"11 (bullseye)\"\r\nVERSION_CODENAME=bullseye\r\nID=debian\r\nHOME_URL=\"https://www.debian.org/\"\r\nSUPPORT_URL=\"https://www.debian.org/support\"\r\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\r\n$ uname -a\r\nLinux instance-1 5.10.0-21-cloud-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64 GNU/Linux\r\n\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Install tools\r\n\r\n<details>\r\n\r\n</details>\r\n\r\n\r\n### Container runtime (CRI) and version (if applicable)\r\n\r\n<details>\r\ncontainerd --version\r\ncontainerd github.com/containerd/containerd v1.7.0 1fbd70374134b891f97ce19c70b6e50c7b9f4e0d\r\n</details>\r\n\r\n\r\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\r\n\r\n<details>\r\n\r\n</details>\r\n",
+      "closed_at": "2023-03-31T14:45:05Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/117010/comments",
+      "created_at": "2023-03-30T10:45:17Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/117010/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/117010",
+      "id": 1647365789,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Node.",
+          "id": 173493665,
+          "name": "sig/node",
+          "node_id": "MDU6TGFiZWwxNzM0OTM2NjU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/node"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/117010/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks5iMM6d",
+      "number": 117010,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/117010/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/117010/timeline",
+      "title": "When a pod's emptyDir exceeds the resource limit, the pod will restart and enter the ContainerStatusUnknown state.",
+      "type": null,
+      "updated_at": "2023-03-31T14:45:05Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/117010",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/53457917?v=4",
+        "events_url": "https://api.github.com/users/HirazawaUi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/HirazawaUi/followers",
+        "following_url": "https://api.github.com/users/HirazawaUi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/HirazawaUi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/HirazawaUi",
+        "id": 53457917,
+        "login": "HirazawaUi",
+        "node_id": "MDQ6VXNlcjUzNDU3OTE3",
+        "organizations_url": "https://api.github.com/users/HirazawaUi/orgs",
+        "received_events_url": "https://api.github.com/users/HirazawaUi/received_events",
+        "repos_url": "https://api.github.com/users/HirazawaUi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/HirazawaUi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/HirazawaUi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/HirazawaUi",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 475
+}

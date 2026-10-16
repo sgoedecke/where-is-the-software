@@ -1,0 +1,51 @@
+app_id,name,added_at,cohort,installs_last_month,installs_total,first180,observed180,verification_verified,developer_name,summary,categories
+org.vinegarhq.Sober,Sober,2025-03-30,2025-H1,193490,3262872,760935,True,True,VinegarHQ & Sober contributors,"Play, chat & explore on Roblox",GNOME|GTK
+app.zen_browser.zen,Zen,2025-01-14,2025-H1,58393,1444400,361863,True,True,Zen Team,"Stay focused, browse faster",WebBrowser
+io.github.kolunmi.Bazaar,Bazaar,2025-08-26,2025-H2,45417,468522,166280,True,True,The Bazaar Contributors,Discover and install apps,
+org.mozilla.thunderbird,Thunderbird,2026-05-19,2026-H1,29389,144722,144158,False,True,"MZLA Technologies, part of the Mozilla Foundation","Thunderbird is a free and open source email, newsfeed, chat, and calendaring client",Calendar|Chat|ContactManagement|Email|Feed|InstantMessaging|IRCClient|News|Office
+org.mozilla.thunderbird_esr,Thunderbird ESR,2026-05-26,2026-H1,28115,1876357,278119,False,True,"MZLA Technologies, part of the Mozilla Foundation","Thunderbird is a free and open source email, newsfeed, chat, and calendaring client",Calendar|Chat|ContactManagement|Email|Feed|InstantMessaging|IRCClient|News|Office
+org.jellyfin.JellyfinDesktop,Jellyfin Desktop,2025-12-27,2025-H2,26061,722537,134911,True,True,Jellyfin,Jellyfin desktop client,Video|Player|TV
+com.orcaslicer.OrcaSlicer,OrcaSlicer,2026-03-30,2026-H1,24085,141794,125573,True,True,SoftFever,Get even more perfect prints!,3DGraphics|Engineering
+io.github.ilya_zlobintsev.LACT,LACT,2025-04-10,2025-H1,19855,353964,75206,True,True,Ilya Zlobintsev,Control your graphics cards,
+io.github.Faugus.faugus-launcher,Faugus,2025-06-14,2025-H1,19296,227316,38142,True,True,Faugus,A simple and lightweight app for running games using UMU-Launcher,
+com.opera.opera-gx,Opera GX,2026-04-12,2026-H1,17447,136306,132867,True,True,Opera,Opera GX: THE gaming browser,WebBrowser|InstantMessaging|Chat|Feed
+rocks.shy.VacuumTube,VacuumTube,2025-03-25,2025-H1,15693,196431,34633,True,True,shy,"YouTube for TV, on your PC",
+space.bigrat.mocktail,Mocktail,2026-08-14,2026-H2,13327,33707,33707,False,True,Mocktail Project Authors,Play Roblox on Linux,
+io.github.linx_systems.ClamUI,ClamUI,2026-01-13,2026-H1,13064,137761,93296,True,True,ClamUI Contributors,GUI for ClamAV,Security|Utility
+com.collaboraoffice.Office,Collabora Office,2025-12-11,2025-H2,12770,81064,49656,True,True,Collabora Productivity Limited,The Collabora Office productivity suite,
+ai.lmstudio.lm-studio,LM Studio,2026-05-15,2026-H1,12676,76522,76522,False,False,"Element Labs, Inc.","Run AI models, locally and privately",Chat|Development
+io.github.cosmic_utils.camera,Camera,2025-12-05,2025-H2,11229,114929,59934,True,True,Frederic Laing,"Camera for photos, videos and QR codes",Video|Recorder|Photography
+com.ranfdev.DistroShelf,DistroShelf,2025-04-25,2025-H1,10240,413686,118291,True,True,Lorenzo Miglietta,Graphical interface for managing Distrobox containers,
+org.azahar_emu.Azahar,Azahar,2025-04-17,2025-H1,9759,274343,57887,True,True,Azahar Emulator Developers,Open-source 3DS emulator project based on Citra.,Emulator
+be.alexandervanhee.gradia,Gradia,2025-05-25,2025-H1,8890,127860,36529,True,True,Alexander Vanhee,Annotate your screenshots,
+io.github.ryubing.Ryujinx,Ryujinx (Ryubing),2025-01-27,2025-H1,8785,241959,65278,True,False,Ryubing,Nintendo Switch emulator,Emulator
+dev.eden_emu.eden,Eden,2026-09-01,2026-H2,8681,15631,15631,False,False,Eden Contributors,Nintendo Switch emulator,Emulator
+io.github.benjamimgois.goverlay,Goverlay,2025-12-28,2025-H2,8560,103821,67830,True,True,Benjamim Gois,Configure gaming overlays,Utility
+ai.jan.Jan,Jan,2025-11-25,2025-H2,8550,61478,23574,True,True,Menlo Research Pte. Ltd.,Private offline AI assistant,Chat|Dictionary|Education
+org.waywallen.waywallen,waywallen,2026-07-03,2026-H2,8481,27757,27757,False,True,hypengw,Wallpaper Manager for Linux,Graphics
+page.tesk.Refine,Refine,2025-01-02,2025-H1,8426,214020,65729,True,True,Hari Rana (TheEvilSkeleton),Tweak various aspects of GNOME,
+io.gitlab.secu_design.usb-imager,USB Imager,2026-08-09,2026-H2,7349,17561,17561,False,True,Secu-Design®,Write many USB drives at once,FileTools
+io.github.screwys.Rufin,Rufin,2026-05-27,2026-H1,7183,17899,17899,False,True,screwy,Feel at home with your music,Audio|Music|Player
+io.github.diegopvlk.Cine,Cine,2026-01-23,2026-H1,7012,64531,43572,True,True,Diego Povliuk,Play your videos,Audio|Video|Player
+org.mozilla.vpn,Mozilla VPN,2025-07-09,2025-H2,6795,134522,55005,True,True,Mozilla Corporation,"A fast, secure and easy to use VPN. Built by the makers of Firefox.",Security
+org.cutwire.Drift,Drift,2026-08-01,2026-H2,6777,15792,15792,False,True,CutWire Studios,Edit and export videos easily,Video|AudioVideoEditing
+ai.opencode.opencode,OpenCode,2026-04-23,2026-H1,6736,30571,30571,False,False,Anomaly Innovations Inc.,Open source AI coding agent,
+io.github.tobagin.karere,Karere,2025-07-14,2025-H2,6422,83285,19772,True,True,Thiago Fernandes,Chat on WhatsApp,InstantMessaging|Chat
+net.code_industry.MasterPDFEditor,Master PDF Editor,2025-01-03,2025-H1,5888,687519,72245,True,False,Code Industry,Master PDF Editor is a full solution for work with PDF documents,Graphics
+no.bragefuglseth.Keypunch,Keypunch,2026-07-18,2026-H2,5834,123035,33627,False,True,Brage Fuglseth,Practice your typing skills,
+com.keepsolid.VpnUnlimited,VPN Unlimited,2026-08-12,2026-H2,5735,13566,13566,False,True,"KeepSolid, Inc.",Fast and private VPN,Security
+io.github.radiolamp.mangojuice,Mango Juice,2025-04-29,2025-H1,5459,117563,34601,True,True,Radiolamp,Customizable performance display,
+net.donnybeelo.Convey,Convey,2026-09-15,2026-H2,5413,5430,5430,False,True,Daniel Elia,Send and receive email,Email
+com.overwolf.curseforge,CurseForge,2026-09-30,2026-H2,5411,5411,5411,False,True,Overwolf,"Discover, install, and manage mods and modpacks",
+com.bilingify.readest,Readest,2025-11-22,2025-H2,5346,53868,27979,True,True,Readest Team,"Modern, feature-rich ebook reader",Literature|Education
+io.github.maniacx.BudsLink,BudsLink,2026-04-27,2026-H1,5285,17091,17091,False,True,maniacx,Monitor and control Bluetooth earbuds,Audio
+app.fluxer.Fluxer,Fluxer,2026-03-19,2026-H1,5179,24036,18772,True,True,Fluxer,A chat app that puts you first,InstantMessaging|Chat
+org.luanti.luanti,Luanti,2025-05-24,2025-H1,5108,497378,74643,True,True,Luanti Team,Block-based multiplayer game platform,Simulation
+org.equicord.equibop,Equibop,2025-10-30,2025-H2,4969,83988,25297,True,True,Equicord Contributors,A snappy Discord desktop client,InstantMessaging
+app.xmcl.voxelum,X Minecraft Launcher,2025-07-02,2025-H2,4950,67718,20004,True,True,Voxelum,Play and manage Minecraft,Utility
+com.sublimehq.SublimeText,Sublime Text,2026-01-24,2026-H1,4882,45729,32195,True,False,Sublime HQ Pty Ltd,"Text Editing, Done Right",Utility
+io.github.fastrizwaan.WineCharm,WineCharm,2025-06-22,2025-H1,4786,93999,37598,True,True,Mohammed Asif Ali Rizvan,A Charming Wine GUI,Emulator
+moe.launcher.an-anime-game-launcher,An Anime Game Launcher,2025-11-17,2025-H2,4723,51013,26991,True,True,An Anime Team,Play your favorite anime game on Linux,
+org.triliumnotes.Trilium,Trilium Notes,2026-09-02,2026-H2,4620,77319,5643,False,True,Trilium Notes Team,Build your personal knowledge base,Utility
+app.twintaillauncher.ttl,Twintail Launcher,2025-07-14,2025-H2,4529,62141,20785,True,True,TwintailTeam,Run anime games hassle free,Utility
+io.github.nozwock.Packet,Packet,2025-05-16,2025-H1,4487,72954,24658,True,True,nozwock,Share files easily,Network

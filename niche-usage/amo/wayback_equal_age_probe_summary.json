@@ -1,0 +1,12 @@
+{
+  "attempted_top_current_adu_2024H1": 10,
+  "with_any_2025H2_detail_page_capture": 6,
+  "with_parsed_snapshot_adu": 6,
+  "snapshot_counts_thresholds": {
+    "10": 6,
+    "100": 6,
+    "1000": 6,
+    "10000": 5
+  },
+  "note": "Coverage is a biased top-current-ADU sample, not a full cohort estimate."
+}

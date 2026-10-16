@@ -1,0 +1,11 @@
+snapshot_date,timestamp,source,total_instances
+2022-03-13,20220313032659,wayback:data_instance_30d,127561
+2024-04-25,20240425195614,wayback:data_instance_30d,150872
+2024-06-29,20240629191639,wayback:data_instance_30d,108145
+2024-11-09,20241109092459,wayback:data_instance_30d,85200
+2025-02-11,20250211111604,wayback:data_instance_30d,83287
+2025-05-19,20250519173656,wayback:data_instance_30d,75621
+2025-09-16,20250916004445,wayback:data_instance_30d,67878
+2026-01-18,20260118162809,wayback:data_instance_30d,66573
+2026-05-21,20260521072507,wayback:data_instance_30d,57708
+2026-10-15,current,live:data_instance_30d,50989

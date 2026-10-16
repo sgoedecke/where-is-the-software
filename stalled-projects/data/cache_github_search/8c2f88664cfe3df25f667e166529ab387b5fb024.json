@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "This is the **summary issue** for the `unsupported_calling_conventions` future-incompatibility warning and other related errors. The goal of this page is describe why this change was made and how you can fix code that is affected by it. It also provides a place to ask questions or register a complaint if you feel the change should not be made. For more information on the policy around future-compatibility warnings, see our [breaking change policy guidelines][guidelines].\n\n[guidelines]: https://rustc-dev-guide.rust-lang.org/bug-fix-procedure.html#tracking-issue-template\n\n#### What is the warning for?\n\nThe `unsupported_calling_conventions` lint is output whenever there is an use of the `stdcall`, `fastcall`, `thiscall`, `vectorcall` calling conventions (or their unwind variants) on targets that cannot meaningfully be supported for the requested target.\n\nFor example `stdcall` does not make much sense for a x86_64 or, more apparently, powerpc code, because this calling convention was never specified for those targets.\n\nHistorically MSVC toolchains have fallen back to the regular C calling convention for targets other than x86, but Rust doesn't really see a similar need to introduce a similar hack across many more targets. That said, for now we are keeping the fallback behavior on Windows targets, for compatibility with MSVC.\n\n### Example\n\n```rust,ignore (needs specific targets)\nextern \"stdcall\" fn stdcall() {}\n```\n\nThis will produce:\n\n```text\nwarning: use of calling convention not supported on this target\n  --> $DIR/unsupported.rs:39:1\n   |\nLL | extern \"stdcall\" fn stdcall() {}\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   |\n   = note: `#[warn(unsupported_calling_conventions)]` on by default\n   = warning: this was previously accepted by the compiler but is being phased out;\n              it will become a hard error in a future release!\n   = note: for more information, see issue ...\n```\n\nOn most of the targets the behaviour of `stdcall` and similar calling conventions is not defined at all, but was previously accepted due to a bug in the implementation of the compiler.\n\n#### Recommendations\n\nUse `#[cfg(\u2026)]` annotations to ensure that the ABI identifiers are only used in combination with targets for which the requested ABI is well specified.\n\n#### When will this warning become a hard error?\n\nAt the beginning of each 6-week release cycle, the Rust compiler team will review the set of outstanding future compatibility warnings and nominate some of them for **Final Comment Period**. Toward the end of the cycle, we will review any comments and make a final determination whether to convert the warning into a hard error or remove it entirely.",
+      "closed_at": "2024-10-22T05:48:13Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/87678/comments",
+      "created_at": "2021-08-01T08:48:35Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/87678/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/87678",
+      "id": 957433607,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Lints (warnings about flaws in source code) such as unused_mut.",
+          "id": 235137,
+          "name": "A-lints",
+          "node_id": "MDU6TGFiZWwyMzUxMzc=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-lints"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: Future-incompatibility lints",
+          "id": 630636017,
+          "name": "C-future-incompatibility",
+          "node_id": "MDU6TGFiZWw2MzA2MzYwMTc=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-future-incompatibility"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue tracking the progress of sth. like the implementation of an RFC",
+          "id": 650846969,
+          "name": "C-tracking-issue",
+          "node_id": "MDU6TGFiZWw2NTA4NDY5Njk=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-tracking-issue"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Concerning the application binary interface (ABI)",
+          "id": 4288196623,
+          "name": "A-ABI",
+          "node_id": "LA_kwDOAAsO6M7_mLAP",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-ABI"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/87678/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5NTc0MzM2MDc=",
+      "number": 87678,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 4,
+        "-1": 1,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 5,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/87678/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/87678/timeline",
+      "title": "Tracking issue for future-incompatibility lint `unsupported_calling_conventions`",
+      "type": null,
+      "updated_at": "2025-02-14T07:41:11Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/87678",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/679122?v=4",
+        "events_url": "https://api.github.com/users/nagisa/events{/privacy}",
+        "followers_url": "https://api.github.com/users/nagisa/followers",
+        "following_url": "https://api.github.com/users/nagisa/following{/other_user}",
+        "gists_url": "https://api.github.com/users/nagisa/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/nagisa",
+        "id": 679122,
+        "login": "nagisa",
+        "node_id": "MDQ6VXNlcjY3OTEyMg==",
+        "organizations_url": "https://api.github.com/users/nagisa/orgs",
+        "received_events_url": "https://api.github.com/users/nagisa/received_events",
+        "repos_url": "https://api.github.com/users/nagisa/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/nagisa/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/nagisa/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/nagisa",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

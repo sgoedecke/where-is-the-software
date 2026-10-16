@@ -1,0 +1,725 @@
+[
+  {
+    "id": 97,
+    "name": "Decky-Framegen",
+    "created": "2025-02-14T19:22:28Z",
+    "downloads": 374694,
+    "description": "This plugin installs and manages OptiScaler, a tool that enhances upscaling and enables frame generation in a range of DirectX 12 games.",
+    "tags": [
+      "DLSS",
+      "Framegen",
+      "FSR",
+      "upscaling"
+    ],
+    "submodule_path": "plugins/Decky-Framegen",
+    "submodule_url": "https://github.com/xXJSONDeruloXx/Decky-Framegen.git",
+    "github_repo": "xXJSONDeruloXx/Decky-Framegen",
+    "repo_meta": {
+      "created_at": "2025-01-21T23:52:49Z",
+      "description": "Steam Deck Plugin to apply Optiscaler upscaling and frame gen mods in game mode",
+      "html_url": "https://github.com/xXJSONDeruloXx/Decky-Framegen",
+      "pushed_at": "2026-08-01T19:14:14Z",
+      "stargazers_count": 1472,
+      "updated_at": "2026-10-14T12:47:25Z"
+    }
+  },
+  {
+    "id": 113,
+    "name": "Decky LSFG-VK",
+    "created": "2025-11-27T16:51:06Z",
+    "downloads": 347948,
+    "description": "Enable lossless scaling frame generation on the Steam Deck using lsfg-vk compatibility layer.",
+    "tags": [
+      "framegen",
+      "installer",
+      "lossless",
+      "lsfg",
+      "scaling",
+      "vulkan"
+    ],
+    "submodule_path": "plugins/decky-lsfg-vk",
+    "submodule_url": "https://github.com/xXJSONDeruloXx/decky-lsfg-vk.git",
+    "github_repo": "xXJSONDeruloXx/decky-lsfg-vk",
+    "repo_meta": {
+      "created_at": "2025-07-11T11:04:28Z",
+      "description": "Decky plugin to streamline installation and usage of lsfg-vk; the Lossless Scaling compatibility layer for linux",
+      "html_url": "https://github.com/xXJSONDeruloXx/decky-lsfg-vk",
+      "pushed_at": "2026-09-17T20:39:38Z",
+      "stargazers_count": 1966,
+      "updated_at": "2026-10-14T16:34:57Z"
+    }
+  },
+  {
+    "id": 91,
+    "name": "PlayCount",
+    "created": "2025-01-14T19:42:25Z",
+    "downloads": 158376,
+    "description": "A Steam Deck plugin that shows current player counts for your steam games.",
+    "tags": [
+      "Currently Playing",
+      "Player Count",
+      "Steam Charts",
+      "SteamDB"
+    ],
+    "submodule_path": "plugins/playcount-decky",
+    "submodule_url": "https://github.com/itsOwen/playcount-decky.git",
+    "github_repo": "itsOwen/playcount-decky",
+    "repo_meta": {
+      "created_at": "2024-12-28T22:41:18Z",
+      "description": "A Steam Deck plugin that shows current player counts for your steam games.",
+      "html_url": "https://github.com/itsOwen/playcount-decky",
+      "pushed_at": "2026-09-27T15:25:43Z",
+      "stargazers_count": 31,
+      "updated_at": "2026-09-27T15:25:47Z"
+    }
+  },
+  {
+    "id": 93,
+    "name": "Deck Settings",
+    "created": "2025-01-25T20:28:03Z",
+    "downloads": 130040,
+    "description": "Fetch and display community-driven game compatibility, settings, and configuration reports.",
+    "tags": [
+      "config",
+      "deckverified",
+      "game",
+      "settings",
+      "setup",
+      "verified"
+    ],
+    "submodule_path": "plugins/decky-game-settings",
+    "submodule_url": "https://github.com/DeckSettings/decky-game-settings.git",
+    "github_repo": "DeckSettings/decky-game-settings",
+    "repo_meta": {
+      "created_at": "2025-01-05T07:40:12Z",
+      "description": "Decky Loader plugin for browsing, filtering and viewing Deck Verified game performance & settings reports (with YouTube and external reviews) directly in Steam Deck\u2019s Quick Access Menu.",
+      "html_url": "https://github.com/DeckSettings/decky-game-settings",
+      "pushed_at": "2025-12-08T00:02:23Z",
+      "stargazers_count": 26,
+      "updated_at": "2026-10-04T23:43:10Z"
+    }
+  },
+  {
+    "id": 108,
+    "name": "HueSync",
+    "created": "2025-06-22T15:36:38Z",
+    "downloads": 81299,
+    "description": "LED controller for non-Steam Deck gaming handhelds running SteamOS.",
+    "tags": [
+      "root"
+    ],
+    "submodule_path": "plugins/HueSync",
+    "submodule_url": "https://github.com/honjow/HueSync.git",
+    "github_repo": "honjow/HueSync",
+    "repo_meta": {
+      "created_at": "2023-04-19T04:09:47Z",
+      "description": "RGB control decky plugin",
+      "html_url": "https://github.com/honjow/HueSync",
+      "pushed_at": "2026-07-15T11:40:10Z",
+      "stargazers_count": 59,
+      "updated_at": "2026-09-17T21:46:27Z"
+    }
+  },
+  {
+    "id": 90,
+    "name": "Picture in Picture",
+    "created": "2025-01-14T19:37:27Z",
+    "downloads": 74888,
+    "description": "Watch your favorite stream while you game!",
+    "tags": [
+      "movies",
+      "pip",
+      "tv",
+      "video",
+      "web"
+    ],
+    "submodule_path": "plugins/decky-pip",
+    "submodule_url": "https://github.com/rossimo/decky-pip",
+    "github_repo": "rossimo/decky-pip",
+    "repo_meta": {
+      "created_at": "2025-01-04T03:20:38Z",
+      "description": null,
+      "html_url": "https://github.com/rossimo/decky-pip",
+      "pushed_at": "2025-01-13T01:42:31Z",
+      "stargazers_count": 24,
+      "updated_at": "2026-08-04T09:51:34Z"
+    }
+  },
+  {
+    "id": 100,
+    "name": "Virtual Surround Sound",
+    "created": "2025-03-05T17:45:52Z",
+    "downloads": 50647,
+    "description": "Create a virtual surround sound audio sink that converts 7.1 surround audio into immersive binaural output for headphones via HRIR processing with multiple presets (Atmos, DTS, Steam, Razer, etc.).",
+    "tags": [
+      "5.1",
+      "7.1",
+      "atmos",
+      "audio",
+      "binaural",
+      "dolby",
+      "dts",
+      "headphones",
+      "surround"
+    ],
+    "submodule_path": "plugins/decky-virtual-surround-sound",
+    "submodule_url": "https://github.com/DeckSettings/decky-virtual-surround-sound.git",
+    "github_repo": "DeckSettings/decky-virtual-surround-sound",
+    "repo_meta": {
+      "created_at": "2025-02-05T19:40:51Z",
+      "description": "Decky Virtual Surround Sound is a Decky plugin using a custom Pipewire filter-chain to enable virtual surround sound for games. It converts 7.1 audio to immersive binaural output for headphones via HRIR processing with multiple presets (Atmos, DTS, Steam, Razer, etc.).",
+      "html_url": "https://github.com/DeckSettings/decky-virtual-surround-sound",
+      "pushed_at": "2025-12-15T00:01:38Z",
+      "stargazers_count": 20,
+      "updated_at": "2026-08-21T16:01:57Z"
+    }
+  },
+  {
+    "id": 106,
+    "name": "LetMeReShade",
+    "created": "2025-06-09T13:17:50Z",
+    "downloads": 47320,
+    "description": "ReShade plugin for Steam Deck - Enhanced version with improved shader and game management.",
+    "tags": [
+      "graphics",
+      "presets",
+      "reshade",
+      "shaders"
+    ],
+    "submodule_path": "plugins/LetMeReShade",
+    "submodule_url": "https://github.com/itsOwen/LetMeReShade.git",
+    "github_repo": "itsOwen/LetMeReShade",
+    "repo_meta": {
+      "created_at": "2025-02-05T09:28:57Z",
+      "description": "ReShade plugin for Steam Deck - Enhanced version with improved shader and game management.",
+      "html_url": "https://github.com/itsOwen/LetMeReShade",
+      "pushed_at": "2026-09-27T15:18:02Z",
+      "stargazers_count": 118,
+      "updated_at": "2026-10-06T17:56:56Z"
+    }
+  },
+  {
+    "id": 111,
+    "name": "Music Control",
+    "created": "2025-10-21T15:35:03Z",
+    "downloads": 37560,
+    "description": "Quick access for media player controls in game mode.",
+    "tags": [
+      "media",
+      "mpris",
+      "music"
+    ],
+    "submodule_path": "plugins/MusicControl",
+    "submodule_url": "https://github.com/martinpl/MusicControl.git",
+    "github_repo": "martinpl/MusicControl",
+    "repo_meta": {
+      "created_at": "2025-09-11T16:09:16Z",
+      "description": "Spotify music control plugin for https://github.com/SteamDeckHomebrew/decky-loader",
+      "html_url": "https://github.com/martinpl/MusicControl",
+      "pushed_at": "2025-09-17T15:46:14Z",
+      "stargazers_count": 3,
+      "updated_at": "2026-09-14T23:48:43Z"
+    }
+  },
+  {
+    "id": 107,
+    "name": "Decky Sunshine",
+    "created": "2025-06-10T22:40:25Z",
+    "downloads": 35969,
+    "description": "Stream your Steam Deck screen to another device with minimal effort.",
+    "tags": [
+      "moonlight",
+      "root",
+      "server",
+      "streaming",
+      "sunshine"
+    ],
+    "submodule_path": "plugins/decky-sunshine",
+    "submodule_url": "https://github.com/s0t7x/decky-sunshine.git",
+    "github_repo": "s0t7x/decky-sunshine",
+    "repo_meta": {
+      "created_at": "2024-03-29T09:35:31Z",
+      "description": "Decky plugin to easily toggle the Sunshine game streaming server when in game mode.",
+      "html_url": "https://github.com/s0t7x/decky-sunshine",
+      "pushed_at": "2026-09-30T19:31:10Z",
+      "stargazers_count": 111,
+      "updated_at": "2026-10-15T00:09:29Z"
+    }
+  },
+  {
+    "id": 102,
+    "name": "DeckSP",
+    "created": "2025-03-17T20:05:42Z",
+    "downloads": 32525,
+    "description": "Full audio effects DSP. EQ, Reverb and much more. Per-game settings possible.",
+    "tags": [
+      "audio",
+      "compressor",
+      "dsp",
+      "effects",
+      "eq",
+      "equalizer",
+      "fx",
+      "reverb",
+      "sound"
+    ],
+    "submodule_path": "plugins/DeckSP",
+    "submodule_url": "https://github.com/jessebofill/DeckSP.git",
+    "github_repo": "jessebofill/DeckSP",
+    "repo_meta": {
+      "created_at": "2023-12-24T19:39:44Z",
+      "description": "Audio DSP for Steam Deck",
+      "html_url": "https://github.com/jessebofill/DeckSP",
+      "pushed_at": "2025-12-21T19:28:08Z",
+      "stargazers_count": 15,
+      "updated_at": "2026-10-12T10:37:29Z"
+    }
+  },
+  {
+    "id": 112,
+    "name": "Better Keyboard",
+    "created": "2025-10-22T15:45:57Z",
+    "downloads": 28994,
+    "description": "Better experience for physical keyboard users.",
+    "tags": [
+      "keyboard",
+      "utility"
+    ],
+    "submodule_path": "plugins/BetterKeyboard",
+    "submodule_url": "https://github.com/chenx-dust/BetterKeyboard.git",
+    "github_repo": "chenx-dust/BetterKeyboard",
+    "repo_meta": {
+      "created_at": "2025-09-21T19:39:43Z",
+      "description": "[Decky Plugin] Better experience for physical keyboard users.",
+      "html_url": "https://github.com/chenx-dust/BetterKeyboard",
+      "pushed_at": "2026-03-02T17:44:42Z",
+      "stargazers_count": 11,
+      "updated_at": "2026-10-01T09:17:26Z"
+    }
+  },
+  {
+    "id": 118,
+    "name": "Speed Test",
+    "created": "2026-01-06T19:38:43Z",
+    "downloads": 28897,
+    "description": "Run internet speed tests directly from your Steam Deck Game Mode using Cloudflare's global network.",
+    "tags": [
+      "network",
+      "speed",
+      "utility"
+    ],
+    "submodule_path": "plugins/decky-speed-test",
+    "submodule_url": "git@github.com:Dukeman330/decky-speed-test.git",
+    "github_repo": "Dukeman330/decky-speed-test",
+    "repo_meta": {
+      "created_at": "2026-01-05T04:12:06Z",
+      "description": "Run internet speed tests directly from your Steam Deck Game Mode using Cloudflare's global network.",
+      "html_url": "https://github.com/Dukeman330/decky-speed-test",
+      "pushed_at": "2026-01-19T17:59:52Z",
+      "stargazers_count": 3,
+      "updated_at": "2026-07-26T11:30:03Z"
+    }
+  },
+  {
+    "id": 105,
+    "name": "WiFi Locker",
+    "created": "2025-05-17T23:21:13Z",
+    "downloads": 27723,
+    "description": "Lock WiFi to a specific access point to prevent background scanning.",
+    "tags": [
+      "network",
+      "root",
+      "wifi"
+    ],
+    "submodule_path": "plugins/decky-wifi-locker",
+    "submodule_url": "git@github.com:felipejfc/decky-wifi-locker.git",
+    "github_repo": "felipejfc/decky-wifi-locker",
+    "repo_meta": {
+      "created_at": "2025-03-28T23:18:48Z",
+      "description": "Lock wifi so that periodic scans stop, preventing stuttering on streaming",
+      "html_url": "https://github.com/felipejfc/decky-wifi-locker",
+      "pushed_at": "2026-03-08T14:29:36Z",
+      "stargazers_count": 36,
+      "updated_at": "2026-08-30T12:51:29Z"
+    }
+  },
+  {
+    "id": 98,
+    "name": "Decky-Lookup",
+    "created": "2025-02-15T17:11:31Z",
+    "downloads": 27584,
+    "description": "A plugin to quickly access useful sites for the running game.",
+    "tags": [
+      "browser",
+      "Lookup",
+      "search",
+      "website"
+    ],
+    "submodule_path": "plugins/Decky-Lookup",
+    "submodule_url": "https://github.com/xXJSONDeruloXx/Decky-Lookup.git",
+    "github_repo": "xXJSONDeruloXx/Decky-Lookup",
+    "repo_meta": {
+      "created_at": "2025-01-18T18:01:20Z",
+      "description": "Per Game Web searches: PC Gaming Wiki, Google, Walkthroughs Etc",
+      "html_url": "https://github.com/xXJSONDeruloXx/Decky-Lookup",
+      "pushed_at": "2025-04-08T05:07:49Z",
+      "stargazers_count": 3,
+      "updated_at": "2026-09-17T00:14:19Z"
+    }
+  },
+  {
+    "id": 137,
+    "name": "Decky Proton Launch",
+    "created": "2026-05-13T22:21:52Z",
+    "downloads": 22973,
+    "description": "Manage Steam game launch options from Gaming Mode. Set Proton environment variables like PROTON_FSR4_UPGRADE=1 or PROTON_DLSS4_UPGRADE=1 and add wrappers such as MangoHud or GameScope.",
+    "tags": [
+      "command",
+      "launch",
+      "proton"
+    ],
+    "submodule_path": "plugins/decky-proton-launch",
+    "submodule_url": "https://github.com/moi952/decky-proton-launch.git",
+    "github_repo": "moi952/decky-proton-launch",
+    "repo_meta": {
+      "created_at": "2026-02-27T11:12:17Z",
+      "description": "Manage Proton launch options easily on Steam",
+      "html_url": "https://github.com/moi952/decky-proton-launch",
+      "pushed_at": "2026-10-12T11:50:35Z",
+      "stargazers_count": 42,
+      "updated_at": "2026-10-12T11:50:40Z"
+    }
+  },
+  {
+    "id": 133,
+    "name": "Non-Steam Badges",
+    "created": "2026-04-20T22:34:06Z",
+    "downloads": 22565,
+    "description": "A Decky plugin that helps identifying non-Steam games using themed badges",
+    "tags": [
+      "badges",
+      "non-steam",
+      "nonsteam",
+      "ui",
+      "utility"
+    ],
+    "submodule_path": "plugins/decky-nonsteam-badges",
+    "submodule_url": "https://github.com/sebet/decky-nonsteam-badges",
+    "github_repo": "sebet/decky-nonsteam-badges",
+    "repo_meta": {
+      "created_at": "2026-01-23T20:05:06Z",
+      "description": "Display non-steam badges on non-steam games",
+      "html_url": "https://github.com/sebet/decky-nonsteam-badges",
+      "pushed_at": "2026-10-02T23:42:01Z",
+      "stargazers_count": 6,
+      "updated_at": "2026-10-06T18:22:32Z"
+    }
+  },
+  {
+    "id": 96,
+    "name": "Simple Timer",
+    "created": "2025-02-07T03:40:01Z",
+    "downloads": 22480,
+    "description": "Set a timer that will remind you when your session should end.",
+    "tags": [
+      "alarm",
+      "decktools",
+      "timer"
+    ],
+    "submodule_path": "plugins/simple-timer",
+    "submodule_url": "https://github.com/decktools-xyz/simple-timer.git",
+    "github_repo": "decktools-xyz/simple-timer",
+    "repo_meta": {
+      "created_at": "2025-01-22T18:09:05Z",
+      "description": "A Decky Plugin that allows the user to set a Timer.",
+      "html_url": "https://github.com/decktools-xyz/simple-timer",
+      "pushed_at": "2025-02-01T00:46:07Z",
+      "stargazers_count": 2,
+      "updated_at": "2025-09-28T20:50:47Z"
+    }
+  },
+  {
+    "id": 135,
+    "name": "Deck Shelves",
+    "created": "2026-05-06T21:50:20Z",
+    "downloads": 21707,
+    "description": "Inject configurable shelves (Collections / Tabs / Filters) into the Steam Deck Home (library/home).",
+    "tags": [
+      "collections",
+      "customization",
+      "filters",
+      "home",
+      "library",
+      "shelves",
+      "tabs"
+    ],
+    "submodule_path": "plugins/Deck-Shelves",
+    "submodule_url": "https://github.com/santojon/Deck-Shelves.git",
+    "github_repo": "santojon/Deck-Shelves",
+    "repo_meta": {
+      "created_at": "2024-07-14T15:14:10Z",
+      "description": "Your Steam Home. Your Way.",
+      "html_url": "https://github.com/santojon/Deck-Shelves",
+      "pushed_at": "2026-10-15T00:49:23Z",
+      "stargazers_count": 122,
+      "updated_at": "2026-10-15T00:49:27Z"
+    }
+  },
+  {
+    "id": 126,
+    "name": "Launch Options",
+    "created": "2026-02-22T16:32:29Z",
+    "downloads": 20935,
+    "description": "Manage launch options for your games with ease.",
+    "tags": [
+      "launch options",
+      "quality of life"
+    ],
+    "submodule_path": "plugins/decky-launch-options",
+    "submodule_url": "https://github.com/Wurielle/decky-launch-options.git",
+    "github_repo": "Wurielle/decky-launch-options",
+    "repo_meta": {
+      "created_at": "2026-01-10T16:30:46Z",
+      "description": "Manage launch options for your games with ease \ud83c\udf43",
+      "html_url": "https://github.com/Wurielle/decky-launch-options",
+      "pushed_at": "2026-09-10T12:25:56Z",
+      "stargazers_count": 29,
+      "updated_at": "2026-10-14T10:57:17Z"
+    }
+  },
+  {
+    "id": 110,
+    "name": "Dimmer Deck",
+    "created": "2025-10-13T23:20:46Z",
+    "downloads": 20849,
+    "description": "Make your brightness even dimmer.",
+    "tags": [
+      "brightness",
+      "utility"
+    ],
+    "submodule_path": "plugins/DimmerDeck",
+    "submodule_url": "https://github.com/chenx-dust/DimmerDeck.git",
+    "github_repo": "chenx-dust/DimmerDeck",
+    "repo_meta": {
+      "created_at": "2025-09-18T07:29:40Z",
+      "description": "Make your Steam Deck even dimmer.",
+      "html_url": "https://github.com/chenx-dust/DimmerDeck",
+      "pushed_at": "2025-11-30T12:26:14Z",
+      "stargazers_count": 4,
+      "updated_at": "2025-12-15T04:07:26Z"
+    }
+  },
+  {
+    "id": 92,
+    "name": "Crosshair",
+    "created": "2025-01-16T18:24:55Z",
+    "downloads": 20287,
+    "description": "Repurpose the performance overlay into a customizable crosshair.",
+    "tags": [
+      "aim",
+      "crosshair",
+      "HUD",
+      "overlay"
+    ],
+    "submodule_path": "plugins/Crosshair",
+    "submodule_url": "https://github.com/xXJSONDeruloXx/crosshair-plugin.git",
+    "github_repo": "xXJSONDeruloXx/crosshair-plugin",
+    "repo_meta": {
+      "created_at": "2025-01-11T04:50:48Z",
+      "description": "use mangohud to create crosshairs in a game session",
+      "html_url": "https://github.com/xXJSONDeruloXx/crosshair-plugin",
+      "pushed_at": "2026-06-06T16:26:31Z",
+      "stargazers_count": 2,
+      "updated_at": "2026-06-06T16:26:35Z"
+    }
+  },
+  {
+    "id": 103,
+    "name": "Decky Ludusavi",
+    "created": "2025-03-23T15:03:39Z",
+    "downloads": 17792,
+    "description": "Ludusavi for Decky. Backup, restore, and keep multiple versions of your save files with ease! Requires Ludusavi installation on the device.",
+    "tags": [
+      "backup",
+      "cloud",
+      "ludusavi",
+      "sync"
+    ],
+    "submodule_path": "plugins/decky-ludusavi",
+    "submodule_url": "https://github.com/GedasFX/decky-ludusavi",
+    "github_repo": "GedasFX/decky-ludusavi",
+    "repo_meta": {
+      "created_at": "2024-01-06T09:55:26Z",
+      "description": "Rudimentary ludusavi interface as a decky plugin.",
+      "html_url": "https://github.com/GedasFX/decky-ludusavi",
+      "pushed_at": "2025-08-05T17:19:42Z",
+      "stargazers_count": 79,
+      "updated_at": "2026-10-10T09:35:16Z"
+    }
+  },
+  {
+    "id": 109,
+    "name": "MuraDeck",
+    "created": "2025-08-07T00:59:09Z",
+    "downloads": 17712,
+    "description": "Adaptive mura correction, gamma correction, and dithering to fix mura effect ONLY FOR defective Samsung Panel for Steam Deck OLED.",
+    "tags": [
+      "mura",
+      "mura-correction",
+      "mura-deck",
+      "muradeck",
+      "mura-fix",
+      "oled",
+      "samsung"
+    ],
+    "submodule_path": "plugins/MuraDeck",
+    "submodule_url": "https://github.com/Moonveil-Kanata/MuraDeck.git",
+    "github_repo": "Moonveil-Kanata/MuraDeck",
+    "repo_meta": {
+      "created_at": "2025-05-10T14:21:03Z",
+      "description": "Plugin to fix gray-level uniformity and mura effect on Steam Deck OLED",
+      "html_url": "https://github.com/Moonveil-Kanata/MuraDeck",
+      "pushed_at": "2025-11-30T12:00:14Z",
+      "stargazers_count": 31,
+      "updated_at": "2026-10-13T06:09:55Z"
+    }
+  },
+  {
+    "id": 127,
+    "name": "Decky Translator",
+    "created": "2026-02-27T16:43:03Z",
+    "downloads": 17434,
+    "description": "Translate anything on your screen to your language",
+    "tags": [
+      "Translation"
+    ],
+    "submodule_path": "plugins/decky-translator",
+    "submodule_url": "https://github.com/cat-in-a-box/Decky-Translator.git",
+    "github_repo": "cat-in-a-box/Decky-Translator",
+    "repo_meta": {
+      "created_at": "2026-01-12T18:04:16Z",
+      "description": "Plugin for your Steam Deck to translate anything on screen",
+      "html_url": "https://github.com/cat-in-a-box/Decky-Translator",
+      "pushed_at": "2026-06-11T19:37:01Z",
+      "stargazers_count": 143,
+      "updated_at": "2026-10-03T01:57:47Z"
+    }
+  },
+  {
+    "id": 134,
+    "name": "Deck Progress Tracker",
+    "created": "2026-04-23T15:50:49Z",
+    "downloads": 16190,
+    "description": "Automatic game tagging based on achievements, playtime, and completion time. Track your progress with visual badges in the Steam library. Features 5 intelligent tags: Mastered, Completed, Dropped, In Progress, and Backlog.",
+    "tags": [
+      "achievements",
+      "enhancement",
+      "library",
+      "progress-tracking",
+      "statistics"
+    ],
+    "submodule_path": "plugins/deck-progress-tracker",
+    "submodule_url": "https://github.com/maroun2/deck-progress-tracker.git",
+    "github_repo": "maroun2/deck-progress-tracker",
+    "repo_meta": {
+      "created_at": "2026-02-08T12:18:50Z",
+      "description": "Automatic game tagging plugin for Steam Deck - Tags games as Completed, In Progress, or Mastered based on achievements and playtime",
+      "html_url": "https://github.com/maroun2/deck-progress-tracker",
+      "pushed_at": "2026-04-09T12:22:42Z",
+      "stargazers_count": 5,
+      "updated_at": "2026-08-30T19:06:56Z"
+    }
+  },
+  {
+    "id": 104,
+    "name": "Game Sync",
+    "created": "2025-04-14T12:55:52Z",
+    "downloads": 15947,
+    "description": "A fork of Decky Cloud Save that manages cloud saves and mods for games",
+    "tags": [
+      "backup",
+      "cloud",
+      "rclone"
+    ],
+    "submodule_path": "plugins/SDH-GameSync",
+    "submodule_url": "https://github.com/AkazaRenn/SDH-GameSync.git",
+    "github_repo": "AkazaRenn/SDH-GameSync",
+    "repo_meta": {
+      "created_at": "2023-10-20T00:12:11Z",
+      "description": null,
+      "html_url": "https://github.com/AkazaRenn/SDH-GameSync",
+      "pushed_at": "2026-08-06T16:20:42Z",
+      "stargazers_count": 33,
+      "updated_at": "2026-10-10T08:56:09Z"
+    }
+  },
+  {
+    "id": 114,
+    "name": "Network Sentinel",
+    "created": "2025-11-27T16:56:21Z",
+    "downloads": 15843,
+    "description": "Monitor network quality and track connection performance with live ping display, latency graphs, and network history tracking.",
+    "tags": [
+      "gaming",
+      "monitoring",
+      "network",
+      "performance"
+    ],
+    "submodule_path": "plugins/network-sentinel",
+    "submodule_url": "https://github.com/KrishGaur1354/network-sentinel.git",
+    "github_repo": "KrishGaur1354/network-sentinel",
+    "repo_meta": {
+      "created_at": "2025-10-07T13:46:18Z",
+      "description": "A native Decky Loader plugin providing comprehensive network diagnostics, latency visualization, and connection quality metrics directly within the Steam Deck Quick Access Menu.",
+      "html_url": "https://github.com/KrishGaur1354/network-sentinel",
+      "pushed_at": "2026-07-11T05:07:55Z",
+      "stargazers_count": 3,
+      "updated_at": "2026-09-17T00:26:05Z"
+    }
+  },
+  {
+    "id": 123,
+    "name": "Steam Status",
+    "created": "2026-02-14T21:32:43Z",
+    "downloads": 12211,
+    "description": "Display Steam Service status, player counts, and service health",
+    "tags": [
+      "monitoring",
+      "status",
+      "steam"
+    ],
+    "submodule_path": "plugins/steamstatus-decky",
+    "submodule_url": "https://github.com/bschelst/steamstatus-decky.git",
+    "github_repo": "bschelst/steamstatus-decky",
+    "repo_meta": {
+      "created_at": "2026-01-02T14:36:04Z",
+      "description": "Steam Status Decky Plugin",
+      "html_url": "https://github.com/bschelst/steamstatus-decky",
+      "pushed_at": "2026-09-26T13:32:13Z",
+      "stargazers_count": 8,
+      "updated_at": "2026-09-26T13:32:17Z"
+    }
+  },
+  {
+    "id": 131,
+    "name": "Download All",
+    "created": "2026-03-28T21:44:17Z",
+    "downloads": 11923,
+    "description": "Download All - A plugin that let's the user immediately queue all scheduled downloads to immediately download.",
+    "tags": [
+      "downloads",
+      "queue"
+    ],
+    "submodule_path": "plugins/decky-download-all",
+    "submodule_url": "https://github.com/bentemple/decky-download-all.git",
+    "github_repo": "bentemple/decky-download-all",
+    "repo_meta": {
+      "created_at": "2026-03-27T01:13:39Z",
+      "description": "Decky plugin to add a button to start all scheduled downloads immediately.",
+      "html_url": "https://github.com/bentemple/decky-download-all",
+      "pushed_at": "2026-04-15T17:52:24Z",
+      "stargazers_count": 4,
+      "updated_at": "2026-10-04T02:15:15Z"
+    }
+  }
+]

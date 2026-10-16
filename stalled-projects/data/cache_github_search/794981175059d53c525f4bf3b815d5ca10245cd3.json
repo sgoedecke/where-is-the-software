@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\nWhen `password_hash` filter is used with libcrypt support rather than passlib, the `bcrypt` algorithm does not work when rounds < 10.\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\npassword_hash\n\n### Ansible Version\n\n```console\n$ ansible --version\nansible [core 2.21.0]\n  config file = None\n  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\n  ansible python module location = /usr/lib/python3.14/site-packages/ansible\n  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections\n  executable location = /usr/bin/ansible\n  python version = 3.14.5 (main, Jun  9 2026, 08:17:28) [GCC 15.2.0] (/usr/bin/python3)\n  jinja version = 3.1.6\n  pyyaml version = 6.0.3 (with libyaml v0.2.5)\n```\n\n### Configuration\n\n```console\n# if using a version older than ansible-core 2.12 you should omit the '-t all'\n$ ansible-config dump --only-changed -t all\nCONFIG_FILE() = None\n\nGALAXY_SERVERS:\n```\n\n### OS / Environment\n\nNAME=\"Alpine Linux\"\nID=alpine\nVERSION_ID=3.24.1\nPRETTY_NAME=\"Alpine Linux v3.24\"\n\n### Steps to Reproduce\n\nUse the following playbook\n\n```yaml\n---\n- hosts: localhost\n  vars:\n    secret: secret\n  tasks:\n    - debug:\n        msg: \"{{ secret | string | password_hash('bcrypt', ('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890' | shuffle(seed=inventory_hostname) | join)[:22], rounds=9) }}\"\n```\n\nAnd run as `ansible-playbook test.yml`\n\nWhen `rounds < 10`, the filter always returns a \"*\" as output. When rounds >= 10, the filter works as expected as returns a correct hash. It appears only when `libcrypt` is used for hashing. When `passlib` is used, the filter works as expected for any number of rounds.\n\n\n### Expected Results\n\nTASK [debug] *************************************************************************************************************************************************************************************\nok: [localhost] => {\n    \"msg\": \"$2b$10$E1UOPcoiI9Jb8gm6HX2YnuFmVronHJYsNAAqXVVg0iKJXakcgxx5m\"\n}\n\n\n### Actual Results\n\n```console\nansible-playbook [core 2.21.0]\n  config file = None\n  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\n  ansible python module location = /usr/lib/python3.14/site-packages/ansible\n  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections\n  executable location = /usr/bin/ansible-playbook\n  python version = 3.14.5 (main, Jun  9 2026, 08:17:28) [GCC 15.2.0] (/usr/bin/python3)\n  jinja version = 3.1.6\n  pyyaml version = 6.0.3 (with libyaml v0.2.5)\nNo config file found; using defaults\nsetting up inventory plugins\nLoading collection ansible.builtin from \nhost_list declined parsing /etc/ansible/hosts as it did not pass its verify_file() method\nSkipping due to inventory source not existing or not being readable by the current user\nscript declined parsing /etc/ansible/hosts as it did not pass its verify_file() method\nauto declined parsing /etc/ansible/hosts as it did not pass its verify_file() method\nSkipping due to inventory source not existing or not being readable by the current user\nyaml declined parsing /etc/ansible/hosts as it did not pass its verify_file() method\nSkipping due to inventory source not existing or not being readable by the current user\nini declined parsing /etc/ansible/hosts as it did not pass its verify_file() method\nSkipping due to inventory source not existing or not being readable by the current user\ntoml declined parsing /etc/ansible/hosts as it did not pass its verify_file() method\n[WARNING]: No inventory was parsed, only implicit localhost is available\n[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'\nLoading callback plugin default of type stdout, v2.0 from /usr/lib/python3.14/site-packages/ansible/plugins/callback/default.py\nAttempting to use 'junit' callback.\nAttempting to use 'minimal' callback.\nSkipping callback 'minimal', as we already have a stdout callback.\nAttempting to use 'oneline' callback.\nSkipping callback 'oneline', as we already have a stdout callback.\nAttempting to use 'tree' callback.\n\nPLAYBOOK: test.yml *******************************************************************************************************************************************************************************\nPositional arguments: test.yml\nverbosity: 5\nconnection: ssh\nbecome_method: sudo\ntags: ('all',)\ninventory: ('/etc/ansible/hosts',)\nforks: 5\n1 plays in test.yml\n\nPLAY [localhost] *********************************************************************************************************************************************************************************\n\nTASK [Gathering Facts] ***************************************************************************************************************************************************************************\ntask path: /test.yml:2\n<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root\n<127.0.0.1> EXEC /bin/sh -c 'echo ~root'\n<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p \"` echo /root/.ansible/tmp `\"&& mkdir \"` echo /root/.ansible/tmp/ansible-tmp-1782637921.982957-233-12870311254775 `\" && echo ansible-tmp-1782637921.982957-233-12870311254775=\"` echo /root/.ansible/tmp/ansible-tmp-1782637921.982957-233-12870311254775 `\" )'\nIncluding module_utils file ansible/__init__.py\nIncluding module_utils file ansible/module_utils/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_ansiballz/_loader.py\nIncluding module_utils file ansible/module_utils/_internal/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_ansiballz/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_errors.py\nIncluding module_utils file ansible/module_utils/_internal/_json/_profiles/_module_legacy_c2m.py\nIncluding module_utils file ansible/module_utils/_internal/_json/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_json/_profiles/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_datatag/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_dataclass_validation.py\nIncluding module_utils file ansible/module_utils/_internal/_datatag/_tags.py\nIncluding module_utils file ansible/module_utils/_internal/_json/_profiles/_module_legacy_m2c.py\nIncluding module_utils file ansible/module_utils/_internal/_messages.py\nIncluding module_utils file ansible/module_utils/_internal/_patches/_socket_patch.py\nIncluding module_utils file ansible/module_utils/_internal/_patches/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_patches/_sys_intern_patch.py\nIncluding module_utils file ansible/module_utils/_internal/_traceback.py\nIncluding module_utils file ansible/module_utils/_internal/_stack.py\nIncluding module_utils file ansible/module_utils/basic.py\nIncluding module_utils file ansible/module_utils/_internal/_debugging.py\nIncluding module_utils file ansible/module_utils/_internal/_deprecator.py\nIncluding module_utils file ansible/module_utils/_internal/_plugin_info.py\nIncluding module_utils file ansible/module_utils/_internal/_validation.py\nIncluding module_utils file ansible/module_utils/common/_utils.py\nIncluding module_utils file ansible/module_utils/common/__init__.py\nIncluding module_utils file ansible/module_utils/common/arg_spec.py\nIncluding module_utils file ansible/module_utils/common/file.py\nIncluding module_utils file ansible/module_utils/common/json.py\nIncluding module_utils file ansible/module_utils/_internal/_json/_legacy_encoder.py\nIncluding module_utils file ansible/module_utils/_internal/_json/_profiles/_tagless.py\nIncluding module_utils file ansible/module_utils/common/locale.py\nIncluding module_utils file ansible/module_utils/common/parameters.py\nIncluding module_utils file ansible/module_utils/_internal/_no_six.py\nIncluding module_utils file ansible/module_utils/common/collections.py\nIncluding module_utils file ansible/module_utils/common/process.py\nIncluding module_utils file ansible/module_utils/common/sys_info.py\nIncluding module_utils file ansible/module_utils/common/text/converters.py\nIncluding module_utils file ansible/module_utils/common/text/__init__.py\nIncluding module_utils file ansible/module_utils/common/text/formatters.py\nIncluding module_utils file ansible/module_utils/common/validation.py\nIncluding module_utils file ansible/module_utils/common/warnings.py\nIncluding module_utils file ansible/module_utils/_internal/_event_utils.py\nIncluding module_utils file ansible/module_utils/_internal/_text_utils.py\nIncluding module_utils file ansible/module_utils/compat/selinux.py\nIncluding module_utils file ansible/module_utils/compat/__init__.py\nIncluding module_utils file ansible/module_utils/compat/typing.py\nIncluding module_utils file ansible/module_utils/_internal/_patches/_dataclass_annotation_patch.py\nIncluding module_utils file ansible/module_utils/datatag.py\nIncluding module_utils file ansible/module_utils/distro/__init__.py\nIncluding module_utils file ansible/module_utils/distro/_distro.py\nIncluding module_utils file ansible/module_utils/errors.py\nIncluding module_utils file ansible/module_utils/facts/ansible_collector.py\nIncluding module_utils file ansible/module_utils/facts/__init__.py\nIncluding module_utils file ansible/module_utils/facts/collector.py\nIncluding module_utils file ansible/module_utils/facts/compat.py\nIncluding module_utils file ansible/module_utils/facts/default_collectors.py\nIncluding module_utils file ansible/module_utils/facts/hardware/aix.py\nIncluding module_utils file ansible/module_utils/facts/hardware/__init__.py\nIncluding module_utils file ansible/module_utils/facts/hardware/base.py\nIncluding module_utils file ansible/module_utils/facts/hardware/darwin.py\nIncluding module_utils file ansible/module_utils/facts/hardware/dragonfly.py\nIncluding module_utils file ansible/module_utils/facts/hardware/freebsd.py\nIncluding module_utils file ansible/module_utils/facts/hardware/hpux.py\nIncluding module_utils file ansible/module_utils/facts/hardware/hurd.py\nIncluding module_utils file ansible/module_utils/facts/hardware/linux.py\nIncluding module_utils file ansible/module_utils/_internal/_concurrent/_futures.py\nIncluding module_utils file ansible/module_utils/_internal/_concurrent/__init__.py\nIncluding module_utils file ansible/module_utils/_internal/_concurrent/_daemon_threading.py\nIncluding module_utils file ansible/module_utils/facts/hardware/netbsd.py\nIncluding module_utils file ansible/module_utils/facts/hardware/openbsd.py\nIncluding module_utils file ansible/module_utils/facts/hardware/sunos.py\nIncluding module_utils file ansible/module_utils/facts/namespace.py\nIncluding module_utils file ansible/module_utils/facts/network/aix.py\nIncluding module_utils file ansible/module_utils/facts/network/__init__.py\nIncluding module_utils file ansible/module_utils/facts/network/base.py\nIncluding module_utils file ansible/module_utils/facts/network/darwin.py\nIncluding module_utils file ansible/module_utils/facts/network/dragonfly.py\nIncluding module_utils file ansible/module_utils/facts/network/fc_wwn.py\nIncluding module_utils file ansible/module_utils/facts/network/freebsd.py\nIncluding module_utils file ansible/module_utils/facts/network/generic_bsd.py\nIncluding module_utils file ansible/module_utils/facts/network/hpux.py\nIncluding module_utils file ansible/module_utils/facts/network/hurd.py\nIncluding module_utils file ansible/module_utils/facts/network/iscsi.py\nIncluding module_utils file ansible/module_utils/facts/network/linux.py\nIncluding module_utils file ansible/module_utils/facts/network/netbsd.py\nIncluding module_utils file ansible/module_utils/facts/network/nvme.py\nIncluding module_utils file ansible/module_utils/facts/network/openbsd.py\nIncluding module_utils file ansible/module_utils/facts/network/sunos.py\nIncluding module_utils file ansible/module_utils/facts/other/facter.py\nIncluding module_utils file ansible/module_utils/facts/other/__init__.py\nIncluding module_utils file ansible/module_utils/facts/other/ohai.py\nIncluding module_utils file ansible/module_utils/facts/sysctl.py\nIncluding module_utils file ansible/module_utils/facts/system/apparmor.py\nIncluding module_utils file ansible/module_utils/facts/system/__init__.py\nIncluding module_utils file ansible/module_utils/facts/system/caps.py\nIncluding module_utils file ansible/module_utils/facts/system/chroot.py\nIncluding module_utils file ansible/module_utils/facts/system/cmdline.py\nIncluding module_utils file ansible/module_utils/facts/system/date_time.py\nIncluding module_utils file ansible/module_utils/facts/system/distribution.py\nIncluding module_utils file ansible/module_utils/facts/system/dns.py\nIncluding module_utils file ansible/module_utils/facts/system/env.py\nIncluding module_utils file ansible/module_utils/facts/system/fips.py\nIncluding module_utils file ansible/module_utils/facts/system/loadavg.py\nIncluding module_utils file ansible/module_utils/facts/system/local.py\nIncluding module_utils file ansible/module_utils/facts/system/lsb.py\nIncluding module_utils file ansible/module_utils/facts/system/pkg_mgr.py\nIncluding module_utils file ansible/module_utils/facts/system/platform.py\nIncluding module_utils file ansible/module_utils/facts/system/python.py\nIncluding module_utils file ansible/module_utils/facts/system/selinux.py\nIncluding module_utils file ansible/module_utils/facts/system/service_mgr.py\nIncluding module_utils file ansible/module_utils/compat/version.py\nIncluding module_utils file ansible/module_utils/facts/system/ssh_pub_keys.py\nIncluding module_utils file ansible/module_utils/facts/system/systemd.py\nIncluding module_utils file ansible/module_utils/facts/system/user.py\nIncluding module_utils file ansible/module_utils/facts/timeout.py\nIncluding module_utils file ansible/module_utils/facts/utils.py\nIncluding module_utils file ansible/module_utils/facts/virtual/base.py\nIncluding module_utils file ansible/module_utils/facts/virtual/__init__.py\nIncluding module_utils file ansible/module_utils/facts/virtual/dragonfly.py\nIncluding module_utils file ansible/module_utils/facts/virtual/freebsd.py\nIncluding module_utils file ansible/module_utils/facts/virtual/hpux.py\nIncluding module_utils file ansible/module_utils/facts/virtual/linux.py\nIncluding module_utils file ansible/module_utils/facts/virtual/netbsd.py\nIncluding module_utils file ansible/module_utils/facts/virtual/openbsd.py\nIncluding module_utils file ansible/module_utils/facts/virtual/sunos.py\nIncluding module_utils file ansible/module_utils/facts/virtual/sysctl.py\nIncluding module_utils file ansible/module_utils/parsing/convert_bool.py\nIncluding module_utils file ansible/module_utils/parsing/__init__.py\nUsing module file /usr/lib/python3.14/site-packages/ansible/modules/setup.py\n<127.0.0.1> PUT /root/.ansible/tmp/ansible-local-228dp710vir/tmp8a8vs6m_ TO /root/.ansible/tmp/ansible-tmp-1782637921.982957-233-12870311254775/AnsiballZ_setup.py\n<127.0.0.1> EXEC /bin/sh -c 'chmod u+rwx /root/.ansible/tmp/ansible-tmp-1782637921.982957-233-12870311254775/ /root/.ansible/tmp/ansible-tmp-1782637921.982957-233-12870311254775/AnsiballZ_setup.py'\n<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1782637921.982957-233-12870311254775/AnsiballZ_setup.py'\n<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1782637921.982957-233-12870311254775/ > /dev/null 2>&1'\nok: [localhost]\n\nTASK [debug] *************************************************************************************************************************************************************************************\ntask path: /test.yml:6\nUsing CryptHash to hash input with 'bcrypt'\nok: [localhost] => {\n    \"msg\": \"*\"\n}\n\nPLAY RECAP ***************************************************************************************************************************************************************************************\nlocalhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0\n```\n\n### Code of Conduct\n\n- [x] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2026-06-30T14:08:33Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/87180/comments",
+      "created_at": "2026-06-28T09:14:30Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/87180/events",
+      "html_url": "https://github.com/ansible/ansible/issues/87180",
+      "id": 4761713710,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "55f65b",
+          "default": false,
+          "description": "This issue/PR affects Ansible v2.21",
+          "id": 9536306285,
+          "name": "affects_2.21",
+          "node_id": "LA_kwDOADeGtM8AAAACOGh8bQ",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.21"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/87180/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM8AAAABG9H8Lg",
+      "number": 87180,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/87180/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/87180/timeline",
+      "title": "`password_hash` filter with libcrypt does not work as expected using `bcrypt`",
+      "type": null,
+      "updated_at": "2026-07-15T00:01:45Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/87180",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/44365948?v=4",
+        "events_url": "https://api.github.com/users/mahendrapaipuri/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mahendrapaipuri/followers",
+        "following_url": "https://api.github.com/users/mahendrapaipuri/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mahendrapaipuri/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mahendrapaipuri",
+        "id": 44365948,
+        "login": "mahendrapaipuri",
+        "node_id": "MDQ6VXNlcjQ0MzY1OTQ4",
+        "organizations_url": "https://api.github.com/users/mahendrapaipuri/orgs",
+        "received_events_url": "https://api.github.com/users/mahendrapaipuri/received_events",
+        "repos_url": "https://api.github.com/users/mahendrapaipuri/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mahendrapaipuri/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mahendrapaipuri/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mahendrapaipuri",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 67
+}

@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Extracting an action item from the OpenJS World AbortController collaborator summit:\r\n\r\n> The performance of EventTarget is much slower than EventEmitter at the moment (order of magnitude) and we should investigate and improve the performance. \r\n\r\nIf its okay with @benjamingr and @jasnell (+ any other maintainers that are involved here) I'd like to give this a shot. I'm not sure if it involves just JS or some C++ as well; either way I'm interested in at least investigating and then hopefully improving!\r\n\r\nI didn't find an existing issue for this, so if one exists please let me know! ",
+      "closed_at": "2023-10-17T17:21:42Z",
+      "comments": 9,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/34074/comments",
+      "created_at": "2020-06-26T14:17:06Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/34074/events",
+      "html_url": "https://github.com/nodejs/node/issues/34074",
+      "id": 646294563,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "Issues and PRs related to the performance of Node.js.",
+          "id": 326905670,
+          "name": "performance",
+          "node_id": "MDU6TGFiZWwzMjY5MDU2NzA=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/performance"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f785a7",
+          "default": false,
+          "description": "Issues and PRs related to the EventTarget implementation.",
+          "id": 2148131886,
+          "name": "eventtarget",
+          "node_id": "MDU6TGFiZWwyMTQ4MTMxODg2",
+          "url": "https://api.github.com/repos/nodejs/node/labels/eventtarget"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/34074/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NDYyOTQ1NjM=",
+      "number": 34074,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/nodejs/node/issues/34074/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/34074/timeline",
+      "title": "Improve Performance of EventTarget",
+      "type": null,
+      "updated_at": "2023-10-17T17:21:43Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/34074",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/16144158?v=4",
+        "events_url": "https://api.github.com/users/Ethan-Arrowood/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Ethan-Arrowood/followers",
+        "following_url": "https://api.github.com/users/Ethan-Arrowood/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Ethan-Arrowood/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Ethan-Arrowood",
+        "id": 16144158,
+        "login": "Ethan-Arrowood",
+        "node_id": "MDQ6VXNlcjE2MTQ0MTU4",
+        "organizations_url": "https://api.github.com/users/Ethan-Arrowood/orgs",
+        "received_events_url": "https://api.github.com/users/Ethan-Arrowood/received_events",
+        "repos_url": "https://api.github.com/users/Ethan-Arrowood/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Ethan-Arrowood/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Ethan-Arrowood/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Ethan-Arrowood",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 8
+}

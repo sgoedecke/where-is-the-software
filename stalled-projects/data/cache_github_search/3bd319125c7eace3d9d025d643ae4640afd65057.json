@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "This command fails:\n```\n./x run miri -- src/tools/miri/tests/pass/float.rs\n```\n```\nerror[E0433]: cannot find `core` in the crate root\n --> src/tools/miri/tests/pass/../utils/io.rs:1:5\n  |\n1 | use core::fmt::{self, Write};\n  |     ^^^^ you might be missing crate `core`\n  |\nhelp: try using `std` instead of `core`\n  |\n1 - use core::fmt::{self, Write};\n1 + use std::fmt::{self, Write};\n  |\n\nerror[E0432]: unresolved import `core`\n --> src/tools/miri/tests/pass/../utils/io.rs:1:5\n  |\n1 | use core::fmt::{self, Write};\n  |     ^^^^ you might be missing crate `core`\n  |\nhelp: try using `std` instead of `core`\n  |\n1 - use core::fmt::{self, Write};\n1 + use std::fmt::{self, Write};\n  |\n\nerror: aborting due to 2 previous errors\n```\n\nThis is very strange, I have not the faintest idea what is happening. `./x test miri` runs that test and it works fine. The same file also works fine in out-of-tree Miri with `./miri run`. Other files that use `std` imports work fine -- just `core` imports are somehow broken?!?\n\n@bjorn3 have you seen anything like this before?",
+      "closed_at": "2026-03-31T23:24:29Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/154630/comments",
+      "created_at": "2026-03-31T07:57:56Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/154630/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/154630",
+      "id": 4176908629,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: The miri tool",
+          "id": 1244499056,
+          "name": "A-miri",
+          "node_id": "MDU6TGFiZWwxMjQ0NDk5MDU2",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-miri"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/154630/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M749pFV",
+      "number": 154630,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/154630/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/154630/timeline",
+      "title": "\"./x run miri\" somehow cannot use \"core\" imports?",
+      "type": null,
+      "updated_at": "2026-03-31T23:24:31Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/154630",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/330628?v=4",
+        "events_url": "https://api.github.com/users/RalfJung/events{/privacy}",
+        "followers_url": "https://api.github.com/users/RalfJung/followers",
+        "following_url": "https://api.github.com/users/RalfJung/following{/other_user}",
+        "gists_url": "https://api.github.com/users/RalfJung/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/RalfJung",
+        "id": 330628,
+        "login": "RalfJung",
+        "node_id": "MDQ6VXNlcjMzMDYyOA==",
+        "organizations_url": "https://api.github.com/users/RalfJung/orgs",
+        "received_events_url": "https://api.github.com/users/RalfJung/received_events",
+        "repos_url": "https://api.github.com/users/RalfJung/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/RalfJung/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/RalfJung/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/RalfJung",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 708
+}

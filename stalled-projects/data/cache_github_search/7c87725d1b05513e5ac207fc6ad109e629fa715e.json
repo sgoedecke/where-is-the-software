@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "https://github.com/bevyengine/bevy/blob/b3fa4790b7fe45c134bc884871824a512f4fd6a3/crates/bevy_log/Cargo.toml#L18\r\n\r\ntracing-subscriber-0.3.12 has compile issue. \r\nHowever in bevy_log it's version written in 0.3.1~. Maybe 0.3.11 had no issue but it automatically get up to date version. \r\nI think it would be better to specify version eg. 0.3.11\r\n\r\n```\r\nerror[E0407]: method `event_enabled` is not a member of trait `Subscriber`\r\n   --> C:\\Users\\---\\.cargo\\registry\\src\\github.com-1ecc6299db9ec823\\tracing-subscriber-0.3.12\\src\\layer\\layered.rs:142:5\r\n    |\r\n142 | /     fn event_enabled(&self, event: &Event<'_>) -> bool {\r\n143 | |         if self.layer.event_enabled(event, self.ctx()) {\r\n144 | |             // if the outer layer enables the event, ask the inner subscriber.\r\n145 | |             self.inner.event_enabled(event)\r\n...   |\r\n149 | |         }\r\n150 | |     }\r\n    | |_____^ not a member of trait `Subscriber`\r\n\r\nerror[E0407]: method `event_enabled` is not a member of trait `tracing_core::Subscriber`\r\n   --> C:\\Users\\---\\.cargo\\registry\\src\\github.com-1ecc6299db9ec823\\tracing-subscriber-0.3.12\\src\\fmt\\mod.rs:401:5\r\n    |\r\n401 | /     fn event_enabled(&self, event: &Event<'_>) -> bool {\r\n402 | |         self.inner.event_enabled(event)\r\n403 | |     }\r\n    | |_____^ not a member of trait `tracing_core::Subscriber`\r\n```\r\n\r\nPS. the error is  ```method `event_enabled` is not a member of trait `Subscriber` ```.  tracing-subscriber-0.3.12 has dependency of  tracin-core-0.1.27 but it has no 'event_enabled' function. But 0.1.28 has. I think this is actually tokio's fault with upload crates but sepecifying the version in bevy_log needed also.",
+      "closed_at": "2022-06-30T20:25:19Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/5156/comments",
+      "created_at": "2022-06-30T20:02:31Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/5156/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/5156",
+      "id": 1290581150,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/5156/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85M7LSe",
+      "number": 5156,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/5156/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/5156/timeline",
+      "title": "Compile Error with bevy_log",
+      "type": null,
+      "updated_at": "2022-06-30T20:25:19Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/5156",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/39656812?v=4",
+        "events_url": "https://api.github.com/users/HyeokSuLee/events{/privacy}",
+        "followers_url": "https://api.github.com/users/HyeokSuLee/followers",
+        "following_url": "https://api.github.com/users/HyeokSuLee/following{/other_user}",
+        "gists_url": "https://api.github.com/users/HyeokSuLee/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/HyeokSuLee",
+        "id": 39656812,
+        "login": "HyeokSuLee",
+        "node_id": "MDQ6VXNlcjM5NjU2ODEy",
+        "organizations_url": "https://api.github.com/users/HyeokSuLee/orgs",
+        "received_events_url": "https://api.github.com/users/HyeokSuLee/received_events",
+        "repos_url": "https://api.github.com/users/HyeokSuLee/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/HyeokSuLee/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/HyeokSuLee/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/HyeokSuLee",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 187
+}

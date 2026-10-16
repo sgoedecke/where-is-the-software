@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\n14.17.4 (x64)\n\n### Platform\n\nMicrosoft Windows NT 10.0.19043.0 x64\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\nI downloaded the latest LTS installer (node-v14.17.4-x64.msi) from https://nodejs.org/en/download/ and it failed to install with a popup that stated, \"This installation package could not be opened. Verify that the package exists and that you can access it, or contact the application vendor to verify that this is a valid Windows Installer package.\"\r\n\r\n![msiexec_VQu3pNXz0O](https://user-images.githubusercontent.com/6905832/128616733-d5793396-8ca8-4218-94dc-b49abf04c6f4.png)\r\n\r\nI downloaded the MSI installer using Chrome, Firefox, and Edge, and received the same results each time.\r\n\r\nI was able to install v14.17.3 without issue.\n\n### How often does it reproduce? Is there a required condition?\n\nIt failed with the same error message whenever I tried to install this version using the ***node-v14.17.4-x64.msi*** file.\n\n### What is the expected behavior?\n\nI expected the installation to complete like it does with v14.17.3 or older versions.\n\n### What do you see instead?\n\n\"This installation package could not be opened. Verify that the package exists and that you can access it, or contact the application vendor to verify that this is a valid Windows Installer package.\"\n\n### Additional information\n\n_No response_",
+      "closed_at": "2024-10-08T09:41:53Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/39699/comments",
+      "created_at": "2021-08-08T00:17:53Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/39699/events",
+      "html_url": "https://github.com/nodejs/node/issues/39699",
+      "id": 963325581,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9944dd",
+          "default": false,
+          "description": "Issues and PRs related to the Windows platform.",
+          "id": 166236401,
+          "name": "windows",
+          "node_id": "MDU6TGFiZWwxNjYyMzY0MDE=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "Issues and PRs related to installing Node.js and its installers.",
+          "id": 166236503,
+          "name": "install",
+          "node_id": "MDU6TGFiZWwxNjYyMzY1MDM=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/install"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/39699/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5NjMzMjU1ODE=",
+      "number": 39699,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/39699/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/39699/timeline",
+      "title": "Install of the v14.17.4-x64 MSI fails",
+      "type": null,
+      "updated_at": "2024-10-08T09:41:54Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/39699",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6905832?v=4",
+        "events_url": "https://api.github.com/users/somethingSTRANGE/events{/privacy}",
+        "followers_url": "https://api.github.com/users/somethingSTRANGE/followers",
+        "following_url": "https://api.github.com/users/somethingSTRANGE/following{/other_user}",
+        "gists_url": "https://api.github.com/users/somethingSTRANGE/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/somethingSTRANGE",
+        "id": 6905832,
+        "login": "somethingSTRANGE",
+        "node_id": "MDQ6VXNlcjY5MDU4MzI=",
+        "organizations_url": "https://api.github.com/users/somethingSTRANGE/orgs",
+        "received_events_url": "https://api.github.com/users/somethingSTRANGE/received_events",
+        "repos_url": "https://api.github.com/users/somethingSTRANGE/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/somethingSTRANGE/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/somethingSTRANGE/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/somethingSTRANGE",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 17
+}

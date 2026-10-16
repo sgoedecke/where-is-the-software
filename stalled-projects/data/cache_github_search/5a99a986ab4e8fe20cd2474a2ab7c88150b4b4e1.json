@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "# Feature or enhancement\n\n### Proposal:\n\nDuring reviewing the #121102, I found out that all is actually supported somewhere, but this support is not complete. Since users of Python are using it, I think that deprecating this behaviour would be incorrect. The best thing we can do here is to extend the support.\n\n### Has this already been discussed elsewhere?\n\nThis is a minor feature, which does not need previous discussion elsewhere\n\n### Links to previous discussion of this feature:\n\n_No response_\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-121164\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2024-06-30T17:48:21Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/121163/comments",
+      "created_at": "2024-06-29T16:29:36Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/121163/events",
+      "html_url": "https://github.com/python/cpython/issues/121163",
+      "id": 2381845937,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Standard Library Python modules in the Lib/ directory",
+          "id": 4018668725,
+          "name": "stdlib",
+          "node_id": "LA_kwDOBN0Z8c7viAS1",
+          "url": "https://api.github.com/repos/python/cpython/labels/stdlib"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/121163/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c6N-BWx",
+      "number": 121163,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/121163/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/121163/timeline",
+      "title": "Consider support \"all\" as an valid action for ``warnings.filterswarnings/simplefilter``.",
+      "type": null,
+      "updated_at": "2024-06-30T17:48:21Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/121163",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/80244920?v=4",
+        "events_url": "https://api.github.com/users/Eclips4/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Eclips4/followers",
+        "following_url": "https://api.github.com/users/Eclips4/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Eclips4/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Eclips4",
+        "id": 80244920,
+        "login": "Eclips4",
+        "node_id": "MDQ6VXNlcjgwMjQ0OTIw",
+        "organizations_url": "https://api.github.com/users/Eclips4/orgs",
+        "received_events_url": "https://api.github.com/users/Eclips4/received_events",
+        "repos_url": "https://api.github.com/users/Eclips4/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Eclips4/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Eclips4/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Eclips4",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 776
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "* **Version**: v10.16.3 (we're using nave)\r\n* **Platform**: Linux zagent 4.4.0-159-generic #187-Ubuntu SMP Thu Aug 1 16:28:06 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux\r\n* **Subsystem**: http2\r\n\r\nWe have this error in high loaded service when customers are making requests to amazon.com (not sure only amazon.com):\r\n```\r\n/var/lib/nave/installed/10.16.3/bin/node[15992]: ../src/tls_wrap.cc:682:virtual int node::TLSWrap::DoWrite(node::WriteWrap*, uv_buf_t*, size_t, uv_stream_t*): Assertion `(current_write_) == nullptr' failed.\r\n 1: 0x8fa0c0 node::Abort() [/var/lib/nave/installed/10.16.3/bin/node]\r\n 2: 0x8fa195  [/var/lib/nave/installed/10.16.3/bin/node]\r\n 3: 0xa2c90b node::TLSWrap::DoWrite(node::WriteWrap*, uv_buf_t*, unsigned long, uv_stream_s*) [/var/lib/nave/installed/10.16.3/bin/node]\r\n 4: 0xa2a5ec node::TLSWrap::EncOut() [/var/lib/nave/installed/10.16.3/bin/node]\r\n 5: 0xa2b34b node::TLSWrap::OnStreamRead(long, uv_buf_t const&) [/var/lib/nave/installed/10.16.3/bin/node]\r\n 6: 0xa2aad1 node::TLSWrap::ClearOut() [/var/lib/nave/installed/10.16.3/bin/node]\r\n 7: 0xa2b343 node::TLSWrap::OnStreamRead(long, uv_buf_t const&) [/var/lib/nave/installed/10.16.3/bin/node]\r\n 8: 0x9cf801  [/var/lib/nave/installed/10.16.3/bin/node]\r\n 9: 0xa7ae09  [/var/lib/nave/installed/10.16.3/bin/node]\r\n10: 0xa7b430  [/var/lib/nave/installed/10.16.3/bin/node]\r\n11: 0xa80dd8  [/var/lib/nave/installed/10.16.3/bin/node]\r\n12: 0xa6fe6b uv_run [/var/lib/nave/installed/10.16.3/bin/node]\r\n13: 0x904725 node::Start(v8::Isolate*, node::IsolateData*, std::vector<std::string, std::allocator<std::string> > const&, std::vector<std::string, std::allocator<std::string> > const&) [/var/lib/nave/installed/10.16.3/bin/node]\r\n14: 0x90297f node::Start(int, char**) [/var/lib/nave/installed/10.16.3/bin/node]\r\n15: 0x7f9536c18830 __libc_start_main [/lib/x86_64-linux-gnu/libc.so.6]\r\n16: 0x8bbe85  [/var/lib/nave/installed/10.16.3/bin/node]\r\n```\r\nCan you suggest me what I can do to get you more info about error?\r\nOr maybe you know why this may occur?\r\nWe have 1-2 this error per hour for one server.",
+      "closed_at": "2023-08-06T10:27:51Z",
+      "comments": 18,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/30896/comments",
+      "created_at": "2019-12-11T07:58:11Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/30896/events",
+      "html_url": "https://github.com/nodejs/node/issues/30896",
+      "id": 536203036,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fad8c7",
+          "default": false,
+          "description": "Issues and PRs related to the tls subsystem.",
+          "id": 155267349,
+          "name": "tls",
+          "node_id": "MDU6TGFiZWwxNTUyNjczNDk=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/tls"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/30896/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1MzYyMDMwMzY=",
+      "number": 30896,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/30896/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/30896/timeline",
+      "title": "TLS assertion error in DoWrite",
+      "type": null,
+      "updated_at": "2023-09-06T06:34:11Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/30896",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1014288?v=4",
+        "events_url": "https://api.github.com/users/lomaster1/events{/privacy}",
+        "followers_url": "https://api.github.com/users/lomaster1/followers",
+        "following_url": "https://api.github.com/users/lomaster1/following{/other_user}",
+        "gists_url": "https://api.github.com/users/lomaster1/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/lomaster1",
+        "id": 1014288,
+        "login": "lomaster1",
+        "node_id": "MDQ6VXNlcjEwMTQyODg=",
+        "organizations_url": "https://api.github.com/users/lomaster1/orgs",
+        "received_events_url": "https://api.github.com/users/lomaster1/received_events",
+        "repos_url": "https://api.github.com/users/lomaster1/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/lomaster1/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/lomaster1/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/lomaster1",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 4
+}

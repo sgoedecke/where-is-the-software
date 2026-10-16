@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Per @eddyb's suggestion (https://github.com/rust-lang-nursery/reference/pull/652#discussion_r314206468):\r\n\r\n> Not sure these should be documented, we've been meaning to remove all 3 for years...\r\n> cc @oli-obk at least for intrinsics we could maybe have an intermediary stage where we do `#[rustc_intrinsic] extern \"Rust\" {...}` instead of `extern \"rust-intrinsic\" {...}`?\r\n> \r\n> I would maybe call them \"pseudo-ABIs\", in that they use the ABI string to indicate something special _not purporting to the ABI_, but are otherwise the \"Rust\" ABI.\r\n\r\ncc @oli-obk, @nagisa, and @nikomatsakis",
+      "closed_at": "2024-11-07T16:59:32Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/63585/comments",
+      "created_at": "2019-08-15T09:01:41Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/63585/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/63585",
+      "id": 481060432,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: PRs that clean code up or issues documenting cleanup.",
+          "id": 37234,
+          "name": "C-cleanup",
+          "node_id": "MDU6TGFiZWwzNzIzNA==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-cleanup"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Intrinsics",
+          "id": 1353616418,
+          "name": "A-intrinsics",
+          "node_id": "MDU6TGFiZWwxMzUzNjE2NDE4",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-intrinsics"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/63585/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0ODEwNjA0MzI=",
+      "number": 63585,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/63585/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/63585/timeline",
+      "title": "Cleanup: Use `#[rust_intrinsic]` and nix `rust-intrinsic` et. al",
+      "type": null,
+      "updated_at": "2024-11-07T16:59:33Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/63585",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/855702?v=4",
+        "events_url": "https://api.github.com/users/Centril/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Centril/followers",
+        "following_url": "https://api.github.com/users/Centril/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Centril/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Centril",
+        "id": 855702,
+        "login": "Centril",
+        "node_id": "MDQ6VXNlcjg1NTcwMg==",
+        "organizations_url": "https://api.github.com/users/Centril/orgs",
+        "received_events_url": "https://api.github.com/users/Centril/received_events",
+        "repos_url": "https://api.github.com/users/Centril/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Centril/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Centril/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Centril",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

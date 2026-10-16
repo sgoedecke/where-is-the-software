@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Bug Report\r\n\r\nWhen a union of types is used as argument in a function, and you pass a property of this type as value to another property that is a function that expects the corresponding type, and the function itself may vary according to the initial union, but each possibility of the union can be correctly applied to the function, then an error occurs (simple demo below).\r\n\r\nThis can be avoided if you verify explicitly each possibility in the union, but this can cause a performance degradation (aside from boilerplate), as well as future issues with maintenance, because each call should be repeated, and when changing one call, all calls should be changed. This is even worse when calling functions or returning react components with several props, repeating the same props every time (there were times in which I forgot to change every case, causing bugs, thankfully not production bugs).\r\n\r\nI see this problem ever since I started using typescript, and even in recent versions I don't see it addressed (I don't know if this is complex to solve). In any case, I gave a search in the FAQ and in the issues and haven't found one related to this issue specifically.\r\n\r\n### \ud83d\udd0e Search Terms\r\n\r\nunion\r\nfunction\r\n\r\n### \ud83d\udd57 Version & Regression Information\r\n\r\nTested on 4.9.5 and Nightly (Playground)\r\n\r\n- This is the behavior in every version I tried, and I reviewed the FAQ for entries about \"union\"\r\n\r\n### \u23ef Playground Link\r\n\r\nhttps://www.typescriptlang.org/play?ts=5.1.0-dev.20230331#code/MYewdgzgLgBApmArgWxgFQJ4Ac4wN4BQAkGgJoAKAogPoCCMAvDAOQCGzANMWVdQEKMWAI04EAvgQJRsuek2gAnAJZgA5gG5J0nDAFMkyIXAWaCcAB5YQC2NtnAoS8LQDCCuKyjXBACiVQ4ZAAuGFoASkYAPlCHJzAASTAAMxBTCysbGDsYx3A+Nw8vBV9-QJC+CIZo2ljwRJS0y2tbGRy4gs9vJj8A4NCYAB9dSurahOTUyXTmmBUAhSTWYHtc8ZT8YiXVgH4QnxGYADcQJQATTSJ3Q+MoXZghEBAAGw8wTQkpVvIFECwIRmIQ0IRBBdhCmBwADoeDRaBcQaU+nDiCCtu13J0FHcaqtXBiioMYIgwKc4EkVHBzsQYDAJEQgSiiGD0DJoRQaHx4UREeUuWjwB0itixvl8d4hsTSeSwJSLjS6QyQUyZCFJWSKVSlTz+kNOYz+WBBdZhasjcUJST1TLNfLTKBILAAO7WADW-26eCyMg4s16PoNZtpIW+vwgB2B9ugMANvhGKOyDETLKhMLojO20bGZu2kJ6gTCjJCCaTELgbN4fHTmdNYqxucRBaVIQDtZzeeQYQu7igiAUYGrcXedvAUeMP2KHt9gX9WdrQZgIb+4eIkdgMe6BxbhWN9d6neI3d7-YNQ8kkeeZaeIFUPgAhLfnQo3T772PrPugA\r\n\r\n### \ud83d\udcbb Code\r\n\r\n<!-- Please post the relevant code sample here as well-->\r\n```ts\r\nconst enum Type {\r\n\tTYPE_A = 'a',\r\n\tTYPE_B = 'b',\r\n}\r\n\r\ntype A = string;\r\n\r\ntype B = number;\r\n\r\nexport type ActionACreator = (item: A) => ActionInfo;\r\n\r\nexport type ActionBCreator = (item: B) => ActionInfo;\r\n\r\nexport type ActionCreator = (item: A | B) => ActionInfo;\r\n\r\nexport interface ActionInfo {\r\n\taction?: () => void;\r\n\trevert?: boolean;\r\n}\r\n\r\ntype Props =\r\n\t| {\r\n\t\t\ttype: Type.TYPE_A;\r\n\t\t\titem: A;\r\n\t\t\tactionCreator?: ActionACreator | undefined;\r\n\t  }\r\n\t| {\r\n\t\t\ttype: Type.TYPE_B;\r\n\t\t\titem: B;\r\n\t\t\tactionCreator?: ActionBCreator | undefined;\r\n\t  }\r\n\t| {\r\n\t\t\ttype: undefined;\r\n\t\t\titem: A | B;\r\n\t\t\tactionCreator?: ActionCreator | undefined;\r\n\t  };\r\n\r\nconst works = ({ type, item, actionCreator }: Props) => {\r\n\tconst action = () =>\r\n\t\ttype === Type.TYPE_A\r\n\t\t\t? actionCreator?.(item)\r\n\t\t\t: type === Type.TYPE_B\r\n\t\t\t? actionCreator?.(item)\r\n\t\t\t: actionCreator?.(item);\r\n\treturn action;\r\n};\r\n\r\nconst error = ({ item, actionCreator }: Props) => {\r\n\tconst action = () => actionCreator?.(item);\r\n\treturn action;\r\n};\r\n\r\nconsole.log(!!works, !!error);\r\n```\r\n\r\n### \ud83d\ude41 Actual behavior\r\n\r\nIt shows an error when each type in the union is not inspected.\r\n\r\n### \ud83d\ude42 Expected behavior\r\n\r\nThe `error` function should be considered correct because each possibility of the union respects the argument of the function (of the same type).\r\n",
+      "closed_at": "2023-03-31T20:02:50Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/53606/comments",
+      "created_at": "2023-03-31T15:14:18Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/53606/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/53606",
+      "id": 1649556540,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7c6c7",
+          "default": false,
+          "description": "An existing issue was already created",
+          "id": 113971226,
+          "name": "Duplicate",
+          "node_id": "MDU6TGFiZWwxMTM5NzEyMjY=",
+          "url": "https://api.github.com/repos/microsoft/TypeScript/labels/Duplicate"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/53606/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc5iUjw8",
+      "number": 53606,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/53606/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/53606/timeline",
+      "title": "Error in value of union passed as argument to function that is a property of the same union",
+      "type": null,
+      "updated_at": "2025-10-22T02:51:58Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/53606",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/19873627?v=4",
+        "events_url": "https://api.github.com/users/lucasbasquerotto/events{/privacy}",
+        "followers_url": "https://api.github.com/users/lucasbasquerotto/followers",
+        "following_url": "https://api.github.com/users/lucasbasquerotto/following{/other_user}",
+        "gists_url": "https://api.github.com/users/lucasbasquerotto/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/lucasbasquerotto",
+        "id": 19873627,
+        "login": "lucasbasquerotto",
+        "node_id": "MDQ6VXNlcjE5ODczNjI3",
+        "organizations_url": "https://api.github.com/users/lucasbasquerotto/orgs",
+        "received_events_url": "https://api.github.com/users/lucasbasquerotto/received_events",
+        "repos_url": "https://api.github.com/users/lucasbasquerotto/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/lucasbasquerotto/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/lucasbasquerotto/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/lucasbasquerotto",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 764
+}

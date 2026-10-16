@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!-- Before reporting: search existing issues and check the FAQ. -->\r\n\r\n- `nvim --version`:\r\n\r\n        NVIM v0.4.3\r\n        Build type: Release\r\n        LuaJIT 2.0.5\r\n        Compilation: /usr/local/Homebrew/Library/Homebrew/shims/mac/super/clang -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -DNDEBUG -DMIN_LOG_LEVEL=3 -Wall -Wextra -pedantic -Wno-unused-parameter -Wstrict-prototypes -std=gnu99 -Wshadow -Wconversion -Wmissing-prototypes -Wimplicit-fallthrough -Wvla -fstack-protector-strong -fdiagnostics-color=auto -DINCLUDE_GENERATED_DECLARATIONS -D_GNU_SOURCE -DNVIM_MSGPACK_HAS_FLOAT32 -DNVIM_UNIBI_HAS_VAR_FROM -I/tmp/neovim-20191107-85913-1wbgqz6/neovim-0.4.3/build/config -I/tmp/neovim-20191107-85913-1wbgqz6/neovim-0.4.3/src -I/usr/local/include -I/tmp/neovim-20191107-85913-1wbgqz6/neovim-0.4.3/deps-build/include -I/usr/local/opt/gettext/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -I/tmp/neovim-20191107-85913-1wbgqz6/neovim-0.4.3/build/src/nvim/auto -I/tmp/neovim-20191107-85913-1wbgqz6/neovim-0.4.3/build/include\r\n        Compiled by brew@Catalina.local\r\n\r\n        Features: +acl +iconv +tui\r\n        See \":help feature-compile\"\r\n\r\n           system vimrc file: \"$VIM/sysinit.vim\"\r\n          fall-back for $VIM: \"/usr/local/Cellar/neovim/0.4.3/share/nvim\"\r\n\r\n        Run :checkhealth for more info\r\n\r\n- `vim -u DEFAULTS` (version: 8.1) behaves differently?\r\n\r\n    Yes.  When opening a `file` for which the user hasn't got read permission:\r\n\r\n    * `vim --clean file` correctly says `[Permission Denied]`\r\n    * `nvim --clean file` says `[RO]`\r\n\r\n- Operating system/version: tried macOS 10.15.5 and ubuntu:groovy\r\n- Terminal name/version: iTerm2\r\n- `$TERM`: xterm-256color\r\n\r\n### Steps to reproduce using `nvim -u NORC`\r\n\r\n1. Create a file that has no read permission:\r\n\r\n        $ echo hello > a && chmod -r a\r\n\r\n2. Open the file in Neovim:\r\n\r\n        $ nvim -u NORC a\r\n\r\n   Neovim shows [RO] rather than [Permission Denied].\r\n\r\n### Actual behaviour\r\n\r\nNeovim reports [RO] when opening a write-only file.\r\n\r\n### Expected behaviour\r\n\r\nNeovim should report [Permission Denied] when a read attempt fails.\r\n\r\nBoth Vim and Neovim set readonly, but Permission Denied should be salient.\r\nShowing RO implies that the file is unwritable rather than unreadable.\r\n",
+      "closed_at": "2024-05-17T10:58:20Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/neovim/neovim/issues/12684/comments",
+      "created_at": "2020-07-25T11:29:31Z",
+      "events_url": "https://api.github.com/repos/neovim/neovim/issues/12684/events",
+      "html_url": "https://github.com/neovim/neovim/issues/12684",
+      "id": 665568910,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c5def5",
+          "default": false,
+          "description": "Nvim defaults for options, colorscheme/theme, autocmds/events, etc.",
+          "id": 103777064,
+          "name": "defaults",
+          "node_id": "MDU6TGFiZWwxMDM3NzcwNjQ=",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/defaults"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0E8A16",
+          "default": false,
+          "description": "issue contains minimal reproducing steps",
+          "id": 435851959,
+          "name": "has:repro",
+          "node_id": "MDU6TGFiZWw0MzU4NTE5NTk=",
+          "url": "https://api.github.com/repos/neovim/neovim/labels/has:repro"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/neovim/neovim/issues/12684/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NjU1Njg5MTA=",
+      "number": 12684,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/neovim/neovim/issues/12684/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/neovim/neovim",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/neovim/neovim/issues/12684/timeline",
+      "title": "Missing read permission treated as missing write permission",
+      "type": null,
+      "updated_at": "2024-05-17T10:58:20Z",
+      "url": "https://api.github.com/repos/neovim/neovim/issues/12684",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/70809?v=4",
+        "events_url": "https://api.github.com/users/jeffs/events{/privacy}",
+        "followers_url": "https://api.github.com/users/jeffs/followers",
+        "following_url": "https://api.github.com/users/jeffs/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jeffs/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/jeffs",
+        "id": 70809,
+        "login": "jeffs",
+        "node_id": "MDQ6VXNlcjcwODA5",
+        "organizations_url": "https://api.github.com/users/jeffs/orgs",
+        "received_events_url": "https://api.github.com/users/jeffs/received_events",
+        "repos_url": "https://api.github.com/users/jeffs/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/jeffs/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jeffs/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/jeffs",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 6
+}

@@ -1,0 +1,150 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MANNEQUIN",
+      "body": "BPO | [43323](https://bugs.python.org/issue43323)\n--- | :---\nNosy | @warsaw, @bitdancer, @andersk, @serhiy-storchaka, @glaubitz\nPRs | <li>python/cpython#32137</li>\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2021-02-25.18:18:08.224>\nlabels = ['type-bug', 'expert-email', '3.10', '3.11', 'library', '3.9']\ntitle = 'UnicodeEncodeError: surrogates not allowed when parsing invalid charset'\nupdated_at = <Date 2022-03-28.22:29:32.019>\nuser = 'https://github.com/andersk'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2022-03-28.22:29:32.019>\nactor = 'glaubitz'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['Library (Lib)', 'email']\ncreation = <Date 2021-02-25.18:18:08.224>\ncreator = 'andersk'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 43323\nkeywords = ['patch']\nmessage_count = 9.0\nmessages = ['387685', '410426', '416092', '416101', '416107', '416109', '416112', '416113', '416225']\nnosy_count = 6.0\nnosy_names = ['barry', 'r.david.murray', 'andersk', 'serhiy.storchaka', 'mdengler', 'glaubitz']\npr_nums = ['32137']\npriority = 'normal'\nresolution = None\nstage = 'patch review'\nstatus = 'open'\nsuperseder = None\ntype = 'behavior'\nurl = 'https://bugs.python.org/issue43323'\nversions = ['Python 3.9', 'Python 3.10', 'Python 3.11']\n```\n\n</p></details>\n",
+      "closed_at": "2024-04-17T15:15:04Z",
+      "comments": 10,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/87489/comments",
+      "created_at": "2021-02-25T18:18:08Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/87489/events",
+      "html_url": "https://github.com/python/cpython/issues/87489",
+      "id": 1199053412,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Standard Library Python modules in the Lib/ directory",
+          "id": 4018668725,
+          "name": "stdlib",
+          "node_id": "LA_kwDOBN0Z8c7viAS1",
+          "url": "https://api.github.com/repos/python/cpython/labels/stdlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 4018733900,
+          "name": "3.11",
+          "node_id": "LA_kwDOBN0Z8c7viQNM",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.11"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772048,
+          "name": "3.10 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhQ",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.10%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772049,
+          "name": "3.9 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhR",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.9%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4018812322,
+          "name": "topic-email",
+          "node_id": "LA_kwDOBN0Z8c7vijWi",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-email"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/87489/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDUzNDEy",
+      "number": 87489,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/87489/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/87489/timeline",
+      "title": "UnicodeEncodeError: surrogates not allowed when parsing invalid charset",
+      "type": null,
+      "updated_at": "2024-04-17T15:15:04Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/87489",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/92881696?v=4",
+        "events_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/events{/privacy}",
+        "followers_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/followers",
+        "following_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/following{/other_user}",
+        "gists_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 92881696,
+        "login": "d23c70bd-a0ee-4d72-b476-0a282f132652",
+        "node_id": "M_kgDOBYlDIA",
+        "organizations_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/orgs",
+        "received_events_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/received_events",
+        "repos_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652/subscriptions",
+        "type": "Mannequin",
+        "url": "https://api.github.com/users/d23c70bd-a0ee-4d72-b476-0a282f132652",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 75
+}

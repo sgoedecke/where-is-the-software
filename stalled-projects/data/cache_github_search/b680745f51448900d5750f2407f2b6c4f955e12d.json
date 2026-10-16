@@ -1,0 +1,150 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--- Verify first that your issue is not already reported on GitHub -->\r\n<!--- Also test if the latest release and devel branch are affected too -->\r\n<!--- Complete *all* sections as described, this form is processed automatically -->\r\n\r\n##### SUMMARY\r\nThe `reboot` module does not work with `async`, `poll`, and `async_status`. Suppose I have 10 nodes to reboot, but I can only set `fork` to 2. The `reboot` module will reboot 2 nodes at a time. I tried using `async`, `poll`, and `async_status` to kick of the reboots on the 10 nodes, 2 at a time, and then poll for the results. `async` and `poll` seem to do nothing on the `reboot` module as the behavior remains the same as without them.\r\n\r\n##### ISSUE TYPE\r\n- Bug Report\r\n\r\n##### COMPONENT NAME\r\n`reboot` module\r\n\r\n##### ANSIBLE VERSION\r\n<!--- Paste verbatim output from \"ansible --version\" between quotes -->\r\n```paste below\r\nansible 2.9.12\r\n  config file = /etc/ansible/ansible.cfg\r\n  configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /usr/lib64/python3.6/site-packages/ansible\r\n  executable location = /usr/bin/ansible\r\n  python version = 3.6.8 (default, May  2 2019, 19:37:42) [GCC 4.4.7 20120313 (Red Hat 4.4.7-23)]\r\n```\r\n\r\n##### CONFIGURATION\r\n<!--- Paste verbatim output from \"ansible-config dump --only-changed\" between quotes -->\r\n```paste below\r\nANSIBLE_PIPELINING(/etc/ansible/ansible.cfg) = True\r\nANSIBLE_SSH_ARGS(/etc/ansible/ansible.cfg) = -o ControlMaster=auto -o ControlPersist=60s -o UserKnownHostsFile=/dev/null\r\nANSIBLE_SSH_RETRIES(/etc/ansible/ansible.cfg) = 2\r\nCOMMAND_WARNINGS(/etc/ansible/ansible.cfg) = False\r\nDEFAULT_FORKS(/etc/ansible/ansible.cfg) = 2\r\nDEFAULT_GATHERING(/etc/ansible/ansible.cfg) = explicit\r\nDEFAULT_TIMEOUT(/etc/ansible/ansible.cfg) = 40\r\nHOST_KEY_CHECKING(/etc/ansible/ansible.cfg) = False\r\nRETRY_FILES_ENABLED(/etc/ansible/ansible.cfg) = False\r\n```\r\n\r\n##### OS / ENVIRONMENT\r\n<!--- Provide all relevant information below, e.g. target OS versions, network device firmware, etc. -->\r\n\r\n\r\n##### STEPS TO REPRODUCE\r\n<!--- Describe exactly how to reproduce the problem, using a minimal test-case -->\r\nDescribed in the summary\r\n\r\n<!--- Paste example playbooks or commands between quotes below -->\r\n```yaml\r\n\r\n```\r\n\r\n<!--- HINT: You can paste gist.github.com links for larger files -->\r\n\r\n##### EXPECTED RESULTS\r\n<!--- Describe what you expected to happen when running the steps above -->\r\nI expect the `reboot` module to start the reboot on 2 nodes, then move on to something else (like start the reboot on another 2 nodes), then come back to check on the results of the reboots by using `async`, `poll`, and `async_status`.\r\n\r\n##### ACTUAL RESULTS\r\n<!--- Describe what actually happened. If possible run with extra verbosity (-vvvv) -->\r\nThe `reboot` module ignores `async` and `poll`.\r\n\r\n<!--- Paste verbatim command output between quotes -->\r\n```paste below\r\n\r\n```\r\n",
+      "closed_at": "2023-10-28T04:14:17Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/71517/comments",
+      "created_at": "2020-08-28T22:19:52Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/71517/events",
+      "html_url": "https://github.com/ansible/ansible/issues/71517",
+      "id": 688385035,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fcc12d",
+          "default": false,
+          "description": "This issue is considered easy to fix by aspiring contributors.",
+          "id": 182907838,
+          "name": "easyfix",
+          "node_id": "MDU6TGFiZWwxODI5MDc4Mzg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/easyfix"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue/PR relates to a module.",
+          "id": 496359346,
+          "name": "module",
+          "node_id": "MDU6TGFiZWw0OTYzNTkzNDY=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/module"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e3ed5e",
+          "default": false,
+          "description": "Priority 3 - Approved, No Time Limitation",
+          "id": 1126594180,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwxMTI2NTk0MTgw",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "This issue/PR affects Ansible v2.9",
+          "id": 1316917295,
+          "name": "affects_2.9",
+          "node_id": "MDU6TGFiZWwxMzE2OTE3Mjk1",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.9"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/71517/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2ODgzODUwMzU=",
+      "number": 71517,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/71517/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/71517/timeline",
+      "title": "Reboot module doesn't work with async",
+      "type": null,
+      "updated_at": "2023-11-11T14:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/71517",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/732659?v=4",
+        "events_url": "https://api.github.com/users/chilicheech/events{/privacy}",
+        "followers_url": "https://api.github.com/users/chilicheech/followers",
+        "following_url": "https://api.github.com/users/chilicheech/following{/other_user}",
+        "gists_url": "https://api.github.com/users/chilicheech/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/chilicheech",
+        "id": 732659,
+        "login": "chilicheech",
+        "node_id": "MDQ6VXNlcjczMjY1OQ==",
+        "organizations_url": "https://api.github.com/users/chilicheech/orgs",
+        "received_events_url": "https://api.github.com/users/chilicheech/received_events",
+        "repos_url": "https://api.github.com/users/chilicheech/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/chilicheech/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/chilicheech/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/chilicheech",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 10
+}

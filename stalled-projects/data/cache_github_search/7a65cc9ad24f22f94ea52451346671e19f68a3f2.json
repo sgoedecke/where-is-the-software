@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\n\nWhen using a custom fact module, a warning is printed about \"ignoring subset(None)\".\r\n\r\nThis warning has been [reported before](https://github.com/ansible/ansible/issues/68532#issuecomment-620868819) and a [commented upon](https://github.com/ansible/ansible/issues/68532#issuecomment-621410150) but it appears that the fix was left out.\r\n\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\ngather_facts.py\n\n### Ansible Version\n\n```console\n$ ansible --version\r\nansible [core 2.14.1]\r\n  config file = None\r\n  configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /home/user/.local/pipx/venvs/ansible/lib/python3.10/site-packages/ansible\r\n  ansible collection location = /home/user/.ansible/collections:/usr/share/ansible/collections\r\n  executable location = /home/user/.local/bin/ansible\r\n  python version = 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0] (/home/user/.local/pipx/venvs/ansible/bin/python)\r\n  jinja version = 3.1.2\r\n  libyaml = True\n```\n\n\n### Configuration\n\n```console\nCONFIG_FILE() = None\n```\n\n\n### OS / Environment\n\nLinux\n\n### Steps to Reproduce\n\nThe custom fact module looks like this:\r\n\r\n```\r\n#!/bin/sh\r\n\r\necho '{\"ansible_facts\": {\"myfact\": \"hello!\"}}'\r\n```\r\n\r\nWhen the custom fact module is picked up by ansible, a warning is printed about \"Ignoring subset(None)\":\r\n\r\n```\r\nANSIBLE_LIBRARY=./library ANSIBLE_FACTS_MODULES=myfacts,smart ansible -m gather_facts  localhost | grep myfact\r\n[WARNING]: No inventory was parsed, only implicit localhost is available\r\n[WARNING]: Ignoring subset(None) for myfacts\r\n            \"ANSIBLE_FACTS_MODULES\": \"myfacts,smart\",\r\n        \"myfact\": \"hello!\"\r\n```\r\n\n\n### Expected Results\n\nCustom fact module to be used without warnings.\n\n### Actual Results\n\n```console\nSpurious warning is printed.\n```\n\n\n### Code of Conduct\n\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2026-06-02T23:18:54Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/79631/comments",
+      "created_at": "2022-12-27T05:21:15Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/79631/events",
+      "html_url": "https://github.com/ansible/ansible/issues/79631",
+      "id": 1511446768,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue/PR relates to a module.",
+          "id": 496359346,
+          "name": "module",
+          "node_id": "MDU6TGFiZWw0OTYzNTkzNDY=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/module"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e3ed5e",
+          "default": false,
+          "description": "Priority 3 - Approved, No Time Limitation",
+          "id": 1126594180,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwxMTI2NTk0MTgw",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 3979696806,
+          "name": "affects_2.14",
+          "node_id": "LA_kwDOADeGtM7tNVqm",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.14"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/79631/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM5aFtjw",
+      "number": 79631,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/79631/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/79631/timeline",
+      "title": "Spurious warning when using a custom fact module",
+      "type": null,
+      "updated_at": "2026-06-02T23:19:00Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/79631",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3172293?v=4",
+        "events_url": "https://api.github.com/users/andreby/events{/privacy}",
+        "followers_url": "https://api.github.com/users/andreby/followers",
+        "following_url": "https://api.github.com/users/andreby/following{/other_user}",
+        "gists_url": "https://api.github.com/users/andreby/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/andreby",
+        "id": 3172293,
+        "login": "andreby",
+        "node_id": "MDQ6VXNlcjMxNzIyOTM=",
+        "organizations_url": "https://api.github.com/users/andreby/orgs",
+        "received_events_url": "https://api.github.com/users/andreby/received_events",
+        "repos_url": "https://api.github.com/users/andreby/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/andreby/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/andreby/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/andreby",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 8
+}

@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "**Is your feature request related to a problem? Please describe.**\r\nWhen I have chrome on full screen and do \"window.show()\" it switches the screen to the desktop with the app.\r\n\r\n**Describe the solution you'd like**\r\nIt would be better if there was a feature which allowed me to bring the window to jut sit in front of the Chrome app while its on full screen rather than \"switch\" back to the desktop.\r\n\r\n**Additional context**\r\nhere is an example;\r\n<img width=\"1308\" alt=\"screenshot 2018-12-10 at 08 44 36\" src=\"https://user-images.githubusercontent.com/37438950/49770278-a456f600-fcdb-11e8-8274-aecf30f914bd.png\">\r\n",
+      "closed_at": "2022-01-28T18:29:41Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/16007/comments",
+      "created_at": "2018-12-11T00:28:25Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/16007/events",
+      "html_url": "https://github.com/electron/electron/issues/16007",
+      "id": 389545724,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/16007/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzODk1NDU3MjQ=",
+      "number": 16007,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 1,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/electron/electron/issues/16007/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/16007/timeline",
+      "title": "How to bring a window to the front of the screen without \"switching\" apps",
+      "type": null,
+      "updated_at": "2022-01-28T18:29:41Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/16007",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/37438950?v=4",
+        "events_url": "https://api.github.com/users/outdoteth/events{/privacy}",
+        "followers_url": "https://api.github.com/users/outdoteth/followers",
+        "following_url": "https://api.github.com/users/outdoteth/following{/other_user}",
+        "gists_url": "https://api.github.com/users/outdoteth/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/outdoteth",
+        "id": 37438950,
+        "login": "outdoteth",
+        "node_id": "MDQ6VXNlcjM3NDM4OTUw",
+        "organizations_url": "https://api.github.com/users/outdoteth/orgs",
+        "received_events_url": "https://api.github.com/users/outdoteth/received_events",
+        "repos_url": "https://api.github.com/users/outdoteth/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/outdoteth/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/outdoteth/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/outdoteth",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 18
+}

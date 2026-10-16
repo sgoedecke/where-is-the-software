@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Steps to reproduce\n\n`RenderTwoDimensionalViewport` assumes always have at least one `ChildVicinity`. Sometimes we lazy loading show built only child that visible on screen.\r\n\r\nSee my package [boundless_stack](https://github.com/definev/boundless_stack), user can add and remove `StackPosition` whatever they want.\n\n### Expected results\n\nIgnore when no child vicinity rendered, or have a flag that tell the viewport is empty and skip the null check\n\n### Actual results\n\nAlways throw error when no child vicinity built\n\n### Code sample\n\n<details open><summary>Code sample</summary>\r\n\r\n```dart\r\nimport 'package:boundless_stack/boundless_stack.dart';\r\nimport 'package:flutter/material.dart';\r\n\r\nvoid main() {\r\n  runApp(const MainApp());\r\n}\r\n\r\nclass MainApp extends StatelessWidget {\r\n  const MainApp({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return const MaterialApp(\r\n      home: HomeView(),\r\n    );\r\n  }\r\n}\r\n\r\nclass HomeView extends StatefulWidget {\r\n  const HomeView({\r\n    super.key,\r\n  });\r\n\r\n  @override\r\n  State<HomeView> createState() => _HomeViewState();\r\n}\r\n\r\nclass _HomeViewState extends State<HomeView> {\r\n  double scaleFactor = 1;\r\n\r\n  final ScrollableDetails _horizontalDetails = ScrollableDetails.horizontal(\r\n    controller: ScrollController(),\r\n  );\r\n  final ScrollableDetails _verticalDetails = ScrollableDetails.vertical(\r\n    controller: ScrollController(),\r\n  );\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      body: ZoomStackGestureDetector(\r\n        onScaleFactorChanged: (scaleFactor) =>\r\n            setState(() => this.scaleFactor = scaleFactor),\r\n        scaleFactor: scaleFactor,\r\n        stack: (scaleFactor) => BoundlessStack(\r\n          clipBehavior: Clip.none,\r\n          cacheExtent: 0,\r\n          backgroundBuilder: gridBackgroundBuilder(\r\n            gridThickness: 1.0,\r\n            gridWidth: 100,\r\n            gridHeight: 100,\r\n            gridColor: Colors.green,\r\n            scaleFactor: scaleFactor,\r\n          ),\r\n          horizontalDetails: _horizontalDetails,\r\n          verticalDetails: _verticalDetails,\r\n          delegate: BoundlessStackListDelegate(\r\n            children: [],\r\n          ),\r\n          scaleFactor: scaleFactor,\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n```\r\n\r\n</details>\r\n\n\n### Screenshots or Video\n\n<details open>\r\n<summary>Screenshots / Video demonstration</summary>\r\n\r\n[Upload media here]\r\n\r\n</details>\r\n\n\n### Logs\n\n<details open><summary>Logs</summary>\r\n\r\n```console\r\n[Paste your logs here]\r\n```\r\n\r\n</details>\r\n\n\n### Flutter Doctor output\n\n<details open><summary>Doctor output</summary>\r\n\r\n```console\r\n[\u2713] Flutter (Channel stable, 3.22.2, on macOS 14.5 23F79 darwin-arm64, locale en-VN)\r\n    \u2022 Flutter version 3.22.2 on channel stable at /Users/daiduong/fvm/versions/stable\r\n    \u2022 Upstream repository https://github.com/flutter/flutter.git\r\n    \u2022 Framework revision 761747bfc5 (4 weeks ago), 2024-06-05 22:15:13 +0200\r\n    \u2022 Engine revision edd8546116\r\n    \u2022 Dart version 3.4.3\r\n    \u2022 DevTools version 2.34.3\r\n\r\n[\u2713] Android toolchain - develop for Android devices (Android SDK version 34.0.0)\r\n    \u2022 Android SDK at /Users/daiduong/Library/Android/sdk\r\n    \u2022 Platform android-34, build-tools 34.0.0\r\n    \u2022 Java binary at: /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java\r\n    \u2022 Java version OpenJDK Runtime Environment (build 17.0.9+0-17.0.9b1087.7-11185874)\r\n    \u2022 All Android licenses accepted.\r\n\r\n[\u2713] Xcode - develop for iOS and macOS (Xcode 15.4)\r\n    \u2022 Xcode at /Applications/Xcode.app/Contents/Developer\r\n    \u2022 Build 15F31d\r\n    \u2022 CocoaPods version 1.15.2\r\n\r\n[\u2713] Chrome - develop for the web\r\n    \u2022 Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\r\n\r\n[\u2713] Android Studio (version 2023.2)\r\n    \u2022 Android Studio at /Applications/Android Studio.app/Contents\r\n    \u2022 Flutter plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/9212-flutter\r\n    \u2022 Dart plugin can be installed from:\r\n      \ud83d\udd28 https://plugins.jetbrains.com/plugin/6351-dart\r\n    \u2022 Java version OpenJDK Runtime Environment (build 17.0.9+0-17.0.9b1087.7-11185874)\r\n\r\n[\u2713] VS Code (version 1.90.2)\r\n    \u2022 VS Code at /Applications/Visual Studio Code.app/Contents\r\n    \u2022 Flutter extension version 3.90.0\r\n\r\n[\u2713] Connected device (4 available)\r\n    \u2022 iPhone 15 Pro Max (mobile)      \u2022 C27D2F52-AD96-48F6-9B11-7AEA89D19DE7 \u2022 ios            \u2022 com.apple.CoreSimulator.SimRuntime.iOS-17-5 (simulator)\r\n    \u2022 macOS (desktop)                 \u2022 macos                                \u2022 darwin-arm64   \u2022 macOS 14.5 23F79 darwin-arm64\r\n    \u2022 Mac Designed for iPad (desktop) \u2022 mac-designed-for-ipad                \u2022 darwin         \u2022 macOS 14.5 23F79 darwin-arm64\r\n    \u2022 Chrome (web)                    \u2022 chrome                               \u2022 web-javascript \u2022 Google Chrome 126.0.6478.127\r\n    ! Error: Browsing on the local area network for mayvees. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.\r\n      The device must be opted into Developer Mode to connect wirelessly. (code -27)\r\n    ! Error: Browsing on the local area network for Duy\u00ean\u2019s iPhone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.\r\n      The device must be opted into Developer Mode to connect wirelessly. (code -27)\r\n    ! Error: Browsing on the local area network for 5pk. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.\r\n      The device must be opted into Developer Mode to connect wirelessly. (code -27)\r\n    ! Error: Browsing on the local area network for fhihung.iphone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.\r\n      The device must be opted into Developer Mode to connect wirelessly. (code -27)\r\n    ! Error: Browsing on the local area network for Lisa (2). Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.\r\n      The device must be opted into Developer Mode to connect wirelessly. (code -27)\r\n    ! Error: Browsing on the local area network for Duong phone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.\r\n      The device must be opted into Developer Mode to connect wirelessly. (code -27)\r\n    ! Error: Browsing on the local area network for Bui Duong\u2019s iPhone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.\r\n      The device must be opted into Developer Mode to connect wirelessly. (code -27)\r\n\r\n[\u2713] Network resources\r\n    \u2022 All expected network resources are available.\r\n\r\n\u2022 No issues found!\r\n```\r\n\r\n</details>\r\n",
+      "closed_at": "2024-06-30T17:44:37Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/151060/comments",
+      "created_at": "2024-06-30T09:07:01Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/151060/events",
+      "html_url": "https://github.com/flutter/flutter/issues/151060",
+      "id": 2382160472,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/151060/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM6N_OJY",
+      "number": 151060,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/151060/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/151060/timeline",
+      "title": "`RenderTwoDimensionalViewport` always yelling '_leadingXIndex != null' when have no children to built ",
+      "type": null,
+      "updated_at": "2024-07-14T18:00:53Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/151060",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/62325868?v=4",
+        "events_url": "https://api.github.com/users/definev/events{/privacy}",
+        "followers_url": "https://api.github.com/users/definev/followers",
+        "following_url": "https://api.github.com/users/definev/following{/other_user}",
+        "gists_url": "https://api.github.com/users/definev/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/definev",
+        "id": 62325868,
+        "login": "definev",
+        "node_id": "MDQ6VXNlcjYyMzI1ODY4",
+        "organizations_url": "https://api.github.com/users/definev/orgs",
+        "received_events_url": "https://api.github.com/users/definev/received_events",
+        "repos_url": "https://api.github.com/users/definev/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/definev/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/definev/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/definev",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1987
+}

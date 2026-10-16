@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "### Summary\n\nDespite having current `devel` listed as compativle with py314, AnsibleLoader fails to load yaml files.\n\nReproducer code\n\n```python\nfrom ansible.parsing.yaml.loader import AnsibleLoader\nloader = AnsibleLoader(\"\")\n```\n\nThis bug directly impacts ansible-lint which makes use of AnsibleLoader, so we were not able to enable testing with py314 due to this bug.\n\n### Issue Type\n\nBug Report\n\n### Component Name\n\ncorfe\n\n### Ansible Version\n\n```console\n$ ansible --version\nansible [core 2.20.0b1]\n```\n\n### Configuration\n\n```console\n# if using a version older than ansible-core 2.12 you should omit the '-t all'\n$ ansible-config dump --only-changed -t all\n```\n\n### OS / Environment\n\nMacOS\n\n### Steps to Reproduce\n\n<!--- Paste example playbooks or commands between quotes below -->\n```python\nfrom ansible.parsing.yaml.loader import AnsibleLoader\nloader = AnsibleLoader(\"\")\n```\n\n### Expected Results\n\nLoad the file\n\n### Actual Results\n\n```console\nTraceback (most recent call last):\n  File \"/Users/ssbarnea/code/a/devtools/ansible-lint/a.py\", line 3, in <module>\n    loader = AnsibleLoader(\"\")\n  File \"/Users/ssbarnea/code/a/devtools/ansible-lint/.tox/py314/lib/python3.14/site-packages/ansible/parsing/yaml/loader.py\", line 10, in AnsibleLoader\n    return _loader.AnsibleLoader(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/Users/ssbarnea/code/a/devtools/ansible-lint/.tox/py314/lib/python3.14/site-packages/ansible/_internal/_yaml/_loader.py\", line 62, in __init__\n    origin=_tags.Origin.get_or_create_tag(stream, self.name),\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/Users/ssbarnea/code/a/devtools/ansible-lint/.tox/py314/lib/python3.14/site-packages/ansible/_internal/_datatag/_tags.py\", line 36, in get_or_create_tag\n    origin = Origin(path=str(path))  # convert tagged strings and path-like values to a native str\n  File \"<string>\", line 7, in __init__\n  File \"<string> generated for <class 'ansible._internal._datatag._tags.Origin'>\", line 10, in __post_init__\n  File \"/Users/ssbarnea/code/a/devtools/ansible-lint/.tox/py314/lib/python3.14/site-packages/ansible/_internal/_datatag/_tags.py\", line 67, in _post_validate\n    raise RuntimeError('The `src` field must be an absolute path.')\nRuntimeError: The `src` field must be an absolute path.\n```\n\n### Code of Conduct\n\n- [x] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2025-09-29T10:16:55Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/85921/comments",
+      "created_at": "2025-09-29T10:06:18Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/85921/events",
+      "html_url": "https://github.com/ansible/ansible/issues/85921",
+      "id": 3464216434,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2d5f45",
+          "default": false,
+          "description": "",
+          "id": 9015055207,
+          "name": "affects_2.20",
+          "node_id": "LA_kwDOADeGtM8AAAACGVbTZw",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.20"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/85921/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM7Oe79y",
+      "number": 85921,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/85921/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/85921/timeline",
+      "title": "py314: AnsibleLoader raising exception RuntimeError('The `src` field must be an absolute path.')",
+      "type": null,
+      "updated_at": "2025-10-20T14:45:31Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/85921",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/102495?v=4",
+        "events_url": "https://api.github.com/users/ssbarnea/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ssbarnea/followers",
+        "following_url": "https://api.github.com/users/ssbarnea/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ssbarnea/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ssbarnea",
+        "id": 102495,
+        "login": "ssbarnea",
+        "node_id": "MDQ6VXNlcjEwMjQ5NQ==",
+        "organizations_url": "https://api.github.com/users/ssbarnea/orgs",
+        "received_events_url": "https://api.github.com/users/ssbarnea/received_events",
+        "repos_url": "https://api.github.com/users/ssbarnea/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ssbarnea/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ssbarnea/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ssbarnea",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 93
+}

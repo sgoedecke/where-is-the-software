@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Documentation\n\nurl like this  : https://docs.python.org/zh-cn/3.14/search.html?q=dict\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-143286\n* gh-143290\n* gh-143291\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2025-12-31T14:30:53Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/143284/comments",
+      "created_at": "2025-12-30T06:18:42Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/143284/events",
+      "html_url": "https://github.com/python/cpython/issues/143284",
+      "id": 3769214847,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Documentation in the Doc dir",
+          "id": 538516109,
+          "name": "docs",
+          "node_id": "MDU6TGFiZWw1Mzg1MTYxMDk=",
+          "url": "https://api.github.com/repos/python/cpython/labels/docs"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/143284/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c7gqad_",
+      "number": 143284,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/143284/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/143284/timeline",
+      "title": "Documentation can't find anything in Chinese language",
+      "type": null,
+      "updated_at": "2026-01-01T10:45:04Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/143284",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/41617351?v=4",
+        "events_url": "https://api.github.com/users/hitzsf/events{/privacy}",
+        "followers_url": "https://api.github.com/users/hitzsf/followers",
+        "following_url": "https://api.github.com/users/hitzsf/following{/other_user}",
+        "gists_url": "https://api.github.com/users/hitzsf/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/hitzsf",
+        "id": 41617351,
+        "login": "hitzsf",
+        "node_id": "MDQ6VXNlcjQxNjE3MzUx",
+        "organizations_url": "https://api.github.com/users/hitzsf/orgs",
+        "received_events_url": "https://api.github.com/users/hitzsf/received_events",
+        "repos_url": "https://api.github.com/users/hitzsf/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/hitzsf/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/hitzsf/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/hitzsf",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 690
+}

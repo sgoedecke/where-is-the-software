@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "### Which jobs are flaking?\n\n[sig-release-master-blocking#gce-master-scale-performance-100](https://testgrid.k8s.io/sig-release-master-blocking#gce-master-scale-performance-100)\n\n### Which tests are flaking?\n\n[ci-kubernetes-e2e-gce-scale-performance-100.Overall](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105274704653717504)\n\n### Since when has it been flaking?\n\n[2026-09-30 12:33:31 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105274704653717504)\n[2026-09-30 11:21:26 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105256569837981696)\n[2026-09-30 06:47:25 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105187614653943808)\n[2026-09-30 06:16:25 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105179813793763328)\n[2026-09-30 05:45:26 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105172012103110656)\n[2026-09-30 05:14:24 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105164210198548480)\n[2026-09-30 04:43:25 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105156408151379968)\n[2026-09-30 04:12:29 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105148607375085568)\n[2026-09-30 03:41:25 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105140804392587264)\n[2026-09-30 03:10:37 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105133003972808704)\n[2026-09-30 02:40:24 UTC](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105125453147672576)\n\n### Testgrid link\n\nhttps://testgrid.k8s.io/sig-release-master-blocking#gce-master-scale-performance-100&exclude-non-failed-tests=\n\n### Reason for failure (if possible)\n\nThe job fails before cluster creation because the kubetest2 binary does not recognize the --metadata option:\n```\nError: unknown flag: --metadata\n```\nExample raw log:\n\nhttps://storage.googleapis.com/kubernetes-ci-logs/logs/ci-kubernetes-e2e-gce-scale-performance-100/2105274704653717504/build-log.txt\n\nThe failed executions do not produce JUnit results, so there is no corresponding Kubernetes Triage cluster.\n\n\n### Anything else we need to know?\n\n\nThis job started immediately after kubernetes/kops#18802 merged on September 30, 2026:\n\nhttps://github.com/kubernetes/kops/pull/18802\n\nThat change stopped building kubetest2 during periodic jobs and added `--metadata=variant=base` to the kubetest2 invocation.\n\nThe outcome depends on the cached kubekins-e2e image available on the Prow worker:\n\nFailed runs use image digest `sha256:12253530c9812be72b1990d85faf87669bb4d998bb8ace00c03eaa1d26b0f686`. Its kubetest2 binary does not support --metadata.\n\nPassing runs use image digest `sha256:470d142cc9b342a49937ac63b76851b9aad305f235b4543d340f6e2cf241b8bc`, containing kubetest2 version 339cd250dc8b779d350f6eb8db57f4fa60ed3784.\n\nBoth digests are referenced through the same image tag, and the job uses `imagePullPolicy: IfNotPresent`. This makes the result depend on which Prow worker executes the job.\n\nPassing and failing runs are currently interleaved, confirming that this remains flaky. The job image should be bumped or pinned to an image containing a compatible kubetest2 binary.\n\n### Relevant SIG(s)\n\n/sig scalability\n/sig cluster-lifecycle\n/kind flake\n\ncc: @kubernetes/release-team-release-signal ",
+      "closed_at": "2026-09-30T20:42:56Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/142560/comments",
+      "created_at": "2026-09-30T14:49:30Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/142560/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/142560",
+      "id": 5648362251,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Scalability.",
+          "id": 125010198,
+          "name": "sig/scalability",
+          "node_id": "MDU6TGFiZWwxMjUwMTAxOTg=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/scalability"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Cluster Lifecycle.",
+          "id": 173494222,
+          "name": "sig/cluster-lifecycle",
+          "node_id": "MDU6TGFiZWwxNzM0OTQyMjI=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/cluster-lifecycle"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7c6c7",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a flaky test.",
+          "id": 264749912,
+          "name": "kind/flake",
+          "node_id": "MDU6TGFiZWwyNjQ3NDk5MTI=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/flake"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/142560/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks8AAAABUKsrCw",
+      "number": 142560,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 1,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/142560/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/142560/timeline",
+      "title": "[Flaking Test] ci-kubernetes-e2e-gce-scale-performance-100.Overall fails with unknown flag: --metadata",
+      "type": null,
+      "updated_at": "2026-09-30T20:42:57Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/142560",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/157102595?v=4",
+        "events_url": "https://api.github.com/users/sudharshanibm/events{/privacy}",
+        "followers_url": "https://api.github.com/users/sudharshanibm/followers",
+        "following_url": "https://api.github.com/users/sudharshanibm/following{/other_user}",
+        "gists_url": "https://api.github.com/users/sudharshanibm/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/sudharshanibm",
+        "id": 157102595,
+        "login": "sudharshanibm",
+        "node_id": "U_kgDOCV0yAw",
+        "organizations_url": "https://api.github.com/users/sudharshanibm/orgs",
+        "received_events_url": "https://api.github.com/users/sudharshanibm/received_events",
+        "repos_url": "https://api.github.com/users/sudharshanibm/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/sudharshanibm/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/sudharshanibm/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/sudharshanibm",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 369
+}

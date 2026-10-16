@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "# Documentation\n\nhttps://docs.python.org/3/library/math.html#math.tau\nattempts to link to a YouTube video \"Pi is (still) Wrong\" by Vi Hart. \nHowever, they intentionally removed their videos from YouTube (see [their Patreon post](https://www.patreon.com/posts/vihart-channel-129842460) ).\n\nA possible quick fix would be to replace the link with a link to what I think is the same video on Vimeo:\nhttps://vimeo.com/147792667\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-136129\n* gh-136131\n* gh-136132\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2025-06-30T14:44:07Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/136122/comments",
+      "created_at": "2025-06-30T13:34:50Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/136122/events",
+      "html_url": "https://github.com/python/cpython/issues/136122",
+      "id": 3188514880,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Documentation in the Doc dir",
+          "id": 538516109,
+          "name": "docs",
+          "node_id": "MDU6TGFiZWw1Mzg1MTYxMDk=",
+          "url": "https://api.github.com/repos/python/cpython/labels/docs"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/136122/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c6-DOBA",
+      "number": 136122,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/python/cpython/issues/136122/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/136122/timeline",
+      "title": "math.tau broken video link",
+      "type": null,
+      "updated_at": "2025-06-30T14:44:07Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/136122",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/54665381?v=4",
+        "events_url": "https://api.github.com/users/sedram/events{/privacy}",
+        "followers_url": "https://api.github.com/users/sedram/followers",
+        "following_url": "https://api.github.com/users/sedram/following{/other_user}",
+        "gists_url": "https://api.github.com/users/sedram/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/sedram",
+        "id": 54665381,
+        "login": "sedram",
+        "node_id": "MDQ6VXNlcjU0NjY1Mzgx",
+        "organizations_url": "https://api.github.com/users/sedram/orgs",
+        "received_events_url": "https://api.github.com/users/sedram/received_events",
+        "repos_url": "https://api.github.com/users/sedram/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/sedram/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/sedram/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/sedram",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 764
+}

@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "The widely used ffi-napi module won't build with the latest minor update across almost all version.\r\nIt can build with  ~ 20.11.1, ~ 21.5.0\r\nBut failed with 20.12.0, 21.6.0 ~\r\n\r\nThe error log is :\r\nnpm ERR! /home/mark/Projects/eudiw-app/node_modules/node-addon-api/napi-inl.h:63:47: error: invalid conversion from \u2018napi_finalize\u2019 {aka \u2018void (*)(napi_env__*, void*, void*)\u2019} to \u2018node_api_nogc_finalize\u2019 {aka \u2018void (*)(const napi_env__*, void*, void*)\u2019} [-fpermissive]\r\n\r\n",
+      "closed_at": "2024-03-28T07:13:34Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/52240/comments",
+      "created_at": "2024-03-28T03:08:47Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/52240/events",
+      "html_url": "https://github.com/nodejs/node/issues/52240",
+      "id": 2212258469,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/52240/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs86D3GKl",
+      "number": 52240,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 7,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 7,
+        "url": "https://api.github.com/repos/nodejs/node/issues/52240/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/52240/timeline",
+      "title": "The latest minor version update broke ffi-napi compatibility",
+      "type": null,
+      "updated_at": "2024-10-23T17:38:33Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/52240",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/31982230?v=4",
+        "events_url": "https://api.github.com/users/lingyuj/events{/privacy}",
+        "followers_url": "https://api.github.com/users/lingyuj/followers",
+        "following_url": "https://api.github.com/users/lingyuj/following{/other_user}",
+        "gists_url": "https://api.github.com/users/lingyuj/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/lingyuj",
+        "id": 31982230,
+        "login": "lingyuj",
+        "node_id": "MDQ6VXNlcjMxOTgyMjMw",
+        "organizations_url": "https://api.github.com/users/lingyuj/orgs",
+        "received_events_url": "https://api.github.com/users/lingyuj/received_events",
+        "repos_url": "https://api.github.com/users/lingyuj/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/lingyuj/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/lingyuj/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/lingyuj",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 175
+}

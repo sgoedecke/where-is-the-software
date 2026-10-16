@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What happened?\n\nI set up a NodePort service pointing to an envoy gateway. Initially this works, and the port is connected to the envoy gateway correctly. However when something changes about the gateway (does not matter what), the service does not connect anymore. In iptables-save, I found the following rule which blocks traffic:\r\n```\r\n-A KUBE-EXTERNAL-SERVICES -p tcp -m comment --comment \"envoy-gateway-system/envoy-default-eg-e41e7b31:http-80 has no local endpoints\" -m addrtype --dst-type LOCAL -m tcp --dport 30100 -j DROP\r\n```\r\n\r\nEven though this rule also still exists:\r\n```\r\n-A KUBE-NODEPORTS -p tcp -m comment --comment \"envoy-gateway-system/envoy-default-eg-e41e7b31:http-80\" -m tcp --dport 30100 -j KUBE-EXT-GGWL76EB3A5WOB4Q\r\n-A KUBE-EXT-GGWL76EB3A5WOB4Q -s 10.1.0.0/16 -m comment --comment \"pod traffic for envoy-gateway-system/envoy-default-eg-e41e7b31:http-80 external destinations\" -j KUBE-SVC-GGWL76EB3A5WOB4Q\r\n-A KUBE-EXT-GGWL76EB3A5WOB4Q -m comment --comment \"masquerade LOCAL traffic for envoy-gateway-system/envoy-default-eg-e41e7b31:http-80 external destinations\" -m addrtype --src-type LOCAL -j KUBE-MARK-MASQ\r\n-A KUBE-EXT-GGWL76EB3A5WOB4Q -m comment --comment \"route LOCAL traffic for envoy-gateway-system/envoy-default-eg-e41e7b31:http-80 external destinations\" -m addrtype --src-type LOCAL -j KUBE-SVC-GGWL76EB3A5WOB4Q\r\n-A KUBE-SVC-GGWL76EB3A5WOB4Q ! -s 10.1.0.0/16 -d 10.0.0.251/32 -p tcp -m comment --comment \"envoy-gateway-system/envoy-default-eg-e41e7b31:http-80 cluster IP\" -m tcp --dport 80 -j KUBE-MARK-MASQ\r\n-A KUBE-SVC-GGWL76EB3A5WOB4Q -m comment --comment \"envoy-gateway-system/envoy-default-eg-e41e7b31:http-80 -> 10.1.1.19:10080\" -j KUBE-SEP-TW3CXZOYNBZZ6B2U\r\n```\n\n### What did you expect to happen?\n\nWhen the envoy gateway changes, the nodeport should still work.\n\n### How can we reproduce it (as minimally and precisely as possible)?\n\nThe nodeport service:\r\n\r\n```yaml\r\napiVersion: v1\r\nkind: Service\r\nmetadata:\r\n  name: envoy-default-eg-e41e7b31\r\n  namespace: envoy-gateway-system\r\nspec:\r\n  ports:\r\n    - name: http-80\r\n      protocol: TCP\r\n      port: 80\r\n      targetPort: 10080\r\n      nodePort: 30100\r\n    - name: https-443\r\n      protocol: TCP\r\n      port: 443\r\n      targetPort: 10443\r\n      nodePort: 30101\r\n  selector:\r\n    app.kubernetes.io/component: proxy\r\n    app.kubernetes.io/managed-by: envoy-gateway\r\n    app.kubernetes.io/name: envoy\r\n    gateway.envoyproxy.io/owning-gateway-name: eg\r\n    gateway.envoyproxy.io/owning-gateway-namespace: default\r\n  type: NodePort\r\n```\r\n\r\nThe gateway:\r\n\r\n```yaml\r\napiVersion: gateway.networking.k8s.io/v1beta1\r\nkind: GatewayClass\r\nmetadata:\r\n  name: eg\r\nspec:\r\n  controllerName: gateway.envoyproxy.io/gatewayclass-controller\r\n---\r\napiVersion: gateway.networking.k8s.io/v1beta1\r\nkind: Gateway\r\nmetadata:\r\n  name: eg\r\nspec:\r\n  gatewayClassName: eg\r\n  listeners:\r\n  - name: http\r\n    protocol: HTTP\r\n    port: 80\r\n  - name: https\r\n    protocol: HTTPS\r\n    hostname: \"bot.yele.dev\"\r\n    port: 443\r\n    tls:\r\n      mode: Terminate\r\n      certificateRefs:\r\n      - kind: Secret\r\n        name: eg-https\r\n```\n\n### Anything else we need to know?\n\n```\r\n; kubectl -n envoy-gateway-system get endpointslices\r\nNAME                              ADDRESSTYPE   PORTS                           ENDPOINTS   AGE\r\nenvoy-default-eg-e41e7b31-cx6mm   IPv4          10443,10080                     10.1.1.19   66m\r\nenvoy-gateway-mxd5w               IPv4          19001,18000,18002 + 1 more...   10.1.2.80   4h4m\r\n; kubectl -n envoy-gateway-system get endpoints envoy-default-eg-e41e7b31\r\nNAME                        ENDPOINTS                         AGE\r\nenvoy-default-eg-e41e7b31   10.1.1.19:10443,10.1.1.19:10080   57m\r\n```\r\n\r\nWhen I replace the service, it starts working again.\n\n### Kubernetes version\n\n<details>\r\n\r\n```console\r\n$ kubectl version\r\nWARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.\r\nClient Version: version.Info{Major:\"1\", Minor:\"25\", GitVersion:\"v1.25.2\", GitCommit:\"5835544ca568b757a8ecae5c153f317e5736700e\", GitTreeState:\"clean\", BuildDate:\"2022-09-21T14:33:49Z\", GoVersion:\"go1.19.1\", Compiler:\"gc\", Platform:\"darwin/arm64\"}\r\nKustomize Version: v4.5.7\r\nServer Version: version.Info{Major:\"1\", Minor:\"28\", GitVersion:\"v1.28.4\", GitCommit:\"bae2c62678db2b5053817bc97181fcc2e8388103\", GitTreeState:\"archive\", BuildDate:\"1980-01-01T00:00:00Z\", GoVersion:\"go1.21.5\", Compiler:\"gc\", Platform:\"linux/amd64\"}\r\nWARNING: version difference between client (1.25) and server (1.28) exceeds the supported minor version skew of +/-1```\r\n\r\n</details>\r\n\n\n### Cloud provider\n\n<details>\r\nNone\r\n</details>\r\n\n\n### OS version\n\n<details>\r\n\r\n```console\r\n# On Linux:\r\n$ cat /etc/os-release\r\nBUG_REPORT_URL=\"https://github.com/NixOS/nixpkgs/issues\"\r\nBUILD_ID=\"23.11.20240213.01885a0\"\r\nDOCUMENTATION_URL=\"https://nixos.org/learn.html\"\r\nHOME_URL=\"https://nixos.org/\"\r\nID=nixos\r\nLOGO=\"nix-snowflake\"\r\nNAME=NixOS\r\nPRETTY_NAME=\"NixOS 23.11 (Tapir)\"\r\nSUPPORT_END=\"2024-06-30\"\r\nSUPPORT_URL=\"https://nixos.org/community.html\"\r\nVERSION=\"23.11 (Tapir)\"\r\nVERSION_CODENAME=tapir\r\nVERSION_ID=\"23.11\"\r\n$ uname -a\r\nLinux vmbox-1 6.1.77 #1-NixOS SMP PREEMPT_DYNAMIC Mon Feb  5 20:13:03 UTC 2024 x86_64 GNU/Linux\r\n```\r\n\r\n</details>\r\n\n\n### Install tools\n\n<details>\r\n\r\n</details>\r\n\n\n### Container runtime (CRI) and version (if applicable)\n\n<details>\r\n\r\n</details>\r\n\n\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\n\n<details>\r\n\r\n</details>\r\n",
+      "closed_at": "2024-06-30T18:35:57Z",
+      "comments": 8,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/125810/comments",
+      "created_at": "2024-06-30T14:10:39Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/125810/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/125810",
+      "id": 2382274152,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Network.",
+          "id": 116712108,
+          "name": "sig/network",
+          "node_id": "MDU6TGFiZWwxMTY3MTIxMDg=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/network"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/125810/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks6N_p5o",
+      "number": 125810,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/125810/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/125810/timeline",
+      "title": "NodePort service with endpoints has \"has no local endpoints\" in iptables",
+      "type": null,
+      "updated_at": "2024-06-30T18:35:57Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/125810",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1576660?v=4",
+        "events_url": "https://api.github.com/users/pingiun/events{/privacy}",
+        "followers_url": "https://api.github.com/users/pingiun/followers",
+        "following_url": "https://api.github.com/users/pingiun/following{/other_user}",
+        "gists_url": "https://api.github.com/users/pingiun/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/pingiun",
+        "id": 1576660,
+        "login": "pingiun",
+        "node_id": "MDQ6VXNlcjE1NzY2NjA=",
+        "organizations_url": "https://api.github.com/users/pingiun/orgs",
+        "received_events_url": "https://api.github.com/users/pingiun/received_events",
+        "repos_url": "https://api.github.com/users/pingiun/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/pingiun/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/pingiun/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/pingiun",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 345
+}

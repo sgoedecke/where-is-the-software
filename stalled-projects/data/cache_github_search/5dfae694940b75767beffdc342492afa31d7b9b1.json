@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "* **Version**: 10.13.0\r\n* **Platform**: Linux themachine.novalocal 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux\r\n\r\n\r\nIf an error is thrown while handling a request and then it is caught by an error domain, the second request coming on the same connection is not parsed correctly and the server returns 400 Bad Request.\r\n\r\nI managed to reproduce this using a simple example. Server code:\r\n```\r\n'use strict';\r\n\r\nvar ed = require('domain');\r\nvar http = require('http');\r\n\r\nvar count = 0;\r\n\r\nvar server = http.createServer(function(request, response) {\r\n\tvar d = ed.createDomain();\r\n\td.on('error', function() {\r\n\t\tconsole.log(\"request\", count++);\r\n\t\tresponse.statusCode = 500;\r\n\t\tresponse.end();\r\n\t}); \r\n\t\r\n\td.enter();\r\n\tthrow new Error(\"Something wrong happened.\");\r\n\td.exit();\r\n});\r\nserver.listen(8092, \"127.0.0.1\", function() {\r\n\tconsole.log(\"connected\");\r\n});\r\n```\r\n\r\nMake the requests:\r\n```\r\n# curl -v 'http://127.0.0.1:8092' 'http://127.0.0.1:8092'\r\n* About to connect() to 127.0.0.1 port 8092 (#0)\r\n*   Trying 127.0.0.1...\r\n* Connected to 127.0.0.1 (127.0.0.1) port 8092 (#0)\r\n> GET / HTTP/1.1\r\n> User-Agent: curl/7.29.0\r\n> Host: 127.0.0.1:8092\r\n> Accept: */*\r\n>\r\n< HTTP/1.1 500 Internal Server Error\r\n< Date: Tue, 11 Dec 2018 09:49:43 GMT\r\n< Connection: keep-alive\r\n< Content-Length: 0\r\n<\r\n* Connection #0 to host 127.0.0.1 left intact\r\n* Found bundle for host 127.0.0.1: 0x2283ec0\r\n* Re-using existing connection! (#0) with host 127.0.0.1\r\n* Connected to 127.0.0.1 (127.0.0.1) port 8092 (#0)\r\n> GET / HTTP/1.1\r\n> User-Agent: curl/7.29.0\r\n> Host: 127.0.0.1:8092\r\n> Accept: */*\r\n>\r\n< HTTP/1.1 400 Bad Request\r\n* no chunk, no close, no size. Assume close to signal end\r\n<\r\n* Closing connection 0\r\n```\r\n\r\nFrom what I found, the parser returns a **HPE_CB_headers_complete** error code. Most probably, the parser's internal state gets messed up or does not get to update when the error is thrown.",
+      "closed_at": "2022-02-17T17:15:03Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/24953/comments",
+      "created_at": "2018-12-11T10:01:56Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/24953/events",
+      "html_url": "https://github.com/nodejs/node/issues/24953",
+      "id": 389681904,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "159818",
+          "default": true,
+          "description": "Issues that need assistance from volunteers or PRs that need help to proceed.",
+          "id": 151728677,
+          "name": "help wanted",
+          "node_id": "MDU6TGFiZWwxNTE3Mjg2Nzc=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/help%20wanted"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": "Issues and PRs related to the http subsystem.",
+          "id": 155267422,
+          "name": "http",
+          "node_id": "MDU6TGFiZWwxNTUyNjc0MjI=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/http"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Issues and PRs related to the domain subsystem.",
+          "id": 155435755,
+          "name": "domain",
+          "node_id": "MDU6TGFiZWwxNTU0MzU3NTU=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/domain"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/24953/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzODk2ODE5MDQ=",
+      "number": 24953,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/24953/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/24953/timeline",
+      "title": "http server returns 400 status code for valid request on keepalive connection after an error was caught by a domain",
+      "type": null,
+      "updated_at": "2022-02-17T17:15:04Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/24953",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6774148?v=4",
+        "events_url": "https://api.github.com/users/dragosnicolae/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dragosnicolae/followers",
+        "following_url": "https://api.github.com/users/dragosnicolae/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dragosnicolae/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dragosnicolae",
+        "id": 6774148,
+        "login": "dragosnicolae",
+        "node_id": "MDQ6VXNlcjY3NzQxNDg=",
+        "organizations_url": "https://api.github.com/users/dragosnicolae/orgs",
+        "received_events_url": "https://api.github.com/users/dragosnicolae/received_events",
+        "repos_url": "https://api.github.com/users/dragosnicolae/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dragosnicolae/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dragosnicolae/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dragosnicolae",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 19
+}

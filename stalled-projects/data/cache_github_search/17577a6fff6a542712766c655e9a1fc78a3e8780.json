@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "## What problem does this solve or what need does it fill?\r\n\r\nWouldn't it be cool if we could set the initial values for `duration` and `repeating` on `Timer` at compile-time?\r\n\r\n## What solution would you like?\r\n\r\nChange the definition of `Timer` from:\r\n```rust\r\npub struct Timer { ... }\r\n```\r\nTo:\r\n```rust\r\npub struct Timer<const S: f32 = 0, const R: bool = false> { ... }\r\n\r\nimpl<const S: f32, const R: bool> Default for Timer<S, R> {\r\n    fn default() -> Self {\r\n        // verbose to prevent recursion on`Default::default()`\r\n        Self {\r\n            stopwatch: Default::default(),\r\n            duration: Duration::from_secs_f32(S),\r\n            repeating: R,\r\n            finished: false,\r\n            times_finished: 0\r\n        }\r\n    }\r\n}\r\n```\r\nSo we can do this:\r\n```rust\r\nfn local_timer(\r\n    time: Res<Time>,\r\n    mut timer: Local<Timer<13.5>>,\r\n    mut repeating_timer: Local<Timer<5., true>>\r\n) {\r\n    if timer.tick(time.delta()).just_finished() {\r\n        info!(\"One off timer just finished!\");\r\n    }\r\n\r\n    if repeating_timer.tick(time.delta()).just_finished() {\r\n        info!(\"Repeating timer just finished!\");\r\n    }\r\n}\r\n\r\n```\r\nor this, a modified version of the timers example (with comments removed):\r\n```rust\r\n\r\nfn main() {\r\n    App::new()\r\n        .add_plugins(DefaultPlugins)\r\n        .init_resource::<Countdown>()\r\n        .add_system(countdown)\r\n        .run();\r\n}\r\n\r\n#[derive(Default)]\r\npub struct Countdown {\r\n    pub percent_trigger: Timer<4., true>,\r\n    pub main_timer: Timer<20.>,\r\n}\r\n\r\nfn countdown(time: Res<Time>, mut countdown: ResMut<Countdown>) {\r\n    countdown.main_timer.tick(time.delta());\r\n\r\n    if countdown.percent_trigger.tick(time.delta()).just_finished() {\r\n\r\n        if !countdown.main_timer.finished() || countdown.main_timer.just_finished() {\r\n            info!(\r\n                \"Timer is {:0.0}% complete!\",\r\n                countdown.main_timer.percent() * 100.0\r\n            );\r\n        }\r\n    }\r\n}\r\n```\r\n## Blocked\r\nBy https://github.com/rust-lang/rust/issues/95174 as we can only use integral types (e.g: i32, bool)  in const generics for now.\r\n\r\nWe could use\r\n```rust\r\npub struct Timer<const M: u64 = 0, const R: bool = false> { ... }\r\n\r\n// and then\r\nduration: Duration::from_millis(M);\r\n```\r\nBut...\r\n```rust\r\n// It's just not the same :c\r\nTimer<2_500>\r\n\r\n// I mean you could...\r\nTimer<{(2.5 * 1000.) as u64}>\r\n// Oh no\r\n```\r\n\r\n## Breakage\r\nThis change compiled on all of bevy, and was tested on the existing timers example.\r\n\r\nI don't think this breaks anything other than custom impl's for `Timer`.\r\n\r\n\r\n### P.S\r\nI don't think this is doable yet, but it sure is neat.",
+      "closed_at": "2022-03-31T21:25:45Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/4380/comments",
+      "created_at": "2022-03-31T18:26:41Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/4380/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/4380",
+      "id": 1188468422,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876E3",
+          "default": false,
+          "description": "This cannot move forward until something else changes",
+          "id": 2707198919,
+          "name": "S-Blocked",
+          "node_id": "MDU6TGFiZWwyNzA3MTk4OTE5",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Blocked"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8b8b8",
+          "default": false,
+          "description": "A targeted quality-of-life change that makes Bevy easier to use",
+          "id": 2747857990,
+          "name": "C-Usability",
+          "node_id": "MDU6TGFiZWwyNzQ3ODU3OTkw",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Usability"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/4380/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85G1pbG",
+      "number": 4380,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 1,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/4380/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/4380/timeline",
+      "title": "Improve Timer ergonomics using const generics with defaults",
+      "type": null,
+      "updated_at": "2024-01-23T08:03:38Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/4380",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/29694403?v=4",
+        "events_url": "https://api.github.com/users/tim-blackbird/events{/privacy}",
+        "followers_url": "https://api.github.com/users/tim-blackbird/followers",
+        "following_url": "https://api.github.com/users/tim-blackbird/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tim-blackbird/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/tim-blackbird",
+        "id": 29694403,
+        "login": "tim-blackbird",
+        "node_id": "MDQ6VXNlcjI5Njk0NDAz",
+        "organizations_url": "https://api.github.com/users/tim-blackbird/orgs",
+        "received_events_url": "https://api.github.com/users/tim-blackbird/received_events",
+        "repos_url": "https://api.github.com/users/tim-blackbird/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/tim-blackbird/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tim-blackbird/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/tim-blackbird",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 196
+}

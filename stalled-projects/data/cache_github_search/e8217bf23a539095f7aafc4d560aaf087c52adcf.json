@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Per flutter/plugins#770 I think we should migrate to the new Android sign-in API. This may allow us to remove the dependency on Guava.\r\n\r\nhttps://developers.google.com/identity/sign-in/android/migration-guide",
+      "closed_at": "2022-04-26T18:29:46Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/29794/comments",
+      "created_at": "2019-03-22T12:18:48Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/29794/events",
+      "html_url": "https://github.com/flutter/flutter/issues/29794",
+      "id": 424182463,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e02000",
+          "default": false,
+          "description": "Nothing broken; request for a new capability",
+          "id": 283479235,
+          "name": "c: new feature",
+          "node_id": "MDU6TGFiZWwyODM0NzkyMzU=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/c:%20new%20feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c0408a",
+          "default": false,
+          "description": "Android applications specifically",
+          "id": 283479900,
+          "name": "platform-android",
+          "node_id": "MDU6TGFiZWwyODM0Nzk5MDA=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/platform-android"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "89d5ff",
+          "default": false,
+          "description": "The Google Sign-In plugin",
+          "id": 1178445543,
+          "name": "p: google_sign_in",
+          "node_id": "MDU6TGFiZWwxMTc4NDQ1NTQz",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/p:%20google_sign_in"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "89d5ff",
+          "default": false,
+          "description": "flutter/packages repository. See also p: labels.",
+          "id": 1185450306,
+          "name": "package",
+          "node_id": "MDU6TGFiZWwxMTg1NDUwMzA2",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/package"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "990000",
+          "default": false,
+          "description": "High-priority issues at the top of the work list",
+          "id": 2096800592,
+          "name": "P1",
+          "node_id": "MDU6TGFiZWwyMDk2ODAwNTky",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/P1"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/29794/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0MjQxODI0NjM=",
+      "number": 29794,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/29794/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/29794/timeline",
+      "title": "[google_sign_in] migrate to new Android sign-in API",
+      "type": null,
+      "updated_at": "2023-07-05T22:43:37Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/29794",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/394889?v=4",
+        "events_url": "https://api.github.com/users/collinjackson/events{/privacy}",
+        "followers_url": "https://api.github.com/users/collinjackson/followers",
+        "following_url": "https://api.github.com/users/collinjackson/following{/other_user}",
+        "gists_url": "https://api.github.com/users/collinjackson/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/collinjackson",
+        "id": 394889,
+        "login": "collinjackson",
+        "node_id": "MDQ6VXNlcjM5NDg4OQ==",
+        "organizations_url": "https://api.github.com/users/collinjackson/orgs",
+        "received_events_url": "https://api.github.com/users/collinjackson/received_events",
+        "repos_url": "https://api.github.com/users/collinjackson/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/collinjackson/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/collinjackson/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/collinjackson",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 47
+}

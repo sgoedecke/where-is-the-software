@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\nThank you for filing a bug report! \ud83d\udc1b Please provide a short summary of the bug,\nalong with any information you feel relevant to replicating the bug.\n-->\n\nI tried this code:\n\n```rust\nuse std::sync::{Arc, Mutex};\n\nfn main() {\n    let lock = Arc::new(Mutex::new(Some(S)));\n    let lock_cloned = lock.clone();\n\n    {\n        // This code works fine\n        // let mut lock = lock.lock().unwrap();\n        // lock.take()\n\n        // This code deadlocks\n        lock.lock().unwrap().take()\n    }\n    .unwrap()\n    .foo(lock_cloned);\n\n    println!(\"end\")\n}\n\nstruct S;\n\nimpl S {\n    fn foo(self, lock: Arc<Mutex<Option<S>>>) {\n        let _l = lock.lock().unwrap();\n    }\n}\n\n```\n\nI expected to see this happen: *print end and the finish*\n\nInstead, this happened: *deadlock*\n\n### Meta\n<!--\nIf you're using the stable version of the compiler, you should also check if the\nbug also exists in the beta or nightly versions.\n-->\n\n`rustc --version --verbose`:\n```\nrustc 1.88.0-nightly (934880f58 2025-04-09)\nbinary: rustc\ncommit-hash: 934880f586f6ac1f952c7090e2a943fcd7775e7b\ncommit-date: 2025-04-09\nhost: aarch64-apple-darwin\nrelease: 1.88.0-nightly\nLLVM version: 20.1.2\n```\n\n<!--\nInclude a backtrace in the code block by setting `RUST_BACKTRACE=1` in your\nenvironment. E.g. `RUST_BACKTRACE=1 cargo build`.\n-->\n<details><summary>Backtrace</summary>\n<p>\n\n```\n<backtrace>\n```\n\n</p>\n</details>\n",
+      "closed_at": "2025-06-30T06:31:43Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/143224/comments",
+      "created_at": "2025-06-30T04:18:43Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/143224/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/143224",
+      "id": 3187078136,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: Discussion or questions that doesn't represent real issues.",
+          "id": 2352122097,
+          "name": "C-discussion",
+          "node_id": "MDU6TGFiZWwyMzUyMTIyMDk3",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-discussion"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/143224/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAAsO6M699vP4",
+      "number": 143224,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/143224/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/143224/timeline",
+      "title": "Deadlock caused by lock not being released in this case.",
+      "type": null,
+      "updated_at": "2025-07-01T11:20:57Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/143224",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/5275802?v=4",
+        "events_url": "https://api.github.com/users/623637646/events{/privacy}",
+        "followers_url": "https://api.github.com/users/623637646/followers",
+        "following_url": "https://api.github.com/users/623637646/following{/other_user}",
+        "gists_url": "https://api.github.com/users/623637646/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/623637646",
+        "id": 5275802,
+        "login": "623637646",
+        "node_id": "MDQ6VXNlcjUyNzU4MDI=",
+        "organizations_url": "https://api.github.com/users/623637646/orgs",
+        "received_events_url": "https://api.github.com/users/623637646/received_events",
+        "repos_url": "https://api.github.com/users/623637646/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/623637646/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/623637646/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/623637646",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 789
+}

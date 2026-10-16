@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Summary\r\n\r\nI have an issue occurring on Ubuntu 20.04 but not occurring on Ubuntu 22.04. I suspect it's related to OS libssh, but I'm unable to find the root cause.\r\n\r\nI'm using the same environment on both systems:\r\n- Python 3.10 (manually compiled on Ubuntu 20.04)\r\n- libssh 0.9.3-2ubuntu2.3 on Ubuntu 20.04, 0.9.6-2ubuntu0.22.10.1 on Ubuntu 22.04\r\n- Ansible installed via pip with the following requirement.txt\r\n\r\n~~~\r\nansible==8.1.0\r\nansible-pylibssh==1.1.0\r\n~~~\r\n\r\nBecause I'm attaching to an old Cisco IOS, I'm using the following SSH client configuration:\r\n\r\n~~~\r\nKexAlgorithms +diffie-hellman-group1-sha1\r\nHostKeyAlgorithms +ssh-rsa\r\n~~~\r\n\r\nThe Ansible inventory is the following:\r\n\r\n~~~\r\nall:\r\n    hosts:\r\n        swx.example.com:\r\n            ansible_host: 169.254.10.10\r\n    vars:\r\n        group_all_var: value\r\n    children:\r\n        cisco_ios:\r\n            hosts:\r\n                swx.example.com:\r\n            vars:\r\n                ansible_user: admin\r\n                ansible_ssh_pass: cisco\r\n                ansible_connection: ansible.netcommon.network_cli\r\n                ansible_network_os: cisco.ios.ios\r\n~~~\r\n\r\nI'm running:\r\n\r\n~~~\r\nansible all -i inventory.yml -m cisco.ios.ios_command -a \"commands='show version'\"\r\n~~~\r\n\r\nOn Ubuntu 22.04 the command completes without error.\r\nOn Ubuntu 20.04 I get:\r\n\r\n~~~\r\nswx.example.com | FAILED! => {\r\n    \"changed\": false,\r\n    \"msg\": \"ssh connection failed: ssh connect failed: kex error : no match for method server host key algo: server [ssh-rsa], client [ssh-dss]\"\r\n}\r\n~~~\r\n\r\nDebugging I found that `ansible/module_utils/connection.py` fails on line 194 because \"errors\" is found on response.\r\n\r\nThe JSON contains:\r\n\r\n~~~\r\n**{'jsonrpc': '2.0', 'id': 'db974b0e-3c18-4c3d-8096-4777f06d2dc8', 'error': {'code': -32603, 'message': 'Internal error', 'data': 'ssh connection failed: ssh connect failed: kex error : no match for method server host key algo: server [ssh-rsa], client [ssh-dss]'}}**\r\n~~~\r\n\r\nI think the real error is `-32603 Internal error` and the ssh-rsa/ssh-dss message is misleading.\r\n\r\nAny hints/suggestions/thoughts?\r\nThank you\r\n\r\nAndrea\r\n\r\n\r\n### Issue Type\r\n\r\nBug Report\r\n\r\n### Component Name\r\n\r\nansible-pylibssh\r\n\r\n### Ansible Version\r\n\r\n```console\r\n$ ansible --version\r\nansible [core 2.15.4]\r\n  config file = None\r\n  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /opt/patreon/ansible/venv/lib/python3.10/site-packages/ansible\r\n  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections\r\n  executable location = /opt/patreon/ansible/venv/bin/ansible\r\n  python version = 3.10.8 (main, Sep 23 2023, 06:34:28) [GCC 9.4.0] (/opt/patreon/ansible/venv/bin/python3.10)\r\n  jinja version = 3.1.2\r\n  libyaml = True\r\n```\r\n\r\n\r\n### Configuration\r\n\r\n```console\r\n# if using a version older than ansible-core 2.12 you should omit the '-t all'\r\n$ ansible-config dump --only-changed -t all\r\n```\r\n\r\n\r\n### OS / Environment\r\n\r\nUbuntu 20.04\r\n\r\nDISTRIB_ID=Ubuntu\r\nDISTRIB_RELEASE=20.04\r\nDISTRIB_CODENAME=focal\r\nDISTRIB_DESCRIPTION=\"Ubuntu 20.04.6 LTS\"\r\n\r\n### Steps to Reproduce\r\n\r\n```\r\nansible all -i inventory.yml -m cisco.ios.ios_command -a \"commands='show version'\"\r\n```\r\n\r\n\r\n### Expected Results\r\n\r\nI expect show version is printed out.\r\n\r\n### Actual Results\r\n\r\n```console\r\n~~~\r\nThe full traceback is:\r\n  File \"/opt/patreon/ansible/venv/lib/python3.10/site-packages/ansible_collections/cisco/ios/plugins/module_utils/network/ios/ios.py\", line 60, in get_capabilities\r\n    capabilities = Connection(module._socket_path).get_capabilities()\r\n  File \"/opt/patreon/ansible/venv/lib/python3.10/site-packages/ansible/module_utils/connection.py\", line 201, in __rpc__\r\n    raise ConnectionError(to_text(msg, errors='surrogate_then_replace'), code=code)\r\nswx.example.com | FAILED! => {\r\n    \"changed\": false,\r\n    \"invocation\": {\r\n        \"module_args\": {\r\n            \"commands\": [\r\n                \"show version\"\r\n            ],\r\n            \"interval\": 1,\r\n            \"match\": \"all\",\r\n            \"retries\": 9,\r\n            \"wait_for\": null\r\n        }\r\n    },\r\n    \"msg\": \"ssh connection failed: ssh connect failed: kex error : no match for method server host key algo: server [ssh-rsa], client [ssh-dss]\"\r\n}\r\n~~~\r\n```\r\n\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2023-09-24T14:59:52Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/81769/comments",
+      "created_at": "2023-09-24T07:40:08Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/81769/events",
+      "html_url": "https://github.com/ansible/ansible/issues/81769",
+      "id": 1910139811,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 4429274425,
+          "name": "affects_2.15",
+          "node_id": "LA_kwDOADeGtM8AAAABCAFdOQ",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.15"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/81769/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM5x2muj",
+      "number": 81769,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/81769/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/81769/timeline",
+      "title": "ssh connect failed on Ubuntu 20.04 with libssh (-32603 Internal error)",
+      "type": null,
+      "updated_at": "2023-10-08T13:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/81769",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/9211364?v=4",
+        "events_url": "https://api.github.com/users/dainok/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dainok/followers",
+        "following_url": "https://api.github.com/users/dainok/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dainok/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dainok",
+        "id": 9211364,
+        "login": "dainok",
+        "node_id": "MDQ6VXNlcjkyMTEzNjQ=",
+        "organizations_url": "https://api.github.com/users/dainok/orgs",
+        "received_events_url": "https://api.github.com/users/dainok/received_events",
+        "repos_url": "https://api.github.com/users/dainok/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dainok/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dainok/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dainok",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 221
+}

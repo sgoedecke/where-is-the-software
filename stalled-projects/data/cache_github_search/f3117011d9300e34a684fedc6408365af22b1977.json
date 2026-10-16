@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\r\nPlease answer these questions before submitting your issue. Thanks!\r\n-->\r\n\r\n### What version of Go are you using (`go version`)?\r\nall\r\n<pre>\r\n$ go version\r\n\r\n</pre>\r\n\r\n### Does this issue reproduce with the latest release?\r\nrelocation target runtime.getg not defined\r\n\r\npackage main\r\n\r\nimport \"unsafe\"\r\n\r\nfunc main() {\r\n\tprintln(getg())\r\n}\r\n\r\n//go:linkname getg runtime.getg\r\nfunc getg() unsafe.Pointer\r\n\r\n### What operating system and processor architecture are you using (`go env`)?\r\n\r\n<details><summary><code>go env</code> Output</summary><br><pre>\r\n$ go env\r\n\r\n</pre></details>\r\n\r\n### What did you do?\r\n\r\n<!--\r\nIf possible, provide a recipe for reproducing the error.\r\nA complete runnable program is good.\r\nA link on go.dev/play is best.\r\n-->\r\n\r\n\r\n\r\n### What did you expect to see?\r\n\r\n\r\n\r\n### What did you see instead?\r\n\r\n\r\n",
+      "closed_at": "2023-03-31T15:28:55Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/golang/go/issues/59344/comments",
+      "created_at": "2023-03-31T08:19:38Z",
+      "events_url": "https://api.github.com/repos/golang/go/issues/59344/events",
+      "html_url": "https://github.com/golang/go/issues/59344",
+      "id": 1648915407,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": null,
+          "id": 398069301,
+          "name": "FrozenDueToAge",
+          "node_id": "MDU6TGFiZWwzOTgwNjkzMDE=",
+          "url": "https://api.github.com/repos/golang/go/labels/FrozenDueToAge"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/golang/go/issues/59344/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAWBuf85iSHPP",
+      "number": 59344,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/golang/go/issues/59344/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/golang/go",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/golang/go/issues/59344/timeline",
+      "title": "affected/package: runtime  relocation target runtime.getg not defined",
+      "type": null,
+      "updated_at": "2024-03-30T19:16:59Z",
+      "url": "https://api.github.com/repos/golang/go/issues/59344",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/12368358?v=4",
+        "events_url": "https://api.github.com/users/introspection3/events{/privacy}",
+        "followers_url": "https://api.github.com/users/introspection3/followers",
+        "following_url": "https://api.github.com/users/introspection3/following{/other_user}",
+        "gists_url": "https://api.github.com/users/introspection3/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/introspection3",
+        "id": 12368358,
+        "login": "introspection3",
+        "node_id": "MDQ6VXNlcjEyMzY4MzU4",
+        "organizations_url": "https://api.github.com/users/introspection3/orgs",
+        "received_events_url": "https://api.github.com/users/introspection3/received_events",
+        "repos_url": "https://api.github.com/users/introspection3/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/introspection3/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/introspection3/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/introspection3",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 904
+}

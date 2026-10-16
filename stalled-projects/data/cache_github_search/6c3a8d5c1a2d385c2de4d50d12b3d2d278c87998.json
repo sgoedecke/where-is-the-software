@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Feature or enhancement\r\n\r\nAdd the class `dataclasses.Dataclass` that\r\n- supports instance and subclass checks using similar logic as `dataclasses.is_dataclass`, and\r\n- blocks inheritance in `__init_subclass__`.\r\n\r\n(Edit: removed \"has an attribute `__dataclass_fields__` for the purpose of type checking\")\r\n\r\n# Pitch\r\n\r\nThis class would simplify runtime type-checking of dataclasses:\r\n```python\r\nnot isinstance(x, type) and dataclasses.is_dataclass(x)  # Previously\r\nisinstance(x, dataclasses.Dataclass)  # With this feature.\r\n```\r\nand similarly\r\n```python\r\nisinstance(x, type) and dataclasses.is_dataclass(x)  # Previously.\r\nissubclass(x, dataclasses.Dataclass)  # With this feature.\r\n```\r\nBesides being simpler, it would also allow combined instance checks like `isinstance(x, Dataclass | SomeOtherBase)`, which is arguably more Pythonic than the combined function calls above (marked \"Previously\").\r\n\r\nIt would also allow users to annotate dataclasses using `Dataclass` or `type[Dataclass]`, which is currently impossible without reaching into protected areas of the typeshed.\r\n\r\nInheritance could be blocked for now with a friendly error message (that perhaps tells you to use the decorator either directly or in a base class's `__init_subclass__`).\r\n\r\n# Previous discussion\r\n\r\nThere's some discussion here: https://github.com/python/typing_extensions/issues/115\r\n@AlexWaygood \r\n@JelleZijlstra \r\n@henryiii \n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-102933\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2026-05-18T03:08:03Z",
+      "comments": 16,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/102699/comments",
+      "created_at": "2023-03-14T20:03:22Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/102699/events",
+      "html_url": "https://github.com/python/cpython/issues/102699",
+      "id": 1624215692,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Standard Library Python modules in the Lib/ directory",
+          "id": 4018668725,
+          "name": "stdlib",
+          "node_id": "LA_kwDOBN0Z8c7viAS1",
+          "url": "https://api.github.com/repos/python/cpython/labels/stdlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4030784939,
+          "name": "topic-typing",
+          "node_id": "LA_kwDOBN0Z8c7wQOWr",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-typing"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 7334604047,
+          "name": "topic-dataclasses",
+          "node_id": "LA_kwDOBN0Z8c8AAAABtS0tDw",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-dataclasses"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/102699/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5gz5CM",
+      "number": 102699,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 8,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 8,
+        "url": "https://api.github.com/repos/python/cpython/issues/102699/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/102699/timeline",
+      "title": "Add a Dataclass abstract base class for instance checking and type annotations",
+      "type": null,
+      "updated_at": "2026-05-18T03:08:03Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/102699",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/730137?v=4",
+        "events_url": "https://api.github.com/users/NeilGirdhar/events{/privacy}",
+        "followers_url": "https://api.github.com/users/NeilGirdhar/followers",
+        "following_url": "https://api.github.com/users/NeilGirdhar/following{/other_user}",
+        "gists_url": "https://api.github.com/users/NeilGirdhar/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/NeilGirdhar",
+        "id": 730137,
+        "login": "NeilGirdhar",
+        "node_id": "MDQ6VXNlcjczMDEzNw==",
+        "organizations_url": "https://api.github.com/users/NeilGirdhar/orgs",
+        "received_events_url": "https://api.github.com/users/NeilGirdhar/received_events",
+        "repos_url": "https://api.github.com/users/NeilGirdhar/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/NeilGirdhar/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/NeilGirdhar/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/NeilGirdhar",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 83
+}

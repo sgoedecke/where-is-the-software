@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\nv20.10.0\n\n### Platform\n\n```text\nMicrosoft Windows NT 10.0.22631.0\nx64\n```\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\nnpm run test\n\n### How often does it reproduce? Is there a required condition?\n\nEvery test run\n\n### What is the expected behavior? Why is that the expected behavior?\n\nExpected behavior is to console.log the present store state and pass the test\n\n### Test Code Block\n![Image](https://github.com/user-attachments/assets/5918dd20-fa36-4017-8045-22bdd1e74b06)\n\n\n### Additional information\n![Image](https://github.com/user-attachments/assets/d3969f7c-74de-4218-a4a5-da5c30c9ab84)\n\n\nconsole.log(initialState)\n![Image](https://github.com/user-attachments/assets/48b0904a-8858-4f67-8307-c667b551ba4d)\n\n\n###What is renderProvider ?\nStandard wrapper for wrapping App from Redux Docs\n![Image](https://github.com/user-attachments/assets/6cd6f96e-84aa-4e20-9f53-70d55970adff)\n\n",
+      "closed_at": "2024-12-27T16:06:42Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/56378/comments",
+      "created_at": "2024-12-27T15:12:18Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/56378/events",
+      "html_url": "https://github.com/nodejs/node/issues/56378",
+      "id": 2760993772,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/56378/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs86kkWvs",
+      "number": 56378,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/56378/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/56378/timeline",
+      "title": "React Testing Library - Reading from Redux Store Crashes Node",
+      "type": null,
+      "updated_at": "2024-12-27T16:06:42Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/56378",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/80021968?v=4",
+        "events_url": "https://api.github.com/users/AshwanthSai/events{/privacy}",
+        "followers_url": "https://api.github.com/users/AshwanthSai/followers",
+        "following_url": "https://api.github.com/users/AshwanthSai/following{/other_user}",
+        "gists_url": "https://api.github.com/users/AshwanthSai/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/AshwanthSai",
+        "id": 80021968,
+        "login": "AshwanthSai",
+        "node_id": "MDQ6VXNlcjgwMDIxOTY4",
+        "organizations_url": "https://api.github.com/users/AshwanthSai/orgs",
+        "received_events_url": "https://api.github.com/users/AshwanthSai/received_events",
+        "repos_url": "https://api.github.com/users/AshwanthSai/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/AshwanthSai/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/AshwanthSai/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/AshwanthSai",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 191
+}

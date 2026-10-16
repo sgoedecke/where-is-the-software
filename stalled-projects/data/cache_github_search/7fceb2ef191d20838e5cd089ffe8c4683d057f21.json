@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Acknowledgement\n\n- [x] I acknowledge that issues using this template may be closed without further explanation at the maintainer's discretion.\n\n### Comment\n\nThere's a TODO marker in the [FAQ](https://github.com/Microsoft/TypeScript/wiki/FAQ#common-bugs-that-arent-bugs), under <q>What's the difference between `declare class` and `interface`?</q>\n\nSince pull requests are not supported for wikis, here is a proposal for FAQ item body, fulfilling the TODO marker.\n\n````md\n### What's the difference between `declare class` and `interface`?\n\n`interface` describes an instance shape only. It does not declare any value, constructor, or inheritance target at runtime.\n\n`declare class` describes an existing class value and its instance shape. It may be used when a constructor function with that name exists at runtime, but its implementation is provided elsewhere.\n\nThis affects which class relationships are meaningful:\n\n* `implements` checks that a class's instance shape matches the type\n* `extends` requires a real base class value at runtime\n\n```ts\ninterface Shape {\n    area(): number;\n}\n\ndeclare class BaseShape {\n    area(): number;\n}\n\nclass A implements Shape {\n    area() { return 0; }\n}\n\nclass B extends BaseShape {\n}\n```\n\nIn the example above, `A` is only checked structurally. `B` inherits from `BaseShape`, so `BaseShape` must exist at runtime.\n\nCommon symptoms of confusion:\n\n* Using `declare class` where only an object shape exists: `extends` compiles, but the emitted inheritance code fails at runtime\n* Using `interface` where an existing class should have been described: `implements` works, but there is no inherited behavior, and runtime checks like `instanceof` do not apply\n\nRule of thumb:\n\n* Use `interface` for \"objects with these members\"\n* Use `declare class` for \"this constructor exists at runtime\"\n\nSee also [this StackOverflow answer](http://stackoverflow.com/a/14348084/1704166).\n````",
+      "closed_at": "2026-03-30T11:28:48Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/63321/comments",
+      "created_at": "2026-03-30T08:59:51Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/63321/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/63321",
+      "id": 4168911792,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/63321/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc74fIuw",
+      "number": 63321,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/63321/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/63321/timeline",
+      "title": "[FAQ] Resolve TODO: Write up common symptoms of `declare class` / `interface` confusion.",
+      "type": null,
+      "updated_at": "2026-06-01T16:12:58Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/63321",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/40403858?v=4",
+        "events_url": "https://api.github.com/users/5cover/events{/privacy}",
+        "followers_url": "https://api.github.com/users/5cover/followers",
+        "following_url": "https://api.github.com/users/5cover/following{/other_user}",
+        "gists_url": "https://api.github.com/users/5cover/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/5cover",
+        "id": 40403858,
+        "login": "5cover",
+        "node_id": "MDQ6VXNlcjQwNDAzODU4",
+        "organizations_url": "https://api.github.com/users/5cover/orgs",
+        "received_events_url": "https://api.github.com/users/5cover/received_events",
+        "repos_url": "https://api.github.com/users/5cover/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/5cover/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/5cover/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/5cover",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 95
+}

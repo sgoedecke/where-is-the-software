@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!-- \ud83d\udea8 STOP \ud83d\udea8 \ud835\udde6\ud835\udde7\ud835\udde2\ud835\udde3 \ud83d\udea8 \ud835\udc7a\ud835\udc7b\ud835\udc76\ud835\udc77 \ud83d\udea8\r\n\r\nHalf of all issues filed here are duplicates, answered in the FAQ, or not appropriate for the bug tracker. Even if you think you've found a *bug*, please read the FAQ first, especially the Common \"Bugs\" That Aren't Bugs section!\r\n\r\nPlease help us by doing the following steps before logging an issue:\r\n  * Search: https://github.com/Microsoft/TypeScript/search?type=Issues\r\n  * Read the FAQ: https://github.com/Microsoft/TypeScript/wiki/FAQ\r\n\r\nPlease fill in the *entire* template below.\r\n-->\r\n\r\n**TypeScript Version:**  4.1.2\r\n\r\n<!-- Search terms you tried before logging this (so others can find this issue more easily) -->\r\n**Search Terms:**\r\ndestructuring, index signature is missing\r\n\r\n**Expected behavior:**\r\nit works\r\n\r\n**Actual behavior:**\r\nwhen I do object destructuring to separate variable index signature is lost somewhere\r\n\r\n<!-- Did you find other bugs that looked similar? -->\r\n**Related Issues:**\r\n\r\n**Code**\r\n```ts\r\ntype InitialIndexType = {\r\n    key: string;\r\n};\r\n\r\ntype FinalIndexType = Record<string, string | number | boolean | null | undefined>;\r\n\r\nconst runtimeInitialVariable: InitialIndexType = { key: 'value' };\r\n\r\n// 1. ok, InitialIndexType is compatible with FinalIndexType\r\nconst runtimeFinalVariable: FinalIndexType = runtimeInitialVariable;\r\n\r\n// 2. error with destructuring, but only when do it to separate variable\r\nconst { ...runtimeInitialVariable_2 } = runtimeInitialVariable;\r\n\r\nconst runtimeFinalVariable_2: FinalIndexType = runtimeInitialVariable_2; // Index signature is missing in type '{ key: string; }'.\r\n\r\n// 3. ok with destructuring, without separate variable\r\nconst runtimeFinalVariable_3: FinalIndexType = { ...runtimeInitialVariable };\r\n\r\n// 4. ok even if I copy&paste type from error message and cast destructured variable to it\r\nconst { ...runtimeInitialVariable_4 } = runtimeInitialVariable;\r\n\r\nconst runtimeFinalVariable_4: FinalIndexType = runtimeInitialVariable_4 as { key: string }; // also works as `as InitialIndexType`\r\n```\r\n\r\n\r\n\r\n<details><summary><b>Output</b></summary>\r\n\r\n```ts\r\n\"use strict\";\r\nvar __rest = (this && this.__rest) || function (s, e) {\r\n    var t = {};\r\n    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)\r\n        t[p] = s[p];\r\n    if (s != null && typeof Object.getOwnPropertySymbols === \"function\")\r\n        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {\r\n            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))\r\n                t[p[i]] = s[p[i]];\r\n        }\r\n    return t;\r\n};\r\nconst runtimeInitialVariable = { key: 'value' };\r\n// ok, InitialIndexType is compatible with FinalIndexType\r\nconst runtimeFinalVariable = runtimeInitialVariable;\r\n// error with ...rest, but only when do ...rest to separate variable\r\nconst runtimeInitialVariable_2 = __rest(runtimeInitialVariable, []);\r\nconst runtimeFinalVariable_2 = runtimeInitialVariable_2;\r\n// ok with rest, without separate variable\r\nconst runtimeFinalVariable_3 = Object.assign({}, runtimeInitialVariable);\r\n// ok even if I copy&paste type from error message and cast ...rest variable to it\r\nconst runtimeInitialVariable_4 = __rest(runtimeInitialVariable, []);\r\nconst runtimeFinalVariable_4 = runtimeInitialVariable_4; // also works as `as InitialIndexType`\r\n\r\n```\r\n\r\n\r\n</details>\r\n\r\n\r\n<details><summary><b>Compiler Options</b></summary>\r\n\r\n```json\r\n{\r\n  \"compilerOptions\": {\r\n    \"noImplicitAny\": true,\r\n    \"strictNullChecks\": true,\r\n    \"strictFunctionTypes\": true,\r\n    \"strictPropertyInitialization\": true,\r\n    \"strictBindCallApply\": true,\r\n    \"noImplicitThis\": true,\r\n    \"noImplicitReturns\": true,\r\n    \"alwaysStrict\": true,\r\n    \"esModuleInterop\": true,\r\n    \"declaration\": true,\r\n    \"experimentalDecorators\": true,\r\n    \"emitDecoratorMetadata\": true,\r\n    \"moduleResolution\": 2,\r\n    \"target\": \"ES2017\",\r\n    \"jsx\": \"React\",\r\n    \"module\": \"ESNext\"\r\n  }\r\n}\r\n```\r\n\r\n\r\n</details>\r\n\r\n**Playground Link:** [Provided](https://www.typescriptlang.org/play?ts=4.1.2#code/C4TwDgpgBAkgdgS2AghgG3gEwgDwCrjQC8UA3gFBRVQDWEIAXFAM7ABOCcA5gNzkC+fcqEhQAYp3RZcBUSQBKEAMYB7NpgA8rDtwA0Ldpy5QAPlDgBXALYAjCG1NQbKlWggo4jy2jSOLcbAAzTghMAD4hVThWKDZ-ZCsIeCRUNAA1FA4UGzcmZOQpAJlCKBJSWnomAHIAN3QLCCqoQXJyAHo2qBUafXzU6XwShGYoVSswFGQc6AB3JAALcUkMIsHIciiYuLgEiAk4dAys6aZ9wuw14lj4hES+w8zUaaEOqHs2NSg54EWAOn+2BBWPobBZgF04GgQF95hBPJgVFB-r9ATFgIjmBAJmxJtA6sc3BsVNFweVkdtdvd0o9sm4APoAJmapWuO1uSUQBWpBIgkWJWxuiTO3Ke9IZp2WA1kVwp7KpR1FEEZL063S+C1iQOA+m+8xUYJYWMyuKg+MVRJJrN2woVtKVAGYJQcVhdpSyyQDBRyUg8ec0VV0aG8anCoAhArBRiowCAAGQTVjQETQQIfKxvNgfByJZjMFBcaAeTCjFAxcla0006ZQdFh4AWmIelFe+VV+kAFmZJFld05qVtz1am3BPb2ywHHad52Kcitcr7vsVdM7pbIFUYBh0xkEUFe6GYiJmahoI1XAANV1SpYQz0A)\r\n      ",
+      "closed_at": "2024-02-24T00:23:12Z",
+      "comments": 10,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/42021/comments",
+      "created_at": "2020-12-17T22:01:09Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/42021/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/42021",
+      "id": 770405039,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "Constraints of the existing architecture prevent this from being fixed",
+          "id": 371615233,
+          "name": "Design Limitation",
+          "node_id": "MDU6TGFiZWwzNzE2MTUyMzM=",
+          "url": "https://api.github.com/repos/microsoft/TypeScript/labels/Design%20Limitation"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/42021/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU3NzA0MDUwMzk=",
+      "number": 42021,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 9,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 9,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/42021/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/42021/timeline",
+      "title": "index signature is missing when do object destructuring to separate variable",
+      "type": null,
+      "updated_at": "2024-02-24T00:23:12Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/42021",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/871583?v=4",
+        "events_url": "https://api.github.com/users/rifler/events{/privacy}",
+        "followers_url": "https://api.github.com/users/rifler/followers",
+        "following_url": "https://api.github.com/users/rifler/following{/other_user}",
+        "gists_url": "https://api.github.com/users/rifler/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/rifler",
+        "id": 871583,
+        "login": "rifler",
+        "node_id": "MDQ6VXNlcjg3MTU4Mw==",
+        "organizations_url": "https://api.github.com/users/rifler/orgs",
+        "received_events_url": "https://api.github.com/users/rifler/received_events",
+        "repos_url": "https://api.github.com/users/rifler/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/rifler/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/rifler/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/rifler",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 169
+}

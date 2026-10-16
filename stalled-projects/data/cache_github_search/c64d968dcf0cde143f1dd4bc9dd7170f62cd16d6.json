@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Tested versions\r\n\r\n4.2 stable.\r\n\r\n### System information\r\n\r\nGodot v4.2.stable - Ubuntu 20.04.6 LTS (Focal Fossa) - X11 - Vulkan (Forward+) - dedicated NVIDIA GeForce GTX 1660 (nvidia; 470.199.02) - AMD FX(tm)-8350 Eight-Core Processor (8 Threads)\r\n\r\n### Issue description\r\n\r\nWhen saving a 3D scene file, I have an object (a door) that always loads at (0,0,0), even though I specify (-2.171, 8.796, -19.122) as its location in the editor:\r\n\r\n![image](https://github.com/godotengine/godot/assets/55257920/29067074-53ea-4682-9456-c79bfd436ed9)\r\n\r\nThat puts the door where it should be (the orange highlight):\r\n\r\n![image](https://github.com/godotengine/godot/assets/55257920/ace93652-1d29-46ac-8abe-98993e32bc22)\r\n\r\nWhen I run the game, the door always appears at (0,0,0). I looked in the *.tscn file, and found that this object doesn't have a Transform3D:\r\n\r\n![image](https://github.com/godotengine/godot/assets/55257920/e444935f-cc9a-4ee1-823d-3e9f30cf046a)\r\n\r\nI exited the editor, copied a transform from another object, entered the correct coordinates, and reloaded Godot and the project. At that point, the object appeared at its proper location. However, when I run the program, and the editor autosaves, the Transform3D entry in the scene file is once again gone.\r\n\r\n### Steps to reproduce\r\n\r\nN/A\r\n\r\n### Minimal reproduction project (MRP)\r\n\r\nN/A",
+      "closed_at": "2024-03-30T20:09:58Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/90051/comments",
+      "created_at": "2024-03-30T19:34:05Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/90051/events",
+      "html_url": "https://github.com/godotengine/godot/issues/90051",
+      "id": 2216637563,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/90051/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc6EHzR7",
+      "number": 90051,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/90051/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/90051/timeline",
+      "title": "Scene File 3D Object Missing Transform",
+      "type": null,
+      "updated_at": "2024-03-30T20:12:30Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/90051",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/55257920?v=4",
+        "events_url": "https://api.github.com/users/SoapSpangledGames/events{/privacy}",
+        "followers_url": "https://api.github.com/users/SoapSpangledGames/followers",
+        "following_url": "https://api.github.com/users/SoapSpangledGames/following{/other_user}",
+        "gists_url": "https://api.github.com/users/SoapSpangledGames/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/SoapSpangledGames",
+        "id": 55257920,
+        "login": "SoapSpangledGames",
+        "node_id": "MDQ6VXNlcjU1MjU3OTIw",
+        "organizations_url": "https://api.github.com/users/SoapSpangledGames/orgs",
+        "received_events_url": "https://api.github.com/users/SoapSpangledGames/received_events",
+        "repos_url": "https://api.github.com/users/SoapSpangledGames/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/SoapSpangledGames/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/SoapSpangledGames/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/SoapSpangledGames",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1063
+}

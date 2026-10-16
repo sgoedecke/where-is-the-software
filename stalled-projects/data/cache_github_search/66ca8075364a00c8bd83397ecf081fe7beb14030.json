@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Tested versions\n\n4.5 Stable\n\n### System information\n\nLinux - 4.5 - OpenGL - GTX 1650(Laptop)\n\n### Issue description\n\nShadows On\n<img width=\"1920\" height=\"1080\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a25795c5-5d8f-4363-b9af-b3ef9009883a\" />\n\nShadows Off\n<img width=\"1920\" height=\"1080\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/91f371ce-6652-4e50-b4fd-468cf5d65534\" />\n\nSun Energy Increased\n<img width=\"1920\" height=\"1080\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3daecd3a-45c7-4e2e-a942-d7b3623712b5\" />\n\nAmbient Energy Increased\n<img width=\"1920\" height=\"1080\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/0556b1a7-19d2-4975-becb-cb579528fb39\" />\n\n### Steps to reproduce\n\nTurn Off & On Shadows in OpenGL\n\n### Minimal reproduction project (MRP)\n\nN/A",
+      "closed_at": "2025-09-28T14:15:57Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/110995/comments",
+      "created_at": "2025-09-28T10:21:41Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/110995/events",
+      "html_url": "https://github.com/godotengine/godot/issues/110995",
+      "id": 3461545134,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098111,
+          "name": "topic:rendering",
+          "node_id": "MDU6TGFiZWwyNzkwOTgxMTE=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:rendering"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 2666708289,
+          "name": "topic:3d",
+          "node_id": "MDU6TGFiZWwyNjY2NzA4Mjg5",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:3d"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/110995/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc7OUvyu",
+      "number": 110995,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/110995/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/110995/timeline",
+      "title": "OpenGL: Colors change if DirectionalLight3D Shadows is disabled",
+      "type": null,
+      "updated_at": "2025-09-28T14:16:02Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/110995",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10137?v=4",
+        "events_url": "https://api.github.com/users/ghost/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ghost/followers",
+        "following_url": "https://api.github.com/users/ghost/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ghost/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 10137,
+        "login": "ghost",
+        "node_id": "MDQ6VXNlcjEwMTM3",
+        "organizations_url": "https://api.github.com/users/ghost/orgs",
+        "received_events_url": "https://api.github.com/users/ghost/received_events",
+        "repos_url": "https://api.github.com/users/ghost/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ghost/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ghost/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ghost",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 731
+}

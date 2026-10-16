@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "## What problem does this solve or what need does it fill?\r\n\r\nWhen removing components (or despawning entities with those components), we often want to perform cleanup. Unfortunately, this work typically requires data from that removed component, rather than just the entity that was returned. See our [example](https://discord.com/channels/691052431525675048/742884593551802431/820708676818042930) for the current behavior.\r\n\r\n## What solution would you like?\r\n\r\nStore the Removed data in a special \"purgatory\" sparse set that we keep around until the frame-after-next, using the same double-buffer strategy as Events.\r\n\r\n## What alternative(s) have you considered?\r\n\r\nWrite custom commands to remove components that require cleanup, like `despawn_recursive`. This is hard to extend though and forces the user to not clean stuff up.\r\n\r\nAlways emit a \"to despawn\" event, and then clean things up before the data is lost by making sure that the cleanup systems run first.\r\n\r\nUsers manually archive and then access the components that they need to access once removed.\r\n\r\n## Additional context\r\n\r\nRelevant to how we despawn entities in a parent-child hierarchy, e.g. `despawn_recursive`.\r\n\r\nWe will need to do the same thing with Resources as well.",
+      "closed_at": "2024-04-20T21:02:57Z",
+      "comments": 8,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/1655/comments",
+      "created_at": "2021-03-14T17:33:37Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/1655/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/1655",
+      "id": 831212991,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8b8b8",
+          "default": false,
+          "description": "A new feature, making something new possible",
+          "id": 1795619326,
+          "name": "C-Feature",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzI2",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c6a751",
+          "default": false,
+          "description": "Entities, components, systems, and events",
+          "id": 2197761682,
+          "name": "A-ECS",
+          "node_id": "MDU6TGFiZWwyMTk3NzYxNjgy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-ECS"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8b8b8",
+          "default": false,
+          "description": "A targeted quality-of-life change that makes Bevy easier to use",
+          "id": 2747857990,
+          "name": "C-Usability",
+          "node_id": "MDU6TGFiZWwyNzQ3ODU3OTkw",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Usability"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/1655/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU4MzEyMTI5OTE=",
+      "number": 1655,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 5,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 5,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/1655/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/1655/timeline",
+      "title": "Access data from removed components",
+      "type": null,
+      "updated_at": "2024-04-20T21:02:58Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/1655",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3579909?v=4",
+        "events_url": "https://api.github.com/users/alice-i-cecile/events{/privacy}",
+        "followers_url": "https://api.github.com/users/alice-i-cecile/followers",
+        "following_url": "https://api.github.com/users/alice-i-cecile/following{/other_user}",
+        "gists_url": "https://api.github.com/users/alice-i-cecile/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/alice-i-cecile",
+        "id": 3579909,
+        "login": "alice-i-cecile",
+        "node_id": "MDQ6VXNlcjM1Nzk5MDk=",
+        "organizations_url": "https://api.github.com/users/alice-i-cecile/orgs",
+        "received_events_url": "https://api.github.com/users/alice-i-cecile/received_events",
+        "repos_url": "https://api.github.com/users/alice-i-cecile/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/alice-i-cecile/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/alice-i-cecile/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/alice-i-cecile",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 4
+}

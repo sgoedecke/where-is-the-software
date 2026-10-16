@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "### Failure cluster [32dd5e17517d4a89c1af](https://go.k8s.io/triage#32dd5e17517d4a89c1af)\n\n##### Error text:\n```\n[FAILED] timed out waiting for the condition\nIn [It] at: k8s.io/kubernetes/test/e2e/network/service.go:2846 @ 03/26/25 11:38:28.313\n\n```\n#### Recent failures:\n[3/27/2025, 1:10:23 PM ci-cloud-provider-aws-e2e-kubetest2](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-cloud-provider-aws-e2e-kubetest2/1905306107497156608)\n[3/27/2025, 1:07:15 PM ci-kubernetes-e2e-ubuntu-ec2-arm64-containerd](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-ubuntu-ec2-arm64-containerd/1905305101233295360)\n[3/27/2025, 11:43:21 AM ci-kubernetes-e2e-ec2-alpha-enabled-default](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-ec2-alpha-enabled-default/1905284213549043712)\n[3/27/2025, 7:10:21 AM ci-cloud-provider-aws-e2e-kubetest2](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-cloud-provider-aws-e2e-kubetest2/1905215509809336320)\n[3/27/2025, 7:06:26 AM ci-kubernetes-e2e-ubuntu-ec2-containerd](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-ubuntu-ec2-containerd/1905214503117656064)\n\n\n/kind failing-test\n<!-- If this is a flake, please add: /kind flake -->\n\n/sig network",
+      "closed_at": "2025-03-28T14:28:40Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/131094/comments",
+      "created_at": "2025-03-28T02:27:17Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/131094/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/131094",
+      "id": 2954845488,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Network.",
+          "id": 116712108,
+          "name": "sig/network",
+          "node_id": "MDU6TGFiZWwxMTY3MTIxMDg=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/network"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a consistently or frequently failing test.",
+          "id": 496752468,
+          "name": "kind/failing-test",
+          "node_id": "MDU6TGFiZWw0OTY3NTI0Njg=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/failing-test"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/131094/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks6wH10w",
+      "number": 131094,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/131094/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/131094/timeline",
+      "title": "Failure cluster [32dd5e17...] `[sig-network] Services should fail health check node port if there are only terminating endpoints`",
+      "type": null,
+      "updated_at": "2025-03-28T14:28:40Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/131094",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/23304?v=4",
+        "events_url": "https://api.github.com/users/dims/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dims/followers",
+        "following_url": "https://api.github.com/users/dims/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dims/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dims",
+        "id": 23304,
+        "login": "dims",
+        "node_id": "MDQ6VXNlcjIzMzA0",
+        "organizations_url": "https://api.github.com/users/dims/orgs",
+        "received_events_url": "https://api.github.com/users/dims/received_events",
+        "repos_url": "https://api.github.com/users/dims/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dims/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dims/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dims",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 358
+}

@@ -1,0 +1,150 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MANNEQUIN",
+      "body": "BPO | [42125](https://bugs.python.org/issue42125)\n--- | :---\nNosy | @ncoghlan, @vstinner, @eltoder, @FFY00\nPRs | <li>python/cpython#22908</li>\nFiles | <li>[t.zip](https://bugs.python.org/file49536/t.zip \"Uploaded as application/x-zip-compressed at 2020-10-23.05:26:52 by @eltoder\")</li>\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = None\ncreated_at = <Date 2020-10-23.05:26:53.150>\nlabels = ['type-bug', 'library', '3.10']\ntitle = 'linecache cannot get source for the __main__ module with a custom loader'\nupdated_at = <Date 2021-05-29.17:12:41.769>\nuser = 'https://github.com/eltoder'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2021-05-29.17:12:41.769>\nactor = 'FFY00'\nassignee = 'none'\nclosed = False\nclosed_date = None\ncloser = None\ncomponents = ['Library (Lib)']\ncreation = <Date 2020-10-23.05:26:53.150>\ncreator = 'eltoder'\ndependencies = []\nfiles = ['49536']\nhgrepos = []\nissue_num = 42125\nkeywords = ['patch']\nmessage_count = 1.0\nmessages = ['379408']\nnosy_count = 5.0\nnosy_names = ['ncoghlan', 'vstinner', 'python-dev', 'eltoder', 'FFY00']\npr_nums = ['22908']\npriority = 'normal'\nresolution = None\nstage = 'patch review'\nstatus = 'open'\nsuperseder = None\ntype = 'behavior'\nurl = 'https://bugs.python.org/issue42125'\nversions = ['Python 3.10']\n```\n\n</p></details>\n\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-115731\n* gh-115732\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2024-02-20T17:05:04Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/86291/comments",
+      "created_at": "2020-10-23T05:26:53Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/86291/events",
+      "html_url": "https://github.com/python/cpython/issues/86291",
+      "id": 1199045788,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Standard Library Python modules in the Lib/ directory",
+          "id": 4018668725,
+          "name": "stdlib",
+          "node_id": "LA_kwDOBN0Z8c7viAS1",
+          "url": "https://api.github.com/repos/python/cpython/labels/stdlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 4018733900,
+          "name": "3.11",
+          "node_id": "LA_kwDOBN0Z8c7viQNM",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.11"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4095883204,
+          "name": "topic-importlib",
+          "node_id": "LA_kwDOBN0Z8c70IjfE",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-importlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 4105172434,
+          "name": "3.12",
+          "node_id": "LA_kwDOBN0Z8c70r_XS",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.12"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 5354314490,
+          "name": "3.13",
+          "node_id": "LA_kwDOBN0Z8c8AAAABPyRa-g",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.13"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/86291/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDQ1Nzg4",
+      "number": 86291,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/86291/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/86291/timeline",
+      "title": "linecache cannot get source for the __main__ module with a custom loader",
+      "type": null,
+      "updated_at": "2024-02-20T17:05:15Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/86291",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/93803184?v=4",
+        "events_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/events{/privacy}",
+        "followers_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/followers",
+        "following_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/following{/other_user}",
+        "gists_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 93803184,
+        "login": "9e803d50-6238-47c1-84e6-b1d134a28aa9",
+        "node_id": "M_kgDOBZdSsA",
+        "organizations_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/orgs",
+        "received_events_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/received_events",
+        "repos_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9/subscriptions",
+        "type": "Mannequin",
+        "url": "https://api.github.com/users/9e803d50-6238-47c1-84e6-b1d134a28aa9",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 99
+}

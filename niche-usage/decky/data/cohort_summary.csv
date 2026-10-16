@@ -1,0 +1,10 @@
+cohort,current_store_plugins,current_ge_5k,current_ge_20k,current_ge_100k,current_median_downloads,current_max_downloads,equal_age_n,equal_age_median_age_days,equal_age_ge_5k,equal_age_ge_20k,equal_age_ge_100k,plugin_addition_prs_created,plugin_addition_prs_merged,closed_unmerged_addition_prs_created
+2022-H2,11,11,11,9,431879,1701673,11,685,11,9,5,42,27,13
+2023-H1,24,24,24,13,111295,1643644,24,496,24,20,6,36,23,12
+2023-H2,14,14,13,7,114738,558179,14,355,13,8,1,28,19,10
+2024-H1,8,8,7,4,123951,371839,8,215,7,3,1,23,8,13
+2024-H2,5,4,2,0,10988,49470,5,184,2,0,0,13,5,8
+2025-H1,19,19,13,3,27723,374694,19,272,16,7,1,23,20,7
+2025-H2,8,8,4,1,20849,347948,8,207,7,2,1,15,7,5
+2026-H1,21,15,5,0,9792,28897,21,215,14,4,0,68,23,39
+2026-H2,0,0,0,0,,,0,,0,0,0,38,0,26

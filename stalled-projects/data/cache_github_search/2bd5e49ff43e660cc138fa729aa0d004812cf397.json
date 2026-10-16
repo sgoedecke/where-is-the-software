@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\nLogger: homeassistant.util.loop\r\nSource: util/loop.py:86\r\nFirst occurred: 7:46:13 AM (4 occurrences)\r\nLast logged: 7:46:13 AM\r\n\r\nDetected blocking call to listdir with args ('/config/deps/lib/python3.12/site-packages',) inside the event loop by integration 'here_travel_time' at homeassistant/components/here_travel_time/coordinator.py, line 60: self._api = HERERoutingApi(api_key) (offender: /usr/local/lib/python3.12/importlib/metadata/__init__.py, line 680: return os.listdir(self.root or '.')), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+here_travel_time%22 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#listdir Traceback (most recent call last): File \"<frozen runpy>\", line 198, in _run_module_as_main File \"<frozen runpy>\", line 88, in _run_code File \"/usr/src/homeassistant/homeassistant/__main__.py\", line 223, in <module> sys.exit(main()) File \"/usr/src/homeassistant/homeassistant/__main__.py\", line 209, in main exit_code = runner.run(runtime_conf) File \"/usr/src/homeassistant/homeassistant/runner.py\", line 190, in run return loop.run_until_complete(setup_and_run_hass(runtime_config)) File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 674, in run_until_complete self.run_forever() File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 641, in run_forever self._run_once() File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 1990, in _run_once handle._run() File \"/usr/local/lib/python3.12/asyncio/events.py\", line 88, in _run self._context.run(self._callback, *self._args) File \"/usr/src/homeassistant/homeassistant/setup.py\", line 167, in async_setup_component result = await _async_setup_component(hass, domain, config) File \"/usr/src/homeassistant/homeassistant/setup.py\", line 449, in _async_setup_component await asyncio.gather( File \"/usr/src/homeassistant/homeassistant/setup.py\", line 451, in <genexpr> create_eager_task( File \"/usr/src/homeassistant/homeassistant/util/async_.py\", line 37, in create_eager_task return Task(coro, loop=loop, name=name, eager_start=True) File \"/usr/src/homeassistant/homeassistant/config_entries.py\", line 734, in async_setup_locked await self.async_setup(hass, integration=integration) File \"/usr/src/homeassistant/homeassistant/config_entries.py\", line 586, in async_setup result = await component.async_setup_entry(hass, self) File \"/usr/src/homeassistant/homeassistant/components/here_travel_time/__init__.py\", line 59, in async_setup_entry data_coordinator = cls(hass, api_key, here_travel_time_config) File \"/usr/src/homeassistant/homeassistant/components/here_travel_time/coordinator.py\", line 60, in __init__ self._api = HERERoutingApi(api_key)\r\nDetected blocking call to listdir with args ('/usr/local/lib/python312.zip',) inside the event loop by integration 'here_travel_time' at homeassistant/components/here_travel_time/coordinator.py, line 60: self._api = HERERoutingApi(api_key) (offender: /usr/local/lib/python3.12/importlib/metadata/__init__.py, line 680: return os.listdir(self.root or '.')), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+here_travel_time%22 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#listdir Traceback (most recent call last): File \"<frozen runpy>\", line 198, in _run_module_as_main File \"<frozen runpy>\", line 88, in _run_code File \"/usr/src/homeassistant/homeassistant/__main__.py\", line 223, in <module> sys.exit(main()) File \"/usr/src/homeassistant/homeassistant/__main__.py\", line 209, in main exit_code = runner.run(runtime_conf) File \"/usr/src/homeassistant/homeassistant/runner.py\", line 190, in run return loop.run_until_complete(setup_and_run_hass(runtime_config)) File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 674, in run_until_complete self.run_forever() File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 641, in run_forever self._run_once() File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 1990, in _run_once handle._run() File \"/usr/local/lib/python3.12/asyncio/events.py\", line 88, in _run self._context.run(self._callback, *self._args) File \"/usr/src/homeassistant/homeassistant/setup.py\", line 167, in async_setup_component result = await _async_setup_component(hass, domain, config) File \"/usr/src/homeassistant/homeassistant/setup.py\", line 449, in _async_setup_component await asyncio.gather( File \"/usr/src/homeassistant/homeassistant/setup.py\", line 451, in <genexpr> create_eager_task( File \"/usr/src/homeassistant/homeassistant/util/async_.py\", line 37, in create_eager_task return Task(coro, loop=loop, name=name, eager_start=True) File \"/usr/src/homeassistant/homeassistant/config_entries.py\", line 734, in async_setup_locked await self.async_setup(hass, integration=integration) File \"/usr/src/homeassistant/homeassistant/config_entries.py\", line 586, in async_setup result = await component.async_setup_entry(hass, self) File \"/usr/src/homeassistant/homeassistant/components/here_travel_time/__init__.py\", line 59, in async_setup_entry data_coordinator = cls(hass, api_key, here_travel_time_config) File \"/usr/src/homeassistant/homeassistant/components/here_travel_time/coordinator.py\", line 60, in __init__ self._api = HERERoutingApi(api_key)\n\n### What version of Home Assistant Core has the issue?\n\n2024.7.0b4\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant Container\n\n### Integration causing the issue\n\nHere Travel Time\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/here_travel_time/\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n_No response_\n\n### Anything in the logs that might be useful for us?\n\n_No response_\n\n### Additional information\n\n_No response_",
+      "closed_at": "2024-06-30T08:35:54Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/120822/comments",
+      "created_at": "2024-06-29T12:23:27Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/120822/events",
+      "html_url": "https://github.com/home-assistant/core/issues/120822",
+      "id": 2381714119,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 1412111206,
+          "name": "integration: here_travel_time",
+          "node_id": "MDU6TGFiZWwxNDEyMTExMjA2",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20here_travel_time"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "",
+          "id": 6788968274,
+          "name": "blocking event loop",
+          "node_id": "LA_kwDOAMSroc8AAAABlKdvUg",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/blocking%20event%20loop"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/120822/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc6N9hLH",
+      "number": 120822,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/120822/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/120822/timeline",
+      "title": "Here Travel Time detected blocking call to listdir with args / 2024.7.0b4",
+      "type": null,
+      "updated_at": "2024-07-30T09:01:39Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/120822",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/28842285?v=4",
+        "events_url": "https://api.github.com/users/pdobrien3/events{/privacy}",
+        "followers_url": "https://api.github.com/users/pdobrien3/followers",
+        "following_url": "https://api.github.com/users/pdobrien3/following{/other_user}",
+        "gists_url": "https://api.github.com/users/pdobrien3/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/pdobrien3",
+        "id": 28842285,
+        "login": "pdobrien3",
+        "node_id": "MDQ6VXNlcjI4ODQyMjg1",
+        "organizations_url": "https://api.github.com/users/pdobrien3/orgs",
+        "received_events_url": "https://api.github.com/users/pdobrien3/received_events",
+        "repos_url": "https://api.github.com/users/pdobrien3/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/pdobrien3/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/pdobrien3/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/pdobrien3",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1296
+}

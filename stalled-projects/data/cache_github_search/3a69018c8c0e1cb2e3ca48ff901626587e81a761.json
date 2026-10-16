@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Godot version\n\n3.5.beta3 (and earlier)\n\n### System information\n\nManjaro KDE\n\n### Issue description\n\nChanging the constants for TabContainer, either through theme overrides or in themes themselves, does not change anything. The only one that does something is side_margin.\n\n### Steps to reproduce\n\nCreate a TabContainer\r\nChange the theme override constants\r\nNothing happens except with side_margin\n\n### Minimal reproduction project\n\n_No response_",
+      "closed_at": "2022-03-31T16:29:08Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/59749/comments",
+      "created_at": "2022-03-31T15:56:18Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/59749/events",
+      "html_url": "https://github.com/godotengine/godot/issues/59749",
+      "id": 1188302167,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 1732720779,
+          "name": "topic:gui",
+          "node_id": "MDU6TGFiZWwxNzMyNzIwNzc5",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:gui"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/59749/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc5G1A1X",
+      "number": 59749,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/59749/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/59749/timeline",
+      "title": "TabContainer constants do nothing",
+      "type": null,
+      "updated_at": "2022-03-31T16:29:13Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/59749",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/16022203?v=4",
+        "events_url": "https://api.github.com/users/andersmmg/events{/privacy}",
+        "followers_url": "https://api.github.com/users/andersmmg/followers",
+        "following_url": "https://api.github.com/users/andersmmg/following{/other_user}",
+        "gists_url": "https://api.github.com/users/andersmmg/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/andersmmg",
+        "id": 16022203,
+        "login": "andersmmg",
+        "node_id": "MDQ6VXNlcjE2MDIyMjAz",
+        "organizations_url": "https://api.github.com/users/andersmmg/orgs",
+        "received_events_url": "https://api.github.com/users/andersmmg/received_events",
+        "repos_url": "https://api.github.com/users/andersmmg/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/andersmmg/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/andersmmg/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/andersmmg",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1314
+}

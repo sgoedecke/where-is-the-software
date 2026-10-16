@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\nv20.8.1  \n\n### Platform\n\n```text\nLinux ushanka-housing 6.5.0-1023-oem #24-Ubuntu SMP PREEMPT_DYNAMIC Tue May  7 14:26:31 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux\n```\n\n\n### Subsystem\n\nError\n\n### What steps will reproduce the bug?\n\nRun\r\n\r\n```javascript\r\nfunction f1(e, trace) {\r\n  Error.prepareStackTrace = f2\r\n  console.log(Error(\"e2\").stack)\r\n  return \"F1\"\r\n}\r\n\r\nfunction f2(e, trace) {\r\n  return \"F2\"\r\n}\r\n\r\nError.prepareStackTrace = f1\r\nconsole.log(Error(\"e1\").stack)\r\n\r\n```\n\n### How often does it reproduce? Is there a required condition?\n\nThis will repro 100% of the time\n\n### What is the expected behavior? Why is that the expected behavior?\n\nWe should see \r\n```javascript\r\n\"F2\"\r\n\"F1\"\r\n```\r\n\r\nInside the f1 handler, we set Error.prepareStackTrace. It makes sense that the original error (`e1`) isn't affected, since it's already being handled, but `e2` should use the newest Error.prepareStackTrace function. \n\n### What do you see instead?\n\n```\r\nError: e2\r\n    at Function.f1 (/home/eli/code/nodejs-agent/tests/one_offs/prepareStackTrace_nest.js:4:15)\r\n    at maybeOverridePrepareStackTrace (node:internal/errors:141:29)\r\n    at prepareStackTrace (node:internal/errors:115:5)\r\n    at Object.<anonymous> (/home/eli/code/nodejs-agent/tests/one_offs/prepareStackTrace_nest.js:14:24)\r\n    at Module._compile (node:internal/modules/cjs/loader:1241:14)\r\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\r\n    at Module._load (node:internal/modules/cjs/loader:938:12)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)\r\n    at node:internal/main/run_main_module:23:47\r\nF1\r\n```\r\n\r\nSo it looks like not only is the `F2` handler being ignored, the `F1` handler is as well\n\n### Additional information\n\nMaybe this is intentional to help with debugging?\r\n\r\nI can see why you would probably want a non-custom error if there's an error in your prepareStackTrace by default, but it would be really nice if a new prepareStackTrace handler was honored if set.\r\n\r\nMaybe?",
+      "closed_at": "2024-06-28T12:22:12Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/53618/comments",
+      "created_at": "2024-06-28T03:50:16Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/53618/events",
+      "html_url": "https://github.com/nodejs/node/issues/53618",
+      "id": 2379510571,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/53618/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs86N1HMr",
+      "number": 53618,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/53618/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/53618/timeline",
+      "title": "prepareStackTrace doesn't work on error thrown within prepareStackTrace handler",
+      "type": null,
+      "updated_at": "2024-06-28T12:22:12Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/53618",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1088443?v=4",
+        "events_url": "https://api.github.com/users/orinatic/events{/privacy}",
+        "followers_url": "https://api.github.com/users/orinatic/followers",
+        "following_url": "https://api.github.com/users/orinatic/following{/other_user}",
+        "gists_url": "https://api.github.com/users/orinatic/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/orinatic",
+        "id": 1088443,
+        "login": "orinatic",
+        "node_id": "MDQ6VXNlcjEwODg0NDM=",
+        "organizations_url": "https://api.github.com/users/orinatic/orgs",
+        "received_events_url": "https://api.github.com/users/orinatic/received_events",
+        "repos_url": "https://api.github.com/users/orinatic/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/orinatic/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/orinatic/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/orinatic",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 232
+}

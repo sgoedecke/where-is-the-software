@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "## Bevy version\r\n\r\nBevy 0.9\r\n\r\n## What you did\r\n```rust\r\nuse bevy::prelude::*;\r\n\r\nfn main() {\r\n    App::new()\r\n        .add_plugins(DefaultPlugins)\r\n        .add_startup_system(setup)\r\n        .run();\r\n}\r\n\r\nfn setup(\r\n    mut commands: Commands,\r\n    asset_server: Res<AssetServer>,\r\n){\r\n    let font = asset_server.load(\"fonts/FiraSans-Bold.ttf\");\r\n    commands.spawn(Camera2dBundle::default());\r\n\r\n    commands\r\n        .spawn(NodeBundle {\r\n            style: Style {\r\n                size: Size::new(Val::Percent(100.0), Val::Percent(100.0)),\r\n                align_items: AlignItems::Center,\r\n                justify_content: JustifyContent::Center,\r\n                ..Default::default()\r\n            },\r\n            background_color: BackgroundColor(Color::CYAN),\r\n            ..Default::default()\r\n        })\r\n        .with_children(|builder| {\r\n            builder.spawn((TextBundle::from_section(\r\n                    \"Hello World\",\r\n                    TextStyle {\r\n                        font,\r\n                        font_size: 32.0,\r\n                        color: Color::WHITE,\r\n                    },\r\n                ).with_style(Style {\r\n                    padding: UiRect::all(Val::Px(10.)),\r\n                    ..Default::default()\r\n                }),\r\n                BackgroundColor(Color::RED),\r\n            ));\r\n\r\n            // spawn an image bundle\r\n            builder.spawn(ImageBundle {\r\n                style: Style {\r\n                    padding: UiRect::all(Val::Px(10.)),\r\n                    ..Default::default()\r\n                },\r\n                image: asset_server.load(\"textures/icon.png\").into(),\r\n                ..Default::default()\r\n            });\r\n        });\r\n}\r\n```\r\n## What went wrong\r\n\r\nThe UI ignores padding when a node contains text or an image.\r\n\r\n## Additional information\r\n\r\nrelated issues #5502, #6825",
+      "closed_at": "2026-03-26T23:14:35Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/6879/comments",
+      "created_at": "2022-12-07T11:05:45Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/6879/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/6879",
+      "id": 1481643629,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c6a751",
+          "default": false,
+          "description": "Graphical user interfaces, styles, layouts, and widgets",
+          "id": 2276469463,
+          "name": "A-UI",
+          "node_id": "MDU6TGFiZWwyMjc2NDY5NDYz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-UI"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/6879/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85YUBZt",
+      "number": 6879,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/6879/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/6879/timeline",
+      "title": "Text and Images can't be given padding",
+      "type": null,
+      "updated_at": "2026-03-26T23:14:35Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/6879",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/27962798?v=4",
+        "events_url": "https://api.github.com/users/ickshonpe/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ickshonpe/followers",
+        "following_url": "https://api.github.com/users/ickshonpe/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ickshonpe/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ickshonpe",
+        "id": 27962798,
+        "login": "ickshonpe",
+        "node_id": "MDQ6VXNlcjI3OTYyNzk4",
+        "organizations_url": "https://api.github.com/users/ickshonpe/orgs",
+        "received_events_url": "https://api.github.com/users/ickshonpe/received_events",
+        "repos_url": "https://api.github.com/users/ickshonpe/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ickshonpe/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ickshonpe/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ickshonpe",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 12
+}

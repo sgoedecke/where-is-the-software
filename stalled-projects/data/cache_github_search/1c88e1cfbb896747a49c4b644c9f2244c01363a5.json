@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!-- Please search existing issues for potential duplicates before filing yours:\t\r\nhttps://github.com/godotengine/godot/issues?q=is%3Aissue\t\r\n-->\r\n\r\n**Godot version:** 481151be (playing with `master`)\r\n\r\n**Issue description:**\r\nI want to use SDFGI with procedural static geometry, and right now I have to toggle `sdfgi_enabled` off and on to regenerate voxel/baked data when I add new geometry. This usually brings in some garbage memory, causing bright flashes (especially in a dark scene). I can cover it up with a loading screen for some scenarios, but this limits more dynamic games that e.g. dynamically generate more geometry as you move along.\r\n\r\nThere should be an API that lets me mark the data for regen, even better if it takes an AABB for a specific region.\r\n\r\nDiscussed with @reduz on IRC. :+1:",
+      "closed_at": "2023-09-19T12:24:46Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/39961/comments",
+      "created_at": "2020-06-29T19:40:09Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/39961/events",
+      "html_url": "https://github.com/godotengine/godot/issues/39961",
+      "id": 647617221,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "4466ff",
+          "default": false,
+          "description": "",
+          "id": 73330068,
+          "name": "feature proposal",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2OA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/feature%20proposal"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098111,
+          "name": "topic:rendering",
+          "node_id": "MDU6TGFiZWwyNzkwOTgxMTE=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:rendering"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 2666708289,
+          "name": "topic:3d",
+          "node_id": "MDU6TGFiZWwyNjY2NzA4Mjg5",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:3d"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/39961/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NDc2MTcyMjE=",
+      "number": 39961,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 9,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 9,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/39961/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/39961/timeline",
+      "title": "SDFGI: Add method to regenerate data (instead of completely reinitializing)",
+      "type": null,
+      "updated_at": "2023-09-19T12:24:55Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/39961",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/331300?v=4",
+        "events_url": "https://api.github.com/users/31/events{/privacy}",
+        "followers_url": "https://api.github.com/users/31/followers",
+        "following_url": "https://api.github.com/users/31/following{/other_user}",
+        "gists_url": "https://api.github.com/users/31/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/31",
+        "id": 331300,
+        "login": "31",
+        "node_id": "MDQ6VXNlcjMzMTMwMA==",
+        "organizations_url": "https://api.github.com/users/31/orgs",
+        "received_events_url": "https://api.github.com/users/31/received_events",
+        "repos_url": "https://api.github.com/users/31/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/31/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/31/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/31",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 42
+}

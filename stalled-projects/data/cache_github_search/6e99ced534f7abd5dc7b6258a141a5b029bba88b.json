@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "\r\n<!--- Also test if the latest release and devel branch are affected too -->\r\n<!--- Complete *all* sections as described, this form is processed automatically -->\r\n\r\n##### SUMMARY\r\nGetting ok on any package. Package may even not exist. \r\n\r\n##### ISSUE TYPE\r\n- Bug Report\r\n\r\n##### COMPONENT NAME\r\nyum with loop\r\n\r\n##### ANSIBLE VERSION\r\n\r\n```paste below\r\nansible 2.9.4\r\n  config file = /etc/ansible/ansible.cfg\r\n  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /usr/lib/python3.7/site-packages/ansible\r\n  executable location = /usr/local/bin/ansible\r\n  python version = 3.7.6 (default, Jan 30 2020, 10:29:04) [GCC 9.2.1 20190827 (Red Hat 9.2.1-1)]\r\n\r\n```\r\n\r\n##### CONFIGURATION\r\n<!--- Paste verbatim output from \"ansible-config dump --only-changed\" between quotes -->\r\n```paste below\r\nANSIBLE_PIPELINING(/etc/ansible/ansible.cfg) = True\r\nCACHE_PLUGIN(/etc/ansible/ansible.cfg) = jsonfile\r\nCACHE_PLUGIN_CONNECTION(/etc/ansible/ansible.cfg) = /tmp\r\nCACHE_PLUGIN_TIMEOUT(/etc/ansible/ansible.cfg) = 600\r\nDISPLAY_SKIPPED_HOSTS(/etc/ansible/ansible.cfg) = False\r\nHOST_KEY_CHECKING(/etc/ansible/ansible.cfg) = False\r\nPARAMIKO_LOOK_FOR_KEYS(/etc/ansible/ansible.cfg) = False\r\nRETRY_FILES_ENABLED(/etc/ansible/ansible.cfg) = False\r\n\r\n```\r\n\r\n##### OS / ENVIRONMENT\r\nmaster node is Fedora 30\r\nmanaged node is Centos7\r\n\r\n\r\n##### STEPS TO REPRODUCE\r\n<!--- Describe exactly how to reproduce the problem, using a minimal test-case -->\r\nRun next playbook\r\n<!--- Paste example playbooks or commands between quotes below -->\r\n```yaml\r\n---\r\n\r\n- name: Ansible bug\r\n  hosts: k\r\n  become: yes\r\n  become_user: root\r\n  tasks:\r\n    - name : yum or loop bug in ansible test\r\n      yum: name{{ item }}\r\n      loop:\r\n        - rakamakafo\r\n        - cowabunga\r\n\r\n```\r\n\r\n\r\n\r\n##### EXPECTED RESULTS\r\nError from yum \r\n\"No package cowabunga available.\r\nError: Nothing to do\"\r\n\r\nOR\r\n\r\nSyntax error from ansible\r\n\r\n##### ACTUAL RESULTS\r\n<!--- Describe what actually happened. If possible run with extra verbosity (-vvvv) -->\r\n\r\n<!--- Paste verbatim command output between quotes -->\r\n```paste below\r\n$ ansible-playbook -i k_hosts yum_bug.yml -vv\r\nansible-playbook 2.9.4\r\n  config file = /etc/ansible/ansible.cfg\r\n  configured module search path = ['/home/user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\r\n  ansible python module location = /usr/lib/python3.7/site-packages/ansible\r\n  executable location = /usr/local/bin/ansible-playbook\r\n  python version = 3.7.6 (default, Jan 30 2020, 10:29:04) [GCC 9.2.1 20190827 (Red Hat 9.2.1-1)]\r\nUsing /etc/ansible/ansible.cfg as config file\r\n\r\nPLAYBOOK: yum_bug.yml ************************************************************************************************************************************************************************************************************************\r\n1 plays in yum_bug.yml\r\n\r\nPLAY [Ansible bug] ***************************************************************************************************************************************************************************************************************************\r\n\r\nTASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************\r\ntask path: /home/user/yum_bug.yml:3\r\nok: [k3.mysite.com]\r\nok: [k1.mysite.com]\r\nok: [k2.mysite.com]\r\nMETA: ran handlers\r\n\r\nTASK [yum or loop bug in ansible test] *******************************************************************************************************************************************************************************************************\r\ntask path: /home/user/yum_bug.yml:8\r\nok: [k2.mysite.com] => (item=rakamakafo) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"rakamakafo\", \"msg\": \"\", \"rc\": 0, \"results\": []}\r\nok: [k3.mysite.com] => (item=rakamakafo) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"rakamakafo\", \"msg\": \"\", \"rc\": 0, \"results\": []}\r\nok: [k1.mysite.com] => (item=rakamakafo) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"rakamakafo\", \"msg\": \"\", \"rc\": 0, \"results\": []}\r\nok: [k2.mysite.com] => (item=cowabunga) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"cowabunga\", \"msg\": \"\", \"rc\": 0, \"results\": []}\r\nok: [k3.mysite.com] => (item=cowabunga) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"cowabunga\", \"msg\": \"\", \"rc\": 0, \"results\": []}\r\nok: [k1.mysite.com] => (item=cowabunga) => {\"ansible_loop_var\": \"item\", \"changed\": false, \"item\": \"cowabunga\", \"msg\": \"\", \"rc\": 0, \"results\": []}\r\nMETA: ran handlers\r\nMETA: ran handlers\r\n\r\nPLAY RECAP ***********************************************************************************************************************************************************************************************************************************\r\nk1.mysite.com               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \r\nk2.mysite.com               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \r\nk3.mysite.com               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \r\n\r\n```\r\n",
+      "closed_at": "2023-06-05T22:51:51Z",
+      "comments": 9,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/67467/comments",
+      "created_at": "2020-02-17T11:32:44Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/67467/events",
+      "html_url": "https://github.com/ansible/ansible/issues/67467",
+      "id": 566239102,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e3ed5e",
+          "default": false,
+          "description": "Priority 3 - Approved, No Time Limitation",
+          "id": 1126594180,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwxMTI2NTk0MTgw",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "5319e7",
+          "default": false,
+          "description": "This issue/PR affects Ansible v2.9",
+          "id": 1316917295,
+          "name": "affects_2.9",
+          "node_id": "MDU6TGFiZWwxMzE2OTE3Mjk1",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.9"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/67467/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1NjYyMzkxMDI=",
+      "number": 67467,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/67467/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/67467/timeline",
+      "title": "Yum doesnt install packages nor show error when = sign absents and loop presents",
+      "type": null,
+      "updated_at": "2023-06-12T13:00:06Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/67467",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10262188?v=4",
+        "events_url": "https://api.github.com/users/ph0en/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ph0en/followers",
+        "following_url": "https://api.github.com/users/ph0en/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ph0en/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ph0en",
+        "id": 10262188,
+        "login": "ph0en",
+        "node_id": "MDQ6VXNlcjEwMjYyMTg4",
+        "organizations_url": "https://api.github.com/users/ph0en/orgs",
+        "received_events_url": "https://api.github.com/users/ph0en/received_events",
+        "repos_url": "https://api.github.com/users/ph0en/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ph0en/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ph0en/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ph0en",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 41
+}

@@ -1,0 +1,2 @@
+dump_url,crates_in_window,crates_non_yanked_in_window,version_downloads_min_date,version_downloads_max_date
+https://static.crates.io/db-dump.tar.gz,241189,235122,2026-07-16,2026-10-15

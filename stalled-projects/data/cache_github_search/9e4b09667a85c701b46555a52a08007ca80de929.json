@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Website or app\n\nhttps://github.com/Fast-Pace-Transfer/analytics-dashboard-ui\n\n### Repro steps\n\nI am trying save a randomly generated set of colors with matching countries as an object in the local storage\r\nfrom a context\r\nSo it doesn't change colors after a manual refresh\n\n### How often does this bug happen?\n\nOnly once\n\n### DevTools package (automated)\n\nreact-devtools-extensions\n\n### DevTools version (automated)\n\n4.24.6-ca7a38ae4\n\n### Error message (automated)\n\nCannot remove node \"276\" because no matching node was found in the Store.\n\n### Error call stack (automated)\n\n```text\nat chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/main.js:26518:43\r\n    at bridge_Bridge.emit (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/main.js:24436:22)\r\n    at chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/main.js:24605:14\r\n    at listener (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/main.js:54547:39)\n```\n\n\n### Error component stack (automated)\n\n_No response_\n\n### GitHub query string (automated)\n\n```text\nhttps://api.github.com/search/issues?q=Cannot remove node  because no matching node was found in the Store. in:title is:issue is:open is:public label:\"Component: Developer Tools\" repo:facebook/react\n```\n",
+      "closed_at": "2025-10-12T13:05:42Z",
+      "comments": 11,
+      "comments_url": "https://api.github.com/repos/react/react/issues/24608/comments",
+      "created_at": "2022-05-24T10:54:44Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/24608/events",
+      "html_url": "https://github.com/react/react/issues/24608",
+      "id": 1246363633,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b60205",
+          "default": false,
+          "description": null,
+          "id": 40929151,
+          "name": "Type: Bug",
+          "node_id": "MDU6TGFiZWw0MDkyOTE1MQ==",
+          "url": "https://api.github.com/repos/react/react/labels/Type:%20Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": null,
+          "id": 710573595,
+          "name": "Component: Developer Tools",
+          "node_id": "MDU6TGFiZWw3MTA1NzM1OTU=",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20Developer%20Tools"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/24608/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks5KSf_x",
+      "number": 24608,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/react/react/issues/24608/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/24608/timeline",
+      "title": "[DevTools Bug] Cannot remove node \"276\" because no matching node was found in the Store.",
+      "type": null,
+      "updated_at": "2025-10-12T13:05:42Z",
+      "url": "https://api.github.com/repos/react/react/issues/24608",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/31775124?v=4",
+        "events_url": "https://api.github.com/users/Mancunia/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Mancunia/followers",
+        "following_url": "https://api.github.com/users/Mancunia/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Mancunia/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Mancunia",
+        "id": 31775124,
+        "login": "Mancunia",
+        "node_id": "MDQ6VXNlcjMxNzc1MTI0",
+        "organizations_url": "https://api.github.com/users/Mancunia/orgs",
+        "received_events_url": "https://api.github.com/users/Mancunia/received_events",
+        "repos_url": "https://api.github.com/users/Mancunia/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Mancunia/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Mancunia/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Mancunia",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 7
+}

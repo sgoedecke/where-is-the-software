@@ -1,0 +1,150 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Godot version\n\n4.01\n\n### System information\n\nFedora 37, Wayland, 125% scaling on monitor\n\n### Issue description\n\nThe add node window scales down until it's super tiny.\n\n### Steps to reproduce\n\nSet desktop scaling to 125% on KDE Plasma Wayland, and then try adding a node. This isn't reproducible when you have desktop scaling at 100%.\n\n### Minimal reproduction project\n\nN/A",
+      "closed_at": "2026-04-13T23:40:10Z",
+      "comments": 17,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/75515/comments",
+      "created_at": "2023-03-31T00:20:25Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/75515/events",
+      "html_url": "https://github.com/godotengine/godot/issues/75515",
+      "id": 1648488529,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e4e4e4",
+          "default": false,
+          "description": "",
+          "id": 279097326,
+          "name": "platform:linuxbsd",
+          "node_id": "MDU6TGFiZWwyNzkwOTczMjY=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/platform:linuxbsd"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098219,
+          "name": "topic:editor",
+          "node_id": "MDU6TGFiZWwyNzkwOTgyMTk=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:editor"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 279098255,
+          "name": "topic:platforms",
+          "node_id": "MDU6TGFiZWwyNzkwOTgyNTU=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:platforms"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaddaa",
+          "default": false,
+          "description": "",
+          "id": 279128044,
+          "name": "confirmed",
+          "node_id": "MDU6TGFiZWwyNzkxMjgwNDQ=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/confirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/75515/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc5iQfBR",
+      "number": 75515,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/75515/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/75515/timeline",
+      "title": "Add node window shrinks down really small with non-standard scaling (120%) on KDE Wayland (DisplayServer regression)",
+      "type": null,
+      "updated_at": "2026-05-26T18:54:32Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/75515",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/94062293?v=4",
+        "events_url": "https://api.github.com/users/mak448a/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mak448a/followers",
+        "following_url": "https://api.github.com/users/mak448a/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mak448a/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mak448a",
+        "id": 94062293,
+        "login": "mak448a",
+        "node_id": "U_kgDOBZtG1Q",
+        "organizations_url": "https://api.github.com/users/mak448a/orgs",
+        "received_events_url": "https://api.github.com/users/mak448a/received_events",
+        "repos_url": "https://api.github.com/users/mak448a/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mak448a/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mak448a/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mak448a",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 48
+}

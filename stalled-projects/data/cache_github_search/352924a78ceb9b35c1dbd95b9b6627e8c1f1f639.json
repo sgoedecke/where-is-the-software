@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "This function foo:\r\n\r\n```rust\r\ntype T = i16;\r\n\r\npub fn foo(start: T) -> T {\r\n    if start <= 0 { return 0; }\r\n    let mut count = 0;\r\n    for i in start .. 10_000 {\r\n        if 752 % i != 0 {\r\n            count += 1;\r\n        }\r\n    }\r\n    count\r\n}\r\n\r\nfn main() {\r\n    println!(\"{}\", (T::MIN ..= T::MAX)\r\n                   .map(foo)\r\n                   .sum::<T>());\r\n}\r\n```\r\n\r\nCompiled with optimizations by rustc (1.54.0-nightly 4de757209 2021-05-01) gives:\r\n\r\n```asm\r\nfoo:\r\n        lea     eax, [rdi - 1]\r\n        movzx   eax, ax\r\n        cmp     eax, 9998\r\n        ja      .LBB0_1\r\n        mov     r8d, 9999\r\n        sub     r8d, edi\r\n        mov     esi, edi\r\n        neg     esi\r\n        xor     ecx, ecx\r\n.LBB0_4:\r\n        cmp     r8w, si\r\n        jae     .LBB0_6\r\n        mov     ax, 752\r\n        xor     edx, edx\r\n        idiv    di\r\n        lea     eax, [rdi + 1]\r\n        cmp     dx, 1\r\n        sbb     cx, -1\r\n        movzx   edx, ax\r\n        mov     edi, eax\r\n        cmp     edx, 10000\r\n        jne     .LBB0_4\r\n        mov     eax, ecx\r\n        ret\r\n.LBB0_1:\r\n        xor     ecx, ecx\r\n        mov     eax, ecx\r\n        ret\r\n.LBB0_6:\r\n        push    rax\r\n        lea     rdi, [rip + str.0]\r\n        lea     rdx, [rip + .L__unnamed_1]\r\n        mov     esi, 57\r\n        call    qword ptr [rip + core::panicking::panic@GOTPCREL]\r\n        ud2\r\n\r\nstr.0:\r\n        .ascii  \"attempt to calculate the remainder with a divisor of zero\"\r\n```\r\n\r\nRunning the code you confirm that the divisor can't be zero.\r\nI think Rustc should be able to remove this test.\r\n(The same code with `T=u16` contains no division by zero test).",
+      "closed_at": "2024-11-02T11:07:36Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/86109/comments",
+      "created_at": "2021-06-07T17:28:15Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/86109/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/86109",
+      "id": 913783641,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e10c02",
+          "default": false,
+          "description": "Issue: Problems and improvements with respect to performance of generated code.",
+          "id": 113376,
+          "name": "I-slow",
+          "node_id": "MDU6TGFiZWwxMTMzNzY=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/I-slow"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue proposing an enhancement or a PR with one.",
+          "id": 234902,
+          "name": "C-enhancement",
+          "node_id": "MDU6TGFiZWwyMzQ5MDI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Code generation",
+          "id": 234956,
+          "name": "A-codegen",
+          "node_id": "MDU6TGFiZWwyMzQ5NTY=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-codegen"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "02e10c",
+          "default": false,
+          "description": "Call for participation: An issue has been fixed and does not reproduce, but no test has been added.",
+          "id": 46741598,
+          "name": "E-needs-test",
+          "node_id": "MDU6TGFiZWw0Njc0MTU5OA==",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/E-needs-test"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/86109/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5MTM3ODM2NDE=",
+      "number": 86109,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/86109/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/86109/timeline",
+      "title": "[ER] A missed removal of division by zero test",
+      "type": null,
+      "updated_at": "2024-11-02T11:07:36Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/86109",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/22328461?v=4",
+        "events_url": "https://api.github.com/users/leonardo-m/events{/privacy}",
+        "followers_url": "https://api.github.com/users/leonardo-m/followers",
+        "following_url": "https://api.github.com/users/leonardo-m/following{/other_user}",
+        "gists_url": "https://api.github.com/users/leonardo-m/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/leonardo-m",
+        "id": 22328461,
+        "login": "leonardo-m",
+        "node_id": "MDQ6VXNlcjIyMzI4NDYx",
+        "organizations_url": "https://api.github.com/users/leonardo-m/orgs",
+        "received_events_url": "https://api.github.com/users/leonardo-m/received_events",
+        "repos_url": "https://api.github.com/users/leonardo-m/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/leonardo-m/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/leonardo-m/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/leonardo-m",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

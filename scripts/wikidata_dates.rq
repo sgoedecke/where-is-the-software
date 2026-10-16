@@ -1,0 +1,5 @@
+SELECT ?g ?d ?plat WHERE {
+  ?g wdt:P31 wd:Q7889 ; p:P577 ?st .
+  ?st ps:P577 ?d .
+  OPTIONAL { ?st pq:P400 ?plat }
+}

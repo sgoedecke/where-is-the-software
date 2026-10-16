@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Tested versions\n\n4.1.stable.official [970459615]\r\n4.1.4.stable.official [fe0e8e557]\r\n4.2.dev1.official [0c2144da9]\r\n4.2.dev2.official [da81ca62a]\r\n4.2.dev3.official [013e8e3af]\r\n4.2.dev4.official [549fcce5f]\r\n4.2.dev5.official [e3e2528ba]\r\n4.2.dev6.official [57a6813bb]\r\n4.2.rc1.official [ad72de508]\r\n4.2.rc2.official [1ba920fad]\r\n4.2.stable.official [46dc27791]\r\n4.3.beta2.official [b75f0485b]\n\n### System information\n\nWindows 11 26244.5000 - Godot v4.3.beta2 - OpenGL 3.3(because it cannot use my vulkan) - AMD RX 6600 - Intel i3-12100F\n\n### Issue description\n\nFirst, i'm chinese, so i hope you guys can forgive my poor English.\r\nI tried so many versions and found that, version that above 4.2.dev6 cannot start up, only leaves version message in console and also not close, keeps running in background. And in old versions that can start up, i found that they cannot dected my graphics card's vulkan and uses opengl to renderer which cause not responding after a couple of secounds. So i hope u guys can fix it!!!\r\n(I think it may because i'm using canary channel of windows 11 version)\r\nAnyways, my graphics driver is up-to-date, and vulkan can dected in gpu-z which shows up vulkan 1.3. Minecraft's vulkan mod also usable too.\r\nIn task manager, it will shows suspend when i start with administrator, but other time just stay there, even no resource use increased.\n\n### Steps to reproduce\n\nStart Godot_v*.*_console.exe and will stuck on version info.\n\n### Minimal reproduction project (MRP)\n\nNothing.",
+      "closed_at": "2024-06-30T22:03:21Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/93781/comments",
+      "created_at": "2024-06-30T12:35:32Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/93781/events",
+      "html_url": "https://github.com/godotengine/godot/issues/93781",
+      "id": 2382235952,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/93781/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAO6SJc6N_gkw",
+      "number": 93781,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/93781/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/93781/timeline",
+      "title": "Godot not launch on my computer!",
+      "type": null,
+      "updated_at": "2024-07-01T07:22:18Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/93781",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/87363371?v=4",
+        "events_url": "https://api.github.com/users/Aruvelut-123/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Aruvelut-123/followers",
+        "following_url": "https://api.github.com/users/Aruvelut-123/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Aruvelut-123/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Aruvelut-123",
+        "id": 87363371,
+        "login": "Aruvelut-123",
+        "node_id": "MDQ6VXNlcjg3MzYzMzcx",
+        "organizations_url": "https://api.github.com/users/Aruvelut-123/orgs",
+        "received_events_url": "https://api.github.com/users/Aruvelut-123/received_events",
+        "repos_url": "https://api.github.com/users/Aruvelut-123/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Aruvelut-123/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Aruvelut-123/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Aruvelut-123",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1188
+}

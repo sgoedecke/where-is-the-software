@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\n16.14.2\n\n### Platform\n\nLinux wmertens-nixos 5.15.3-zen1 #1-NixOS ZEN SMP Tue Jan 1 00:00:00 UTC 1980 x86_64 GNU/Linux\n\n### Subsystem\n\nrepl\n\n### What steps will reproduce the bug?\n\nset `type: \"module\"` in package.json, and then try to run `node -r ./some-module.js`. It will fail with the error\r\n\r\n```\r\n[Error [ERR_REQUIRE_ESM]: require() of ES Module .../some-module.js not supported.\r\nInstead change the require of repl.js in null to a dynamic import() which is available in all CommonJS modules.] {\r\n  code: 'ERR_REQUIRE_ESM'\r\n```\r\n\r\nI suppose that when using -r in an ESM repo, the repl must use `await import` instead of `require` for `-r` arguments?\n\n### How often does it reproduce? Is there a required condition?\n\nevery time when the project is ESM and you try to load a local file as a module\n\n### What is the expected behavior?\n\nit works\n\n### What do you see instead?\n\n'ERR_REQUIRE_ESM'\r\n\n\n### Additional information\n\n_No response_",
+      "closed_at": "2022-03-31T19:14:42Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/42547/comments",
+      "created_at": "2022-03-31T19:06:08Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/42547/events",
+      "html_url": "https://github.com/nodejs/node/issues/42547",
+      "id": 1188541453,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/42547/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85G17QN",
+      "number": 42547,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/42547/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/42547/timeline",
+      "title": "repl: -r doesn't work with ESM",
+      "type": null,
+      "updated_at": "2022-03-31T19:14:43Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/42547",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/54934?v=4",
+        "events_url": "https://api.github.com/users/wmertens/events{/privacy}",
+        "followers_url": "https://api.github.com/users/wmertens/followers",
+        "following_url": "https://api.github.com/users/wmertens/following{/other_user}",
+        "gists_url": "https://api.github.com/users/wmertens/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/wmertens",
+        "id": 54934,
+        "login": "wmertens",
+        "node_id": "MDQ6VXNlcjU0OTM0",
+        "organizations_url": "https://api.github.com/users/wmertens/orgs",
+        "received_events_url": "https://api.github.com/users/wmertens/received_events",
+        "repos_url": "https://api.github.com/users/wmertens/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/wmertens/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/wmertens/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/wmertens",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 308
+}

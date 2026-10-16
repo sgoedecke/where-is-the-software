@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Summary\r\n\r\nWith ansible-core 2.13 out, I wanted to finally reenable running tests for Ansible when packaging it for Voidlinux, which we couldn't on 2.12 due to Python 3.10 support missing. Now that I've reenabled the tests, I'm having trouble running them though. The problem seems to be that Voidlinux ships with `/bin`, `/sbin`, and `/usr/sbin` linked to `/usr/bin`, while the test assumes that setting `PATH=\"\"` is enough to make sure that `get_bin_path` can't find `git`. Problem is: `get_bin_path` looks in `PATH`, but also explicitly adds `/sbin`, `/usr/sbin` and `/usr/local/sbin` (see https://github.com/ansible/ansible/blob/v2.13.1/lib/ansible/module_utils/common/process.py#L12-L44). Thus, it finds a git executable, and the error message that the tests wants to be triggered isn't actually triggered.\r\n\r\n```\r\n=================================== FAILURES ===================================\r\n_______________ test_concrete_artifact_manager_scm_no_executable _______________\r\n[gw6] linux -- Python 3.10.5 /usr/bin/python\r\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7dff16e110>\r\n\r\n    def test_concrete_artifact_manager_scm_no_executable(monkeypatch):\r\n        url = 'https://github.com/org/repo'\r\n        version = 'commitish'\r\n        mock_subprocess_check_call = MagicMock()\r\n        monkeypatch.setattr(collection.concrete_artifact_manager.subprocess, 'check_call', mock_subprocess_check_call)\r\n        mock_mkdtemp = MagicMock(return_value='')\r\n        monkeypatch.setattr(collection.concrete_artifact_manager, 'mkdtemp', mock_mkdtemp)\r\n    \r\n        error = re.escape(\r\n            \"Could not find git executable to extract the collection from the Git repository `https://github.com/org/repo`\"\r\n        )\r\n        with mock.patch.dict(os.environ, {\"PATH\": \"\"}):\r\n>           with pytest.raises(AnsibleError, match=error):\r\nE           Failed: DID NOT RAISE <class 'ansible.errors.AnsibleError'>\r\n\r\ntest/units/galaxy/test_collection_install.py:189: Failed\r\n- generated xml file: /builddir/ansible-core-2.13.1/test/results/junit/python3.10-controller-units.xml -\r\n```\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow the Ansible Code of Conduct",
+      "closed_at": "2022-06-30T17:19:45Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/78169/comments",
+      "created_at": "2022-06-30T11:11:46Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/78169/events",
+      "html_url": "https://github.com/ansible/ansible/issues/78169",
+      "id": 1289976227,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "This issue requires further information. Please answer any outstanding questions.",
+          "id": 54811101,
+          "name": "needs_info",
+          "node_id": "MDU6TGFiZWw1NDgxMTEwMQ==",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/needs_info"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f9d0c4",
+          "default": false,
+          "description": "This issue/PR has an incomplete description. Please fill in the proposed template correctly.",
+          "id": 572345061,
+          "name": "needs_template",
+          "node_id": "MDU6TGFiZWw1NzIzNDUwNjE=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/needs_template"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": "This issue has an associated PR.",
+          "id": 814251818,
+          "name": "has_pr",
+          "node_id": "MDU6TGFiZWw4MTQyNTE4MTg=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/has_pr"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "This issue/PR relates to a feature request.",
+          "id": 852590921,
+          "name": "feature",
+          "node_id": "MDU6TGFiZWw4NTI1OTA5MjE=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 3979696806,
+          "name": "affects_2.14",
+          "node_id": "LA_kwDOADeGtM7tNVqm",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.14"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/78169/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOADeGtM5M43mj",
+      "number": 78169,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/78169/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/78169/timeline",
+      "title": "Test failure on systems where bin==sbin",
+      "type": null,
+      "updated_at": "2022-07-07T13:00:15Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/78169",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6861958?v=4",
+        "events_url": "https://api.github.com/users/jcgruenhage/events{/privacy}",
+        "followers_url": "https://api.github.com/users/jcgruenhage/followers",
+        "following_url": "https://api.github.com/users/jcgruenhage/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jcgruenhage/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/jcgruenhage",
+        "id": 6861958,
+        "login": "jcgruenhage",
+        "node_id": "MDQ6VXNlcjY4NjE5NTg=",
+        "organizations_url": "https://api.github.com/users/jcgruenhage/orgs",
+        "received_events_url": "https://api.github.com/users/jcgruenhage/received_events",
+        "repos_url": "https://api.github.com/users/jcgruenhage/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/jcgruenhage/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jcgruenhage/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/jcgruenhage",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 462
+}

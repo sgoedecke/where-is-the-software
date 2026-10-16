@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\nOverkiz integration does not work anymore with Rexel Energeasy Connect.\r\nSince several days It asked to reconfigure credentials then following error appears in integration. There are also several overkiz instances that appears in dashboard with strange names like\" Gateway: 1212-8314-6818\"\r\n\r\nFailed to set up: Invalid authentication\r\nIn HA logs there's only followinf error message:\r\n2022-04-26 09:55:05 WARNING (MainThread) [homeassistant.config_entries] Config entry 'xxxxx@gmail.com' for overkiz integration could not authenticate: Invalid authentication\r\n\r\n\n\n### What version of Home Assistant Core has the issue?\n\ncore-2022.4.7\n\n### What was the last working version of Home Assistant Core?\n\n_No response_\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\noverkiz\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/overkiz/\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n_No response_\n\n### Anything in the logs that might be useful for us?\n\n```txt\n2022-04-26 09:55:05 WARNING (MainThread) [homeassistant.config_entries] Config entry 'xxxxx@gmail.com' for overkiz integration could not authenticate: Invalid authentication\n```\n\n\n### Additional information\n\n_No response_",
+      "closed_at": "2026-06-20T12:55:47Z",
+      "comments": 64,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/70869/comments",
+      "created_at": "2022-04-27T09:19:09Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/70869/events",
+      "html_url": "https://github.com/home-assistant/core/issues/70869",
+      "id": 1217064058,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 2926125973,
+          "name": "integration: overkiz",
+          "node_id": "MDU6TGFiZWwyOTI2MTI1OTcz",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20overkiz"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/70869/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc5Iiux6",
+      "number": 70869,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/70869/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/70869/timeline",
+      "title": "Rexel Energeasy Connect does not work in Overkiz integration due to API change",
+      "type": null,
+      "updated_at": "2026-07-20T13:32:10Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/70869",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/83003395?v=4",
+        "events_url": "https://api.github.com/users/cyjud06/events{/privacy}",
+        "followers_url": "https://api.github.com/users/cyjud06/followers",
+        "following_url": "https://api.github.com/users/cyjud06/following{/other_user}",
+        "gists_url": "https://api.github.com/users/cyjud06/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/cyjud06",
+        "id": 83003395,
+        "login": "cyjud06",
+        "node_id": "MDQ6VXNlcjgzMDAzMzk1",
+        "organizations_url": "https://api.github.com/users/cyjud06/orgs",
+        "received_events_url": "https://api.github.com/users/cyjud06/received_events",
+        "repos_url": "https://api.github.com/users/cyjud06/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/cyjud06/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/cyjud06/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/cyjud06",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

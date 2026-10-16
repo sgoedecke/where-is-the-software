@@ -1,0 +1,161 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "4 score and 7 years ago we had this issue - [SPDY is deprecated. Switch to HTTP/2](https://github.com/kubernetes/kubernetes/issues/7452). \r\n\r\nWe are using [docker/spdystream](https://github.com/docker/spdystream) currently for kubectl and problems with SPDY with proxies are documented in the same issue above as well. \r\n\r\nThe long term plan has been to use http/2 by adding support in `x/net/http2` example in https://github.com/golang/go/issues/27244 which have stalled.\r\n\r\nAt some point in the evolution of our api server, we needed to support python based clients and hence we added support for websockets. So API Server already supports websockets. \r\n\r\nSo we could possibly remove SPDY if we switched kubectl to use websocket(s). Should we do that?\r\n\r\ncc @mtaufen @liggitt @smarterclayton @lavalamp \r\n/sig api-machinery\r\n/sig cli",
+      "closed_at": "2023-09-05T23:20:53Z",
+      "comments": 61,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/89163/comments",
+      "created_at": "2020-03-16T23:03:04Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/89163/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/89163",
+      "id": 582648073,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG API Machinery.",
+          "id": 173493835,
+          "name": "sig/api-machinery",
+          "node_id": "MDU6TGFiZWwxNzM0OTM4MzU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/api-machinery"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a new feature.",
+          "id": 267761362,
+          "name": "kind/feature",
+          "node_id": "MDU6TGFiZWwyNjc3NjEzNjI=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": true,
+          "description": "Denotes an issue that needs help from a contributor. Must meet \"help wanted\" guidelines.",
+          "id": 433686790,
+          "name": "help wanted",
+          "node_id": "MDU6TGFiZWw0MzM2ODY3OTA=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/help%20wanted"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG CLI.",
+          "id": 450823910,
+          "name": "sig/cli",
+          "node_id": "MDU6TGFiZWw0NTA4MjM5MTA=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/cli"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Architecture.",
+          "id": 636152047,
+          "name": "sig/architecture",
+          "node_id": "MDU6TGFiZWw2MzYxNTIwNDc=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/architecture"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d3e2f0",
+          "default": false,
+          "description": "Indicates that an issue or PR should not be auto-closed due to staleness.",
+          "id": 778118403,
+          "name": "lifecycle/frozen",
+          "node_id": "MDU6TGFiZWw3NzgxMTg0MDM=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/lifecycle/frozen"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "8fc951",
+          "default": false,
+          "description": "Indicates an issue or PR is ready to be actively worked on.",
+          "id": 2389856656,
+          "name": "triage/accepted",
+          "node_id": "MDU6TGFiZWwyMzg5ODU2NjU2",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/triage/accepted"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/89163/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU1ODI2NDgwNzM=",
+      "number": 89163,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 31,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 1,
+        "laugh": 0,
+        "rocket": 1,
+        "total_count": 33,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/89163/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/89163/timeline",
+      "title": "Support kubectl exec/attach using Websocket",
+      "type": null,
+      "updated_at": "2023-09-05T23:20:53Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/89163",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/23304?v=4",
+        "events_url": "https://api.github.com/users/dims/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dims/followers",
+        "following_url": "https://api.github.com/users/dims/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dims/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dims",
+        "id": 23304,
+        "login": "dims",
+        "node_id": "MDQ6VXNlcjIzMzA0",
+        "organizations_url": "https://api.github.com/users/dims/orgs",
+        "received_events_url": "https://api.github.com/users/dims/received_events",
+        "repos_url": "https://api.github.com/users/dims/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dims/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dims/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dims",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 8
+}

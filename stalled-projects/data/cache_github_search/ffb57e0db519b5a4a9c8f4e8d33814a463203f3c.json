@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### What happened?\r\n\r\nI have built some docker images and pushed them to my dockerhub repo. That means that these docker images are also available on my local computer. Here is an example of a public docker image in my repo https://hub.docker.com/repository/docker/vikash112/pathology/general\r\n\r\nI wrote a yaml file for a pod that uses this image and I keep getting the following error\r\n![image](https://github.com/kubernetes/kubernetes/assets/3863212/92c308c4-d1e6-417c-8511-68d79f8344e7)\r\n\r\nNow, the interesting thing is that \r\n1. Because the image is available locally, k8s should not try to download the image \r\n2. So, inorder to force k8s to not download the image, I used the `imagePullPolicy: Never` and I get the following error, even though the image is clearly present\r\n![image](https://github.com/kubernetes/kubernetes/assets/3863212/7cff6583-9062-4ec5-8ee3-b3e24b15175f)\r\n\r\nSo, another thing I tried was to create a secret in k8s for my docker login following the instructions here https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/\r\n\r\nHowever, I am able to pull the public repositories like `mongodb`, `busybox` etc. So, I don't know why my own public repositories have any problems while pulling. \r\n\r\nAny help will be very very appreciated. \r\nThanks \r\n\r\n\r\n\r\n\r\n\r\n### What did you expect to happen?\r\n\r\nI dont expect k8s to pull any images if they are available locally. If it is trying to pull it should pull my images from docker hub as it is pulling other images like `mongodb`, `busybox` etc.\r\n\r\n### How can we reproduce it (as minimally and precisely as possible)?\r\n\r\nYou can try it using the following yaml script\r\n```\r\napiVersion: v1\r\nkind: Pod\r\nmetadata:\r\n  name: classification-pod\r\nspec:\r\n  restartPolicy: OnFailure\r\n  containers:\r\n    - name: caiiapp\r\n      image: vikash112/pathology:0.1.0\r\n      imagePullPolicy: IfNotPresent\r\n      resources:\r\n        limits:\r\n          nvidia.com/gpu: 1\r\n  nodeSelector:\r\n    kubernetes.io/hostname: digi1036734\r\n```\r\n\r\nLets say you save the file as myscript.yaml. You can execute it as \r\n```\r\nkubectl apply -f myscript.yaml\r\n```\r\n\r\n\r\n### Anything else we need to know?\r\n\r\n_No response_\r\n\r\n### Kubernetes version\r\n\r\n<details>\r\n\r\n```console\r\n$ kubectl version\r\n![image](https://github.com/kubernetes/kubernetes/assets/3863212/8b10a96e-314a-42e6-a650-3f8a66432091)\r\n\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Cloud provider\r\n\r\n<details>\r\nInstalling on prem device\r\n</details>\r\n\r\n\r\n### OS version\r\n\r\n<details>\r\n\r\n```console\r\n# On Linux:\r\n$ cat /etc/os-release\r\n# paste output here\r\n$ uname -a\r\n![image](https://github.com/kubernetes/kubernetes/assets/3863212/3b8e89ab-8ad8-4240-8943-3530809ce1ac)\r\n# On Windows:\r\nC:\\> wmic os get Caption, Version, BuildNumber, OSArchitecture\r\n# paste output here\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Install tools\r\n\r\n<details>\r\n\r\n</details>\r\n\r\n\r\n### Container runtime (CRI) and version (if applicable)\r\n\r\n<details>\r\ncontainerd\r\n</details>\r\n\r\n\r\n### Related plugins (CNI, CSI, ...) and versions (if applicable)\r\n\r\n<details>\r\n\r\n</details>\r\n\r\n/sig auth",
+      "closed_at": "2023-06-30T17:46:50Z",
+      "comments": 4,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/119004/comments",
+      "created_at": "2023-06-30T16:57:11Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/119004/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/119004",
+      "id": 1782851285,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a bug.",
+          "id": 105146071,
+          "name": "kind/bug",
+          "node_id": "MDU6TGFiZWwxMDUxNDYwNzE=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d455d0",
+          "default": false,
+          "description": "Categorizes issue or PR as a support question.",
+          "id": 130318610,
+          "name": "kind/support",
+          "node_id": "MDU6TGFiZWwxMzAzMTg2MTA=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/support"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `sig/foo` label and requires one.",
+          "id": 617149945,
+          "name": "needs-sig",
+          "node_id": "MDU6TGFiZWw2MTcxNDk5NDU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-sig"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/119004/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks5qRCbV",
+      "number": 119004,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/119004/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/119004/timeline",
+      "title": "Not able to download docker images in my dockerhub repo",
+      "type": null,
+      "updated_at": "2023-06-30T17:46:50Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/119004",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/3863212?v=4",
+        "events_url": "https://api.github.com/users/vikashg/events{/privacy}",
+        "followers_url": "https://api.github.com/users/vikashg/followers",
+        "following_url": "https://api.github.com/users/vikashg/following{/other_user}",
+        "gists_url": "https://api.github.com/users/vikashg/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/vikashg",
+        "id": 3863212,
+        "login": "vikashg",
+        "node_id": "MDQ6VXNlcjM4NjMyMTI=",
+        "organizations_url": "https://api.github.com/users/vikashg/orgs",
+        "received_events_url": "https://api.github.com/users/vikashg/received_events",
+        "repos_url": "https://api.github.com/users/vikashg/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/vikashg/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/vikashg/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/vikashg",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 370
+}

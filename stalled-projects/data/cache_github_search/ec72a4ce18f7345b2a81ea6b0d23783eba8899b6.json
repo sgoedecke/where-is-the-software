@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "### What is the problem this feature will solve?\r\n\r\nTL;DR: It will help parse binary files\r\n\r\nBinary files are usually made out of blocks let's take for example the pcapng file format (Packet capture format that contains a \"dump\" of data packets captured over a network) as I'm very familiar with it:\r\n\r\nPcapng file made out of blocks, each block has the total size in it as the size can change depending on the block body\r\n\r\n```\r\n                        1                   2                   3\r\n    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1\r\n   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\r\n 0 |                          Block Type                           |\r\n   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\r\n 4 |                      Block Total Length                       |\r\n   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\r\n 8 /                          Block Body                           /\r\n   /              variable length, padded to 32 bits               /\r\n   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\r\n   |                      Block Total Length                       |\r\n   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\r\n````\r\n\r\nIt's hard to parse that file block by block as the size change and you need to save the loaded buffer until the whole block is loaded and so on.\r\n\r\n### What is the feature you are proposing to solve the problem?\r\n\r\nWhat I'm suggesting is to allow `reduce` operator to accept the generator function\r\n\r\n\r\nWe would use `yield` here when wanting to keep iterating - the data is not enough to push to the next operator/transformer\r\nWe would use `return` when the data is enough and the next operator can get it\r\n(when we return we would return an array, the 1st item is the value ready for the next operator and the 2nd value is the initial value for the next data\r\n\r\nThis is how it would look to parse this file using the generator function in `reduce`:\r\n```js\r\nfs.readFileStream(\"./file.pcapng\").reduce(function* (block, loadedBytes) {\r\n  while (true) {\r\n    const mergedBlock = Buffer.concat(block, blockExpectedTotalSize);\r\n\r\n    if (\r\n      mergedBlock.length <\r\n      REQUIRED_BLOCK_SIZE_TO_GET_TO_TOTAL_LENGTH\r\n    ) {\r\n      yield mergedBlock;\r\n      continue;\r\n    }\r\n    \r\n     const blockExpectedTotalSize = getTotalSizeFromBlock(mergedBlock);\r\n\r\n    if (mergedBlock.length < blockExpectedTotalSize) {\r\n      yield mergedBlock;\r\n      continue;\r\n    }\r\n\r\n    if (mergedBlock.length === blockExpectedTotalSize) {\r\n      return [mergedBlock, Buffer.alloc(0)];\r\n    }\r\n\r\n    if (mergedBlock.length > blockExpectedTotalSize) {\r\n      return [\r\n        // The result\r\n        mergedBlock.slice(0, blockExpectedTotalSize),\r\n\r\n        // The initial value for the next one\r\n        mergedBlock.slice(blockExpectedTotalSize),\r\n      ];\r\n    }\r\n  }\r\n}, Buffer.alloc(0));\r\n```\r\n\r\n### What alternatives have you considered?\r\n\r\nI've used the async generator and done this by only yielding when enough data is exist",
+      "closed_at": "2022-06-29T17:33:48Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/43621/comments",
+      "created_at": "2022-06-29T17:31:04Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/43621/events",
+      "html_url": "https://github.com/nodejs/node/issues/43621",
+      "id": 1289044371,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0D7BDE",
+          "default": false,
+          "description": "Issues requesting new Node.js features.",
+          "id": 207445406,
+          "name": "feature request",
+          "node_id": "MDU6TGFiZWwyMDc0NDU0MDY=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/feature%20request"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/43621/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85M1UGT",
+      "number": 43621,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/43621/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/43621/timeline",
+      "title": "stream: allowing readable reduce to accept a async generator",
+      "type": null,
+      "updated_at": "2022-06-29T17:42:49Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/43621",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/16746759?v=4",
+        "events_url": "https://api.github.com/users/rluvaton/events{/privacy}",
+        "followers_url": "https://api.github.com/users/rluvaton/followers",
+        "following_url": "https://api.github.com/users/rluvaton/following{/other_user}",
+        "gists_url": "https://api.github.com/users/rluvaton/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/rluvaton",
+        "id": 16746759,
+        "login": "rluvaton",
+        "node_id": "MDQ6VXNlcjE2NzQ2NzU5",
+        "organizations_url": "https://api.github.com/users/rluvaton/orgs",
+        "received_events_url": "https://api.github.com/users/rluvaton/received_events",
+        "repos_url": "https://api.github.com/users/rluvaton/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/rluvaton/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/rluvaton/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/rluvaton",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 370
+}

@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "## Bevy version\r\n\r\nBevy 0.5.0.\r\n\r\n## What you did\r\n\r\nComparison between the font rendered by Bevy (ab_glyph) and Firefox (with subpixel disabled and subpixel enabled).\r\n\r\n## What you expected to happen\r\n\r\nThe font rendered with anti-aliasing in Bevy should be as rendered as close as possible as in Firefox (readable in small sizes, sharp, and correct positioning of glyphs).\r\n\r\n## What actually happened\r\n\r\n\r\n### Issue 1: aliasing\r\n\r\nFont in Bevy is \"bulkier\". It is possible to notice that the anti-aliasing in Bevy generates a pixel with higher lightness than in the other implementations, that it is possible to notice single pixels without zooming-in (look at the letter `e`, for example).\r\n\r\nThe line on the top is Bevy, the line in the middle is Firefox with subpixel disabled, and the line bellow is Firefox with subpixel enabled:\r\n![f](https://user-images.githubusercontent.com/59259533/123550812-a374fb00-d745-11eb-8f8f-3b7d02e8ac73.png)\r\n![f2](https://user-images.githubusercontent.com/59259533/123550962-13838100-d746-11eb-9d99-8752c8cb5db9.png)\r\n\r\nThe values indicated are the values of LCh lightness (using the color picker from GIMP). The lightness of the anti-alias in the Bevy implementation is 3-5 times than in the other implementations.\r\n\r\n### Issue 2: vertical positioning\r\n\r\nAnother issue is the positioning of the glyphs on the baseline. In Bevy, with certain fonts at certain font sizes, the glyphs will be rendered on the incorrect vertical position:\r\n\r\n![image](https://user-images.githubusercontent.com/59259533/123551320-a40e9100-d747-11eb-8908-d2d324559534.png)\r\n\r\nIt only happens with certain sizes, but not others. The examples above (showing the aliasing issues) are rendered in the correct vertical position, but not at size 15.\r\n\r\n### Possible issue 3: sizing\r\n\r\nThe size defined in `TextStyle` does not match the size in other implementations. On the first image (showing the aliasing issues), for example, I had to use the size `14.5` to match the font size `12` in Firefox.\r\n\r\n## Additional information\r\n\r\nI did this experiment using the font \"Fredoka One\" on Google Fonts for comparison.\r\n\r\n## Proposal\r\n\r\nReplace the Bevy implementation with one of two existing solutions: [`fontdue`](https://github.com/mooman219/fontdue/) or [`swash`](https://github.com/dfrg/swash). It seems that these two libraries are the best options for font rendering in pure Rust. We should evaluate which features that both have or don't have that are important for Bevy.",
+      "closed_at": "2024-08-22T22:59:25Z",
+      "comments": 12,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/2404/comments",
+      "created_at": "2021-06-27T16:20:29Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/2404/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/2404",
+      "id": 930968360,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "C6A751",
+          "default": false,
+          "description": "Drawing game state to the screen",
+          "id": 2045383863,
+          "name": "A-Rendering",
+          "node_id": "MDU6TGFiZWwyMDQ1MzgzODYz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-Rendering"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c6A751",
+          "default": false,
+          "description": "Rendering and layout for characters",
+          "id": 6203464532,
+          "name": "A-Text",
+          "node_id": "LA_kwDODf6-U88AAAABccFbVA",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/A-Text"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/2404/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU5MzA5NjgzNjA=",
+      "number": 2404,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 5,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 5,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/2404/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/2404/timeline",
+      "title": "Replace the font renderer with one without the issues of anti-aliasing/hinting/subpixel/baseline",
+      "type": null,
+      "updated_at": "2024-08-22T22:59:26Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/2404",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/59259533?v=4",
+        "events_url": "https://api.github.com/users/dasifefe/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dasifefe/followers",
+        "following_url": "https://api.github.com/users/dasifefe/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dasifefe/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dasifefe",
+        "id": 59259533,
+        "login": "dasifefe",
+        "node_id": "MDQ6VXNlcjU5MjU5NTMz",
+        "organizations_url": "https://api.github.com/users/dasifefe/orgs",
+        "received_events_url": "https://api.github.com/users/dasifefe/received_events",
+        "repos_url": "https://api.github.com/users/dasifefe/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dasifefe/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dasifefe/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dasifefe",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 9
+}

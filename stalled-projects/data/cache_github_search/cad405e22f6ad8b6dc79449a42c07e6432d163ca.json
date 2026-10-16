@@ -1,0 +1,172 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "Details of use SkSL warmup\r\n\r\n I read the document, but some details are not explained in the document\r\n\r\n https://docs.flutter.dev/perf/rendering/shader#how-to-use-sksl-warmup\r\n\r\n 1. If the app has animation drop frames caused by SKSL, do both Android and iOS require SkSL warmup before publishing to the store?\r\n\r\n 2. Does this provide a better experience on older devices,  such as iPhone6s?\r\n\r\n 3. On which version of the Flutter stable channel was SkSL warmup support for iOS Metal added?\r\n\r\n 4. Does a mobile platform, such as the iOS platform, only use one mobile device for SkSL warmup, or does it require multiple devices and multiple .sksl.json files?\r\n\r\n 5. How do we use SkSL warmup to get the maximum performance improvement?\r\n\r\n\r\n Thank you for your reply",
+      "closed_at": "2025-01-31T01:26:15Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/95935/comments",
+      "created_at": "2021-12-29T13:24:39Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/95935/events",
+      "html_url": "https://github.com/flutter/flutter/issues/95935",
+      "id": 1090519360,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "FC6401",
+          "default": false,
+          "description": "flutter/engine related. See also e: labels.",
+          "id": 284438921,
+          "name": "engine",
+          "node_id": "MDU6TGFiZWwyODQ0Mzg5MjE=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/engine"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0e8a16",
+          "default": false,
+          "description": "Issues with https://api.flutter.dev/",
+          "id": 535362743,
+          "name": "d: api docs",
+          "node_id": "MDU6TGFiZWw1MzUzNjI3NDM=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/d:%20api%20docs"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "55ddbb",
+          "default": false,
+          "description": "A truly polished experience",
+          "id": 796550875,
+          "name": "a: quality",
+          "node_id": "MDU6TGFiZWw3OTY1NTA4NzU=",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/a:%20quality"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "4d7910",
+          "default": false,
+          "description": "Performance issues related to (mostly rendering) speed",
+          "id": 1710809165,
+          "name": "perf: speed",
+          "node_id": "MDU6TGFiZWwxNzEwODA5MTY1",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/perf:%20speed"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "550000",
+          "default": false,
+          "description": "Issues that are less important to the Flutter project",
+          "id": 2096802849,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwyMDk2ODAyODQ5",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "4d7910",
+          "default": false,
+          "description": "Performance issues related to app startup time",
+          "id": 3405396305,
+          "name": "perf: startup",
+          "node_id": "LA_kwDOAeUeuM7K-jlR",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/perf:%20startup"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "198022",
+          "default": false,
+          "description": "Owned by Engine team",
+          "id": 5706368317,
+          "name": "team-engine",
+          "node_id": "LA_kwDOAeUeuM8AAAABVCBFPQ",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/team-engine"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "b8ccba",
+          "default": false,
+          "description": "Triaged by Engine team",
+          "id": 5706368328,
+          "name": "triaged-engine",
+          "node_id": "LA_kwDOAeUeuM8AAAABVCBFSA",
+          "url": "https://api.github.com/repos/flutter/flutter/labels/triaged-engine"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/95935/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM5BAAFA",
+      "number": 95935,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/95935/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/95935/timeline",
+      "title": "Provide more details on the usage of SkSL warmup",
+      "type": null,
+      "updated_at": "2025-02-14T01:27:33Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/95935",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/22866404?v=4",
+        "events_url": "https://api.github.com/users/paintingStyle/events{/privacy}",
+        "followers_url": "https://api.github.com/users/paintingStyle/followers",
+        "following_url": "https://api.github.com/users/paintingStyle/following{/other_user}",
+        "gists_url": "https://api.github.com/users/paintingStyle/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/paintingStyle",
+        "id": 22866404,
+        "login": "paintingStyle",
+        "node_id": "MDQ6VXNlcjIyODY2NDA0",
+        "organizations_url": "https://api.github.com/users/paintingStyle/orgs",
+        "received_events_url": "https://api.github.com/users/paintingStyle/received_events",
+        "repos_url": "https://api.github.com/users/paintingStyle/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/paintingStyle/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/paintingStyle/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/paintingStyle",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 91
+}

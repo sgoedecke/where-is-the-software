@@ -1,0 +1,104 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a feature request that matches the one I want to file, without success.\n\n### Problem Description\n\n- I'm trying to make a browser window on the `macOS`, but I don't want to make it visible on `the application windows list`.\r\n- On `Windows OS`, I'm using the perfect below options that did the job, and clicking on `Alt + Tab` will not show the window to the list of windows, while the same options on macOS will add the browser window to `the application windows list` via clicking on `F3` key.\r\n\r\n```js\r\n        focusable: false,\r\n        transparent: true,\r\n        alwaysOnTop: true,\r\n        skipTaskbar: true,\r\n        frame: false,\r\n```\n\n### Proposed Solution\n\nProviding options for the browser window on `macOS` to prevent adding it to `the application windows list` as `Window OS`.\n\n### Alternatives Considered\n\nAny alternative options from your side will be appreciated if there.\r\nThanks in advance!\n\n### Additional Information\n\n_No response_",
+      "closed_at": "2026-08-11T08:18:06Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/38882/comments",
+      "created_at": "2023-06-21T19:01:43Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/38882/events",
+      "html_url": "https://github.com/electron/electron/issues/38882",
+      "id": 1768237342,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/38882/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85pZSke",
+      "number": 38882,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 1,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 1,
+        "url": "https://api.github.com/repos/electron/electron/issues/38882/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/38882/timeline",
+      "title": "[Feature Request]: hiding Electron browser window from the applications windows list ",
+      "type": {
+        "color": "blue",
+        "created_at": "2024-01-25T14:31:12Z",
+        "description": "A request, idea, or new functionality",
+        "id": 1725382,
+        "is_enabled": true,
+        "name": "Enhancement",
+        "node_id": "IT_kwDOAMybxs4AGlPG",
+        "updated_at": "2024-07-26T10:30:10Z"
+      },
+      "updated_at": "2026-08-11T08:18:06Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/38882",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/80884942?v=4",
+        "events_url": "https://api.github.com/users/oalfroukh/events{/privacy}",
+        "followers_url": "https://api.github.com/users/oalfroukh/followers",
+        "following_url": "https://api.github.com/users/oalfroukh/following{/other_user}",
+        "gists_url": "https://api.github.com/users/oalfroukh/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/oalfroukh",
+        "id": 80884942,
+        "login": "oalfroukh",
+        "node_id": "MDQ6VXNlcjgwODg0OTQy",
+        "organizations_url": "https://api.github.com/users/oalfroukh/orgs",
+        "received_events_url": "https://api.github.com/users/oalfroukh/received_events",
+        "repos_url": "https://api.github.com/users/oalfroukh/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/oalfroukh/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/oalfroukh/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/oalfroukh",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 60
+}

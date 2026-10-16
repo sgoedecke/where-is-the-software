@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\r\n\r\nv16.19.1\r\n\r\n### Platform\r\n\r\nDarwin laurenzos-macbook-pro.home 22.5.0 Darwin Kernel Version 22.5.0: Thu Jun  8 22:22:22 PDT 2023; root:xnu-8796.121.3~7/RELEASE_X86_64 x86_64\r\n\r\n### Subsystem\r\n\r\n_No response_\r\n\r\n### What steps will reproduce the bug?\r\n\r\nCopy and paste the following code in the index.js file\r\n```js\r\nconst http = require('http');\r\n\r\nconst hostname = '127.0.0.1';\r\nconst port = 3000;\r\n\r\nconst server = http.createServer((req, res) => {\r\n  const p = new Promise((resolve) => {\r\n    setTimeout(() => {\r\n      resolve()\r\n    }, 10000)\r\n  })\r\n  p.then(() => {\r\n    res.statusCode = 200;\r\n    res.setHeader('Content-Type', 'text/plain');\r\n    res.end(\"hello \" + req.url);\r\n  })\r\n});\r\n\r\nserver.listen(port, hostname, () => {\r\n  console.log(`Server running at http://${hostname}:${port}/`);\r\n});\r\n```\r\nand start the server.\r\n\r\nFirst case:\r\nWhen you launch 2 tabs on your browser with different paths such as /foo and /bar, the two tabs are loading for 5 seconds and then display respectively \"hello /foo\" and \"hello bar\" at the same time.\r\nhttps://watch.screencastify.com/v/ST2EyvSW4vMwyCZZ7xAU\r\n\r\nSecond case:\r\nWhen you launch 2 tabs on your browser with the same path (/foo for instance), the first tab is loading for 5 seconds and then displays \"hello /foo\" and the second tab is loading for 10 seconds and display \"hello /foo\".\r\nhttps://watch.screencastify.com/v/FqB1wEobYXkBGjbIvDbj\r\n\r\n### How often does it reproduce? Is there a required condition?\r\n\r\nAlways reproducible.\r\n\r\n### What is the expected behavior? Why is that the expected behavior?\r\n\r\nI would expect the second case to work like the first case:\r\nwhen launching 2 tabs on your browser with the same path (/foo for instance), the two tabs are loading for 5 seconds and then display \"hello /foo\" at the same time.\r\n\r\n### What do you see instead?\r\n\r\nIn the second case, the second tab is loading for 10 seconds, as if the second request was beginning to be handled only after the first one is finished, while in the first case, they seem to be handled at the same time.\r\n\r\n### Additional information\r\n\r\nI know Node.js is single-threaded, however it does not explain the difference between the two cases.",
+      "closed_at": "2023-06-30T13:00:56Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/48600/comments",
+      "created_at": "2023-06-29T14:50:05Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/48600/events",
+      "html_url": "https://github.com/nodejs/node/issues/48600",
+      "id": 1780991097,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "cc317c",
+          "default": true,
+          "description": "Issues asking questions about Node.js.",
+          "id": 151728679,
+          "name": "question",
+          "node_id": "MDU6TGFiZWwxNTE3Mjg2Nzk=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/question"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c7def8",
+          "default": false,
+          "description": "Issues and PRs related to the http subsystem.",
+          "id": 155267422,
+          "name": "http",
+          "node_id": "MDU6TGFiZWwxNTUyNjc0MjI=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/http"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/48600/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85qJ8R5",
+      "number": 48600,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 3,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 3,
+        "url": "https://api.github.com/repos/nodejs/node/issues/48600/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/48600/timeline",
+      "title": "Cannot handle multiple requests on same http path",
+      "type": null,
+      "updated_at": "2023-06-30T13:00:56Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/48600",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1711382?v=4",
+        "events_url": "https://api.github.com/users/LaurentBERTHOLLE/events{/privacy}",
+        "followers_url": "https://api.github.com/users/LaurentBERTHOLLE/followers",
+        "following_url": "https://api.github.com/users/LaurentBERTHOLLE/following{/other_user}",
+        "gists_url": "https://api.github.com/users/LaurentBERTHOLLE/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/LaurentBERTHOLLE",
+        "id": 1711382,
+        "login": "LaurentBERTHOLLE",
+        "node_id": "MDQ6VXNlcjE3MTEzODI=",
+        "organizations_url": "https://api.github.com/users/LaurentBERTHOLLE/orgs",
+        "received_events_url": "https://api.github.com/users/LaurentBERTHOLLE/received_events",
+        "repos_url": "https://api.github.com/users/LaurentBERTHOLLE/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/LaurentBERTHOLLE/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/LaurentBERTHOLLE/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/LaurentBERTHOLLE",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 236
+}

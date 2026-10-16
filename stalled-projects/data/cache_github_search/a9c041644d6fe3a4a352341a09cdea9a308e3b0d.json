@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "# Bug Report\r\n\r\n<!--\r\n  Please fill in each section completely. Thank you!\r\n-->\r\n\r\n### \ud83d\udd0e Search Terms\r\n\r\n<!--\r\n  What search terms did you use when trying to find an existing bug report?\r\n  List them here so people in the future can find this one more easily.\r\n-->\r\n\r\n### \ud83d\udd57 Version & Regression Information\r\n\r\n<!-- When did you start seeing this bug occur?\r\n\r\n\"Bugs\" that have existed in TS for a long time are very likely to be FAQs; refer to\r\n  https://github.com/Microsoft/TypeScript/wiki/FAQ#common-bugs-that-arent-bugs\r\n\r\nIf possible, please try testing the nightly version of TS to see if it's already been fixed.\r\nFor npm: `typescript@next`\r\nThis is also the 'Nightly' version in the playground: http://www.typescriptlang.org/play/?ts=Nightly\r\n\r\nNote: The TypeScript Playground can be used to try older versions of TypeScript.\r\n\r\nPlease keep and fill in the line that best applies:\r\n-->\r\nTypeScript 4.9.4\r\n\r\n### \u23ef Playground Link\r\n\r\n<!--\r\n  A link to a TypeScript Playground \"Share\" link which shows this behavior\r\n\r\n  The TypeScript Workbench can be used for more complex setups, try\r\n  https://www.typescriptlang.org/dev/bug-workbench/\r\n\r\n  As a last resort, you can link to a repo, but these will be slower for us to investigate.\r\n-->\r\n[Playground link with relevant code](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABMOcAUMAmAuRBnKAJxjAHMBKRAbwFgAoRRCBAxQgU2cJ0QCVO43ADwFiZADSIwIALYAjdoUQAfRAEFChAIYBPIdPmKAfEcQBeagF8A3PXqNmYVls3m2A7gG0sAXVt17RBhgRDQNbR0AOhg8cN00F0JySloGRkQAegzEAHdBAGtAxkTIgAcQPAALNABGcn9GS0DA4NC4qJj2tA4uTG9MH2TqIszszDh2PDAAcihcgpGewT7fMorquobEJrodoA)\r\n\r\n### \ud83d\udcbb Code\r\n\r\n<!-- Please post the relevant code sample here as well-->\r\n```ts\r\nfunction foo(id: string) {\r\n  const record: Record<string, number | Array<number>> = {};\r\n\r\n  const arr = record[id];\r\n\r\n  if (Array.isArray(arr)) {\r\n    // work\r\n    arr.push(1);\r\n  }\r\n  \r\n  if (Array.isArray(record[id])) {\r\n    // doesn't work\r\n    record[id].push(1);\r\n  }\r\n}\r\n```\r\n\r\n### \ud83d\ude41 Actual behavior\r\n\r\n<!-- What happened, and why it was wrong -->\r\nIf the record value is used directly is not narrowed down to an array.\r\n\r\n### \ud83d\ude42 Expected behavior\r\n\r\n<!-- What you expected to happen instead, and why -->\r\nThe record value type should be narrowed.",
+      "closed_at": "2022-12-24T09:44:28Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/52014/comments",
+      "created_at": "2022-12-24T09:35:20Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/52014/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/52014",
+      "id": 1510019712,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/52014/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc5aARKA",
+      "number": 52014,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/52014/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/52014/timeline",
+      "title": "A record value should be narrowed down to array when using Array.isArray",
+      "type": null,
+      "updated_at": "2025-10-22T00:16:01Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/52014",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/10583268?v=4",
+        "events_url": "https://api.github.com/users/ficristo/events{/privacy}",
+        "followers_url": "https://api.github.com/users/ficristo/followers",
+        "following_url": "https://api.github.com/users/ficristo/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ficristo/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ficristo",
+        "id": 10583268,
+        "login": "ficristo",
+        "node_id": "MDQ6VXNlcjEwNTgzMjY4",
+        "organizations_url": "https://api.github.com/users/ficristo/orgs",
+        "received_events_url": "https://api.github.com/users/ficristo/received_events",
+        "repos_url": "https://api.github.com/users/ficristo/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/ficristo/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ficristo/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/ficristo",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 469
+}

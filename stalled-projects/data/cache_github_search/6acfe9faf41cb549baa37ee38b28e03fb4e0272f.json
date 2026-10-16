@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!--\r\n  Please provide a clear and concise description of what the bug is. Include\r\n  screenshots if needed. Please test using the latest version of the relevant\r\n  React packages to make sure your issue has not already been fixed.\r\n-->\r\n\r\nReact version: Latest\r\n\r\n## Steps To Reproduce\r\n\r\n1. Go to [react.dev](https://react.dev) (or other react app in prod or dev build)\r\n2. Open inspect pane\r\n\r\n<!--\r\n  Your bug will get fixed much faster if we can run your code and it doesn't\r\n  have dependencies other than React. Issues without reproduction steps or\r\n  code examples may be immediately closed as not actionable.\r\n-->\r\n\r\nLink to code example: [Example Codesandbox](https://codesandbox.io/s/nifty-ace-5zh2k9). If you have the console open and reload you will see the errors for a second then they will vanish as the internal console logs are cleared. To actually see it and not have it vanish, go to [react.dev](https://react.dev)\r\n\r\n<!--\r\n  Please provide a CodeSandbox (https://codesandbox.io/s/new), a link to a\r\n  repository on GitHub, or provide a minimal code example that reproduces the\r\n  problem. You may provide a screenshot of the application if you think it is\r\n  relevant to your bug report. Here are some tips for providing a minimal\r\n  example: https://stackoverflow.com/help/mcve.\r\n-->\r\n\r\n## The current behavior\r\nThere are 2 issues in the console:\r\n```\r\nlockdown-run.js:17 Lockdown failed: TypeError: At intrinsics.Object.groupBy expected boolean not function\r\n  at isAllowedPropertyValue (lockdown-install.js:1:53384)\r\n  at isAllowedProperty (lockdown-install.js:1:53807)\r\n  at visitProperties (lockdown-install.js:1:55095)\r\n  at isAllowedPropertyValue (lockdown-install.js:1:53041)\r\n  at isAllowedProperty (lockdown-install.js:1:53807)\r\n  at visitProperties (lockdown-install.js:1:55095)\r\n  at lockdown-install.js:1:55523\r\n  at repairIntrinsics (lockdown-install.js:1:144597)\r\n  at lockdown-install.js:1:145462\r\n  at lockdown-run.js:4:3\r\n```\r\nand\r\n```\r\nlockdown-run.js:17 Lockdown failed: TypeError: At intrinsics.Object.groupBy expected boolean not function\r\n  at isAllowedPropertyValue (lockdown-install.js:1:53384)\r\n  at isAllowedProperty (lockdown-install.js:1:53807)\r\n  at visitProperties (lockdown-install.js:1:55095)\r\n  at isAllowedPropertyValue (lockdown-install.js:1:53041)\r\n  at isAllowedProperty (lockdown-install.js:1:53807)\r\n  at visitProperties (lockdown-install.js:1:55095)\r\n  at lockdown-install.js:1:55523\r\n  at repairIntrinsics (lockdown-install.js:1:144597)\r\n  at lockdown-install.js:1:145462\r\n  at lockdown-run.js:4:3\r\n```\r\nThe website works fine but having errors in the console can impact google SEO and is generally not best practice.\r\n\r\n## The expected behavior\r\nNo errors in the console, at least building the react app removes the errors and not with a temporary fix such as `console.clear()`.",
+      "closed_at": "2023-09-25T11:49:31Z",
+      "comments": 14,
+      "comments_url": "https://api.github.com/repos/react/react/issues/27411/comments",
+      "created_at": "2023-09-23T22:40:32Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/27411/events",
+      "html_url": "https://github.com/react/react/issues/27411",
+      "id": 1910022445,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/27411/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAJy2Ks5x2KEt",
+      "number": 27411,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/27411/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/27411/timeline",
+      "title": "Bug: Lockdown Failed",
+      "type": null,
+      "updated_at": "2023-10-04T12:09:05Z",
+      "url": "https://api.github.com/repos/react/react/issues/27411",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/109481728?v=4",
+        "events_url": "https://api.github.com/users/InsightfulFuture/events{/privacy}",
+        "followers_url": "https://api.github.com/users/InsightfulFuture/followers",
+        "following_url": "https://api.github.com/users/InsightfulFuture/following{/other_user}",
+        "gists_url": "https://api.github.com/users/InsightfulFuture/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/InsightfulFuture",
+        "id": 109481728,
+        "login": "InsightfulFuture",
+        "node_id": "U_kgDOBoaPAA",
+        "organizations_url": "https://api.github.com/users/InsightfulFuture/orgs",
+        "received_events_url": "https://api.github.com/users/InsightfulFuture/received_events",
+        "repos_url": "https://api.github.com/users/InsightfulFuture/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/InsightfulFuture/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/InsightfulFuture/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/InsightfulFuture",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 44
+}

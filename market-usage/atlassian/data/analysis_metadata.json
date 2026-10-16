@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-10-15T19:33:50",
+  "today_assumed": "2026-10-15",
+  "listing_rows": 10538,
+  "unique_addons_observed": 8295,
+  "segment_rows": {
+    "cloud": 6687,
+    "dc_server": 2648
+  },
+  "current_listing_counts_by_hosting_filter": {
+    "cloud": 6687,
+    "dataCenter": 1589,
+    "server": 2262
+  },
+  "cohort_rows": 48,
+  "recent_since_2025_07_01": 2596,
+  "recent_top50_ai_flags": 8,
+  "recent_top50_established_vendors": 45
+}

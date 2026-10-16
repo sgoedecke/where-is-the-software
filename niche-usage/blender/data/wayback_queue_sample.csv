@@ -1,0 +1,10 @@
+target_date,parsed_results,parsed_rows,awaiting_review,awaiting_changes,status,url
+20241015,,48,33,15,ok,https://web.archive.org/web/20241015id_/https://extensions.blender.org/approval-queue/
+20250115,,0,0,0,ok,https://web.archive.org/web/20250115id_/https://extensions.blender.org/approval-queue/
+20250415,725,50,5,45,ok,https://web.archive.org/web/20250415id_/https://extensions.blender.org/approval-queue/
+20250715,874,50,13,37,ok,https://web.archive.org/web/20250715id_/https://extensions.blender.org/approval-queue/
+20251015,1045,50,3,47,ok,https://web.archive.org/web/20251015id_/https://extensions.blender.org/approval-queue/
+20260115,,0,0,0,ok,https://web.archive.org/web/20260115id_/https://extensions.blender.org/approval-queue/
+20260415,,0,0,0,ok,https://web.archive.org/web/20260415id_/https://extensions.blender.org/approval-queue/
+20260715,1761,50,21,29,ok,https://web.archive.org/web/20260715id_/https://extensions.blender.org/approval-queue/
+20261015,2168,49,15,34,ok,https://web.archive.org/web/20261015id_/https://extensions.blender.org/approval-queue/

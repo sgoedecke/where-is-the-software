@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### MVP\r\n- [x] Initial prototype with a tree and toggling.\r\n- [x] Tree should reflect real suspense state.\r\n- [ ] Make it less fragile.\r\n  - [x] Does findDOMNode issue affect this?\r\n- [ ] Ensure expensive tree construction doesn't run unless you're on the tab.\r\n- [ ] Improve navigation so the user doesn't get lost.\r\n  - [ ] Maybe flash nodes.\r\n  - [ ] Maybe offer a \"finder\" tool.\r\n- [ ] Sync selection with the Components tab.\r\n- [ ] Make it look nice. @bvaughn \r\n\r\n### Future\r\n- [ ] Consider a fuzzer.\r\n- [ ] Considering filtering by viewport.\r\n- [ ] Optimize the tree updates.\r\n  - [ ] Consider listening to operations. Don't forget to handle ancestor reorder.\r\n\r\n---\r\nOriginally reported by @gaearon via https://github.com/bvaughn/react-devtools-experimental/issues/43",
+      "closed_at": "2023-04-14T12:49:41Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/react/react/issues/16489/comments",
+      "created_at": "2019-08-19T22:25:26Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/16489/events",
+      "html_url": "https://github.com/react/react/issues/16489",
+      "id": 482556895,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": null,
+          "id": 40929153,
+          "name": "Type: Enhancement",
+          "node_id": "MDU6TGFiZWw0MDkyOTE1Mw==",
+          "url": "https://api.github.com/repos/react/react/labels/Type:%20Enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": null,
+          "id": 710573595,
+          "name": "Component: Developer Tools",
+          "node_id": "MDU6TGFiZWw3MTA1NzM1OTU=",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20Developer%20Tools"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9149d1",
+          "default": false,
+          "description": "Opened by a member of the React Core Team",
+          "id": 1775958285,
+          "name": "React Core Team",
+          "node_id": "MDU6TGFiZWwxNzc1OTU4Mjg1",
+          "url": "https://api.github.com/repos/react/react/labels/React%20Core%20Team"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/16489/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU0ODI1NTY4OTU=",
+      "number": 16489,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 2,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/react/react/issues/16489/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/16489/timeline",
+      "title": "DevTools: Suspense Debugger",
+      "type": null,
+      "updated_at": "2023-04-14T12:49:41Z",
+      "url": "https://api.github.com/repos/react/react/issues/16489",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/29597?v=4",
+        "events_url": "https://api.github.com/users/bvaughn/events{/privacy}",
+        "followers_url": "https://api.github.com/users/bvaughn/followers",
+        "following_url": "https://api.github.com/users/bvaughn/following{/other_user}",
+        "gists_url": "https://api.github.com/users/bvaughn/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/bvaughn",
+        "id": 29597,
+        "login": "bvaughn",
+        "node_id": "MDQ6VXNlcjI5NTk3",
+        "organizations_url": "https://api.github.com/users/bvaughn/orgs",
+        "received_events_url": "https://api.github.com/users/bvaughn/received_events",
+        "repos_url": "https://api.github.com/users/bvaughn/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/bvaughn/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/bvaughn/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/bvaughn",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

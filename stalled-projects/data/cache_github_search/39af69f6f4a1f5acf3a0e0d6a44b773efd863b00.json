@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "# Feature or enhancement\r\n\r\n### Proposal:\r\n\r\nIt is known to be efficient to get a module state from an object directly rather than from a type.  The same can go for the `_decimal`'s context object (i.e. extending the `PyDecContextObject` struct).\r\n\r\nExtending `PyDecObject`, which made no perf difference for me, seems to be a waste of memory with many objects.\r\n\r\ncc @vstinner @erlend-aasland @mdboom\r\n\r\n### Links to previous discussion of this feature:\r\n\r\n* #119663\r\n\r\n<!-- gh-linked-prs -->\r\n### Linked PRs\r\n* gh-124691\r\n<!-- /gh-linked-prs -->\r\n",
+      "closed_at": "2024-09-28T16:20:10Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/124688/comments",
+      "created_at": "2024-09-27T17:59:57Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/124688/events",
+      "html_url": "https://github.com/python/cpython/issues/124688",
+      "id": 2553458498,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "C modules in the Modules dir",
+          "id": 4018672955,
+          "name": "extension-modules",
+          "node_id": "LA_kwDOBN0Z8c7viBU7",
+          "url": "https://api.github.com/repos/python/cpython/labels/extension-modules"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/124688/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c6YMq9C",
+      "number": 124688,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/124688/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/124688/timeline",
+      "title": "_decimal: Store a module state in objects for faster access",
+      "type": null,
+      "updated_at": "2024-09-28T16:20:10Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/124688",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/53406459?v=4",
+        "events_url": "https://api.github.com/users/neonene/events{/privacy}",
+        "followers_url": "https://api.github.com/users/neonene/followers",
+        "following_url": "https://api.github.com/users/neonene/following{/other_user}",
+        "gists_url": "https://api.github.com/users/neonene/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/neonene",
+        "id": 53406459,
+        "login": "neonene",
+        "node_id": "MDQ6VXNlcjUzNDA2NDU5",
+        "organizations_url": "https://api.github.com/users/neonene/orgs",
+        "received_events_url": "https://api.github.com/users/neonene/received_events",
+        "repos_url": "https://api.github.com/users/neonene/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/neonene/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/neonene/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/neonene",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 640
+}

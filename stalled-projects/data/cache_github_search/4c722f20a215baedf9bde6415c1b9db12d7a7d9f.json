@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "## Bevy version\r\n\r\nbevy 0.11.3\r\nbevy_render 0.11.3\r\n\r\n## What you did\r\n\r\ncopied example code for compute_shader_game_of_life.rs into new project along with shader code in assets/shaders folder\r\n\r\n## What went wrong\r\n\r\nBuild fails with:\r\nerror[E0599]: no variant or associated item named `PrepareBindGroups` found for enum `RenderSet` in the current scope\r\n\r\n src\\main.rs:79:50\r\n\r\nprepare_bind_group.in_set(RenderSet::PrepareBindGroups)\r\n\r\n## Additional information\r\n\r\nUsing \"Go to definition\" in VSCode shows the enum that is, I believe, the version of lib.rs from 2 months ago (July 4th commit):\r\n\r\n[https://github.com/bevyengine/bevy/blob/608367f9059c4391cade8dfbc811a8e02255ae25/crates/bevy_render/src/lib.rs](url)\r\n\r\nNot the more recent ones with PrepareBindGroups added around the end of August.\r\n\r\n\r\n",
+      "closed_at": "2023-09-29T19:09:11Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/9970/comments",
+      "created_at": "2023-09-29T17:47:00Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/9970/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/9970",
+      "id": 1919685073,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876e3",
+          "default": false,
+          "description": "This issue needs to be labelled",
+          "id": 2488007862,
+          "name": "S-Needs-Triage",
+          "node_id": "MDU6TGFiZWwyNDg4MDA3ODYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/9970/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85ybBHR",
+      "number": 9970,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/9970/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/9970/timeline",
+      "title": "bevy_render 0.11.3 using old code? Compute Shader example won't compile",
+      "type": null,
+      "updated_at": "2023-09-29T19:09:11Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/9970",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7412425?v=4",
+        "events_url": "https://api.github.com/users/Rippletank/events{/privacy}",
+        "followers_url": "https://api.github.com/users/Rippletank/followers",
+        "following_url": "https://api.github.com/users/Rippletank/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Rippletank/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/Rippletank",
+        "id": 7412425,
+        "login": "Rippletank",
+        "node_id": "MDQ6VXNlcjc0MTI0MjU=",
+        "organizations_url": "https://api.github.com/users/Rippletank/orgs",
+        "received_events_url": "https://api.github.com/users/Rippletank/received_events",
+        "repos_url": "https://api.github.com/users/Rippletank/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/Rippletank/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Rippletank/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/Rippletank",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 173
+}

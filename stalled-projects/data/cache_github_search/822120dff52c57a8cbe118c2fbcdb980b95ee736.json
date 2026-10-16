@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "https://twitter.com/acdlite/status/1369894466308497411\r\n\r\nThis is a tweet from @acdlite , which I think is worth thinking about and recording\r\n\r\nThe current react fiber linked list structure does limit the implementation of few algorithms, such as the right to left diff algorithm based on the longest incremental subsequence.\r\n\r\nIs there a new structure that doesn't need a return pointer? What should it look like?\r\n\r\nIt's easy to delete alternative pointer, but what about the return pointer? Is there a new structure to replace it?",
+      "closed_at": "2024-04-11T05:22:53Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/react/react/issues/21137/comments",
+      "created_at": "2021-03-30T07:14:26Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/21137/events",
+      "html_url": "https://github.com/react/react/issues/21137",
+      "id": 844158973,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": "A potential issue that we haven't yet confirmed as a bug",
+          "id": 155984160,
+          "name": "Status: Unconfirmed",
+          "node_id": "MDU6TGFiZWwxNTU5ODQxNjA=",
+          "url": "https://api.github.com/repos/react/react/labels/Status:%20Unconfirmed"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e6e6e6",
+          "default": false,
+          "description": "Automatically closed due to inactivity",
+          "id": 1775957182,
+          "name": "Resolution: Stale",
+          "node_id": "MDU6TGFiZWwxNzc1OTU3MTgy",
+          "url": "https://api.github.com/repos/react/react/labels/Resolution:%20Stale"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/21137/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU4NDQxNTg5NzM=",
+      "number": 21137,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/react/react/issues/21137/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/21137/timeline",
+      "title": "Another Fiber structure without return pointer.",
+      "type": null,
+      "updated_at": "2024-04-11T05:22:53Z",
+      "url": "https://api.github.com/repos/react/react/issues/21137",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/12951461?v=4",
+        "events_url": "https://api.github.com/users/yisar/events{/privacy}",
+        "followers_url": "https://api.github.com/users/yisar/followers",
+        "following_url": "https://api.github.com/users/yisar/following{/other_user}",
+        "gists_url": "https://api.github.com/users/yisar/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/yisar",
+        "id": 12951461,
+        "login": "yisar",
+        "node_id": "MDQ6VXNlcjEyOTUxNDYx",
+        "organizations_url": "https://api.github.com/users/yisar/orgs",
+        "received_events_url": "https://api.github.com/users/yisar/received_events",
+        "repos_url": "https://api.github.com/users/yisar/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/yisar/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/yisar/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/yisar",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 3
+}

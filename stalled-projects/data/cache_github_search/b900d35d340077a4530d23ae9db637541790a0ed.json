@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "##### SUMMARY\r\nWhen gathering facts for Debian systems, Ansible fails to detect at least \"bullseye\". The fact \"ansible_distribution_release\" is \"NA\". \r\nThis seems to be caused by trying to call a shell-command via module.run_command(), but not specifying \"use_unsafe_shell=True\"\r\n\r\n##### ISSUE TYPE\r\n- Bug Report\r\n\r\n##### COMPONENT NAME\r\nmodule_utils/facts/system/distribution.py\r\n\r\n##### ANSIBLE VERSION\r\n```paste below\r\n2.9.9\r\n```\r\nbut seems to still be the same on master as well.\r\n\r\n##### CONFIGURATION\r\n```paste below\r\nALLOW_WORLD_READABLE_TMPFILES(/opt/svn/Ansible/ansible.cfg) = True\r\nANSIBLE_PIPELINING(/opt/svn/Ansible/ansible.cfg) = True\r\nANSIBLE_SSH_ARGS(/opt/svn/Ansible/ansible.cfg) = -C -o ControlMaster=no -o ControlPersist=15m\r\nDEFAULT_GATHERING(/opt/svn/Ansible/ansible.cfg) = smart\r\nDEFAULT_GATHER_SUBSET(/opt/svn/Ansible/ansible.cfg) = [u'min']\r\nDEFAULT_SCP_IF_SSH(/opt/svn/Ansible/ansible.cfg) = True\r\nDEFAULT_STDOUT_CALLBACK(/opt/svn/Ansible/ansible.cfg) = debug\r\n```\r\n\r\n##### OS / ENVIRONMENT\r\nHost: Ubuntu 18.04\r\nRemote system: Debian Bullseye\r\n\r\n\r\n##### STEPS TO REPRODUCE\r\nRun `ansible -m setup` against a Debian Bullseye operating system and check `ansible_distribution_release`. It will be \"NA\".\r\n\r\n##### EXPECTED RESULTS\r\nIt should properly detect this as `ansible_distribution_release: \"bullseye\"`.\r\n\r\n\r\n##### ACTUAL RESULTS\r\nThe reason for this is that at https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/module_utils/facts/system/distribution.py#L314 the call to `module.run_command` tries to run a shell command (it tries to pipe the output into other commands!), but does not specify `use_unsafe_shell=True`.\r\n\r\nThere is actually an error reported by run_command here, something along \"Error: --status requires a valid package name\", which is from dpkg because it recieves the whole commandline including the piped commands as it's argument. \r\n\r\nSee https://github.com/ansible/ansible/blob/devel/lib/ansible/module_utils/basic.py#L2424 for the description of this argument of `run_command`.\r\n\r\nAdding `use_unsafe_shell=True` locally makes it work, but the proper fix may be different if you want to avoid invoking the shell here.\r\n\r\nIdeally there should be some better error-handling here to actually show this in debug-output as it was not visible even with -vvv and thus was quite hard to narrow down!",
+      "closed_at": "2023-08-28T15:06:45Z",
+      "comments": 15,
+      "comments_url": "https://api.github.com/repos/ansible/ansible/issues/70304/comments",
+      "created_at": "2020-06-25T16:14:20Z",
+      "events_url": "https://api.github.com/repos/ansible/ansible/issues/70304/events",
+      "html_url": "https://github.com/ansible/ansible/issues/70304",
+      "id": 645689073,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "eb6420",
+          "default": false,
+          "description": "This issue requires further information. Please answer any outstanding questions.",
+          "id": 54811101,
+          "name": "needs_info",
+          "node_id": "MDU6TGFiZWw1NDgxMTEwMQ==",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/needs_info"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": true,
+          "description": "This issue/PR relates to a bug.",
+          "id": 785271699,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3ODUyNzE2OTk=",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e3ed5e",
+          "default": false,
+          "description": "Priority 3 - Approved, No Time Limitation",
+          "id": 1126594180,
+          "name": "P3",
+          "node_id": "MDU6TGFiZWwxMTI2NTk0MTgw",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/P3"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 3979696806,
+          "name": "affects_2.14",
+          "node_id": "LA_kwDOADeGtM7tNVqm",
+          "url": "https://api.github.com/repos/ansible/ansible/labels/affects_2.14"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/ansible/ansible/issues/70304/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU2NDU2ODkwNzM=",
+      "number": 70304,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/ansible/ansible/issues/70304/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/ansible/ansible",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/ansible/ansible/issues/70304/timeline",
+      "title": "Detection of distribution facts fails on Debian Bullseye and Unstable if lsb_release is not available",
+      "type": null,
+      "updated_at": "2023-09-11T13:00:02Z",
+      "url": "https://api.github.com/repos/ansible/ansible/issues/70304",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/548322?v=4",
+        "events_url": "https://api.github.com/users/centic9/events{/privacy}",
+        "followers_url": "https://api.github.com/users/centic9/followers",
+        "following_url": "https://api.github.com/users/centic9/following{/other_user}",
+        "gists_url": "https://api.github.com/users/centic9/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/centic9",
+        "id": 548322,
+        "login": "centic9",
+        "node_id": "MDQ6VXNlcjU0ODMyMg==",
+        "organizations_url": "https://api.github.com/users/centic9/orgs",
+        "received_events_url": "https://api.github.com/users/centic9/received_events",
+        "repos_url": "https://api.github.com/users/centic9/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/centic9/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/centic9/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/centic9",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 21
+}

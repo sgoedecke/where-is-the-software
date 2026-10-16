@@ -1,0 +1,139 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "**Bug report**\r\nFor the following tree, where `./b` is not a package, `PathFinder.find_spec(\"a.b\")` raises an undocumented `KeyError`:\r\n```\r\n.\r\n\u251c\u2500\u2500 a\r\n\u2502   \u251c\u2500\u2500 b.py\r\n\u2514\u2500\u2500 b\r\n```\r\n```python\r\n>>> from importlib.machinery import PathFinder\r\n>>> PathFinder.find_spec(\"a.b\")\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"<frozen importlib._bootstrap_external>\", line 1439, in find_spec\r\n  File \"<frozen importlib._bootstrap_external>\", line 1218, in __init__\r\n  File \"<frozen importlib._bootstrap_external>\", line 1233, in _get_parent_path\r\nKeyError: 'a'\r\n```\r\n\r\nWorks as expected if `a` is provided as the `path` argument:\r\n```python\r\n>>> PathFinder.find_spec(\"a.b\", path=[\"a\"])\r\nModuleSpec(name='a.b', loader=<_frozen_importlib_external.SourceFileLoader object at 0x100d37d30>, origin='/Users/myuser/a/b.py')\r\n```\r\n**Your environment**\r\n\r\nPython 3.10.2 (v3.10.2:a58ebcc701, Jan 13 2022, 14:50:16) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin\r\n\r\nAlso reproduced on 3.8 and 3.12.0a0\r\n\n\n<!-- gh-linked-prs -->\n### Linked PRs\n* gh-98100\n<!-- /gh-linked-prs -->\n",
+      "closed_at": "2025-09-05T22:41:02Z",
+      "comments": 7,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/93334/comments",
+      "created_at": "2022-05-29T15:00:22Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/93334/events",
+      "html_url": "https://github.com/python/cpython/issues/93334",
+      "id": 1251911847,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e99695",
+          "default": false,
+          "description": "An unexpected behavior, bug, or error",
+          "id": 536871770,
+          "name": "type-bug",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzA=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 4018733900,
+          "name": "3.11",
+          "node_id": "LA_kwDOBN0Z8c7viQNM",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.11"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018772048,
+          "name": "3.10 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viZhQ",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.10%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "0052cc",
+          "default": false,
+          "description": "",
+          "id": 4095883204,
+          "name": "topic-importlib",
+          "node_id": "LA_kwDOBN0Z8c70IjfE",
+          "url": "https://api.github.com/repos/python/cpython/labels/topic-importlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "2e730f",
+          "default": false,
+          "description": "only security fixes",
+          "id": 4105172434,
+          "name": "3.12",
+          "node_id": "LA_kwDOBN0Z8c70r_XS",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.12"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/93334/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOBN0Z8c5Knqin",
+      "number": 93334,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/93334/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/93334/timeline",
+      "title": "`PathFinder.find_spec()` can raise bare `KeyError` when `path=None` ",
+      "type": null,
+      "updated_at": "2025-09-05T22:42:35Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/93334",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/38668450?v=4",
+        "events_url": "https://api.github.com/users/jacobtylerwalls/events{/privacy}",
+        "followers_url": "https://api.github.com/users/jacobtylerwalls/followers",
+        "following_url": "https://api.github.com/users/jacobtylerwalls/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jacobtylerwalls/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/jacobtylerwalls",
+        "id": 38668450,
+        "login": "jacobtylerwalls",
+        "node_id": "MDQ6VXNlcjM4NjY4NDUw",
+        "organizations_url": "https://api.github.com/users/jacobtylerwalls/orgs",
+        "received_events_url": "https://api.github.com/users/jacobtylerwalls/received_events",
+        "repos_url": "https://api.github.com/users/jacobtylerwalls/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/jacobtylerwalls/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jacobtylerwalls/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/jacobtylerwalls",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 83
+}

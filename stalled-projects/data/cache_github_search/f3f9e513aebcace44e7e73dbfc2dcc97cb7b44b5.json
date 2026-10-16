@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MEMBER",
+      "body": "### Failure cluster [046b4ed31ce5a4d566a3](https://go.k8s.io/triage#046b4ed31ce5a4d566a3)\n\n<img width=\"1610\" height=\"434\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/55c21a52-a331-4a24-b3d6-2a3a56a236bf\" />\n\n##### Error text:\n```\n[FAILED] Verifying pod resources resize state. Pod: {\n  \"metadata\": {\n    \"name\": \"resize-test-wr7sz\",\n    \"generateName\": \"resize-test-\",\n    \"namespace\": \"pod-level-resources-resize-tests-5215\",\n    \"uid\": \"3ff6137a-fd1a-4cf7-b623-1eef88c8c37b\",\n    \"resourceVersion\": \"14100\",\n    \"generation\": 2,\n    \"creationTimestamp\": \"2026-06-26T22:52:29Z\",\n    \"labels\": {\n      \"time\": \"706127151\"\n    }\n  },\n  \"spec\": {\n    \"volumes\": [\n      {\n        \"name\": \"sysfscgroup\",\n        \"hostPath\": {\n          \"path\": \"/sys/fs/cgroup\",\n          \"type\": \"\"\n        }\n      },\n      {\n        \"name\": \"kube-api-access-h9b6b\",\n        \"projected\": {\n          \"sources\": [\n            {\n              \"serviceAccountToken\": {\n                \"expirationSeconds\": 3607,\n                \"path\": \"token\"\n              }\n            },\n            {\n              \"configMap\": {\n                \"name\": \"kube-root-ca.crt\",\n                \"items\": [\n                  {\n                    \"key\": \"ca.crt\",\n                    \"path\": \"ca.crt\"\n                  }\n                ]\n              }\n            },\n            {\n              \"downwardAPI\": {\n                \"items\": [\n                  {\n                    \"path\": \"namespace\",\n                    \"fieldRef\": {\n                      \"apiVersion\": \"v1\",\n                      \"fieldPath\": \"metadata.namespace\"\n                    }\n                  }\n                ]\n              }\n            }\n          ],\n          \"defaultMode\": 420\n   \n```\n#### Recent failures:\n[6/30/2026, 2:16:14 AM ci-kubernetes-e2e-kind-rootless](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-kind-rootless/2071840095991762944)\n[6/29/2026, 10:16:15 PM ci-kubernetes-e2e-kind-rootless](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-kind-rootless/2071779690791571456)\n[6/29/2026, 6:15:15 PM ci-kubernetes-e2e-kind-rootless](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-kind-rootless/2071719046046289920)\n[6/29/2026, 2:14:13 PM ci-kubernetes-e2e-kind-rootless](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-kind-rootless/2071658396389478400)\n[6/29/2026, 10:13:12 AM ci-kubernetes-e2e-kind-rootless](https://prow.k8s.io/view/gs/kubernetes-ci-logs/logs/ci-kubernetes-e2e-kind-rootless/2071597744476131328)\n\n\n/kind failing-test\n<!-- If this is a flake, please add: /kind flake -->\n\n/sig node",
+      "closed_at": "2026-06-30T16:23:24Z",
+      "comments": 5,
+      "comments_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/140110/comments",
+      "created_at": "2026-06-30T16:04:33Z",
+      "events_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/140110/events",
+      "html_url": "https://github.com/kubernetes/kubernetes/issues/140110",
+      "id": 4778433766,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d2b48c",
+          "default": false,
+          "description": "Categorizes an issue or PR as relevant to SIG Node.",
+          "id": 173493665,
+          "name": "sig/node",
+          "node_id": "MDU6TGFiZWwxNzM0OTM2NjU=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/sig/node"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "e11d21",
+          "default": false,
+          "description": "Categorizes issue or PR as related to a consistently or frequently failing test.",
+          "id": 496752468,
+          "name": "kind/failing-test",
+          "node_id": "MDU6TGFiZWw0OTY3NTI0Njg=",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/kind/failing-test"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one.",
+          "id": 2389815605,
+          "name": "needs-triage",
+          "node_id": "MDU6TGFiZWwyMzg5ODE1NjA1",
+          "url": "https://api.github.com/repos/kubernetes/kubernetes/labels/needs-triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/140110/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAToIks8AAAABHNEc5g",
+      "number": 140110,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/140110/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/kubernetes/kubernetes",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/kubernetes/kubernetes/issues/140110/timeline",
+      "title": "Failure cluster [046b4ed3...] ci-kubernetes-e2e-kind-rootless failure",
+      "type": null,
+      "updated_at": "2026-06-30T16:23:24Z",
+      "url": "https://api.github.com/repos/kubernetes/kubernetes/issues/140110",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/23304?v=4",
+        "events_url": "https://api.github.com/users/dims/events{/privacy}",
+        "followers_url": "https://api.github.com/users/dims/followers",
+        "following_url": "https://api.github.com/users/dims/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dims/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/dims",
+        "id": 23304,
+        "login": "dims",
+        "node_id": "MDQ6VXNlcjIzMzA0",
+        "organizations_url": "https://api.github.com/users/dims/orgs",
+        "received_events_url": "https://api.github.com/users/dims/received_events",
+        "repos_url": "https://api.github.com/users/dims/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/dims/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dims/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/dims",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 324
+}

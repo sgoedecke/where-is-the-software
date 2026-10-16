@@ -1,0 +1,22 @@
+number,createdAt,title,labels,url
+1015,2026-04-01T14:14:43Z,Add MuteOnSleep to Plugin Store,plugin-addition;stale,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1015
+1019,2026-04-08T15:37:56Z,Add allmazz/decky-volume-mixer,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1019
+1028,2026-04-15T06:13:45Z,Add Decklingo helper for Steam Deck,plugin-addition;stale,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1028
+1029,2026-04-15T19:19:03Z,Add allmazz/decky-desktop-apps,plugin-addition;stale,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1029
+1032,2026-04-18T04:59:29Z,Add decky-ftpd to Plugin Store,plugin-addition;stale,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1032
+1034,2026-04-20T20:44:08Z,Add easy-ssh plugin,plugin-addition;stale,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1034
+1046,2026-05-11T15:53:10Z,Add Squad Up to Plugin Store,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1046
+1047,2026-05-13T13:46:53Z,Add Pixel Buddy plugin,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1047
+1072,2026-06-26T17:29:59Z,Add VARTA plugin,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1072
+1102,2026-08-07T03:23:35Z,Add Docky plugin,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1102
+1103,2026-08-09T19:45:39Z,Add Audio Output Switcher to Plugin Store,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1103
+1112,2026-08-24T08:47:36Z,Add Restart to Windows,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1112
+1124,2026-09-11T04:07:09Z,Add DeckySales plugin to Plugin Store,plugin-addition;stale,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1124
+1126,2026-09-12T23:35:44Z,Add Decktation to Plugin Store,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1126
+1127,2026-09-13T23:24:26Z,Add SSH Switch v0.2.2,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1127
+1130,2026-09-17T09:22:35Z,Add IPv6 Control Decky plugin,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1130
+1134,2026-09-26T04:57:07Z,Add Deckamine plugin (v1.0.0),plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1134
+1135,2026-09-26T23:17:28Z,Add Output Manager,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1135
+1136,2026-09-27T08:39:53Z,Add Decky Macro plugin,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1136
+1146,2026-10-09T23:34:47Z,Add SpoutRemotePlay to Plugin Store,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1146
+1150,2026-10-12T06:34:07Z,Add SteamClip to Plugin Store,plugin-addition,https://github.com/SteamDeckHomebrew/decky-plugin-database/pull/1150

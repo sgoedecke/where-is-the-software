@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!-- Please search existing issues for potential duplicates before filing yours:\r\nhttps://github.com/godotengine/godot/issues?q=is%3Aissue\r\n-->\r\n\r\n**Godot version:**\r\n3.3-rc6-official\r\n\r\n\r\n**OS/device including version:**\r\nN/A\r\n\r\n**Issue description:**\r\n\r\nWith https://github.com/godotengine/godot/pull/47084 most of the capsule-cylinder collision issues have been fixed, however a small issue remains when sliding across the side of a cylinder. Sometimes move_and_slide will give bad normals like this:\r\n\r\n![bad-collision-normal](https://user-images.githubusercontent.com/79001820/111864283-b0968700-89ab-11eb-9ab1-448266fad242.jpg)\r\n\r\n![bad-normal-2](https://user-images.githubusercontent.com/79001820/111865086-ab880680-89b0-11eb-85de-573e156fea7c.jpg)\r\n\r\n\r\n**Steps to reproduce:**\r\n\r\n* Use move_and_slide to walk backwards and forwards on the side of a cylinder. This bug doesn't happen all the time, but it happens pretty consistently.\r\n\r\nhttps://user-images.githubusercontent.com/79001820/111864340-03703e80-89ac-11eb-9d03-7598757b0bd3.mp4\r\n\r\n**Minimal reproduction project:**\r\n\r\nMRP: https://github.com/godotengine/godot/files/6175149/cylinder-collision-bug.zip\r\nAlso for further testing: https://github.com/e344fde6bf/godot-physics-sandbox",
+      "closed_at": "2024-04-20T19:59:51Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/godotengine/godot/issues/47185/comments",
+      "created_at": "2021-03-20T08:56:11Z",
+      "events_url": "https://api.github.com/repos/godotengine/godot/issues/47185/events",
+      "html_url": "https://github.com/godotengine/godot/issues/47185",
+      "id": 836758939,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ff6055",
+          "default": true,
+          "description": "",
+          "id": 73330064,
+          "name": "bug",
+          "node_id": "MDU6TGFiZWw3MzMzMDA2NA==",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "aaaaaa",
+          "default": false,
+          "description": "",
+          "id": 279096997,
+          "name": "archived",
+          "node_id": "MDU6TGFiZWwyNzkwOTY5OTc=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/archived"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 370471880,
+          "name": "topic:physics",
+          "node_id": "MDU6TGFiZWwzNzA0NzE4ODA=",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:physics"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffee88",
+          "default": false,
+          "description": "",
+          "id": 2666708289,
+          "name": "topic:3d",
+          "node_id": "MDU6TGFiZWwyNjY2NzA4Mjg5",
+          "url": "https://api.github.com/repos/godotengine/godot/labels/topic:3d"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/godotengine/godot/issues/47185/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU4MzY3NTg5Mzk=",
+      "number": 47185,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 3,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 3,
+        "url": "https://api.github.com/repos/godotengine/godot/issues/47185/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/godotengine/godot",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/godotengine/godot/issues/47185/timeline",
+      "title": "[Godot Physics] Capsule-Cylinder collision with move_and_slide sometimes gets bad collision normals",
+      "type": null,
+      "updated_at": "2024-04-20T20:00:12Z",
+      "url": "https://api.github.com/repos/godotengine/godot/issues/47185",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/79001820?v=4",
+        "events_url": "https://api.github.com/users/e344fde6bf/events{/privacy}",
+        "followers_url": "https://api.github.com/users/e344fde6bf/followers",
+        "following_url": "https://api.github.com/users/e344fde6bf/following{/other_user}",
+        "gists_url": "https://api.github.com/users/e344fde6bf/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/e344fde6bf",
+        "id": 79001820,
+        "login": "e344fde6bf",
+        "node_id": "MDQ6VXNlcjc5MDAxODIw",
+        "organizations_url": "https://api.github.com/users/e344fde6bf/orgs",
+        "received_events_url": "https://api.github.com/users/e344fde6bf/received_events",
+        "repos_url": "https://api.github.com/users/e344fde6bf/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/e344fde6bf/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/e344fde6bf/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/e344fde6bf",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 52
+}

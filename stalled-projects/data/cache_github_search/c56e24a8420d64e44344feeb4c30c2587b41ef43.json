@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### \ud83d\udd0d Search Terms\n\ndeclare namespace\nnamespace same name as generic type\ntype hints\ntype alias name\ngeneric type arguments\nhide type arguments in type hint\nhide type arguments when namespace\n\n### \u2705 Viability Checklist\n\n- [x] This wouldn't be a breaking change in existing TypeScript/JavaScript code\n- [x] This wouldn't change the runtime behavior of existing JavaScript code\n- [x] This could be implemented without emitting different JS based on the types of the expressions\n- [x] This isn't a runtime feature (e.g. library functionality, non-ECMAScript syntax with JavaScript output, new syntax sugar for JS, etc.)\n- [x] This isn't a request to add a new utility type: https://github.com/microsoft/TypeScript/wiki/No-New-Utility-Types\n- [x] This feature would agree with the rest of our Design Goals: https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals\n\n### \u2b50 Suggestion\n\nWhen hinting a type in a `namespace` whose name is shared by a sibling generic type, the generic type's type arguments should not be shown in the hint.\n\n### \ud83d\udcc3 Motivating Example\n\nWhen writing types, it's often useful to use `declare namespace` to 'nest' related utility types underneath a type's name. e.g. [ts playground](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAQgTgQwHYBMA8AVKBeKBXJAayQHsB3JAPhyiwDIoBvKAfRYCNFUAuKAcgCyIDOAh8AvgChJKCAGMANgjjQkCALYQAzmARzo8ZCiaSoZqBAAeYEnGBRQkKAFUkZRGEwXLwCKi2wXCjUuFhWvv6BRmgAlkgAZhBwLtQA-C5QvEgQAG5JklKSjtAAGjSGqAB0ru4InhXofPEkJHyUlJIA9J3mvX1QAHqpQA)\n\n```ts\nexport type Brand<T = unknown> = T & { __brand: 'MyType'}\n\nexport declare namespace Brand {\n    export type Unwrap<T extends Brand> = T extends Brand<infer U> ? U : never\n}\n```\n\nIn this example, when TS provides hints for a usage of `Unwrap`, this is the hint we get:\n`type Brand<T = unknown>.Unwrap<T extends Brand> = T extends Brand<infer U> ? U : never`\n\nSince the `Brand` keyword is being used as a `namespace` in this case, the type arguments `<T = unknown>` are superfluous and just make the type hard to read.\n\nA better hint would simply be:\n`type Brand.Unwrap<T extends Brand> = T extends Brand<infer U> ? U : never`\n\nThese tidier hints make it more attractive to organize related types using `declare namespace`, by making their names and namespacing more readable.\n\n### \ud83d\udcbb Use Cases\n\n1. What do you want to use this for?\n\nSince `declare namespace` has no runtime impact, it's a useful tool to meaningfully structure types in an intuitive and expressive way. This allows for better completion, discovery and logical scoping.\n\nE.g. in this, we're defining a type `Ftor`, with utilities available as `Ftor.In` etc.\n```\nexport type Ftor<A extends [...unknown[]] = never, R = unknown> = Fn<A, R> | Ctor<A, R>\n\nexport declare namespace Ftor {\n  export type In<A extends [...unknown[]] = [...unknown[]]> = FnIn<A> | CtorIn<A>\n  export type Out<R = unknown> = FnOut<R> | CtorOut<R>\n\n  // Other related 'Ftor' utility types\n}\n\n```\n\n2. What shortcomings exist with current approaches?\n\nThe only problem with using `declare namespace` in this way is that we can't read the namespacing in type hints, because (unrelated) type arguments are displayed, as shown in the Motivating example.\n\n3. What workarounds are you using in the meantime?\n\nNone, unfortunately. Other than giving the namespace its own name.",
+      "closed_at": "2025-03-28T09:17:46Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61499/comments",
+      "created_at": "2025-03-28T07:23:42Z",
+      "events_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61499/events",
+      "html_url": "https://github.com/microsoft/TypeScript/issues/61499",
+      "id": 2955250697,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61499/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAT9aAc6wJYwJ",
+      "number": 61499,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/TypeScript/issues/61499/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/TypeScript",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/TypeScript/issues/61499/timeline",
+      "title": "Hide type args when hinting a type nested in a namespace of the same name as a generic type.",
+      "type": null,
+      "updated_at": "2025-10-22T03:08:56Z",
+      "url": "https://api.github.com/repos/microsoft/TypeScript/issues/61499",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/6123570?v=4",
+        "events_url": "https://api.github.com/users/martaver/events{/privacy}",
+        "followers_url": "https://api.github.com/users/martaver/followers",
+        "following_url": "https://api.github.com/users/martaver/following{/other_user}",
+        "gists_url": "https://api.github.com/users/martaver/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/martaver",
+        "id": 6123570,
+        "login": "martaver",
+        "node_id": "MDQ6VXNlcjYxMjM1NzA=",
+        "organizations_url": "https://api.github.com/users/martaver/orgs",
+        "received_events_url": "https://api.github.com/users/martaver/received_events",
+        "repos_url": "https://api.github.com/users/martaver/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/martaver/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/martaver/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/martaver",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 150
+}

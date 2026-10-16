@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "## Bevy version\r\nBevy 0.10\r\n\r\n## \\[Optional\\] Relevant system information\r\n\r\nIf you cannot get Bevy to build or run on your machine, please include:\r\n\r\n- Rustc 1.70.0-nightly\r\n - Endeavour OS\r\n\r\nIf your bug is rendering-related, copy the adapter info that appears when you run Bevy.\r\n\r\n```\r\nthread 'Compute Task Pool (0)' panicked at 'called `Result::unwrap()` on an `Err` value: NoEntities(\"bevy_ecs::query::state::QueryState<bevy_ecs::entity::Entity, bevy_ecs::query::filter::With<bevymon::chat::components::ChatBoxText>>\")', src/chat/controller.rs:43:32\r\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\r\nthread 'Compute Task Pool (0)' panicked at 'A system has panicked so the executor cannot continue.: RecvError', /home/stanley/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.10.0/src/schedule/executor/multi_threaded.rs:194:60\r\nthread 'main' panicked at 'called `Option::unwrap()` on a `None` value', /home/stanley/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_tasks-0.10.0/src/task_pool.rs:376:49\r\n```\r\n\r\n## What you did\r\n\r\nI'm trying to despawn two entities, I made sure that if I debug it, the entity already exists e.g. showing the ID on log and it renders on Egui. The below code works:\r\n\r\n```\r\nuse bevy::prelude::*;\r\n\r\nuse super::components::{SplashBackground, SplashText};\r\nuse crate::startup::state::StartupState;\r\n\r\n#[derive(Resource, Debug, Deref, DerefMut)]\r\npub struct SplashTimer(Timer);\r\n\r\n#[derive(Component, Debug)]\r\npub struct SplashScreen;\r\n\r\nimpl SplashScreen {\r\n    pub fn new(mut commands: Commands, asset_server: Res<AssetServer>, query: Query<&Window>) {\r\n        let window = query.single();\r\n\r\n        let splash_bg = SplashBackground::new(&asset_server, window);\r\n        let splash_text = SplashText::new(&asset_server, window);\r\n\r\n        commands\r\n            .spawn((splash_bg, SplashBackground))\r\n            .with_children(|par| {\r\n                par.spawn((splash_text, SplashText));\r\n            });\r\n        commands.insert_resource(SplashTimer(Timer::from_seconds(2., TimerMode::Once)));\r\n    }\r\n\r\n    pub fn despawn(mut commands: Commands, splash_query: Query<Entity, With<SplashBackground>>) {\r\n        let splash_screen = splash_query.single();\r\n        commands.entity(splash_screen).despawn_descendants();\r\n        commands.entity(splash_screen).despawn();\r\n    }\r\n}\r\n```\r\n\r\n## What went wrong\r\n\r\nHowever when I tried with the below code it doesn't working:\r\n```\r\nuse bevy::prelude::*;\r\n\r\nuse super::components::*;\r\nuse super::resource::ChatResource;\r\n\r\n#[derive(Debug)]\r\npub struct Chat;\r\n\r\nimpl Chat {\r\n    pub fn new(\r\n        chat_res: Res<ChatResource>,\r\n        mut commands: Commands,\r\n        asset_server: Res<AssetServer>,\r\n        texture_atlas_res: ResMut<Assets<TextureAtlas>>,\r\n        window_query: Query<&Window>,\r\n    ) {\r\n        let window = window_query.single();\r\n\r\n        let chatbox_name = Name::new(\"Chatbox\");\r\n        let chatbox = ChatBoxSprite::new(&asset_server, texture_atlas_res, window);\r\n\r\n        let chattext_name = Name::new(\"ChatText\");\r\n        let chattext = ChatBoxText::new(\r\n            &asset_server,\r\n            window,\r\n            &chat_res.dialgoues[chat_res.dialogue_index],\r\n        );\r\n\r\n        commands\r\n            .spawn((chatbox_name, chatbox))\r\n            .insert(ChatBoxSprite);\r\n        commands\r\n            .spawn((chattext_name, chattext))\r\n            .insert(ChatBoxText);\r\n    }\r\n\r\n    pub fn next_dialogue(\r\n        keyboard: Res<Input<KeyCode>>,\r\n        mut commands: Commands,\r\n        query: Query<Entity, With<ChatBoxText>>,\r\n    ) {\r\n        if keyboard.pressed(KeyCode::Z) {\r\n            let entity = query.single();\r\n            commands.entity(entity).despawn();\r\n        }\r\n    }\r\n}\r\n```\r\n\r\nIt throws the following error:\r\n```\r\nthread 'Compute Task Pool (0)' panicked at 'called `Result::unwrap()` on an `Err` value: NoEntities(\"bevy_ecs::query::state::QueryState<bevy_ecs::entity::Entity, bevy_ecs::query::filter::With<bevymon::chat::components::ChatBoxText>>\")', src/chat/controller.rs:43:32\r\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\r\nthread 'Compute Task Pool (0)' panicked at 'A system has panicked so the executor cannot continue.: RecvError', /home/stanley/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.10.0/src/schedule/executor/multi_threaded.rs:194:60\r\nthread 'main' panicked at 'called `Option::unwrap()` on a `None` value', /home/stanley/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_tasks-0.10.0/src/task_pool.rs:376:49\r\n```\r\n\r\nAs the error message says, it got err value with no entities but when I debug it on log the entity is showing its ID, I'm not sure which part is my fault on despawning it, does anybody have similar issue?\r\n\r\n",
+      "closed_at": "2023-03-30T07:33:33Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/bevyengine/bevy/issues/8262/comments",
+      "created_at": "2023-03-30T07:11:03Z",
+      "events_url": "https://api.github.com/repos/bevyengine/bevy/issues/8262/events",
+      "html_url": "https://github.com/bevyengine/bevy/issues/8262",
+      "id": 1647045058,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d73a4a",
+          "default": false,
+          "description": "An unexpected or incorrect behavior",
+          "id": 1795619323,
+          "name": "C-Bug",
+          "node_id": "MDU6TGFiZWwxNzk1NjE5MzIz",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/C-Bug"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "D876e3",
+          "default": false,
+          "description": "This issue needs to be labelled",
+          "id": 2488007862,
+          "name": "S-Needs-Triage",
+          "node_id": "MDU6TGFiZWwyNDg4MDA3ODYy",
+          "url": "https://api.github.com/repos/bevyengine/bevy/labels/S-Needs-Triage"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/bevyengine/bevy/issues/8262/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDODf6-U85iK-nC",
+      "number": 8262,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/bevyengine/bevy/issues/8262/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/bevyengine/bevy",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/bevyengine/bevy/issues/8262/timeline",
+      "title": "`Err` value: NoEntities even though entity id exists",
+      "type": null,
+      "updated_at": "2023-03-30T07:33:33Z",
+      "url": "https://api.github.com/repos/bevyengine/bevy/issues/8262",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/53996155?v=4",
+        "events_url": "https://api.github.com/users/stanley355/events{/privacy}",
+        "followers_url": "https://api.github.com/users/stanley355/followers",
+        "following_url": "https://api.github.com/users/stanley355/following{/other_user}",
+        "gists_url": "https://api.github.com/users/stanley355/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/stanley355",
+        "id": 53996155,
+        "login": "stanley355",
+        "node_id": "MDQ6VXNlcjUzOTk2MTU1",
+        "organizations_url": "https://api.github.com/users/stanley355/orgs",
+        "received_events_url": "https://api.github.com/users/stanley355/received_events",
+        "repos_url": "https://api.github.com/users/stanley355/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/stanley355/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/stanley355/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/stanley355",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 344
+}

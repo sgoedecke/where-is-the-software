@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\r\n\r\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\r\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\r\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a feature request that matches the one I want to file, without success.\r\n\r\n### Problem Description\r\n\r\nRight now it is not possible to have reference to `window` of BrowserView in renderer process.\r\n\r\nThis is however possible for BrowserWindow with `const windowRef = window.open()`. \r\n\r\nIn some cases, it'd be very useful to be able to have `window.open()` create new BrowserView in parent window instead of new BrowserWindow.\r\n\r\nExample use case:\r\n- we render some external website using BrowserView\r\n- we want to show some content on top of it\r\n- we'd like to allow main renderer process to have DOM control over this overlay part\r\n\r\n### Proposed Solution\r\n\r\nI'd be like\r\n\r\n```tsx\r\n// renderer\r\nconst overlayWindow = window.open(\"about:blank\", \"overlay\");\r\n\r\noverlayWindow.document.write(\"<h1>Hello</h1>\");\r\n\r\n// main\r\n\r\nmainWindow.webContents.setWindowOpenHandler(({ frameName }) => {\r\n  if (frameName === 'overlay') {\r\n    return { action: \"allow\", useBrowserView: true }\r\n  }\r\n})\r\n\r\nmainWindow.on(\"browser-view-added\", (view) => {\r\n  // Manage position, etc here\r\n})\r\n```\r\n\r\n### Alternatives Considered\r\n\r\nI tried to manage such 'overlay' using new window on top of main window.\r\n\r\nI was mirroring their position and size, trying to make it look as if there is only one window.\r\n\r\nIt was tricky due to multiple reasons: window shadow was flickering when focus was switching from one window to another, same with vibrancy effect, I also had to manage `setIgnoreMouseEvents` with forward options handling a lot of edge-cases\r\n\r\n### Additional Information\r\n\r\n_No response_",
+      "closed_at": "2025-05-15T14:17:37Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/33383/comments",
+      "created_at": "2022-03-22T10:20:39Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/33383/events",
+      "html_url": "https://github.com/electron/electron/issues/33383",
+      "id": 1176566737,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "84b6eb",
+          "default": false,
+          "description": "",
+          "id": 35575880,
+          "name": "enhancement :sparkles:",
+          "node_id": "MDU6TGFiZWwzNTU3NTg4MA==",
+          "url": "https://api.github.com/repos/electron/electron/labels/enhancement%20:sparkles:"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/33383/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS85GIPvR",
+      "number": 33383,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 6,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 6,
+        "url": "https://api.github.com/repos/electron/electron/issues/33383/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/33383/timeline",
+      "title": "[Feature Request]: Allow `setWindowOpenHandler` to create BrowserView instead of BrowserWindow",
+      "type": null,
+      "updated_at": "2025-05-15T14:17:38Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/33383",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/7311462?v=4",
+        "events_url": "https://api.github.com/users/pie6k/events{/privacy}",
+        "followers_url": "https://api.github.com/users/pie6k/followers",
+        "following_url": "https://api.github.com/users/pie6k/following{/other_user}",
+        "gists_url": "https://api.github.com/users/pie6k/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/pie6k",
+        "id": 7311462,
+        "login": "pie6k",
+        "node_id": "MDQ6VXNlcjczMTE0NjI=",
+        "organizations_url": "https://api.github.com/users/pie6k/orgs",
+        "received_events_url": "https://api.github.com/users/pie6k/received_events",
+        "repos_url": "https://api.github.com/users/pie6k/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/pie6k/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/pie6k/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/pie6k",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 16
+}

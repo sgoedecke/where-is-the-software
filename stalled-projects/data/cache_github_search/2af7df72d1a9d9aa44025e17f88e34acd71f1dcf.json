@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": "resolved",
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "### Steps to reproduce\r\n\r\n1. Configure an aarch64 system with `CONFIG_ARM64_64K_PAGES` in the kernel\r\n2. Use Flutter\r\n\r\nRef: https://github.com/dart-lang/sdk/issues/56823\r\n\r\n### Actual results\r\n\r\n```\r\n../../runtime/bin/snapshot_utils.cc: 154: error: Failed to memory map snapshot: /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/bin/cache/flutter_tools.snapshot\r\n\r\n\r\n===== CRASH =====\r\nsi_signo=Segmentation fault(11), si_code=SEGV_MAPERR(1), si_addr=0x10\r\nAborting reentrant request for stack trace.\r\n/nix/store/yja2i691gbdxl6v1hd7ccnym3zqgl11i-stdenv-linux/setup: line 1582:   282 Aborted                 (core dumped) $out/bin/flutter config --android-studio-dir $HOME\r\n```\r\n\r\n### Logs\r\n\r\n<details open>\r\n<summary>Logs from Nix</summary>\r\n\r\n```console\r\n@nix { \"action\": \"setPhase\", \"phase\": \"unpackPhase\" }\r\nRunning phase: unpackPhase\r\nunpacking source archive /nix/store/l3gg0flw1faxcz8rrgphl4yk4hffqk9z-source\r\nsource root is source\r\n@nix { \"action\": \"setPhase\", \"phase\": \"patchPhase\" }\r\nRunning phase: patchPhase\r\napplying patch /nix/store/pny48fk4h0sfvkqq74kdgpspi7fz7l3c-copy-without-perms.patch\r\npatching file packages/flutter_tools/lib/src/build_system/targets/assets.dart\r\nHunk #1 succeeded at 173 with fuzz 1 (offset 45 lines).\r\napplying patch /nix/store/ypfk08bwadxsi5xgzxbc051xw0gm6lk1-deregister-pub-dependencies-artifact.patch\r\npatching file packages/flutter_tools/lib/src/flutter_cache.dart\r\npatch unexpectedly ends in middle of line\r\napplying patch /nix/store/i7n1f1w1ap034jn7d5knxqvbk065sk7n-disable-auto-update.patch\r\npatching file packages/flutter_tools/lib/src/runner/flutter_command.dart\r\nHunk #1 succeeded at 1679 (offset 125 lines).\r\npatching file packages/flutter_tools/lib/src/runner/flutter_command_runner.dart\r\nHunk #1 succeeded at 321 with fuzz 1 (offset 24 lines).\r\nHunk #2 succeeded at 329 (offset 24 lines).\r\napplying patch /nix/store/hpwy1bnd9jasxf9q16na47hi4zmdznm7-dont-validate-executable-location.patch\r\npatching file packages/flutter_tools/lib/src/doctor.dart\r\nHunk #1 succeeded at 566 (offset 51 lines).\r\napplying patch /nix/store/6xsrdwhz7sbbr5r4cgxs1bvhz12bdpf1-flutter-pub-dart-override.patch\r\npatching file packages/flutter_tools/lib/src/dart/pub.dart\r\napplying patch /nix/store/6p07k08s34a12641ax842h8f43i2hji6-override-host-platform.patch\r\npatching file packages/flutter_tools/lib/src/base/os.dart\r\nHunk #1 succeeded at 274 (offset 14 lines).\r\napplying patch /nix/store/fymrzhgfs2n7imid60cf8lbv3bdskx0n-override-operating-system.patch\r\npatching file packages/flutter_tools/lib/src/base/platform.dart\r\napplying patch /nix/store/4ahym68jw9a4kvwrhfb32g347qwdr6k4-disable-auto-update-shared.patch\r\npatching file bin/internal/shared.sh\r\nHunk #1 succeeded at 251 with fuzz 2 (offset 6 lines).\r\napplying patch /nix/store/35wdc0dvm1qlmvs1d187y9v3y2m9nyy3-gradle-flutter-tools-wrapper.patch\r\npatching file packages/flutter_tools/gradle/settings.gradle\r\npatching script interpreter paths in ./bin/\r\n./bin/dart: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n./bin/flutter: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n./bin/internal/update_dart_sdk.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n@nix { \"action\": \"setPhase\", \"phase\": \"updateAutotoolsGnuConfigScriptsPhase\" }\r\nRunning phase: updateAutotoolsGnuConfigScriptsPhase\r\n@nix { \"action\": \"setPhase\", \"phase\": \"configurePhase\" }\r\nRunning phase: configurePhase\r\nno configure script, doing nothing\r\n@nix { \"action\": \"setPhase\", \"phase\": \"buildPhase\" }\r\nRunning phase: buildPhase\r\nInitialized empty Git repository in /build/source/.git/\r\n[nixpkgs (root-commit) ab75bef] Initial commit\r\nEnumerating objects: 2, done.\r\nCounting objects:  50% (1/2)\r\nCounting objects: 100% (2/2)\r\nCounting objects: 100% (2/2), done.\r\nWriting objects:  50% (1/2)\r\nWriting objects: 100% (2/2)\r\nWriting objects: 100% (2/2), done.\r\nTotal 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\r\nEnumerating objects: 2, done.\r\nNothing new to pack.\r\n@nix { \"action\": \"setPhase\", \"phase\": \"installPhase\" }\r\nRunning phase: installPhase\r\n@nix { \"action\": \"setPhase\", \"phase\": \"fixupPhase\" }\r\nRunning phase: fixupPhase\r\nshrinking RPATHs of ELF executables and libraries in /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped\r\nchecking for references to /build/ in /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped...\r\npatching script interpreter paths in /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/conductor/bin/conductor: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/conductor/bin/packages_autoroller: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/conductor/core/lib/src/proto/compile_proto.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/tools/repackage_gradle_wrapper.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/tools/gen_keycodes/bin/gen_keycodes: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/integration_tests/flutter_gallery/tool/run_instrumentation_test.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/integration_tests/deferred_components_test/run_release_test.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/integration_tests/deferred_components_test/download_assets.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/integration_tests/ios_add2app_life_cycle/build_and_test.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/bots/docs.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/bots/accept_android_sdk_licenses.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/bots/codelabs_build_test.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/dev/customer_testing/ci.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/packages/flutter_tools/bin/xcode_backend.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/packages/flutter_tools/bin/tool_backend.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\n/nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/packages/flutter_tools/bin/macos_assemble.sh: interpreter directive changed from \"#!/usr/bin/env bash\" to \"/nix/store/6klllvhvq5aawjbg02dsixg02f0v933r-bash-5.2p26/bin/bash\"\r\nstripping (with command strip and flags -S -p) in  /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/bin\r\nrewriting symlink /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/bin/dart to be relative to /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped\r\n@nix { \"action\": \"setPhase\", \"phase\": \"installCheckPhase\" }\r\nRunning phase: installCheckPhase\r\n../../runtime/bin/snapshot_utils.cc: 154: error: Failed to memory map snapshot: /nix/store/gjvyzckkyq2s57ajcnxy3682bj06r9gx-flutter-3.22.0-unwrapped/bin/cache/flutter_tools.snapshot\r\n\r\n\r\n===== CRASH =====\r\nsi_signo=Segmentation fault(11), si_code=SEGV_MAPERR(1), si_addr=0x10\r\nAborting reentrant request for stack trace.\r\n/nix/store/yja2i691gbdxl6v1hd7ccnym3zqgl11i-stdenv-linux/setup: line 1582:   282 Aborted                 (core dumped) $out/bin/flutter config --android-studio-dir $HOME\r\n```\r\n\r\n</details>\r\n\r\n\r\n### Flutter Doctor output\r\n\r\n<details open>\r\n<summary>Doctor output</summary>\r\n\r\n```console\r\n\r\nNo output due to not running\r\n\r\n```\r\n\r\n</details>\r\n",
+      "closed_at": "2024-09-30T23:40:19Z",
+      "comments": 2,
+      "comments_url": "https://api.github.com/repos/flutter/flutter/issues/155965/comments",
+      "created_at": "2024-09-30T23:11:38Z",
+      "events_url": "https://api.github.com/repos/flutter/flutter/issues/155965/events",
+      "html_url": "https://github.com/flutter/flutter/issues/155965",
+      "id": 2557807490,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/flutter/flutter/issues/155965/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAeUeuM6YdQuC",
+      "number": 155965,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/flutter/flutter/issues/155965/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/flutter/flutter",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/flutter/flutter/issues/155965/timeline",
+      "title": "Flutter apps and itself fails to build on Ampere Altra with 64k page size",
+      "type": null,
+      "updated_at": "2024-10-15T01:27:45Z",
+      "url": "https://api.github.com/repos/flutter/flutter/issues/155965",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/19699320?v=4",
+        "events_url": "https://api.github.com/users/RossComputerGuy/events{/privacy}",
+        "followers_url": "https://api.github.com/users/RossComputerGuy/followers",
+        "following_url": "https://api.github.com/users/RossComputerGuy/following{/other_user}",
+        "gists_url": "https://api.github.com/users/RossComputerGuy/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/RossComputerGuy",
+        "id": 19699320,
+        "login": "RossComputerGuy",
+        "node_id": "MDQ6VXNlcjE5Njk5MzIw",
+        "organizations_url": "https://api.github.com/users/RossComputerGuy/orgs",
+        "received_events_url": "https://api.github.com/users/RossComputerGuy/received_events",
+        "repos_url": "https://api.github.com/users/RossComputerGuy/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/RossComputerGuy/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/RossComputerGuy/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/RossComputerGuy",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2206
+}

@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "The issue was initially reported in #50203; starting with #51645 we raise an error when the options are both enabled.\r\n\r\nThe tracking issue for -Zprofile is #42524.",
+      "closed_at": "2024-11-12T02:28:11Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/rust-lang/rust/issues/51983/comments",
+      "created_at": "2018-07-02T14:29:07Z",
+      "events_url": "https://api.github.com/repos/rust-lang/rust/issues/51983/events",
+      "html_url": "https://github.com/rust-lang/rust/issues/51983",
+      "id": 337542732,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f5f1fd",
+          "default": false,
+          "description": "Category: An issue proposing an enhancement or a PR with one.",
+          "id": 234902,
+          "name": "C-enhancement",
+          "node_id": "MDU6TGFiZWwyMzQ5MDI=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/C-enhancement"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Relevant to the compiler team, which will review and decide on the PR/issue.",
+          "id": 211668100,
+          "name": "T-compiler",
+          "node_id": "MDU6TGFiZWwyMTE2NjgxMDA=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/T-compiler"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Incremental compilation",
+          "id": 307747675,
+          "name": "A-incr-comp",
+          "node_id": "MDU6TGFiZWwzMDc3NDc2NzU=",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-incr-comp"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "f7e101",
+          "default": false,
+          "description": "Area: Self-profiling feature of the compiler",
+          "id": 1260714786,
+          "name": "A-self-profile",
+          "node_id": "MDU6TGFiZWwxMjYwNzE0Nzg2",
+          "url": "https://api.github.com/repos/rust-lang/rust/labels/A-self-profile"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/rust-lang/rust/issues/51983/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUzMzc1NDI3MzI=",
+      "number": 51983,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/rust-lang/rust/issues/51983/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/rust-lang/rust",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/rust-lang/rust/issues/51983/timeline",
+      "title": "Make incremental compilation work with -Zprofile",
+      "type": null,
+      "updated_at": "2024-11-12T02:28:12Z",
+      "url": "https://api.github.com/repos/rust-lang/rust/issues/51983",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/1616846?v=4",
+        "events_url": "https://api.github.com/users/marco-c/events{/privacy}",
+        "followers_url": "https://api.github.com/users/marco-c/followers",
+        "following_url": "https://api.github.com/users/marco-c/following{/other_user}",
+        "gists_url": "https://api.github.com/users/marco-c/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/marco-c",
+        "id": 1616846,
+        "login": "marco-c",
+        "node_id": "MDQ6VXNlcjE2MTY4NDY=",
+        "organizations_url": "https://api.github.com/users/marco-c/orgs",
+        "received_events_url": "https://api.github.com/users/marco-c/received_events",
+        "repos_url": "https://api.github.com/users/marco-c/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/marco-c/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/marco-c/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/marco-c",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 2
+}

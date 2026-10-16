@@ -1,0 +1,115 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### The problem\n\n[See this previous issue for more data:\r\n](https://github.com/home-assistant/core/issues/36540)\r\n\r\nWhen adding a gstreamer media player to the config the following error occurs:\r\n[homeassistant.components.hassio] Platform error media_player.gstreamer - No module named 'gi'\n\n### What version of Home Assistant Core has the issue?\n\n2022.6.0\n\n### What was the last working version of Home Assistant Core?\n\nunknown\n\n### What type of installation are you running?\n\nHome Assistant OS\n\n### Integration causing the issue\n\ngstreamer\n\n### Link to integration documentation on our website\n\nhttps://www.home-assistant.io/integrations/gstreamer\n\n### Diagnostics information\n\n_No response_\n\n### Example YAML snippet\n\n```yaml\nmedia_player:\r\n  - platform: gstreamer\r\n    pipeline: \"audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapcast_gstreamer\"\n```\n\n\n### Anything in the logs that might be useful for us?\n\n```txt\nERROR (MainThread) [homeassistant.components.hassio] Platform error media_player.gstreamer - No module named 'gi'\n```\n\n\n### Additional information\n\nSeems that there are some missing components needed for this integration missing from Core, which prevents the integration from working out of the box. ",
+      "closed_at": "2025-10-29T20:28:29Z",
+      "comments": 51,
+      "comments_url": "https://api.github.com/repos/home-assistant/core/issues/72875/comments",
+      "created_at": "2022-06-02T03:21:34Z",
+      "events_url": "https://api.github.com/repos/home-assistant/core/issues/72875/events",
+      "html_url": "https://github.com/home-assistant/core/issues/72875",
+      "id": 1257633073,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": false,
+          "description": null,
+          "id": 1282968364,
+          "name": "integration: gstreamer",
+          "node_id": "MDU6TGFiZWwxMjgyOTY4MzY0",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/integration:%20gstreamer"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ffffff",
+          "default": false,
+          "description": "",
+          "id": 1439687199,
+          "name": "stale",
+          "node_id": "MDU6TGFiZWwxNDM5Njg3MTk5",
+          "url": "https://api.github.com/repos/home-assistant/core/labels/stale"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/home-assistant/core/issues/72875/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAMSroc5K9fUx",
+      "number": 72875,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 7,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 7,
+        "url": "https://api.github.com/repos/home-assistant/core/issues/72875/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/home-assistant/core",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/home-assistant/core/issues/72875/timeline",
+      "title": "gstreamer integration does not work on Home Assistant Core",
+      "type": {
+        "color": "red",
+        "created_at": "2024-01-25T14:53:42Z",
+        "description": "An unexpected problem or behavior",
+        "id": 1798639,
+        "is_enabled": true,
+        "name": "Bug",
+        "node_id": "IT_kwDOANNB784AG3Hv",
+        "updated_at": "2024-07-26T10:31:18Z"
+      },
+      "updated_at": "2025-11-28T21:01:42Z",
+      "url": "https://api.github.com/repos/home-assistant/core/issues/72875",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/386533?v=4",
+        "events_url": "https://api.github.com/users/doughecka/events{/privacy}",
+        "followers_url": "https://api.github.com/users/doughecka/followers",
+        "following_url": "https://api.github.com/users/doughecka/following{/other_user}",
+        "gists_url": "https://api.github.com/users/doughecka/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/doughecka",
+        "id": 386533,
+        "login": "doughecka",
+        "node_id": "MDQ6VXNlcjM4NjUzMw==",
+        "organizations_url": "https://api.github.com/users/doughecka/orgs",
+        "received_events_url": "https://api.github.com/users/doughecka/received_events",
+        "repos_url": "https://api.github.com/users/doughecka/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/doughecka/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/doughecka/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/doughecka",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 3
+}

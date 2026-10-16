@@ -1,0 +1,106 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Preflight Checklist\n\n- [X] I have read the [Contributing Guidelines](https://github.com/electron/electron/blob/main/CONTRIBUTING.md) for this project.\n- [X] I agree to follow the [Code of Conduct](https://github.com/electron/electron/blob/main/CODE_OF_CONDUCT.md) that this project adheres to.\n- [X] I have searched the [issue tracker](https://www.github.com/electron/electron/issues) for a bug report that matches the one I want to file, without success.\n\n### Electron Version\n\n29.1.0\n\n### What operating system are you using?\n\nWindows\n\n### Operating System Version\n\nWindows 11 version 23H2\n\n### What arch are you using?\n\nx64\n\n### Last Known Working Electron version\n\n_No response_\n\n### Expected Behavior\n\nI am using Electron js via Node.js, I get an error when I add the canvas module, Electron js application and canvas work separately from each other without any errors.\r\n\r\nI tried using the latest version of electron js, same problem.\r\n\r\nI put the github link containing a similar scenario with Electron Fiddle and added a screenshot.\r\n![Ekran g\u00f6r\u00fcnt\u00fcs\u00fc 2024-03-28 172304](https://github.com/electron/electron/assets/61876272/a085047e-c0fd-4664-8338-4a5523d4dc72)\r\n\n\n### Actual Behavior\n\nWhen the canvas module is added to the Node js electron js application, it gives the following error.\r\n\r\n`Electron v29.1.5 started.\r\n\r\nApp threw an error during load\r\nError: The module '\\\\?\\C:\\Users\\scray\\AppData\\Local\\Temp\\electron-fiddle-32588-4mbj3bRr2w0Y\\node_modules\\canvas\\build\\Release\\canvas.node'\r\nwas compiled against a different Node.js version using\r\nNODE_MODULE_VERSION 115. This version of Node.js requires\r\nNODE_MODULE_VERSION 121. Please try re-compiling or re-installing\r\nthe module (for instance, using `npm rebuild` or `npm install`).\r\nat process.func [as dlopen] (node:electron/js2c/node_init:2:2214)\r\nat Module._extensions..node (node:internal/modules/cjs/loader:1343:18)\r\nat Object.func [as .node] (node:electron/js2c/node_init:2:2214)\r\nat Module.load (node:internal/modules/cjs/loader:1098:32)\r\nat Module._load (node:internal/modules/cjs/loader:945:12)\r\nat c._load (node:electron/js2c/node_init:2:13672)\r\nat Module.require (node:internal/modules/cjs/loader:1122:19)\r\nat require (node:internal/modules/helpers:130:18)\r\nat Object.<anonymous> (C:\\Users\\scray\\AppData\\Local\\Temp\\electron-fiddle-32588-4mbj3bRr2w0Y\\node_modules\\canvas\\lib\\bindings.js:3:18)\r\nat Module._compile (node:internal/modules/cjs/loader:1256:14)`\n\n### Testcase Gist URL\n\nhttps://gist.github.com/thescrayx/39087f53fc3e19ab03500e9a9b5290c5\n\n### Additional Information\n\nNode.js v20.11.1\r\n\"electron\": \"^29.1.0\"\r\n\"canvas\": \"^2.11.2\"\r\n\"discord.js\": \"^14.14.1\"\r\n\"node-os-utils\": \"^1.3.7\"\r\n\"npm\": \"^10.5.0\"",
+      "closed_at": "2024-03-28T21:35:30Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/electron/electron/issues/41729/comments",
+      "created_at": "2024-03-28T14:46:15Z",
+      "events_url": "https://api.github.com/repos/electron/electron/issues/41729/events",
+      "html_url": "https://github.com/electron/electron/issues/41729",
+      "id": 2213424505,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": "",
+          "id": 520323169,
+          "name": "bug :beetle:",
+          "node_id": "MDU6TGFiZWw1MjAzMjMxNjk=",
+          "url": "https://api.github.com/repos/electron/electron/labels/bug%20:beetle:"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "c2e0c6",
+          "default": false,
+          "description": "Issue can be reproduced with code at https://gist.github.com/",
+          "id": 2285277606,
+          "name": "has-repro-gist",
+          "node_id": "MDU6TGFiZWwyMjg1Mjc3NjA2",
+          "url": "https://api.github.com/repos/electron/electron/labels/has-repro-gist"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/electron/electron/issues/41729/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAI8xS86D7i15",
+      "number": 41729,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/electron/electron/issues/41729/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/electron/electron",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/electron/electron/issues/41729/timeline",
+      "title": "[Bug]: I get an error when I use canvas or any module containing canvas",
+      "type": null,
+      "updated_at": "2024-03-28T21:35:30Z",
+      "url": "https://api.github.com/repos/electron/electron/issues/41729",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/61876272?v=4",
+        "events_url": "https://api.github.com/users/capanp/events{/privacy}",
+        "followers_url": "https://api.github.com/users/capanp/followers",
+        "following_url": "https://api.github.com/users/capanp/following{/other_user}",
+        "gists_url": "https://api.github.com/users/capanp/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/capanp",
+        "id": 61876272,
+        "login": "capanp",
+        "node_id": "MDQ6VXNlcjYxODc2Mjcy",
+        "organizations_url": "https://api.github.com/users/capanp/orgs",
+        "received_events_url": "https://api.github.com/users/capanp/received_events",
+        "repos_url": "https://api.github.com/users/capanp/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/capanp/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/capanp/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/capanp",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 113
+}

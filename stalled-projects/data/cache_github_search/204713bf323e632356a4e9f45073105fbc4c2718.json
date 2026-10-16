@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "### Version\n\nv18.15.0\n\n### Platform\n\nLinux server-host 5.15.0-69-generic #76-Ubuntu SMP Fri Mar 17 17:19:29 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux\n\n### Subsystem\n\n_No response_\n\n### What steps will reproduce the bug?\n\nI don't know how to reproduce.  But this seems to happen on our busiest servers.  The server has plenty of RAM available (80GB out of 128GB).  And it has 96 CPUs.\r\n\r\n\n\n### How often does it reproduce? Is there a required condition?\n\nIt seems to happen when my server is under heavy traffic (although CPU and RAM usage are not high).  It happens maybe once or twice per day.  I cannot reproduce it readily.\n\n### What is the expected behavior? Why is that the expected behavior?\n\nit should not seg fault\n\n### What do you see instead?\n\nI opened the coredump with `coredump info` and `coredumpctl debug`.  Here is some info.  I got the backtrace as well.  I'm happy to send this coredump if it's helpful.  It's only about 10Mb.\r\n\r\ncoredumpctl info\r\n```\r\n\r\n           PID: 35768 (PM2 v5.3.0: God)\r\n           UID: 0 (root)\r\n           GID: 0 (root)\r\n        Signal: 11 (SEGV)\r\n     Timestamp: Thu 2023-03-30 14:35:27 EDT (2min 33s ago)\r\n  Command Line: $'PM2 v5.3.0: God Daemon (/root/.pm2)' \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\" \"\"\r\n    Executable: /root/.nvm/versions/node/v18.15.0/bin/node\r\n Control Group: /user.slice/user-0.slice/session-7.scope\r\n          Unit: session-7.scope\r\n         Slice: user-0.slice\r\n       Session: 7\r\n     Owner UID: 0 (root)\r\n       Boot ID: cf3aaa25cae342f8903aefa322ba0e8f\r\n    Machine ID: 53ee02db24a24b008c218ca45204acc3\r\n      Hostname: server-host\r\n       Storage: /var/lib/systemd/coredump/core.PM2\\x20v5\\x2e3\\x2e0:\\x20God.0.cf3aaa25cae342f8903aefa322ba0e8f.35768.1680201327000000.zst (present)\r\n     Disk Size: 10.5M\r\n       Message: Process 35768 (PM2 v5.3.0: God) of user 0 dumped core.\r\n\r\n                Found module /root/.nvm/versions/node/v18.15.0/bin/node with build-id: 417328b1953d476d486d4bfa7f9a79d6571d694c\r\n                Found module linux-vdso.so.1 with build-id: 2dfff2e3b9908e870457adfd8ab8457adccee5ca\r\n                Found module ld-linux-x86-64.so.2 with build-id: 61ef896a699bb1c2e4e231642b2e1688b2f1a61e\r\n                Found module libc.so.6 with build-id: 69389d485a9793dbe873f0ea2c93e02efaa9aa3d\r\n                Found module libpthread.so.0 with build-id: e62798b68557abb4bc5548aba2640cd5ab948f36\r\n                Found module libgcc_s.so.1 with build-id: 09c4935b79388431a1248f6a98e00d7dc81b8513\r\n                Found module libm.so.6 with build-id: 27e82301dba6c3f644404d504e1bb1c97894b433\r\n                Found module libstdc++.so.6 with build-id: f57e02bfadacc0c923c82457d5e18e1830b5faea\r\n                Found module libdl.so.2 with build-id: 952123c3bdce7c3370553717942b4878d1fad797\r\n                Stack trace of thread 35768:\r\n                #0  0x00007fb7447122a9 tcache_get (libc.so.6 + 0xa52a9)\r\n                #1  0x00007fb744a519cc _Znwm (libstdc++.so.6 + 0xae9cc)\r\n                #2  0x00000000010805c0 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0xc805c0)\r\n                #3  0x0000000000d7a1a4 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x97a1a4)\r\n                #4  0x0000000000b11fa3 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x711fa3)\r\n                #5  0x0000000000c6f528 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x86f528)\r\n                #6  0x0000000001676dba n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x1276dba)\r\n                #7  0x0000000001677790 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x1277790)\r\n                #8  0x000000000167d534 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x127d534)\r\n                #9  0x000000000166b95e n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x126b95e)\r\n                #10 0x0000000000abda2d n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x6bda2d)\r\n                #11 0x0000000000bc1874 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x7c1874)\r\n                #12 0x0000000000b36434 n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x736434)\r\n                #13 0x0000000000b3a02f n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x73a02f)\r\n                #14 0x00007fb744696d90 __libc_start_call_main (libc.so.6 + 0x29d90)\r\n                #15 0x00007fb744696e40 __libc_start_main_impl (libc.so.6 + 0x29e40)\r\n                #16 0x0000000000aba37e n/a (/root/.nvm/versions/node/v18.15.0/bin/node + 0x6ba37e)\r\n```\r\n\r\ncoredump debug with backtrace\r\n```\r\nType \"apropos word\" to search for commands related to \"word\"...\r\nReading symbols from /root/.nvm/versions/node/v18.15.0/bin/node...\r\n[New LWP 35768]\r\n[New LWP 35773]\r\n[New LWP 35771]\r\n[New LWP 35778]\r\n[New LWP 35775]\r\n[New LWP 35815]\r\n[New LWP 35772]\r\n[New LWP 35814]\r\n[New LWP 35817]\r\n[New LWP 35774]\r\n[New LWP 35816]\r\n[Thread debugging using libthread_db enabled]\r\nUsing host libthread_db library \"/lib/x86_64-linux-gnu/libthread_db.so.1\".\r\nCore was generated by `PM2 v5.3.0: God Daemon (/root/.pm2)                                      '.\r\nProgram terminated with signal SIGSEGV, Segmentation fault.\r\n#0  0x00007fb7447122a9 in tcache_get (tc_idx=<optimized out>) at ./malloc/malloc.c:3196\r\n3196\t./malloc/malloc.c: No such file or directory.\r\n[Current thread is 1 (Thread 0x7fb74466a7c0 (LWP 35768))]\r\n(gdb) bt\r\n#0  0x00007fb7447122a9 in tcache_get (tc_idx=<optimized out>) at ./malloc/malloc.c:3196\r\n#1  __GI___libc_malloc (bytes=64) at ./malloc/malloc.c:3313\r\n#2  0x00007fb744a519cc in operator new(unsigned long) () from /lib/x86_64-linux-gnu/libstdc++.so.6\r\n#3  0x00000000010805c0 in v8::internal::BackingStore::Allocate(v8::internal::Isolate*, unsigned long, v8::internal::SharedFlag, v8::internal::InitializedFlag) ()\r\n#4  0x0000000000d7a1a4 in v8::ArrayBuffer::NewBackingStore(v8::Isolate*, unsigned long) ()\r\n#5  0x0000000000b11fa3 in node::Environment::allocate_managed_buffer(unsigned long) ()\r\n#6  0x0000000000c6f528 in node::LibuvStreamWrap::ReadStart()::{lambda(uv_handle_s*, unsigned long, uv_buf_t*)#1}::_FUN(uv_handle_s*, unsigned long, uv_buf_t*) ()\r\n#7  0x0000000001676dba in uv__read (stream=stream@entry=0x7fb7403cc0c0) at ../deps/uv/src/unix/stream.c:1105\r\n#8  0x0000000001677790 in uv__stream_io (loop=<optimized out>, w=0x7fb7403cc148, events=1) at ../deps/uv/src/unix/stream.c:1270\r\n#9  0x000000000167d534 in uv__io_poll (loop=loop@entry=0x526dfc0 <default_loop_struct>, timeout=<optimized out>) at ../deps/uv/src/unix/epoll.c:374\r\n#10 0x000000000166b95e in uv_run (loop=0x526dfc0 <default_loop_struct>, mode=UV_RUN_DEFAULT) at ../deps/uv/src/unix/core.c:406\r\n#11 0x0000000000abda2d in node::SpinEventLoop(node::Environment*) ()\r\n#12 0x0000000000bc1874 in node::NodeMainInstance::Run() ()\r\n#13 0x0000000000b36434 in node::LoadSnapshotDataAndRun(node::SnapshotData const**, node::InitializationResult const*) ()\r\n#14 0x0000000000b3a02f in node::Start(int, char**) ()\r\n#15 0x00007fb744696d90 in __libc_start_call_main (main=main@entry=0xab1f70 <main>, argc=argc@entry=2, argv=argv@entry=0x7ffe26fd3918) at ../sysdeps/nptl/libc_start_call_main.h:58\r\n#16 0x00007fb744696e40 in __libc_start_main_impl (main=0xab1f70 <main>, argc=2, argv=0x7ffe26fd3918, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffe26fd3908)\r\n    at ../csu/libc-start.c:392\r\n#17 0x0000000000aba37e in _start ()\r\n```\n\n### Additional information\n\nRunny Ubuntu 22.04 Jammy with latest patches.",
+      "closed_at": "2023-03-31T20:35:37Z",
+      "comments": 17,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/47324/comments",
+      "created_at": "2023-03-30T18:52:29Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/47324/events",
+      "html_url": "https://github.com/nodejs/node/issues/47324",
+      "id": 1648145106,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/47324/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "I_kwDOAZ7xs85iPLLS",
+      "number": 47324,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/47324/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/47324/timeline",
+      "title": "Segfault with different nodejs procs (I have coredump info)",
+      "type": null,
+      "updated_at": "2023-04-08T20:24:11Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/47324",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/2703309?v=4",
+        "events_url": "https://api.github.com/users/amit777/events{/privacy}",
+        "followers_url": "https://api.github.com/users/amit777/followers",
+        "following_url": "https://api.github.com/users/amit777/following{/other_user}",
+        "gists_url": "https://api.github.com/users/amit777/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/amit777",
+        "id": 2703309,
+        "login": "amit777",
+        "node_id": "MDQ6VXNlcjI3MDMzMDk=",
+        "organizations_url": "https://api.github.com/users/amit777/orgs",
+        "received_events_url": "https://api.github.com/users/amit777/received_events",
+        "repos_url": "https://api.github.com/users/amit777/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/amit777/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/amit777/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/amit777",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 253
+}

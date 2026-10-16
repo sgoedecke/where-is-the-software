@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "Server rendering has a lot of quirks that are easy to break. We have a fixture set up for it in [/fixtures/ssr](https://github.com/facebook/react/tree/master/fixtures/ssr).\r\n\r\nThis could be expanded to have more stuff in it. A few things we should have in the fixture and test for:\r\n\r\n- `<input />`, `<select />`, `<option />` and `<textarea />` controlled and uncontrolled. All types of inputs, including dates, numbers etc.\r\n- Where children is a single string/number, children array with multiple string/numbers, children with interleaved nodes and string/numbers.\r\n- Event handlers on hydrated nodes that does something useful when clicked. Reused event handlers on multiple different nodes etc.\r\n- onLoad event handlers.\r\n- Special properties that don't map directly to attribute names like `className`.\r\n- `<div hidden>...</div>` subtrees. (Subtrees with the \"hidden\" attribute set on it. Tests deprioritization.)\r\n\r\nWe probably need some on-screen options to turn on/off these things in the test suite to test under these conditions:\r\n\r\n- Server and Client differences. Turn on a flag that makes the server and client differ in minor ways.\r\n- Async hydration. Use Fiber's async features to hydrate the tree.\r\n- Defer hydration for some time. This is useful to test slow loading conditions where the user may have changed state of form controls before hydration. When combined with async, it can make the async rendering artificially slow. It should reveal issues such as a patching or event handlers being attached too early (before commit phase).\r\n\r\nIt's ok to start small. You don't have to do it all at once.",
+      "closed_at": "2023-10-19T03:26:18Z",
+      "comments": 30,
+      "comments_url": "https://api.github.com/repos/react/react/issues/9866/comments",
+      "created_at": "2017-06-06T17:31:30Z",
+      "events_url": "https://api.github.com/repos/react/react/issues/9866/events",
+      "html_url": "https://github.com/react/react/issues/9866",
+      "id": 233967763,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "fbca04",
+          "default": false,
+          "description": null,
+          "id": 588833528,
+          "name": "Difficulty: medium",
+          "node_id": "MDU6TGFiZWw1ODg4MzM1Mjg=",
+          "url": "https://api.github.com/repos/react/react/labels/Difficulty:%20medium"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "d4c5f9",
+          "default": false,
+          "description": null,
+          "id": 710332294,
+          "name": "Component: Server Rendering",
+          "node_id": "MDU6TGFiZWw3MTAzMzIyOTQ=",
+          "url": "https://api.github.com/repos/react/react/labels/Component:%20Server%20Rendering"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9149d1",
+          "default": false,
+          "description": "Opened by a member of the React Core Team",
+          "id": 1775958285,
+          "name": "React Core Team",
+          "node_id": "MDU6TGFiZWwxNzc1OTU4Mjg1",
+          "url": "https://api.github.com/repos/react/react/labels/React%20Core%20Team"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/react/react/issues/9866/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUyMzM5Njc3NjM=",
+      "number": 9866,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 2,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 2,
+        "url": "https://api.github.com/repos/react/react/issues/9866/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/react/react",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/react/react/issues/9866/timeline",
+      "title": "Add More Cases to Server Rendering Fixture",
+      "type": null,
+      "updated_at": "2023-10-19T03:26:18Z",
+      "url": "https://api.github.com/repos/react/react/issues/9866",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/63648?v=4",
+        "events_url": "https://api.github.com/users/sebmarkbage/events{/privacy}",
+        "followers_url": "https://api.github.com/users/sebmarkbage/followers",
+        "following_url": "https://api.github.com/users/sebmarkbage/following{/other_user}",
+        "gists_url": "https://api.github.com/users/sebmarkbage/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/sebmarkbage",
+        "id": 63648,
+        "login": "sebmarkbage",
+        "node_id": "MDQ6VXNlcjYzNjQ4",
+        "organizations_url": "https://api.github.com/users/sebmarkbage/orgs",
+        "received_events_url": "https://api.github.com/users/sebmarkbage/received_events",
+        "repos_url": "https://api.github.com/users/sebmarkbage/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/sebmarkbage/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/sebmarkbage/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/sebmarkbage",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 1
+}

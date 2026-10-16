@@ -1,0 +1,83 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "Java has added some more language keywords, including `record`. Let's update the stock parser to highlight these terms.",
+      "closed_at": "2022-03-31T20:26:26Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/microsoft/vscode/issues/146475/comments",
+      "created_at": "2022-03-31T20:24:54Z",
+      "events_url": "https://api.github.com/repos/microsoft/vscode/issues/146475/events",
+      "html_url": "https://github.com/microsoft/vscode/issues/146475",
+      "id": 1188695398,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [],
+      "labels_url": "https://api.github.com/repos/microsoft/vscode/issues/146475/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAn8RLM5G2g1m",
+      "number": 146475,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/microsoft/vscode/issues/146475/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/microsoft/vscode",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/microsoft/vscode/issues/146475/timeline",
+      "title": "Support more recent Java keywords",
+      "type": null,
+      "updated_at": "2022-05-15T23:26:21Z",
+      "url": "https://api.github.com/repos/microsoft/vscode/issues/146475",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/5316?v=4",
+        "events_url": "https://api.github.com/users/mcandre/events{/privacy}",
+        "followers_url": "https://api.github.com/users/mcandre/followers",
+        "following_url": "https://api.github.com/users/mcandre/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mcandre/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/mcandre",
+        "id": 5316,
+        "login": "mcandre",
+        "node_id": "MDQ6VXNlcjUzMTY=",
+        "organizations_url": "https://api.github.com/users/mcandre/orgs",
+        "received_events_url": "https://api.github.com/users/mcandre/received_events",
+        "repos_url": "https://api.github.com/users/mcandre/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/mcandre/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mcandre/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/mcandre",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 4958
+}

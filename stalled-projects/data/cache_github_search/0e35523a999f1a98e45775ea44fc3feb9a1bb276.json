@@ -1,0 +1,128 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "MANNEQUIN",
+      "body": "BPO | [35577](https://bugs.python.org/issue35577)\n--- | :---\nNosy | @cjw296, @mariocj89, @remilapeyre, @tirkarthi\n\n<sup>*Note: these values reflect the state of the issue at the time it was migrated and might not reflect the current state.*</sup>\n\n<details><summary>Show more details</summary><p>\n\nGitHub fields:\n```python\nassignee = None\nclosed_at = <Date 2022-03-19.19:47:30.250>\ncreated_at = <Date 2018-12-24.15:19:00.713>\nlabels = ['3.7', '3.8', 'type-feature', 'library', 'invalid']\ntitle = 'side_effect mocked method lose reference to instance'\nupdated_at = <Date 2022-03-19.19:47:30.249>\nuser = 'https://bugs.python.org/AdnanUmer'\n```\n\nbugs.python.org fields:\n```python\nactivity = <Date 2022-03-19.19:47:30.249>\nactor = 'iritkatriel'\nassignee = 'none'\nclosed = True\nclosed_date = <Date 2022-03-19.19:47:30.250>\ncloser = 'iritkatriel'\ncomponents = ['Library (Lib)']\ncreation = <Date 2018-12-24.15:19:00.713>\ncreator = 'Adnan Umer'\ndependencies = []\nfiles = []\nhgrepos = []\nissue_num = 35577\nkeywords = []\nmessage_count = 3.0\nmessages = ['332463', '332848', '335548']\nnosy_count = 5.0\nnosy_names = ['cjw296', 'mariocj89', 'remi.lapeyre', 'xtreak', 'Adnan Umer']\npr_nums = []\npriority = 'normal'\nresolution = 'not a bug'\nstage = 'resolved'\nstatus = 'closed'\nsuperseder = None\ntype = 'enhancement'\nurl = 'https://bugs.python.org/issue35577'\nversions = ['Python 3.7', 'Python 3.8']\n```\n\n</p></details>\n",
+      "closed_at": "2022-03-19T19:47:30Z",
+      "comments": 3,
+      "comments_url": "https://api.github.com/repos/python/cpython/issues/79758/comments",
+      "created_at": "2018-12-24T15:19:01Z",
+      "events_url": "https://api.github.com/repos/python/cpython/issues/79758/events",
+      "html_url": "https://github.com/python/cpython/issues/79758",
+      "id": 1199003136,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "006b75",
+          "default": false,
+          "description": "A feature request or enhancement",
+          "id": 536871772,
+          "name": "type-feature",
+          "node_id": "MDU6TGFiZWw1MzY4NzE3NzI=",
+          "url": "https://api.github.com/repos/python/cpython/labels/type-feature"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "09fc59",
+          "default": false,
+          "description": "Standard Library Python modules in the Lib/ directory",
+          "id": 4018668725,
+          "name": "stdlib",
+          "node_id": "LA_kwDOBN0Z8c7viAS1",
+          "url": "https://api.github.com/repos/python/cpython/labels/stdlib"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018775327,
+          "name": "3.8 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viaUf",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.8%20(EOL)"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "888888",
+          "default": false,
+          "description": "end of life",
+          "id": 4018775329,
+          "name": "3.7 (EOL)",
+          "node_id": "LA_kwDOBN0Z8c7viaUh",
+          "url": "https://api.github.com/repos/python/cpython/labels/3.7%20(EOL)"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/python/cpython/issues/79758/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWUxMTk5MDAzMTM2",
+      "number": 79758,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/python/cpython/issues/79758/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/python/cpython",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/python/cpython/issues/79758/timeline",
+      "title": "side_effect mocked method lose reference to instance",
+      "type": null,
+      "updated_at": "2022-04-10T11:59:23Z",
+      "url": "https://api.github.com/repos/python/cpython/issues/79758",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/101770426?v=4",
+        "events_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/events{/privacy}",
+        "followers_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/followers",
+        "following_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/following{/other_user}",
+        "gists_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/ghost",
+        "id": 101770426,
+        "login": "fdeefc8a-4f73-49f2-ad51-77aadde9e0f7",
+        "node_id": "M_kgDOBhDkug",
+        "organizations_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/orgs",
+        "received_events_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/received_events",
+        "repos_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7/subscriptions",
+        "type": "Mannequin",
+        "url": "https://api.github.com/users/fdeefc8a-4f73-49f2-ad51-77aadde9e0f7",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 216
+}

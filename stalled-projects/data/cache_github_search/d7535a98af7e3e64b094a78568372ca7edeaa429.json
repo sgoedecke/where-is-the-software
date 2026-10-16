@@ -1,0 +1,117 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "CONTRIBUTOR",
+      "body": "<!--\r\nThank you for reporting an issue.\r\n\r\nThis issue tracker is for bugs and issues found within Node.js core.\r\nIf you require more general support please file an issue on our help\r\nrepo. https://github.com/nodejs/help\r\n\r\n\r\nPlease fill in as much of the template below as you're able.\r\n\r\nVersion: output of `node -v \r\nPlatform: output of `uname -a` (UNIX), or output of `\"$([Environment]::OSVersion | ForEach-Object VersionString) $(if ([Environment]::Is64BitOperatingSystem) { \"x64\" } else { \"x86\" })\"` in PowerShell console (Windows) window 10\r\nSubsystem: if known, please specify affected core module name: \r\n-->\r\n\r\n* **Version**:15.2.1\r\n* **Platform**:window 10\r\n* **Subsystem**:IMPORT\r\n\r\n### What steps will reproduce the bug?\r\n\r\n**a.js**\r\n```js\r\nimport {b} from \"./B.js\";\r\n```\r\n**b.js**\r\n\r\n```js\r\nexport {b};\r\nconst b = 10;\r\n```\r\n\r\n**package.json**\r\n```json\r\n{\r\n  \"version\": \"1.0.0\",\r\n  \"type\": \"module\",\r\n  \"private\": true\r\n}\r\n```\r\n\r\n### How often does it reproduce? Is there a required condition?\r\n\r\nAlways\r\n\r\n### What is the expected behavior?\r\n\r\nB.js not found (Uppercase)\r\n\r\n### What do you see instead?\r\n\r\nno errors\r\n\r\n### Additional information\r\n\r\nIt creates error on linux",
+      "closed_at": "2024-05-29T19:51:46Z",
+      "comments": 6,
+      "comments_url": "https://api.github.com/repos/nodejs/node/issues/36968/comments",
+      "created_at": "2021-01-16T16:32:07Z",
+      "events_url": "https://api.github.com/repos/nodejs/node/issues/36968/events",
+      "html_url": "https://github.com/nodejs/node/issues/36968",
+      "id": 787502438,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "ededed",
+          "default": true,
+          "description": "Issues that will not be fixed.",
+          "id": 151728680,
+          "name": "wontfix",
+          "node_id": "MDU6TGFiZWwxNTE3Mjg2ODA=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/wontfix"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "9944dd",
+          "default": false,
+          "description": "Issues and PRs related to the Windows platform.",
+          "id": 166236401,
+          "name": "windows",
+          "node_id": "MDU6TGFiZWwxNjYyMzY0MDE=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/windows"
+        },
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "bfd4f2",
+          "default": false,
+          "description": "Issues and PRs related to the libuv dependency or the uv binding.",
+          "id": 214431115,
+          "name": "libuv",
+          "node_id": "MDU6TGFiZWwyMTQ0MzExMTU=",
+          "url": "https://api.github.com/repos/nodejs/node/labels/libuv"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/nodejs/node/issues/36968/labels{/name}",
+      "locked": false,
+      "milestone": null,
+      "node_id": "MDU6SXNzdWU3ODc1MDI0Mzg=",
+      "number": 36968,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/nodejs/node/issues/36968/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/nodejs/node",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/nodejs/node/issues/36968/timeline",
+      "title": "Import are case insensitive in window 10",
+      "type": null,
+      "updated_at": "2024-05-29T19:51:46Z",
+      "url": "https://api.github.com/repos/nodejs/node/issues/36968",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/5721194?v=4",
+        "events_url": "https://api.github.com/users/GrosSacASac/events{/privacy}",
+        "followers_url": "https://api.github.com/users/GrosSacASac/followers",
+        "following_url": "https://api.github.com/users/GrosSacASac/following{/other_user}",
+        "gists_url": "https://api.github.com/users/GrosSacASac/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/GrosSacASac",
+        "id": 5721194,
+        "login": "GrosSacASac",
+        "node_id": "MDQ6VXNlcjU3MjExOTQ=",
+        "organizations_url": "https://api.github.com/users/GrosSacASac/orgs",
+        "received_events_url": "https://api.github.com/users/GrosSacASac/received_events",
+        "repos_url": "https://api.github.com/users/GrosSacASac/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/GrosSacASac/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/GrosSacASac/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/GrosSacASac",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 16
+}

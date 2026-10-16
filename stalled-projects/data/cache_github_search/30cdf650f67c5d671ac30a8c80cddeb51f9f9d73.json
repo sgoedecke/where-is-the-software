@@ -1,0 +1,95 @@
+{
+  "incomplete_results": false,
+  "items": [
+    {
+      "active_lock_reason": null,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "body": "<!-- Please answer these questions before submitting your issue. Thanks! -->\r\n\r\n### What version of Go are you using (`go version`)?\r\n\r\n<pre>\r\n$ go version\r\ngo version go1.20 darwin/amd64\r\n</pre>\r\n\r\n### Does this issue reproduce with the latest release?\r\n\r\n\r\n### What operating system and processor architecture are you using (`go env`)?\r\n\r\n<details><summary><code>go env</code> Output</summary><br><pre>\r\n$ go env\r\nGO111MODULE=\"\"\r\nGOARCH=\"amd64\"\r\nGOBIN=\"\"\r\nGOCACHE=\"/Users/pavan/Library/Caches/go-build\"\r\nGOENV=\"/Users/pavan/Library/Application Support/go/env\"\r\nGOEXE=\"\"\r\nGOEXPERIMENT=\"\"\r\nGOFLAGS=\"\"\r\nGOHOSTARCH=\"amd64\"\r\nGOHOSTOS=\"darwin\"\r\nGOINSECURE=\"\"\r\nGOMODCACHE=\"/Users/pavan/go/pkg/mod\"\r\nGONOPROXY=\"\"\r\nGONOSUMDB=\"\"\r\nGOOS=\"darwin\"\r\nGOPATH=\"/Users/pavan/go\"\r\nGOPRIVATE=\"\"\r\nGOPROXY=\"https://proxy.golang.org,direct\"\r\nGOROOT=\"/usr/local/go\"\r\nGOSUMDB=\"sum.golang.org\"\r\nGOTMPDIR=\"\"\r\nGOTOOLDIR=\"/usr/local/go/pkg/tool/darwin_amd64\"\r\nGOVCS=\"\"\r\nGOVERSION=\"go1.20\"\r\nGCCGO=\"gccgo\"\r\nGOAMD64=\"v1\"\r\nAR=\"ar\"\r\nCC=\"clang\"\r\nCXX=\"clang++\"\r\nCGO_ENABLED=\"1\"\r\nGOMOD=\"/Users/pavan/Desktop/project3/go.mod\"\r\nGOWORK=\"\"\r\nCGO_CFLAGS=\"-O2 -g\"\r\nCGO_CPPFLAGS=\"\"\r\nCGO_CXXFLAGS=\"-O2 -g\"\r\nCGO_FFLAGS=\"-O2 -g\"\r\nCGO_LDFLAGS=\"-O2 -g\"\r\nPKG_CONFIG=\"pkg-config\"\r\nGOGCCFLAGS=\"-fPIC -arch x86_64 -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/cx/mx974mqn49n2rl5xbt6m05l80000gn/T/go-build1297795665=/tmp/go-build -gno-record-gcc-switches -fno-common\"\r\nGOROOT/bin/go version: go version go1.20 darwin/amd64\r\nGOROOT/bin/go tool compile -V: compile version go1.20\r\nuname -v: Darwin Kernel Version 19.6.0: Tue Jun 21 21:18:39 PDT 2022; root:xnu-6153.141.66~1/RELEASE_X86_64\r\nProductName:\tMac OS X\r\nProductVersion:\t10.15.7\r\nBuildVersion:\t19H2026\r\nlldb --version: lldb-1200.0.44.2\r\nApple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)\r\n</pre></details>\r\n\r\n### What did you do?\r\n\r\n<!--\r\nIf possible, provide a recipe for reproducing the error.\r\nA complete runnable program is good.\r\nA link on play.golang.org is best.\r\n-->\r\n\r\n\r\n\r\n### What did you expect to see?\r\n\r\n\r\n\r\n### What did you see instead?\r\n\r\n",
+      "closed_at": "2024-12-31T06:32:51Z",
+      "comments": 1,
+      "comments_url": "https://api.github.com/repos/golang/go/issues/71070/comments",
+      "created_at": "2024-12-31T06:27:03Z",
+      "events_url": "https://api.github.com/repos/golang/go/issues/71070/events",
+      "html_url": "https://github.com/golang/go/issues/71070",
+      "id": 2764008472,
+      "issue_dependencies_summary": {
+        "blocked_by": 0,
+        "blocking": 0,
+        "total_blocked_by": 0,
+        "total_blocking": 0
+      },
+      "issue_field_values": [],
+      "labels": [
+        {
+          "archived_at": null,
+          "archived_by": null,
+          "color": "1d76db",
+          "default": false,
+          "description": null,
+          "id": 398069301,
+          "name": "FrozenDueToAge",
+          "node_id": "MDU6TGFiZWwzOTgwNjkzMDE=",
+          "url": "https://api.github.com/repos/golang/go/labels/FrozenDueToAge"
+        }
+      ],
+      "labels_url": "https://api.github.com/repos/golang/go/issues/71070/labels{/name}",
+      "locked": true,
+      "milestone": null,
+      "node_id": "I_kwDOAWBuf86kv2wY",
+      "number": 71070,
+      "performed_via_github_app": null,
+      "pinned_comment": null,
+      "reactions": {
+        "+1": 0,
+        "-1": 0,
+        "confused": 0,
+        "eyes": 0,
+        "heart": 0,
+        "hooray": 0,
+        "laugh": 0,
+        "rocket": 0,
+        "total_count": 0,
+        "url": "https://api.github.com/repos/golang/go/issues/71070/reactions"
+      },
+      "repository_url": "https://api.github.com/repos/golang/go",
+      "score": 1.0,
+      "state": "closed",
+      "state_reason": "completed",
+      "sub_issues_summary": {
+        "completed": 0,
+        "percent_completed": 0,
+        "total": 0
+      },
+      "timeline_url": "https://api.github.com/repos/golang/go/issues/71070/timeline",
+      "title": "go bug",
+      "type": null,
+      "updated_at": "2025-12-31T07:12:41Z",
+      "url": "https://api.github.com/repos/golang/go/issues/71070",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/187273314?v=4",
+        "events_url": "https://api.github.com/users/code1211/events{/privacy}",
+        "followers_url": "https://api.github.com/users/code1211/followers",
+        "following_url": "https://api.github.com/users/code1211/following{/other_user}",
+        "gists_url": "https://api.github.com/users/code1211/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/code1211",
+        "id": 187273314,
+        "login": "code1211",
+        "node_id": "U_kgDOCymQYg",
+        "organizations_url": "https://api.github.com/users/code1211/orgs",
+        "received_events_url": "https://api.github.com/users/code1211/received_events",
+        "repos_url": "https://api.github.com/users/code1211/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/code1211/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/code1211/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/code1211",
+        "user_view_type": "public"
+      }
+    }
+  ],
+  "search_type": "lexical",
+  "total_count": 688
+}
