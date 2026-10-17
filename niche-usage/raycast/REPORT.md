@@ -1,34 +1,55 @@
 # Raycast Store usage cohorts (2026-10-15)
 
+Threshold revision: 2026-10-17; the underlying 2026-10-15 snapshot is unchanged.
+
 ## Source and method
 
 - **Listing date / supply.** I cloned `github.com/raycast/extensions` bloblessly into `cache/extensions-repo` and treated the first git add of `extensions/<slug>/package.json` as the first-listed date. Source: <https://github.com/raycast/extensions>. Script/data: `scripts/analyze.py`, `data/extension_first_listed_git.csv`.
 - **Current usage.** I scraped all 343 Raycast Store pages from <https://www.raycast.com/store> and parsed the server-rendered extension objects containing `download_count`. This yielded 3,271 currently active store extensions; 3,252 joined to git first-listed paths, with 19 current-store path mismatches and 196 git-listed paths no longer active. Script/data: `scripts/scrape_store.py`, `data/store_extensions_current.csv`.
-- **Usage thresholds.** I used current downloads only: low = **≥1k**, modest = **≥10k**, high = **≥100k**. In the active store snapshot these are roughly the 75th, 95th and 99th percentiles, respectively (median 223; p75 1,154; p95 15,157; p99 98,974).
+- **Usage thresholds.** Modest usage is now **≥100 current cumulative downloads**, selected to address small-audience software; high remains **≥100k**. The previous ≥10k "modest" bar was near the 95th percentile (93% of active extensions have fewer than 10k downloads; p95 is 15,157), so it poorly represented modest use. The ≥1k and ≥10k counts remain secondary measures with their original meanings, not relabeled counts (median 223; p75 1,154; p99 98,974). Downloads are not a count of distinct users.
 - **Equal-age caveat.** I could not get complete equal-age downloads. A Wayback CDX probe found Store snapshots but extension-page CDX calls timed out and Store snapshots are not complete per-item cohort history. Therefore all usage counts below favor older cohorts; a recent cohort beating old ones would be strong evidence, but trailing old cohorts is weak evidence.
 - **Review queue / submissions.** I counted GitHub PRs with `label:"new extension"` by created and merged quarter using `gh api search/issues`; current open backlog is from `state:open`. Data: `data/new_extension_prs_by_quarter.csv`.
+
+To reproduce from the checked-in data without re-scraping, run `python3 niche-usage/raycast/scripts/analyze.py` from the repository root. It joins the two source CSVs on `relative_path` and regenerates quarter/half-year cohorts, the top-recent list and `data/summary.json`, including threshold definitions and the comparison/sensitivity results.
 
 ## Cohort table
 
 Supply is all package first-adds in git. Usage counts are current downloads for extensions still active in the Store.
 
-| Cohort | Supply | Active w/downloads | Median current downloads | ≥1k | ≥10k | ≥100k | AI-related active |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| 2021H2 | 155 | 147 | 7,934 | 124 | 65 | 14 | 31 |
-| 2022H1 | 315 | 287 | 1,672 | 177 | 51 | 7 | 25 |
-| 2022H2 | 271 | 251 | 782 | 113 | 31 | 5 | 22 |
-| 2023H1 | 323 | 301 | 641 | 125 | 22 | 2 | 28 |
-| 2023H2 | 215 | 201 | 558 | 62 | 13 | 1 | 17 |
-| 2024H1 | 323 | 302 | 337 | 76 | 12 | 0 | 38 |
-| 2024H2 | 253 | 235 | 255 | 51 | 7 | 0 | 26 |
-| 2025H1 | 342 | 329 | 223 | 71 | 9 | 0 | 65 |
-| 2025H2 | 307 | 297 | 120 | 35 | 1 | 0 | 46 |
-| 2026H1 | 550 | 523 | 58 | 29 | 1 | 0 | 104 |
-| 2026H2* | 394 | 379 | 13 | 0 | 0 | 0 | 86 |
+| Cohort | Supply | Active w/downloads | Median current downloads | ≥100 (modest) | ≥1k | ≥10k | ≥100k (high) | AI-related active |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2021H2 | 155 | 147 | 7,934 | 147 | 124 | 65 | 14 | 31 |
+| 2022H1 | 315 | 287 | 1,672 | 268 | 177 | 51 | 7 | 25 |
+| 2022H2 | 271 | 251 | 782 | 217 | 113 | 31 | 5 | 22 |
+| 2023H1 | 323 | 301 | 641 | 255 | 125 | 22 | 2 | 28 |
+| 2023H2 | 215 | 201 | 558 | 168 | 62 | 13 | 1 | 17 |
+| 2024H1 | 323 | 302 | 337 | 252 | 76 | 12 | 0 | 38 |
+| 2024H2 | 253 | 235 | 255 | 174 | 51 | 7 | 0 | 26 |
+| 2025H1 | 342 | 329 | 223 | 232 | 71 | 9 | 0 | 65 |
+| 2025H2 | 307 | 297 | 120 | 161 | 35 | 1 | 0 | 46 |
+| 2026H1 | 550 | 523 | 58 | 197 | 29 | 1 | 0 | 104 |
+| 2026H2* | 394 | 379 | 13 | 22 | 0 | 0 | 0 | 86 |
 
 `*` 2026H2 is partial through 2026-10-15.
 
 Quarterly data is in `data/cohorts_quarter.csv`. Annual supply from git first-adds was 576 in 2024, 649 in 2025, and 944 in 2026 YTD (annualizing 2026 YTD gives roughly 1.2k, about 2.1× 2024). Active AI-related extensions listed per year rose from 64 in 2024 to 111 in 2025 and 190 in 2026 YTD.
+
+## Modest-usage comparison and sensitivity
+
+At **≥100 downloads**, the six complete 2022–24 half-year cohorts average **222.3333 extensions per half-year**, compared with **197 in 2026H1**: **−11.3943%**, rounded to **−11%**. Partial 2026H2 (22 so far) is excluded from the comparison. These counts include both AI-related and non-AI extensions; they are not a non-AI-only series.
+
+Every row below uses that same six-half-year baseline and 2026H1 comparison, changing only the cumulative-download threshold:
+
+| Current downloads | 2022–24 mean per half-year | 2026H1 | Observed change |
+|---|---:|---:|---:|
+| ≥10 | 262.6667 | 469 | +79% |
+| ≥100 (modest) | 222.3333 | 197 | −11% |
+| ≥500 | 141.3333 | 47 | −67% |
+| ≥1k | 100.6667 | 29 | −71% |
+| ≥10k (previous modest bar) | 22.6667 | 1 | −96% |
+| ≥100k (high, unchanged) | 2.5 | 0 | −100% |
+
+This is a **snapshot comparison, not an estimate of a true 11% decline** in modestly used new software. Older cohorts have had years to accumulate downloads, while the recent cohort has had months; lowering the threshold does not make those ages comparable. The sensitivity table illustrates how much the description depends on the bar, not a reason to select a bar for a desired result. True growth remains **inconclusive**, and these data cannot establish AI causation.
 
 ## Submission / review queue check
 
@@ -97,8 +118,8 @@ Among the top 20, 14 are AI/agent-related, 4 are manifest/company-owned integrat
 - **AI Extensions / Raycast AI.** The Store has an AI category (<https://www.raycast.com/store/category/ai>), many extension objects carry an `AI Extensions` category, and 2025+ top items are dominated by MCP, Claude/Copilot/Cursor, AI browser, and AI-tooling integrations. This can create real “new useful software” in the Store while being specifically AI-agent tooling, the exception category seen in other ecosystems.
 - **Review policy / throughput.** I did not verify a written review-policy change. The PR data show submissions roughly doubled in 2025 and rose again in 2026, while merged/listed throughput also rose sharply; the current open queue is 236 PRs and is recent, so review friction is a confounder but not enough to explain all 2026 supply.
 - **Survivorship.** Usage counts are for active Store entries only. Git supply includes 3,448 package additions; only 3,252 matched active Store entries with downloads. Removed/rejected extensions can depress true cohort success rates.
-- **Current-download age bias.** Older cohorts have had years to accumulate downloads. The absence of 2025–26 high-download hits is therefore meaningful only at the high end; low/modest thresholds for 2026 especially are too early to judge.
+- **Current-download age bias.** Older cohorts have had years to accumulate downloads; recent cohorts have had only months. The ≥100 modest bar does not correct this, and neither the −11% snapshot comparison nor the absence of recent ≥100k hits establishes a true decline at equal age.
 
 ## Three-sentence verdict
 
-Raycast clearly shows **more supply**: git first-adds rose from 576 in 2024 to 649 in 2025 and 944 in 2026 YTD, while `new extension` PR submissions jumped from roughly 260-300/quarter in 2024 to 470-620/quarter in 2025 and 780-990/quarter in early 2026. It does **not yet show more modestly used non-AI new tools** on current downloads: 2025 has fewer ≥1k and ≥10k extensions than 2024 despite more supply, though current-download age bias makes this conservative against recent cohorts. It shows **no new big hits** by the ≥100k threshold after 2023; the recent top list is instead dominated by AI/agent tooling and wrappers/official integrations rather than many brand-new standalone projects.
+Raycast clearly shows **more supply**: git first-adds rose from 576 in 2024 to 649 in 2025 and 944 in 2026 YTD, while `new extension` PR submissions jumped from roughly 260-300/quarter in 2024 to 470-620/quarter in 2025 and 780-990/quarter in early 2026. At **≥100 current downloads**, modestly used new extensions average 222.33 per half-year in 2022–24 versus 197 in 2026H1 (−11% observed, excluding partial 2026H2), but unequal time to accumulate downloads leaves true growth **inconclusive** and establishes neither a decline nor AI causation. No extensions first listed after 2023 have reached the unchanged **≥100k** high bar in this snapshot, also age-confounded; the recent top list is dominated by AI/agent tooling and wrappers/official integrations rather than many brand-new standalone projects.

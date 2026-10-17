@@ -2,7 +2,7 @@ import csv, json, re, statistics
 from collections import defaultdict, Counter
 from datetime import datetime, timezone
 from pathlib import Path
-BASE=Path('/Users/seangoedecke/Code/where-is-the-software/niche-usage/raycast')
+BASE=Path(__file__).resolve().parents[1]
 DATA=BASE/'data'
 def read_csv(p):
     with open(p,newline='') as f: return list(csv.DictReader(f))
@@ -22,7 +22,9 @@ def ai_flag(r):
 def int0(x):
     try: return int(float(x))
     except: return 0
-thresholds=[1000,10000,100000]
+modest_threshold=100
+high_threshold=100000
+thresholds=[modest_threshold,1000,10000,high_threshold]
 rows=[]
 for fr in first:
     sr=store_by_rel.get(fr['relative_path'])
@@ -48,10 +50,12 @@ def cohort_table(key):
             'downloads_median_active': int(statistics.median(dls)) if dls else 0,
             'downloads_p90_active': int(statistics.quantiles(dls,n=10)[8]) if len(dls)>=10 else (max(dls) if dls else 0),
             'downloads_total_active': sum(dls),
+            'ge_100':sum(1 for r in active if r['downloads']>=modest_threshold),
             'ge_1k':sum(1 for r in active if r['downloads']>=1000),
             'ge_10k':sum(1 for r in active if r['downloads']>=10000),
-            'ge_100k':sum(1 for r in active if r['downloads']>=100000),
+            'ge_100k':sum(1 for r in active if r['downloads']>=high_threshold),
             'ai_related_active':sum(1 for r in active if r['ai_related']),
+            'ai_ge_100':sum(1 for r in active if r['ai_related'] and r['downloads']>=modest_threshold),
             'ai_ge_10k':sum(1 for r in active if r['ai_related'] and r['downloads']>=10000),
         })
     return out
@@ -66,12 +70,42 @@ recent.sort(key=lambda r:r['downloads'] or 0, reverse=True)
 with open(DATA/'top_recent_2025plus.csv','w',newline='') as f:
     fields=['date','quarter','slug','title','downloads','ai_related','categories','platforms','owner','description','store_url']
     w=csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows([{k:r.get(k) for k in fields} for r in recent[:75]])
+# Compare complete listing cohorts using the same current-download snapshot.
+baseline_cohorts=[f'{year}H{half}' for year in (2022,2023,2024) for half in (1,2)]
+recent_cohort='2026H1'
+downloads_by_half=defaultdict(list)
+for r in rows:
+    if r['active']:
+        downloads_by_half[r['half']].append(r['downloads'])
+sensitivity={}
+for threshold in [10,modest_threshold,500,1000,10000,high_threshold]:
+    baseline_mean=statistics.mean(
+        sum(dl>=threshold for dl in downloads_by_half[cohort])
+        for cohort in baseline_cohorts
+    )
+    recent_count=sum(dl>=threshold for dl in downloads_by_half[recent_cohort])
+    sensitivity[str(threshold)]={
+        'baseline_mean':baseline_mean,
+        'recent_count':recent_count,
+        'change_percent':100*(recent_count-baseline_mean)/baseline_mean,
+    }
 # distribution
 with open(DATA/'summary.json','w') as f:
     json.dump({
         'git_supply_total':len(first),'store_active_total':len(store),'joined_active':sum(r['active'] for r in rows),
         'unmatched_store':len(unmatched),
         'download_thresholds':thresholds,
+        'modest_download_threshold':modest_threshold,
+        'high_download_threshold':high_threshold,
+        'usage_measure':'current_cumulative_downloads',
+        'snapshot_date':'2026-10-15',
+        'equal_age':False,
+        'half_year_comparison':{
+            'baseline_cohorts':baseline_cohorts,
+            'recent_cohort':recent_cohort,
+            'excluded_partial_cohorts':['2026H2'],
+            'threshold_sensitivity':sensitivity,
+        },
         'current_download_distribution':{str(p): int(statistics.quantiles([int0(s['download_count']) for s in store],n=100)[p-1]) for p in [10,25,50,75,90,95,99]},
         'max_downloads':max(int0(s['download_count']) for s in store),
     }, f, indent=2)
