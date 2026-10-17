@@ -73,7 +73,7 @@ Six more ecosystems, measured by usage:
 - **Not up** in WordPress (flat), CRAN (down) or OctoPrint (a declining platform).
 - **Gatekeeping:** registry review capacity (HACS backlog, F-Droid, Obsidian's pre-May queue) looks like a real constraint.
 - **Round 3 (Flathub, Decky Loader, Raycast, Blender):**
-  - Blender is weakly up. Flathub is flat after adjusting for ecosystem growth. Decky shows no increase. Raycast is inconclusive (current usage only).
+  - Blender is weakly up. Flathub is flat after adjusting for ecosystem growth. Decky shows no increase. Raycast is **inconclusive**: at the revised ≥100-download modest bar, 222.33/HY (2022–24 mean) → 197 (2026H1), −11% observed, excluding partial 2026H2. Current cumulative downloads give older cohorts years and recent ones months; the lower bar does not fix age comparability, establish a true decline or prove AI causation (≥100k high bar unchanged).
   - No new big hits beyond AI tooling.
   - Submissions are surging 3–5× while listings rise ~30% to 2×, because reviewers absorb the flood.
 

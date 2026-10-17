@@ -125,13 +125,15 @@ Usage across all 17 ecosystems we measured:
 | **Nexus code mods** | ≥100 downloads +23% | current | Weak yes |
 | **Blender extensions** | ≥1k downloads: 196 (2026H1) vs 151–194, with less time | current | Weak yes |
 | **Flathub** | ≥1k installs in 90d +50%, but flat once normalised for ecosystem growth | equal-age | No (beyond platform growth) |
-| **Raycast** | current usage only; recent cohorts trail | current | Inconclusive |
+| **Raycast** | ≥100 downloads: 222.33/HY (2022–24 mean) → 197 (2026H1), −11% observed; partial 2026H2 excluded | current cumulative, age-confounded | **Inconclusive** for true growth |
 | **Google Play** | ≥5k downloads at 23 weeks tracks supply | equal-age (aggregate) | No AI-era surge |
 | **Decky Loader** (Steam Deck) | ≥20k downloads: 5 vs 2–13 | current | No |
 | **WordPress** | ≥100 active installs flat (~380/HY) | current | No |
 | **Atlassian (Cloud)** | ≥100 installs ~70 → ~30/HY | current | No |
 | **CRAN** | ≥2k downloads (equal-age) down | equal-age | No |
 | **OctoPrint** | down at every bar; platform declining | current | No |
+
+Raycast's modest bar was revised from ≥10k to **≥100 downloads** to better represent small-audience software; ≥1k and ≥10k remain secondary measures and the high bar stays ≥100k. Its −11% is a current-snapshot comparison, not a demonstrated decline: older cohorts have years to accumulate downloads, recent ones months, and lowering the bar does not fix that age mismatch or establish AI causation. See `niche-usage/raycast/REPORT.md` for threshold sensitivity.
 
 **The pattern (interpretation, not proven):**
 

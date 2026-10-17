@@ -50,10 +50,12 @@ Detail is in `niche-usage/{flathub,decky,raycast,blender}/REPORT.md`.
 |---|---|---|---|---|---|---|
 | **Flathub** | ~340–490/HY → 1,211 (26H1), 1,173 (26H2 partial): **3–5×** | ~200–250 → 308 (+30%) | ≥1k new installs in 90d: 120–156 → 216 (+50%), but **flat once normalised** for ecosystem install growth (21M → 244M/HY since 2021) | ≥10k in 90d: 14–25 → 25, flat | equal-age (daily stats) | **No** beyond platform growth. Reviewers absorb the surge. |
 | **Decky Loader** | addition PRs 13–42/HY → 68 (26H1), 38 (26H2, 0 merged yet) | 5–24/HY → 21 | ≥20k: 2–13 → 5 | ≥100k down | current (equal-age only from 2024-08) | **No**; review-bottlenecked; tiny |
-| **Raycast** | rising; 236 open, nearly all 2026Q3–Q4 | ~580–650/yr → 944 YTD (~2×) | current only; recent cohorts trail (age confound) | none recent | current | **Inconclusive**; top recent items mostly AI/agent tooling and company integrations |
+| **Raycast** | rising; 236 open, nearly all 2026Q3–Q4 | ~580–650/yr → 944 YTD (~2×) | ≥100 downloads: 222.33/HY (2022–24 mean) → 197 (2026H1), −11% observed; partial 2026H2 excluded | ≥100k: none first listed after 2023 in current snapshot | current cumulative, age-confounded | **Inconclusive** for true growth; top recent items mostly AI/agent tooling and company integrations |
 | **Blender Extensions** (launched Jul 2024) | queue ~725 (Apr 2025) → ~2,170 (Oct 2026) | 152 → 250/HY; genuinely new GitHub-linked projects 40 (25Q2) → 91 (26Q2) → 123 (26Q3) | ≥1k downloads: 196 (26H1) vs 151–194, despite less time | ≥10k down; recent big hits mostly migrated old add-ons | current | **Weak yes** |
 
 AI add-ons in Blender's queue (BlenderGPT, several MCP bridges) were mostly declined. Flathub's top new apps are LM Studio, Jan and OpenCode.
+
+Raycast threshold revision (2026-10-17): **≥100 downloads** replaces ≥10k as modest usage because the old bar was near the 95th percentile, not a small-audience bar. The ≥1k/≥10k series remain secondary measures and ≥100k remains high. The −11% comparison uses the unchanged 2026-10-15 snapshot; it is not a true-growth estimate because older cohorts have years of cumulative downloads and recent cohorts months. Lowering the threshold does not solve age comparability or demonstrate AI causation; sensitivity results are in `niche-usage/raycast/REPORT.md`.
 
 ## Updated picture across 12 ecosystems
 - **Big hits (new tools reaching high usage):** flat or down in all 12, except AI tooling and Obsidian's AI-agent plugins.

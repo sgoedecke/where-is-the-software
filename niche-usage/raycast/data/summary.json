@@ -4,10 +4,62 @@
   "joined_active": 3252,
   "unmatched_store": 19,
   "download_thresholds": [
+    100,
     1000,
     10000,
     100000
   ],
+  "modest_download_threshold": 100,
+  "high_download_threshold": 100000,
+  "usage_measure": "current_cumulative_downloads",
+  "snapshot_date": "2026-10-15",
+  "equal_age": false,
+  "half_year_comparison": {
+    "baseline_cohorts": [
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2",
+      "2024H1",
+      "2024H2"
+    ],
+    "recent_cohort": "2026H1",
+    "excluded_partial_cohorts": [
+      "2026H2"
+    ],
+    "threshold_sensitivity": {
+      "10": {
+        "baseline_mean": 262.6666666666667,
+        "recent_count": 469,
+        "change_percent": 78.55329949238578
+      },
+      "100": {
+        "baseline_mean": 222.33333333333334,
+        "recent_count": 197,
+        "change_percent": -11.394302848575716
+      },
+      "500": {
+        "baseline_mean": 141.33333333333334,
+        "recent_count": 47,
+        "change_percent": -66.74528301886792
+      },
+      "1000": {
+        "baseline_mean": 100.66666666666667,
+        "recent_count": 29,
+        "change_percent": -71.19205298013244
+      },
+      "10000": {
+        "baseline_mean": 22.666666666666668,
+        "recent_count": 1,
+        "change_percent": -95.58823529411765
+      },
+      "100000": {
+        "baseline_mean": 2.5,
+        "recent_count": 0,
+        "change_percent": -100.0
+      }
+    }
+  },
   "current_download_distribution": {
     "10": 14,
     "25": 51,
